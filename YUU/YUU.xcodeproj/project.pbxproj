@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */; };
+		09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */; };
+		09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E0D21270C6A00952C6D /* YUUMachineMarket.storyboard */; };
+		09207E1C21270C6A00952C6D /* YUUMachineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0F21270C6A00952C6D /* YUUMachineModel.m */; };
+		09207E1D21270C6A00952C6D /* YUUMineMachine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E1221270C6A00952C6D /* YUUMineMachine.storyboard */; };
+		09207E1E21270C6A00952C6D /* YUUMinePool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E1421270C6A00952C6D /* YUUMinePool.storyboard */; };
+		09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1721270C6A00952C6D /* YUUMinePoolVC.m */; };
+		09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1821270C6A00952C6D /* YUUMinePoolCell.m */; };
+		09207E242127105700952C6D /* YUUTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E232127105700952C6D /* YUUTabBar.storyboard */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -25,6 +34,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketVC.m; sourceTree = "<group>"; };
+		09207E0B21270C6A00952C6D /* YUUMachineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineModel.h; sourceTree = "<group>"; };
+		09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketCell.m; sourceTree = "<group>"; };
+		09207E0D21270C6A00952C6D /* YUUMachineMarket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YUUMachineMarket.storyboard; sourceTree = "<group>"; };
+		09207E0E21270C6A00952C6D /* YUUMachineMarketVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineMarketVC.h; sourceTree = "<group>"; };
+		09207E0F21270C6A00952C6D /* YUUMachineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineModel.m; sourceTree = "<group>"; };
+		09207E1021270C6A00952C6D /* YUUMachineMarketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineMarketCell.h; sourceTree = "<group>"; };
+		09207E1221270C6A00952C6D /* YUUMineMachine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YUUMineMachine.storyboard; sourceTree = "<group>"; };
+		09207E1421270C6A00952C6D /* YUUMinePool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YUUMinePool.storyboard; sourceTree = "<group>"; };
+		09207E1521270C6A00952C6D /* YUUMinePoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMinePoolCell.h; sourceTree = "<group>"; };
+		09207E1621270C6A00952C6D /* YUUMinePoolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMinePoolVC.h; sourceTree = "<group>"; };
+		09207E1721270C6A00952C6D /* YUUMinePoolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolVC.m; sourceTree = "<group>"; };
+		09207E1821270C6A00952C6D /* YUUMinePoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolCell.m; sourceTree = "<group>"; };
+		09207E232127105700952C6D /* YUUTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUTabBar.storyboard; sourceTree = "<group>"; };
 		18784C662126A58B00874434 /* YUUDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDebugMacros.h; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +93,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09207E0821270C6A00952C6D /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				09207E2121270D1300952C6D /* TabBarController */,
+				09207E0921270C6A00952C6D /* MachineMarket */,
+				09207E1121270C6A00952C6D /* MineMachine */,
+				09207E1321270C6A00952C6D /* MinePool */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		09207E0921270C6A00952C6D /* MachineMarket */ = {
+			isa = PBXGroup;
+			children = (
+				09207E0D21270C6A00952C6D /* YUUMachineMarket.storyboard */,
+				09207E1021270C6A00952C6D /* YUUMachineMarketCell.h */,
+				09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */,
+				09207E0E21270C6A00952C6D /* YUUMachineMarketVC.h */,
+				09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */,
+				09207E0B21270C6A00952C6D /* YUUMachineModel.h */,
+				09207E0F21270C6A00952C6D /* YUUMachineModel.m */,
+			);
+			path = MachineMarket;
+			sourceTree = "<group>";
+		};
+		09207E1121270C6A00952C6D /* MineMachine */ = {
+			isa = PBXGroup;
+			children = (
+				09207E1221270C6A00952C6D /* YUUMineMachine.storyboard */,
+			);
+			path = MineMachine;
+			sourceTree = "<group>";
+		};
+		09207E1321270C6A00952C6D /* MinePool */ = {
+			isa = PBXGroup;
+			children = (
+				09207E1421270C6A00952C6D /* YUUMinePool.storyboard */,
+				09207E1521270C6A00952C6D /* YUUMinePoolCell.h */,
+				09207E1621270C6A00952C6D /* YUUMinePoolVC.h */,
+				09207E1721270C6A00952C6D /* YUUMinePoolVC.m */,
+				09207E1821270C6A00952C6D /* YUUMinePoolCell.m */,
+			);
+			path = MinePool;
+			sourceTree = "<group>";
+		};
+		09207E2121270D1300952C6D /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				09207E232127105700952C6D /* YUUTabBar.storyboard */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		09207E222127103200952C6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		18784C642126A53E00874434 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +192,8 @@
 		18EDE40921257A3700FC8E0C /* YUU */ = {
 			isa = PBXGroup;
 			children = (
+				09207E222127103200952C6D /* Model */,
+				09207E0821270C6A00952C6D /* VC */,
 				18F85D042126B8AC001A3205 /* Category */,
 				18F85CED2126B3FC001A3205 /* Network */,
 				18784C652126A53E00874434 /* Config */,
@@ -229,8 +314,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09207E242127105700952C6D /* YUUTabBar.storyboard in Resources */,
 				18EDE41721257A3A00FC8E0C /* LaunchScreen.storyboard in Resources */,
 				18EDE41421257A3A00FC8E0C /* Assets.xcassets in Resources */,
+				09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */,
+				09207E1E21270C6A00952C6D /* YUUMinePool.storyboard in Resources */,
+				09207E1D21270C6A00952C6D /* YUUMineMachine.storyboard in Resources */,
 				18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,18 +331,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */,
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
+				09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */,
 				18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
+				09207E1C21270C6A00952C6D /* YUUMachineModel.m in Sources */,
+				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
+				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,8 +487,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ECVCAG6ZK6;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -404,6 +498,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -412,8 +507,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ECVCAG6ZK6;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -423,6 +518,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
