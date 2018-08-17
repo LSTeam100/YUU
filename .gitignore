@@ -1,0 +1,9 @@
+#.gitignore  
+# ignore cocoaPods  
+/Pods  
+Podfile.lock
+.clang-format
+UserInterfaceState.xcuserstate
+Breakpoints_v2.xcbkptlist
+IDEWorkspaceChecks.plist
+xcschememanagement.plist
