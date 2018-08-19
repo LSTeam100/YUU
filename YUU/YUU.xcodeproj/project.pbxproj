@@ -31,6 +31,8 @@
 		18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85CE62126B3A2001A3205 /* ZHAFURLRequestSerialization.m */; };
 		18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D0A2126B9D7001A3205 /* UIDevice+YUUDe.m */; };
 		18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D0D2126BA93001A3205 /* HLCNetworkReachability.m */; };
+		18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D1E2129048F001A3205 /* YUUBaseRequest.m */; };
+		18F85D212129048F001A3205 /* YUUResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D1F2129048F001A3205 /* YUUResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,10 @@
 		18F85D0C2126BA93001A3205 /* HLCNetworkReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCNetworkReachability.h; sourceTree = "<group>"; };
 		18F85D0D2126BA93001A3205 /* HLCNetworkReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCNetworkReachability.m; sourceTree = "<group>"; };
 		18F85D0F2126BCA8001A3205 /* YUUPre.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPre.pch; sourceTree = "<group>"; };
+		18F85D1C2129048F001A3205 /* YUUResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUResponse.h; sourceTree = "<group>"; };
+		18F85D1D2129048F001A3205 /* YUUBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUBaseRequest.h; sourceTree = "<group>"; };
+		18F85D1E2129048F001A3205 /* YUUBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUBaseRequest.m; sourceTree = "<group>"; };
+		18F85D1F2129048F001A3205 /* YUUResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUResponse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +248,10 @@
 		18F85CED2126B3FC001A3205 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				18F85D1D2129048F001A3205 /* YUUBaseRequest.h */,
+				18F85D1E2129048F001A3205 /* YUUBaseRequest.m */,
+				18F85D1C2129048F001A3205 /* YUUResponse.h */,
+				18F85D1F2129048F001A3205 /* YUUResponse.m */,
 				18F85D0C2126BA93001A3205 /* HLCNetworkReachability.h */,
 				18F85D0D2126BA93001A3205 /* HLCNetworkReachability.m */,
 			);
@@ -343,9 +353,11 @@
 				09207E1C21270C6A00952C6D /* YUUMachineModel.m in Sources */,
 				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
+				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
+				18F85D212129048F001A3205 /* YUUResponse.m in Sources */,
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
 			);
