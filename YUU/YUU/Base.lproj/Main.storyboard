@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,126 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="118"/>
+            <point key="canvasLocation" x="26" y="-17"/>
+        </scene>
+        <!--Login Ctrl-->
+        <scene sceneID="Vj7-yc-Ky1">
+            <objects>
+                <viewController storyboardIdentifier="YUULoginCtrl" id="Pd8-Vp-W65" customClass="YUULoginCtrl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uDm-bc-ETP"/>
+                        <viewControllerLayoutGuide type="bottom" id="KdQ-r9-XGH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="YUULoginCtrl" id="M3U-mB-V6J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_lager" translatesAutoresizingMaskIntoConstraints="NO" id="AHz-PN-qo2">
+                                <rect key="frame" x="91" y="120" width="193" height="206"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="86S-EB-OZ8"/>
+                                    <constraint firstAttribute="width" constant="193" id="pyv-fH-gSz"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jZ-zo-Xlg">
+                                <rect key="frame" x="40" y="388" width="295" height="48"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_lager" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-vE-bBd">
+                                        <rect key="frame" x="0.0" y="2" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="AVh-1t-DJ9"/>
+                                            <constraint firstAttribute="height" constant="44" id="VaU-rK-xU0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E29-3x-x7e">
+                                        <rect key="frame" x="64" y="2" width="221" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="AOE-lO-er4"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="E29-3x-x7e" firstAttribute="leading" secondItem="Nd2-vE-bBd" secondAttribute="trailing" constant="20" id="LW6-St-nwV"/>
+                                    <constraint firstItem="Nd2-vE-bBd" firstAttribute="centerY" secondItem="1jZ-zo-Xlg" secondAttribute="centerY" id="O78-fh-04x"/>
+                                    <constraint firstItem="E29-3x-x7e" firstAttribute="centerY" secondItem="1jZ-zo-Xlg" secondAttribute="centerY" id="VJ7-JA-Vhi"/>
+                                    <constraint firstAttribute="trailing" secondItem="E29-3x-x7e" secondAttribute="trailing" constant="10" id="pRR-al-WjQ"/>
+                                    <constraint firstAttribute="height" constant="48" id="tma-gN-rE0"/>
+                                    <constraint firstItem="Nd2-vE-bBd" firstAttribute="leading" secondItem="1jZ-zo-Xlg" secondAttribute="leading" id="xAb-OQ-oFQ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvY-6o-gRb">
+                                <rect key="frame" x="171.5" y="490" width="31" height="30"/>
+                                <state key="normal" title="登录"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esb-G0-TXN">
+                                <rect key="frame" x="156" y="601" width="62" height="30"/>
+                                <state key="normal" title="忘记密码"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8O-fr-Rzi">
+                                <rect key="frame" x="40" y="320" width="295" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6M-3A-ozp">
+                                        <rect key="frame" x="64" y="2" width="221" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="4Qv-PP-eI0"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_lager" translatesAutoresizingMaskIntoConstraints="NO" id="h7r-1x-u7c">
+                                        <rect key="frame" x="0.0" y="4" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="HwZ-kF-Z0I"/>
+                                            <constraint firstAttribute="width" constant="44" id="IDQ-dh-vHN"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="h7r-1x-u7c" secondAttribute="bottom" id="47G-Ix-eTK"/>
+                                    <constraint firstAttribute="trailing" secondItem="q6M-3A-ozp" secondAttribute="trailing" constant="10" id="88f-hj-xIF"/>
+                                    <constraint firstAttribute="height" constant="48" id="aju-Qm-ILI"/>
+                                    <constraint firstItem="h7r-1x-u7c" firstAttribute="leading" secondItem="x8O-fr-Rzi" secondAttribute="leading" id="cwb-uE-s7h"/>
+                                    <constraint firstItem="q6M-3A-ozp" firstAttribute="leading" secondItem="h7r-1x-u7c" secondAttribute="trailing" constant="20" id="dMR-t4-fkg"/>
+                                    <constraint firstItem="q6M-3A-ozp" firstAttribute="centerY" secondItem="x8O-fr-Rzi" secondAttribute="centerY" id="qn4-46-HGP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="x8O-fr-Rzi" secondAttribute="trailing" constant="24" id="4U6-sk-Ye1"/>
+                            <constraint firstItem="AHz-PN-qo2" firstAttribute="centerX" secondItem="M3U-mB-V6J" secondAttribute="centerX" id="5Bt-SO-4D6"/>
+                            <constraint firstItem="CvY-6o-gRb" firstAttribute="top" secondItem="1jZ-zo-Xlg" secondAttribute="bottom" constant="54" id="DjK-cI-iHO"/>
+                            <constraint firstItem="CvY-6o-gRb" firstAttribute="centerX" secondItem="M3U-mB-V6J" secondAttribute="centerX" id="FMZ-qR-tGq"/>
+                            <constraint firstItem="AHz-PN-qo2" firstAttribute="top" secondItem="uDm-bc-ETP" secondAttribute="bottom" constant="100" id="JFO-iJ-4z0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1jZ-zo-Xlg" secondAttribute="trailing" constant="24" id="L5b-dp-8SE"/>
+                            <constraint firstItem="x8O-fr-Rzi" firstAttribute="top" secondItem="uDm-bc-ETP" secondAttribute="bottom" constant="300" id="j75-6i-LP9"/>
+                            <constraint firstItem="x8O-fr-Rzi" firstAttribute="centerX" secondItem="M3U-mB-V6J" secondAttribute="centerX" id="jkf-Z8-4O0"/>
+                            <constraint firstItem="x8O-fr-Rzi" firstAttribute="leading" secondItem="M3U-mB-V6J" secondAttribute="leadingMargin" constant="24" id="t9B-gm-LVw"/>
+                            <constraint firstItem="esb-G0-TXN" firstAttribute="centerX" secondItem="M3U-mB-V6J" secondAttribute="centerX" id="tte-Bj-J7i"/>
+                            <constraint firstItem="KdQ-r9-XGH" firstAttribute="top" secondItem="esb-G0-TXN" secondAttribute="bottom" constant="36" id="xgG-ei-2aI"/>
+                            <constraint firstItem="1jZ-zo-Xlg" firstAttribute="top" secondItem="x8O-fr-Rzi" secondAttribute="bottom" constant="20" id="yMP-x8-dey"/>
+                            <constraint firstItem="1jZ-zo-Xlg" firstAttribute="leading" secondItem="M3U-mB-V6J" secondAttribute="leadingMargin" constant="24" id="zYY-UD-hfa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="account" destination="q6M-3A-ozp" id="UCl-e7-zBj"/>
+                        <outlet property="btnSignIn" destination="CvY-6o-gRb" id="OvA-iC-VUi"/>
+                        <outlet property="cstTopMargin" destination="j75-6i-LP9" id="Riw-Qk-EXd"/>
+                        <outlet property="passworad" destination="E29-3x-x7e" id="jo1-PE-WJU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d1W-8B-JaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="-18"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_lager" width="512" height="512"/>
+    </resources>
 </document>

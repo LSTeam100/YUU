@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "YUULoginCtrl.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YUULoginCtrl *login = [sb instantiateViewControllerWithIdentifier:@"YUULoginCtrl"];
+    [self presentViewController:login animated:true completion:^{
+        DLOG("展示登录页面");
+    }];
+    
+    
+
 }
 
 
