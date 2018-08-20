@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091DBB09212A3E86005DC12C /* YUUTabBarController.m */; };
+		091DBB10212A3F31005DC12C /* YUUTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091DBB0F212A3F31005DC12C /* YUUTabBar.storyboard */; };
 		09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */; };
 		09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */; };
 		09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E0D21270C6A00952C6D /* YUUMachineMarket.storyboard */; };
@@ -15,7 +17,9 @@
 		09207E1E21270C6A00952C6D /* YUUMinePool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E1421270C6A00952C6D /* YUUMinePool.storyboard */; };
 		09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1721270C6A00952C6D /* YUUMinePoolVC.m */; };
 		09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1821270C6A00952C6D /* YUUMinePoolCell.m */; };
-		09207E242127105700952C6D /* YUUTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E232127105700952C6D /* YUUTabBar.storyboard */; };
+		095F4A62212A774C00098859 /* UIColor+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A60212A774C00098859 /* UIColor+Help.m */; };
+		095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A65212A96A200098859 /* YUUBaseViewController.m */; };
+		095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A68212AC0C000098859 /* UINavigationController+help.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -38,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		091DBB08212A3E86005DC12C /* YUUTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTabBarController.h; sourceTree = "<group>"; };
+		091DBB09212A3E86005DC12C /* YUUTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTabBarController.m; sourceTree = "<group>"; };
+		091DBB0F212A3F31005DC12C /* YUUTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUTabBar.storyboard; sourceTree = "<group>"; };
 		09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketVC.m; sourceTree = "<group>"; };
 		09207E0B21270C6A00952C6D /* YUUMachineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineModel.h; sourceTree = "<group>"; };
 		09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketCell.m; sourceTree = "<group>"; };
@@ -51,7 +58,12 @@
 		09207E1621270C6A00952C6D /* YUUMinePoolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMinePoolVC.h; sourceTree = "<group>"; };
 		09207E1721270C6A00952C6D /* YUUMinePoolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolVC.m; sourceTree = "<group>"; };
 		09207E1821270C6A00952C6D /* YUUMinePoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolCell.m; sourceTree = "<group>"; };
-		09207E232127105700952C6D /* YUUTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUTabBar.storyboard; sourceTree = "<group>"; };
+		095F4A60212A774C00098859 /* UIColor+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Help.m"; sourceTree = "<group>"; };
+		095F4A61212A774C00098859 /* UIColor+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Help.h"; sourceTree = "<group>"; };
+		095F4A64212A96A200098859 /* YUUBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseViewController.h; sourceTree = "<group>"; };
+		095F4A65212A96A200098859 /* YUUBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseViewController.m; sourceTree = "<group>"; };
+		095F4A67212AC0C000098859 /* UINavigationController+help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+help.h"; sourceTree = "<group>"; };
+		095F4A68212AC0C000098859 /* UINavigationController+help.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+help.m"; sourceTree = "<group>"; };
 		18784C662126A58B00874434 /* YUUDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDebugMacros.h; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +120,7 @@
 		09207E0821270C6A00952C6D /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				095F4A63212A968C00098859 /* Base */,
 				18F85D2521290A12001A3205 /* Login */,
 				09207E2121270D1300952C6D /* TabBarController */,
 				09207E0921270C6A00952C6D /* MachineMarket */,
@@ -156,7 +169,9 @@
 		09207E2121270D1300952C6D /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				09207E232127105700952C6D /* YUUTabBar.storyboard */,
+				091DBB08212A3E86005DC12C /* YUUTabBarController.h */,
+				091DBB09212A3E86005DC12C /* YUUTabBarController.m */,
+				091DBB0F212A3F31005DC12C /* YUUTabBar.storyboard */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -166,6 +181,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		095F4A63212A968C00098859 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				095F4A64212A96A200098859 /* YUUBaseViewController.h */,
+				095F4A65212A96A200098859 /* YUUBaseViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		18784C642126A53E00874434 /* Library */ = {
@@ -272,6 +296,10 @@
 			children = (
 				18F85D092126B9D7001A3205 /* UIDevice+YUUDe.h */,
 				18F85D0A2126B9D7001A3205 /* UIDevice+YUUDe.m */,
+				095F4A61212A774C00098859 /* UIColor+Help.h */,
+				095F4A60212A774C00098859 /* UIColor+Help.m */,
+				095F4A67212AC0C000098859 /* UINavigationController+help.h */,
+				095F4A68212AC0C000098859 /* UINavigationController+help.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -342,7 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09207E242127105700952C6D /* YUUTabBar.storyboard in Resources */,
+				091DBB10212A3F31005DC12C /* YUUTabBar.storyboard in Resources */,
 				18EDE41721257A3A00FC8E0C /* LaunchScreen.storyboard in Resources */,
 				18EDE41421257A3A00FC8E0C /* Assets.xcassets in Resources */,
 				09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */,
@@ -363,10 +391,12 @@
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
 				09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */,
 				18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */,
+				095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
+				095F4A62212A774C00098859 /* UIColor+Help.m in Sources */,
 				18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */,
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
 				18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */,
@@ -375,11 +405,13 @@
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
+				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
 				18F85D212129048F001A3205 /* YUUResponse.m in Sources */,
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
+				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,17 +552,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P6UF878TKN;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "5a5bf09d-5c26-4d4e-81d4-3493912339e1";
+				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -543,7 +576,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
