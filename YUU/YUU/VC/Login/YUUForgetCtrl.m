@@ -8,10 +8,15 @@
 
 #import "YUUForgetCtrl.h"
 
-@interface YUUForgetCtrl ()
+@interface YUUForgetCtrl ()<UITextFieldDelegate>
 {
     
 }
+@property(nonatomic,weak)IBOutlet UITextField *phoneTextField;
+@property(nonatomic,weak)IBOutlet UITextField *codeTextField;
+@property(nonatomic,weak)IBOutlet UITextField *passwordField;
+@property(nonatomic,weak)IBOutlet UITextField *resetPasswordField;
+@property(nonatomic,weak)IBOutlet UIButton *submitBtn;
 @end
 
 @implementation YUUForgetCtrl
