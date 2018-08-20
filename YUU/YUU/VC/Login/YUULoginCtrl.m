@@ -52,7 +52,7 @@
 
 - (void)reover{
     [UIView animateWithDuration:0.2 animations:^{
-        
+        self.cstTopMargin.constant = self->originInputTopMargin;
         [self.view layoutIfNeeded];
     }];
 }
