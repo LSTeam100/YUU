@@ -7,7 +7,7 @@
 //
 
 #import "YUULoginCtrl.h"
-
+#import "YUUSignUpCtrl.h"
 @interface YUULoginCtrl ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
 {
     IBOutlet UITextField *account;
@@ -27,6 +27,7 @@
     self.title = @"登录";
     
     DLOG(@"YUULoginCtrl viewDidLoad");
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
@@ -93,6 +94,15 @@
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     return  true;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [self.view endEditing:YES];
+    if ([segue.identifier isEqualToString:@"signup"]) {
+        
+        
+    }
+    
 }
 
 

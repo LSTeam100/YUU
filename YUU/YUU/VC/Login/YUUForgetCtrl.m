@@ -9,7 +9,9 @@
 #import "YUUForgetCtrl.h"
 
 @interface YUUForgetCtrl ()
-
+{
+    
+}
 @end
 
 @implementation YUUForgetCtrl
