@@ -39,20 +39,18 @@
     // 取消导航栏下面的线
     self.navigationController.navigationBar.clipsToBounds = YES;
     
-    [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName: @"",
-                                                         NSForegroundColorAttributeName: @""
+    [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:18],
+                                                         NSForegroundColorAttributeName: [UIColor hex:@"#e4c177"]
                                                          }];
     // 透明背景
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"bg"]];
-
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"bg"]];
 
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     bgImageView.image = [UIImage imageNamed:@"bg"];
     [self.view addSubview:bgImageView];
-    
-    
+    [self.view sendSubviewToBack:bgImageView];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

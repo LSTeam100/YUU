@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YUUBaseViewController.h"
 
-@interface YUUMinePoolVC : UIViewController
+@interface YUUMinePoolVC : YUUBaseViewController
 
 @end

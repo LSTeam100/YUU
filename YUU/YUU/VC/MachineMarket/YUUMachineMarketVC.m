@@ -8,10 +8,11 @@
 
 #import "YUUMachineMarketVC.h"
 #import "YUUMachineMarketCell.h"
+#import "YUUBaseTableView.h"
 
 @interface YUUMachineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMachineMarketCellDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) IBOutlet YUUBaseTableView *tableview;
 
 @property (nonatomic, strong) NSArray *items;
 
@@ -28,8 +29,18 @@
     [super viewDidLoad];
     self.title = @"机市";
     
-    
     _items = [NSArray array];
+    
+    YUUMachineModel *model = [[YUUMachineModel alloc] init];
+    model.icon = @"miningMachine0";
+    model.name = @"新手云矿机";
+    model.power = 6;
+    model.operationCycle = 500;
+    model.allIncome = 188.9;
+    model.price = 120;
+    _items = @[model];
+    
+
 }
 
 // 获取数据

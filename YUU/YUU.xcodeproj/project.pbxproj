@@ -12,11 +12,18 @@
 		09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */; };
 		09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */; };
 		09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E0D21270C6A00952C6D /* YUUMachineMarket.storyboard */; };
-		09207E1C21270C6A00952C6D /* YUUMachineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0F21270C6A00952C6D /* YUUMachineModel.m */; };
 		09207E1D21270C6A00952C6D /* YUUMineMachine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E1221270C6A00952C6D /* YUUMineMachine.storyboard */; };
 		09207E1E21270C6A00952C6D /* YUUMinePool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E1421270C6A00952C6D /* YUUMinePool.storyboard */; };
 		09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1721270C6A00952C6D /* YUUMinePoolVC.m */; };
 		09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1821270C6A00952C6D /* YUUMinePoolCell.m */; };
+		09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225515212B9943000BF25B /* YUUBaseTableViewCell.m */; };
+		09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225518212B9F31000BF25B /* YUUMineMachineVC.m */; };
+		0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922551B212B9F78000BF25B /* YUUBaseTableView.m */; };
+		095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CB212CE03D0083C009 /* SHSegmentView.m */; };
+		095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CF212CECEF0083C009 /* YUUUserModel.m */; };
+		0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B99D212C011F00B105CE /* YUUMineMachineCell.m */; };
+		0958B9A1212C024A00B105CE /* YUUBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B9A0212C024A00B105CE /* YUUBaseModel.m */; };
+		0958B9A4212C031E00B105CE /* YUUMachineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B9A2212C031D00B105CE /* YUUMachineModel.m */; };
 		095F4A62212A774C00098859 /* UIColor+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A60212A774C00098859 /* UIColor+Help.m */; };
 		095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A65212A96A200098859 /* YUUBaseViewController.m */; };
 		095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A68212AC0C000098859 /* UINavigationController+help.m */; };
@@ -39,6 +46,7 @@
 		18F85D212129048F001A3205 /* YUUResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D1F2129048F001A3205 /* YUUResponse.m */; };
 		18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D2321290981001A3205 /* YUUSuperCtrl.m */; };
 		18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D2721290A58001A3205 /* YUULoginCtrl.m */; };
+		FCF2E7AEAB778F8ABA8D959A /* libPods-YUU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5ACEB701D806D505D5CF79 /* libPods-YUU.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +54,9 @@
 		091DBB09212A3E86005DC12C /* YUUTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTabBarController.m; sourceTree = "<group>"; };
 		091DBB0F212A3F31005DC12C /* YUUTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUTabBar.storyboard; sourceTree = "<group>"; };
 		09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketVC.m; sourceTree = "<group>"; };
-		09207E0B21270C6A00952C6D /* YUUMachineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineModel.h; sourceTree = "<group>"; };
 		09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketCell.m; sourceTree = "<group>"; };
 		09207E0D21270C6A00952C6D /* YUUMachineMarket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YUUMachineMarket.storyboard; sourceTree = "<group>"; };
 		09207E0E21270C6A00952C6D /* YUUMachineMarketVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineMarketVC.h; sourceTree = "<group>"; };
-		09207E0F21270C6A00952C6D /* YUUMachineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineModel.m; sourceTree = "<group>"; };
 		09207E1021270C6A00952C6D /* YUUMachineMarketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineMarketCell.h; sourceTree = "<group>"; };
 		09207E1221270C6A00952C6D /* YUUMineMachine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YUUMineMachine.storyboard; sourceTree = "<group>"; };
 		09207E1421270C6A00952C6D /* YUUMinePool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YUUMinePool.storyboard; sourceTree = "<group>"; };
@@ -58,6 +64,24 @@
 		09207E1621270C6A00952C6D /* YUUMinePoolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMinePoolVC.h; sourceTree = "<group>"; };
 		09207E1721270C6A00952C6D /* YUUMinePoolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolVC.m; sourceTree = "<group>"; };
 		09207E1821270C6A00952C6D /* YUUMinePoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolCell.m; sourceTree = "<group>"; };
+		09225514212B9943000BF25B /* YUUBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseTableViewCell.h; sourceTree = "<group>"; };
+		09225515212B9943000BF25B /* YUUBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseTableViewCell.m; sourceTree = "<group>"; };
+		09225517212B9F31000BF25B /* YUUMineMachineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMachineVC.h; sourceTree = "<group>"; };
+		09225518212B9F31000BF25B /* YUUMineMachineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMachineVC.m; sourceTree = "<group>"; };
+		0922551A212B9F78000BF25B /* YUUBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseTableView.h; sourceTree = "<group>"; };
+		0922551B212B9F78000BF25B /* YUUBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseTableView.m; sourceTree = "<group>"; };
+		0922551E212BA040000BF25B /* YUUColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUColor.h; sourceTree = "<group>"; };
+		095181CA212CE03D0083C009 /* SHSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSegmentView.h; sourceTree = "<group>"; };
+		095181CB212CE03D0083C009 /* SHSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSegmentView.m; sourceTree = "<group>"; };
+		095181CD212CE0E40083C009 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		095181CE212CECEF0083C009 /* YUUUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUUserModel.h; sourceTree = "<group>"; };
+		095181CF212CECEF0083C009 /* YUUUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUUserModel.m; sourceTree = "<group>"; };
+		0958B99C212C011F00B105CE /* YUUMineMachineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMachineCell.h; sourceTree = "<group>"; };
+		0958B99D212C011F00B105CE /* YUUMineMachineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMachineCell.m; sourceTree = "<group>"; };
+		0958B99F212C024A00B105CE /* YUUBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseModel.h; sourceTree = "<group>"; };
+		0958B9A0212C024A00B105CE /* YUUBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseModel.m; sourceTree = "<group>"; };
+		0958B9A2212C031D00B105CE /* YUUMachineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMachineModel.m; sourceTree = "<group>"; };
+		0958B9A3212C031E00B105CE /* YUUMachineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMachineModel.h; sourceTree = "<group>"; };
 		095F4A60212A774C00098859 /* UIColor+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Help.m"; sourceTree = "<group>"; };
 		095F4A61212A774C00098859 /* UIColor+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Help.h"; sourceTree = "<group>"; };
 		095F4A64212A96A200098859 /* YUUBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseViewController.h; sourceTree = "<group>"; };
@@ -104,6 +128,9 @@
 		18F85D2321290981001A3205 /* YUUSuperCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSuperCtrl.m; sourceTree = "<group>"; };
 		18F85D2621290A58001A3205 /* YUULoginCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUULoginCtrl.h; sourceTree = "<group>"; };
 		18F85D2721290A58001A3205 /* YUULoginCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUULoginCtrl.m; sourceTree = "<group>"; };
+		D337288ADA5FB1CCA7135CD7 /* Pods-YUU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YUU/Pods-YUU.debug.xcconfig"; sourceTree = "<group>"; };
+		DC5ACEB701D806D505D5CF79 /* libPods-YUU.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YUU.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6A70E4E5C3398F992757CB /* Pods-YUU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUU.release.xcconfig"; path = "Pods/Target Support Files/Pods-YUU/Pods-YUU.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF2E7AEAB778F8ABA8D959A /* libPods-YUU.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +168,6 @@
 				09207E0C21270C6A00952C6D /* YUUMachineMarketCell.m */,
 				09207E0E21270C6A00952C6D /* YUUMachineMarketVC.h */,
 				09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */,
-				09207E0B21270C6A00952C6D /* YUUMachineModel.h */,
-				09207E0F21270C6A00952C6D /* YUUMachineModel.m */,
 			);
 			path = MachineMarket;
 			sourceTree = "<group>";
@@ -150,6 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				09207E1221270C6A00952C6D /* YUUMineMachine.storyboard */,
+				09225517212B9F31000BF25B /* YUUMineMachineVC.h */,
+				09225518212B9F31000BF25B /* YUUMineMachineVC.m */,
+				0958B99C212C011F00B105CE /* YUUMineMachineCell.h */,
+				0958B99D212C011F00B105CE /* YUUMineMachineCell.m */,
 			);
 			path = MineMachine;
 			sourceTree = "<group>";
@@ -159,9 +189,9 @@
 			children = (
 				09207E1421270C6A00952C6D /* YUUMinePool.storyboard */,
 				09207E1521270C6A00952C6D /* YUUMinePoolCell.h */,
+				09207E1821270C6A00952C6D /* YUUMinePoolCell.m */,
 				09207E1621270C6A00952C6D /* YUUMinePoolVC.h */,
 				09207E1721270C6A00952C6D /* YUUMinePoolVC.m */,
-				09207E1821270C6A00952C6D /* YUUMinePoolCell.m */,
 			);
 			path = MinePool;
 			sourceTree = "<group>";
@@ -179,8 +209,23 @@
 		09207E222127103200952C6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0958B99F212C024A00B105CE /* YUUBaseModel.h */,
+				0958B9A0212C024A00B105CE /* YUUBaseModel.m */,
+				0958B9A3212C031E00B105CE /* YUUMachineModel.h */,
+				0958B9A2212C031D00B105CE /* YUUMachineModel.m */,
+				095181CE212CECEF0083C009 /* YUUUserModel.h */,
+				095181CF212CECEF0083C009 /* YUUUserModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		095181C9212CDFF30083C009 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				095181CA212CE03D0083C009 /* SHSegmentView.h */,
+				095181CB212CE03D0083C009 /* SHSegmentView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		095F4A63212A968C00098859 /* Base */ = {
@@ -188,6 +233,10 @@
 			children = (
 				095F4A64212A96A200098859 /* YUUBaseViewController.h */,
 				095F4A65212A96A200098859 /* YUUBaseViewController.m */,
+				09225514212B9943000BF25B /* YUUBaseTableViewCell.h */,
+				09225515212B9943000BF25B /* YUUBaseTableViewCell.m */,
+				0922551A212B9F78000BF25B /* YUUBaseTableView.h */,
+				0922551B212B9F78000BF25B /* YUUBaseTableView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -208,6 +257,8 @@
 				18F85CD52126B295001A3205 /* HLCLog.m */,
 				18784C662126A58B00874434 /* YUUDebugMacros.h */,
 				18F85D082126B972001A3205 /* YUUConfig.h */,
+				0922551E212BA040000BF25B /* YUUColor.h */,
+				095181CD212CE0E40083C009 /* Header.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -217,6 +268,8 @@
 			children = (
 				18EDE40921257A3700FC8E0C /* YUU */,
 				18EDE40821257A3700FC8E0C /* Products */,
+				6D7387824A22C65EAD165112 /* Pods */,
+				FC5F5ED3B559D9D55368A155 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +284,7 @@
 		18EDE40921257A3700FC8E0C /* YUU */ = {
 			isa = PBXGroup;
 			children = (
+				095181C9212CDFF30083C009 /* View */,
 				09207E222127103200952C6D /* Model */,
 				09207E0821270C6A00952C6D /* VC */,
 				18F85D042126B8AC001A3205 /* Category */,
@@ -313,6 +367,23 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		6D7387824A22C65EAD165112 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D337288ADA5FB1CCA7135CD7 /* Pods-YUU.debug.xcconfig */,
+				FD6A70E4E5C3398F992757CB /* Pods-YUU.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC5F5ED3B559D9D55368A155 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC5ACEB701D806D505D5CF79 /* libPods-YUU.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -320,9 +391,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18EDE41D21257A3A00FC8E0C /* Build configuration list for PBXNativeTarget "YUU" */;
 			buildPhases = (
+				499C3BF1A5435AB6241755BF /* [CP] Check Pods Manifest.lock */,
 				18EDE40321257A3700FC8E0C /* Sources */,
 				18EDE40421257A3700FC8E0C /* Frameworks */,
 				18EDE40521257A3700FC8E0C /* Resources */,
+				FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,6 +455,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		499C3BF1A5435AB6241755BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YUU-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YUU/Pods-YUU-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUU/Pods-YUU-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18EDE40321257A3700FC8E0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -394,23 +506,30 @@
 				095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
+				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
+				09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				095F4A62212A774C00098859 /* UIColor+Help.m in Sources */,
+				0958B9A4212C031E00B105CE /* YUUMachineModel.m in Sources */,
 				18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */,
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
+				0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */,
 				18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */,
-				09207E1C21270C6A00952C6D /* YUUMachineModel.m in Sources */,
+				095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */,
 				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
+				0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
 				18F85D212129048F001A3205 /* YUUResponse.m in Sources */,
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
+				095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
+				0958B9A1212C024A00B105CE /* YUUBaseModel.m in Sources */,
 				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +668,7 @@
 		};
 		18EDE41E21257A3A00FC8E0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D337288ADA5FB1CCA7135CD7 /* Pods-YUU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -570,6 +690,7 @@
 		};
 		18EDE41F21257A3A00FC8E0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6A70E4E5C3398F992757CB /* Pods-YUU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

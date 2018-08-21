@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YUUBaseTableView.h"
 
 @interface YUUBaseViewController : UIViewController
 

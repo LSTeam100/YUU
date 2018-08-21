@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YUUUserModel.h"
+#import "YUUBaseTableViewCell.h"
 
-@interface YUUMinePoolCell : UITableViewCell
+@interface YUUMinePoolCell : YUUBaseTableViewCell
 
+@property (strong, nonatomic) IBOutlet UIView *bgView;
 @property (strong, nonatomic) IBOutlet UIImageView *icon;
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
 @property (strong, nonatomic) IBOutlet UILabel *powerLabel;
@@ -17,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *levelLabel;
 @property (strong, nonatomic) IBOutlet UILabel *directPushLabel;
 @property (strong, nonatomic) IBOutlet UILabel *teamCountLabel;
+
+@property (nonatomic, strong) YUUUserModel *model;
 
 
 @end
