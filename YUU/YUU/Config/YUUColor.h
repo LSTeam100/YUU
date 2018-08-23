@@ -11,7 +11,7 @@
 
 #import "UIColor+Help.h"
 
-#define YUUYellow [UIColor hex:@"#e4c177"];
+#define YUUYellow [UIColor hex:@"#e4c177"]
 
 
 #endif /* YUUColor_h */

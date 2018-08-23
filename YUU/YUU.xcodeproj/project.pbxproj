@@ -21,12 +21,16 @@
 		0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922551B212B9F78000BF25B /* YUUBaseTableView.m */; };
 		095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CB212CE03D0083C009 /* SHSegmentView.m */; };
 		095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CF212CECEF0083C009 /* YUUUserModel.m */; };
+		0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951820A212D84C30083C009 /* UIViewController+Help.m */; };
 		0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B99D212C011F00B105CE /* YUUMineMachineCell.m */; };
 		0958B9A1212C024A00B105CE /* YUUBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B9A0212C024A00B105CE /* YUUBaseModel.m */; };
 		0958B9A4212C031E00B105CE /* YUUMachineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B9A2212C031D00B105CE /* YUUMachineModel.m */; };
 		095F4A62212A774C00098859 /* UIColor+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A60212A774C00098859 /* UIColor+Help.m */; };
 		095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A65212A96A200098859 /* YUUBaseViewController.m */; };
 		095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A68212AC0C000098859 /* UINavigationController+help.m */; };
+		09612989212E298200D9D02C /* YUUMineMarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09612988212E298200D9D02C /* YUUMineMarket.storyboard */; };
+		0961298C212E29A700D9D02C /* YUUMineMarketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961298B212E29A700D9D02C /* YUUMineMarketVC.m */; };
+		09612992212E40F700D9D02C /* YUUButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09612991212E40F700D9D02C /* YUUButton.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -76,6 +80,8 @@
 		095181CD212CE0E40083C009 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		095181CE212CECEF0083C009 /* YUUUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUUserModel.h; sourceTree = "<group>"; };
 		095181CF212CECEF0083C009 /* YUUUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUUserModel.m; sourceTree = "<group>"; };
+		0951820A212D84C30083C009 /* UIViewController+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Help.m"; sourceTree = "<group>"; };
+		0951820B212D84C30083C009 /* UIViewController+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Help.h"; sourceTree = "<group>"; };
 		0958B99C212C011F00B105CE /* YUUMineMachineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMachineCell.h; sourceTree = "<group>"; };
 		0958B99D212C011F00B105CE /* YUUMineMachineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMachineCell.m; sourceTree = "<group>"; };
 		0958B99F212C024A00B105CE /* YUUBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseModel.h; sourceTree = "<group>"; };
@@ -88,6 +94,11 @@
 		095F4A65212A96A200098859 /* YUUBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseViewController.m; sourceTree = "<group>"; };
 		095F4A67212AC0C000098859 /* UINavigationController+help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+help.h"; sourceTree = "<group>"; };
 		095F4A68212AC0C000098859 /* UINavigationController+help.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+help.m"; sourceTree = "<group>"; };
+		09612988212E298200D9D02C /* YUUMineMarket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUMineMarket.storyboard; sourceTree = "<group>"; };
+		0961298A212E29A700D9D02C /* YUUMineMarketVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketVC.h; sourceTree = "<group>"; };
+		0961298B212E29A700D9D02C /* YUUMineMarketVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketVC.m; sourceTree = "<group>"; };
+		09612990212E40F700D9D02C /* YUUButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUButton.h; sourceTree = "<group>"; };
+		09612991212E40F700D9D02C /* YUUButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUButton.m; sourceTree = "<group>"; };
 		18784C662126A58B00874434 /* YUUDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDebugMacros.h; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +165,7 @@
 				09207E0921270C6A00952C6D /* MachineMarket */,
 				09207E1121270C6A00952C6D /* MineMachine */,
 				09207E1321270C6A00952C6D /* MinePool */,
+				09612987212E294400D9D02C /* MineMarket */,
 				18F85D2221290981001A3205 /* YUUSuperCtrl.h */,
 				18F85D2321290981001A3205 /* YUUSuperCtrl.m */,
 			);
@@ -224,6 +236,8 @@
 			children = (
 				095181CA212CE03D0083C009 /* SHSegmentView.h */,
 				095181CB212CE03D0083C009 /* SHSegmentView.m */,
+				09612990212E40F700D9D02C /* YUUButton.h */,
+				09612991212E40F700D9D02C /* YUUButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +253,16 @@
 				0922551B212B9F78000BF25B /* YUUBaseTableView.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		09612987212E294400D9D02C /* MineMarket */ = {
+			isa = PBXGroup;
+			children = (
+				09612988212E298200D9D02C /* YUUMineMarket.storyboard */,
+				0961298A212E29A700D9D02C /* YUUMineMarketVC.h */,
+				0961298B212E29A700D9D02C /* YUUMineMarketVC.m */,
+			);
+			path = MineMarket;
 			sourceTree = "<group>";
 		};
 		18784C642126A53E00874434 /* Library */ = {
@@ -348,6 +372,8 @@
 		18F85D042126B8AC001A3205 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0951820B212D84C30083C009 /* UIViewController+Help.h */,
+				0951820A212D84C30083C009 /* UIViewController+Help.m */,
 				18F85D092126B9D7001A3205 /* UIDevice+YUUDe.h */,
 				18F85D0A2126B9D7001A3205 /* UIDevice+YUUDe.m */,
 				095F4A61212A774C00098859 /* UIColor+Help.h */,
@@ -444,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				091DBB10212A3F31005DC12C /* YUUTabBar.storyboard in Resources */,
+				09612989212E298200D9D02C /* YUUMineMarket.storyboard in Resources */,
 				18EDE41721257A3A00FC8E0C /* LaunchScreen.storyboard in Resources */,
 				18EDE41421257A3A00FC8E0C /* Assets.xcassets in Resources */,
 				09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */,
@@ -502,8 +529,10 @@
 				09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */,
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
 				09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */,
+				09612992212E40F700D9D02C /* YUUButton.m in Sources */,
 				18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */,
 				095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */,
+				0961298C212E29A700D9D02C /* YUUMineMarketVC.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
@@ -520,6 +549,7 @@
 				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
+				0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,

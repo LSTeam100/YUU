@@ -27,11 +27,14 @@
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor hex:@"#E3C278"]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor hex:@"#EF6607"]} forState:UIControlStateSelected];
+    
+    NSArray *titles = @[@"机市", @"矿机", @"矿池", @"矿市", @"我的"];
 
     for (int i = 0; i < self.viewControllers.count; i++) {
         UIViewController *vc = self.viewControllers[i];
         vc.tabBarItem.image = [UIImage imageNamed:[NSString stringWithFormat:@"tabbar_%d_unSelected",i]];
         vc.tabBarItem.selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"tabbar_%d_selected",i]];
+        vc.tabBarItem.title = titles[i];
     }
 
 }

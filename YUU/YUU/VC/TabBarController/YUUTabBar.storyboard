@@ -23,6 +23,7 @@
                         <segue destination="EGE-E0-rI8" kind="relationship" relationship="viewControllers" id="aoC-u4-2cr"/>
                         <segue destination="Sa7-mu-6Bl" kind="relationship" relationship="viewControllers" id="Fao-8K-DQA"/>
                         <segue destination="zpI-Kx-d6j" kind="relationship" relationship="viewControllers" id="mtF-r7-uCX"/>
+                        <segue destination="o7d-S1-aQI" kind="relationship" relationship="viewControllers" id="mBq-we-5q2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRO-jB-3Lb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,6 +59,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEY-kh-n9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-481" y="-154"/>
+        </scene>
+        <!--YUUMineMarket-->
+        <scene sceneID="Jqy-77-Rxa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="YUUMineMarket" id="o7d-S1-aQI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="AQZ-QQ-PII"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ioh-XT-eCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484" y="-53"/>
         </scene>
     </scenes>
 </document>

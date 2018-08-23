@@ -9,6 +9,7 @@
 #import "YUUMachineMarketVC.h"
 #import "YUUMachineMarketCell.h"
 #import "YUUBaseTableView.h"
+#import "UIViewController+Help.h"
 
 @interface YUUMachineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMachineMarketCellDelegate>
 
@@ -81,7 +82,11 @@
 
 #pragma mark - YUUMachineMarketCellDelegate -
 - (void)buyMachine:(YUUMachineModel *)model {
-    
+    [UIViewController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
+        
+    } cancelHandler:^{
+        
+    }];
 }
 
 @end
