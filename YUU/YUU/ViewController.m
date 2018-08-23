@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "YUULoginCtrl.h"
+#import "YUUMineDetailCtrl.h"
 @interface ViewController ()
 
 @end
@@ -23,7 +24,10 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
 //    YUULoginCtrl *login = [sb` instantiateViewControllerWithIdentifier:@"YUULoginCtrl"];
-    [self presentViewController:navi animated:true completion:^{
+    
+    YUUMineDetailCtrl *c = [sb instantiateViewControllerWithIdentifier:@"YUUMineDetailCtrl"];
+    
+    [self presentViewController:c animated:true completion:^{
         DLOG("展示登录页面");
     }];
     
