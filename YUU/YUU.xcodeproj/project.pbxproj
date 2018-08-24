@@ -22,6 +22,10 @@
 		189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC55D212E97B000E8E2E4 /* YUUMineDetailCtrl.m */; };
 		189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC560212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m */; };
 		189CC564212EB9A500E8E2E4 /* YUUCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC563212EB9A500E8E2E4 /* YUUCreditCard.m */; };
+		189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC566212EC4FE00E8E2E4 /* YUUViturlWallet.m */; };
+		189CC56A212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC569212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m */; };
+		189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */; };
+		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -71,6 +75,14 @@
 		189CC560212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUProfileAuthenCtrl.m; sourceTree = "<group>"; };
 		189CC562212EB9A500E8E2E4 /* YUUCreditCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCreditCard.h; sourceTree = "<group>"; };
 		189CC563212EB9A500E8E2E4 /* YUUCreditCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCreditCard.m; sourceTree = "<group>"; };
+		189CC565212EC4FE00E8E2E4 /* YUUViturlWallet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUViturlWallet.h; sourceTree = "<group>"; };
+		189CC566212EC4FE00E8E2E4 /* YUUViturlWallet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUViturlWallet.m; sourceTree = "<group>"; };
+		189CC568212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUProfileAuthenEditeCtrl.h; sourceTree = "<group>"; };
+		189CC569212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUProfileAuthenEditeCtrl.m; sourceTree = "<group>"; };
+		189CC56B212FE93800E8E2E4 /* YUUMessageCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMessageCtrl.h; sourceTree = "<group>"; };
+		189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMessageCtrl.m; sourceTree = "<group>"; };
+		189CC56E212FF72400E8E2E4 /* YUUMessageDetailCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMessageDetailCtrl.h; sourceTree = "<group>"; };
+		189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMessageDetailCtrl.m; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18EDE40B21257A3700FC8E0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -218,6 +230,14 @@
 				189CC560212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m */,
 				189CC562212EB9A500E8E2E4 /* YUUCreditCard.h */,
 				189CC563212EB9A500E8E2E4 /* YUUCreditCard.m */,
+				189CC565212EC4FE00E8E2E4 /* YUUViturlWallet.h */,
+				189CC566212EC4FE00E8E2E4 /* YUUViturlWallet.m */,
+				189CC568212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.h */,
+				189CC569212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m */,
+				189CC56B212FE93800E8E2E4 /* YUUMessageCtrl.h */,
+				189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */,
+				189CC56E212FF72400E8E2E4 /* YUUMessageDetailCtrl.h */,
+				189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -400,10 +420,12 @@
 				09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */,
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
 				09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */,
+				189CC56A212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m in Sources */,
 				189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */,
 				18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
+				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */,
@@ -414,6 +436,7 @@
 				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
 				189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
+				189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
@@ -423,6 +446,7 @@
 				18F85D212129048F001A3205 /* YUUResponse.m in Sources */,
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
+				189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */,
 				189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

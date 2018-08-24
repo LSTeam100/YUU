@@ -23,11 +23,11 @@
     [super viewDidAppear:animated];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
-//    YUULoginCtrl *login = [sb` instantiateViewControllerWithIdentifier:@"YUULoginCtrl"];
+//    YUULoginCtrl *login = [sb instantiateViewControllerWithIdentifier:@"YUULoginCtrl"];
     
     YUUMineDetailCtrl *c = [sb instantiateViewControllerWithIdentifier:@"YUUMineDetailCtrl"];
     
-    [self presentViewController:c animated:true completion:^{
+    [self presentViewController:navi animated:true completion:^{
         DLOG("展示登录页面");
     }];
     

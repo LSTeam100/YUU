@@ -25,7 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"登录";
-    
     DLOG(@"YUULoginCtrl viewDidLoad");
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
@@ -34,6 +33,11 @@
     
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     originInputTopMargin = self.cstTopMargin.constant;
@@ -42,6 +46,8 @@
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
     [self unregisterKeyboardNotification];
 }
 - (void)moveUp:(float)shift{
