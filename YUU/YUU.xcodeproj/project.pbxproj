@@ -16,6 +16,10 @@
 		09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1721270C6A00952C6D /* YUUMinePoolVC.m */; };
 		09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1821270C6A00952C6D /* YUUMinePoolCell.m */; };
 		09207E242127105700952C6D /* YUUTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E232127105700952C6D /* YUUTabBar.storyboard */; };
+		1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D49E213109D300D5FDAE /* YUUModifyPassword.m */; };
+		1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */; };
+		1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */; };
+		1877D4A82131543900D5FDAE /* YUUBillCenterCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */; };
 		189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC54F212A95A700E8E2E4 /* YUUForgetCtrl.m */; };
 		189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC552212A964800E8E2E4 /* YUUSignUpCtrl.m */; };
 		189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC55A212D61DD00E8E2E4 /* YUUProfileCtrl.m */; };
@@ -26,6 +30,7 @@
 		189CC56A212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC569212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m */; };
 		189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */; };
 		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
+		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -62,6 +67,14 @@
 		09207E1721270C6A00952C6D /* YUUMinePoolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolVC.m; sourceTree = "<group>"; };
 		09207E1821270C6A00952C6D /* YUUMinePoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolCell.m; sourceTree = "<group>"; };
 		09207E232127105700952C6D /* YUUTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUTabBar.storyboard; sourceTree = "<group>"; };
+		1877D49D213109D300D5FDAE /* YUUModifyPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUModifyPassword.h; sourceTree = "<group>"; };
+		1877D49E213109D300D5FDAE /* YUUModifyPassword.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUModifyPassword.m; sourceTree = "<group>"; };
+		1877D4A0213145B500D5FDAE /* YUUCurrencyTransactionCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencyTransactionCtrl.h; sourceTree = "<group>"; };
+		1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCurrencyTransactionCtrl.m; sourceTree = "<group>"; };
+		1877D4A321314C1C00D5FDAE /* YUUTransactionHisCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTransactionHisCtrl.h; sourceTree = "<group>"; };
+		1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTransactionHisCtrl.m; sourceTree = "<group>"; };
+		1877D4A62131543900D5FDAE /* YUUBillCenterCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBillCenterCtrl.h; sourceTree = "<group>"; };
+		1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBillCenterCtrl.m; sourceTree = "<group>"; };
 		18784C662126A58B00874434 /* YUUDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDebugMacros.h; sourceTree = "<group>"; };
 		189CC54E212A95A700E8E2E4 /* YUUForgetCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUForgetCtrl.h; sourceTree = "<group>"; };
 		189CC54F212A95A700E8E2E4 /* YUUForgetCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUForgetCtrl.m; sourceTree = "<group>"; };
@@ -83,6 +96,8 @@
 		189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMessageCtrl.m; sourceTree = "<group>"; };
 		189CC56E212FF72400E8E2E4 /* YUUMessageDetailCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMessageDetailCtrl.h; sourceTree = "<group>"; };
 		189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMessageDetailCtrl.m; sourceTree = "<group>"; };
+		189CC5712130FC4C00E8E2E4 /* YUUSetingCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSetingCtrl.h; sourceTree = "<group>"; };
+		189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSetingCtrl.m; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18EDE40B21257A3700FC8E0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -238,6 +253,16 @@
 				189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */,
 				189CC56E212FF72400E8E2E4 /* YUUMessageDetailCtrl.h */,
 				189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */,
+				189CC5712130FC4C00E8E2E4 /* YUUSetingCtrl.h */,
+				189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */,
+				1877D49D213109D300D5FDAE /* YUUModifyPassword.h */,
+				1877D49E213109D300D5FDAE /* YUUModifyPassword.m */,
+				1877D4A0213145B500D5FDAE /* YUUCurrencyTransactionCtrl.h */,
+				1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */,
+				1877D4A321314C1C00D5FDAE /* YUUTransactionHisCtrl.h */,
+				1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */,
+				1877D4A62131543900D5FDAE /* YUUBillCenterCtrl.h */,
+				1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -424,29 +449,34 @@
 				189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */,
 				18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
+				1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */,
+				189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */,
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
 				189CC564212EB9A500E8E2E4 /* YUUCreditCard.m in Sources */,
 				18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */,
 				09207E1C21270C6A00952C6D /* YUUMachineModel.m in Sources */,
 				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
 				189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */,
+				1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */,
+				1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
 				189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */,
 				18F85D212129048F001A3205 /* YUUResponse.m in Sources */,
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
 				189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */,
+				1877D4A82131543900D5FDAE /* YUUBillCenterCtrl.m in Sources */,
 				189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
