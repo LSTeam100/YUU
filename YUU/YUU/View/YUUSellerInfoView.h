@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YUUSellerInfo : UIView
+@interface YUUSellerInfoView : UIView
 
 + (instancetype)xibInstancetype;
 

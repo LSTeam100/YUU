@@ -6,9 +6,9 @@
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "YUUSellerInfo.h"
+#import "YUUSellerInfoView.h"
 
-@implementation YUUSellerInfo
+@implementation YUUSellerInfoView
 
 + (instancetype)xibInstancetype {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] firstObject];
