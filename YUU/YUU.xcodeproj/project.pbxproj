@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091D8E392130D66D00C430AB /* YUUTransactionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091D8E382130D66D00C430AB /* YUUTransactionModel.m */; };
+		091D8E432130D8C900C430AB /* YUUMineMarketPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 091D8E3C2130D8C800C430AB /* YUUMineMarketPriceCell.m */; };
+		091D8E442130D8C900C430AB /* YUUMineMarketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 091D8E3D2130D8C800C430AB /* YUUMineMarketVC.m */; };
+		091D8E452130D8C900C430AB /* YUUMineMarketMailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 091D8E402130D8C800C430AB /* YUUMineMarketMailCell.m */; };
+		091D8E462130D8C900C430AB /* YUUMineMarketPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 091D8E422130D8C800C430AB /* YUUMineMarketPointCell.m */; };
+		091D8E492130DF1800C430AB /* YUUSellerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 091D8E482130DF1800C430AB /* YUUSellerInfo.m */; };
+		091D8E4B2130DF2C00C430AB /* YUUSellerInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091D8E4A2130DF2C00C430AB /* YUUSellerInfo.xib */; };
 		091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091DBB09212A3E86005DC12C /* YUUTabBarController.m */; };
 		091DBB10212A3F31005DC12C /* YUUTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091DBB0F212A3F31005DC12C /* YUUTabBar.storyboard */; };
 		09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E0A21270C6A00952C6D /* YUUMachineMarketVC.m */; };
@@ -29,8 +36,8 @@
 		095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A65212A96A200098859 /* YUUBaseViewController.m */; };
 		095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F4A68212AC0C000098859 /* UINavigationController+help.m */; };
 		09612989212E298200D9D02C /* YUUMineMarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09612988212E298200D9D02C /* YUUMineMarket.storyboard */; };
-		0961298C212E29A700D9D02C /* YUUMineMarketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961298B212E29A700D9D02C /* YUUMineMarketVC.m */; };
 		09612992212E40F700D9D02C /* YUUButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09612991212E40F700D9D02C /* YUUButton.m */; };
+		09612995212E510A00D9D02C /* YUUPendingOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09612994212E510A00D9D02C /* YUUPendingOrderVC.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -54,6 +61,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		091D8E372130D66D00C430AB /* YUUTransactionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTransactionModel.h; sourceTree = "<group>"; };
+		091D8E382130D66D00C430AB /* YUUTransactionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTransactionModel.m; sourceTree = "<group>"; };
+		091D8E3B2130D8C800C430AB /* YUUMineMarketMailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketMailCell.h; sourceTree = "<group>"; };
+		091D8E3C2130D8C800C430AB /* YUUMineMarketPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketPriceCell.m; sourceTree = "<group>"; };
+		091D8E3D2130D8C800C430AB /* YUUMineMarketVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketVC.m; sourceTree = "<group>"; };
+		091D8E3E2130D8C800C430AB /* YUUMineMarketPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketPointCell.h; sourceTree = "<group>"; };
+		091D8E3F2130D8C800C430AB /* YUUMineMarketPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketPriceCell.h; sourceTree = "<group>"; };
+		091D8E402130D8C800C430AB /* YUUMineMarketMailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketMailCell.m; sourceTree = "<group>"; };
+		091D8E412130D8C800C430AB /* YUUMineMarketVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketVC.h; sourceTree = "<group>"; };
+		091D8E422130D8C800C430AB /* YUUMineMarketPointCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketPointCell.m; sourceTree = "<group>"; };
+		091D8E472130DF1800C430AB /* YUUSellerInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSellerInfo.h; sourceTree = "<group>"; };
+		091D8E482130DF1800C430AB /* YUUSellerInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSellerInfo.m; sourceTree = "<group>"; };
+		091D8E4A2130DF2C00C430AB /* YUUSellerInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YUUSellerInfo.xib; sourceTree = "<group>"; };
 		091DBB08212A3E86005DC12C /* YUUTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTabBarController.h; sourceTree = "<group>"; };
 		091DBB09212A3E86005DC12C /* YUUTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTabBarController.m; sourceTree = "<group>"; };
 		091DBB0F212A3F31005DC12C /* YUUTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUTabBar.storyboard; sourceTree = "<group>"; };
@@ -95,10 +115,10 @@
 		095F4A67212AC0C000098859 /* UINavigationController+help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+help.h"; sourceTree = "<group>"; };
 		095F4A68212AC0C000098859 /* UINavigationController+help.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+help.m"; sourceTree = "<group>"; };
 		09612988212E298200D9D02C /* YUUMineMarket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUMineMarket.storyboard; sourceTree = "<group>"; };
-		0961298A212E29A700D9D02C /* YUUMineMarketVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketVC.h; sourceTree = "<group>"; };
-		0961298B212E29A700D9D02C /* YUUMineMarketVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketVC.m; sourceTree = "<group>"; };
 		09612990212E40F700D9D02C /* YUUButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUButton.h; sourceTree = "<group>"; };
 		09612991212E40F700D9D02C /* YUUButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUButton.m; sourceTree = "<group>"; };
+		09612993212E510A00D9D02C /* YUUPendingOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPendingOrderVC.h; sourceTree = "<group>"; };
+		09612994212E510A00D9D02C /* YUUPendingOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPendingOrderVC.m; sourceTree = "<group>"; };
 		18784C662126A58B00874434 /* YUUDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDebugMacros.h; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +176,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091D8E3A2130D8C800C430AB /* YUUMineMarket */ = {
+			isa = PBXGroup;
+			children = (
+				091D8E3B2130D8C800C430AB /* YUUMineMarketMailCell.h */,
+				091D8E402130D8C800C430AB /* YUUMineMarketMailCell.m */,
+				091D8E3E2130D8C800C430AB /* YUUMineMarketPointCell.h */,
+				091D8E422130D8C800C430AB /* YUUMineMarketPointCell.m */,
+				091D8E3F2130D8C800C430AB /* YUUMineMarketPriceCell.h */,
+				091D8E3C2130D8C800C430AB /* YUUMineMarketPriceCell.m */,
+				091D8E412130D8C800C430AB /* YUUMineMarketVC.h */,
+				091D8E3D2130D8C800C430AB /* YUUMineMarketVC.m */,
+			);
+			path = YUUMineMarket;
+			sourceTree = "<group>";
+		};
 		09207E0821270C6A00952C6D /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +262,8 @@
 				0958B9A2212C031D00B105CE /* YUUMachineModel.m */,
 				095181CE212CECEF0083C009 /* YUUUserModel.h */,
 				095181CF212CECEF0083C009 /* YUUUserModel.m */,
+				091D8E372130D66D00C430AB /* YUUTransactionModel.h */,
+				091D8E382130D66D00C430AB /* YUUTransactionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +275,9 @@
 				095181CB212CE03D0083C009 /* SHSegmentView.m */,
 				09612990212E40F700D9D02C /* YUUButton.h */,
 				09612991212E40F700D9D02C /* YUUButton.m */,
+				091D8E472130DF1800C430AB /* YUUSellerInfo.h */,
+				091D8E482130DF1800C430AB /* YUUSellerInfo.m */,
+				091D8E4A2130DF2C00C430AB /* YUUSellerInfo.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,8 +299,9 @@
 			isa = PBXGroup;
 			children = (
 				09612988212E298200D9D02C /* YUUMineMarket.storyboard */,
-				0961298A212E29A700D9D02C /* YUUMineMarketVC.h */,
-				0961298B212E29A700D9D02C /* YUUMineMarketVC.m */,
+				091D8E3A2130D8C800C430AB /* YUUMineMarket */,
+				09612993212E510A00D9D02C /* YUUPendingOrderVC.h */,
+				09612994212E510A00D9D02C /* YUUPendingOrderVC.m */,
 			);
 			path = MineMarket;
 			sourceTree = "<group>";
@@ -476,6 +517,7 @@
 				09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */,
 				09207E1E21270C6A00952C6D /* YUUMinePool.storyboard in Resources */,
 				09207E1D21270C6A00952C6D /* YUUMineMachine.storyboard in Resources */,
+				091D8E4B2130DF2C00C430AB /* YUUSellerInfo.xib in Resources */,
 				18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,13 +568,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091D8E432130D8C900C430AB /* YUUMineMarketPriceCell.m in Sources */,
 				09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */,
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
+				091D8E392130D66D00C430AB /* YUUTransactionModel.m in Sources */,
 				09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */,
 				09612992212E40F700D9D02C /* YUUButton.m in Sources */,
 				18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */,
 				095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */,
-				0961298C212E29A700D9D02C /* YUUMineMarketVC.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
@@ -545,13 +588,17 @@
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
 				0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */,
 				18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */,
+				091D8E452130D8C900C430AB /* YUUMineMarketMailCell.m in Sources */,
 				095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */,
 				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
+				09612995212E510A00D9D02C /* YUUPendingOrderVC.m in Sources */,
+				091D8E462130D8C900C430AB /* YUUMineMarketPointCell.m in Sources */,
 				0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
+				091D8E442130D8C900C430AB /* YUUMineMarketVC.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
@@ -559,6 +606,7 @@
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
 				095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
+				091D8E492130DF1800C430AB /* YUUSellerInfo.m in Sources */,
 				0958B9A1212C024A00B105CE /* YUUBaseModel.m in Sources */,
 				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 			);

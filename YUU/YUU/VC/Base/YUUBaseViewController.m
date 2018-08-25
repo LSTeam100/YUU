@@ -16,6 +16,11 @@
 
 @implementation YUUBaseViewController
 
++ (instancetype)storyboardInstanceType {
+    NSAssert(YES, @"请重新");
+    return [[self alloc] init];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

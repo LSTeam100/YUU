@@ -11,4 +11,6 @@
 
 @interface YUUBaseViewController : UIViewController
 
++ (instancetype)storyboardInstanceType;
+
 @end
