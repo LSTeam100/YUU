@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "YUULoginCtrl.h"
 #import "YUUMineDetailCtrl.h"
+#import "YUUProfileAuthenEditeCtrl.h"
 @interface ViewController ()
 
 @end
@@ -27,7 +28,9 @@
     
     YUUMineDetailCtrl *c = [sb instantiateViewControllerWithIdentifier:@"YUUMineDetailCtrl"];
     
-    [self presentViewController:navi animated:true completion:^{
+    
+    YUUProfileAuthenEditeCtrl * edite = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenEditeCtrl"];
+    [self presentViewController:edite animated:true completion:^{
         DLOG("展示登录页面");
     }];
     
