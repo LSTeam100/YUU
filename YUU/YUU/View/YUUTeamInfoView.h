@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HUDView.h"
+#import "HUDProtocol.h"
 
-@interface YUUTeamInfoView : UIView
+@interface YUUTeamInfoView : HUDView
+
+@property (nonatomic ,weak) id <HUDProtocol> delegate;
 
 + (instancetype)xibInstancetype;
 

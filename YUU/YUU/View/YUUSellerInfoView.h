@@ -7,18 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HUDView.h"
+#import "YUUBorderTextField.h"
+#import "HUDProtocol.h"
 
-@interface YUUSellerInfoView : UIView
+@interface YUUSellerInfoView : HUDView
 
 + (instancetype)xibInstancetype;
 
-@property (strong, nonatomic) IBOutlet UILabel *label0;
-@property (strong, nonatomic) IBOutlet UILabel *label1;
-@property (strong, nonatomic) IBOutlet UILabel *label2;
-@property (strong, nonatomic) IBOutlet UILabel *label3;
-@property (strong, nonatomic) IBOutlet UILabel *label4;
-@property (strong, nonatomic) IBOutlet UILabel *label5;
-@property (strong, nonatomic) IBOutlet UILabel *label6;
+@property (nonatomic, weak) id <HUDProtocol> delegate;
+
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField0;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField1;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField2;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField3;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField4;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField5;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField6;
+
 
 @property (strong, nonatomic) IBOutlet UIButton *btn0;
 @property (strong, nonatomic) IBOutlet UIButton *btn1;
@@ -28,7 +34,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btn5;
 @property (strong, nonatomic) IBOutlet UIButton *btn6;
 
-@property (nonatomic, strong) NSArray *labels;
+@property (nonatomic, strong) NSArray *textFields;
 
 @end
 
@@ -36,6 +42,4 @@
 
 @end
 
-@interface sellerInfoBg : UIView
 
-@end

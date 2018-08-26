@@ -16,14 +16,18 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _labels = @[_label0, _label1, _label2, _label3, _label4, _label5, _label6,];
+        _textFields = @[_textField0, _textField1, _textField2, _textField3, _textField4, _textField5, _textField6,];
     }
     return self;
 }
 
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(300, 260);
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _labels = @[_label0, _label1, _label2, _label3, _label4, _label5, _label6,];
+    _textFields = @[_textField0, _textField1, _textField2, _textField3, _textField4, _textField5, _textField6,];
 }
 
 /*
@@ -36,11 +40,16 @@
 
 
 - (IBAction)copyAction:(UIButton *)sender {
-    UILabel *label = _labels[sender.tag];
+    UILabel *label = _textFields[sender.tag];
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = label.text;
 }
 
+- (IBAction)closeBtnAction:(id)sender {
+    if (_delegate && [_delegate respondsToSelector:@selector(closeBtnDidSelected)]) {
+        [_delegate closeBtnDidSelected];
+    }
+}
 
 
 @end
@@ -49,23 +58,4 @@
 
 @end
 
-@implementation sellerInfoBg
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    self.backgroundColor = [UIColor clearColor];
-    self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 5;
-    self.layer.borderWidth = 1;
-    self.layer.borderColor = [[UIColor whiteColor] CGColor];
-}
-
-- (instancetype)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
-
-@end

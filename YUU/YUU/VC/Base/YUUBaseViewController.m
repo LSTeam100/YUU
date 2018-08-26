@@ -9,6 +9,7 @@
 #import "YUUBaseViewController.h"
 #import "UIColor+Help.h"
 #import "UINavigationController+help.h"
+#import "YUUColor.h"
 
 @interface YUUBaseViewController ()
 
@@ -25,18 +26,19 @@
     [super viewDidLoad];
     
     UIView *aview = [[UIView alloc] initWithFrame:self.navigationController.navigationBar.bounds];
+    aview.userInteractionEnabled = NO;
     
     UIView *middle = [[UIView alloc] initWithFrame:CGRectMake(0, 2, aview.frame.size.width, aview.frame.size.height - 4)];
-    middle.backgroundColor = [UIColor hex:@"#e4c177"];
-    middle.alpha = 0.15;
+    middle.backgroundColor = YUUYellow;
+    middle.alpha = 0.05;
     [aview addSubview:middle];
     
     UIView *up = [[UIView alloc] initWithFrame:CGRectMake(0, 0, aview.frame.size.width, 2)];
-    up.backgroundColor = [UIColor hex:@"#e4c177"];
+    up.backgroundColor = YUUYellow;
     [aview addSubview:up];
     
     UIView *down = [[UIView alloc] initWithFrame:CGRectMake(0, aview.frame.size.height-2, aview.frame.size.width, 2)];
-    down.backgroundColor = [UIColor hex:@"#e4c177"];
+    down.backgroundColor = YUUYellow;
     [aview addSubview:down];
     
     [self.navigationController.navigationBar addSubview:aview];
@@ -45,10 +47,10 @@
     self.navigationController.navigationBar.clipsToBounds = YES;
     
     [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:18],
-                                                         NSForegroundColorAttributeName: [UIColor hex:@"#e4c177"]
+                                                         NSForegroundColorAttributeName: YUUYellow
                                                          }];
     // 透明背景
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"120"] forBarMetrics:UIBarMetricsDefault];
 //    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"bg"]];
 
     
@@ -65,6 +67,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setCustomBackItem {
+    [self.navigationController.navigationBar setBackIndicatorImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [self.navigationController.navigationBar setBackIndicatorTransitionMaskImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    self.navigationItem.backBarButtonItem = backItem;
 }
 
 /*

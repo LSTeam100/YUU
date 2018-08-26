@@ -10,6 +10,10 @@
 
 @implementation YUUUserInfoView
 
++ (instancetype)xibInstancetype {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] firstObject];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -18,11 +22,24 @@
 }
 */
 
-- (IBAction)btn0Action:(id)sender {
-}
-- (IBAction)btn1Action:(id)sender {
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(300, 260);
 }
 
+- (IBAction)btn0Action:(id)sender {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = _textField0.text;
+}
+- (IBAction)btn1Action:(id)sender {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = _textField1.text;
+}
+
+- (IBAction)closeBtnAction:(id)sender {
+    if (_delegate && [_delegate respondsToSelector:@selector(closeBtnDidSelected)]) {
+        [_delegate closeBtnDidSelected];
+    }
+}
 
 
 @end

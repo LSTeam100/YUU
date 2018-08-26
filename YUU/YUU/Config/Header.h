@@ -11,7 +11,7 @@
 
 #import "Masonry.h"
 #import "YUUColor.h"
-
+#import "HUD.h"
 
 #define WeakSelf __weak typeof(self) weakSelf = self;
 

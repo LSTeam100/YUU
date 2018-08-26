@@ -10,8 +10,10 @@
 #import "YUUMinePoolCell.h"
 #import "SHSegmentView.h"
 #import "Header.h"
+#import "YUUTeamInfoView.h"
+#import "YUUUserInfoView.h"
 
-@interface YUUMinePoolVC () <UITableViewDelegate, UITableViewDataSource>
+@interface YUUMinePoolVC () <UITableViewDelegate, UITableViewDataSource, HUDProtocol>
 
 @property (strong, nonatomic) IBOutlet UILabel *powerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minerCountLabel;
@@ -61,8 +63,21 @@
     }];
     
     [segment setTitles:@[@"直推" ,@"团队"] segmentSelectedAtIndex:^(NSInteger index) {
-        
+        if (index == 0) {
+            YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
+            view.delegate = self;
+            view.textField0.text = @"28346879";
+            [HUD showCustomView:view];
+        } else {
+            YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
+            view.delegate = self;
+            [HUD showCustomView:view];
+        }
     }];
+}
+
+- (void)closeBtnDidSelected {
+    [HUD hide];
 }
 
 #pragma mark - UITableViewDataSource -

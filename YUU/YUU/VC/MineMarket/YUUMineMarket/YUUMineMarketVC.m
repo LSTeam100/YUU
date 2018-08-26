@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"矿市";
     
     [self addSegment];
     [self setButtonStyle];
@@ -62,6 +63,11 @@
     }];
     
     [segment setSegmentTitles:@[@"价格", @"点对点", @"信箱"] segmentSelectedAtIndex:^(NSInteger index) {
+        if (index == 0) {
+            
+        } else {
+            
+        }
         weakSelf.segmentSelected = index;
         [self.tableView reloadData];
     }];
@@ -120,14 +126,16 @@
     if (sender.tag == 0) {
         vc.title = @"新手挂单";
     } else if (sender.tag == 1) {
-        vc.title = @"";
+        vc.title = @"进阶挂单";
     } else if (sender.tag == 2) {
-        vc.title = @"";
+        vc.title = @"高手挂单";
     } else {
-        vc.title = @"";
+        vc.title = @"国际挂单";
     }
-    
+    self.hidesBottomBarWhenPushed = YES;
+    [self setCustomBackItem];
     [self.navigationController pushViewController:vc animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 

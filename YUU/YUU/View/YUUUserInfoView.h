@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HUDView.h"
+#import "YUUBorderTextField.h"
+#import "HUDProtocol.h"
+#import "YUUBorderButton.h"
 
-@interface YUUUserInfoView : UIView
+@interface YUUUserInfoView : HUDView
 
-@property (strong, nonatomic) IBOutlet UIView *bgView0;
-@property (strong, nonatomic) IBOutlet UIView *bgView1;
++ (instancetype)xibInstancetype;
 
-@property (strong, nonatomic) IBOutlet UILabel *label0;
-@property (strong, nonatomic) IBOutlet UILabel *label1;
+@property (nonatomic, weak) id <HUDProtocol> delegate;
 
-@property (strong, nonatomic) IBOutlet UIButton *btn0;
-@property (strong, nonatomic) IBOutlet UIButton *btn1;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField0;
+@property (strong, nonatomic) IBOutlet YUUBorderTextField *textField1;
+
+@property (strong, nonatomic) IBOutlet YUUBorderButton *btn0;
+@property (strong, nonatomic) IBOutlet YUUBorderButton *btn1;
 
 @end

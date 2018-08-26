@@ -30,6 +30,11 @@
 		09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225515212B9943000BF25B /* YUUBaseTableViewCell.m */; };
 		09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225518212B9F31000BF25B /* YUUMineMachineVC.m */; };
 		0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922551B212B9F78000BF25B /* YUUBaseTableView.m */; };
+		0926F06B213289050083CFDD /* YUUBorderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F06A213289050083CFDD /* YUUBorderTextField.m */; };
+		0926F07221328E200083CFDD /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07021328E200083CFDD /* HUD.m */; };
+		0926F07321328E200083CFDD /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07121328E200083CFDD /* HUDManager.m */; };
+		0926F076213298B20083CFDD /* YUUBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F075213298B20083CFDD /* YUUBorderButton.m */; };
+		0926F0792132993C0083CFDD /* HUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F0782132993C0083CFDD /* HUDView.m */; };
 		095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CB212CE03D0083C009 /* SHSegmentView.m */; };
 		095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CF212CECEF0083C009 /* YUUUserModel.m */; };
 		0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951820A212D84C30083C009 /* UIViewController+Help.m */; };
@@ -105,6 +110,17 @@
 		0922551A212B9F78000BF25B /* YUUBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseTableView.h; sourceTree = "<group>"; };
 		0922551B212B9F78000BF25B /* YUUBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseTableView.m; sourceTree = "<group>"; };
 		0922551E212BA040000BF25B /* YUUColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUColor.h; sourceTree = "<group>"; };
+		0926F069213289050083CFDD /* YUUBorderTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBorderTextField.h; sourceTree = "<group>"; };
+		0926F06A213289050083CFDD /* YUUBorderTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBorderTextField.m; sourceTree = "<group>"; };
+		0926F06C21328B990083CFDD /* HUDProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDProtocol.h; sourceTree = "<group>"; };
+		0926F06E21328E200083CFDD /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		0926F06F21328E200083CFDD /* HUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDManager.h; sourceTree = "<group>"; };
+		0926F07021328E200083CFDD /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
+		0926F07121328E200083CFDD /* HUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDManager.m; sourceTree = "<group>"; };
+		0926F074213298B20083CFDD /* YUUBorderButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBorderButton.h; sourceTree = "<group>"; };
+		0926F075213298B20083CFDD /* YUUBorderButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBorderButton.m; sourceTree = "<group>"; };
+		0926F0772132993C0083CFDD /* HUDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDView.h; sourceTree = "<group>"; };
+		0926F0782132993C0083CFDD /* HUDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDView.m; sourceTree = "<group>"; };
 		095181CA212CE03D0083C009 /* SHSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSegmentView.h; sourceTree = "<group>"; };
 		095181CB212CE03D0083C009 /* SHSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSegmentView.m; sourceTree = "<group>"; };
 		095181CD212CE0E40083C009 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -278,6 +294,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0926F06D21328E200083CFDD /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				0926F06E21328E200083CFDD /* HUD.h */,
+				0926F06F21328E200083CFDD /* HUDManager.h */,
+				0926F07021328E200083CFDD /* HUD.m */,
+				0926F07121328E200083CFDD /* HUDManager.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 		095181C9212CDFF30083C009 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +321,13 @@
 				091983CE2131A95A00E35196 /* YUUUserInfoView.h */,
 				091983CF2131A95A00E35196 /* YUUUserInfoView.m */,
 				091983D12131A96900E35196 /* YUUUserInfoView.xib */,
+				0926F069213289050083CFDD /* YUUBorderTextField.h */,
+				0926F06A213289050083CFDD /* YUUBorderTextField.m */,
+				0926F074213298B20083CFDD /* YUUBorderButton.h */,
+				0926F075213298B20083CFDD /* YUUBorderButton.m */,
+				0926F0772132993C0083CFDD /* HUDView.h */,
+				0926F0782132993C0083CFDD /* HUDView.m */,
+				0926F06C21328B990083CFDD /* HUDProtocol.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +359,7 @@
 		18784C642126A53E00874434 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				0926F06D21328E200083CFDD /* HUD */,
 				18F85CDB2126B3A2001A3205 /* AFNetworking */,
 				18F85CD82126B3A2001A3205 /* YUUReachability */,
 			);
@@ -586,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0926F0792132993C0083CFDD /* HUDView.m in Sources */,
 				091D8E432130D8C900C430AB /* YUUMineMarketPriceCell.m in Sources */,
 				09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */,
 				091983D02131A95A00E35196 /* YUUUserInfoView.m in Sources */,
@@ -599,14 +635,18 @@
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */,
 				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
+				0926F07321328E200083CFDD /* HUDManager.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */,
+				0926F07221328E200083CFDD /* HUD.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				095F4A62212A774C00098859 /* UIColor+Help.m in Sources */,
+				0926F06B213289050083CFDD /* YUUBorderTextField.m in Sources */,
 				0958B9A4212C031E00B105CE /* YUUMachineModel.m in Sources */,
 				18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */,
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
 				0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */,
+				0926F076213298B20083CFDD /* YUUBorderButton.m in Sources */,
 				18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */,
 				091D8E452130D8C900C430AB /* YUUMineMarketMailCell.m in Sources */,
 				095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */,
