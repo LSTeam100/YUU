@@ -26,7 +26,11 @@
     [super viewDidLoad];
     self.title = @"登录";
     DLOG(@"YUULoginCtrl viewDidLoad");
-    
+
+    UIColor *color = [UIColor whiteColor];
+    account.attributedPlaceholder = [[NSAttributedString alloc] initWithString:account.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+    passworad.attributedPlaceholder = [[NSAttributedString alloc] initWithString:account.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
