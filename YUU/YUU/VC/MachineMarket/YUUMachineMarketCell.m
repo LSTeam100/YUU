@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+//    [_buyBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 4)];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,11 +25,13 @@
 
 - (void)setModel:(YUUMachineModel *)model {
     _model = model;
-//    [_icon ];
+    _icon.image = [UIImage imageNamed:model.icon];
     _nameLabel.text = model.name.length > 0 ? model.name : @" ";
     _ComputingPowerLabel.text = [NSString stringWithFormat:@"算力: %ld",(long)model.power];
-    _cycleLabel.text = [NSString stringWithFormat:@"运行周期: %ld天",(long)model.OperationCycle];
-    _incomeLabel.text = [NSString stringWithFormat:@"收益总量: %0.1f",model.income];
+    _cycleLabel.text = [NSString stringWithFormat:@"运行周期: %ld天",(long)model.operationCycle];
+    _incomeLabel.text = [NSString stringWithFormat:@"收益总量: %0.1f",model.allIncome];
+//    [_buyBtn setTitle:[NSString stringWithFormat:@"%ldYUU",model.price] forState:UIControlStateNormal];
+    _priceLabel.text = [NSString stringWithFormat:@"%ldYUU",model.price];
 }
 
 

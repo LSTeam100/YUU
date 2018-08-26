@@ -8,10 +8,12 @@
 
 #import "YUUMachineMarketVC.h"
 #import "YUUMachineMarketCell.h"
+#import "YUUBaseTableView.h"
+#import "UIViewController+Help.h"
 
 @interface YUUMachineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMachineMarketCellDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) IBOutlet YUUBaseTableView *tableview;
 
 @property (nonatomic, strong) NSArray *items;
 
@@ -27,7 +29,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"机市";
+    
     _items = [NSArray array];
+    
+    YUUMachineModel *model = [[YUUMachineModel alloc] init];
+    model.icon = @"miningMachine0";
+    model.name = @"新手云矿机";
+    model.power = 6;
+    model.operationCycle = 500;
+    model.allIncome = 188.9;
+    model.price = 120;
+    _items = @[model];
+    
+
 }
 
 // 获取数据
@@ -52,7 +66,7 @@
 
 #pragma mark - UITableViewDelegate -
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  80;
+    return  84;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -68,7 +82,11 @@
 
 #pragma mark - YUUMachineMarketCellDelegate -
 - (void)buyMachine:(YUUMachineModel *)model {
-    
+    [UIViewController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
+        
+    } cancelHandler:^{
+        
+    }];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YUUMachineModel.h"
+#import "YUUBaseTableViewCell.h"
 
 @protocol YUUMachineMarketCellDelegate <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface YUUMachineMarketCell : UITableViewCell
+@interface YUUMachineMarketCell : YUUBaseTableViewCell
 
 @property (nonatomic, weak) id <YUUMachineMarketCellDelegate> delegate;
 
@@ -30,9 +31,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *incomeLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *buyBtn;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 
+@property (strong, nonatomic) IBOutlet UIView *upLine;
+@property (strong, nonatomic) IBOutlet UIView *downLine;
 
 @property (nonatomic, strong) YUUMachineModel *model;
+
 
 
 

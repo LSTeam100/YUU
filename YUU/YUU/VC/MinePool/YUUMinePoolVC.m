@@ -8,13 +8,17 @@
 
 #import "YUUMinePoolVC.h"
 #import "YUUMinePoolCell.h"
+#import "SHSegmentView.h"
+#import "Header.h"
+#import "YUUTeamInfoView.h"
+#import "YUUUserInfoView.h"
 
-@interface YUUMinePoolVC () <UITableViewDelegate, UITableViewDataSource>
+@interface YUUMinePoolVC () <UITableViewDelegate, UITableViewDataSource, HUDProtocol>
 
 @property (strong, nonatomic) IBOutlet UILabel *powerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minerCountLabel;
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray *items;
 
@@ -30,6 +34,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"矿池";
+    _items = [NSMutableArray array];
+    
+    [self addSegment];
+    
+    for (int i = 0; i<10; i++) {
+        YUUUserModel *model = [[YUUUserModel alloc] init];
+        model.userId = @"123456";
+        model.uerLevel = YUUUserLevelNew;
+        model.power = 13;
+        model.machineCount =4;
+        model.directPush = 3;
+        model.groupNumberCount = 5;
+        [_items addObject:model];
+    }
+    
+}
+
+- (void)addSegment {
+    WeakSelf
+    SHSegmentView *segment = [[SHSegmentView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:segment];
+    [segment mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.top.mas_equalTo(weakSelf.powerLabel.mas_bottom).mas_offset(30);
+        make.width.mas_equalTo(263);
+        make.height.mas_equalTo(38);
+    }];
+    
+    [segment setTitles:@[@"直推" ,@"团队"] segmentSelectedAtIndex:^(NSInteger index) {
+        if (index == 0) {
+            YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
+            view.delegate = self;
+            view.textField0.text = @"28346879";
+            [HUD showCustomView:view];
+        } else {
+            YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
+            view.delegate = self;
+            [HUD showCustomView:view];
+        }
+    }];
+}
+
+- (void)closeBtnDidSelected {
+    [HUD hide];
 }
 
 #pragma mark - UITableViewDataSource -
@@ -39,7 +87,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YUUMinePoolCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMinePoolCell"];
-    
+    cell.model = _items[indexPath.row];
     return cell;
 }
 
@@ -56,7 +104,13 @@
     if (section == 0) {
         return 0;
     }
-    return 10;
+    return 7;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 7)];
+    aview.backgroundColor = [UIColor clearColor];
+    return aview;
 }
 
 @end
