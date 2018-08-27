@@ -27,22 +27,6 @@
 		09207E1E21270C6A00952C6D /* YUUMinePool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E1421270C6A00952C6D /* YUUMinePool.storyboard */; };
 		09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1721270C6A00952C6D /* YUUMinePoolVC.m */; };
 		09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1821270C6A00952C6D /* YUUMinePoolCell.m */; };
-		09207E242127105700952C6D /* YUUTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09207E232127105700952C6D /* YUUTabBar.storyboard */; };
-		1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D49E213109D300D5FDAE /* YUUModifyPassword.m */; };
-		1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */; };
-		1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */; };
-		1877D4A82131543900D5FDAE /* YUUBillCenterCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */; };
-		189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC54F212A95A700E8E2E4 /* YUUForgetCtrl.m */; };
-		189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC552212A964800E8E2E4 /* YUUSignUpCtrl.m */; };
-		189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC55A212D61DD00E8E2E4 /* YUUProfileCtrl.m */; };
-		189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC55D212E97B000E8E2E4 /* YUUMineDetailCtrl.m */; };
-		189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC560212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m */; };
-		189CC564212EB9A500E8E2E4 /* YUUCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC563212EB9A500E8E2E4 /* YUUCreditCard.m */; };
-		189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC566212EC4FE00E8E2E4 /* YUUViturlWallet.m */; };
-		189CC56A212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC569212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m */; };
-		189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */; };
-		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
-		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
 		09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225515212B9943000BF25B /* YUUBaseTableViewCell.m */; };
 		09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225518212B9F31000BF25B /* YUUMineMachineVC.m */; };
 		0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922551B212B9F78000BF25B /* YUUBaseTableView.m */; };
@@ -63,6 +47,21 @@
 		09612989212E298200D9D02C /* YUUMineMarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09612988212E298200D9D02C /* YUUMineMarket.storyboard */; };
 		09612992212E40F700D9D02C /* YUUButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09612991212E40F700D9D02C /* YUUButton.m */; };
 		09612995212E510A00D9D02C /* YUUPendingOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09612994212E510A00D9D02C /* YUUPendingOrderVC.m */; };
+		1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D49E213109D300D5FDAE /* YUUModifyPassword.m */; };
+		1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */; };
+		1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */; };
+		1877D4A82131543900D5FDAE /* YUUBillCenterCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */; };
+		189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC54F212A95A700E8E2E4 /* YUUForgetCtrl.m */; };
+		189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC552212A964800E8E2E4 /* YUUSignUpCtrl.m */; };
+		189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC55A212D61DD00E8E2E4 /* YUUProfileCtrl.m */; };
+		189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC55D212E97B000E8E2E4 /* YUUMineDetailCtrl.m */; };
+		189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC560212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m */; };
+		189CC564212EB9A500E8E2E4 /* YUUCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC563212EB9A500E8E2E4 /* YUUCreditCard.m */; };
+		189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC566212EC4FE00E8E2E4 /* YUUViturlWallet.m */; };
+		189CC56A212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC569212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m */; };
+		189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */; };
+		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
+		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -119,15 +118,6 @@
 		09207E1621270C6A00952C6D /* YUUMinePoolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMinePoolVC.h; sourceTree = "<group>"; };
 		09207E1721270C6A00952C6D /* YUUMinePoolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolVC.m; sourceTree = "<group>"; };
 		09207E1821270C6A00952C6D /* YUUMinePoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMinePoolCell.m; sourceTree = "<group>"; };
-		09207E232127105700952C6D /* YUUTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YUUTabBar.storyboard; sourceTree = "<group>"; };
-		1877D49D213109D300D5FDAE /* YUUModifyPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUModifyPassword.h; sourceTree = "<group>"; };
-		1877D49E213109D300D5FDAE /* YUUModifyPassword.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUModifyPassword.m; sourceTree = "<group>"; };
-		1877D4A0213145B500D5FDAE /* YUUCurrencyTransactionCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencyTransactionCtrl.h; sourceTree = "<group>"; };
-		1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCurrencyTransactionCtrl.m; sourceTree = "<group>"; };
-		1877D4A321314C1C00D5FDAE /* YUUTransactionHisCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTransactionHisCtrl.h; sourceTree = "<group>"; };
-		1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTransactionHisCtrl.m; sourceTree = "<group>"; };
-		1877D4A62131543900D5FDAE /* YUUBillCenterCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBillCenterCtrl.h; sourceTree = "<group>"; };
-		1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBillCenterCtrl.m; sourceTree = "<group>"; };
 		09225514212B9943000BF25B /* YUUBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseTableViewCell.h; sourceTree = "<group>"; };
 		09225515212B9943000BF25B /* YUUBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseTableViewCell.m; sourceTree = "<group>"; };
 		09225517212B9F31000BF25B /* YUUMineMachineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMachineVC.h; sourceTree = "<group>"; };
@@ -170,6 +160,14 @@
 		09612991212E40F700D9D02C /* YUUButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUButton.m; sourceTree = "<group>"; };
 		09612993212E510A00D9D02C /* YUUPendingOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPendingOrderVC.h; sourceTree = "<group>"; };
 		09612994212E510A00D9D02C /* YUUPendingOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPendingOrderVC.m; sourceTree = "<group>"; };
+		1877D49D213109D300D5FDAE /* YUUModifyPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUModifyPassword.h; sourceTree = "<group>"; };
+		1877D49E213109D300D5FDAE /* YUUModifyPassword.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUModifyPassword.m; sourceTree = "<group>"; };
+		1877D4A0213145B500D5FDAE /* YUUCurrencyTransactionCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencyTransactionCtrl.h; sourceTree = "<group>"; };
+		1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCurrencyTransactionCtrl.m; sourceTree = "<group>"; };
+		1877D4A321314C1C00D5FDAE /* YUUTransactionHisCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTransactionHisCtrl.h; sourceTree = "<group>"; };
+		1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTransactionHisCtrl.m; sourceTree = "<group>"; };
+		1877D4A62131543900D5FDAE /* YUUBillCenterCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBillCenterCtrl.h; sourceTree = "<group>"; };
+		1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBillCenterCtrl.m; sourceTree = "<group>"; };
 		18784C662126A58B00874434 /* YUUDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDebugMacros.h; sourceTree = "<group>"; };
 		189CC54E212A95A700E8E2E4 /* YUUForgetCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUForgetCtrl.h; sourceTree = "<group>"; };
 		189CC54F212A95A700E8E2E4 /* YUUForgetCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUForgetCtrl.m; sourceTree = "<group>"; };
@@ -599,6 +597,7 @@
 				18EDE40421257A3700FC8E0C /* Frameworks */,
 				18EDE40521257A3700FC8E0C /* Resources */,
 				FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */,
+				5BCBA76D2FDB43A9AEC1E606 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -679,6 +678,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BCBA76D2FDB43A9AEC1E606 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUU/Pods-YUU-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */ = {
@@ -912,8 +926,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PCGH4WWPX;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P6UF878TKN;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -923,8 +935,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5a5bf09d-5c26-4d4e-81d4-3493912339e1";
-				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

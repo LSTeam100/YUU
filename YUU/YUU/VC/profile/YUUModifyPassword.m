@@ -9,6 +9,8 @@
 #import "YUUModifyPassword.h"
 
 @interface YUUModifyPassword ()
+@property(nonatomic,weak)IBOutlet UITextField *oldField;
+//@property(nonatomic,weak)IBOutlet UITextField *newField;
 
 @end
 

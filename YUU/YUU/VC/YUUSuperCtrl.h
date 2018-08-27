@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface YUUSuperCtrl : UIViewController
+#import "YUUBaseViewController.h"
+@interface YUUSuperCtrl : YUUBaseViewController
 -(void)moveUp:(float)shift;
 -(void)reover;
 -(void)registerKeyboardNotification;
