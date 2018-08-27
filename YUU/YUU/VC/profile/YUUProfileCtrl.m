@@ -34,9 +34,9 @@
     [self.navigationController pushViewController: mine animated:YES];
 }
 -(IBAction)naviToBill:(id)sender{
-//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    YUUBillCenterCtrl *bill = [sb instantiateViewControllerWithIdentifier:@"YUUBillCenterCtrl"];
-//    [self.navigationController pushViewController: bill animated:YES];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YUUBillCenterCtrl *bill = [sb instantiateViewControllerWithIdentifier:@"YUUBillCenterCtrl"];
+    [self.navigationController pushViewController: bill animated:YES];
 }
 -(IBAction)naviToCoin:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

@@ -7,13 +7,15 @@
 //
 
 #import "YUUBillCenterCtrl.h"
-@interface YUUBillCenterCell : UITableViewCell
-@property(nonatomic,weak)IBOutlet UILabel *titleLabel;
-@property(nonatomic,weak)IBOutlet UILabel *detailLabel;
-@property(nonatomic,weak)IBOutlet UILabel *tailLabel;
+
+
+@implementation YUUBillCenterCell
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    DLOG(@"111");
+}
+
 @end
-
-
 
 @interface YUUBillCenterCtrl ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,weak)IBOutlet UIScrollView *scrollView;
