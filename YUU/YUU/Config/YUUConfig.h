@@ -9,7 +9,7 @@
 #ifndef YUUConfig_h
 #define YUUConfig_h
 #import <UIKit/UIKit.h>
-
+#import "YUUEncryMgr.h"
 #define AFHTTPSessionManager ZHAFHTTPSessionManager
 #define AFHTTPRequestSerializer ZHAFHTTPRequestSerializer
 #define AFJSONRequestSerializer ZHAFJSONRequestSerializer
@@ -17,6 +17,27 @@
 #define AFHTTPResponseSerializer ZHAFHTTPResponseSerializer
 #define AFURLSessionManager ZHAFURLSessionManager
 #define AFNetworkReachabilityManager ZHAFNetworkReachabilityManager
+
+
+#define MD5KEY @"7372d98e44d163e2ae7978a9b9d826a1"
+
+
+
+NS_INLINE id getSignFromParameter(NSArray *paraArr){
+    if (paraArr.count > 0) {
+        NSArray *sordArr = [paraArr sortedArrayUsingSelector:@selector(compare:)];
+        NSString *appendingStr = [sordArr componentsJoinedByString:@""];
+        NSString *key = [MD5KEY stringByAppendingString:appendingStr];
+        NSString *sha1key = [[YUUEncryMgr sha1:key] uppercaseString];
+        return sha1key;
+    }
+    else{
+        return nil;
+    }
+}
+
+
+
 
 
 NS_INLINE id colorWithHexString(NSString *color,float costomAlpha)

@@ -11,6 +11,6 @@
 #import "HLCLog.h"
 #import "YUUDebugMacros.h"
 #import "YUUConfig.h"
-
+#import "UIDevice+YUUDe.h"
 
 #endif /* YUUPre_pch */

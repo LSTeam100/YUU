@@ -45,4 +45,6 @@
 
 //获取手机型号
 +(NSString *)getPhoneType;
+//IDFV
++ (NSString *)IDFAString;
 @end

@@ -16,7 +16,8 @@
 #include <ifaddrs.h>
 #import "HLCNetworkReachability.h"
 #import <sys/utsname.h>
-
+#import <AdSupport/AdSupport.h>
+#import "HMWADSimulateIDFA.h"
 @implementation UIDevice (YUUDe)
 
 + (void)startNetworkMonitor {
@@ -582,4 +583,17 @@
         return @"iPhone 7";
     }
 }
+//IDFA
++ (NSString *)IDFAString{
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        NSString *realIDFA = [[[ASIdentifierManager sharedManager]advertisingIdentifier] UUIDString];
+        if ([realIDFA isEqualToString:@"00000000-0000-0000-0000-000000000000"] || [realIDFA isEqualToString:@""]) {
+            realIDFA = [HMWADSimulateIDFA createSimulateIDFA];
+        }
+        return realIDFA;
+    }else{
+        return @"";
+    }
+}
+
 @end

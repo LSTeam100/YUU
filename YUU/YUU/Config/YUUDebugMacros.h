@@ -11,6 +11,10 @@
 
 #include "HLCLog.h"
 
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+
 #define kLogToFile 1        // 是否将日志写入文件， 发布时请设为0
 
 #if (DEBUG)
