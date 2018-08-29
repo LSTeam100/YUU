@@ -1,14 +1,13 @@
 //
-//  YUURegisterResult.m
+//  YUULoginResult.m
 //  YUU
 //
 //  Created by apple on 2018/8/29.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "YUURegisterResult.h"
+#import "YUULoginResult.h"
 
-@implementation YUURegisterResult
-
+@implementation YUULoginResult
 
 @end

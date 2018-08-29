@@ -1,5 +1,5 @@
 //
-//  YUURegisterResult.h
+//  YUULoginResult.h
 //  YUU
 //
 //  Created by apple on 2018/8/29.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YUURegisterResult : NSObject
+@interface YUULoginResult : NSObject
 @property(nonatomic,strong)NSString *headphoto;
 @property(nonatomic,strong)NSString *membergrade;
 @property(nonatomic,strong)NSNumber *memberid;
