@@ -10,4 +10,14 @@
 
 @interface YUUResponse : NSObject
 
+@property(nonatomic,strong)NSNumber *success;
+
+@property (nonatomic,assign)int code;
+
+@property (strong, nonatomic) NSString* msg;
+
+@property (strong, nonatomic) id data;
+
+-(BOOL) isSucceed;
+
 @end

@@ -7,8 +7,12 @@
 //
 
 #import "YUUSuperCtrl.h"
+#import "MBProgressHUD.h"
 
-@interface YUUSuperCtrl ()
+@interface YUUSuperCtrl (){
+    int _busyCount;
+}
+@property (strong, nonatomic)MBProgressHUD *busyIndicator;
 
 @end
 
@@ -67,6 +71,115 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setBusyIndicatorVisible:(BOOL)visible{
+    if(visible){
+        _busyCount++;
+        if(self.busyIndicator==nil){
+            self.busyIndicator=[MBProgressHUD showHUDAddedTo:[[UIApplication sharedApplication].windows lastObject] animated:YES];
+            self.busyIndicator.dimBackground=YES;
+        }
+    }else{
+        _busyCount--;
+        if(_busyCount==0 || _busyCount<0){
+            _busyCount=0;
+            [self.busyIndicator hide:YES];
+            [self.busyIndicator removeFromSuperview];
+            self.busyIndicator=nil;
+        }
+    }
+}
+
+-(BOOL)handleResponseError:(YUUSuperCtrl *)currentController
+                   request:(YUUBaseRequest *)request
+       treatErrorAsUnknown:(BOOL) treated{
+    int statusCode=[request getResponse].code;
+//    if (statusCode == 0) {
+//        <#statements#>
+//    }
+//    if(statusCode==430||statusCode==431){
+//        [self handleSessionTimeout:currentController request:request];
+//        return YES;
+//    }
+//        else if(statusCode==-100){
+//        [self showMessage:[request getResponse].errorMessage];
+//        return YES;
+//    }
+//    else if (statusCode==502)
+//    {
+//        [self showMessage:@"没有权限"];
+//        return YES;
+//    }
+//    else if (statusCode==503)
+//    {
+//        [self showMessage:@"已存在该数据"];
+//    }
+//    else if(statusCode==504)
+//    {
+//        [self showMessage:@"数据库错误"];
+//    }
+//    else if (statusCode==505)
+//    {
+//        [self showMessage:@"密码错误"];
+//    }
+//    else if (statusCode==506)
+//    {
+//        [self showMessage:@"更新失败"];
+//    }
+//    else if (statusCode==516)
+//    {
+//        [self showMessage:@"库存不够"];
+//    }
+//    else if (statusCode==507)
+//    {
+//        [self showMessage:@"验证码错误"];
+//    }
+//    else if (statusCode==508)
+//    {
+//        [self showMessage:@"无权限"];
+//    }
+//    else if (statusCode==404)
+//    {
+//
+//    }
+//    else if (statusCode==450)
+//    {
+//        [self showMessage:@"该用户已存在"];
+//    }
+//    else if (statusCode==510)
+//    {
+//        [self showMessage:@"商铺歇业中"];
+//    }
+//    else if (statusCode==511)
+//    {
+//        [self showMessage:@"当前城市不支持"];
+//    }
+//    else{
+//        if(treated){
+//            [self showDefaultFailureMessage];
+//            return YES;
+//        }
+//    }
+    return NO;
+}
+-(void)showDefaultFailureMessage{
+    UIAlertController *alert  = [UIAlertController alertControllerWithTitle:@"" message:@"操作失败" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"OK Action");
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)showMessage:(NSString *)message{
+    UIAlertController *alert  = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"OK Action");
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 

@@ -28,8 +28,9 @@ typedef void(^onFailureCallback)(YUUBaseRequest* request);
 
 -(void)start;
 
--(void)updateSessionId:(NSString *)sessionId;
+//-(void)updateSessionId:(NSString *)sessionId;
 
 -(onFailureCallback)failCallback;
+-(id)initWithSuccessCallback: (onSuccessCallback)success failureCallback:(onFailureCallback) failed;
 
 @end

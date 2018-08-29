@@ -9,5 +9,8 @@
 #import "YUUResponse.h"
 
 @implementation YUUResponse
+-(BOOL) isSucceed{
+    return self.success == [NSNumber numberWithInt:1];
+}
 
 @end

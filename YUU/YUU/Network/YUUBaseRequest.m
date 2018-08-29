@@ -8,6 +8,10 @@
 
 #import "YUUBaseRequest.h"
 #import "AFNetworking.h"
+
+@interface YUUBaseRequest ()
+@end
+
 @implementation YUUBaseRequest
 {
     onSuccessCallback _onSuccess;
@@ -45,10 +49,10 @@
 }
 -(void)processResponse:(NSDictionary *)responseDictionary{
     _response=[[YUUResponse alloc]init];
-//    if(responseDictionary!=nil){
-//        NSNumber *statusCode=(NSNumber *)responseDictionary[@"returnCode"];
-//        _response.statusCode=[statusCode intValue];
-//    }
+    if(responseDictionary!=nil){
+        NSNumber *suc=(NSNumber *)responseDictionary[@"succeed"];
+        _response.success = suc;
+    }
 }
 -(void)start{
     if([[self getMethod] isEqualToString:@"GET"]){
@@ -73,22 +77,22 @@
     [manager GET:url parameters:_parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * result=responseObject;
         [self processResponse:result];
-        //        if([_response isSucceed]){
-        //            if(_onSuccess!=nil){
-        //                _onSuccess(self);
-        //            }
-        //        }else{
-        //            [_response setErrorMessage:result[@"errorMessage"]];
-        //            if(_onFailure!=nil){
-        //                _onFailure(self);
-        //            }
-        //        }
+                if([_response isSucceed]){
+                    if(_onSuccess!=nil){
+                        _onSuccess(self);
+                    }
+                }else{
+                    [_response setMsg:result[@"msg"]];
+                    if(_onFailure!=nil){
+                        _onFailure(self);
+                    }
+                }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self processError:error];
-        //        if(_onFailure!=nil){
-        //            _onFailure(self);
-        //        }
+                if(_onFailure!=nil){
+                    _onFailure(self);
+                }
         
     }];
     
@@ -108,28 +112,27 @@
     }
     manager.responseSerializer=[AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/xml"]];
-    //manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/x-json"];
     manager.securityPolicy.allowInvalidCertificates=YES;
     [manager POST:url parameters:_parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * result=responseObject;
         [self processResponse:result];
         
-//        if([_response isSucceed]){
-//            if(_onSuccess!=nil){
-//                _onSuccess(self);
-//            }
-//        }else{
-//            [_response setErrorMessage:result[@"errorMessage"]];
-//            if(_onFailure!=nil){
-//                _onFailure(self);
-//            }
-//        }
+        if([_response isSucceed]){
+            if(_onSuccess!=nil){
+                _onSuccess(self);
+            }
+        }else{
+            [_response setMsg:result[@"msg"]];
+            if(_onFailure!=nil){
+                _onFailure(self);
+            }
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self processError:error];
-//        if(_onFailure!=nil){
-//            _onFailure(self);
-//        }
+        if(_onFailure!=nil){
+            _onFailure(self);
+        }
 
     }];
     
@@ -138,13 +141,13 @@
 
 -(void) processError:(NSError *)error{
     _response=[[YUUResponse alloc]init];
-//    if([error code]==-1001||[error code]==-1009 || [error code]==-1004){
-//        _response.errorMessage=@"您当前无法正常访问服务，请确认网络是否正常";
-//        _response.statusCode=-100;
-//    }else{
-//        _response.statusCode=(int)error.code;
-//        _response.errorMessage=error.description;
-//    }
+    if([error code]==-1001||[error code]==-1009 || [error code]==-1004){
+        _response.msg=@"您当前无法正常访问服务，请确认网络是否正常";
+        _response.code=-100;
+    }else{
+        _response.code=(int)error.code;
+        _response.msg=error.description;
+    }
     
 }
 
