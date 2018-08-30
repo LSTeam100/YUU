@@ -1,14 +1,14 @@
 //
-//  YUURegisterResult.h
+//  YUUCommonModel.h
 //  YUU
 //
-//  Created by apple on 2018/8/29.
+//  Created by apple on 2018/8/30.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface YUURegisterResult : NSObject
+@interface YUUCommonModel : NSObject
 @property(nonatomic,strong)NSString *headphoto;
 @property(nonatomic,strong)NSString *membergrade;
 @property(nonatomic,strong)NSNumber *memberid;

@@ -1,15 +1,15 @@
 //
-//  YUULauchAppRequest.m
+//  YUUMineDetailRequest.m
 //  YUU
 //
-//  Created by apple on 2018/8/29.
+//  Created by apple on 2018/8/30.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "YUULauchAppRequest.h"
-#import "YUUCommonModel.h"
-@implementation YUULauchAppRequest
--(id)initWithMobilePhone:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+#import "YUUMineDetailRequest.h"
+#import "YUUMineDetailModel.h"
+@implementation YUUMineDetailRequest
+-(id)initWithMineDetail:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
@@ -24,9 +24,8 @@
     }
     return self;
 }
-
 -(NSString *)getURL{
-    return @"/";
+    return @"/memberdata";
 }
 
 -(NSString *)getMethod{
@@ -37,17 +36,16 @@
     if([[self getResponse] isSucceed]){
         NSDictionary* data=responseDictionary[@"data"];
         if(data!=nil){
-            YUUCommonModel *result=[[YUUCommonModel alloc]init];
-            result.headphoto = data[@"headphoto"];
-            result.membergrade = data[@"membergrade"];
-            result.memberid = data[@"memberid"];
-            result.certification = data[@"certification"];
-            result.propertynum = data[@"propertynum"];
-            result.canuseyuu = data[@"canuseyuu"];
-            result.frozenyuu = data[@"frozenyuu"];
-            result.lockedyuu = data[@"lockedyuu"];
-            result.newnews = data[@"newnews"];
-            result.token = data[@"token"];
+            YUUMineDetailModel *result = [[YUUMineDetailModel alloc]init];
+            result.upmemberid = data[@"upmemberid"];
+            result.memberphone = data[@"memberphone"];
+            result.memberwx = data[@"memberwx"];
+            result.memberalipay = data[@"memberalipay"];
+            result.memberwallet = data[@"memberwallet"];
+            result.membername = data[@"membername"];
+            result.membercardid = data[@"membercardid"];
+            result.bankname = data[@"bankname"];
+            result.bankcard = data[@"bankcard"];
             [self getResponse].data=result;
         }
     }

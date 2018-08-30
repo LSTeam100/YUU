@@ -7,26 +7,29 @@
 //
 
 #import "YUUCertificationRequest.h"
-
+#import "YUUCommonModel.h"
 @implementation YUUCertificationRequest
-//-(id)initWithCertification:(NSNumber *)name
-//              Membercardid:(NSString *)membercardid Bankcard:(NSNumber *)bankcard bankphone:() SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
-//    self=[super initWithSuccessCallback:success
-//                        failureCallback:failed];
-//    if (self) {
-//        NSArray *signArr = @[ @"membername",@"membercardid",@"bankcard",@"bankphone",@"code",@"token"];
-//        NSString *sha1key = getSignFromParameter(signArr);
-//
-//        NSDictionary *parameters=@{
-//                                   @"membername": phoneNum,
-//                                   @"loginpassword":password,
-//                                   @"code":idCode,
-//                                   @"sign" : sha1key
-//                                   };
-//        [self setParameters:parameters];
-//    }
-//    return self;
-//}
+-(id)initWithCertification:(NSString *)name
+              Membercardid:(NSString *)membercardid Bankcard:(NSNumber *)bankcard Bankphone:(NSNumber *)bankphone Code:(NSString *)code Token:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+    self=[super initWithSuccessCallback:success
+                        failureCallback:failed];
+    if (self) {
+        NSArray *signArr = @[ @"membername",@"membercardid",@"bankcard",@"bankphone",@"code",@"token"];
+        NSString *sha1key = getSignFromParameter(signArr);
+
+        NSDictionary *parameters=@{
+                                   @"membername": name,
+                                   @"Membercardid":membercardid,
+                                   @"bankcard":bankcard,
+                                   @"bankphone":bankphone,
+                                   @"code":code,
+                                   @"token":token,
+                                   @"sign" : sha1key
+                                   };
+        [self setParameters:parameters];
+    }
+    return self;
+}
 
 -(NSString *)getURL{
     return @"/certification";
@@ -34,5 +37,25 @@
 
 -(NSString *)getMethod{
     return @"POST";
+}
+-(void)processResponse:(NSDictionary *)responseDictionary{
+    [super processResponse:responseDictionary];
+    if([[self getResponse] isSucceed]){
+        NSDictionary* data=responseDictionary[@"data"];
+        if(data!=nil){
+            YUUCommonModel *result=[[YUUCommonModel alloc]init];
+            result.headphoto = data[@"headphoto"];
+            result.membergrade = data[@"membergrade"];
+            result.memberid = data[@"memberid"];
+            result.certification = data[@"certification"];
+            result.propertynum = data[@"propertynum"];
+            result.canuseyuu = data[@"canuseyuu"];
+            result.frozenyuu = data[@"frozenyuu"];
+            result.lockedyuu = data[@"lockedyuu"];
+            result.newnews = data[@"newnews"];
+            result.token = data[@"token"];
+            [self getResponse].data=result;
+        }
+    }
 }
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "YUURegisterRequest.h"
-#import "YUURegisterResult.h"
+#import "YUUCommonModel.h"
 @implementation YUURegisterRequest
 
 -(id)initWithMobilePhone:(NSNumber *)phoneNum IDCode:(NSNumber *)idCode
@@ -44,7 +44,7 @@
     if([[self getResponse] isSucceed]){
         NSDictionary* data=responseDictionary[@"data"];
         if(data!=nil){
-            YUURegisterResult *result=[[YUURegisterResult alloc]init];
+            YUUCommonModel *result=[[YUUCommonModel alloc]init];
             result.headphoto = data[@"headphoto"];
             result.membergrade = data[@"membergrade"];
             result.memberid = data[@"memberid"];

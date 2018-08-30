@@ -9,5 +9,6 @@
 #import "YUUBaseRequest.h"
 
 @interface YUULoginRequest : YUUBaseRequest
-
+-(id)initWithMobilePhone:(NSNumber *)phoneNum
+                Password:(NSString *)password  SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 @end

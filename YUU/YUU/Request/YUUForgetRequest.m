@@ -7,7 +7,7 @@
 //
 
 #import "YUUForgetRequest.h"
-
+#import "YUUCommonModel.h"
 @implementation YUUForgetRequest
 
 -(id)initWithMobilePhone:(NSNumber *)phoneNum
@@ -35,5 +35,25 @@
 
 -(NSString *)getMethod{
     return @"POST";
+}
+-(void)processResponse:(NSDictionary *)responseDictionary{
+    [super processResponse:responseDictionary];
+    if([[self getResponse] isSucceed]){
+        NSDictionary* data=responseDictionary[@"data"];
+        if(data!=nil){
+            YUUCommonModel *result=[[YUUCommonModel alloc]init];
+            result.headphoto = data[@"headphoto"];
+            result.membergrade = data[@"membergrade"];
+            result.memberid = data[@"memberid"];
+            result.certification = data[@"certification"];
+            result.propertynum = data[@"propertynum"];
+            result.canuseyuu = data[@"canuseyuu"];
+            result.frozenyuu = data[@"frozenyuu"];
+            result.lockedyuu = data[@"lockedyuu"];
+            result.newnews = data[@"newnews"];
+            result.token = data[@"token"];
+            [self getResponse].data=result;
+        }
+    }
 }
 @end
