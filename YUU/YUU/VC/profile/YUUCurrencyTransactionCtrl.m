@@ -9,19 +9,28 @@
 #import "YUUCurrencyTransactionCtrl.h"
 
 @implementation YUUCurrencyCell
-
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.bottomView.backgroundColor = colorWithHexString(@"e4c177", 1.0);
+    self.titleLabel.textColor = colorWithHexString(@"e4c177", 1.0);
+    self.contenLabel.textColor = [UIColor whiteColor];
+    
+}
 
 @end
 
 
 @interface YUUCurrencyTransactionCtrl ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
+
 @end
 
 @implementation YUUCurrencyTransactionCtrl
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"币币交易";
+    self.tableView.backgroundColor = [UIColor clearColor];
     // Do any additional setup after loading the view.
 }
 

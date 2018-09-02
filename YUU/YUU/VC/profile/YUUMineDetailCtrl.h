@@ -13,6 +13,7 @@
 @property(nonatomic,weak)IBOutlet UILabel *detailLabel;
 @property(nonatomic,weak)IBOutlet UIButton *authenBtn;
 @property(nonatomic,weak)IBOutlet UIImageView *moreImageView;
+@property(nonatomic,weak)IBOutlet UIView *bottomView;
 
 @end
 

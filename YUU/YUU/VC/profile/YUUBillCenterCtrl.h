@@ -12,6 +12,7 @@
 @property(nonatomic,weak)IBOutlet UILabel *titleLabel;
 @property(nonatomic,weak)IBOutlet UILabel *detailLabel;
 @property(nonatomic,weak)IBOutlet UILabel *tailLabel;
+@property(nonatomic,weak)IBOutlet UIView *bottomView;
 @end
 
 

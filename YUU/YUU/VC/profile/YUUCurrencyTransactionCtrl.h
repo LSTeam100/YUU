@@ -11,6 +11,7 @@
 @interface YUUCurrencyCell : UITableViewCell;
 @property(nonatomic,weak)IBOutlet UILabel *titleLabel;
 @property(nonatomic,weak)IBOutlet UILabel *contenLabel;
+@property(nonatomic,weak)IBOutlet UIView *bottomView;
 @end
 
 @interface YUUCurrencyTransactionCtrl : YUUSuperCtrl

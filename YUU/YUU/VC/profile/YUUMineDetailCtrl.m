@@ -9,7 +9,12 @@
 #import "YUUMineDetailCtrl.h"
 
 @implementation profileAuthenCell
-
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.bottomView.backgroundColor = colorWithHexString(@"e4c177",1);
+    self.titleLabel.textColor = colorWithHexString(@"e4c177",1);
+    self.detailLabel.textColor = [UIColor whiteColor];
+}
 @end
 
 @interface YUUMineDetailCtrl ()<UITableViewDelegate,UITableViewDataSource>

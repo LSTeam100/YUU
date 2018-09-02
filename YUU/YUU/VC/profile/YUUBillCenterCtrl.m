@@ -12,7 +12,11 @@
 @implementation YUUBillCenterCell
 -(void)awakeFromNib{
     [super awakeFromNib];
-    DLOG(@"111");
+    self.titleLabel.textColor = colorWithHexString(@"e4c177", 1);
+    self.bottomView.backgroundColor = colorWithHexString(@"e4c177", 1);
+    self.tailLabel.textColor = colorWithHexString(@"e4c177", 1);
+    self.detailLabel.textColor = [UIColor whiteColor];
+
 }
 
 @end
@@ -30,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"账单中心";
+    self.tableView.backgroundColor = [UIColor clearColor];
     // Do any additional setup after loading the view.
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
