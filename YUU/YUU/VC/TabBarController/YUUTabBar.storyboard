@@ -128,10 +128,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-0R-6mE">
                                         <rect key="frame" x="341" y="31" width="19" height="18"/>
                                         <state key="normal" backgroundImage="profile_setting"/>
+                                        <connections>
+                                            <action selector="naviToSetting:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="wCS-W6-THd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-ce-vyB">
                                         <rect key="frame" x="296" y="30" width="20" height="20"/>
                                         <state key="normal" backgroundImage="profile_wechat_icon"/>
+                                        <connections>
+                                            <action selector="naviToMesage:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="QqA-Sj-ww7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -467,12 +473,21 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="assetLabel" destination="l11-Sv-h9e" id="e6P-PA-ZNv"/>
+                        <outlet property="availbleLabel" destination="Nh9-rH-pnC" id="OYV-hq-brK"/>
                         <outlet property="billBtn" destination="uAV-u8-ndQ" id="mTj-pf-cEX"/>
                         <outlet property="bussniessBtn" destination="c3e-h7-39r" id="1CR-p2-xN6"/>
                         <outlet property="coinBtn" destination="Zq1-hM-7Zz" id="wJl-YZ-Rpf"/>
                         <outlet property="costomBtn" destination="ins-iS-sQz" id="PGY-EF-bYx"/>
+                        <outlet property="freezeLabel" destination="LmJ-xd-WVS" id="gkY-EL-Gqk"/>
                         <outlet property="gamesBtn" destination="lCk-s4-Wn3" id="X90-Wb-ASd"/>
+                        <outlet property="lockLabel" destination="IdB-ZM-sT7" id="3o7-fQ-HxR"/>
+                        <outlet property="messageBtn" destination="O4B-ce-vyB" id="YjI-Dq-FXX"/>
                         <outlet property="mineBtn" destination="e0K-J1-xj4" id="Urc-SQ-5gd"/>
+                        <outlet property="profileGradeLabel" destination="lDh-gX-Udf" id="j6f-ir-JoD"/>
+                        <outlet property="profileIdLabel" destination="B95-q0-Ej5" id="XbX-yJ-otv"/>
+                        <outlet property="profileIsAuthenBtn" destination="cu8-x3-D9P" id="b1D-v0-KRr"/>
+                        <outlet property="settingBtn" destination="TVN-0R-6mE" id="dxz-MI-Sf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ado-4a-KuU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,7 @@
 @property(nonatomic,weak)IBOutlet UILabel *titleLabel;
 @property(nonatomic,weak)IBOutlet UILabel *dateLabel;
 @property(nonatomic,weak)IBOutlet UILabel *detailLabel;
+@property(nonatomic,weak)IBOutlet UIView *bgView;
 
 
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "YUUModifyPassword.h"
-
+#import "YUUForgetCtrl.h"
 @interface YUUModifyPassword ()
 @property(nonatomic,weak)IBOutlet UITextField *oldField;
 //@property(nonatomic,weak)IBOutlet UITextField *newField;
+@property(nonatomic,weak)IBOutlet UIButton *forgetTransactionBtn;
 
 @end
 
@@ -18,7 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.modifyType == loginType) {
+        self.title = @"修改登录密码";
+        self.forgetTransactionBtn.hidden = YES;
+    }
+    else{
+        self. title = @"修改交易密码";
+    }
     // Do any additional setup after loading the view.
+}
+
+-(IBAction)naviToForgetpassword:(id)sender{
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YUUForgetCtrl *forget = [sb instantiateViewControllerWithIdentifier:@"YUUForgetCtrl"];
+    [self.navigationController pushViewController:forget animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

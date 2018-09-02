@@ -10,7 +10,16 @@
 #import "YUUMessageDetailCtrl.h"
 
 @implementation YUUMessageCell
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.bgView.backgroundColor = colorWithHexString(@"e4c177",0.15);
+    self.bgView.layer.borderWidth = 1.0;
+    self.bgView.layer.borderColor = [colorWithHexString(@"e4c177",1) CGColor];
+    self.titleLabel.textColor = colorWithHexString(@"e4c177",1);
+    self.detailLabel.textColor = [UIColor whiteColor];
+    self.dateLabel.textColor = [UIColor whiteColor];
 
+}
 
 @end
 
@@ -24,6 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"消息通知";
+    self.tableView.backgroundColor = [UIColor clearColor];
     // Do any additional setup after loading the view.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

@@ -7,6 +7,7 @@
 //
 
 #import "YUUSignUpCtrl.h"
+#import "Header.h"
 
 @interface YUUSignUpCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
@@ -33,7 +34,8 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
-    // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

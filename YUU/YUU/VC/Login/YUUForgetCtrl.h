@@ -8,6 +8,11 @@
 
 #import "YUUSuperCtrl.h"
 
-@interface YUUForgetCtrl : YUUSuperCtrl
+typedef enum {
+    forgetLoginType,
+    forgetTransactionType,
+}forgetPasswordType;
 
+@interface YUUForgetCtrl : YUUSuperCtrl
+@property(nonatomic,assign)forgetPasswordType forgetType;
 @end

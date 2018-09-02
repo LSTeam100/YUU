@@ -17,7 +17,6 @@
 @end
 
 
-@interface YUUMineDetailCtrl : YUUSuperCtrl<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,weak)IBOutlet UITableView *tableView;
+@interface YUUMineDetailCtrl : YUUSuperCtrl
 
 @end

@@ -8,6 +8,12 @@
 
 #import "YUUSuperCtrl.h"
 
+typedef enum {
+    loginType,
+    transactionType,
+}ModifyType;
+
 @interface YUUModifyPassword : YUUSuperCtrl
 
+@property(nonatomic,assign)ModifyType modifyType;
 @end

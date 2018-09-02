@@ -111,6 +111,8 @@
 		18D353982138466E00990F7C /* YUUBuyerTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353972138466E00990F7C /* YUUBuyerTransactionRequest.m */; };
 		18D3539B213847BB00990F7C /* YUUSellerOnsaleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3539A213847BB00990F7C /* YUUSellerOnsaleRequest.m */; };
 		18D3539E2138483000990F7C /* YUUSendMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3539D2138483000990F7C /* YUUSendMessageRequest.m */; };
+		18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A0213929A000990F7C /* CostomTextFieldBgView.m */; };
+		18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A3213A7BAA00990F7C /* CostomSepView.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -334,6 +336,10 @@
 		18D3539A213847BB00990F7C /* YUUSellerOnsaleRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSellerOnsaleRequest.m; sourceTree = "<group>"; };
 		18D3539C2138483000990F7C /* YUUSendMessageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSendMessageRequest.h; sourceTree = "<group>"; };
 		18D3539D2138483000990F7C /* YUUSendMessageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSendMessageRequest.m; sourceTree = "<group>"; };
+		18D3539F213929A000990F7C /* CostomTextFieldBgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CostomTextFieldBgView.h; sourceTree = "<group>"; };
+		18D353A0213929A000990F7C /* CostomTextFieldBgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostomTextFieldBgView.m; sourceTree = "<group>"; };
+		18D353A2213A7BAA00990F7C /* CostomSepView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CostomSepView.h; sourceTree = "<group>"; };
+		18D353A3213A7BAA00990F7C /* CostomSepView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostomSepView.m; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18EDE40B21257A3700FC8E0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -543,6 +549,10 @@
 				0926F0772132993C0083CFDD /* HUDView.h */,
 				0926F0782132993C0083CFDD /* HUDView.m */,
 				0926F06C21328B990083CFDD /* HUDProtocol.h */,
+				18D3539F213929A000990F7C /* CostomTextFieldBgView.h */,
+				18D353A0213929A000990F7C /* CostomTextFieldBgView.m */,
+				18D353A2213A7BAA00990F7C /* CostomSepView.h */,
+				18D353A3213A7BAA00990F7C /* CostomSepView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1022,6 +1032,7 @@
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				18D3538321383D3900990F7C /* YUUPointSellCancelRequest.m in Sources */,
 				09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */,
+				18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */,
 				0926F07221328E200083CFDD /* HUD.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				095F4A62212A774C00098859 /* UIColor+Help.m in Sources */,
@@ -1084,6 +1095,7 @@
 				095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
 				189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */,
+				18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */,
 				18D3538F2138422A00990F7C /* YUUPointOnsaleModel.m in Sources */,
 				1877D4A82131543900D5FDAE /* YUUBillCenterCtrl.m in Sources */,
 				189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */,

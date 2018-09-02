@@ -27,7 +27,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"忘记密码";
+    if (self.forgetType == forgetLoginType) {
+        self.title = @"忘记密码";
+    }
+    else{
+        self.title = @"忘记交易密码";
+    }
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];

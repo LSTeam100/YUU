@@ -12,7 +12,11 @@
 
 @end
 
-@interface YUUMineDetailCtrl ()
+@interface YUUMineDetailCtrl ()<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,weak)IBOutlet UITableView *tableView;
+@property(nonatomic,weak)IBOutlet UILabel *superIdLabel;
+@property(nonatomic,weak)IBOutlet UILabel *mineIdLabel;
+@property(nonatomic,weak)IBOutlet UILabel *mineGradeLabel;
 
 @end
 
@@ -20,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"个人资料";
+    self.tableView.backgroundColor = [UIColor clearColor];
     // Do any additional setup after loading the view.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

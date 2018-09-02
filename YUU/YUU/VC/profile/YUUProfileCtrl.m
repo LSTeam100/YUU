@@ -10,6 +10,8 @@
 #import "YUUMineDetailCtrl.h"
 #import "YUUBillCenterCtrl.h"
 #import "YUUCurrencyTransactionCtrl.h"
+#import "YUUMessageCtrl.h"
+#import "YUUSetingCtrl.h"
 @interface YUUProfileCtrl ()
 @property(nonatomic,weak)IBOutlet UIButton *mineBtn;
 @property(nonatomic,weak)IBOutlet UIButton *billBtn;
@@ -17,6 +19,15 @@
 @property(nonatomic,weak)IBOutlet UIButton *bussniessBtn;
 @property(nonatomic,weak)IBOutlet UIButton *costomBtn;
 @property(nonatomic,weak)IBOutlet UIButton *gamesBtn;
+@property(nonatomic,weak)IBOutlet UILabel *profileIdLabel;
+@property(nonatomic,weak)IBOutlet UILabel *profileGradeLabel;
+@property(nonatomic,weak)IBOutlet UIButton *profileIsAuthenBtn;
+@property(nonatomic,weak)IBOutlet UIButton *messageBtn;
+@property(nonatomic,weak)IBOutlet UIButton *settingBtn;
+@property(nonatomic,weak)IBOutlet UILabel *assetLabel;
+@property(nonatomic,weak)IBOutlet UILabel *availbleLabel;
+@property(nonatomic,weak)IBOutlet UILabel *freezeLabel;
+@property(nonatomic,weak)IBOutlet UILabel *lockLabel;
 
 @end
 
@@ -51,6 +62,18 @@
 }
 -(IBAction)naviToGames:(id)sender{
     
+}
+
+-(IBAction)naviToMesage:(id)sender{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YUUMessageCtrl *message = [sb instantiateViewControllerWithIdentifier:@"YUUMessageCtrl"];
+    [self.navigationController pushViewController: message animated:YES];
+}
+
+-(IBAction)naviToSetting:(id)sender{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YUUSetingCtrl *setting = [sb instantiateViewControllerWithIdentifier:@"YUUSetingCtrl"];
+    [self.navigationController pushViewController:setting animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
