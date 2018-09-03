@@ -184,7 +184,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWx-UP-82v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="-707"/>
+            <point key="canvasLocation" x="-1001" y="-707"/>
+        </scene>
+        <!--Transaction History Ctrl-->
+        <scene sceneID="Umi-oS-5VK">
+            <objects>
+                <viewController storyboardIdentifier="YUUTransactionHistoryCtrl" id="Fb5-dU-lEE" customClass="YUUTransactionHistoryCtrl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kgt-Y5-ZzL"/>
+                        <viewControllerLayoutGuide type="bottom" id="YeC-6W-Qjq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="na1-Tx-zon">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="y3y-Hc-s6H">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n4c-hD-1nI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="transactionHistoryCell" rowHeight="60" id="JHz-EG-QRd" customClass="transactionHistoryCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JHz-EG-QRd" id="jtb-cq-IXL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fb5-dU-lEE" id="ydA-kE-igA"/>
+                                    <outlet property="delegate" destination="Fb5-dU-lEE" id="eva-aB-A0L"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YeC-6W-Qjq" firstAttribute="top" secondItem="y3y-Hc-s6H" secondAttribute="bottom" id="21X-kp-vfe"/>
+                            <constraint firstAttribute="trailing" secondItem="y3y-Hc-s6H" secondAttribute="trailing" id="AKC-YB-U6V"/>
+                            <constraint firstItem="n4c-hD-1nI" firstAttribute="leading" secondItem="na1-Tx-zon" secondAttribute="leading" id="KtH-Qc-0ZQ"/>
+                            <constraint firstItem="YeC-6W-Qjq" firstAttribute="top" secondItem="n4c-hD-1nI" secondAttribute="bottom" id="NhX-A9-22X"/>
+                            <constraint firstAttribute="trailing" secondItem="n4c-hD-1nI" secondAttribute="trailing" id="UgD-Td-zWF"/>
+                            <constraint firstItem="n4c-hD-1nI" firstAttribute="top" secondItem="kgt-Y5-ZzL" secondAttribute="bottom" id="VGQ-2l-Y7x"/>
+                            <constraint firstItem="y3y-Hc-s6H" firstAttribute="top" secondItem="kgt-Y5-ZzL" secondAttribute="bottom" id="gav-o0-ILJ"/>
+                            <constraint firstItem="y3y-Hc-s6H" firstAttribute="leading" secondItem="na1-Tx-zon" secondAttribute="leading" id="i3i-3v-70G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="n4c-hD-1nI" id="dMZ-j3-aiJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQ8-vX-Eui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="-707"/>
         </scene>
         <!--Transaction His Ctrl-->
         <scene sceneID="qM2-pj-hn6">

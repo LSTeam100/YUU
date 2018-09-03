@@ -7,7 +7,7 @@
 //
 
 #import "YUUCurrencyTransactionCtrl.h"
-
+#import "YUUTransactionHistoryCtrl.h"
 @implementation YUUCurrencyCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -34,8 +34,19 @@
     self.title = @"币币交易";
     self.tableView.backgroundColor = [UIColor clearColor];
     [self initSegmentBar];
+    [self setCustomBackItem];
     
+    UIBarButtonItem *histroyItem = [[UIBarButtonItem alloc]initWithTitle:@"历史记录" style:UIBarButtonItemStylePlain target:self action:@selector(naviToHistoryController)];
+    self.navigationItem.rightBarButtonItem = histroyItem;
+
+//    self.navigationController.navigationItem.rightBarButtonItem = histroyItem;
+
+}
+-(void)naviToHistoryController{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    YUUTransactionHistoryCtrl *his = [sb instantiateViewControllerWithIdentifier:@"YUUTransactionHistoryCtrl"];
+    [self.navigationController pushViewController:his animated:YES];
 }
 -(void)initSegmentBar{
     [self.leftSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_left_selected"] forState:UIControlStateNormal];
