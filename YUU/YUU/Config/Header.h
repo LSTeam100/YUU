@@ -9,7 +9,7 @@
 #ifndef Header_h
 #define Header_h
 
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 #import "YUUColor.h"
 #import "HUD.h"
 

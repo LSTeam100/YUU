@@ -38,6 +38,11 @@
 		095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CB212CE03D0083C009 /* SHSegmentView.m */; };
 		095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CF212CECEF0083C009 /* YUUUserModel.m */; };
 		0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951820A212D84C30083C009 /* UIViewController+Help.m */; };
+		0952AC2021391C4D00D701CE /* YUUEncryMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 0952AC1F21391C4D00D701CE /* YUUEncryMgr.m */; };
+		0952AC2521391D0B00D701CE /* HMWADSimulateIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0952AC2221391D0B00D701CE /* HMWADSimulateIDFA.m */; };
+		0952AC2621391D0B00D701CE /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 0952AC2321391D0B00D701CE /* readme.md */; };
+		0952AC2921392C9900D701CE /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0952AC2721392C9800D701CE /* DrawView.m */; };
+		0952AC2C21392D2600D701CE /* UIView+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 0952AC2A21392D2500D701CE /* UIView+Help.m */; };
 		0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B99D212C011F00B105CE /* YUUMineMachineCell.m */; };
 		0958B9A1212C024A00B105CE /* YUUBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B9A0212C024A00B105CE /* YUUBaseModel.m */; };
 		0958B9A4212C031E00B105CE /* YUUMachineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958B9A2212C031D00B105CE /* YUUMachineModel.m */; };
@@ -51,9 +56,6 @@
 		1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */; };
 		1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */; };
 		1877D4A82131543900D5FDAE /* YUUBillCenterCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */; };
-		1877D4B1213644BC00D5FDAE /* YUURegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4B0213644BC00D5FDAE /* YUURegisterRequest.m */; };
-		1877D4D821367FB800D5FDAE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1877D4D721367FB800D5FDAE /* AdSupport.framework */; };
-		1877D4DA213685FC00D5FDAE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1877D4D9213685FC00D5FDAE /* CoreTelephony.framework */; };
 		189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC54F212A95A700E8E2E4 /* YUUForgetCtrl.m */; };
 		189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC552212A964800E8E2E4 /* YUUSignUpCtrl.m */; };
 		189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC55A212D61DD00E8E2E4 /* YUUProfileCtrl.m */; };
@@ -65,52 +67,6 @@
 		189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56C212FE93800E8E2E4 /* YUUMessageCtrl.m */; };
 		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
 		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
-		18D3530B21368F4000990F7C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18D3530721368F4000990F7C /* LICENSE */; };
-		18D3530C21368F4000990F7C /* HMWADSimulateIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3530821368F4000990F7C /* HMWADSimulateIDFA.m */; };
-		18D3530D21368F4000990F7C /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 18D3530921368F4000990F7C /* readme.md */; };
-		18D353112136A16800990F7C /* YUUEncryMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353102136A16800990F7C /* YUUEncryMgr.m */; };
-		18D353142136A5DC00990F7C /* YUULoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353132136A5DC00990F7C /* YUULoginRequest.m */; };
-		18D353172136B00D00990F7C /* YUUForgetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353162136B00D00990F7C /* YUUForgetRequest.m */; };
-		18D353202136F25300990F7C /* YUULauchAppRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3531F2136F25300990F7C /* YUULauchAppRequest.m */; };
-		18D353232136F30800990F7C /* YUUCertificationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353222136F30800990F7C /* YUUCertificationRequest.m */; };
-		18D3532621379D9000990F7C /* YUUCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3532521379D9000990F7C /* YUUCommonModel.m */; };
-		18D353292137A2F900990F7C /* YUUProfileMessageListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353282137A2F900990F7C /* YUUProfileMessageListRequest.m */; };
-		18D3532C2137C46F00990F7C /* YUUMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3532B2137C46F00990F7C /* YUUMsgModel.m */; };
-		18D3532F2137D02700990F7C /* YUUModifyLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3532E2137D02700990F7C /* YUUModifyLoginRequest.m */; };
-		18D353322137D1F400990F7C /* YUUModifyTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353312137D1F400990F7C /* YUUModifyTransactionRequest.m */; };
-		18D353352137D36E00990F7C /* YUUForgetTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353342137D36E00990F7C /* YUUForgetTransactionRequest.m */; };
-		18D353382137D4DE00990F7C /* YUUMineDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353372137D4DE00990F7C /* YUUMineDetailRequest.m */; };
-		18D3533B2137D5C800990F7C /* YUUMineDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3533A2137D5C800990F7C /* YUUMineDetailModel.m */; };
-		18D353412137D8BB00990F7C /* YUUUserSendwxRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353402137D8BB00990F7C /* YUUUserSendwxRequest.m */; };
-		18D353442137DA3900990F7C /* YUUUserSendAlipayRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353432137DA3900990F7C /* YUUUserSendAlipayRequest.m */; };
-		18D353472137DB3E00990F7C /* YUUUserSendWalletRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353462137DB3E00990F7C /* YUUUserSendWalletRequest.m */; };
-		18D3534A2137DC1000990F7C /* YUUBillCenterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353492137DC1000990F7C /* YUUBillCenterRequest.m */; };
-		18D3534D2137DCCE00990F7C /* YUUBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3534C2137DCCE00990F7C /* YUUBillModel.m */; };
-		18D353502137E03800990F7C /* YUUCurrencySellRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3534F2137E03800990F7C /* YUUCurrencySellRequest.m */; };
-		18D353532137E12D00990F7C /* YUUCurrencyHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353522137E12D00990F7C /* YUUCurrencyHistoryRequest.m */; };
-		18D353562137E1D500990F7C /* YUUCurrencyHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353552137E1D500990F7C /* YUUCurrencyHistoryModel.m */; };
-		18D353592137E3D700990F7C /* YUUCallCenterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353582137E3D700990F7C /* YUUCallCenterRequest.m */; };
-		18D3535C2137E4AF00990F7C /* YUUMilltraderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3535B2137E4AF00990F7C /* YUUMilltraderRequest.m */; };
-		18D3535F2137E52900990F7C /* YUUMilltraderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3535E2137E52900990F7C /* YUUMilltraderModel.m */; };
-		18D353682137EDFF00990F7C /* YUUBuyMachineRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353672137EDFF00990F7C /* YUUBuyMachineRequest.m */; };
-		18D3536B2137EE7E00990F7C /* YUUMachineListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3536A2137EE7E00990F7C /* YUUMachineListRequest.m */; };
-		18D3536E2137EF1000990F7C /* YUUMachineArrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3536D2137EF1000990F7C /* YUUMachineArrModel.m */; };
-		18D353712137F53500990F7C /* YUUMachinepoolRequst.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353702137F53500990F7C /* YUUMachinepoolRequst.m */; };
-		18D353742137F60700990F7C /* YUUMachinePoolArrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353732137F60700990F7C /* YUUMachinePoolArrModel.m */; };
-		18D353772138014D00990F7C /* YUUMachineMarketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353762138014D00990F7C /* YUUMachineMarketRequest.m */; };
-		18D3537A2138025600990F7C /* YUUMachineMarketInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353792138025600990F7C /* YUUMachineMarketInfoModel.m */; };
-		18D3537D2138381200990F7C /* YUUPointSellRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3537C2138381100990F7C /* YUUPointSellRequest.m */; };
-		18D3538021383A5A00990F7C /* YUUPointSellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3537F21383A5A00990F7C /* YUUPointSellModel.m */; };
-		18D3538321383D3900990F7C /* YUUPointSellCancelRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3538221383D3900990F7C /* YUUPointSellCancelRequest.m */; };
-		18D3538621383E1F00990F7C /* YUUPointbuyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3538521383E1F00990F7C /* YUUPointbuyRequest.m */; };
-		18D3538921383FB600990F7C /* YUUSellerTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3538821383FB600990F7C /* YUUSellerTransactionRequest.m */; };
-		18D3538C2138410200990F7C /* YUUPointOnsaleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3538B2138410200990F7C /* YUUPointOnsaleRequest.m */; };
-		18D3538F2138422A00990F7C /* YUUPointOnsaleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3538E2138422A00990F7C /* YUUPointOnsaleModel.m */; };
-		18D353922138438E00990F7C /* YUUSellerSellitRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353912138438E00990F7C /* YUUSellerSellitRequest.m */; };
-		18D353952138449700990F7C /* YUUSellerSellitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353942138449700990F7C /* YUUSellerSellitModel.m */; };
-		18D353982138466E00990F7C /* YUUBuyerTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353972138466E00990F7C /* YUUBuyerTransactionRequest.m */; };
-		18D3539B213847BB00990F7C /* YUUSellerOnsaleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3539A213847BB00990F7C /* YUUSellerOnsaleRequest.m */; };
-		18D3539E2138483000990F7C /* YUUSendMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3539D2138483000990F7C /* YUUSendMessageRequest.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -192,6 +148,15 @@
 		095181CF212CECEF0083C009 /* YUUUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUUserModel.m; sourceTree = "<group>"; };
 		0951820A212D84C30083C009 /* UIViewController+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Help.m"; sourceTree = "<group>"; };
 		0951820B212D84C30083C009 /* UIViewController+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Help.h"; sourceTree = "<group>"; };
+		0952AC1E21391C4D00D701CE /* YUUEncryMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUEncryMgr.h; sourceTree = "<group>"; };
+		0952AC1F21391C4D00D701CE /* YUUEncryMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUEncryMgr.m; sourceTree = "<group>"; };
+		0952AC2221391D0B00D701CE /* HMWADSimulateIDFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWADSimulateIDFA.m; sourceTree = "<group>"; };
+		0952AC2321391D0B00D701CE /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		0952AC2421391D0B00D701CE /* HMWADSimulateIDFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWADSimulateIDFA.h; sourceTree = "<group>"; };
+		0952AC2721392C9800D701CE /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		0952AC2821392C9900D701CE /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		0952AC2A21392D2500D701CE /* UIView+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Help.m"; sourceTree = "<group>"; };
+		0952AC2B21392D2600D701CE /* UIView+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Help.h"; sourceTree = "<group>"; };
 		0958B99C212C011F00B105CE /* YUUMineMachineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMachineCell.h; sourceTree = "<group>"; };
 		0958B99D212C011F00B105CE /* YUUMineMachineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMachineCell.m; sourceTree = "<group>"; };
 		0958B99F212C024A00B105CE /* YUUBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseModel.h; sourceTree = "<group>"; };
@@ -217,10 +182,6 @@
 		1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTransactionHisCtrl.m; sourceTree = "<group>"; };
 		1877D4A62131543900D5FDAE /* YUUBillCenterCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBillCenterCtrl.h; sourceTree = "<group>"; };
 		1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBillCenterCtrl.m; sourceTree = "<group>"; };
-		1877D4AF213644BC00D5FDAE /* YUURegisterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUURegisterRequest.h; sourceTree = "<group>"; };
-		1877D4B0213644BC00D5FDAE /* YUURegisterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUURegisterRequest.m; sourceTree = "<group>"; };
-		1877D4D721367FB800D5FDAE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		1877D4D9213685FC00D5FDAE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		18784C662126A58B00874434 /* YUUDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDebugMacros.h; sourceTree = "<group>"; };
 		189CC54E212A95A700E8E2E4 /* YUUForgetCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUForgetCtrl.h; sourceTree = "<group>"; };
 		189CC54F212A95A700E8E2E4 /* YUUForgetCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUForgetCtrl.m; sourceTree = "<group>"; };
@@ -244,96 +205,6 @@
 		189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMessageDetailCtrl.m; sourceTree = "<group>"; };
 		189CC5712130FC4C00E8E2E4 /* YUUSetingCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSetingCtrl.h; sourceTree = "<group>"; };
 		189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSetingCtrl.m; sourceTree = "<group>"; };
-		18D3530721368F4000990F7C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		18D3530821368F4000990F7C /* HMWADSimulateIDFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWADSimulateIDFA.m; sourceTree = "<group>"; };
-		18D3530921368F4000990F7C /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
-		18D3530A21368F4000990F7C /* HMWADSimulateIDFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWADSimulateIDFA.h; sourceTree = "<group>"; };
-		18D3530F2136A16800990F7C /* YUUEncryMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUEncryMgr.h; sourceTree = "<group>"; };
-		18D353102136A16800990F7C /* YUUEncryMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUEncryMgr.m; sourceTree = "<group>"; };
-		18D353122136A5DC00990F7C /* YUULoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUULoginRequest.h; sourceTree = "<group>"; };
-		18D353132136A5DC00990F7C /* YUULoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUULoginRequest.m; sourceTree = "<group>"; };
-		18D353152136B00D00990F7C /* YUUForgetRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUForgetRequest.h; sourceTree = "<group>"; };
-		18D353162136B00D00990F7C /* YUUForgetRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUForgetRequest.m; sourceTree = "<group>"; };
-		18D3531E2136F25300990F7C /* YUULauchAppRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUULauchAppRequest.h; sourceTree = "<group>"; };
-		18D3531F2136F25300990F7C /* YUULauchAppRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUULauchAppRequest.m; sourceTree = "<group>"; };
-		18D353212136F30800990F7C /* YUUCertificationRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCertificationRequest.h; sourceTree = "<group>"; };
-		18D353222136F30800990F7C /* YUUCertificationRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCertificationRequest.m; sourceTree = "<group>"; };
-		18D3532421379D9000990F7C /* YUUCommonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCommonModel.h; sourceTree = "<group>"; };
-		18D3532521379D9000990F7C /* YUUCommonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCommonModel.m; sourceTree = "<group>"; };
-		18D353272137A2F900990F7C /* YUUProfileMessageListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUProfileMessageListRequest.h; sourceTree = "<group>"; };
-		18D353282137A2F900990F7C /* YUUProfileMessageListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUProfileMessageListRequest.m; sourceTree = "<group>"; };
-		18D3532A2137C46F00990F7C /* YUUMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMsgModel.h; sourceTree = "<group>"; };
-		18D3532B2137C46F00990F7C /* YUUMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMsgModel.m; sourceTree = "<group>"; };
-		18D3532D2137D02700990F7C /* YUUModifyLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUModifyLoginRequest.h; sourceTree = "<group>"; };
-		18D3532E2137D02700990F7C /* YUUModifyLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUModifyLoginRequest.m; sourceTree = "<group>"; };
-		18D353302137D1F400990F7C /* YUUModifyTransactionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUModifyTransactionRequest.h; sourceTree = "<group>"; };
-		18D353312137D1F400990F7C /* YUUModifyTransactionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUModifyTransactionRequest.m; sourceTree = "<group>"; };
-		18D353332137D36E00990F7C /* YUUForgetTransactionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUForgetTransactionRequest.h; sourceTree = "<group>"; };
-		18D353342137D36E00990F7C /* YUUForgetTransactionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUForgetTransactionRequest.m; sourceTree = "<group>"; };
-		18D353362137D4DE00990F7C /* YUUMineDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineDetailRequest.h; sourceTree = "<group>"; };
-		18D353372137D4DE00990F7C /* YUUMineDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineDetailRequest.m; sourceTree = "<group>"; };
-		18D353392137D5C800990F7C /* YUUMineDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineDetailModel.h; sourceTree = "<group>"; };
-		18D3533A2137D5C800990F7C /* YUUMineDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineDetailModel.m; sourceTree = "<group>"; };
-		18D3533F2137D8BB00990F7C /* YUUUserSendwxRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUUserSendwxRequest.h; sourceTree = "<group>"; };
-		18D353402137D8BB00990F7C /* YUUUserSendwxRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUUserSendwxRequest.m; sourceTree = "<group>"; };
-		18D353422137DA3900990F7C /* YUUUserSendAlipayRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUUserSendAlipayRequest.h; sourceTree = "<group>"; };
-		18D353432137DA3900990F7C /* YUUUserSendAlipayRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUUserSendAlipayRequest.m; sourceTree = "<group>"; };
-		18D353452137DB3E00990F7C /* YUUUserSendWalletRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUUserSendWalletRequest.h; sourceTree = "<group>"; };
-		18D353462137DB3E00990F7C /* YUUUserSendWalletRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUUserSendWalletRequest.m; sourceTree = "<group>"; };
-		18D353482137DC1000990F7C /* YUUBillCenterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBillCenterRequest.h; sourceTree = "<group>"; };
-		18D353492137DC1000990F7C /* YUUBillCenterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBillCenterRequest.m; sourceTree = "<group>"; };
-		18D3534B2137DCCE00990F7C /* YUUBillModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBillModel.h; sourceTree = "<group>"; };
-		18D3534C2137DCCE00990F7C /* YUUBillModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBillModel.m; sourceTree = "<group>"; };
-		18D3534E2137E03800990F7C /* YUUCurrencySellRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencySellRequest.h; sourceTree = "<group>"; };
-		18D3534F2137E03800990F7C /* YUUCurrencySellRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCurrencySellRequest.m; sourceTree = "<group>"; };
-		18D353512137E12D00990F7C /* YUUCurrencyHistoryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencyHistoryRequest.h; sourceTree = "<group>"; };
-		18D353522137E12D00990F7C /* YUUCurrencyHistoryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCurrencyHistoryRequest.m; sourceTree = "<group>"; };
-		18D353542137E1D500990F7C /* YUUCurrencyHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencyHistoryModel.h; sourceTree = "<group>"; };
-		18D353552137E1D500990F7C /* YUUCurrencyHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCurrencyHistoryModel.m; sourceTree = "<group>"; };
-		18D353572137E3D700990F7C /* YUUCallCenterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCallCenterRequest.h; sourceTree = "<group>"; };
-		18D353582137E3D700990F7C /* YUUCallCenterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCallCenterRequest.m; sourceTree = "<group>"; };
-		18D3535A2137E4AF00990F7C /* YUUMilltraderRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMilltraderRequest.h; sourceTree = "<group>"; };
-		18D3535B2137E4AF00990F7C /* YUUMilltraderRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMilltraderRequest.m; sourceTree = "<group>"; };
-		18D3535D2137E52900990F7C /* YUUMilltraderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMilltraderModel.h; sourceTree = "<group>"; };
-		18D3535E2137E52900990F7C /* YUUMilltraderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMilltraderModel.m; sourceTree = "<group>"; };
-		18D353662137EDFF00990F7C /* YUUBuyMachineRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBuyMachineRequest.h; sourceTree = "<group>"; };
-		18D353672137EDFF00990F7C /* YUUBuyMachineRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBuyMachineRequest.m; sourceTree = "<group>"; };
-		18D353692137EE7E00990F7C /* YUUMachineListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMachineListRequest.h; sourceTree = "<group>"; };
-		18D3536A2137EE7E00990F7C /* YUUMachineListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMachineListRequest.m; sourceTree = "<group>"; };
-		18D3536C2137EF1000990F7C /* YUUMachineArrModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMachineArrModel.h; sourceTree = "<group>"; };
-		18D3536D2137EF1000990F7C /* YUUMachineArrModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMachineArrModel.m; sourceTree = "<group>"; };
-		18D3536F2137F53500990F7C /* YUUMachinepoolRequst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMachinepoolRequst.h; sourceTree = "<group>"; };
-		18D353702137F53500990F7C /* YUUMachinepoolRequst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMachinepoolRequst.m; sourceTree = "<group>"; };
-		18D353722137F60700990F7C /* YUUMachinePoolArrModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMachinePoolArrModel.h; sourceTree = "<group>"; };
-		18D353732137F60700990F7C /* YUUMachinePoolArrModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMachinePoolArrModel.m; sourceTree = "<group>"; };
-		18D353752138014D00990F7C /* YUUMachineMarketRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMachineMarketRequest.h; sourceTree = "<group>"; };
-		18D353762138014D00990F7C /* YUUMachineMarketRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketRequest.m; sourceTree = "<group>"; };
-		18D353782138025600990F7C /* YUUMachineMarketInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMachineMarketInfoModel.h; sourceTree = "<group>"; };
-		18D353792138025600990F7C /* YUUMachineMarketInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMachineMarketInfoModel.m; sourceTree = "<group>"; };
-		18D3537B2138381100990F7C /* YUUPointSellRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPointSellRequest.h; sourceTree = "<group>"; };
-		18D3537C2138381100990F7C /* YUUPointSellRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPointSellRequest.m; sourceTree = "<group>"; };
-		18D3537E21383A5A00990F7C /* YUUPointSellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPointSellModel.h; sourceTree = "<group>"; };
-		18D3537F21383A5A00990F7C /* YUUPointSellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPointSellModel.m; sourceTree = "<group>"; };
-		18D3538121383D3900990F7C /* YUUPointSellCancelRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPointSellCancelRequest.h; sourceTree = "<group>"; };
-		18D3538221383D3900990F7C /* YUUPointSellCancelRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPointSellCancelRequest.m; sourceTree = "<group>"; };
-		18D3538421383E1F00990F7C /* YUUPointbuyRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPointbuyRequest.h; sourceTree = "<group>"; };
-		18D3538521383E1F00990F7C /* YUUPointbuyRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPointbuyRequest.m; sourceTree = "<group>"; };
-		18D3538721383FB600990F7C /* YUUSellerTransactionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSellerTransactionRequest.h; sourceTree = "<group>"; };
-		18D3538821383FB600990F7C /* YUUSellerTransactionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSellerTransactionRequest.m; sourceTree = "<group>"; };
-		18D3538A2138410100990F7C /* YUUPointOnsaleRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPointOnsaleRequest.h; sourceTree = "<group>"; };
-		18D3538B2138410200990F7C /* YUUPointOnsaleRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPointOnsaleRequest.m; sourceTree = "<group>"; };
-		18D3538D2138422A00990F7C /* YUUPointOnsaleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPointOnsaleModel.h; sourceTree = "<group>"; };
-		18D3538E2138422A00990F7C /* YUUPointOnsaleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPointOnsaleModel.m; sourceTree = "<group>"; };
-		18D353902138438E00990F7C /* YUUSellerSellitRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSellerSellitRequest.h; sourceTree = "<group>"; };
-		18D353912138438E00990F7C /* YUUSellerSellitRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSellerSellitRequest.m; sourceTree = "<group>"; };
-		18D353932138449700990F7C /* YUUSellerSellitModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSellerSellitModel.h; sourceTree = "<group>"; };
-		18D353942138449700990F7C /* YUUSellerSellitModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSellerSellitModel.m; sourceTree = "<group>"; };
-		18D353962138466E00990F7C /* YUUBuyerTransactionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBuyerTransactionRequest.h; sourceTree = "<group>"; };
-		18D353972138466E00990F7C /* YUUBuyerTransactionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBuyerTransactionRequest.m; sourceTree = "<group>"; };
-		18D35399213847BB00990F7C /* YUUSellerOnsaleRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSellerOnsaleRequest.h; sourceTree = "<group>"; };
-		18D3539A213847BB00990F7C /* YUUSellerOnsaleRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSellerOnsaleRequest.m; sourceTree = "<group>"; };
-		18D3539C2138483000990F7C /* YUUSendMessageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSendMessageRequest.h; sourceTree = "<group>"; };
-		18D3539D2138483000990F7C /* YUUSendMessageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSendMessageRequest.m; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18EDE40B21257A3700FC8E0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -383,8 +254,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1877D4DA213685FC00D5FDAE /* CoreTelephony.framework in Frameworks */,
-				1877D4D821367FB800D5FDAE /* AdSupport.framework in Frameworks */,
 				FCF2E7AEAB778F8ABA8D959A /* libPods-YUU.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,8 +342,6 @@
 		09207E222127103200952C6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				18D3532421379D9000990F7C /* YUUCommonModel.h */,
-				18D3532521379D9000990F7C /* YUUCommonModel.m */,
 				0958B99F212C024A00B105CE /* YUUBaseModel.h */,
 				0958B9A0212C024A00B105CE /* YUUBaseModel.m */,
 				0958B9A3212C031E00B105CE /* YUUMachineModel.h */,
@@ -483,28 +350,6 @@
 				095181CF212CECEF0083C009 /* YUUUserModel.m */,
 				091D8E372130D66D00C430AB /* YUUTransactionModel.h */,
 				091D8E382130D66D00C430AB /* YUUTransactionModel.m */,
-				18D3532A2137C46F00990F7C /* YUUMsgModel.h */,
-				18D3532B2137C46F00990F7C /* YUUMsgModel.m */,
-				18D353392137D5C800990F7C /* YUUMineDetailModel.h */,
-				18D3533A2137D5C800990F7C /* YUUMineDetailModel.m */,
-				18D3534B2137DCCE00990F7C /* YUUBillModel.h */,
-				18D3534C2137DCCE00990F7C /* YUUBillModel.m */,
-				18D353542137E1D500990F7C /* YUUCurrencyHistoryModel.h */,
-				18D353552137E1D500990F7C /* YUUCurrencyHistoryModel.m */,
-				18D3535D2137E52900990F7C /* YUUMilltraderModel.h */,
-				18D3535E2137E52900990F7C /* YUUMilltraderModel.m */,
-				18D3536C2137EF1000990F7C /* YUUMachineArrModel.h */,
-				18D3536D2137EF1000990F7C /* YUUMachineArrModel.m */,
-				18D353722137F60700990F7C /* YUUMachinePoolArrModel.h */,
-				18D353732137F60700990F7C /* YUUMachinePoolArrModel.m */,
-				18D353782138025600990F7C /* YUUMachineMarketInfoModel.h */,
-				18D353792138025600990F7C /* YUUMachineMarketInfoModel.m */,
-				18D3537E21383A5A00990F7C /* YUUPointSellModel.h */,
-				18D3537F21383A5A00990F7C /* YUUPointSellModel.m */,
-				18D3538D2138422A00990F7C /* YUUPointOnsaleModel.h */,
-				18D3538E2138422A00990F7C /* YUUPointOnsaleModel.m */,
-				18D353932138449700990F7C /* YUUSellerSellitModel.h */,
-				18D353942138449700990F7C /* YUUSellerSellitModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -523,8 +368,17 @@
 		095181C9212CDFF30083C009 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0952AC2821392C9900D701CE /* DrawView.h */,
+				0952AC2721392C9800D701CE /* DrawView.m */,
+				0926F06C21328B990083CFDD /* HUDProtocol.h */,
+				0926F0772132993C0083CFDD /* HUDView.h */,
+				0926F0782132993C0083CFDD /* HUDView.m */,
 				095181CA212CE03D0083C009 /* SHSegmentView.h */,
 				095181CB212CE03D0083C009 /* SHSegmentView.m */,
+				0926F074213298B20083CFDD /* YUUBorderButton.h */,
+				0926F075213298B20083CFDD /* YUUBorderButton.m */,
+				0926F069213289050083CFDD /* YUUBorderTextField.h */,
+				0926F06A213289050083CFDD /* YUUBorderTextField.m */,
 				09612990212E40F700D9D02C /* YUUButton.h */,
 				09612991212E40F700D9D02C /* YUUButton.m */,
 				091D8E472130DF1800C430AB /* YUUSellerInfoView.h */,
@@ -536,15 +390,28 @@
 				091983CE2131A95A00E35196 /* YUUUserInfoView.h */,
 				091983CF2131A95A00E35196 /* YUUUserInfoView.m */,
 				091983D12131A96900E35196 /* YUUUserInfoView.xib */,
-				0926F069213289050083CFDD /* YUUBorderTextField.h */,
-				0926F06A213289050083CFDD /* YUUBorderTextField.m */,
-				0926F074213298B20083CFDD /* YUUBorderButton.h */,
-				0926F075213298B20083CFDD /* YUUBorderButton.m */,
-				0926F0772132993C0083CFDD /* HUDView.h */,
-				0926F0782132993C0083CFDD /* HUDView.m */,
-				0926F06C21328B990083CFDD /* HUDProtocol.h */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0952AC1D21391C4D00D701CE /* common */ = {
+			isa = PBXGroup;
+			children = (
+				0952AC1E21391C4D00D701CE /* YUUEncryMgr.h */,
+				0952AC1F21391C4D00D701CE /* YUUEncryMgr.m */,
+			);
+			name = common;
+			path = YUU/common;
+			sourceTree = SOURCE_ROOT;
+		};
+		0952AC2121391D0B00D701CE /* SimulateIDFA-master */ = {
+			isa = PBXGroup;
+			children = (
+				0952AC2221391D0B00D701CE /* HMWADSimulateIDFA.m */,
+				0952AC2321391D0B00D701CE /* readme.md */,
+				0952AC2421391D0B00D701CE /* HMWADSimulateIDFA.h */,
+			);
+			path = "SimulateIDFA-master";
 			sourceTree = "<group>";
 		};
 		095F4A63212A968C00098859 /* Base */ = {
@@ -571,79 +438,11 @@
 			path = MineMarket;
 			sourceTree = "<group>";
 		};
-		1877D4AE2136449300D5FDAE /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				1877D4AF213644BC00D5FDAE /* YUURegisterRequest.h */,
-				1877D4B0213644BC00D5FDAE /* YUURegisterRequest.m */,
-				18D353122136A5DC00990F7C /* YUULoginRequest.h */,
-				18D353132136A5DC00990F7C /* YUULoginRequest.m */,
-				18D353152136B00D00990F7C /* YUUForgetRequest.h */,
-				18D353162136B00D00990F7C /* YUUForgetRequest.m */,
-				18D3531E2136F25300990F7C /* YUULauchAppRequest.h */,
-				18D3531F2136F25300990F7C /* YUULauchAppRequest.m */,
-				18D353212136F30800990F7C /* YUUCertificationRequest.h */,
-				18D353222136F30800990F7C /* YUUCertificationRequest.m */,
-				18D353272137A2F900990F7C /* YUUProfileMessageListRequest.h */,
-				18D353282137A2F900990F7C /* YUUProfileMessageListRequest.m */,
-				18D3532D2137D02700990F7C /* YUUModifyLoginRequest.h */,
-				18D3532E2137D02700990F7C /* YUUModifyLoginRequest.m */,
-				18D353302137D1F400990F7C /* YUUModifyTransactionRequest.h */,
-				18D353312137D1F400990F7C /* YUUModifyTransactionRequest.m */,
-				18D353332137D36E00990F7C /* YUUForgetTransactionRequest.h */,
-				18D353342137D36E00990F7C /* YUUForgetTransactionRequest.m */,
-				18D353362137D4DE00990F7C /* YUUMineDetailRequest.h */,
-				18D353372137D4DE00990F7C /* YUUMineDetailRequest.m */,
-				18D3533F2137D8BB00990F7C /* YUUUserSendwxRequest.h */,
-				18D353402137D8BB00990F7C /* YUUUserSendwxRequest.m */,
-				18D353422137DA3900990F7C /* YUUUserSendAlipayRequest.h */,
-				18D353432137DA3900990F7C /* YUUUserSendAlipayRequest.m */,
-				18D353452137DB3E00990F7C /* YUUUserSendWalletRequest.h */,
-				18D353462137DB3E00990F7C /* YUUUserSendWalletRequest.m */,
-				18D353482137DC1000990F7C /* YUUBillCenterRequest.h */,
-				18D353492137DC1000990F7C /* YUUBillCenterRequest.m */,
-				18D3534E2137E03800990F7C /* YUUCurrencySellRequest.h */,
-				18D3534F2137E03800990F7C /* YUUCurrencySellRequest.m */,
-				18D353512137E12D00990F7C /* YUUCurrencyHistoryRequest.h */,
-				18D353522137E12D00990F7C /* YUUCurrencyHistoryRequest.m */,
-				18D353572137E3D700990F7C /* YUUCallCenterRequest.h */,
-				18D353582137E3D700990F7C /* YUUCallCenterRequest.m */,
-				18D3535A2137E4AF00990F7C /* YUUMilltraderRequest.h */,
-				18D3535B2137E4AF00990F7C /* YUUMilltraderRequest.m */,
-				18D353662137EDFF00990F7C /* YUUBuyMachineRequest.h */,
-				18D353672137EDFF00990F7C /* YUUBuyMachineRequest.m */,
-				18D353692137EE7E00990F7C /* YUUMachineListRequest.h */,
-				18D3536A2137EE7E00990F7C /* YUUMachineListRequest.m */,
-				18D3536F2137F53500990F7C /* YUUMachinepoolRequst.h */,
-				18D353702137F53500990F7C /* YUUMachinepoolRequst.m */,
-				18D353752138014D00990F7C /* YUUMachineMarketRequest.h */,
-				18D353762138014D00990F7C /* YUUMachineMarketRequest.m */,
-				18D3537B2138381100990F7C /* YUUPointSellRequest.h */,
-				18D3537C2138381100990F7C /* YUUPointSellRequest.m */,
-				18D3538121383D3900990F7C /* YUUPointSellCancelRequest.h */,
-				18D3538221383D3900990F7C /* YUUPointSellCancelRequest.m */,
-				18D3538421383E1F00990F7C /* YUUPointbuyRequest.h */,
-				18D3538521383E1F00990F7C /* YUUPointbuyRequest.m */,
-				18D3538721383FB600990F7C /* YUUSellerTransactionRequest.h */,
-				18D3538821383FB600990F7C /* YUUSellerTransactionRequest.m */,
-				18D3538A2138410100990F7C /* YUUPointOnsaleRequest.h */,
-				18D3538B2138410200990F7C /* YUUPointOnsaleRequest.m */,
-				18D353902138438E00990F7C /* YUUSellerSellitRequest.h */,
-				18D353912138438E00990F7C /* YUUSellerSellitRequest.m */,
-				18D353962138466E00990F7C /* YUUBuyerTransactionRequest.h */,
-				18D353972138466E00990F7C /* YUUBuyerTransactionRequest.m */,
-				18D35399213847BB00990F7C /* YUUSellerOnsaleRequest.h */,
-				18D3539A213847BB00990F7C /* YUUSellerOnsaleRequest.m */,
-				18D3539C2138483000990F7C /* YUUSendMessageRequest.h */,
-				18D3539D2138483000990F7C /* YUUSendMessageRequest.m */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
 		18784C642126A53E00874434 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				18D3530621368F4000990F7C /* SimulateIDFA-master */,
+				0952AC2121391D0B00D701CE /* SimulateIDFA-master */,
+				0952AC1D21391C4D00D701CE /* common */,
 				0926F06D21328E200083CFDD /* HUD */,
 				18F85CDB2126B3A2001A3205 /* AFNetworking */,
 				18F85CD82126B3A2001A3205 /* YUUReachability */,
@@ -697,26 +496,6 @@
 			path = profile;
 			sourceTree = "<group>";
 		};
-		18D3530621368F4000990F7C /* SimulateIDFA-master */ = {
-			isa = PBXGroup;
-			children = (
-				18D3530721368F4000990F7C /* LICENSE */,
-				18D3530A21368F4000990F7C /* HMWADSimulateIDFA.h */,
-				18D3530821368F4000990F7C /* HMWADSimulateIDFA.m */,
-				18D3530921368F4000990F7C /* readme.md */,
-			);
-			path = "SimulateIDFA-master";
-			sourceTree = "<group>";
-		};
-		18D3530E2136A08800990F7C /* common */ = {
-			isa = PBXGroup;
-			children = (
-				18D3530F2136A16800990F7C /* YUUEncryMgr.h */,
-				18D353102136A16800990F7C /* YUUEncryMgr.m */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
 		18EDE3FE21257A3700FC8E0C = {
 			isa = PBXGroup;
 			children = (
@@ -738,8 +517,6 @@
 		18EDE40921257A3700FC8E0C /* YUU */ = {
 			isa = PBXGroup;
 			children = (
-				18D3530E2136A08800990F7C /* common */,
-				1877D4AE2136449300D5FDAE /* Request */,
 				095181C9212CDFF30083C009 /* View */,
 				09207E222127103200952C6D /* Model */,
 				09207E0821270C6A00952C6D /* VC */,
@@ -804,6 +581,8 @@
 		18F85D042126B8AC001A3205 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0952AC2B21392D2600D701CE /* UIView+Help.h */,
+				0952AC2A21392D2500D701CE /* UIView+Help.m */,
 				0951820B212D84C30083C009 /* UIViewController+Help.h */,
 				0951820A212D84C30083C009 /* UIViewController+Help.m */,
 				18F85D092126B9D7001A3205 /* UIDevice+YUUDe.h */,
@@ -841,8 +620,6 @@
 		FC5F5ED3B559D9D55368A155 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1877D4D9213685FC00D5FDAE /* CoreTelephony.framework */,
-				1877D4D721367FB800D5FDAE /* AdSupport.framework */,
 				DC5ACEB701D806D505D5CF79 /* libPods-YUU.a */,
 			);
 			name = Frameworks;
@@ -860,7 +637,6 @@
 				18EDE40421257A3700FC8E0C /* Frameworks */,
 				18EDE40521257A3700FC8E0C /* Resources */,
 				FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */,
-				5BCBA76D2FDB43A9AEC1E606 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -911,15 +687,14 @@
 				091DBB10212A3F31005DC12C /* YUUTabBar.storyboard in Resources */,
 				09612989212E298200D9D02C /* YUUMineMarket.storyboard in Resources */,
 				18EDE41721257A3A00FC8E0C /* LaunchScreen.storyboard in Resources */,
-				18D3530D21368F4000990F7C /* readme.md in Resources */,
 				091983D22131A96900E35196 /* YUUUserInfoView.xib in Resources */,
 				18EDE41421257A3A00FC8E0C /* Assets.xcassets in Resources */,
 				09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */,
-				18D3530B21368F4000990F7C /* LICENSE in Resources */,
 				09207E1E21270C6A00952C6D /* YUUMinePool.storyboard in Resources */,
 				091983CD2131A55600E35196 /* YUUTeamInfoView.xib in Resources */,
 				09207E1D21270C6A00952C6D /* YUUMineMachine.storyboard in Resources */,
 				091D8E4B2130DF2C00C430AB /* YUUSellerInfoView.xib in Resources */,
+				0952AC2621391D0B00D701CE /* readme.md in Resources */,
 				18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,21 +718,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5BCBA76D2FDB43A9AEC1E606 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUU/Pods-YUU-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */ = {
@@ -987,110 +747,69 @@
 			files = (
 				0926F0792132993C0083CFDD /* HUDView.m in Sources */,
 				091D8E432130D8C900C430AB /* YUUMineMarketPriceCell.m in Sources */,
-				18D3530C21368F4000990F7C /* HMWADSimulateIDFA.m in Sources */,
+				0952AC2521391D0B00D701CE /* HMWADSimulateIDFA.m in Sources */,
 				09207E2021270C6A00952C6D /* YUUMinePoolCell.m in Sources */,
 				091983D02131A95A00E35196 /* YUUUserInfoView.m in Sources */,
-				18D3536E2137EF1000990F7C /* YUUMachineArrModel.m in Sources */,
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
 				091D8E392130D66D00C430AB /* YUUTransactionModel.m in Sources */,
 				09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */,
 				189CC56A212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m in Sources */,
 				189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */,
-				18D353742137F60700990F7C /* YUUMachinePoolArrModel.m in Sources */,
 				09612992212E40F700D9D02C /* YUUButton.m in Sources */,
-				18D3539B213847BB00990F7C /* YUUSellerOnsaleRequest.m in Sources */,
 				18F85D0E2126BA93001A3205 /* HLCNetworkReachability.m in Sources */,
-				18D353592137E3D700990F7C /* YUUCallCenterRequest.m in Sources */,
 				095F4A69212AC0C000098859 /* UINavigationController+help.m in Sources */,
-				18D353142136A5DC00990F7C /* YUULoginRequest.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
-				18D3537D2138381200990F7C /* YUUPointSellRequest.m in Sources */,
+				0952AC2C21392D2600D701CE /* UIView+Help.m in Sources */,
 				1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */,
-				18D3532621379D9000990F7C /* YUUCommonModel.m in Sources */,
-				18D3533B2137D5C800990F7C /* YUUMineDetailModel.m in Sources */,
-				18D353772138014D00990F7C /* YUUMachineMarketRequest.m in Sources */,
-				18D353172136B00D00990F7C /* YUUForgetRequest.m in Sources */,
-				18D3538021383A5A00990F7C /* YUUPointSellModel.m in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
-				18D353322137D1F400990F7C /* YUUModifyTransactionRequest.m in Sources */,
 				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
 				091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */,
-				18D3532F2137D02700990F7C /* YUUModifyLoginRequest.m in Sources */,
-				18D3538C2138410200990F7C /* YUUPointOnsaleRequest.m in Sources */,
 				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
+				0952AC2021391C4D00D701CE /* YUUEncryMgr.m in Sources */,
 				0926F07321328E200083CFDD /* HUDManager.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
-				18D3538321383D3900990F7C /* YUUPointSellCancelRequest.m in Sources */,
 				09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */,
 				0926F07221328E200083CFDD /* HUD.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				095F4A62212A774C00098859 /* UIColor+Help.m in Sources */,
+				0952AC2921392C9900D701CE /* DrawView.m in Sources */,
 				0926F06B213289050083CFDD /* YUUBorderTextField.m in Sources */,
 				0958B9A4212C031E00B105CE /* YUUMachineModel.m in Sources */,
 				18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */,
-				18D3538621383E1F00990F7C /* YUUPointbuyRequest.m in Sources */,
-				18D3538921383FB600990F7C /* YUUSellerTransactionRequest.m in Sources */,
-				18D3534D2137DCCE00990F7C /* YUUBillModel.m in Sources */,
-				18D353382137D4DE00990F7C /* YUUMineDetailRequest.m in Sources */,
-				18D353112136A16800990F7C /* YUUEncryMgr.m in Sources */,
 				189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */,
-				18D353502137E03800990F7C /* YUUCurrencySellRequest.m in Sources */,
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
 				189CC564212EB9A500E8E2E4 /* YUUCreditCard.m in Sources */,
-				18D353922138438E00990F7C /* YUUSellerSellitRequest.m in Sources */,
-				18D353682137EDFF00990F7C /* YUUBuyMachineRequest.m in Sources */,
 				0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */,
-				18D353232136F30800990F7C /* YUUCertificationRequest.m in Sources */,
 				0926F076213298B20083CFDD /* YUUBorderButton.m in Sources */,
-				18D353952138449700990F7C /* YUUSellerSellitModel.m in Sources */,
-				18D3535C2137E4AF00990F7C /* YUUMilltraderRequest.m in Sources */,
-				1877D4B1213644BC00D5FDAE /* YUURegisterRequest.m in Sources */,
 				18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */,
-				18D3539E2138483000990F7C /* YUUSendMessageRequest.m in Sources */,
 				091D8E452130D8C900C430AB /* YUUMineMarketMailCell.m in Sources */,
 				095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */,
 				09207E1F21270C6A00952C6D /* YUUMinePoolVC.m in Sources */,
-				18D353532137E12D00990F7C /* YUUCurrencyHistoryRequest.m in Sources */,
 				189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */,
 				1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */,
-				18D353292137A2F900990F7C /* YUUProfileMessageListRequest.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
-				18D3532C2137C46F00990F7C /* YUUMsgModel.m in Sources */,
 				09612995212E510A00D9D02C /* YUUPendingOrderVC.m in Sources */,
-				18D3534A2137DC1000990F7C /* YUUBillCenterRequest.m in Sources */,
 				091D8E462130D8C900C430AB /* YUUMineMarketPointCell.m in Sources */,
-				18D353202136F25300990F7C /* YUULauchAppRequest.m in Sources */,
 				0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */,
-				18D353712137F53500990F7C /* YUUMachinepoolRequst.m in Sources */,
-				18D353442137DA3900990F7C /* YUUUserSendAlipayRequest.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
-				18D353982138466E00990F7C /* YUUBuyerTransactionRequest.m in Sources */,
 				091D8E442130D8C900C430AB /* YUUMineMarketVC.m in Sources */,
-				18D353412137D8BB00990F7C /* YUUUserSendwxRequest.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */,
 				1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */,
 				0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */,
-				18D3536B2137EE7E00990F7C /* YUUMachineListRequest.m in Sources */,
-				18D3537A2138025600990F7C /* YUUMachineMarketInfoModel.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
 				189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */,
 				18F85D212129048F001A3205 /* YUUResponse.m in Sources */,
-				18D353472137DB3E00990F7C /* YUUUserSendWalletRequest.m in Sources */,
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
 				095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
 				189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */,
-				18D3538F2138422A00990F7C /* YUUPointOnsaleModel.m in Sources */,
 				1877D4A82131543900D5FDAE /* YUUBillCenterCtrl.m in Sources */,
 				189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */,
 				091D8E492130DF1800C430AB /* YUUSellerInfoView.m in Sources */,
-				18D353352137D36E00990F7C /* YUUForgetTransactionRequest.m in Sources */,
-				18D3535F2137E52900990F7C /* YUUMilltraderModel.m in Sources */,
-				18D353562137E1D500990F7C /* YUUCurrencyHistoryModel.m in Sources */,
 				0958B9A1212C024A00B105CE /* YUUBaseModel.m in Sources */,
 				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 			);
@@ -1169,7 +888,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1221,7 +940,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1233,10 +952,9 @@
 			baseConfigurationReference = D337288ADA5FB1CCA7135CD7 /* Pods-YUU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PCGH4WWPX;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = P6UF878TKN;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1246,8 +964,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "5a5bf09d-5c26-4d4e-81d4-3493912339e1";
+				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1257,7 +975,6 @@
 			baseConfigurationReference = FD6A70E4E5C3398F992757CB /* Pods-YUU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PCGH4WWPX;

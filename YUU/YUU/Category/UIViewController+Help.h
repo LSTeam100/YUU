@@ -12,16 +12,4 @@
 
 + (UIViewController *)currentViewController;
 
-+ (void)alertTitle:(NSString *)title
-           message:(NSString *)message
-         determine:(NSString *)determine
-            cancel:(NSString *)cancel
-  determineHandler:(void (^)(void))determineHandler
-     cancelHandler:(void (^)(void))cancelHandler;
-
-+ (void)alertTitle:(NSString *)title
-           message:(NSString *)message
-         determine:(NSString *)determine
-  determineHandler:(void (^)(void))determineHandler;
-
 @end
