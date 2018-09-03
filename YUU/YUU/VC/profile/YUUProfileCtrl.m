@@ -12,6 +12,7 @@
 #import "YUUCurrencyTransactionCtrl.h"
 #import "YUUMessageCtrl.h"
 #import "YUUSetingCtrl.h"
+#import "YUUProfileAuthenEditeCtrl.h"
 @interface YUUProfileCtrl ()
 @property(nonatomic,weak)IBOutlet UIButton *mineBtn;
 @property(nonatomic,weak)IBOutlet UIButton *billBtn;
@@ -74,6 +75,11 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUSetingCtrl *setting = [sb instantiateViewControllerWithIdentifier:@"YUUSetingCtrl"];
     [self.navigationController pushViewController:setting animated:YES];
+}
+-(IBAction)authenId:(id)sender{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YUUProfileAuthenEditeCtrl * edite = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenEditeCtrl"];
+    [self.navigationController pushViewController:edite animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

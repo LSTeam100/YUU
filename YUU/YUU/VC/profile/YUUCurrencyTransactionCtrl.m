@@ -22,6 +22,8 @@
 
 @interface YUUCurrencyTransactionCtrl ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
+@property(nonatomic,weak)IBOutlet UIButton *leftSelectBtn;
+@property(nonatomic,weak)IBOutlet UIButton *rightSelectBtn;
 
 @end
 
@@ -31,8 +33,28 @@
     [super viewDidLoad];
     self.title = @"币币交易";
     self.tableView.backgroundColor = [UIColor clearColor];
-    // Do any additional setup after loading the view.
+    [self initSegmentBar];
+    
+    
 }
+-(void)initSegmentBar{
+    [self.leftSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_left_selected"] forState:UIControlStateNormal];
+    [self.rightSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
+}
+
+-(IBAction)selectSegment:(UIButton *)clickBtn{
+    if (clickBtn.tag == 0) {
+        [self.leftSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_left_selected"] forState:UIControlStateNormal];
+        [self.rightSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
+    }
+    else{
+        [self.leftSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
+        [self.rightSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_right_selected"] forState:UIControlStateNormal];
+    }
+    
+}
+
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 40;

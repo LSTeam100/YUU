@@ -124,6 +124,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu8-x3-D9P">
                                         <rect key="frame" x="147" y="27" width="81" height="26"/>
                                         <state key="normal" backgroundImage="profile_alauth"/>
+                                        <connections>
+                                            <action selector="authenId:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="Avg-Iv-sfj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-0R-6mE">
                                         <rect key="frame" x="341" y="31" width="19" height="18"/>
