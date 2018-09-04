@@ -52,6 +52,7 @@
     if(responseDictionary!=nil){
         NSNumber *suc=(NSNumber *)responseDictionary[@"succeed"];
         _response.success = suc;
+        _response.code = [responseDictionary[@"code"] intValue];
     }
 }
 -(void)start{
@@ -116,7 +117,6 @@
     [manager POST:url parameters:_parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * result=responseObject;
         [self processResponse:result];
-        
         if([_response isSucceed]){
             if(_onSuccess!=nil){
                 _onSuccess(self);

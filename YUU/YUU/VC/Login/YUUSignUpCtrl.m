@@ -8,6 +8,9 @@
 
 #import "YUUSignUpCtrl.h"
 #import "Header.h"
+#import "YUURegisterRequest.h"
+#import "HUD.h"
+#import "YUUCommonModel.h"
 
 @interface YUUSignUpCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
@@ -102,6 +105,72 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self unregisterKeyboardNotification];
+}
+-(IBAction)registerAction:(id)sender{
+    
+    if (self.phoneField.text.length == 0) {
+        [HUD showHUDTitle:@"手机号码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.messageField.text.length == 0) {
+        [HUD showHUDTitle:@"验证码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.imgField.text == 0) {
+        [HUD showHUDTitle:@"图片验证码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.passwordField.text == 0) {
+        [HUD showHUDTitle:@"密码不能为空" durationTime:2];
+        return;
+    }
+    if (self.recommedField.text == 0) {
+        [HUD showHUDTitle:@"推荐人手机号不能为空" durationTime:2];
+        return;
+    }
+    if (isMobileValid(_phoneField.text) == false) {
+        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+        return;
+    }
+    
+    if (isUserPwdValid(_passwordField.text) == false) {
+        [HUD showHUDTitle:@"密码要是字母+数字的组合且大于8位" durationTime:2];
+        return;
+    }
+    
+    if (isUserPwdValid(_recommedField.text) == false) {
+        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+        return;
+    }
+    
+    [self setBusyIndicatorVisible:YES];
+    
+    YUURegisterRequest *reg = [[YUURegisterRequest alloc]initWithMobilePhone:[NSNumber numberWithInt:[_phoneField.text intValue]] IDCode:[NSNumber numberWithInt:[_messageField.text intValue]] Password:_passwordField.text DeviceId:_recommedField.text SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUCommonModel *model = [request getResponse].data;
+        
+        
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"提示用户错误信息");
+                break;
+            case 1:
+                DLOG(@"锁定发送短信按钮");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+    }];
+    [reg start];
+    
 }
 /*
 #pragma mark - Navigation

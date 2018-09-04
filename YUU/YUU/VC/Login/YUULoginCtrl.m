@@ -8,6 +8,10 @@
 
 #import "YUULoginCtrl.h"
 #import "YUUSignUpCtrl.h"
+#import "YUULoginRequest.h"
+#import "HUDManager.h"
+#import "YUUCommonModel.h"
+#import "YUUUserData.h"
 @interface YUULoginCtrl ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
 {
     IBOutlet UITextField *account;
@@ -115,7 +119,62 @@
     
 }
 
+-(IBAction)login:(id)sender{
+    
+    if (account.text.length == 0) {
+        [[HUDManager manager] showHUDTitle:@"用户名不能为空" durationTitme:2];
+        return;
+    }
+    
+    if(passworad.text.length == 0){
+        [[HUDManager manager] showHUDTitle:@"密码不能为空" durationTitme:2];
 
+        return;
+
+    }
+    
+    if (isMobileValid(account.text) == false) {
+        [[HUDManager manager] showHUDTitle:@"输入手机号有误" durationTitme:2];
+        return;
+    }
+    [self setBusyIndicatorVisible:YES];
+    YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:[NSNumber numberWithInt:[account.text intValue]] Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUCommonModel *login = [request getResponse].data;
+        [[YUUUserData shareInstance] saveUserData:login.memberid];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"用户锁定");
+                break;
+            case 1:
+                DLOG(@"需要提示用户错误信息");
+                break;
+            case 2:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
+
+        [self handleResponseError:self request:request treatErrorAsUnknown:YES];
+        
+        //接口未调试
+        [[YUUUserData shareInstance] saveUserData:[NSNumber numberWithInt:[account.text intValue]]];
+        
+    }];
+    [req start];
+    
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        DLOG(@"关闭登录页面");
+    }];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

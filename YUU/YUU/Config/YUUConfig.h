@@ -82,5 +82,32 @@ NS_INLINE id colorWithHexString(NSString *color,float costomAlpha)
     
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:costomAlpha];
 }
+NS_INLINE int isMobileValid(NSString *phoneNum){
+    NSString * regexPhoneNum = @"[0－9]{11}";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regexPhoneNum];
+    
+    if ([predicate evaluateWithObject:phoneNum] == true) {
+        return 1;
+    }
+    return 0;
+}
+
+//用户名密码正则验证：8个字符以上，由字母和数字组成
+NS_INLINE int isUserPwdValid(NSString *pwd){
+    if (pwd.length < 8) {
+        //长度不对
+        return 0;
+    }
+    NSString *regExp = @"[A-Za-z0-9]+";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regExp];
+    if ([predicate evaluateWithObject:pwd] == true) {
+        return 1;
+    }
+    return 0;
+}
+
+
+
+
 
 #endif /* YUUConfig_h */

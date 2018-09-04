@@ -93,6 +93,10 @@
                    request:(YUUBaseRequest *)request
        treatErrorAsUnknown:(BOOL) treated{
     int statusCode=[request getResponse].code;
+    if (treated) {
+        [self showDefaultFailureMessage];
+
+    }
 //    if (statusCode == 0) {
 //        <#statements#>
 //    }

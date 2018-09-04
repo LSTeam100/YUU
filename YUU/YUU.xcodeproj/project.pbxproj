@@ -66,6 +66,7 @@
 		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
 		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
 		18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */; };
+		18CDC7C5213E3A1C00A405F9 /* YUUUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDC7C4213E3A1C00A405F9 /* YUUUserData.m */; };
 		18D3530B21368F4000990F7C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18D3530721368F4000990F7C /* LICENSE */; };
 		18D3530C21368F4000990F7C /* HMWADSimulateIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D3530821368F4000990F7C /* HMWADSimulateIDFA.m */; };
 		18D3530D21368F4000990F7C /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 18D3530921368F4000990F7C /* readme.md */; };
@@ -249,6 +250,8 @@
 		189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSetingCtrl.m; sourceTree = "<group>"; };
 		18CDC7C0213D548A00A405F9 /* YUUTransactionHistoryCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTransactionHistoryCtrl.h; sourceTree = "<group>"; };
 		18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTransactionHistoryCtrl.m; sourceTree = "<group>"; };
+		18CDC7C3213E3A1C00A405F9 /* YUUUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUUserData.h; sourceTree = "<group>"; };
+		18CDC7C4213E3A1C00A405F9 /* YUUUserData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUUserData.m; sourceTree = "<group>"; };
 		18D3530721368F4000990F7C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		18D3530821368F4000990F7C /* HMWADSimulateIDFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWADSimulateIDFA.m; sourceTree = "<group>"; };
 		18D3530921368F4000990F7C /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
@@ -514,6 +517,8 @@
 				18D3538E2138422A00990F7C /* YUUPointOnsaleModel.m */,
 				18D353932138449700990F7C /* YUUSellerSellitModel.h */,
 				18D353942138449700990F7C /* YUUSellerSellitModel.m */,
+				18CDC7C3213E3A1C00A405F9 /* YUUUserData.h */,
+				18CDC7C4213E3A1C00A405F9 /* YUUUserData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1100,6 +1105,7 @@
 				18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */,
 				095181D0212CECEF0083C009 /* YUUUserModel.m in Sources */,
 				09207E1921270C6A00952C6D /* YUUMachineMarketVC.m in Sources */,
+				18CDC7C5213E3A1C00A405F9 /* YUUUserData.m in Sources */,
 				189CC567212EC4FE00E8E2E4 /* YUUViturlWallet.m in Sources */,
 				18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */,
 				18D3538F2138422A00990F7C /* YUUPointOnsaleModel.m in Sources */,

@@ -7,7 +7,9 @@
 //
 
 #import "YUUForgetCtrl.h"
-
+#import "YUUForgetRequest.h"
+#import "YUUCommonModel.h"
+#import "HUD.h"
 @interface YUUForgetCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     CGFloat originInputTopMargin;
@@ -92,6 +94,35 @@
         self.cstTopMargin.constant = self->originInputTopMargin;
         [self.view layoutIfNeeded];
     }];
+}
+
+-(IBAction)forgetAction:(id)sender{
+    
+    if (self.phoneTextField.text == 0) {
+        [HUD showHUDTitle:@"手机号码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.codeTextField.text == 0) {
+        [HUD showHUDTitle:@"验证码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.passwordField.text == 0) {
+        [HUD showHUDTitle:@"密码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.resetPasswordField.text == 0) {
+        [HUD showHUDTitle:@"重复密码不能为空" durationTime:2];
+        return;
+    }
+    
+    
+    
+
+
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{

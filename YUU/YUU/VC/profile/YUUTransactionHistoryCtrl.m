@@ -10,6 +10,11 @@
 
 @implementation transactionHistoryCell
 
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.bottomView.backgroundColor = colorWithHexString(@"e4c177", 1.0);
+}
+
 @end
 
 
@@ -24,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"交易记录";
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
     // Do any additional setup after loading the view.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

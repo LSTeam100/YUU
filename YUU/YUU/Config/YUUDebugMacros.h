@@ -11,6 +11,8 @@
 
 #include "HLCLog.h"
 
+#define kUserAccountKey @"__cp_account"
+#define kUserPasswordKey @"__cp_password"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 

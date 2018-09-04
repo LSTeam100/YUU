@@ -8,7 +8,8 @@
 
 #import "YUUTabBarController.h"
 #import "UIColor+Help.h"
-
+#import "YUULoginCtrl.h"
+#import "YUUUserData.h"
 @interface YUUTabBarController ()
 
 @end
@@ -17,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tabBar.frame.size.width, 2)];
     aview.backgroundColor = [UIColor hex:@"#e4c177"];
     [self.tabBar addSubview:aview];
@@ -38,7 +38,22 @@
     }
     NSLog(@"%f,%f",self.tabBar.frame.size.width,self.tabBar.frame.size.height);
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self checkLoginStatus];
+}
+-(void)checkLoginStatus{
+    [[YUUUserData shareInstance] getUserData];
+    if ([YUUUserData shareInstance].userName == nil) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
+        [self presentViewController:navi animated:YES completion:^{
+            DLOG(@"展示登录页面");
+        }];
+    }
+    
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
