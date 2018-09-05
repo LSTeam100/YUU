@@ -27,11 +27,9 @@
     _statusView.layer.masksToBounds = YES;
     _statusView.layer.cornerRadius = _statusView.frame.size.width/2;
     _numberLabel.text = model.machineNumber;
-    if (model.type == YUUMachineTypeNew) {
-        _typeLabel.text = @"新手";
-    }
-    _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)model.operationDay, (long)model.operationCycle];
-    _powerLabel.text = [NSString stringWithFormat:@"%ld", (long)model.power];
+    _typeLabel.text = _model.typeName;
+    _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)model.operationDay, (long)model.totaldays];
+    _powerLabel.text = [NSString stringWithFormat:@"%ld", (long)model.compower];
     _outputLabel.text = [NSString stringWithFormat:@"%.2f", model.output];
     if (model.receive == YUUMachineReceiveNo) {
         _receiveLabel.text = @"未领取";

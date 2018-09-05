@@ -7,8 +7,14 @@
 //
 
 #import "YUUPendingOrderVC.h"
+#import "SHSegmentView.h"
+#import "PendingTableViewCell.h"
 
-@interface YUUPendingOrderVC ()
+@interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) NSArray *items;
+
+@property (nonatomic, strong) SHSegmentView *segmentView;
 
 @end
 
@@ -22,22 +28,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedRowHeight = 100;
     
+    _segmentView = [[SHSegmentView alloc] init];
+    [self.view addSubview:_segmentView];
+    WeakSelf
+    [_segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(weakSelf.view);
+        make.left.mas_equalTo(weakSelf.view).mas_offset(40);
+        make.height.mas_equalTo(40);
+        make.bottom.mas_equalTo(weakSelf.tableView.mas_top).mas_offset(-20);
+    }];
+    
+    [_segmentView setSegmentTitles:@[@"买家看板", @"交易信箱"] segmentSelectedAtIndex:^(NSInteger index) {
+        
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource -
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PendingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingTableViewCell"];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+    return cell;
 }
-*/
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return _items.count;
+}
+
+#pragma mark - UITableViewDelegate -
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return  84;
+}
+
 
 @end

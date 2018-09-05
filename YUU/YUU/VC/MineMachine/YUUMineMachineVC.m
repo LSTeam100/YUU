@@ -35,9 +35,9 @@
     YUUMachineModel *model = [[YUUMachineModel alloc] init];
     model.status = YUUMachineStatusDefault;
     model.machineNumber = @"S00922";
-    model.type = YUUMachineTypeNew;
+    model.type = YUUMilltypeNovice;
     model.operationDay = 5;
-    model.operationCycle = 200;
+    model.totalcoins = 200;
     model.output = 12.8;
     model.receive = YUUMachineReceiveNo;
     _items = [NSMutableArray array];

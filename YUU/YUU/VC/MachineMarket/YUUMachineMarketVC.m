@@ -10,6 +10,7 @@
 #import "YUUMachineMarketCell.h"
 #import "YUUBaseTableView.h"
 #import "UIViewController+Help.h"
+#import "AlertController.h"
 
 @interface YUUMachineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMachineMarketCellDelegate>
 
@@ -35,10 +36,10 @@
     YUUMachineModel *model = [[YUUMachineModel alloc] init];
     model.icon = @"miningMachine0";
     model.name = @"新手云矿机";
-    model.power = 6;
-    model.operationCycle = 500;
-    model.allIncome = 188.9;
-    model.price = 120;
+    model.compower = 6;
+    model.totaldays = 500;
+    model.totalcoins = 188.9;
+    model.millprice = 120;
     _items = @[model];
     
 
@@ -82,7 +83,7 @@
 
 #pragma mark - YUUMachineMarketCellDelegate -
 - (void)buyMachine:(YUUMachineModel *)model {
-    [UIViewController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
+    [AlertController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
         
     } cancelHandler:^{
         
