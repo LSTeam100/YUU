@@ -1,19 +1,20 @@
 //
-//  YUUMinePoolVC.m
+//  YUUMineralPoolVC.m
 //  YUU
 //
 //  Created by boli on 2018/8/17.
 //  Copyright © 2018年 boli. All rights reserved.
 //
 
-#import "YUUMinePoolVC.h"
-#import "YUUMinePoolCell.h"
+#import "YUUMineralPoolVC.h"
+#import "YUUMineralPoolCell.h"
 #import "SHSegmentView.h"
 #import "Header.h"
 #import "YUUTeamInfoView.h"
 #import "YUUUserInfoView.h"
+#import "GetMineralPoolRequest.h"
 
-@interface YUUMinePoolVC () <UITableViewDelegate, UITableViewDataSource, HUDProtocol>
+@interface YUUMineralPoolVC () <UITableViewDelegate, UITableViewDataSource, HUDProtocol>
 
 @property (strong, nonatomic) IBOutlet UILabel *powerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minerCountLabel;
@@ -21,13 +22,14 @@
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) MineralPoolModel *model;
 
 @end
 
-@implementation YUUMinePoolVC
+@implementation YUUMineralPoolVC
 
 + (instancetype)storyboardInstanceType {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YUUMinePool" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YUUMineralPool" bundle:nil];
     return [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([self class])];
 }
 
@@ -49,6 +51,24 @@
         [_items addObject:model];
     }
     
+}
+
+- (void)getHTTPData {
+    WeakSelf
+    GetMineralPoolRequest *request = [[GetMineralPoolRequest alloc] initWithSuccess:^(YUUBaseRequest *request) {
+        weakSelf.model = request.getResponse.data;
+        [weakSelf setupUI];
+    } failure:^(YUUBaseRequest *request) {
+        
+    }];
+    [request start];
+}
+
+- (void)setupUI {
+    _powerLabel.text = [NSString stringWithFormat:@"%ld",_model.millspoolpower];
+    _minerCountLabel.text = [NSString stringWithFormat:@"%ld",_model.totalminers];
+    _items = _model.directid;
+    [_tableView reloadData];
 }
 
 - (void)addSegment {
@@ -86,7 +106,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YUUMinePoolCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMinePoolCell"];
+    YUUMineralPoolCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineralPoolCell"];
     cell.model = _items[indexPath.row];
     return cell;
 }

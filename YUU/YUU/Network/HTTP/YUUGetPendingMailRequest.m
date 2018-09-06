@@ -1,14 +1,14 @@
 //
-//  YUUGetPendingOrderBuyerRequest.m
+//  YUUGetPendingMailRequest.m
 //  YUU
 //
 //  Created by boli on 2018/9/5.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "YUUGetPendingOrderBuyerRequest.h"
+#import "YUUGetPendingMailRequest.h"
 
-@implementation YUUGetPendingOrderBuyerRequest
+@implementation YUUGetPendingMailRequest
 
 - (instancetype)initWithUserLevel:(UserLevel)level
                           success:(onSuccessCallback)success
@@ -26,14 +26,12 @@
 }
 
 - (id)processResponseToModel:(NSDictionary *)dict {
-    NSArray *arr = [YUUPendingBuyerModel mj_objectArrayWithKeyValuesArray:[dict objectForKey:@"buylist"]];
+    NSArray *arr = [YUUPendingMailboxModel mj_objectArrayWithKeyValuesArray:[dict objectForKey:@"maildata"]];
     return arr;
 }
 
 - (NSString *)getURL {
-    return @"/sellrecord/";
+    return @"/upordermail/";
 }
-
-
 
 @end

@@ -10,9 +10,17 @@
 #define Header_h
 
 #import <Masonry/Masonry.h>
+#import <MJExtension/MJExtension.h>
 #import "YUUColor.h"
 #import "HUD.h"
 
 #define WeakSelf __weak typeof(self) weakSelf = self;
+
+typedef NS_ENUM(NSInteger, UserLevel) {
+    UserLevelNovice = 0, // 新手
+    UserLevelAdvanced = 1, // 进阶
+    UserLevelMaster = 2, // 高手
+    UserLevelInternational = 3, // 国际
+};
 
 #endif /* Header_h */

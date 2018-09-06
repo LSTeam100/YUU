@@ -6,8 +6,8 @@
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "YUUBaseRequest.h"
+#import "BaseHTTP.h"
 
-@interface MachineMarketRequest : YUUBaseRequest
+@interface MachineMarketRequest : BaseHTTP
 
 @end

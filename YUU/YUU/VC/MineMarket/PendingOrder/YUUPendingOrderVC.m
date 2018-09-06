@@ -9,6 +9,8 @@
 #import "YUUPendingOrderVC.h"
 #import "SHSegmentView.h"
 #import "PendingTableViewCell.h"
+#import "YUUGetPendingMailRequest.h"
+#import "YUUGetPendingOrderBuyerRequest.h"
 
 @interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -42,8 +44,22 @@
     }];
     
     [_segmentView setSegmentTitles:@[@"买家看板", @"交易信箱"] segmentSelectedAtIndex:^(NSInteger index) {
-        
+        if (index == 0) {
+            [self getBuyerInfo];
+        } else {
+            [self getMailInfo];
+        }
     }];
+    
+    [self getBuyerInfo];
+}
+
+- (void)getBuyerInfo {
+    
+}
+
+- (void)getMailInfo {
+    
 }
 
 #pragma mark - UITableViewDataSource -

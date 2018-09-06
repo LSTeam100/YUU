@@ -1,5 +1,5 @@
 //
-//  YUUMinePoolCell.h
+//  YUUMineralPoolCell.h
 //  YUU
 //
 //  Created by boli on 2018/8/17.
@@ -10,7 +10,7 @@
 #import "YUUUserModel.h"
 #import "YUUBaseTableViewCell.h"
 
-@interface YUUMinePoolCell : YUUBaseTableViewCell
+@interface YUUMineralPoolCell : YUUBaseTableViewCell
 
 @property (strong, nonatomic) IBOutlet UIView *bgView;
 @property (strong, nonatomic) IBOutlet UIImageView *icon;

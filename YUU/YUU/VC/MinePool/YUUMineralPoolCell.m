@@ -1,15 +1,15 @@
 //
-//  YUUMinePoolCell.m
+//  YUUMineralPoolCell.m
 //  YUU
 //
 //  Created by boli on 2018/8/17.
 //  Copyright © 2018年 boli. All rights reserved.
 //
 
-#import "YUUMinePoolCell.h"
+#import "YUUMineralPoolCell.h"
 #import "Header.h"
 
-@implementation YUUMinePoolCell
+@implementation YUUMineralPoolCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

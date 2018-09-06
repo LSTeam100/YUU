@@ -1,5 +1,5 @@
 //
-//  YUUGetPendingOrderBuyerRequest.h
+//  YUUGetPendingMailRequest.h
 //  YUU
 //
 //  Created by boli on 2018/9/5.
@@ -7,9 +7,9 @@
 //
 
 #import "BaseHTTP.h"
-#import "YUUPendingBuyerModel.h"
+#import "YUUPendingMailboxModel.h"
 
-@interface YUUGetPendingOrderBuyerRequest : BaseHTTP
+@interface YUUGetPendingMailRequest : BaseHTTP
 
 - (instancetype)initWithUserLevel:(UserLevel)level
                           success:(onSuccessCallback)success

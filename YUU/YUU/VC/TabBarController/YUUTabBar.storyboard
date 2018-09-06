@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QGN-cz-vlM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="-549" y="-229"/>
         </scene>
-        <!--YUUMinePool-->
+        <!--YUUMineralPool-->
         <scene sceneID="kP6-t6-CqQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="YUUMinePool" id="zpI-Kx-d6j" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="YUUMineralPool" id="zpI-Kx-d6j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="vtF-cN-Nad"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEY-kh-n9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,14 +93,14 @@
                         <viewControllerLayoutGuide type="bottom" id="sog-FN-HLf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q1O-15-lWl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-49-kFl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abc-II-ax3">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="DGB-tX-pAw">
                                         <rect key="frame" x="13.5" y="19.5" width="40" height="41"/>
@@ -122,15 +118,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu8-x3-D9P">
-                                        <rect key="frame" x="147" y="27" width="81" height="26"/>
+                                        <rect key="frame" x="259.5" y="27" width="81" height="26"/>
                                         <state key="normal" backgroundImage="profile_alauth"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-0R-6mE">
-                                        <rect key="frame" x="341" y="31" width="19" height="18"/>
+                                        <rect key="frame" x="566" y="31" width="19" height="18"/>
                                         <state key="normal" backgroundImage="profile_setting"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-ce-vyB">
-                                        <rect key="frame" x="296" y="30" width="20" height="20"/>
+                                        <rect key="frame" x="521" y="30" width="20" height="20"/>
                                         <state key="normal" backgroundImage="profile_wechat_icon"/>
                                     </button>
                                 </subviews>
@@ -152,19 +148,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqa-ss-5kG">
-                                <rect key="frame" x="15" y="100" width="345" height="187"/>
+                                <rect key="frame" x="15" y="100" width="570" height="187"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_asset" translatesAutoresizingMaskIntoConstraints="NO" id="P95-wd-rC6">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="187"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="570" height="187"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="资产总额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQW-K6-sBe">
-                                        <rect key="frame" x="133.5" y="24" width="77.5" height="23"/>
+                                        <rect key="frame" x="246" y="24" width="77.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l11-Sv-h9e">
-                                        <rect key="frame" x="85.5" y="64" width="174.5" height="36"/>
+                                        <rect key="frame" x="198" y="64" width="174.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -223,22 +219,22 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5I-AK-efs">
-                                <rect key="frame" x="0.0" y="287" width="375" height="331"/>
+                                <rect key="frame" x="0.0" y="287" width="600" height="264"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kH-T9-Po5">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="165.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0K-J1-xj4">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="165.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
                                                 <connections>
                                                     <action selector="naviToMine:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="iYJ-gD-suS"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_mine" translatesAutoresizingMaskIntoConstraints="NO" id="Y2r-2b-0hB">
-                                                <rect key="frame" x="28" y="29" width="69" height="74"/>
+                                                <rect key="frame" x="65.5" y="29" width="69" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人资料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9Y-Sc-HIx">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="20.5"/>
+                                                <rect key="frame" x="65" y="116" width="69.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -257,19 +253,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aP-hn-fam">
-                                        <rect key="frame" x="0.0" y="165.5" width="125" height="165.5"/>
+                                        <rect key="frame" x="0.0" y="132" width="200" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-h7-39r">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="165.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
                                                 <connections>
                                                     <action selector="naviToBussniess:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="e0M-dJ-z6I"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_business" translatesAutoresizingMaskIntoConstraints="NO" id="cOh-W5-UDr">
-                                                <rect key="frame" x="28" y="29" width="69" height="74"/>
+                                                <rect key="frame" x="65.5" y="29" width="69" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家入驻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXj-Ga-ZPP">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
+                                                <rect key="frame" x="65" y="116" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -288,19 +284,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQZ-3I-uDP">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="165.5"/>
+                                        <rect key="frame" x="200" y="0.0" width="200" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-u8-ndQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="165.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
                                                 <connections>
                                                     <action selector="naviToBill:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="mEi-h6-Fwf"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_bills" translatesAutoresizingMaskIntoConstraints="NO" id="ThS-ZD-bwX">
-                                                <rect key="frame" x="28" y="29" width="69" height="73"/>
+                                                <rect key="frame" x="65.5" y="29" width="69" height="73"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账单中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0h-la-VDX">
-                                                <rect key="frame" x="27.5" y="115" width="69.5" height="21"/>
+                                                <rect key="frame" x="65" y="115" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -319,19 +315,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJ7-Sc-R91">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="165.5"/>
+                                        <rect key="frame" x="400" y="0.0" width="200" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zq1-hM-7Zz">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="165.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
                                                 <connections>
                                                     <action selector="naviToCoin:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="eeA-ux-nfz"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_coin" translatesAutoresizingMaskIntoConstraints="NO" id="HTv-nY-aCQ">
-                                                <rect key="frame" x="28" y="29" width="69" height="73"/>
+                                                <rect key="frame" x="65.5" y="29" width="69" height="73"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="币币兑换" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g40-fI-2dO">
-                                                <rect key="frame" x="28" y="115" width="69.5" height="21"/>
+                                                <rect key="frame" x="65.5" y="115" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -350,19 +346,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcS-8n-tuF">
-                                        <rect key="frame" x="250" y="165.5" width="125" height="165.5"/>
+                                        <rect key="frame" x="400" y="132" width="200" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCk-s4-Wn3">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="165.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
                                                 <connections>
                                                     <action selector="naviToGames:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="jur-gG-euL"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_games" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-be-ATO">
-                                                <rect key="frame" x="27.5" y="29" width="70" height="74"/>
+                                                <rect key="frame" x="65" y="29" width="70" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏娱乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArZ-P4-Xej">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
+                                                <rect key="frame" x="65" y="116" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -381,19 +377,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jy-xD-rAQ">
-                                        <rect key="frame" x="125" y="165.5" width="125" height="165.5"/>
+                                        <rect key="frame" x="200" y="132" width="200" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ins-iS-sQz">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="165.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="132"/>
                                                 <connections>
                                                     <action selector="naviToCostom:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="8Ra-eh-AAd"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_costmer" translatesAutoresizingMaskIntoConstraints="NO" id="qfB-eB-0T3">
-                                                <rect key="frame" x="28" y="29" width="69" height="74"/>
+                                                <rect key="frame" x="65.5" y="29" width="69" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客服中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNL-jK-hbp">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
+                                                <rect key="frame" x="65" y="116" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
