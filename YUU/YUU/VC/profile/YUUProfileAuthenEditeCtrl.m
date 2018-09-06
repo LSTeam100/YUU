@@ -7,7 +7,10 @@
 //
 
 #import "YUUProfileAuthenEditeCtrl.h"
-
+#import "HUD.h"
+#import "YUUCommonModel.h"
+#import "YUUCertificationRequest.h"
+#import "YUUUserData.h"
 @interface YUUProfileAuthenEditeCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     CGFloat originInputTopMargin;
@@ -99,6 +102,60 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self unregisterKeyboardNotification];
+}
+
+-(IBAction)submitAction:(id)sender{
+    
+    
+    if (self.nameField.text.length == 0) {
+        [HUD showHUDTitle:@"姓名不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.idCardField.text.length == 0) {
+        [HUD showHUDTitle:@"身份证号不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.bankField.text.length == 0) {
+        [HUD showHUDTitle:@"银行卡号不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.prePhoneField.text.length == 0) {
+        [HUD showHUDTitle:@"预留手机号不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.messageCode.text.length == 0) {
+        [HUD showHUDTitle:@"验证码不能为空" durationTime:2];
+        return;
+    }
+    
+    
+    if (isMobileValid(self.prePhoneField.text) == false) {
+        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+        return;
+    }
+    
+    [self setBusyIndicatorVisible:YES];
+    
+    NSString *token = [YUUUserData shareInstance].token;
+    
+    YUUCertificationRequest *auth = [[YUUCertificationRequest alloc]initWithCertification:self.nameField.text Membercardid:self.idCardField.text Bankcard:[NSNumber numberWithInt:[self.bankField.text intValue]] Bankphone:[NSNumber numberWithInt:[self.prePhoneField.text intValue]] Code:self.messageCode.text Token:token SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+
+    }];
+    [auth start];
+    
+    
+    
+    
+    
 }
 /*
 #pragma mark - Navigation

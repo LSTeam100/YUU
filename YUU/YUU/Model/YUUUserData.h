@@ -11,6 +11,7 @@
 @interface YUUUserData : NSObject
 @property(nonatomic,assign)BOOL haveSigned;
 @property(nonatomic,strong)NSString *userName;
+@property(nonatomic,strong)NSString *token;
 
 
 + (instancetype)shareInstance;

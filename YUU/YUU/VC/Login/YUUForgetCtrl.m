@@ -120,6 +120,55 @@
     
     
     
+    if (isMobileValid(self.phoneTextField.text) == false) {
+        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+        return;
+    }
+    
+    if (isUserPwdValid(self.passwordField.text) == false) {
+        [HUD showHUDTitle:@"密码要是字母+数字的组合且大于8位" durationTime:2];
+        return;
+    }
+    
+    if (self.passwordField.text != self.resetPasswordField.text) {
+        [HUD showHUDTitle:@"密码输入不一致" durationTime:2];
+        return;
+    }
+    
+    [self setBusyIndicatorVisible:YES];
+
+    YUUForgetRequest *forget = [[YUUForgetRequest alloc]initWithMobilePhone:[NSNumber numberWithInt:[self.passwordField.text intValue]] Password:self.passwordField.text IDCode:[NSNumber numberWithInt:[self.codeTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        [HUD showHUDTitle:@"成功重置密码" durationTime:2];
+
+
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                [HUD showHUDTitle:res.msg durationTime:2];
+                break;
+            case 1:
+                [HUD showHUDTitle:@"token无效" durationTime:2];
+                break;
+            case 2:
+                [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
+                break;
+            default:
+                break;
+        }
+
+    }];
+    
+    [forget start];
+    
+    
+    
+    
+    
+    
+    
 
 
     
