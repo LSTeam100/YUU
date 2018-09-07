@@ -9,5 +9,5 @@
 #import "YUUBaseRequest.h"
 
 @interface YUULauchAppRequest : YUUBaseRequest
--(id)initWithMobilePhone:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
+-(id)initWithAppRequest:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 @end

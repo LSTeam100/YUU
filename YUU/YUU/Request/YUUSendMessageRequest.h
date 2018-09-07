@@ -9,5 +9,5 @@
 #import "YUUBaseRequest.h"
 
 @interface YUUSendMessageRequest : YUUBaseRequest
-
+-(id)initWithSendMessage:(NSNumber *)memberphone SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 @end

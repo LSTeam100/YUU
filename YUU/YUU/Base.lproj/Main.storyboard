@@ -1231,6 +1231,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLc-oG-0Bt">
                                                     <rect key="frame" x="278" y="11" width="81" height="26"/>
                                                     <state key="normal" backgroundImage="profile_alauth"/>
+                                                    <connections>
+                                                        <action selector="authenAction:" destination="4fz-01-91k" eventType="touchUpInside" id="iSm-AO-4M1"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1388888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYB-J4-nkw">
                                                     <rect key="frame" x="208.5" y="17.5" width="51.5" height="15"/>
@@ -1320,7 +1323,7 @@
         <!--Profile Authen Ctrl-->
         <scene sceneID="kb3-v2-0ad">
             <objects>
-                <viewController id="btX-wW-Onr" customClass="YUUProfileAuthenCtrl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YUUProfileAuthenCtrl" id="btX-wW-Onr" customClass="YUUProfileAuthenCtrl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g3D-Uo-Fsq"/>
                         <viewControllerLayoutGuide type="bottom" id="z57-LA-SCe"/>
@@ -1591,6 +1594,9 @@
                                 <state key="normal" backgroundImage="btn_commit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitAction:" destination="TJz-9A-gBV" eventType="touchUpInside" id="fnN-bM-NpF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请务必提交正确的信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxX-pf-Crj">
                                 <rect key="frame" x="31" y="415.5" width="313" height="21"/>
@@ -1645,13 +1651,23 @@
                                 <state key="normal" title="发送短信" backgroundImage="profile_sendmessage">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendVerifyCode:" destination="TJz-9A-gBV" eventType="touchUpInside" id="rCI-q0-DaF"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCs-YC-3hp">
+                                <rect key="frame" x="289" y="311.5" width="31" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rdf-UN-PBt" firstAttribute="top" secondItem="KAR-Ly-01R" secondAttribute="bottom" constant="10" id="2cl-ru-Pp0"/>
                             <constraint firstItem="rdf-UN-PBt" firstAttribute="leading" secondItem="m11-Ek-WlF" secondAttribute="leadingMargin" constant="15" id="6Df-1e-hvV"/>
                             <constraint firstItem="v0q-25-ffM" firstAttribute="leading" secondItem="m11-Ek-WlF" secondAttribute="leadingMargin" constant="15" id="8Ch-lx-vCp"/>
+                            <constraint firstItem="FCs-YC-3hp" firstAttribute="leading" secondItem="KAR-Ly-01R" secondAttribute="trailing" constant="30" id="9Fg-bb-vtP"/>
                             <constraint firstItem="lDN-T4-YG7" firstAttribute="leading" secondItem="m11-Ek-WlF" secondAttribute="leadingMargin" constant="15" id="A4y-Dg-8cO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rdf-UN-PBt" secondAttribute="trailing" constant="15" id="DhN-xG-URf"/>
                             <constraint firstItem="ZLV-Nq-9Om" firstAttribute="top" secondItem="v0q-25-ffM" secondAttribute="bottom" constant="10" id="Jo3-QG-Kfx"/>
@@ -1664,6 +1680,7 @@
                             <constraint firstItem="4HD-mF-NgJ" firstAttribute="leading" secondItem="KAR-Ly-01R" secondAttribute="trailing" constant="10" id="SmL-XG-Knu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZLV-Nq-9Om" secondAttribute="trailing" constant="15" id="SuO-CF-gOT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UxX-pf-Crj" secondAttribute="trailing" constant="15" id="VTW-ba-n5V"/>
+                            <constraint firstItem="v0q-25-ffM" firstAttribute="top" secondItem="ac8-mh-iOg" secondAttribute="bottom" constant="12" id="WWI-3U-1lq"/>
                             <constraint firstItem="4HD-mF-NgJ" firstAttribute="centerY" secondItem="KAR-Ly-01R" secondAttribute="centerY" id="WYv-xn-H9Z"/>
                             <constraint firstItem="0kq-el-TVm" firstAttribute="leading" secondItem="u0Q-5V-EEn" secondAttribute="leading" id="YF7-fV-mJp"/>
                             <constraint firstItem="UxX-pf-Crj" firstAttribute="leading" secondItem="m11-Ek-WlF" secondAttribute="leadingMargin" constant="15" id="YUI-N1-Jdh"/>
@@ -1677,18 +1694,20 @@
                             <constraint firstItem="u0Q-5V-EEn" firstAttribute="top" secondItem="ZLV-Nq-9Om" secondAttribute="bottom" constant="10" id="n34-E2-C6N"/>
                             <constraint firstItem="ac8-mh-iOg" firstAttribute="leading" secondItem="m11-Ek-WlF" secondAttribute="leadingMargin" constant="15" id="oOe-cN-ze1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lDN-T4-YG7" secondAttribute="trailing" constant="15" id="pSt-cu-z48"/>
+                            <constraint firstItem="FCs-YC-3hp" firstAttribute="centerY" secondItem="KAR-Ly-01R" secondAttribute="centerY" id="r8t-Q6-Nf7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4HD-mF-NgJ" secondAttribute="trailing" constant="15" id="suY-Bl-mzc"/>
-                            <constraint firstItem="ac8-mh-iOg" firstAttribute="top" secondItem="5ru-LW-saE" secondAttribute="bottom" constant="23" id="tLl-RL-oII"/>
                             <constraint firstItem="ZLV-Nq-9Om" firstAttribute="leading" secondItem="m11-Ek-WlF" secondAttribute="leadingMargin" constant="15" id="xiN-Dp-XKu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bankField" destination="N28-bY-7wy" id="MdX-ZZ-4aL"/>
+                        <outlet property="countDownLabel" destination="FCs-YC-3hp" id="Cga-BL-lZ1"/>
                         <outlet property="cstTopMargin" destination="QLy-eT-XnK" id="mUK-Dd-oah"/>
                         <outlet property="idCardField" destination="hgK-ai-ecL" id="t5a-OI-OTM"/>
                         <outlet property="messageCode" destination="8DE-Dx-wkr" id="bzf-2C-IQw"/>
                         <outlet property="nameField" destination="1qp-rY-chw" id="IIp-Yn-DVf"/>
                         <outlet property="prePhoneField" destination="btY-W7-F50" id="6ac-Io-Mi6"/>
+                        <outlet property="sendMsgBtn" destination="4HD-mF-NgJ" id="uBz-13-w3B"/>
                         <outlet property="submitBtn" destination="rdf-UN-PBt" id="nBU-kp-iqf"/>
                     </connections>
                 </viewController>
@@ -2029,7 +2048,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_more_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yAd-zQ-pFK">
-                                                            <rect key="frame" x="336" y="41.5" width="9" height="16"/>
+                                                            <rect key="frame" x="326" y="41.5" width="9" height="16"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihE-iJ-zKf">
                                                             <rect key="frame" x="15" y="67.5" width="58" height="17"/>
@@ -2042,7 +2061,7 @@
                                                     <constraints>
                                                         <constraint firstItem="dR5-YL-R0p" firstAttribute="top" secondItem="GIB-hB-AqK" secondAttribute="top" constant="30" id="24N-Qg-9K2"/>
                                                         <constraint firstItem="yAd-zQ-pFK" firstAttribute="centerY" secondItem="GIB-hB-AqK" secondAttribute="centerY" id="3ym-lq-Nqe"/>
-                                                        <constraint firstAttribute="trailing" secondItem="yAd-zQ-pFK" secondAttribute="trailing" id="6ts-nd-HxK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yAd-zQ-pFK" secondAttribute="trailing" constant="10" id="6ts-nd-HxK"/>
                                                         <constraint firstItem="LUD-Md-c8J" firstAttribute="centerX" secondItem="GIB-hB-AqK" secondAttribute="centerX" id="8wY-vm-cbv"/>
                                                         <constraint firstItem="ihE-iJ-zKf" firstAttribute="leading" secondItem="GIB-hB-AqK" secondAttribute="leading" constant="15" id="Ps5-V4-KH0"/>
                                                         <constraint firstItem="dR5-YL-R0p" firstAttribute="leading" secondItem="GIB-hB-AqK" secondAttribute="leading" constant="20" id="fuW-aQ-pLw"/>
@@ -2126,7 +2145,7 @@
         <!--Credit Card-->
         <scene sceneID="KOK-P1-uRa">
             <objects>
-                <viewController id="mcx-Gb-6I7" customClass="YUUCreditCard" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YUUCreditCard" id="mcx-Gb-6I7" customClass="YUUCreditCard" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jdo-Kf-EAq"/>
                         <viewControllerLayoutGuide type="bottom" id="52A-sj-RRO"/>

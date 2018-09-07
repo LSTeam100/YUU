@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface YUUUserData : NSObject
+#import "YUUCommonModel.h"
+@interface YUUUserData : NSObject 
 @property(nonatomic,assign)BOOL haveSigned;
-@property(nonatomic,strong)NSString *userName;
-@property(nonatomic,strong)NSString *token;
+@property(nonatomic,strong)YUUCommonModel *userModel;
+//@property(nonatomic,strong)NSString *userName;
 
 
 + (instancetype)shareInstance;
 -(void)getUserData;
--(void)saveUserData:(NSNumber *)userName;
-
+-(void)saveUserData:(YUUCommonModel *)userModel;
 @end

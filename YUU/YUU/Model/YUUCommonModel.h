@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YUUCommonModel : NSObject
+@interface YUUCommonModel : NSObject <NSCoding>
 @property(nonatomic,strong)NSString *headphoto;
 @property(nonatomic,strong)NSString *membergrade;
 @property(nonatomic,strong)NSNumber *memberid;

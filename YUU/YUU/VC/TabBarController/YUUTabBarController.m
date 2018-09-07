@@ -44,7 +44,7 @@
 }
 -(void)checkLoginStatus{
     [[YUUUserData shareInstance] getUserData];
-    if ([YUUUserData shareInstance].userName == nil) {
+    if ([YUUUserData shareInstance].userModel == nil) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
         [self presentViewController:navi animated:YES completion:^{

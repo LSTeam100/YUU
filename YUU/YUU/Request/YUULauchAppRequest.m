@@ -9,7 +9,7 @@
 #import "YUULauchAppRequest.h"
 #import "YUUCommonModel.h"
 @implementation YUULauchAppRequest
--(id)initWithMobilePhone:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+-(id)initWithAppRequest:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
@@ -26,7 +26,7 @@
 }
 
 -(NSString *)getURL{
-    return @"/";
+    return @"/openapp";
 }
 
 -(NSString *)getMethod{

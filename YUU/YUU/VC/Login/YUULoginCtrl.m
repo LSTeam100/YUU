@@ -141,7 +141,7 @@
     YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:[NSNumber numberWithInt:[account.text intValue]] Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUCommonModel *login = [request getResponse].data;
-        [[YUUUserData shareInstance] saveUserData:login.memberid];
+        [[YUUUserData shareInstance] saveUserData:login];
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -153,7 +153,7 @@
             case 1:
                 DLOG(@"需要提示用户错误信息");
                 break;
-            case 2:
+            case 3:
                 DLOG(@"闭市");
                 break;
             default:
@@ -164,7 +164,10 @@
         [self handleResponseError:self request:request treatErrorAsUnknown:YES];
         
         //接口未调试
-        [[YUUUserData shareInstance] saveUserData:[NSNumber numberWithInt:[account.text intValue]]];
+        YUUCommonModel *model = [[YUUCommonModel alloc]init];
+        model.memberid = [NSNumber numberWithInt:[account.text intValue]];
+        model.token = @"dskljfklsjkfljk";
+        [[YUUUserData shareInstance] saveUserData:model];
         
     }];
     [req start];

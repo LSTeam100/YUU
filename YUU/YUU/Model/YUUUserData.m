@@ -19,16 +19,19 @@
     return user;
 }
 
--(void)saveUserData:(NSNumber *)userName{
+-(void)saveUserData:(YUUCommonModel *)userModel{
     NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
-    [userdefault setObject:userName forKey:kUserAccountKey];
-//    [userdefault setObject:password forKey:kUserPasswordKey];
+    NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:userModel];
+    [userdefault setObject:userData forKey:kUserAccountKey];
     [userdefault synchronize];
 }
 -(void)getUserData{
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    self.userName = [userDefault objectForKey:kUserAccountKey];
-    if (self.userName != nil) {
+    NSData *userData = [userDefault objectForKey:kUserAccountKey];
+    self.userModel = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    
+    if (self.userModel != nil) {
+        DLOG(@"self.userModel.memberid=%@",self.userModel.memberid);
         self.haveSigned = YES;
     }
 }

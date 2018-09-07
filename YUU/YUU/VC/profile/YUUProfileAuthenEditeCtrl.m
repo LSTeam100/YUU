@@ -11,10 +11,14 @@
 #import "YUUCommonModel.h"
 #import "YUUCertificationRequest.h"
 #import "YUUUserData.h"
+#import "YUUSendMessageRequest.h"
+//static NSTimer *countDownTimer;
+
 @interface YUUProfileAuthenEditeCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     CGFloat originInputTopMargin;
-    
+    NSTimer *countDownTimer;
+    int countNum;
 }
 @property(nonatomic,weak)IBOutlet UITextField *nameField;
 @property(nonatomic,weak)IBOutlet UITextField *idCardField;
@@ -22,6 +26,8 @@
 @property(nonatomic,weak)IBOutlet UITextField *prePhoneField;
 @property(nonatomic,weak)IBOutlet UITextField *messageCode;
 @property(nonatomic,weak)IBOutlet UIButton *submitBtn;
+@property(nonatomic,weak)IBOutlet UIButton *sendMsgBtn;
+@property(nonatomic,weak)IBOutlet UILabel *countDownLabel;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint *cstTopMargin;
 
 @property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
@@ -35,8 +41,22 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
-    // Do any additional setup after loading the view.
+    
+    
+
+    if (countDownTimer) {
+        self.countDownLabel.hidden = NO;
+        self.sendMsgBtn.hidden = YES;
+
+    }
+    else{
+        self.countDownLabel.hidden = YES;
+        self.sendMsgBtn.hidden = NO;
+        countNum = 300;
+
+    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -103,9 +123,63 @@
     [super viewWillDisappear:animated];
     [self unregisterKeyboardNotification];
 }
-
--(IBAction)submitAction:(id)sender{
+-(IBAction)sendVerifyCode:(id)sender{
+    if (self.prePhoneField.text.length == 0) {
+        [HUD showHUDTitle:@"预留手机号不能为空" durationTime:2];
+        return;
+    }
     
+    if (isMobileValid(self.prePhoneField.text) == false) {
+        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+        return;
+    }
+    
+    [self setBusyIndicatorVisible:YES];
+    YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:[NSNumber numberWithInt:[self.prePhoneField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        if (countDownTimer == nil) {
+            countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        }
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        if (countDownTimer == nil) {
+            countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        }
+       YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"错误信息");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+
+    }];
+    [sendMsg start];
+    
+    
+    
+}
+-(void)timerAction{
+    self.countDownLabel.hidden = NO;
+    self.sendMsgBtn.hidden = YES;
+    countNum --;
+    if (countNum == 0) {
+        [countDownTimer invalidate];
+        countDownTimer = nil;
+        self.sendMsgBtn.hidden = NO;
+        self.countDownLabel.hidden = YES;
+    }
+    else{
+        self.countDownLabel.text = [NSString stringWithFormat:@"%d",countNum];
+    }
+}
+-(IBAction)submitAction:(id)sender{
     
     if (self.nameField.text.length == 0) {
         [HUD showHUDTitle:@"姓名不能为空" durationTime:2];
@@ -140,23 +214,45 @@
     
     [self setBusyIndicatorVisible:YES];
     
-    NSString *token = [YUUUserData shareInstance].token;
+    NSString *token = [YUUUserData shareInstance].userModel.token;
     
     YUUCertificationRequest *auth = [[YUUCertificationRequest alloc]initWithCertification:self.nameField.text Membercardid:self.idCardField.text Bankcard:[NSNumber numberWithInt:[self.bankField.text intValue]] Bankphone:[NSNumber numberWithInt:[self.prePhoneField.text intValue]] Code:self.messageCode.text Token:token SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
+        YUUCommonModel *m = [request getResponse].data;
+        [[YUUUserData shareInstance] saveUserData:m];
+        [[YUUUserData shareInstance] getUserData];
         
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+                break;
+            case 1:
+                DLOG(@"无效token");
+//                [HUD showHUDTitle:res.msg durationTime:2];
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
     [auth start];
-    
-    
-    
-    
+}
+
+-(void)dealloc{
+    DLOG(@"释放YUUProfileAuthenEditeCtrl页面");
+    [countDownTimer invalidate];
+    countDownTimer = nil;
     
 }
+
 /*
 #pragma mark - Navigation
 

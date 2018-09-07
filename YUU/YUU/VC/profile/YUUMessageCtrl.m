@@ -8,6 +8,10 @@
 
 #import "YUUMessageCtrl.h"
 #import "YUUMessageDetailCtrl.h"
+#import "YUUProfileMessageListRequest.h"
+#import "YUUUserData.h"
+#import "HUD.h"
+#import "YUUMsgModel.h"
 
 @implementation YUUMessageCell
 -(void)awakeFromNib{
@@ -26,7 +30,7 @@
 
 @interface YUUMessageCtrl ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
-
+@property(nonatomic,strong)YUUMsgModelList *msgModelList;
 @end
 
 @implementation YUUMessageCtrl
@@ -35,10 +39,37 @@
     [super viewDidLoad];
     self.title = @"消息通知";
     self.tableView.backgroundColor = [UIColor clearColor];
-    // Do any additional setup after loading the view.
+    
+}
+-(void)getMessageRequest{
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    [self setBusyIndicatorVisible:YES];
+    YUUProfileMessageListRequest *msgReq = [[YUUProfileMessageListRequest alloc]initWithMessagelist:token SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        self.msgModelList = [request getResponse].data;
+        
+        [self.tableView reloadData];
+
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 1:
+                DLOG(@"token无效");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+
+    }];
+    [msgReq start];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return self.msgModelList.msgList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
@@ -48,6 +79,10 @@
     static NSString *identifer = @"YUUMessageCell";
     YUUMessageCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    YUUMsgModel *msgModel = [self.msgModelList.msgList objectAtIndex:indexPath.row];
+    cell.titleLabel.text = msgModel.newstext;
+    cell.dateLabel.text = msgModel.newstime;
+    cell.detailLabel.text = msgModel.newsname;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setCustomBackItem];
+//    self.navigationController.navigationBar.topItem.title = @"";
     // Do any additional setup after loading the view.
 }
 -(void)handleTap:(UIGestureRecognizer *)gesture{
@@ -184,6 +186,7 @@
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
 /*
 #pragma mark - Navigation
 

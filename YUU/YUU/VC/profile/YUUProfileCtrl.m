@@ -13,6 +13,11 @@
 #import "YUUMessageCtrl.h"
 #import "YUUSetingCtrl.h"
 #import "YUUProfileAuthenEditeCtrl.h"
+#import "YUUCommonModel.h"
+#import "YUULauchAppRequest.h"
+#import "YUUUserData.h"
+#import "HUD.h"
+#import "YUUProfileAuthenCtrl.h"
 @interface YUUProfileCtrl ()
 @property(nonatomic,weak)IBOutlet UIButton *mineBtn;
 @property(nonatomic,weak)IBOutlet UIButton *billBtn;
@@ -29,7 +34,7 @@
 @property(nonatomic,weak)IBOutlet UILabel *availbleLabel;
 @property(nonatomic,weak)IBOutlet UILabel *freezeLabel;
 @property(nonatomic,weak)IBOutlet UILabel *lockLabel;
-
+@property(nonatomic,strong)YUUCommonModel *userModel;
 @end
 
 @implementation YUUProfileCtrl
@@ -38,6 +43,63 @@
     [super viewDidLoad];
     self.title = @"我的";
     // Do any additional setup after loading the view.
+    [self setupUI];
+}
+-(void)setupUI{
+    self.profileIdLabel.text = [NSString stringWithFormat:@"%@",self.userModel.memberid];
+    self.profileGradeLabel.text = self.userModel.membergrade;
+    self.assetLabel.text = [NSString stringWithFormat:@"%@",self.userModel.propertynum];
+    self.availbleLabel.text = [NSString stringWithFormat:@"%@",self.userModel.canuseyuu];
+    self.freezeLabel.text = [NSString stringWithFormat:@"%@",self.userModel.frozenyuu];
+    self.lockLabel.text = [NSString stringWithFormat:@"%@",self.userModel.lockedyuu];
+    [self setupAuthenBtn];
+}
+
+-(void)setupAuthenBtn{
+    if (self.userModel) {
+        if ([self.userModel.certification intValue] == 1) {
+            [self.profileIsAuthenBtn setBackgroundImage:[UIImage imageNamed:@"profile_alauth"] forState:UIControlStateNormal];
+
+        }
+        else{
+            [self.profileIsAuthenBtn setBackgroundImage:[UIImage imageNamed:@"profile_unauth"] forState:UIControlStateNormal];
+        }
+    }
+    else{
+        [self.profileIsAuthenBtn setBackgroundImage:[UIImage imageNamed:@"profile_unauth"] forState:UIControlStateNormal];
+    }
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    [self setBusyIndicatorVisible:YES];
+    YUULauchAppRequest *lauch = [[YUULauchAppRequest alloc]initWithAppRequest:token SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        self.userModel = [request getResponse].data;
+        [self setupUI];
+
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 1:
+                DLOG(@"token无效");
+                break;
+            case 2:
+                DLOG(@"用户被锁定");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+    
+        [HUD showHUDTitle:res.msg durationTime:2];
+
+    }];
+    
+    [lauch start];
 }
 
 -(IBAction)naviToMine:(id)sender{
@@ -78,8 +140,20 @@
 }
 -(IBAction)authenId:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    YUUProfileAuthenEditeCtrl * edite = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenEditeCtrl"];
-    [self.navigationController pushViewController:edite animated:YES];
+    if (self.userModel) {
+        if ([self.userModel.certification intValue] == 1) {
+            YUUProfileAuthenCtrl * already = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenCtrl"];
+            [self.navigationController pushViewController:already animated:YES];
+        }
+        else{
+            YUUProfileAuthenEditeCtrl * edite = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenEditeCtrl"];
+            [self.navigationController pushViewController:edite animated:YES];
+        }
+    }
+    else{
+        YUUProfileAuthenEditeCtrl * edite = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenEditeCtrl"];
+        [self.navigationController pushViewController:edite animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
