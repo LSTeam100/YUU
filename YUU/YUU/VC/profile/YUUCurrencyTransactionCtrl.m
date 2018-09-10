@@ -8,22 +8,30 @@
 
 #import "YUUCurrencyTransactionCtrl.h"
 #import "YUUTransactionHistoryCtrl.h"
+#import "YUUCurrencySellRequest.h"
+#import "HUD.h"
+#import "YUUUserData.h"
 @implementation YUUCurrencyCell
 -(void)awakeFromNib{
     [super awakeFromNib];
     self.bottomView.backgroundColor = colorWithHexString(@"e4c177", 1.0);
     self.titleLabel.textColor = colorWithHexString(@"e4c177", 1.0);
-    self.contenLabel.textColor = [UIColor whiteColor];
-    
+
+
 }
 
 @end
 
 
-@interface YUUCurrencyTransactionCtrl ()<UITableViewDelegate,UITableViewDataSource>
+@interface YUUCurrencyTransactionCtrl ()<UITableViewDelegate,UITableViewDataSource>{
+}
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
 @property(nonatomic,weak)IBOutlet UIButton *leftSelectBtn;
 @property(nonatomic,weak)IBOutlet UIButton *rightSelectBtn;
+@property(nonatomic,weak)IBOutlet UILabel *coinsiteLabel;
+@property(nonatomic,weak)IBOutlet UILabel *coinnumLabel;
+@property(nonatomic,weak)IBOutlet UITextField *coinsiteField;
+@property(nonatomic,weak)IBOutlet UITextField *coinnumField;
 
 @end
 
@@ -37,7 +45,24 @@
     [self setCustomBackItem];
     
     UIBarButtonItem *histroyItem = [[UIBarButtonItem alloc]initWithTitle:@"历史记录" style:UIBarButtonItemStylePlain target:self action:@selector(naviToHistoryController)];
+    
     self.navigationItem.rightBarButtonItem = histroyItem;
+    [self.navigationItem.rightBarButtonItem setTintColor:colorWithHexString(@"e4c177", 1.0)];
+    
+    
+    self.coinnumLabel.textColor = colorWithHexString(@"e4c177", 1.0);
+    self.coinsiteLabel.textColor = colorWithHexString(@"e4c177", 1.0);
+    self.coinsiteLabel.text = @"钱包地址";
+    self.coinsiteLabel.text = @"YUU数量";
+
+    self.coinsiteField.placeholder = @"请输入地址";
+    self.coinnumField.placeholder = @"请输入交易金额";
+    
+    self.coinsiteField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.coinsiteField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    
+    self.coinnumField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.coinnumField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+
 
 //    self.navigationController.navigationItem.rightBarButtonItem = histroyItem;
 
@@ -64,6 +89,46 @@
     }
     
 }
+-(IBAction)sell:(id)sender{
+    
+    
+    if (self.coinsiteField.text > 0) {
+        [HUD showHUDTitle:@"地址不能为空" durationTime:2];
+        return;
+    }
+
+    if (self.coinnumField.text > 0) {
+        [HUD showHUDTitle:@"交易金额不能为空" durationTime:2];
+        return;
+    }
+    
+    
+    [self setBusyIndicatorVisible:YES];
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    
+    YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:[NSNumber numberWithInt:[self.coinnumField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"用户错误信息");
+                break;
+            case 1:
+                DLOG(@"token无效");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+    }];
+    [sell start];
+}
 
 
 
@@ -81,6 +146,21 @@
     static NSString *identifer = @"YUUCurrencyCell";
     YUUCurrencyCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    switch (indexPath.row) {
+        case 0:
+            cell.titleLabel.text = @"钱包地址";
+            cell.field.placeholder = @"请输入钱包地址";
+
+            break;
+        case 1:
+            cell.titleLabel.text = @"YUU数量";
+            cell.field.placeholder = @"请输入需要转出的YUU钱币数量";
+            break;
+        default:
+            break;
+    }
+    cell.field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:cell.field.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+
     return cell;
 }
 
