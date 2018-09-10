@@ -1118,7 +1118,16 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="获取验证码" backgroundImage="profile_sendmessage"/>
+                                <connections>
+                                    <action selector="sendVerifyCode:" destination="XmS-VZ-3T3" eventType="touchUpInside" id="BE0-AM-DO7"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isP-1z-2Ha">
+                                <rect key="frame" x="290" y="144" width="26" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1128,6 +1137,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fxW-Gq-Are" secondAttribute="trailing" constant="10" id="8mr-bQ-zB0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rZ6-73-4Hg" secondAttribute="trailing" constant="10" id="FtL-HU-PQd"/>
                             <constraint firstItem="YLP-hI-gkQ" firstAttribute="leading" secondItem="U6V-0V-Lgf" secondAttribute="leadingMargin" constant="10" id="HHO-wg-cya"/>
+                            <constraint firstItem="isP-1z-2Ha" firstAttribute="centerY" secondItem="YLP-hI-gkQ" secondAttribute="centerY" id="KBC-Cz-TQs"/>
                             <constraint firstItem="ha8-9e-Ear" firstAttribute="top" secondItem="YLP-hI-gkQ" secondAttribute="bottom" constant="10" id="NXx-jr-mhJ"/>
                             <constraint firstItem="Ixd-Gk-Hnm" firstAttribute="top" secondItem="fxW-Gq-Are" secondAttribute="bottom" constant="50" id="Pv3-64-Zsg"/>
                             <constraint firstItem="PAS-sD-pD4" firstAttribute="top" secondItem="0nf-08-SIP" secondAttribute="bottom" id="QcE-Ea-Sfe"/>
@@ -1141,15 +1151,18 @@
                             <constraint firstItem="ha8-9e-Ear" firstAttribute="leading" secondItem="U6V-0V-Lgf" secondAttribute="leadingMargin" constant="10" id="s8V-tE-A1h"/>
                             <constraint firstItem="YLP-hI-gkQ" firstAttribute="top" secondItem="rZ6-73-4Hg" secondAttribute="bottom" constant="10" id="t5l-PY-lbo"/>
                             <constraint firstItem="Ixd-Gk-Hnm" firstAttribute="centerX" secondItem="U6V-0V-Lgf" secondAttribute="centerX" id="udT-X0-fU8"/>
+                            <constraint firstItem="isP-1z-2Ha" firstAttribute="leading" secondItem="YLP-hI-gkQ" secondAttribute="trailing" constant="26" id="vLY-BH-zht"/>
                             <constraint firstItem="pAT-dk-Wwa" firstAttribute="centerY" secondItem="YLP-hI-gkQ" secondAttribute="centerY" id="xez-9O-6Xf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="codeTextField" destination="Ej5-kY-1Vz" id="8Ph-ZT-lW7"/>
+                        <outlet property="countDownLabel" destination="isP-1z-2Ha" id="5kS-bG-ybA"/>
                         <outlet property="cstTopMargin" destination="5p3-Bd-elw" id="7Ye-pt-4qw"/>
                         <outlet property="passwordField" destination="B71-p7-QLD" id="bIG-Iw-hm8"/>
                         <outlet property="phoneTextField" destination="1Da-qB-xLg" id="oCz-k9-kRk"/>
                         <outlet property="resetPasswordField" destination="7Jb-nt-bOY" id="wQk-oh-fPI"/>
+                        <outlet property="sendMsgBtn" destination="pAT-dk-Wwa" id="2TH-6w-lLD"/>
                         <outlet property="submitBtn" destination="Ixd-Gk-Hnm" id="QCC-pn-ehd"/>
                     </connections>
                 </viewController>
@@ -1798,6 +1811,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAc-SW-ueg">
                                 <rect key="frame" x="106" y="300" width="163" height="38"/>
                                 <state key="normal" backgroundImage="profile_logout"/>
+                                <connections>
+                                    <action selector="loginOut:" destination="pKv-tE-8s2" eventType="touchUpInside" id="NzE-JA-anL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1957,9 +1973,12 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoT-4g-dgO">
                                 <rect key="frame" x="15" y="240" width="345" height="38"/>
-                                <state key="normal" title="提交" backgroundImage="btn_bg">
+                                <state key="normal" backgroundImage="btn_commit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitAction:" destination="emp-BZ-880" eventType="touchUpInside" id="479-yO-aQY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-fJ-RTb">
                                 <rect key="frame" x="274" y="288" width="86" height="29"/>
@@ -1998,6 +2017,9 @@
                     </view>
                     <connections>
                         <outlet property="forgetTransactionBtn" destination="WdW-fJ-RTb" id="hGh-xK-oam"/>
+                        <outlet property="makeSureField" destination="Z5O-yU-LC2" id="XG8-Yq-Rhc"/>
+                        <outlet property="oldField" destination="TRb-yP-ylO" id="qJv-p0-Et6"/>
+                        <outlet property="passwordField" destination="URV-FY-VDE" id="3YP-Yw-eLZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Op-a4-4fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2258,7 +2280,7 @@
         <!--Viturl Wallet-->
         <scene sceneID="Wcb-RC-who">
             <objects>
-                <viewController id="jKW-rM-gnu" customClass="YUUViturlWallet" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YUUViturlWallet" id="jKW-rM-gnu" customClass="YUUViturlWallet" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JBm-c7-Bo7"/>
                         <viewControllerLayoutGuide type="bottom" id="aEJ-oo-YHh"/>
@@ -2297,6 +2319,10 @@
                             <constraint firstAttribute="trailing" secondItem="LlU-PJ-OF3" secondAttribute="trailing" id="vkj-SI-UXV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="BgX-XW-kcY" id="29N-d1-2Qr"/>
+                        <outlet property="titleLabel" destination="N2b-I8-AYg" id="4PA-s5-9vP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqQ-hH-AeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

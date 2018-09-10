@@ -10,10 +10,12 @@
 #import "YUUForgetRequest.h"
 #import "YUUCommonModel.h"
 #import "HUD.h"
+#import "YUUSendMessageRequest.h"
 @interface YUUForgetCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     CGFloat originInputTopMargin;
-    
+    NSTimer *countDownTimer;
+    int countNum;
 }
 @property(nonatomic,weak)IBOutlet UITextField *phoneTextField;
 @property(nonatomic,weak)IBOutlet UITextField *codeTextField;
@@ -22,6 +24,9 @@
 @property(nonatomic,weak)IBOutlet UIButton *submitBtn;
 @property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint *cstTopMargin;
+@property(nonatomic,weak)IBOutlet UILabel *countDownLabel;
+@property(nonatomic,weak)IBOutlet UIButton *sendMsgBtn;
+
 
 @end
 
@@ -38,6 +43,18 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
+    if (countDownTimer) {
+        self.countDownLabel.hidden = NO;
+        self.sendMsgBtn.hidden = YES;
+        
+    }
+    else{
+        self.countDownLabel.hidden = YES;
+        self.sendMsgBtn.hidden = NO;
+        countNum = 300;
+        
+    }
+    
     // Do any additional setup after loading the view.
 }
 
@@ -162,18 +179,67 @@
     }];
     
     [forget start];
-    
-    
-    
-    
-    
-    
-    
-
-
-    
 }
 
+-(IBAction)sendVerifyCode:(id)sender{
+    if (self.phoneTextField.text.length == 0) {
+        [HUD showHUDTitle:@"手机号不能为空" durationTime:2];
+        return;
+    }
+    
+    if (isMobileValid(self.phoneTextField.text) == false) {
+        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+        return;
+    }
+    
+    [self setBusyIndicatorVisible:YES];
+    YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:[NSNumber numberWithInt:[self.phoneTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        if (countDownTimer == nil) {
+            countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        }
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        if (countDownTimer == nil) {
+            countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        }
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"错误信息");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+        
+    }];
+    [sendMsg start];
+
+}
+-(void)timerAction{
+    self.countDownLabel.hidden = NO;
+    self.sendMsgBtn.hidden = YES;
+    countNum --;
+    if (countNum == 0) {
+        [countDownTimer invalidate];
+        countDownTimer = nil;
+        self.sendMsgBtn.hidden = NO;
+        self.countDownLabel.hidden = YES;
+    }
+    else{
+        self.countDownLabel.text = [NSString stringWithFormat:@"%d",countNum];
+    }
+}
+-(void)dealloc{
+    [countDownTimer invalidate];
+    countDownTimer = nil;
+  
+}
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     originInputTopMargin = self.cstTopMargin.constant;

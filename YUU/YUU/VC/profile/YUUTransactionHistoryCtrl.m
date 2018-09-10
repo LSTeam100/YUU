@@ -7,6 +7,9 @@
 //
 
 #import "YUUTransactionHistoryCtrl.h"
+#import "YUUCurrencyHistoryRequest.h"
+#import "YUUUserData.h"
+#import "YUUCurrencyHistoryModel.h"
 
 @implementation transactionHistoryCell
 
@@ -20,7 +23,7 @@
 
 @interface YUUTransactionHistoryCtrl ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
-
+@property(nonatomic,strong)YUUCurrencyHistoryArrModel *hisArrModel;
 
 @end
 
@@ -30,16 +33,35 @@
     [super viewDidLoad];
     self.title = @"交易记录";
     self.tableView.backgroundColor = [UIColor clearColor];
-    
+    [self getHistory];
     // Do any additional setup after loading the view.
 }
+-(void)getHistory{
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    [self setBusyIndicatorVisible:YES];
+    YUUCurrencyHistoryRequest *history = [[YUUCurrencyHistoryRequest alloc]initWithCurrencyHistory:token SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        self.hisArrModel = [request getResponse].data;
+        [self.tableView reloadData];
+
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+
+    }];
+    [history start];
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return self.hisArrModel.currencyHistoryArr.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifer = @"transactionHistoryCell";
     transactionHistoryCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    YUUCurrencyHistoryModel *m = self.hisArrModel.currencyHistoryArr[indexPath.row];
+    cell.titleLabel.text = m.coinsite;
+    cell.contentLabel.text = [NSString stringWithFormat:@"%@",m.coinnum];
+    cell.dateLabel.text = [NSString stringWithFormat:@"%@",m.cointime];
+
     return cell;
     
 }

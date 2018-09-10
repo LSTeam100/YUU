@@ -8,10 +8,15 @@
 
 #import "YUUModifyPassword.h"
 #import "YUUForgetCtrl.h"
+#import "HUD.h"
+#import "YUUModifyTransactionRequest.h"
+#import "YUUModifyLoginRequest.h"
+#import "YUUUserData.h"
 @interface YUUModifyPassword ()
 @property(nonatomic,weak)IBOutlet UITextField *oldField;
-//@property(nonatomic,weak)IBOutlet UITextField *newField;
+@property(nonatomic,weak)IBOutlet UITextField *makeSureField;
 @property(nonatomic,weak)IBOutlet UIButton *forgetTransactionBtn;
+@property(nonatomic,weak)IBOutlet UITextField *passwordField;
 
 @end
 
@@ -35,6 +40,92 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUForgetCtrl *forget = [sb instantiateViewControllerWithIdentifier:@"YUUForgetCtrl"];
     [self.navigationController pushViewController:forget animated:YES];
+}
+-(IBAction)submitAction:(id)sender{
+    
+    if (self.oldField.text.length == 0) {
+        [HUD showHUDTitle:@"旧密码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.passwordField.text.length == 0) {
+        [HUD showHUDTitle:@"新密码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.makeSureField.text.length == 0) {
+        [HUD showHUDTitle:@"重复密码不能为空" durationTime:2];
+        return;
+    }
+    
+    if (self.passwordField.text != self.makeSureField.text) {
+        [HUD showHUDTitle:@"两次密码输入不一致" durationTime:2];
+        return;
+    }
+    
+    
+    if (self.modifyType == loginType) {
+        [self setBusyIndicatorVisible:YES];
+        NSString *token = [YUUUserData shareInstance].userModel.token;
+        YUUModifyLoginRequest *modifyLogin = [[YUUModifyLoginRequest alloc]initWithModifyLogin:token Oldpsw:self.oldField.text Newpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            [HUD showHUDTitle:@"修改密码成功" durationTime:2];
+        } failureCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            YUUResponse *res = [request getResponse];
+            switch (res.code) {
+                case 0:
+                    DLOG(@"信息错误");
+                    break;
+                case 1:
+                    DLOG(@"token无效");
+                    break;
+                case 3:
+                    DLOG(@"闭市");
+                    break;
+                default:
+                    break;
+            }
+            [HUD showHUDTitle:res.msg durationTime:2];
+        }];
+        [modifyLogin start];
+    }
+    else{
+        NSString *token = [YUUUserData shareInstance].userModel.token;
+        [self setBusyIndicatorVisible:YES];
+        YUUModifyTransactionRequest *modifyTransaction = [[YUUModifyTransactionRequest alloc]initWithModifyTransaction:token Oldtraderpsw:self.oldField.text Newtraderpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            [HUD showHUDTitle:@"修改密码成功" durationTime:2];
+
+        } failureCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            YUUResponse *res = [request getResponse];
+            switch (res.code) {
+                case 0:
+                    DLOG(@"信息错误");
+                    break;
+                case 1:
+                    DLOG(@"token无效");
+                    break;
+                case 3:
+                    DLOG(@"闭市");
+                    break;
+                default:
+                    break;
+            }
+            [HUD showHUDTitle:res.msg durationTime:2];
+
+        }];
+        
+        [modifyTransaction start];
+        
+    }
+
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

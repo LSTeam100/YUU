@@ -11,13 +11,14 @@
 @interface YUUViturlWallet ()
 @property(nonatomic,weak)IBOutlet UILabel *titleLabel;
 @property(nonatomic,weak)IBOutlet UILabel *contentLabel;
-
 @end
 
 @implementation YUUViturlWallet
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"虚拟钱包";
+    self.contentLabel.text = self.virtualWalletStr;
     // Do any additional setup after loading the view.
 }
 

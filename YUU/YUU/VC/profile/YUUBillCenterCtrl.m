@@ -8,7 +8,6 @@
 
 #import "YUUBillCenterCtrl.h"
 
-
 @implementation YUUBillCenterCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -36,7 +35,7 @@
     [super viewDidLoad];
     self.title = @"账单中心";
     self.tableView.backgroundColor = [UIColor clearColor];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self createScrollViewArr];
     // Do any additional setup after loading the view.
 }
@@ -48,9 +47,7 @@
     }
     UIButton *lastBtn = [self.scrBtnArr lastObject];
     [self.scrollView setContentSize:CGSizeMake(lastBtn.frame.origin.x + lastBtn.frame.size.width, lastBtn.frame.size.height)];
-    
-    
-    
+
     
 }
 -(void)InitScrBtnFactory:(NSArray *)dataArr{
@@ -81,6 +78,8 @@
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         }
     }
+    
+    DLOG(@"title=%@",clickBtn.titleLabel.text);
     
 }
 

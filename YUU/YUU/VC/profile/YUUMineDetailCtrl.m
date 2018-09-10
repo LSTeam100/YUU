@@ -15,6 +15,10 @@
 #import "YUUProfileAuthenEditeCtrl.h"
 #import "YUUProfileAuthenCtrl.h"
 #import "YUUCreditCard.h"
+#import "YUUUserSendwxRequest.h"
+#import "YUUUserSendAlipayRequest.h"
+#import "YUUUserSendWalletRequest.h"
+#import "YUUViturlWallet.h"
 @implementation profileAuthenCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -25,12 +29,20 @@
 @end
 
 @interface YUUMineDetailCtrl ()<UITableViewDelegate,UITableViewDataSource>
+
+typedef enum {
+    wechatType,
+    aliPayType,
+    walletType
+}clickPayType;
+
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
 @property(nonatomic,weak)IBOutlet UILabel *superIdLabel;
 @property(nonatomic,weak)IBOutlet UILabel *mineIdLabel;
 @property(nonatomic,weak)IBOutlet UILabel *mineGradeLabel;
 @property(nonatomic,weak)YUUMineDetailModel *DetailModel;
 @property(nonatomic,weak)YUUCommonModel *userModel;
+@property(nonatomic,assign)clickPayType clickType;
 @end
 
 @implementation YUUMineDetailCtrl
@@ -165,7 +177,83 @@
     return 50;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DLOG(@"点击%ld行",(long)indexPath.row);
     
+    NSString *msg = [[NSString alloc]init];
+    switch (indexPath.row) {
+        case 3:
+            if (self.DetailModel.memberwx != nil) {
+                [HUD showHUDTitle:@"如果需要更换，请联系客服" durationTime:2];
+                return;
+            }
+            self.clickType = wechatType;
+            msg = @"微信号只能填写一次，请谨慎填写";
+            break;
+        case 4:
+            if (self.DetailModel.memberalipay != nil) {
+                [HUD showHUDTitle:@"如果需要更换，请联系客服" durationTime:2];
+                return;
+            }
+            self.clickType = aliPayType;
+            msg = @"支付宝账号只能填写一次，请谨慎填写";
+            break;
+        case 5:
+            if (self.DetailModel.memberwallet != nil) {
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                YUUViturlWallet *wallet = [sb instantiateViewControllerWithIdentifier:@"YUUViturlWallet"];
+                wallet.virtualWalletStr = self.DetailModel.memberwallet;
+                
+                [self.navigationController pushViewController:wallet animated:YES];
+
+                return;
+            }
+            self.clickType = walletType;
+            break;
+        default:
+            break;
+    }
+    
+
+    
+    if ((self.clickType == wechatType || self.clickType == aliPayType || self.clickType == walletType) && indexPath.row >= 3) {
+        
+        UIAlertController *alert  = [UIAlertController alertControllerWithTitle:@"温馨提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"OK Action");
+            if (alert.textFields.count > 0) {
+                UITextField *textField  = alert.textFields[0];
+                if (textField.text.length == 0) {
+                    [HUD showHUDTitle:@"号码不能为空" durationTime:2];
+                }
+                else{
+                    if (self.clickType == wechatType) {
+                        [self sendWXRequest:textField.text];
+                    }
+                    else if (self.clickType == aliPayType){
+                        [self sendAliRequest:textField.text];
+                    }
+                    else if (self.clickType == walletType){
+                        [self sendWalletRequest:textField.text];
+                    }
+                }
+            }
+        }];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField){
+            if (self.clickType == wechatType) {
+                textField.placeholder = @"微信号";
+            }
+            else if (self.clickType == aliPayType){
+                textField.placeholder = @"支付宝号";
+            }
+            else if (self.clickType == walletType){
+                textField.placeholder = @"虚拟钱包";
+            }
+        }];
+        
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
 }
 -(IBAction)authenAction:(UIButton *)clickBtn{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -220,6 +308,96 @@
     }
     return authen;
 }
+-(void)sendWXRequest:(NSString *)wxNum{
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    
+    [self setBusyIndicatorVisible:YES];
+    YUUUserSendwxRequest *sendWX = [[YUUUserSendwxRequest alloc]initWithSendwx:token Memberwx:wxNum SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"错误信息");
+                break;
+            case 1:
+                DLOG(@"token无效");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        
+        [HUD showHUDTitle:res.msg durationTime:2];
+    }];
+    [sendWX start];
+}
+
+-(void)sendAliRequest:(NSString *)aliNum{
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    
+    [self setBusyIndicatorVisible:YES];
+    YUUUserSendAlipayRequest *ali = [[YUUUserSendAlipayRequest alloc]initWithSendAlipay:token Memberalipay:aliNum SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"错误信息");
+                break;
+            case 1:
+                DLOG(@"token无效");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        
+        [HUD showHUDTitle:res.msg durationTime:2];
+
+        
+    }];
+    [ali start];
+    
+    
+}
+
+-(void)sendWalletRequest:(NSString *)walletNum{
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    [self setBusyIndicatorVisible:YES];
+    YUUUserSendWalletRequest *wallet = [[YUUUserSendWalletRequest alloc]initWithSendWallet:token Memberwallet:walletNum SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"错误信息");
+                break;
+            case 1:
+                DLOG(@"token无效");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+
+    }];
+    [wallet start];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

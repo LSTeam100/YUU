@@ -9,5 +9,6 @@
 #import "YUUSuperCtrl.h"
 
 @interface YUUViturlWallet : YUUSuperCtrl
+@property(nonatomic,strong)NSString *virtualWalletStr;
 
 @end
