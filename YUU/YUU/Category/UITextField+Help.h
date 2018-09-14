@@ -12,4 +12,6 @@
 
 @property (nonatomic, assign) NSInteger maxLength;
 
+- (void)setPlaceholderColor:(UIColor *)color;
+
 @end

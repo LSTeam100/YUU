@@ -12,7 +12,8 @@
 #import "Header.h"
 #import "YUUTeamInfoView.h"
 #import "YUUUserInfoView.h"
-#import "GetMineralPoolRequest.h"
+#import "YUUMachinepoolRequst.h"
+#import "YUUMachinePoolArrModel.h"
 
 @interface YUUMineralPoolVC () <UITableViewDelegate, UITableViewDataSource, HUDProtocol>
 
@@ -22,7 +23,8 @@
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray *items;
-@property (nonatomic, strong) MineralPoolModel *model;
+@property (nonatomic, strong) YUUMachinePoolArrModel *model;
+@property (nonatomic, assign) BOOL isDirect;
 
 @end
 
@@ -40,34 +42,24 @@
     
     [self addSegment];
     
-    for (int i = 0; i<10; i++) {
-        YUUUserModel *model = [[YUUUserModel alloc] init];
-        model.userId = @"123456";
-        model.uerLevel = YUUUserLevelNew;
-        model.power = 13;
-        model.machineCount =4;
-        model.directPush = 3;
-        model.groupNumberCount = 5;
-        [_items addObject:model];
-    }
-    
+    [self getHTTPData];
 }
 
 - (void)getHTTPData {
     WeakSelf
-    GetMineralPoolRequest *request = [[GetMineralPoolRequest alloc] initWithSuccess:^(YUUBaseRequest *request) {
+    YUUMachinepoolRequst *request = [[YUUMachinepoolRequst alloc] initWithMachinepool:@"" SuccessCallback:^(YUUBaseRequest *request) {
         weakSelf.model = request.getResponse.data;
-        [weakSelf setupUI];
-    } failure:^(YUUBaseRequest *request) {
+        [weakSelf updateUI];
+    } failureCallback:^(YUUBaseRequest *request) {
         
     }];
+
     [request start];
 }
 
-- (void)setupUI {
-    _powerLabel.text = [NSString stringWithFormat:@"%ld",_model.millspoolpower];
-    _minerCountLabel.text = [NSString stringWithFormat:@"%ld",_model.totalminers];
-    _items = _model.directid;
+- (void)updateUI {
+    _powerLabel.text = [NSString stringWithFormat:@"%ld",[_model.millspoolpower integerValue]];
+    _minerCountLabel.text = [NSString stringWithFormat:@"%ld",[_model.totalminers integerValue]];
     [_tableView reloadData];
 }
 
@@ -82,19 +74,37 @@
         make.height.mas_equalTo(38);
     }];
     
-    [segment setTitles:@[@"直推" ,@"团队"] segmentSelectedAtIndex:^(NSInteger index) {
+//    [segment setTitles:@[@"直推" ,@"团队"] segmentSelectedAtIndex:^(NSInteger index) {
+//        if (index == 0) {
+//            YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
+//            view.delegate = self;
+//            view.textField0.text = @"28346879";
+//            [HUD showCustomView:view];
+//        } else {
+//            YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
+//            view.delegate = self;
+//            [HUD showCustomView:view];
+//        }
+//    }];
+    
+    [segment setSegmentTitles:@[@"直推" ,@"团队"] segmentSelectedAtIndex:^(NSInteger index) {
         if (index == 0) {
-            YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
-            view.delegate = self;
-            view.textField0.text = @"28346879";
-            [HUD showCustomView:view];
+            weakSelf.isDirect = YES;
+            [weakSelf.tableView reloadData];
         } else {
-            YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
-            view.delegate = self;
-            [HUD showCustomView:view];
+            weakSelf.isDirect = NO;
+            [weakSelf.tableView reloadData];
         }
     }];
 }
+
+- (IBAction)showTeamMessage:(id)sender {
+    YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
+    view.delegate = self;
+    view.model = self.model;
+    [HUD showCustomView:view];
+}
+
 
 - (void)closeBtnDidSelected {
     [HUD hide];
@@ -107,15 +117,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YUUMineralPoolCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineralPoolCell"];
-    cell.model = _items[indexPath.row];
+    if (_isDirect) {
+        cell.model = self.model.directidArr[indexPath.section];
+    } else {
+        cell.model = self.model.nodirectidArr[indexPath.section];
+    }
+    
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _items.count;
+    if (_isDirect) {
+        return self.model.directidArr.count;
+    } else {
+        return self.model.nodirectidArr.count;
+    }
 }
 
 #pragma mark - UITableViewDelegate -
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_isDirect) {
+        YUUMachinePoolModel *model = self.model.directidArr[indexPath.section];
+        YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
+        view.delegate = self;
+        view.textField0.text = [NSString stringWithFormat:@"%@", model.memberid];
+        view.textField1.text = [NSString stringWithFormat:@"%@", model.memberphone];
+        [HUD showCustomView:view];
+    } else {
+//        YUUMachinePoolModel *model = self.model.nodirectidArr[indexPath.section];
+//        YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
+//        view.delegate = self;
+//        [HUD showCustomView:view];
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return  60;
 }

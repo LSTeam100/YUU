@@ -7,11 +7,11 @@
 //
 
 #import "YUUBaseTableViewCell.h"
-#import "YUUMachineModel.h"
+#import "YUUMachineArrModel.h"
 
 @interface YUUMineMachineCell : YUUBaseTableViewCell
 
-@property (nonatomic, strong) YUUMachineModel *model;
+@property (nonatomic, strong) YUUMachineDetailModel *model;
 
 
 @property (strong, nonatomic) IBOutlet UIView *statusView;

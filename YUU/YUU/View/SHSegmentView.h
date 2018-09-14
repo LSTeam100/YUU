@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^SegmentSelectedAtIndex)(NSInteger);
+typedef void(^SegmentSelectedAtIndex)(NSInteger index);
 
 @interface SHSegmentView : UIView
 

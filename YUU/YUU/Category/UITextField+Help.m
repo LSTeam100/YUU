@@ -38,4 +38,12 @@ static void *kMaxLength = &kMaxLength;
     });
 }
 
+- (void)setPlaceholderColor:(UIColor *)color {
+    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:self.placeholder attributes:
+                                      @{NSForegroundColorAttributeName:color,
+                                        NSFontAttributeName:self.font
+                                        }];
+    self.attributedPlaceholder = attrString;
+}
+
 @end

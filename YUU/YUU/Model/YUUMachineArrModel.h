@@ -7,18 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Header.h"
 
 
 @interface YUUMachineDetailModel :NSObject
 @property(nonatomic,strong)NSString *millsize;
-@property(nonatomic,strong)NSNumber *milltype;
+@property(nonatomic, assign) YUUMilltype milltype;
+@property(nonatomic,strong) NSString *milltypeName;
 @property(nonatomic,strong)NSNumber *runtimeday;
 @property(nonatomic,strong)NSNumber *totaldays;
 @property(nonatomic,strong)NSString *compower;
 @property(nonatomic,strong)NSNumber *outputcoins;
-@property(nonatomic,strong)NSNumber *getmill;
-@property(nonatomic,strong)NSNumber *milldie;
+@property(nonatomic,assign) YUUMachineReceiveStatus getmill;
+@property(nonatomic,assign) YUUMachineStatus milldie;
 -(instancetype)initWtihDic:(NSDictionary *)dic;
 
 @end

@@ -43,9 +43,9 @@
     [super viewDidLoad];
     self.title = @"我的";
     // Do any additional setup after loading the view.
-    [self setupUI];
+    [self updateUI];
 }
--(void)setupUI{
+-(void)updateUI{
     self.profileIdLabel.text = [NSString stringWithFormat:@"%@",self.userModel.memberid];
     self.profileGradeLabel.text = self.userModel.membergrade;
     self.assetLabel.text = [NSString stringWithFormat:@"%@",self.userModel.propertynum];
@@ -76,7 +76,7 @@
     YUULauchAppRequest *lauch = [[YUULauchAppRequest alloc]initWithAppRequest:token SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         self.userModel = [request getResponse].data;
-        [self setupUI];
+        [self updateUI];
 
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];

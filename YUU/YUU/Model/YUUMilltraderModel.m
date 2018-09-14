@@ -16,9 +16,37 @@
         self.totaldays = dic[@"totaldays"];
         self.totalcoins = dic[@"totalcoins"];
         self.millprice = dic[@"millprice"];
-        self.milltype = dic[@"milltype"];
+        self.milltype = [dic[@"milltype"] integerValue];
     }
     return self;
+}
+
+
+- (NSString *)typeName {
+    switch (_milltype) {
+        case YUUMilltypeNovice:
+            return @"新手";
+            break;
+        case YUUMilltypebronze:
+            return @"青铜";
+            break;
+        case YUUMilltypesilver:
+            return @"白银";
+            break;
+        case YUUMilltypegold:
+            return @"黄金";
+            break;
+        case YUUMilltypePlatinum:
+            return @"铂金";
+            break;
+        case YUUMilltypediamond:
+            return @"钻石";
+            break;
+            
+        default:
+            return @"新手";
+            break;
+    }
 }
 
 @end

@@ -32,6 +32,7 @@
 
 
 @interface machineMarketPriceModel : NSObject
+@property(nonatomic,strong)NSNumber *tradernum;
 @property(nonatomic,strong)NSNumber *oneprice;
 @property(nonatomic,strong)NSNumber *twoprice;
 @property(nonatomic,strong)NSNumber *threeprice;

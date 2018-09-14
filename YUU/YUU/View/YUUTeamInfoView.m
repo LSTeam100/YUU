@@ -24,6 +24,20 @@
     }
 }
 
+- (void)setModel:(YUUMachinePoolArrModel *)model {
+    if (!model) {
+        return;
+    }
+    _model = model;
+    
+    _label0.text = [NSString stringWithFormat:@"总直推数：%@", model.totaldirect];
+    _label1.text = [NSString stringWithFormat:@"四级矿工数：%@", model.fourminer];
+    _label2.text = [NSString stringWithFormat:@"四级矿工数：%@", model.threeminer];
+    _label3.text = [NSString stringWithFormat:@"四级矿工数：%@", model.twominer];
+    _label4.text = [NSString stringWithFormat:@"四级矿工数：%@", model.oneminer];
+    _label5.text = [NSString stringWithFormat:@"在产矿工数：%@", model.actminer];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -10,7 +10,7 @@
 
 @interface YUUMachinePoolModel :NSObject
 @property(nonatomic,strong)NSString *headphoto;
-@property(nonatomic,strong)NSNumber *membergrade;
+@property(nonatomic,strong)NSString *membergrade;
 @property(nonatomic,strong)NSNumber *memberid;
 @property(nonatomic,strong)NSNumber *memberpower;
 @property(nonatomic,strong)NSNumber *membertotalmills;

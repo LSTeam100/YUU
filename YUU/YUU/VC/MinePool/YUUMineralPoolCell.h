@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YUUUserModel.h"
+#import "YUUMachinePoolArrModel.h"
 #import "YUUBaseTableViewCell.h"
 
 @interface YUUMineralPoolCell : YUUBaseTableViewCell
@@ -21,7 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *directPushLabel;
 @property (strong, nonatomic) IBOutlet UILabel *teamCountLabel;
 
-@property (nonatomic, strong) YUUUserModel *model;
+@property (nonatomic, strong) YUUMachinePoolModel *model;
 
 
 @end

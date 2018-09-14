@@ -23,15 +23,15 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(YUUMachineModel *)model {
+- (void)setModel:(YUUMilltraderModel *)model {
     _model = model;
-    _icon.image = [UIImage imageNamed:model.icon];
-    _nameLabel.text = model.name.length > 0 ? model.name : @" ";
-    _ComputingPowerLabel.text = [NSString stringWithFormat:@"算力: %ld",(long)model.power];
-    _cycleLabel.text = [NSString stringWithFormat:@"运行周期: %ld天",(long)model.operationCycle];
-    _incomeLabel.text = [NSString stringWithFormat:@"收益总量: %0.1f",model.allIncome];
+//    _icon.image = [UIImage imageNamed:model.icon];
+//    _nameLabel.text = model.name.length > 0 ? model.name : @" ";
+    _ComputingPowerLabel.text = [NSString stringWithFormat:@"算力: %ld",(long)model.compower];
+    _cycleLabel.text = [NSString stringWithFormat:@"运行周期: %ld天",(long)model.totaldays];
+    _incomeLabel.text = [NSString stringWithFormat:@"收益总量: %@",model.totalcoins];
 //    [_buyBtn setTitle:[NSString stringWithFormat:@"%ldYUU",model.price] forState:UIControlStateNormal];
-    _priceLabel.text = [NSString stringWithFormat:@"%ldYUU",model.price];
+    _priceLabel.text = [NSString stringWithFormat:@"%@YUU",model.millprice];
 }
 
 

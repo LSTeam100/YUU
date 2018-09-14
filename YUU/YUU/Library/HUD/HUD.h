@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MBProgressHUD.h"
+#import "YUUBaseRequest.h"
 
 @interface HUD : NSObject
 
@@ -38,5 +39,7 @@
 + (void)hide;
 
 + (void)showCustomView:(UIView *)customView;
+
++ (void)showRequest:(YUUBaseRequest *)request;
 
 @end

@@ -21,19 +21,17 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(YUUMachineModel *)model {
+- (void)setModel:(YUUMachineDetailModel *)model {
     _model = model;
     
     _statusView.layer.masksToBounds = YES;
     _statusView.layer.cornerRadius = _statusView.frame.size.width/2;
-    _numberLabel.text = model.machineNumber;
-    if (model.type == YUUMachineTypeNew) {
-        _typeLabel.text = @"新手";
-    }
-    _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)model.operationDay, (long)model.operationCycle];
-    _powerLabel.text = [NSString stringWithFormat:@"%ld", (long)model.power];
-    _outputLabel.text = [NSString stringWithFormat:@"%.2f", model.output];
-    if (model.receive == YUUMachineReceiveNo) {
+    _numberLabel.text = model.millsize;
+    _typeLabel.text = _model.milltypeName;
+    _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)model.runtimeday, (long)model.totaldays];
+    _powerLabel.text = [NSString stringWithFormat:@"%ld", (long)model.compower];
+    _outputLabel.text = [NSString stringWithFormat:@"%.2f", [model.outputcoins doubleValue]];
+    if (model.getmill == YUUMachineReceiveNo) {
         _receiveLabel.text = @"未领取";
     } else {
         _receiveLabel.text = @"已领取";
