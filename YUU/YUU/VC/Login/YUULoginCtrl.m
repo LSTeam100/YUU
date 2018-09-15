@@ -33,11 +33,14 @@
 
     UIColor *color = [UIColor whiteColor];
     account.attributedPlaceholder = [[NSAttributedString alloc] initWithString:account.placeholder attributes:@{NSForegroundColorAttributeName: color}];
-    passworad.attributedPlaceholder = [[NSAttributedString alloc] initWithString:account.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+    passworad.attributedPlaceholder = [[NSAttributedString alloc] initWithString:passworad.placeholder attributes:@{NSForegroundColorAttributeName: color}];
 
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
+    
+    
+    
     
     
 }
@@ -138,10 +141,13 @@
         return;
     }
     [self setBusyIndicatorVisible:YES];
-    YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:[NSNumber numberWithInt:[account.text intValue]] Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
+    YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:account.text Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUCommonModel *login = [request getResponse].data;
         [[YUUUserData shareInstance] saveUserData:login];
+        [self dismissViewControllerAnimated:YES completion:^{
+            DLOG(@"关闭登录页面");
+        }];
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -161,21 +167,10 @@
         }
         [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
 
-        [self handleResponseError:self request:request treatErrorAsUnknown:YES];
-        
-        //接口未调试
-        YUUCommonModel *model = [[YUUCommonModel alloc]init];
-        model.memberid = [NSNumber numberWithInt:[account.text intValue]];
-        model.token = @"dskljfklsjkfljk";
-        [[YUUUserData shareInstance] saveUserData:model];
-        
+//        [self handleResponseError:self request:request treatErrorAsUnknown:YES];
     }];
     [req start];
     
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        DLOG(@"关闭登录页面");
-    }];
     
 }
 - (void)didReceiveMemoryWarning {

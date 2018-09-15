@@ -11,10 +11,14 @@
 #import "YUURegisterRequest.h"
 #import "HUD.h"
 #import "YUUCommonModel.h"
-
+#import "YUUSendMessageRequest.h"
+#import "YUUUserData.h"
 @interface YUUSignUpCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     CGFloat originInputTopMargin;
+    NSTimer *countDownTimer;
+    int countNum;
+
 
 }
 @property(nonatomic,weak)IBOutlet UITextField *phoneField;
@@ -24,8 +28,10 @@
 @property(nonatomic,weak)IBOutlet UITextField *recommedField;
 @property(nonatomic,weak)IBOutlet UIButton *signBtn;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint *cstTopMargin;
-
+@property(nonatomic,weak)IBOutlet UILabel *countDownLabel;
+@property(nonatomic,weak)IBOutlet UIButton *sendMsgBtn;
 @property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
+@property(nonatomic,weak)IBOutlet UILabel *localVerCodeLabel;
 
 @end
 
@@ -37,7 +43,30 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
+    self.passwordField.secureTextEntry = true;
+    self.recommedField.keyboardType = UIKeyboardTypeNumberPad;
+    if (countDownTimer) {
+        self.countDownLabel.hidden = NO;
+        self.sendMsgBtn.hidden = YES;
+        
+    }
+    else{
+        self.countDownLabel.hidden = YES;
+        self.sendMsgBtn.hidden = NO;
+        countNum = 300;
+    }
     
+    self.phoneField.keyboardType = UIKeyboardTypeNumberPad;
+    self.messageField.keyboardType = UIKeyboardTypeNumberPad;
+    self.imgField.keyboardType = UIKeyboardTypeNumberPad;
+    NSString *code = getLocalVerifyCodeWithBit(4);
+    self.localVerCodeLabel.text = code;
+    
+    
+    self.phoneField.text = @"15630008679";
+    self.recommedField.text = @"1";
+    self.imgField.text = code;
+    self.passwordField.text = @"r20855090";
     
 }
 
@@ -131,7 +160,7 @@
         [HUD showHUDTitle:@"推荐人手机号不能为空" durationTime:2];
         return;
     }
-    if (isMobileValid(_phoneField.text) == false) {
+    if (isMobileValid(self.phoneField.text) == false) {
         [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
         return;
     }
@@ -141,19 +170,26 @@
         return;
     }
     
-    if (isUserPwdValid(_recommedField.text) == false) {
-        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+//    if (isUserPwdValid(_recommedField.text) == false) {
+//        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+//        return;
+//    }
+    
+    if (![self.imgField.text isEqualToString:self.localVerCodeLabel.text]) {
+        [HUD showHUDTitle:@"输入验证码有误" durationTime:2];
         return;
     }
     
-    [self setBusyIndicatorVisible:YES];
     
-    YUURegisterRequest *reg = [[YUURegisterRequest alloc]initWithMobilePhone:[NSNumber numberWithInt:[_phoneField.text intValue]] IDCode:[NSNumber numberWithInt:[_messageField.text intValue]] Password:_passwordField.text DeviceId:_recommedField.text SuccessCallback:^(YUUBaseRequest *request) {
+    [self setBusyIndicatorVisible:YES];
+    YUURegisterRequest *req = [[YUURegisterRequest alloc]initWithMobilePhone:_phoneField.text IDCode:[NSNumber numberWithInt:[_messageField.text intValue]] Password:_passwordField.text UpMemberip:_recommedField.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUCommonModel *model = [request getResponse].data;
-        
-        
-        
+        [[YUUUserData shareInstance] saveUserData:model];
+        [HUD showHUDTitle:@"注册成功" durationTime:2];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUResponse *res = [request getResponse];
@@ -169,8 +205,64 @@
         }
         [HUD showHUDTitle:res.msg durationTime:2];
     }];
-    [reg start];
+    [req start];
     
+}
+-(void)dealloc{
+    [countDownTimer invalidate];
+    countDownTimer = nil;
+    
+}
+-(IBAction)sendVerifyCode:(id)sender{
+    if (self.phoneField.text.length == 0) {
+        [HUD showHUDTitle:@"手机号不能为空" durationTime:2];
+        return;
+    }
+    
+    if (isMobileValid(self.phoneField.text) == false) {
+        [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
+        return;
+    }
+    
+    [self setBusyIndicatorVisible:YES];
+    YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:self.phoneField.text SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        if (countDownTimer == nil) {
+            countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        }
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"错误信息");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+        
+    }];
+    [sendMsg start];
+    
+}
+-(void)timerAction{
+    self.countDownLabel.hidden = NO;
+    self.sendMsgBtn.hidden = YES;
+    countNum --;
+    if (countNum == 0) {
+        [countDownTimer invalidate];
+        countDownTimer = nil;
+        self.sendMsgBtn.hidden = NO;
+        self.countDownLabel.hidden = YES;
+    }
+    else{
+        self.countDownLabel.text = [NSString stringWithFormat:@"%d",countNum];
+    }
 }
 /*
 #pragma mark - Navigation

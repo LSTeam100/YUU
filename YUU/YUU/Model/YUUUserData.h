@@ -17,4 +17,5 @@
 + (instancetype)shareInstance;
 -(void)getUserData;
 -(void)saveUserData:(YUUCommonModel *)userModel;
+-(void)removeUserData;
 @end

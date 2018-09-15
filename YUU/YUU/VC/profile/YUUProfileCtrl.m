@@ -46,12 +46,16 @@
     [self setupUI];
 }
 -(void)setupUI{
-    self.profileIdLabel.text = [NSString stringWithFormat:@"%@",self.userModel.memberid];
-    self.profileGradeLabel.text = self.userModel.membergrade;
+    self.profileIdLabel.text = [NSString stringWithFormat:@"ID:%@",self.userModel.memberid];
+    self.profileGradeLabel.text = [NSString stringWithFormat:@"等级:%@",self.userModel.membergrade];
     self.assetLabel.text = [NSString stringWithFormat:@"%@",self.userModel.propertynum];
-    self.availbleLabel.text = [NSString stringWithFormat:@"%@",self.userModel.canuseyuu];
-    self.freezeLabel.text = [NSString stringWithFormat:@"%@",self.userModel.frozenyuu];
-    self.lockLabel.text = [NSString stringWithFormat:@"%@",self.userModel.lockedyuu];
+    self.availbleLabel.text = [NSString stringWithFormat:@"可用YUU:%@",self.userModel.canuseyuu];
+    self.freezeLabel.text = [NSString stringWithFormat:@"冻结YUU:%@",self.userModel.frozenyuu];
+    self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%@",self.userModel.lockedyuu];
+    self.profileIdLabel.textColor = colorWithHexString(@"e4c177", 1);
+    self.profileGradeLabel.textColor = colorWithHexString(@"e4c177", 1);
+    self.assetLabel.textColor = colorWithHexString(@"ED6621", 1);
+
     [self setupAuthenBtn];
 }
 

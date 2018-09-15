@@ -55,6 +55,12 @@
         countNum = 300;
 
     }
+    self.nameField.text = @"张三";
+    self.idCardField.text = @"130403198807063648";
+    self.bankField.text = @"123231313";
+    self.prePhoneField.text = @"15630008679";
+    self.messageCode.text = @"2233";
+
 }
 
 
@@ -135,7 +141,7 @@
     }
     
     [self setBusyIndicatorVisible:YES];
-    YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:[NSNumber numberWithInt:[self.prePhoneField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+    YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:self.prePhoneField.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         if (countDownTimer == nil) {
             countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
@@ -216,7 +222,7 @@
     
     NSString *token = [YUUUserData shareInstance].userModel.token;
     
-    YUUCertificationRequest *auth = [[YUUCertificationRequest alloc]initWithCertification:self.nameField.text Membercardid:self.idCardField.text Bankcard:[NSNumber numberWithInt:[self.bankField.text intValue]] Bankphone:[NSNumber numberWithInt:[self.prePhoneField.text intValue]] Code:self.messageCode.text Token:token SuccessCallback:^(YUUBaseRequest *request) {
+    YUUCertificationRequest *auth = [[YUUCertificationRequest alloc]initWithCertification:self.nameField.text Membercardid:self.idCardField.text Bankcard:self.bankField.text Bankphone:self.prePhoneField.text Code:self.messageCode.text Token:token SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUCommonModel *m = [request getResponse].data;
         [[YUUUserData shareInstance] saveUserData:m];

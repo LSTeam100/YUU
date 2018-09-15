@@ -9,5 +9,5 @@
 #import "YUUBaseRequest.h"
 
 @interface YUUCurrencySellRequest : YUUBaseRequest
--(id)initWithCurrencySell:(NSString *)token Coinsite:(NSString *)coinsite Coinnum:(NSNumber *)coinnum SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
+-(id)initWithCurrencySell:(NSString *)token Coinsite:(NSString *)coinsite Coinnum:(NSString *)coinnum SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 @end

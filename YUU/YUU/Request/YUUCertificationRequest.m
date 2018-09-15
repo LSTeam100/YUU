@@ -10,11 +10,12 @@
 #import "YUUCommonModel.h"
 @implementation YUUCertificationRequest
 -(id)initWithCertification:(NSString *)name
-              Membercardid:(NSString *)membercardid Bankcard:(NSNumber *)bankcard Bankphone:(NSNumber *)bankphone Code:(NSString *)code Token:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+              Membercardid:(NSString *)membercardid Bankcard:(NSString *)bankcard Bankphone:(NSString *)bankphone Code:(NSString *)code Token:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[ @"membername",@"membercardid",@"bankcard",@"bankphone",@"code",@"token"];
+        NSArray *signArr = @[name,membercardid,bankcard,bankphone,code,token];
+        
         NSString *sha1key = getSignFromParameter(signArr);
 
         NSDictionary *parameters=@{
@@ -32,7 +33,7 @@
 }
 
 -(NSString *)getURL{
-    return @"/certification";
+    return @"/certification/";
 }
 
 -(NSString *)getMethod{

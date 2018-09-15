@@ -13,7 +13,10 @@
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[@"token",@"oldpsw",@"newpsw"];
+        
+        NSArray *signArr = @[token,oldpsw,newpsw];
+        
+        
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
@@ -27,7 +30,7 @@
     return self;
 }
 -(NSString *)getURL{
-    return @"/modifyloginpsw";
+    return @"/modifyloginpsw/";
 }
 
 -(NSString *)getMethod{

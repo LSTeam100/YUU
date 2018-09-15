@@ -78,6 +78,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifer = @"YUUMessageCell";
     YUUMessageCell *cell = nil;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     YUUMsgModel *msgModel = [self.msgModelList.msgList objectAtIndex:indexPath.row];
     cell.titleLabel.text = msgModel.newstext;

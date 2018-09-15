@@ -9,11 +9,11 @@
 #import "YUUCurrencySellRequest.h"
 
 @implementation YUUCurrencySellRequest
--(id)initWithCurrencySell:(NSString *)token Coinsite:(NSString *)coinsite Coinnum:(NSNumber *)coinnum SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+-(id)initWithCurrencySell:(NSString *)token Coinsite:(NSString *)coinsite Coinnum:(NSString *)coinnum SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[@"token",@"coinsite",@"coinnum"];
+        NSArray *signArr = @[token,coinsite,coinnum];
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
@@ -27,7 +27,7 @@
     return self;
 }
 -(NSString *)getURL{
-    return @"/cointrader";
+    return @"/cointrader/";
 }
 
 -(NSString *)getMethod{

@@ -9,12 +9,13 @@
 #import "YUULoginRequest.h"
 #import "YUUCommonModel.h"
 @implementation YUULoginRequest
--(id)initWithMobilePhone:(NSNumber *)phoneNum
+-(id)initWithMobilePhone:(NSString *)phoneNum
                 Password:(NSString *)password  SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[ @"memberip",@"loginpassword"];
+        NSArray *signArr = @[phoneNum,password];
+        
         NSString *sha1key = getSignFromParameter(signArr);
 
         NSDictionary *parameters=@{
@@ -28,7 +29,7 @@
 }
 
 -(NSString *)getURL{
-    return @"/loginapp";
+    return @"/loginapp/";
 }
 
 -(NSString *)getMethod{

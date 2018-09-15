@@ -35,6 +35,12 @@
         self.haveSigned = YES;
     }
 }
+-(void)removeUserData{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault removeObjectForKey:kUserAccountKey];
+    self.userModel = nil;
+    self.haveSigned = false;
+}
 
 
 @end

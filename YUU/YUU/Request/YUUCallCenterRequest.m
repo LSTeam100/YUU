@@ -24,7 +24,7 @@
     return self;
 }
 -(NSString *)getURL{
-    return @"/callcenter";
+    return @"/callcenter/";
 }
 
 -(NSString *)getMethod{

@@ -40,8 +40,13 @@ typedef enum {
 @property(nonatomic,weak)IBOutlet UILabel *superIdLabel;
 @property(nonatomic,weak)IBOutlet UILabel *mineIdLabel;
 @property(nonatomic,weak)IBOutlet UILabel *mineGradeLabel;
-@property(nonatomic,weak)YUUMineDetailModel *DetailModel;
-@property(nonatomic,weak)YUUCommonModel *userModel;
+@property(nonatomic,weak)IBOutlet UILabel *titleSuperIdLabel;
+@property(nonatomic,weak)IBOutlet UILabel *titleMineIdLabel;
+@property(nonatomic,weak)IBOutlet UILabel *titleGradeLabel;
+
+
+@property(nonatomic,strong)YUUMineDetailModel *DetailModel;
+@property(nonatomic,strong)YUUCommonModel *userModel;
 @property(nonatomic,assign)clickPayType clickType;
 @end
 
@@ -53,12 +58,15 @@ typedef enum {
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.userModel = [YUUUserData shareInstance].userModel;
+    self.titleGradeLabel.textColor = colorWithHexString(@"ED6621", 1.0);
+    self.titleMineIdLabel.textColor = colorWithHexString(@"ED6621", 1.0);
+    self.titleSuperIdLabel.textColor = colorWithHexString(@"ED6621", 1.0);
     [self mineDetailRequest];
     
 }
 -(void)dataInit{
     self.superIdLabel.text = [NSString stringWithFormat:@"%@",self.DetailModel.upmemberid];
-    self.mineIdLabel.text =  [NSString stringWithFormat:@"%@",self.DetailModel.memberphone];
+    self.mineIdLabel.text =  [NSString stringWithFormat:@"%@",self.userModel.memberid];
     self.mineGradeLabel.text = [YUUUserData shareInstance].userModel.membergrade;
 
 
@@ -77,9 +85,9 @@ typedef enum {
     YUUMineDetailRequest *mineDetial = [[YUUMineDetailRequest alloc]initWithMineDetail:token SuccessCallback:^(YUUBaseRequest *request) {
         [weakSelf setBusyIndicatorVisible:NO];
         YUUMineDetailModel *model = [request getResponse].data;
-        weakSelf.DetailModel = model;
-        [weakSelf dataInit];
-        [weakSelf.tableView reloadData];
+        self.DetailModel = model;
+        [self dataInit];
+        [self.tableView reloadData];
         
     } failureCallback:^(YUUBaseRequest *request) {
         [weakSelf setBusyIndicatorVisible:NO];
@@ -109,10 +117,11 @@ typedef enum {
     profileAuthenCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     cell.authenBtn.tag = indexPath.row;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     switch (indexPath.row) {
         case 0:
             cell.titleLabel.text = @"手机号验证";
-            cell.detailLabel.text = [NSString stringWithFormat:@"%@",self.userModel.memberid];
+            cell.detailLabel.text = [NSString stringWithFormat:@"%@",self.DetailModel.memberphone];
             if ([self isAuthenPhone]) {
                 [cell.authenBtn setBackgroundImage:[UIImage imageNamed:@"profile_alauth"] forState:UIControlStateNormal];
             }
@@ -182,7 +191,7 @@ typedef enum {
     NSString *msg = [[NSString alloc]init];
     switch (indexPath.row) {
         case 3:
-            if (self.DetailModel.memberwx != nil) {
+            if (self.DetailModel.memberwx != nil && self.DetailModel.memberwx.length > 0) {
                 [HUD showHUDTitle:@"如果需要更换，请联系客服" durationTime:2];
                 return;
             }
@@ -190,7 +199,7 @@ typedef enum {
             msg = @"微信号只能填写一次，请谨慎填写";
             break;
         case 4:
-            if (self.DetailModel.memberalipay != nil) {
+            if (self.DetailModel.memberalipay != nil && self.DetailModel.memberalipay.length > 0) {
                 [HUD showHUDTitle:@"如果需要更换，请联系客服" durationTime:2];
                 return;
             }
@@ -198,7 +207,7 @@ typedef enum {
             msg = @"支付宝账号只能填写一次，请谨慎填写";
             break;
         case 5:
-            if (self.DetailModel.memberwallet != nil) {
+            if (self.DetailModel.memberwallet != nil && self.DetailModel.memberwallet.length > 0) {
                 UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 YUUViturlWallet *wallet = [sb instantiateViewControllerWithIdentifier:@"YUUViturlWallet"];
                 wallet.virtualWalletStr = self.DetailModel.memberwallet;
@@ -296,7 +305,7 @@ typedef enum {
 }
 -(BOOL)isAuthenBank{
     BOOL authen = false;
-    if (self.DetailModel.bankname != nil) {
+    if (self.DetailModel.bankname != nil && self.DetailModel.bankname.length > 0) {
         authen = true;
     }
     return authen;
@@ -314,7 +323,9 @@ typedef enum {
     [self setBusyIndicatorVisible:YES];
     YUUUserSendwxRequest *sendWX = [[YUUUserSendwxRequest alloc]initWithSendwx:token Memberwx:wxNum SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-        
+        [HUD showHUDTitle:@"微信注册成功" durationTime:2];
+        [self mineDetailRequest];
+
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUResponse *res = [request getResponse];
@@ -343,6 +354,8 @@ typedef enum {
     [self setBusyIndicatorVisible:YES];
     YUUUserSendAlipayRequest *ali = [[YUUUserSendAlipayRequest alloc]initWithSendAlipay:token Memberalipay:aliNum SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
+        [HUD showHUDTitle:@"支付宝注册成功" durationTime:2];
+        [self mineDetailRequest];
 
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -375,6 +388,8 @@ typedef enum {
     [self setBusyIndicatorVisible:YES];
     YUUUserSendWalletRequest *wallet = [[YUUUserSendWalletRequest alloc]initWithSendWallet:token Memberwallet:walletNum SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
+        [HUD showHUDTitle:@"虚拟钱包注册成功" durationTime:2];
+        [self mineDetailRequest];
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];

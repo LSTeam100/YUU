@@ -12,8 +12,8 @@
 -(id)initWithModifyTransaction:(NSString *)token Oldtraderpsw:(NSString *)oldtraderpsw Newtraderpsw:(NSString *)newtraderpsw SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
-    if (self) {
-        NSArray *signArr = @[@"token",@"oldtraderpsw",@"newtraderpsw"];
+    if (self) {        
+        NSArray *signArr = @[token,oldtraderpsw,newtraderpsw];;
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
@@ -27,7 +27,7 @@
     return self;
 }
 -(NSString *)getURL{
-    return @"/modifytraderpsw";
+    return @"/modifytraderpsw/";
 }
 
 -(NSString *)getMethod{

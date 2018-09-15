@@ -13,7 +13,7 @@
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[@"token"];
+        NSArray *signArr = @[token];
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
@@ -26,7 +26,7 @@
 }
 
 -(NSString *)getURL{
-    return @"/openapp";
+    return @"/openapp/";
 }
 
 -(NSString *)getMethod{

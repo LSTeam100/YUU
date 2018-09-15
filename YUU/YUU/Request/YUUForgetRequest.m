@@ -10,12 +10,12 @@
 #import "YUUCommonModel.h"
 @implementation YUUForgetRequest
 
--(id)initWithMobilePhone:(NSNumber *)phoneNum
+-(id)initWithMobilePhone:(NSString *)phoneNum
                 Password:(NSString *)password IDCode:(NSNumber *)idCode SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[ @"memberphone",@"loginpassword",@"code",@"deviceid"];
+        NSArray *signArr = @[phoneNum,password,[NSString stringWithFormat:@"%d",[idCode intValue]]];
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
@@ -30,7 +30,7 @@
 }
 
 -(NSString *)getURL{
-    return @"/forgetlogin";
+    return @"/forgetlogin/";
 }
 
 -(NSString *)getMethod{

@@ -9,20 +9,25 @@
 #import "YUUSendMessageRequest.h"
 
 @implementation YUUSendMessageRequest
--(id)initWithSendMessage:(NSNumber *)memberphone SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+-(id)initWithSendMessage:(NSString *)memberphone SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
+        NSArray *signArr = @[memberphone,[UIDevice IDFAString]];
+        NSString *sha1key = getSignFromParameter(signArr);
+        DLOG(@"sha1key=%@",sha1key);
         
         NSDictionary *parameters=@{
                                    @"memberphone": memberphone,
+                                   @"deviceid" : [UIDevice IDFAString],
+                                   @"sign" : sha1key,
                                    };
         [self setParameters:parameters];
     }
     return self;
 }
 -(NSString *)getURL{
-    return @"/sendmessage";
+    return @"/sendmessage/";
 }
 
 -(NSString *)getMethod{

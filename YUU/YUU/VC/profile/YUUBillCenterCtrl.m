@@ -7,7 +7,10 @@
 //
 
 #import "YUUBillCenterCtrl.h"
-
+#import "YUUBillCenterRequest.h"
+#import "YUUUserData.h"
+#import "HUD.h"
+#import "YUUBillModel.h"
 @implementation YUUBillCenterCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -26,6 +29,7 @@
 @property(nonatomic,weak)IBOutlet UILabel *moneyFlayLabel;
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *scrBtnArr;
+@property(nonatomic,strong)YUUBillModelList *BillModelList;
 
 @end
 
@@ -37,8 +41,27 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self createScrollViewArr];
+    [self billCenterRequest];
     // Do any additional setup after loading the view.
 }
+-(void)billCenterRequest{
+    [self setBusyIndicatorVisible:YES];
+    NSString *token =[YUUUserData shareInstance].userModel.token;
+    YUUBillCenterRequest *bill = [[YUUBillCenterRequest alloc]initWithBillCenter:token SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        self.BillModelList = [request getResponse].data;
+        [self.tableView reloadData];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        [HUD showHUDTitle:res.msg durationTime:2];
+
+    }];
+    [bill start];
+}
+
+
 -(void)createScrollViewArr{
     NSArray *dataArr = @[@"全部",@"转入",@"转出",@"收益",@"奖励",@"支出",@"冻结"];
     [self InitScrBtnFactory:dataArr];
@@ -87,6 +110,14 @@
     static NSString *idnetifer = @"YUUBillCenterCell";
     YUUBillCenterCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:idnetifer];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    YUUBillModel *model = [self.BillModelList.billModelArr objectAtIndex:indexPath.row];
+    cell.titleLabel.text = model.billname;
+    cell.detailLabel.text = model.billtime;
+    cell.detailLabel.text = [NSString stringWithFormat:@"%d",model.billnum];
+    
+
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

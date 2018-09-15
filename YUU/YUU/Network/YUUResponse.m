@@ -10,7 +10,14 @@
 
 @implementation YUUResponse
 -(BOOL) isSucceed{
-    return self.success == [NSNumber numberWithInt:1];
+    BOOL suc = false;
+    if ([self.success intValue] == 1) {
+        suc = true;
+    }
+    else{
+        suc = false;
+    }
+    return suc;
 }
 
 @end

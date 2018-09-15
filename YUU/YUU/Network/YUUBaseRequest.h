@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "YUUResponse.h"
 @class YUUBaseRequest;
-static NSString * const BaseAddress = @"http://www.baidu.com";
+static NSString * const BaseAddress = @"http://yuuleyou.com";
 
 typedef void(^onSuccessCallback)(YUUBaseRequest* request);
 typedef void(^onFailureCallback)(YUUBaseRequest* request);

@@ -10,5 +10,5 @@
 
 @interface YUUCertificationRequest : YUUBaseRequest
 -(id)initWithCertification:(NSString *)name
-              Membercardid:(NSString *)membercardid Bankcard:(NSNumber *)bankcard Bankphone:(NSNumber *)bankphone Code:(NSString *)code Token:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
+              Membercardid:(NSString *)membercardid Bankcard:(NSString *)bankcard Bankphone:(NSString *)bankphone Code:(NSString *)code Token:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 @end

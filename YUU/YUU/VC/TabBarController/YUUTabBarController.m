@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tabBar.frame.size.width, 2)];
     aview.backgroundColor = [UIColor hex:@"#e4c177"];
     [self.tabBar addSubview:aview];
@@ -51,8 +52,9 @@
             DLOG(@"展示登录页面");
         }];
     }
-    
-
+}
+-(void)setupCommonConfigure{
+    [UIDevice getUserAgent];
 }
 
 - (void)didReceiveMemoryWarning {

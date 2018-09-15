@@ -34,6 +34,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *idnetifer = @"YUUTransactionHisCell";
     YUUTransactionHisCell *cell = nil;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell = [tableView dequeueReusableCellWithIdentifier:idnetifer];
     return cell;
 }

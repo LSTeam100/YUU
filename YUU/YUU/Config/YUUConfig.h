@@ -35,7 +35,15 @@ NS_INLINE id getSignFromParameter(NSArray *paraArr){
         return nil;
     }
 }
-
+NS_INLINE NSString* getLocalVerifyCodeWithBit(int num){
+    NSString *verifyCode = @"";
+    for (int i = 0; i < num; i++) {
+        int n = (0 + arc4random() % (9 - 0 + 1));
+        verifyCode = [verifyCode stringByAppendingString:[NSString stringWithFormat:@"%d",n]];
+        
+    }
+    return verifyCode;
+}
 
 
 

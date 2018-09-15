@@ -25,6 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.oldField.secureTextEntry = true;
+    self.passwordField.secureTextEntry = true;
+    self.makeSureField.secureTextEntry = true;
+    
     if (self.modifyType == loginType) {
         self.title = @"修改登录密码";
         self.forgetTransactionBtn.hidden = YES;
@@ -66,10 +70,18 @@
     
     if (self.modifyType == loginType) {
         [self setBusyIndicatorVisible:YES];
+        
         NSString *token = [YUUUserData shareInstance].userModel.token;
         YUUModifyLoginRequest *modifyLogin = [[YUUModifyLoginRequest alloc]initWithModifyLogin:token Oldpsw:self.oldField.text Newpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
             [HUD showHUDTitle:@"修改密码成功" durationTime:2];
+            if (self.modifyType == loginType) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self logout];
+                });
+            }
+
+            
         } failureCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
             YUUResponse *res = [request getResponse];
@@ -120,12 +132,15 @@
         [modifyTransaction start];
         
     }
+}
+-(void)logout{
+    [[YUUUserData shareInstance]removeUserData];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
+    [self presentViewController:navi animated:YES completion:^{
+        DLOG(@"展示登录页面");
+    }];
 
-    
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,7 @@
 #import "YUUCurrencyHistoryRequest.h"
 #import "YUUUserData.h"
 #import "YUUCurrencyHistoryModel.h"
-
+#import "HUD.h"
 @implementation transactionHistoryCell
 
 - (void)awakeFromNib{
@@ -46,7 +46,18 @@
 
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
     }];
     [history start];
 }

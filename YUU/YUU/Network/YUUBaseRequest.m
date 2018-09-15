@@ -103,16 +103,21 @@
     NSString* url=[BaseAddress stringByAppendingString:[self getURL]];
     
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
-    manager.requestSerializer=[AFJSONRequestSerializer serializerWithWritingOptions:0];
+//    manager.requestSerializer=[AFJSONRequestSerializer serializerWithWritingOptions:0];
     manager.requestSerializer.timeoutInterval=10.0f;
-    
+    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     if(_headers!=nil){
         [_headers enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             [manager.requestSerializer setValue:obj forHTTPHeaderField:key];
         }];
     }
+    
     manager.responseSerializer=[AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/xml"]];
+    
+ 
+//    [mutableRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
     manager.securityPolicy.allowInvalidCertificates=YES;
     [manager POST:url parameters:_parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * result=responseObject;

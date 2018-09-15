@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"银行卡认证";
     // Do any additional setup after loading the view.
 }
 

@@ -52,9 +52,19 @@
         self.countDownLabel.hidden = YES;
         self.sendMsgBtn.hidden = NO;
         countNum = 300;
-        
     }
+    self.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.codeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    UIColor *color = [UIColor whiteColor];
     
+    
+    _phoneTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_phoneTextField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+    _codeTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_codeTextField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+     _passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_passwordField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+    _resetPasswordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_resetPasswordField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+    
+    self.passwordField.secureTextEntry = YES;
+    self.resetPasswordField.secureTextEntry = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -154,11 +164,12 @@
     
     [self setBusyIndicatorVisible:YES];
 
-    YUUForgetRequest *forget = [[YUUForgetRequest alloc]initWithMobilePhone:[NSNumber numberWithInt:[self.passwordField.text intValue]] Password:self.passwordField.text IDCode:[NSNumber numberWithInt:[self.codeTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+    YUUForgetRequest *forget = [[YUUForgetRequest alloc]initWithMobilePhone:self.phoneTextField.text Password:self.passwordField.text IDCode:[NSNumber numberWithInt:[self.codeTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         [HUD showHUDTitle:@"成功重置密码" durationTime:2];
-
-
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUResponse *res = [request getResponse];
@@ -193,7 +204,7 @@
     }
     
     [self setBusyIndicatorVisible:YES];
-    YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:[NSNumber numberWithInt:[self.phoneTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+    YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:self.phoneTextField.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         if (countDownTimer == nil) {
             countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];

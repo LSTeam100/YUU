@@ -23,7 +23,9 @@
 @end
 
 
-@interface YUUCurrencyTransactionCtrl ()<UITableViewDelegate,UITableViewDataSource>{
+@interface YUUCurrencyTransactionCtrl ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>{
+    CGFloat originInputTopMargin;
+
 }
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
 @property(nonatomic,weak)IBOutlet UIButton *leftSelectBtn;
@@ -32,6 +34,9 @@
 @property(nonatomic,weak)IBOutlet UILabel *coinnumLabel;
 @property(nonatomic,weak)IBOutlet UITextField *coinsiteField;
 @property(nonatomic,weak)IBOutlet UITextField *coinnumField;
+@property(nonatomic,weak)IBOutlet NSLayoutConstraint *cstTopMargin;
+@property(nonatomic,weak)IBOutlet UIButton *sellBtn;
+@property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
 
 @end
 
@@ -53,7 +58,7 @@
     self.coinnumLabel.textColor = colorWithHexString(@"e4c177", 1.0);
     self.coinsiteLabel.textColor = colorWithHexString(@"e4c177", 1.0);
     self.coinsiteLabel.text = @"钱包地址";
-    self.coinsiteLabel.text = @"YUU数量";
+    self.coinnumLabel.text = @"YUU数量";
 
     self.coinsiteField.placeholder = @"请输入地址";
     self.coinnumField.placeholder = @"请输入交易金额";
@@ -62,7 +67,9 @@
     
     
     self.coinnumField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.coinnumField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-
+    [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        DLOG(@"text change");
+    }];
 
 //    self.navigationController.navigationItem.rightBarButtonItem = histroyItem;
 
@@ -106,8 +113,10 @@
     [self setBusyIndicatorVisible:YES];
     NSString *token = [YUUUserData shareInstance].userModel.token;
     
-    YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:[NSNumber numberWithInt:[self.coinnumField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+    YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:self.coinnumField.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
+        [HUD showHUDTitle:@"交易成功" durationTime:2];
+
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -146,6 +155,8 @@
     static NSString *identifer = @"YUUCurrencyCell";
     YUUCurrencyCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     switch (indexPath.row) {
         case 0:
             cell.titleLabel.text = @"钱包地址";
@@ -164,11 +175,72 @@
     return cell;
 }
 
+- (void)moveUp:(float)shift{
+    self.cstTopMargin.constant -= shift;
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)reover{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.cstTopMargin.constant = self->originInputTopMargin;
+        [self.view layoutIfNeeded];
+    }];
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    self.activeView = textField;
+    if (textField == self.coinnumField) {
+        self.activeView = self.sellBtn;
+    }
+    return true;
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    [self tapCancelGesture:true];
+    
+}
+-(void)tapCancelGesture:(bool)ret{
+    if (ret) {
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
+        [self.view addGestureRecognizer:tap];
+        self.tapCancelGesture = tap;
+    }
+    else{
+        if (self.tapCancelGesture) {
+            UITapGestureRecognizer *g = self.tapCancelGesture;
+            [self.view removeGestureRecognizer:g];
+        }
+    }
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return true;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self tapCancelGesture:false];
+}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    return  true;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    originInputTopMargin = self.cstTopMargin.constant;
+    [self registerKeyboardNotification];
+    
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self unregisterKeyboardNotification];
+}
 /*
 #pragma mark - Navigation
 

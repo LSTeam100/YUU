@@ -8,6 +8,7 @@
 
 #import "YUUSetingCtrl.h"
 #import "YUUModifyPassword.h"
+#import "YUUUserData.h"
 @implementation YUUSetingCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -44,7 +45,8 @@
     static NSString *identifer = @"YUUSetingCell";
     YUUSetingCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     switch (indexPath.row) {
         case 0:
             cell.titleLabel.text = @"微信公众号";
@@ -91,7 +93,13 @@
 }
 
 -(IBAction)loginOut:(id)sender{
-    
+    [[YUUUserData shareInstance]removeUserData];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
+    [self presentViewController:navi animated:YES completion:^{
+        DLOG(@"展示登录页面");
+    }];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
