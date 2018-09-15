@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface YUUMilltraderModel : NSObject
-@property(nonatomic,strong)NSNumber *compower;
-@property(nonatomic,strong)NSNumber *totaldays;
-@property(nonatomic,strong)NSNumber *totalcoins;
-@property(nonatomic,strong)NSNumber *millprice;
-@property(nonatomic,strong)NSNumber *milltype;
+@property(nonatomic,strong)NSNumber *compower; // 矿机算力
+@property(nonatomic,strong)NSNumber *totaldays; // 总运行天数
+@property(nonatomic,strong)NSNumber *totalcoins; // 总收益量
+@property(nonatomic,strong)NSNumber *millprice; // 价格
+@property(nonatomic,assign) YUUMilltype milltype; // 矿机等级0：新手1:青铜2：白银3：黄金4：铂金5：钻石
 
 -(instancetype)initWtihDic:(NSDictionary *)dic;
 @end

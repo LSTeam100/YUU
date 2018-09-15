@@ -10,6 +10,9 @@
 #import "YUUMachineMarketCell.h"
 #import "YUUBaseTableView.h"
 #import "UIViewController+Help.h"
+#import "AlertController.h"
+#import "YUUMilltraderRequest.h"
+#import "YUUBuyMachineRequest.h"
 
 @interface YUUMachineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMachineMarketCellDelegate>
 
@@ -32,20 +35,30 @@
     
     _items = [NSArray array];
     
-    YUUMachineModel *model = [[YUUMachineModel alloc] init];
-    model.icon = @"miningMachine0";
-    model.name = @"新手云矿机";
-    model.power = 6;
-    model.operationCycle = 500;
-    model.allIncome = 188.9;
-    model.price = 120;
+    YUUMilltraderModel *model = [[YUUMilltraderModel alloc] init];
+//    YUUMachineModel *model = [[YUUMachineModel alloc] init];
+//    model.icon = @"miningMachine0";
+//    model.name = @"新手云矿机";
+    model.compower = @6;
+    model.totaldays = @500;
+    model.totalcoins = @188.9;
+    model.millprice = @120;
     _items = @[model];
     
-
+    [self getHTTPData];
 }
 
 // 获取数据
-
+- (void)getHTTPData {
+    WeakSelf
+    YUUMilltraderRequest *request = [[YUUMilltraderRequest alloc] initWithMilltrader:@"" SuccessCallback:^(YUUBaseRequest *request)
+    {
+        weakSelf.items = request.getResponse.data;
+    } failureCallback:^(YUUBaseRequest *request) {
+        
+    }];
+    [request start];
+}
 
 #pragma mark - UITableViewDataSource -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -81,9 +94,15 @@
 //}
 
 #pragma mark - YUUMachineMarketCellDelegate -
-- (void)buyMachine:(YUUMachineModel *)model {
-    [UIViewController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
-        
+- (void)buyMachine:(YUUMilltraderModel *)model {
+    [HUD showHUD];
+    [AlertController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
+        YUUBuyMachineRequest *request = [[YUUBuyMachineRequest alloc] initWithBuyMachine:@"" Milltype:[NSNumber numberWithInteger:model.milltype] SuccessCallback:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        } failureCallback:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        }];
+        [request start];
     } cancelHandler:^{
         
     }];

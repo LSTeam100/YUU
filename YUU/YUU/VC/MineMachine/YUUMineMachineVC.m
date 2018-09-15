@@ -9,6 +9,8 @@
 #import "YUUMineMachineVC.h"
 #import "YUUMineMachineCell.h"
 #import "YUUColor.h"
+#import "YUUMachineListRequest.h"
+#import "YUUMachineArrModel.h"
 
 @interface YUUMineMachineVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -20,7 +22,11 @@
 
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 
-@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) YUUMachineArrModel *arrModel;
+//@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray *workingItems;
+@property (nonatomic, strong) NSMutableArray *doneItems;
+@property (nonatomic, assign) BOOL isWorking;
 
 @end
 
@@ -31,27 +37,65 @@
     
     self.title = @"矿机";
     _ouputImageView.hidden = YES;
+    _workingItems = [NSMutableArray array];
+    _doneItems = [NSMutableArray array];
+    _isWorking = YES;
     
-    YUUMachineModel *model = [[YUUMachineModel alloc] init];
-    model.status = YUUMachineStatusDefault;
-    model.machineNumber = @"S00922";
-    model.type = YUUMachineTypeNew;
-    model.operationDay = 5;
-    model.operationCycle = 200;
-    model.output = 12.8;
-    model.receive = YUUMachineReceiveNo;
-    _items = [NSMutableArray array];
-    [_items addObject:model];
+    YUUMachineDetailModel *model = [[YUUMachineDetailModel alloc] init];
+    model.millsize = @"1";
+    model.milltype = @1;
+    model.runtimeday = @1;
+    model.totaldays = @1;
+    model.compower = @"1";
+    model.outputcoins = @1;
+    model.getmill = 1;
+    model.milldie = 1;
+
+    _workingItems = [NSMutableArray array];
+    [_workingItems addObject:model];
+    
+    _doneItems = [NSMutableArray array];
+    [_doneItems addObject:model];
+    [_doneItems addObject:model];
+    
+    [self getHTTPData];
+}
+
+- (void)getHTTPData {
+    WeakSelf
+    YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:@"" SuccessCallback:^(YUUBaseRequest *request) {
+        weakSelf.arrModel = request.getResponse.data;
+        for (YUUMachineDetailModel *model in weakSelf.arrModel.machineArr) {
+            if (model.milldie == YUUMachineStatusWorking) {
+                [weakSelf.workingItems addObject:model];
+            } else {
+                [weakSelf.doneItems addObject:model];
+            }
+        }
+        [self.tableView reloadData];
+    } failureCallback:^(YUUBaseRequest *request) {
+        
+    }];
+    [request start];
 }
 
 #pragma mark - UITableViewDataSource -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _items.count;
+    if (_isWorking) {
+        return _workingItems.count;
+    } else {
+        return _doneItems.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YUUMineMachineCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMachineCell"];
-    cell.model = _items[indexPath.row];
+    if (_isWorking) {
+        cell.model = _workingItems[indexPath.row];
+    } else {
+        cell.model = _doneItems[indexPath.row];
+    }
+    
     return cell;
 }
 
@@ -72,11 +116,17 @@
 - (IBAction)computePowerImageViewTap:(id)sender {
     _computePowerImageView.hidden = NO;
     _ouputImageView.hidden = YES;
+    
+    _isWorking = YES;
+    [_tableView reloadData];
 }
 
 - (IBAction)outputImageViewTap:(id)sender {
     _computePowerImageView.hidden = YES;
     _ouputImageView.hidden = NO;
+    
+    _isWorking = NO;
+    [_tableView reloadData];
 }
 
 

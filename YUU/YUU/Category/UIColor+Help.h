@@ -12,6 +12,8 @@
 
 + (UIColor *)hex:(NSString *)hexString;
 
++ (UIColor *)hex:(NSString *)hexString alpha:(float)alpha;
+
 + (UIColor *)R:(float)r G:(float)g B:(float)b;
 
 @end

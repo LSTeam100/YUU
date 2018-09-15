@@ -22,8 +22,11 @@
     UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tabBar.frame.size.width, 2)];
     aview.backgroundColor = [UIColor hex:@"#e4c177"];
     [self.tabBar addSubview:aview];
-    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"48"]];
+//    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"48"]];
 //    [self.tabBar setShadowImage:[UIImage imageNamed:@"bg"]];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+    bgImageView.image = [UIImage imageNamed:@"48"];
+    [self.tabBar insertSubview:bgImageView atIndex:0];
     self.tabBar.clipsToBounds = YES;
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor hex:@"#E3C278"]} forState:UIControlStateNormal];
@@ -41,7 +44,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self checkLoginStatus];
+//    [self checkLoginStatus];
 }
 -(void)checkLoginStatus{
     [[YUUUserData shareInstance] getUserData];

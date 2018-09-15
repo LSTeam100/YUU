@@ -7,7 +7,12 @@
 //
 
 #import "YUUBaseRequest.h"
+#import "YUUMilltraderModel.h"
+#import "YUUPriceModel.h"
+#import "Header.h"
 
 @interface YUUMilltraderRequest : YUUBaseRequest
+
+-(id)initWithMilltrader:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 
 @end

@@ -7,7 +7,12 @@
 //
 
 #import "YUUBaseTableViewCell.h"
+#import "DrawView.h"
 
 @interface YUUMineMarketPriceCell : YUUBaseTableViewCell
+
+@property (nonatomic, strong) DrawView *priceView;
+
+@property (nonatomic, strong) NSArray *priceArr;
 
 @end

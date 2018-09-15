@@ -11,6 +11,10 @@
 @implementation UIColor (Help)
 
 + (UIColor *)hex:(NSString *)hexString {
+    return [UIColor hex:hexString alpha:1.0f];
+}
+
++ (UIColor *)hex:(NSString *)hexString alpha:(float)alpha {
     NSString *cString = [[hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     if ([cString length] < 6)
@@ -39,7 +43,7 @@
     return [UIColor colorWithRed:((float) r / 255.0f)
                            green:((float) g / 255.0f)
                             blue:((float) b / 255.0f)
-                           alpha:1.0f];
+                           alpha:alpha];
 }
 
 + (UIColor *)R:(float)r G:(float)g B:(float)b {

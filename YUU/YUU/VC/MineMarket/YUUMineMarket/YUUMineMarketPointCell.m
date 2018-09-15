@@ -7,6 +7,9 @@
 //
 
 #import "YUUMineMarketPointCell.h"
+#import "UITextField+Help.h"
+#import "YUUPointSellRequest.h"
+#import "Header.h"
 
 @implementation YUUMineMarketPointCell
 
@@ -15,6 +18,10 @@
     
     [_noticeBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     [_noticeBtn setTitle:@"点对点交易须知" forState:UIControlStateNormal];
+    
+    [_idTextField setPlaceholderColor:[UIColor whiteColor]];
+    [_countTextField setPlaceholderColor:[UIColor whiteColor]];
+    [_priceTextField setPlaceholderColor:[UIColor whiteColor]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -24,6 +31,19 @@
 }
 
 - (IBAction)sellBtnAction:(UIButton *)sender {
+    if (_idTextField.text.length == 0 ||
+        _priceTextField.text.length == 0 ||
+        _countTextField.text.length == 0) {
+        return;
+    }
+    
+    [HUD showHUD];
+    YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithPointSell:@"sing" Memberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
+        [HUD showRequest:request];
+    } failureCallback:^(YUUBaseRequest *request) {
+        [HUD showRequest:request];
+    }];
+    [request start];
 }
 
 - (IBAction)noticeBtnAction:(id)sender {

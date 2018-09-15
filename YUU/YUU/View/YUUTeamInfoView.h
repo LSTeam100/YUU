@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HUDView.h"
 #import "HUDProtocol.h"
+#import "YUUMachinePoolArrModel.h"
 
 @interface YUUTeamInfoView : HUDView
 
@@ -23,5 +24,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *label3;
 @property (strong, nonatomic) IBOutlet UILabel *label4;
 @property (strong, nonatomic) IBOutlet UILabel *label5;
+
+@property (nonatomic, strong) YUUMachinePoolArrModel *model;
 
 @end

@@ -14,6 +14,7 @@
 #import "YUUMineMarketMailCell.h"
 #import "YUUMineMarketPointCell.h"
 #import "YUUMineMarketPriceCell.h"
+#import "YUUMilltraderRequest.h"
 
 @interface YUUMineMarketVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -29,6 +30,9 @@
 @property (nonatomic, strong) NSArray *transactionList;
 
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
+
+@property (nonatomic, strong) YUUPriceModel *model;
+@property (nonatomic, strong) NSArray *priceArr;
 
 @end
 
@@ -49,6 +53,36 @@
     model.time = @"1/3 9:00";
     model.content = @"9868387699ffnifnf jdn;nafje njnsllb";
     _transactionList = @[model];
+    
+    [self getHTTPData];
+}
+
+- (void)getHTTPData {
+    WeakSelf
+    YUUMilltraderRequest *request = [[YUUMilltraderRequest alloc] initWithMilltrader:@"" SuccessCallback:^(YUUBaseRequest *request) {
+        weakSelf.model = request.getResponse.data;
+        [weakSelf updateUI];
+    } failureCallback:^(YUUBaseRequest *request) {
+        
+    }];
+    [request start];
+}
+
+- (void)getMailData {
+    
+}
+
+- (void)updateUI {
+    _priceLabel.text = [NSString stringWithFormat:@"%@", _model.sevenprice];
+    _timeLabel.text = [NSString stringWithFormat:@"次：%ld", _model.tradernum];
+    _priceArr = @[_model.oneprice,
+                  _model.twoprice,
+                  _model.threeprice,
+                  _model.fourprice,
+                  _model.fiveprice,
+                  _model.sixprice,
+                  _model.sevenprice];
+    [self.tableView reloadData];
 }
 
 - (void)addSegment {
@@ -63,10 +97,8 @@
     }];
     
     [segment setSegmentTitles:@[@"价格", @"点对点", @"信箱"] segmentSelectedAtIndex:^(NSInteger index) {
-        if (index == 0) {
-            
-        } else {
-            
+        if (index == 2) {
+            [self getMailData];
         }
         weakSelf.segmentSelected = index;
         [self.tableView reloadData];

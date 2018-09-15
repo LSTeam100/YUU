@@ -93,4 +93,12 @@
     [[HUDManager manager] showCustomView:customView];
 }
 
++ (void)showRequest:(YUUBaseRequest *)request {
+    if (request.getResponse.msg.length > 0) {
+        [HUD showHUDTitle:request.getResponse.msg];
+    } else {
+        [HUD hide];
+    }
+}
+
 @end

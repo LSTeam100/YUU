@@ -53,6 +53,8 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"120"] forBarMetrics:UIBarMetricsDefault];
 //    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"bg"]];
 
+    // title color
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : YUUYellow};
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     bgImageView.image = [UIImage imageNamed:@"bg"];

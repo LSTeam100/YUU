@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "YUUMachineModel.h"
+#import "YUUMilltraderModel.h"
 #import "YUUBaseTableViewCell.h"
 
 @protocol YUUMachineMarketCellDelegate <NSObject>
 
-- (void)buyMachine:(YUUMachineModel *)model;
+- (void)buyMachine:(YUUMilltraderModel *)model;
 
 @end
 
@@ -36,7 +37,7 @@
 @property (strong, nonatomic) IBOutlet UIView *upLine;
 @property (strong, nonatomic) IBOutlet UIView *downLine;
 
-@property (nonatomic, strong) YUUMachineModel *model;
+@property (nonatomic, strong) YUUMilltraderModel *model;
 
 
 

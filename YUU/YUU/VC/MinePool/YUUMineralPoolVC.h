@@ -1,5 +1,5 @@
 //
-//  YUUMinePoolVC.h
+//  YUUMineralPoolVC.h
 //  YUU
 //
 //  Created by boli on 2018/8/17.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "YUUBaseViewController.h"
 
-@interface YUUMinePoolVC : YUUBaseViewController
+@interface YUUMineralPoolVC : YUUBaseViewController
 
 @end

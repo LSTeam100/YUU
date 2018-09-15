@@ -7,7 +7,7 @@
 //
 
 #import "YUUMilltraderRequest.h"
-#import "YUUMilltraderModel.h"
+
 @implementation YUUMilltraderRequest
 -(id)initWithMilltrader:(NSString *)token SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
@@ -35,14 +35,18 @@
     [super processResponse:responseDictionary];
     if([[self getResponse] isSucceed]){
         NSDictionary* data=responseDictionary[@"data"];
-        if(data!=nil){
-            YUUMilltraderArrModel *modelList = [[YUUMilltraderArrModel alloc]init];
-            NSArray *modelArr = data[@"msgList"];
-            for (NSDictionary *oneDic in modelArr) {
-                YUUMilltraderModel *m = [[YUUMilltraderModel alloc]initWtihDic:oneDic];
-                [modelList.MilltraderArr addObject:m];
-            }
-            [self getResponse].data=modelList;
+//        if(data!=nil){
+//            YUUMilltraderArrModel *modelList = [[YUUMilltraderArrModel alloc]init];
+//            NSArray *modelArr = data[@"msgList"];
+//            for (NSDictionary *oneDic in modelArr) {
+//                YUUMilltraderModel *m = [[YUUMilltraderModel alloc]initWtihDic:oneDic];
+//                [modelList.MilltraderArr addObject:m];
+//            }
+//            [self getResponse].data=modelList;
+//        }
+        if (data) {
+            YUUPriceModel *model = [YUUPriceModel mj_objectWithKeyValues:data];
+            [self getResponse].data = model;
         }
     }
 }

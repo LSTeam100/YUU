@@ -29,7 +29,7 @@
         <!--矿池-->
         <scene sceneID="feS-8P-t79">
             <objects>
-                <viewController storyboardIdentifier="YUUMinePoolVC" id="NXS-rV-7t2" customClass="YUUMinePoolVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YUUMineralPoolVC" id="NXS-rV-7t2" customClass="YUUMineralPoolVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ngi-vK-iH8"/>
                         <viewControllerLayoutGuide type="bottom" id="GHN-ac-Xkm"/>
@@ -51,34 +51,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(截止昨天)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYN-Ss-c5p">
-                                <rect key="frame" x="89.5" y="119" width="49" height="12"/>
+                                <rect key="frame" x="90" y="119" width="49" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(截止昨天)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzj-gr-T0r">
-                                <rect key="frame" x="237" y="119" width="49" height="12"/>
+                                <rect key="frame" x="237.5" y="119" width="49" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLY-P0-e2x">
-                                <rect key="frame" x="74" y="161" width="79.5" height="36"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLY-P0-e2x">
+                                <rect key="frame" x="74.5" y="161" width="79.5" height="36"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.92941176470588238" green="0.40000000000000002" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3kU-kL-8Ts" appends="YES" id="RS4-T4-qGL"/>
+                                </connections>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVD-Xq-7KT">
-                                <rect key="frame" x="232.5" y="161" width="58.5" height="36"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVD-Xq-7KT">
+                                <rect key="frame" x="232" y="161" width="58.5" height="36"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.92941176470588238" green="0.40000000000000002" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BCM-Mc-Kkw" appends="YES" id="J6g-2d-YIU"/>
+                                </connections>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-O5-Ltt" customClass="YUUBaseTableView">
                                 <rect key="frame" x="10" y="287" width="355" height="331"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YUUMinePoolCell" rowHeight="89" id="YBh-KZ-3IV" customClass="YUUMinePoolCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YUUMineralPoolCell" rowHeight="89" id="YBh-KZ-3IV" customClass="YUUMineralPoolCell">
                                         <rect key="frame" x="0.0" y="28" width="355" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YBh-KZ-3IV" id="LW7-im-WQe">
@@ -205,6 +213,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7FH-KD-x8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3kU-kL-8Ts">
+                    <connections>
+                        <action selector="showTeamMessage:" destination="NXS-rV-7t2" id="4e6-JZ-yRx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="BCM-Mc-Kkw">
+                    <connections>
+                        <action selector="showTeamMessage:" destination="NXS-rV-7t2" id="OLl-00-bNI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-130.40000000000001" y="132.68365817091455"/>
         </scene>
