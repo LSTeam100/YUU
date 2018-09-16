@@ -10,6 +10,8 @@
 #import "UIColor+Help.h"
 #import "YUULoginCtrl.h"
 #import "YUUUserData.h"
+
+
 @interface YUUTabBarController ()
 
 @end
@@ -44,7 +46,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-//    [self checkLoginStatus];
+    [self checkLoginStatus];
 }
 -(void)checkLoginStatus{
     [[YUUUserData shareInstance] getUserData];

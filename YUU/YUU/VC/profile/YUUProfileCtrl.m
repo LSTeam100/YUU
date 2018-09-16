@@ -18,6 +18,7 @@
 #import "YUUUserData.h"
 #import "HUD.h"
 #import "YUUProfileAuthenCtrl.h"
+#import "YUUCallCenterCtrl.h"
 @interface YUUProfileCtrl ()
 @property(nonatomic,weak)IBOutlet UIButton *mineBtn;
 @property(nonatomic,weak)IBOutlet UIButton *billBtn;
@@ -119,21 +120,28 @@
 -(IBAction)naviToBill:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUBillCenterCtrl *bill = [sb instantiateViewControllerWithIdentifier:@"YUUBillCenterCtrl"];
+    bill.assetMoney = self.assetLabel.text;
     [self.navigationController pushViewController: bill animated:YES];
 }
 -(IBAction)naviToCoin:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
      YUUCurrencyTransactionCtrl *currency = [sb instantiateViewControllerWithIdentifier:@"YUUCurrencyTransactionCtrl"];
+    currency.avalibleMoney = [NSString stringWithFormat:@"%@",self.userModel.canuseyuu];
     [self.navigationController pushViewController: currency animated:YES];
 }
 -(IBAction)naviToBussniess:(id)sender{
-    
+    [HUD showHUDTitle:@"敬请期待" durationTime:2];
+
 }
 -(IBAction)naviToCostom:(id)sender{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YUUCallCenterCtrl *callcenter = [sb instantiateViewControllerWithIdentifier:@"YUUCallCenterCtrl"];
+    [self.navigationController pushViewController: callcenter animated:YES];
+
     
 }
 -(IBAction)naviToGames:(id)sender{
-    
+    [HUD showHUDTitle:@"敬请期待" durationTime:2];
 }
 
 -(IBAction)naviToMesage:(id)sender{

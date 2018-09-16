@@ -148,6 +148,7 @@
 		18F85D212129048F001A3205 /* YUUResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D1F2129048F001A3205 /* YUUResponse.m */; };
 		18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D2321290981001A3205 /* YUUSuperCtrl.m */; };
 		18F85D2821290A58001A3205 /* YUULoginCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85D2721290A58001A3205 /* YUULoginCtrl.m */; };
+		18F97C14214E08960059E194 /* YUUCallCenterCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F97C13214E08960059E194 /* YUUCallCenterCtrl.m */; };
 		FCF2E7AEAB778F8ABA8D959A /* libPods-YUU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5ACEB701D806D505D5CF79 /* libPods-YUU.a */; };
 /* End PBXBuildFile section */
 
@@ -426,6 +427,8 @@
 		18F85D2321290981001A3205 /* YUUSuperCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSuperCtrl.m; sourceTree = "<group>"; };
 		18F85D2621290A58001A3205 /* YUULoginCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUULoginCtrl.h; sourceTree = "<group>"; };
 		18F85D2721290A58001A3205 /* YUULoginCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUULoginCtrl.m; sourceTree = "<group>"; };
+		18F97C12214E08960059E194 /* YUUCallCenterCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCallCenterCtrl.h; sourceTree = "<group>"; };
+		18F97C13214E08960059E194 /* YUUCallCenterCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCallCenterCtrl.m; sourceTree = "<group>"; };
 		D337288ADA5FB1CCA7135CD7 /* Pods-YUU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YUU/Pods-YUU.debug.xcconfig"; sourceTree = "<group>"; };
 		DC5ACEB701D806D505D5CF79 /* libPods-YUU.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YUU.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A70E4E5C3398F992757CB /* Pods-YUU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUU.release.xcconfig"; path = "Pods/Target Support Files/Pods-YUU/Pods-YUU.release.xcconfig"; sourceTree = "<group>"; };
@@ -838,6 +841,8 @@
 				1877D4A72131543900D5FDAE /* YUUBillCenterCtrl.m */,
 				18CDC7C0213D548A00A405F9 /* YUUTransactionHistoryCtrl.h */,
 				18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */,
+				18F97C12214E08960059E194 /* YUUCallCenterCtrl.h */,
+				18F97C13214E08960059E194 /* YUUCallCenterCtrl.m */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -1156,6 +1161,7 @@
 				099445382141226000548245 /* (null) in Sources */,
 				09251C82213F6EC300B12370 /* PendingTableViewCell.m in Sources */,
 				0926F07221328E200083CFDD /* HUD.m in Sources */,
+				18F97C14214E08960059E194 /* YUUCallCenterCtrl.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				0923C458214895EE00869625 /* YUUPointOnsaleRequest.m in Sources */,
 				0923C467214895EE00869625 /* YUUBuyMachineRequest.m in Sources */,

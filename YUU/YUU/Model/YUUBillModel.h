@@ -12,6 +12,7 @@
 @property(nonatomic,strong)NSString *billname;
 @property(nonatomic,strong)NSNumber *billnum;
 @property(nonatomic,strong)NSString *billtime;
+@property(nonatomic,strong)NSNumber *billtype;
 -(instancetype)initWtihDic:(NSDictionary *)dic;
 @end
 

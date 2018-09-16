@@ -37,7 +37,7 @@
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint *cstTopMargin;
 @property(nonatomic,weak)IBOutlet UIButton *sellBtn;
 @property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
-
+@property(nonatomic,weak)IBOutlet UILabel *avaliableLabel;
 @end
 
 @implementation YUUCurrencyTransactionCtrl
@@ -48,6 +48,7 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     [self initSegmentBar];
     [self setCustomBackItem];
+    self.avaliableLabel.text = self.avalibleMoney;
     
     UIBarButtonItem *histroyItem = [[UIBarButtonItem alloc]initWithTitle:@"历史记录" style:UIBarButtonItemStylePlain target:self action:@selector(naviToHistoryController)];
     

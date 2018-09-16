@@ -17,5 +17,6 @@
 
 
 @interface YUUBillCenterCtrl : YUUSuperCtrl
+@property(nonatomic,strong)NSString *assetMoney;
 
 @end

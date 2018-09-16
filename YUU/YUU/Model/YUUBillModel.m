@@ -16,6 +16,7 @@
         self.billname = dic[@"billname"];
         self.billnum = dic[@"billnum"];
         self.billtime = dic[@"billtime"];
+        self.billtype = dic[@"billtype"];
     }
     return self;
 }
