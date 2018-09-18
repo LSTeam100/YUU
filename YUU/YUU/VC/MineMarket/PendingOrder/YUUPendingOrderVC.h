@@ -26,6 +26,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *noticeBtn;
 
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
+@property (strong, nonatomic) IBOutlet UISlider *slider;
 
+@property (nonatomic, assign) UserLevel level;
+@property (nonatomic, assign) NSInteger sliderBegin;
+@property (nonatomic, assign) NSInteger sliderEnd;
 
 @end

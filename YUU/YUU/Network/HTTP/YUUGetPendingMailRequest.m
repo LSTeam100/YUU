@@ -20,7 +20,7 @@
     NSDictionary *parameters=@{ @"uporderstype": [NSNumber numberWithInteger:level] };
     [self setParameters:parameters];
     
-    [self start];
+//    [self start];
     
     return self;
 }

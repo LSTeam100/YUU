@@ -558,6 +558,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="挂买单" backgroundImage="btn_bg"/>
+                                <connections>
+                                    <action selector="hangingOrderAction:" destination="75R-pC-dw3" eventType="touchUpInside" id="qAt-8C-Fbf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wak-Qu-bzb">
                                 <rect key="frame" x="130" y="330" width="115" height="29"/>

@@ -7,6 +7,10 @@
 //
 
 #import "YUUMineMarketMailCell.h"
+#import "YUUPointSellCancelRequest.h"
+#import "YUUPointbuyRequest.h"
+#import "YUUSellerTransactionRequest.h"
+#import "YUUSellerInfoView.h"
 
 @implementation YUUMineMarketMailCell
 
@@ -51,11 +55,34 @@
     if ([title isEqualToString:@"买家资料"]) {
         
     } else if ([title isEqualToString:@"卖家资料"]) {
+        YUUSellerInfoView *hudView = [YUUSellerInfoView xibInstancetype];
         
+        [HUD showCustomView:hudView];
     } else if ([title isEqualToString:@"确认交易"]) {
+        //买家
+        if (1) {
+            YUUPointbuyRequest *request = [[YUUPointbuyRequest alloc] initWithPointbuy:@"" Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
+                
+            } failureCallback:^(YUUBaseRequest *request) {
+                
+            }];
+            [request start];
+        } else { // 卖家
+            YUUSellerTransactionRequest *request = [[YUUSellerTransactionRequest alloc] initWithSellerTransaction:@"" Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
+                
+            } failureCallback:^(YUUBaseRequest *request) {
+                
+            }];
+            [request start];
+        }
         
     } else if ([title isEqualToString:@"取消交易"]) {
-        
+        YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:@"" Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
+            
+        } failureCallback:^(YUUBaseRequest *request) {
+            
+        }];
+        [request start];
     }
 }
 

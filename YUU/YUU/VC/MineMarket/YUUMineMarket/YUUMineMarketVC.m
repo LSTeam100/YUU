@@ -157,12 +157,24 @@
     YUUPendingOrderVC *vc = [YUUPendingOrderVC storyboardInstanceType];
     if (sender.tag == 0) {
         vc.title = @"新手挂单";
+        vc.level = UserLevelNovice;
+        vc.sliderBegin = 1;
+        vc.sliderEnd = 50;
     } else if (sender.tag == 1) {
         vc.title = @"进阶挂单";
+        vc.level = UserLevelAdvanced;
+        vc.sliderBegin = 50;
+        vc.sliderEnd = 100;
     } else if (sender.tag == 2) {
         vc.title = @"高手挂单";
+        vc.level = UserLevelMaster;
+        vc.sliderBegin = 100;
+        vc.sliderEnd = 500;
     } else {
         vc.title = @"国际挂单";
+        vc.level = UserLevelInternational;
+        vc.sliderBegin = 500;
+        vc.sliderEnd = 1000;
     }
     self.hidesBottomBarWhenPushed = YES;
     [self setCustomBackItem];

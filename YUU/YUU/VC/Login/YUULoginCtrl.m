@@ -136,10 +136,10 @@
 
     }
     
-    if (isMobileValid(account.text) == false) {
-        [[HUDManager manager] showHUDTitle:@"输入手机号有误" durationTitme:2];
-        return;
-    }
+//    if (isMobileValid(account.text) == false) {
+//        [[HUDManager manager] showHUDTitle:@"输入手机号有误" durationTitme:2];
+//        return;
+//    }
     [self setBusyIndicatorVisible:YES];
     YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:account.text Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];

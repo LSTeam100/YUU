@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YUUBaseTableView.h"
+#import "YUUUserData.h"
 
 @interface YUUBaseViewController : UIViewController
 

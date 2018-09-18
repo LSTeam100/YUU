@@ -25,5 +25,8 @@
 @property (nonatomic, strong) NSArray *numbers;
 
 @property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, strong) UIColor *strokeColor;
+@property (nonatomic, strong) UIColor *fillColor;
 
 @end

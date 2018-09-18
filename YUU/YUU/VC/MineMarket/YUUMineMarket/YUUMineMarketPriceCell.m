@@ -19,12 +19,18 @@
     _priceView.backgroundColor = [UIColor clearColor];
     
     _priceView.lineColor = YUUYellow;
+    _priceView.textColor = YUUYellow;
+    _priceView.strokeColor = YUUYellow;
+    _priceView.fillColor = [UIColor hex:@"#e4c177" alpha:0.3];
     
     _priceView.leftTitles = @[@"0",@"2",@"4",@"6",@"8",@"10", @"12", @"14"];
     _priceView.left = 40;
+    _priceView.right = 50;
+    _priceView.bottom = 60;
+    _priceView.top = 60;
     
+//    _priceView.partLine = 3;
     
-    _priceView.bottomTitles = @[@"1",@"1",@"1",@"1",@"1",@"1",];
     _priceView.maxLeft = 100;
     _priceView.numbers = @[@10,@30, @80, @40];
     
