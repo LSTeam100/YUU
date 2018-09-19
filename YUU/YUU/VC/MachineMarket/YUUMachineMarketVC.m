@@ -51,11 +51,11 @@
 // 获取数据
 - (void)getHTTPData {
     WeakSelf
-    YUUMilltraderRequest *request = [[YUUMilltraderRequest alloc] initWithMilltrader:@"" SuccessCallback:^(YUUBaseRequest *request)
+    YUUMilltraderRequest *request = [[YUUMilltraderRequest alloc] initWithMilltrader:[YUUUserData shareInstance].userModel.token SuccessCallback:^(YUUBaseRequest *request)
     {
         weakSelf.items = request.getResponse.data;
     } failureCallback:^(YUUBaseRequest *request) {
-        
+        NSLog(@"");
     }];
     [request start];
 }

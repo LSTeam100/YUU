@@ -20,11 +20,20 @@
 }
 
 -(void)saveUserData:(YUUCommonModel *)userModel{
+    _userModel = userModel;
     NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
     NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:userModel];
     [userdefault setObject:userData forKey:kUserAccountKey];
     [userdefault synchronize];
 }
+
+- (YUUCommonModel *)userModel {
+    if (!_userModel) {
+        [self getUserData];
+    }
+    return _userModel;
+}
+
 -(void)getUserData{
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSData *userData = [userDefault objectForKey:kUserAccountKey];
