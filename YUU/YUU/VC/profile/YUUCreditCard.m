@@ -25,7 +25,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"银行卡认证";
-    // Do any additional setup after loading the view.
+    self.lastLabel.textColor = [UIColor whiteColor];
+    self.cardName.text = [NSString stringWithFormat:@"%@",self.DetailModel.bankname];
+    
+    self.cranOwnerLabel.text = [NSString stringWithFormat:@"持卡人:%@",self.DetailModel.membername];
+    self.DetailModel.bankname = @"9999999999";
+    
+    if (self.DetailModel.bankname.length > 0) {
+        NSString *lastNum = [self.DetailModel.bankname substringFromIndex:self.DetailModel.bankname.length - 4];
+        self.lastLabel.text = lastNum;
+    }
+
+
 }
 
 - (void)didReceiveMemoryWarning {

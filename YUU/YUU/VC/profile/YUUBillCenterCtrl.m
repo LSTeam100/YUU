@@ -55,7 +55,7 @@ typedef enum {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.moneyLabel.text = self.assetMoney;
     self.moneyLabel.textColor = colorWithHexString(@"ED6621", 1);
-
+    self.moneyFlayLabel.textColor = colorWithHexString(@"ED6621", 1.0);
     [self createScrollViewArr];
     self.selectBillType = billTypeAll;
     [self billCenterRequest];

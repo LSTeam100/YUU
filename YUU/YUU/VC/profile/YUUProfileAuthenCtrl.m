@@ -7,10 +7,12 @@
 //
 
 #import "YUUProfileAuthenCtrl.h"
-
+#import "YUUMineDetailModel.h"
+#import "YUUCommonModel.h"
 @interface YUUProfileAuthenCtrl ()
 @property(nonatomic,weak)IBOutlet UIView *alreadyAuthenView;
-
+@property(nonatomic,weak)IBOutlet UILabel *nameLabel;
+@property(nonatomic,weak)IBOutlet UILabel *idLabel;
 
 @end
 
@@ -18,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"实名认证";
+    self.nameLabel.text = self.DetailModel.membername;
+    self.idLabel.text = [NSString stringWithFormat:@"%@",self.DetailModel.memberphone];
+    
     // Do any additional setup after loading the view.
 }
 

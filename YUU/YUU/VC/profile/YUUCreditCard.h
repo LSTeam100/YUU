@@ -7,7 +7,8 @@
 //
 
 #import "YUUSuperCtrl.h"
-
+#import "YUUMineDetailModel.h"
 @interface YUUCreditCard : YUUSuperCtrl
+@property(nonatomic,strong)YUUMineDetailModel *DetailModel;
 
 @end

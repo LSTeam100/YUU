@@ -130,6 +130,7 @@ typedef enum {
             }
             cell.authenBtn.hidden = NO;
             cell.moreImageView.hidden = YES;
+            cell.detailConstant.constant = 18;
             break;
         case 1:
             if ([self isAuthenUser]) {
@@ -142,6 +143,8 @@ typedef enum {
             cell.moreImageView.hidden = YES;
             cell.titleLabel.text = @"实名认证";
             cell.detailLabel.text = self.DetailModel.membername;
+            cell.detailConstant.constant = 18;
+
             break;
             case 2:
             if ([self isAuthenBank]) {
@@ -154,18 +157,22 @@ typedef enum {
             cell.moreImageView.hidden = YES;
             cell.titleLabel.text = @"银行卡认证";
             cell.detailLabel.text = self.DetailModel.bankcard;
+            cell.detailConstant.constant = 18;
             break;
             case 3:
             cell.detailLabel.text = self.DetailModel.memberwx;
             cell.authenBtn.hidden = YES;
             cell.moreImageView.hidden = NO;
             cell.titleLabel.text = @"微信";
+            cell.detailConstant.constant = -80;
+
             break;
             case 4:
             cell.detailLabel.text = self.DetailModel.memberalipay;
             cell.authenBtn.hidden = YES;
             cell.moreImageView.hidden = NO;
             cell.titleLabel.text = @"支付宝";
+            cell.detailConstant.constant = -80;
 
             break;
             case 5:
@@ -173,6 +180,7 @@ typedef enum {
             cell.authenBtn.hidden = YES;
             cell.moreImageView.hidden = NO;
             cell.titleLabel.text = @"虚拟钱包";
+            cell.detailConstant.constant = -80;
 
             break;
         default:
@@ -247,6 +255,12 @@ typedef enum {
                 }
             }
         }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"OK Action");
+
+        }];
+        
         [alert addTextFieldWithConfigurationHandler:^(UITextField *textField){
             if (self.clickType == wechatType) {
                 textField.placeholder = @"微信号";
@@ -260,6 +274,7 @@ typedef enum {
         }];
         
         [alert addAction:okAction];
+        [alert addAction:cancelAction];
         [self presentViewController:alert animated:YES completion:nil];
 
     }
@@ -284,6 +299,7 @@ typedef enum {
         case 2:
             if ([self isAuthenBank]) {
                 YUUCreditCard * bank = [sb instantiateViewControllerWithIdentifier:@"YUUCreditCard"];
+                bank.DetailModel = self.DetailModel;
                 [self.navigationController pushViewController:bank animated:YES];
             }
             else{

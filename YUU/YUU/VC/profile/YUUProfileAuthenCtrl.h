@@ -7,7 +7,9 @@
 //
 
 #import "YUUSuperCtrl.h"
+#import "YUUMineDetailModel.h"
 
 @interface YUUProfileAuthenCtrl : YUUSuperCtrl
+@property(nonatomic,strong)YUUMineDetailModel *DetailModel;
 
 @end

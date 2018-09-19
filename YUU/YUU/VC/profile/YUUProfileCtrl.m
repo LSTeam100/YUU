@@ -46,11 +46,7 @@
     // Do any additional setup after loading the view.
     [self updateUI];
 }
-//<<<<<<< HEAD
-//-(void)setupUI{
-//    self.profileIdLabel.text = [NSString stringWithFormat:@"ID:%@",self.userModel.memberid];
-//    self.profileGradeLabel.text = [NSString stringWithFormat:@"等级:%@",self.userModel.membergrade];
-//=======
+
 -(void)updateUI{
     self.profileIdLabel.text = [NSString stringWithFormat:@"ID:%@",self.userModel.memberid];
     self.profileGradeLabel.text = [NSString stringWithFormat:@"等级:%@",self.userModel.membergrade];

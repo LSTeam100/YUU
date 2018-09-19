@@ -14,7 +14,7 @@
 @property(nonatomic,weak)IBOutlet UIButton *authenBtn;
 @property(nonatomic,weak)IBOutlet UIImageView *moreImageView;
 @property(nonatomic,weak)IBOutlet UIView *bottomView;
-
+@property(nonatomic,weak)IBOutlet NSLayoutConstraint *detailConstant;
 @end
 
 
