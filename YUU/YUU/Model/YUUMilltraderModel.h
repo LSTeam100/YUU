@@ -16,6 +16,8 @@
 @property(nonatomic,strong)NSNumber *totalcoins; // 总收益量
 @property(nonatomic,strong)NSNumber *millprice; // 价格
 @property(nonatomic,assign) YUUMilltype milltype; // 矿机等级0：新手1:青铜2：白银3：黄金4：铂金5：钻石
+- (NSString *)typeName;
+- (NSString *)iconName;
 
 -(instancetype)initWtihDic:(NSDictionary *)dic;
 @end

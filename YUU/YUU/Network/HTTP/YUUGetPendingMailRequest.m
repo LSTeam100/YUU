@@ -18,9 +18,8 @@
     
     
     NSDictionary *parameters=@{ @"uporderstype": [NSNumber numberWithInteger:level] };
-    [self setParameters:parameters];
-    
-//    [self start];
+//    [self setParameters:parameters];
+    [self setParameterDic:parameters];
     
     return self;
 }

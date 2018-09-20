@@ -8,6 +8,7 @@
 
 #import "YUUBaseRequest.h"
 #import "AFNetworking.h"
+#import "YUUUserData.h"
 
 @interface YUUBaseRequest ()
 @end
@@ -43,6 +44,24 @@
 -(void)setParameters:(NSDictionary *)parameters{
     _parameters=parameters;
 }
+
+- (void)setParameterDic:(NSDictionary *)dict {
+    NSMutableArray *allParameters = [NSMutableArray array];
+    if (![dict.allKeys containsObject:@"token"]) {
+        [allParameters addObject:[YUUUserData shareInstance].token];
+    }
+    for (id str in dict.allValues) {
+        [allParameters addObject:[str stringValue]];
+    }
+    NSString *sha1key = getSignFromParameter([NSArray arrayWithArray:allParameters]);
+    
+    NSMutableDictionary *d = [NSMutableDictionary dictionaryWithDictionary:dict];
+    [d setObject:[YUUUserData shareInstance].token forKey:@"token"];
+    [d setObject:sha1key forKey:@"sign"];
+    _parameters = [NSDictionary dictionaryWithDictionary:d];
+}
+
+
 
 -(YUUResponse *)getResponse{
     return _response;
@@ -122,6 +141,7 @@
     [manager POST:url parameters:_parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * result=responseObject;
         [self processResponse:result];
+        _response.responseObject = responseObject;
         if([_response isSucceed]){
             if(_onSuccess!=nil){
                 _onSuccess(self);

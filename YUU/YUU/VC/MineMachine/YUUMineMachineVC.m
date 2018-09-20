@@ -53,6 +53,7 @@
 
     _workingItems = [NSMutableArray array];
     [_workingItems addObject:model];
+    [_workingItems addObject:model];
     
     _doneItems = [NSMutableArray array];
     [_doneItems addObject:model];
@@ -63,7 +64,7 @@
 
 - (void)getHTTPData {
     WeakSelf
-    YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:@"" SuccessCallback:^(YUUBaseRequest *request) {
+    YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
         weakSelf.arrModel = request.getResponse.data;
         for (YUUMachineDetailModel *model in weakSelf.arrModel.machineArr) {
             if (model.milldie == YUUMachineStatusWorking) {
@@ -72,11 +73,21 @@
                 [weakSelf.doneItems addObject:model];
             }
         }
-        [self.tableView reloadData];
+        [weakSelf updateUI];
     } failureCallback:^(YUUBaseRequest *request) {
-        
+//        if (request.getResponse.code == 4) {
+//            [weakSelf.workingItems removeAllObjects];
+//            [weakSelf.doneItems removeAllObjects];
+//            [weakSelf updateUI];
+//        }
     }];
     [request start];
+}
+
+- (void)updateUI {
+    _computePowerLabel.text = [NSString stringWithFormat:@"%@",_arrModel.memberpower];
+    _outputLabel.text = [NSString stringWithFormat:@"%0.2f",[_arrModel.memberdaycoin floatValue]];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource -

@@ -35,27 +35,26 @@
     
     _items = [NSArray array];
     
-    YUUMilltraderModel *model = [[YUUMilltraderModel alloc] init];
-//    YUUMachineModel *model = [[YUUMachineModel alloc] init];
-//    model.icon = @"miningMachine0";
-//    model.name = @"新手云矿机";
-    model.compower = @6;
-    model.totaldays = @500;
-    model.totalcoins = @188.9;
-    model.millprice = @120;
-    _items = @[model];
-    
-    [self getHTTPData];
+    WeakSelf
+    _tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getHTTPData];
+    }];
+    [_tableview.mj_header beginRefreshing];
 }
 
 // 获取数据
 - (void)getHTTPData {
     WeakSelf
-    YUUMilltraderRequest *request = [[YUUMilltraderRequest alloc] initWithMilltrader:[YUUUserData shareInstance].userModel.token SuccessCallback:^(YUUBaseRequest *request)
+    [HUD showHUD];
+    YUUMilltraderRequest *request = [[YUUMilltraderRequest alloc] initWithMilltrader:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request)
     {
+        [HUD hide];
         weakSelf.items = request.getResponse.data;
+        [weakSelf.tableview reloadData];
+        [weakSelf.tableview.mj_header endRefreshing];
     } failureCallback:^(YUUBaseRequest *request) {
-        NSLog(@"");
+        [HUD hide];
+        [weakSelf.tableview.mj_header endRefreshing];
     }];
     [request start];
 }
@@ -89,15 +88,17 @@
     return 10;
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//
-//}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 10)];
+    aview.backgroundColor = [UIColor clearColor];
+    return aview;
+}
 
 #pragma mark - YUUMachineMarketCellDelegate -
 - (void)buyMachine:(YUUMilltraderModel *)model {
-    [HUD showHUD];
     [AlertController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
-        YUUBuyMachineRequest *request = [[YUUBuyMachineRequest alloc] initWithBuyMachine:@"" Milltype:[NSNumber numberWithInteger:model.milltype] SuccessCallback:^(YUUBaseRequest *request) {
+        [HUD showHUD];
+        YUUBuyMachineRequest *request = [[YUUBuyMachineRequest alloc] initWithBuyMachine:[YUUUserData shareInstance].token Milltype:[NSNumber numberWithInteger:model.milltype] SuccessCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];
         } failureCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];

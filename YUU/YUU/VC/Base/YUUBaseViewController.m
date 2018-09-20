@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
     UIView *aview = [[UIView alloc] initWithFrame:self.navigationController.navigationBar.bounds];
     aview.userInteractionEnabled = NO;
     

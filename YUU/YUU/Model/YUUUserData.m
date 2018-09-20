@@ -34,13 +34,21 @@
     return _userModel;
 }
 
+- (NSString *)token {
+    if (self.userModel.token) {
+        return self.userModel.token;
+    }
+    NSAssert(1, @"");
+    return @"";
+}
+
 -(void)getUserData{
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSData *userData = [userDefault objectForKey:kUserAccountKey];
-    self.userModel = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    _userModel = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
     
-    if (self.userModel != nil) {
-        DLOG(@"self.userModel.memberid=%@",self.userModel.memberid);
+    if (_userModel != nil) {
+        DLOG(@"self.userModel.memberid=%@",_userModel.memberid);
         self.haveSigned = YES;
     }
 }

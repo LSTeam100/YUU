@@ -14,6 +14,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+}
+
+- (void)drawPrice {
     _priceView = [[DrawView alloc] initWithFrame:self.contentView.bounds];
     [self.contentView addSubview:_priceView];
     _priceView.backgroundColor = [UIColor clearColor];
@@ -29,10 +32,10 @@
     _priceView.bottom = 60;
     _priceView.top = 60;
     
-//    _priceView.partLine = 3;
+    //    _priceView.partLine = 3;
     
     _priceView.maxLeft = 100;
-    _priceView.numbers = @[@10,@30, @80, @40];
+    _priceView.numbers = _priceArr;
     
     [_priceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(self.contentView).mas_offset(20);
@@ -41,10 +44,10 @@
     }];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setPriceArr:(NSArray *)priceArr {
+    _priceArr = priceArr;
+    [_priceView removeFromSuperview];
+    [self drawPrice];
 }
 
 @end

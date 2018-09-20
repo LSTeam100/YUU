@@ -8,7 +8,6 @@
 
 #import "YUUBaseRequest.h"
 #import "YUUMilltraderModel.h"
-#import "YUUPriceModel.h"
 #import "Header.h"
 
 @interface YUUMilltraderRequest : YUUBaseRequest

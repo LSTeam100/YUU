@@ -10,6 +10,8 @@
 
 @interface YUUResponse : NSObject
 
+@property (nonatomic, strong) NSDictionary *responseObject;
+
 @property(nonatomic,strong)NSNumber *success;
 
 @property (nonatomic,assign)int code;

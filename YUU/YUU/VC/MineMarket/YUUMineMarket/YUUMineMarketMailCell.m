@@ -68,7 +68,7 @@
             }];
             [request start];
         } else { // 卖家
-            YUUSellerTransactionRequest *request = [[YUUSellerTransactionRequest alloc] initWithSellerTransaction:@"" Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
+            YUUSellerTransactionRequest *request = [[YUUSellerTransactionRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
                 
             } failureCallback:^(YUUBaseRequest *request) {
                 
@@ -77,7 +77,7 @@
         }
         
     } else if ([title isEqualToString:@"取消交易"]) {
-        YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:@"" Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
+        YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:[YUUUserData shareInstance].token Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
             
         } failureCallback:^(YUUBaseRequest *request) {
             

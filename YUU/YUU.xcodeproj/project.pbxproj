@@ -65,8 +65,11 @@
 		09251C76213F6D1D00B12370 /* YUUGetPendingMailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09251C75213F6D1D00B12370 /* YUUGetPendingMailRequest.m */; };
 		09251C80213F6EC300B12370 /* YUUPendingMailboxModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09251C79213F6EC300B12370 /* YUUPendingMailboxModel.m */; };
 		09251C81213F6EC300B12370 /* YUUPendingOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09251C7A213F6EC300B12370 /* YUUPendingOrderVC.m */; };
-		09251C82213F6EC300B12370 /* PendingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09251C7C213F6EC300B12370 /* PendingTableViewCell.m */; };
+		09251C82213F6EC300B12370 /* PendingBuyerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09251C7C213F6EC300B12370 /* PendingBuyerCell.m */; };
 		09251C83213F6EC300B12370 /* YUUPendingBuyerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09251C7F213F6EC300B12370 /* YUUPendingBuyerModel.m */; };
+		0925E975215320CC00F874A7 /* YUUMineMarketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925E974215320CB00F874A7 /* YUUMineMarketRequest.m */; };
+		0925E9782153211100F874A7 /* YUUMineMarketMailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925E9772153211100F874A7 /* YUUMineMarketMailRequest.m */; };
+		0925E97B21532E8000F874A7 /* PendingMailboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925E97A21532E8000F874A7 /* PendingMailboxCell.m */; };
 		0926F06B213289050083CFDD /* YUUBorderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F06A213289050083CFDD /* YUUBorderTextField.m */; };
 		0926F07221328E200083CFDD /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07021328E200083CFDD /* HUD.m */; };
 		0926F07321328E200083CFDD /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07121328E200083CFDD /* HUDManager.m */; };
@@ -259,14 +262,20 @@
 		09251C72213F68DA00B12370 /* BaseHTTP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHTTP.m; sourceTree = "<group>"; };
 		09251C74213F6D1D00B12370 /* YUUGetPendingMailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUGetPendingMailRequest.h; sourceTree = "<group>"; };
 		09251C75213F6D1D00B12370 /* YUUGetPendingMailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUGetPendingMailRequest.m; sourceTree = "<group>"; };
-		09251C78213F6EC300B12370 /* PendingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendingTableViewCell.h; sourceTree = "<group>"; };
+		09251C78213F6EC300B12370 /* PendingBuyerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendingBuyerCell.h; sourceTree = "<group>"; };
 		09251C79213F6EC300B12370 /* YUUPendingMailboxModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUPendingMailboxModel.m; sourceTree = "<group>"; };
 		09251C7A213F6EC300B12370 /* YUUPendingOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUPendingOrderVC.m; sourceTree = "<group>"; };
 		09251C7B213F6EC300B12370 /* YUUPendingBuyerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUPendingBuyerModel.h; sourceTree = "<group>"; };
-		09251C7C213F6EC300B12370 /* PendingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingTableViewCell.m; sourceTree = "<group>"; };
+		09251C7C213F6EC300B12370 /* PendingBuyerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingBuyerCell.m; sourceTree = "<group>"; };
 		09251C7D213F6EC300B12370 /* YUUPendingOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUPendingOrderVC.h; sourceTree = "<group>"; };
 		09251C7E213F6EC300B12370 /* YUUPendingMailboxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUPendingMailboxModel.h; sourceTree = "<group>"; };
 		09251C7F213F6EC300B12370 /* YUUPendingBuyerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUPendingBuyerModel.m; sourceTree = "<group>"; };
+		0925E973215320CB00F874A7 /* YUUMineMarketRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketRequest.h; sourceTree = "<group>"; };
+		0925E974215320CB00F874A7 /* YUUMineMarketRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketRequest.m; sourceTree = "<group>"; };
+		0925E9762153211100F874A7 /* YUUMineMarketMailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMarketMailRequest.h; sourceTree = "<group>"; };
+		0925E9772153211100F874A7 /* YUUMineMarketMailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketMailRequest.m; sourceTree = "<group>"; };
+		0925E97921532E8000F874A7 /* PendingMailboxCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PendingMailboxCell.h; sourceTree = "<group>"; };
+		0925E97A21532E8000F874A7 /* PendingMailboxCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PendingMailboxCell.m; sourceTree = "<group>"; };
 		0926F069213289050083CFDD /* YUUBorderTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBorderTextField.h; sourceTree = "<group>"; };
 		0926F06A213289050083CFDD /* YUUBorderTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBorderTextField.m; sourceTree = "<group>"; };
 		0926F06C21328B990083CFDD /* HUDProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDProtocol.h; sourceTree = "<group>"; };
@@ -449,6 +458,7 @@
 		091D8E3A2130D8C800C430AB /* YUUMineMarket */ = {
 			isa = PBXGroup;
 			children = (
+				0925E972215320CB00F874A7 /* HTTP */,
 				091D8E3B2130D8C800C430AB /* YUUMineMarketMailCell.h */,
 				091D8E402130D8C800C430AB /* YUUMineMarketMailCell.m */,
 				091D8E3E2130D8C800C430AB /* YUUMineMarketPointCell.h */,
@@ -641,8 +651,10 @@
 		09251C77213F6EC300B12370 /* PendingOrder */ = {
 			isa = PBXGroup;
 			children = (
-				09251C78213F6EC300B12370 /* PendingTableViewCell.h */,
-				09251C7C213F6EC300B12370 /* PendingTableViewCell.m */,
+				09251C78213F6EC300B12370 /* PendingBuyerCell.h */,
+				09251C7C213F6EC300B12370 /* PendingBuyerCell.m */,
+				0925E97921532E8000F874A7 /* PendingMailboxCell.h */,
+				0925E97A21532E8000F874A7 /* PendingMailboxCell.m */,
 				09251C7B213F6EC300B12370 /* YUUPendingBuyerModel.h */,
 				09251C7F213F6EC300B12370 /* YUUPendingBuyerModel.m */,
 				09251C7E213F6EC300B12370 /* YUUPendingMailboxModel.h */,
@@ -651,6 +663,17 @@
 				09251C7A213F6EC300B12370 /* YUUPendingOrderVC.m */,
 			);
 			path = PendingOrder;
+			sourceTree = "<group>";
+		};
+		0925E972215320CB00F874A7 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				0925E973215320CB00F874A7 /* YUUMineMarketRequest.h */,
+				0925E974215320CB00F874A7 /* YUUMineMarketRequest.m */,
+				0925E9762153211100F874A7 /* YUUMineMarketMailRequest.h */,
+				0925E9772153211100F874A7 /* YUUMineMarketMailRequest.m */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 		0926F06D21328E200083CFDD /* HUD */ = {
@@ -1102,6 +1125,7 @@
 			files = (
 				0923C46A214895EE00869625 /* YUUUserSendwxRequest.m in Sources */,
 				0994456B2141229200548245 /* YUUUserData.m in Sources */,
+				0925E97B21532E8000F874A7 /* PendingMailboxCell.m in Sources */,
 				0923C45E214895EE00869625 /* YUUPointSellCancelRequest.m in Sources */,
 				0926F0792132993C0083CFDD /* HUDView.m in Sources */,
 				091D8E432130D8C900C430AB /* YUUMineMarketPriceCell.m in Sources */,
@@ -1121,6 +1145,7 @@
 				0923C46B214895EE00869625 /* YUUCurrencyHistoryRequest.m in Sources */,
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
 				09251C73213F68DA00B12370 /* BaseHTTP.m in Sources */,
+				0925E9782153211100F874A7 /* YUUMineMarketMailRequest.m in Sources */,
 				09251C83213F6EC300B12370 /* YUUPendingBuyerModel.m in Sources */,
 				099445762141229200548245 /* YUUPointOnsaleModel.m in Sources */,
 				09251C6D213F637B00B12370 /* YUUGetPendingOrderBuyerRequest.m in Sources */,
@@ -1159,7 +1184,7 @@
 				099445752141229200548245 /* YUUCurrencyHistoryModel.m in Sources */,
 				18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */,
 				099445382141226000548245 /* (null) in Sources */,
-				09251C82213F6EC300B12370 /* PendingTableViewCell.m in Sources */,
+				09251C82213F6EC300B12370 /* PendingBuyerCell.m in Sources */,
 				0926F07221328E200083CFDD /* HUD.m in Sources */,
 				18F97C14214E08960059E194 /* YUUCallCenterCtrl.m in Sources */,
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
@@ -1209,6 +1234,7 @@
 				189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */,
 				099445672141229200548245 /* YUUMineDetailModel.m in Sources */,
 				0923C455214895EE00869625 /* YUUCertificationRequest.m in Sources */,
+				0925E975215320CC00F874A7 /* YUUMineMarketRequest.m in Sources */,
 				09D4C47B213CFF5900AA8EFD /* AlertController.m in Sources */,
 				0994456C2141229200548245 /* YUUBaseModel.m in Sources */,
 				1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */,

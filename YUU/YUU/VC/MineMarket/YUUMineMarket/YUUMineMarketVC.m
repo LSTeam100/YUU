@@ -14,7 +14,8 @@
 #import "YUUMineMarketMailCell.h"
 #import "YUUMineMarketPointCell.h"
 #import "YUUMineMarketPriceCell.h"
-#import "YUUMilltraderRequest.h"
+#import "YUUMineMarketRequest.h"
+#import "YUUMineMarketMailRequest.h"
 
 @interface YUUMineMarketVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -27,7 +28,7 @@
 @property (strong, nonatomic) IBOutlet YUUButton *pendingOrderBtn3;
 
 @property (nonatomic, assign) NSInteger segmentSelected;
-@property (nonatomic, strong) NSArray *transactionList;
+@property (nonatomic, strong) NSArray *mailList;
 
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 
@@ -48,28 +49,34 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 100;
     
-    YUUTransactionModel *model = [[YUUTransactionModel alloc] init];
-    model.number = @"626478923";
-    model.time = @"1/3 9:00";
-    model.content = @"9868387699ffnifnf jdn;nafje njnsllb";
-    _transactionList = @[model];
-    
     [self getHTTPData];
 }
 
 - (void)getHTTPData {
     WeakSelf
-    YUUMilltraderRequest *request = [[YUUMilltraderRequest alloc] initWithMilltrader:@"" SuccessCallback:^(YUUBaseRequest *request) {
+    [HUD showHUD];
+    YUUMineMarketRequest *request = [[YUUMineMarketRequest alloc] initSuccess:^(YUUBaseRequest *request) {
         weakSelf.model = request.getResponse.data;
         [weakSelf updateUI];
-    } failureCallback:^(YUUBaseRequest *request) {
-        
+        [HUD showRequest:request];
+    } failure:^(YUUBaseRequest *request) {
+        NSLog(@"");
+        [HUD showRequest:request];
     }];
     [request start];
 }
 
 - (void)getMailData {
-    
+    WeakSelf
+    [HUD showHUD];
+    YUUMineMarketMailRequest *request = [[YUUMineMarketMailRequest alloc] initSuccess:^(YUUBaseRequest *request) {
+        weakSelf.mailList = request.getResponse.data;
+        [weakSelf.tableView reloadData];
+        [HUD showRequest:request];
+    } failure:^(YUUBaseRequest *request) {
+        [HUD showRequest:request];
+    }];
+    [request start];
 }
 
 - (void)updateUI {
@@ -119,7 +126,7 @@
 #pragma mark - UITableViewDataSource -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_segmentSelected == 2) {
-        return _transactionList.count;
+        return _mailList.count;
     }
     return 1;
 }
@@ -127,7 +134,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_segmentSelected == 0) {
         YUUMineMarketPriceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMarketPriceCell"];
-        
+        cell.priceArr = _priceArr;
         return cell;
     } else if (_segmentSelected == 1) {
         YUUMineMarketPointCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMarketPointCell"];
@@ -135,7 +142,7 @@
         return cell;
     } else {
         YUUMineMarketMailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMarketMailCell"];
-        cell.model = _transactionList[indexPath.row];
+        cell.model = _mailList[indexPath.row];
         
         return cell;
     }
@@ -176,6 +183,7 @@
         vc.sliderBegin = 500;
         vc.sliderEnd = 1000;
     }
+    vc.model = _model;
     self.hidesBottomBarWhenPushed = YES;
     [self setCustomBackItem];
     [self.navigationController pushViewController:vc animated:YES];

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "YUUResponse.h"
+#import "YUUUserData.h"
+
 @class YUUBaseRequest;
 static NSString * const BaseAddress = @"http://yuuleyou.com";
 
@@ -23,6 +25,7 @@ typedef void(^onFailureCallback)(YUUBaseRequest* request);
 -(void)processResponse:(NSDictionary *)responseDictionary;
 
 -(void)setParameters:(NSDictionary *)parameters;
+- (void)setParameterDic:(NSDictionary *)dict;
 
 -(YUUResponse *)getResponse;
 

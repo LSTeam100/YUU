@@ -52,7 +52,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiv-mk-HyI">
-                                                    <rect key="frame" x="5" y="12.5" width="12" height="12"/>
+                                                    <rect key="frame" x="10" y="12.5" width="12" height="12"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="12" id="U2t-en-7Li"/>
@@ -135,7 +135,7 @@
                                                 <constraint firstItem="Ldt-FM-BNT" firstAttribute="centerY" secondItem="59u-3A-dWg" secondAttribute="centerY" id="XFC-rQ-9gu"/>
                                                 <constraint firstItem="rzj-xJ-cYV" firstAttribute="leading" secondItem="59u-3A-dWg" secondAttribute="leading" id="XtU-Zk-P9R"/>
                                                 <constraint firstItem="4rp-M7-Pmq" firstAttribute="leading" secondItem="59u-3A-dWg" secondAttribute="leading" id="Y4J-Fx-qMo"/>
-                                                <constraint firstItem="wiv-mk-HyI" firstAttribute="leading" secondItem="59u-3A-dWg" secondAttribute="leading" constant="5" id="Za0-3f-Pbc"/>
+                                                <constraint firstItem="wiv-mk-HyI" firstAttribute="leading" secondItem="59u-3A-dWg" secondAttribute="leading" constant="10" id="Za0-3f-Pbc"/>
                                                 <constraint firstItem="Ldt-FM-BNT" firstAttribute="width" secondItem="OFr-6z-OOo" secondAttribute="width" id="aCs-Zn-S6P"/>
                                                 <constraint firstItem="j1n-nE-NvN" firstAttribute="leading" secondItem="YCv-XK-xYu" secondAttribute="trailing" constant="5" id="awT-jg-lGh"/>
                                                 <constraint firstAttribute="bottom" secondItem="rzj-xJ-cYV" secondAttribute="bottom" id="kg0-ls-qKV"/>

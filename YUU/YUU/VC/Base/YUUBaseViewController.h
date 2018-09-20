@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "YUUBaseTableView.h"
 #import "YUUUserData.h"
+#import <MJRefresh/MJRefresh.h>
+#import "Header.h"
 
 @interface YUUBaseViewController : UIViewController
 

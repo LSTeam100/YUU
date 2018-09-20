@@ -25,7 +25,7 @@
     return self;
 }
 -(NSString *)getURL{
-    return @"/milltrader/";
+    return @"/millmarket/";
 }
 
 -(NSString *)getMethod{
@@ -44,10 +44,7 @@
 //            }
 //            [self getResponse].data=modelList;
 //        }
-        if (data) {
-            YUUPriceModel *model = [YUUPriceModel mj_objectWithKeyValues:data];
-            [self getResponse].data = model;
-        }
+        [self getResponse].data = [YUUMilltraderModel mj_objectArrayWithKeyValuesArray:data[@"msgList"]];
     }
 }
 @end

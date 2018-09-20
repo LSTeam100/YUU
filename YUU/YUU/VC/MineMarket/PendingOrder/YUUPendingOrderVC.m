@@ -8,7 +8,8 @@
 
 #import "YUUPendingOrderVC.h"
 #import "SHSegmentView.h"
-#import "PendingTableViewCell.h"
+#import "PendingBuyerCell.h"
+#import "PendingMailboxCell.h"
 #import "YUUGetPendingMailRequest.h"
 #import "YUUGetPendingOrderBuyerRequest.h"
 #import "YUUPendingBuyerModel.h"
@@ -18,9 +19,12 @@
 
 @interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSArray *items;
-
 @property (nonatomic, strong) SHSegmentView *segmentView;
+@property (nonatomic, assign) NSInteger segmentSelected;
+@property (nonatomic, strong) NSArray *buyerArr;
+@property (nonatomic, strong) NSArray *mailArr;
+
+@property (nonatomic, assign) double currentPrice;
 
 @end
 
@@ -53,6 +57,7 @@
         } else {
             [weakSelf getMailInfo];
         }
+        weakSelf.segmentSelected = index;
     }];
     
     [self getBuyerInfo];
@@ -60,36 +65,58 @@
     _slider.minimumValue = _sliderBegin;
     _slider.continuous = YES;//默认YES  如果设置为NO，则每次滑块停止移动后才触发事件
     [_slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
+    
+    _countTextField.textColor = YUUYellow;
+    _countTextField.layer.masksToBounds = YES;
+    _countTextField.layer.cornerRadius = 5;
+    _countTextField.layer.borderColor = [YUUYellow CGColor];
+    _countTextField.layer.borderWidth = 1;
+    _countTextField.backgroundColor = [UIColor hex:@"#e4c177" alpha:0.3];
+    
+    _currentPriceLabel.text = [NSString stringWithFormat:@"%@",_model.sevenprice];
+    self.currentPrice = [_model.sevenprice doubleValue];
 }
 
 - (void)sliderChange:(UISlider *)slider {
-    
+    _countTextField.text = [NSString stringWithFormat:@"%.0f",slider.value];
 }
 
 - (void)getBuyerInfo {
     WeakSelf
+    [HUD showHUD];
     YUUGetPendingOrderBuyerRequest *request = [[YUUGetPendingOrderBuyerRequest alloc] initWithUserLevel:_level success:^(YUUBaseRequest *request) {
-        weakSelf.items = request.getResponse.data;
+        weakSelf.buyerArr = request.getResponse.data;
         [weakSelf.tableView reloadData];
+        [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
-        
+        if (request.getResponse.code == 4) {
+            weakSelf.buyerArr = @[];
+            [weakSelf.tableView reloadData];
+        }
+        [HUD showRequest:request];
     }];
     [request start];
 }
 
 - (void)getMailInfo {
     WeakSelf
+    [HUD showHUD];
     YUUGetPendingMailRequest *request = [[YUUGetPendingMailRequest alloc] initWithUserLevel:_level success:^(YUUBaseRequest *request) {
-        weakSelf.items = request.getResponse.data;
+        weakSelf.mailArr = request.getResponse.data;
         [weakSelf.tableView reloadData];
+        [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
-        
+        if (request.getResponse.code == 4) {
+            weakSelf.mailArr = @[];
+            [weakSelf.tableView reloadData];
+        }
+        [HUD showRequest:request];
     }];
     [request start];
 }
 
 - (IBAction)hangingOrderAction:(UIButton *)sender {
-    YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:@"" Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:@"" Buyprice:@"" SuccessCallback:^(YUUBaseRequest *request) {
+    YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:@"" Buyprice:@"" SuccessCallback:^(YUUBaseRequest *request) {
         
     } failureCallback:^(YUUBaseRequest *request) {
         
@@ -104,19 +131,56 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PendingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingTableViewCell"];
-
-
+    if (_segmentSelected == 0) {
+        PendingBuyerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingTableViewCell"];
+        
+    } else {
+        
+    }
+PendingBuyerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingTableViewCell"];
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _items.count;
+    if (_segmentSelected == 0) {
+        return _buyerArr.count;
+    }
+    return _mailArr.count;
 }
 
 #pragma mark - UITableViewDelegate -
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return  84;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0;
+    }
+    return 5;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 10)];
+    aview.backgroundColor = [UIColor clearColor];
+    return aview;
+}
+
+
+- (IBAction)plusAction:(id)sender {
+    self.currentPrice -= 1;
+}
+
+- (IBAction)lessAction:(id)sender {
+    self.currentPrice += 1;
+}
+
+- (void)setCurrentPrice:(double)currentPrice {
+    if (currentPrice < 0) {
+        return;
+    }
+    _currentPrice = currentPrice;
+    _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
 }
 
 

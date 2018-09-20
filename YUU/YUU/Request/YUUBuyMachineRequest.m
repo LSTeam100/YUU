@@ -13,7 +13,7 @@
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[token,milltype];
+        NSArray *signArr = @[token,[milltype stringValue]];
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{

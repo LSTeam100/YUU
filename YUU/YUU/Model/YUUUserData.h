@@ -12,6 +12,7 @@
 @property(nonatomic,assign)BOOL haveSigned;
 @property(nonatomic,strong)YUUCommonModel *userModel;
 //@property(nonatomic,strong)NSString *userName;
+@property (nonatomic, strong) NSString *token;
 
 
 + (instancetype)shareInstance;

@@ -49,6 +49,34 @@
     }
 }
 
+- (NSString *)iconName {
+    return [NSString stringWithFormat:@"miningMachine%ld",_milltype];
+    switch (_milltype) {
+        case YUUMilltypeNovice:
+            return @"miningMachine0";
+            break;
+        case YUUMilltypebronze:
+            return @"miningMachine1";
+            break;
+        case YUUMilltypesilver:
+            return @"miningMachine2";
+            break;
+        case YUUMilltypegold:
+            return @"黄金";
+            break;
+        case YUUMilltypePlatinum:
+            return @"铂金";
+            break;
+        case YUUMilltypediamond:
+            return @"钻石";
+            break;
+            
+        default:
+            return @"新手";
+            break;
+    }
+}
+
 @end
 
 

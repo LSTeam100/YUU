@@ -8,8 +8,9 @@
 
 #import "YUUBaseTableViewCell.h"
 #import "YUUBorderButton.h"
+#import "YUUPendingBuyerModel.h"
 
-@interface PendingTableViewCell : YUUBaseTableViewCell
+@interface PendingBuyerCell : YUUBaseTableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 

@@ -1,14 +1,14 @@
 //
-//  PendingTableViewCell.m
+//  PendingMailboxCell.m
 //  YUU
 //
-//  Created by boli on 2018/9/5.
+//  Created by boli on 2018/9/20.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "PendingTableViewCell.h"
+#import "PendingMailboxCell.h"
 
-@implementation PendingTableViewCell
+@implementation PendingMailboxCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -95,7 +95,7 @@
 
 + (void)showRequest:(YUUBaseRequest *)request {
     if (request.getResponse.msg.length > 0) {
-        [HUD showHUDTitle:request.getResponse.msg];
+        [HUD showHUDTitle:request.getResponse.msg durationTime:2];
     } else {
         [HUD hide];
     }

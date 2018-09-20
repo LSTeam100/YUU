@@ -7,6 +7,7 @@
 //
 
 #import "YUUBaseViewController.h"
+#import "YUUPriceModel.h"
 
 @interface YUUPendingOrderVC : YUUBaseViewController
 
@@ -19,7 +20,7 @@
 
 @property (strong, nonatomic) IBOutlet UISlider *priceSlider;
 
-@property (strong, nonatomic) IBOutlet UILabel *countLabel;
+@property (strong, nonatomic) IBOutlet UITextField *countTextField;
 
 @property (strong, nonatomic) IBOutlet UILabel *totalPriceLabel;
 
@@ -27,6 +28,8 @@
 
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
+
+@property (nonatomic, strong) YUUPriceModel *model;
 
 @property (nonatomic, assign) UserLevel level;
 @property (nonatomic, assign) NSInteger sliderBegin;

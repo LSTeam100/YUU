@@ -47,19 +47,29 @@
 
 - (void)getHTTPData {
     WeakSelf
-    YUUMachinepoolRequst *request = [[YUUMachinepoolRequst alloc] initWithMachinepool:@"" SuccessCallback:^(YUUBaseRequest *request) {
+    YUUMachinepoolRequst *request = [[YUUMachinepoolRequst alloc] initWithMachinepool:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
         weakSelf.model = request.getResponse.data;
         [weakSelf updateUI];
     } failureCallback:^(YUUBaseRequest *request) {
-        
+        if (request.getResponse.code == 4) {
+            weakSelf.model = nil;
+            [weakSelf updateUI];
+        }
+        NSLog(@"");
     }];
 
     [request start];
 }
 
 - (void)updateUI {
-    _powerLabel.text = [NSString stringWithFormat:@"%ld",[_model.millspoolpower integerValue]];
-    _minerCountLabel.text = [NSString stringWithFormat:@"%ld",[_model.totalminers integerValue]];
+    if (_model) {
+        _powerLabel.text = [NSString stringWithFormat:@"%ld",[_model.millspoolpower integerValue]];
+        _minerCountLabel.text = [NSString stringWithFormat:@"%ld",[_model.totalminers integerValue]];
+    } else {
+        _powerLabel.text = @"0";
+        _minerCountLabel.text = @"0";
+    }
+    
     [_tableView reloadData];
 }
 
