@@ -12,6 +12,7 @@
 #import <Masonry/Masonry.h>
 #import <MJExtension/MJExtension.h>
 #import "YUUColor.h"
+#import "UIColor+Help.h"
 #import "HUD.h"
 
 #define WeakSelf __weak typeof(self) weakSelf = self;

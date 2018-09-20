@@ -75,6 +75,46 @@
     
     _currentPriceLabel.text = [NSString stringWithFormat:@"%@",_model.sevenprice];
     self.currentPrice = [_model.sevenprice doubleValue];
+    
+    {
+        YUUPendingBuyerModel *model = [[YUUPendingBuyerModel alloc] init];
+        model.tradingcard = @"828722626";
+        model.tradingtime = @"2018";
+        model.memberid = 1111;
+        model.coinnum = 23;
+        model.buyprice = 100;
+        _buyerArr = @[model, model];
+    }
+    
+    {
+        YUUPendingMailboxModel *model = [[YUUPendingMailboxModel alloc] init];
+        model.sorbid = 1111;
+        model.tradingtime = @"2018";
+        model.tradingcard = @"90000";
+        model.membername = @"小明";
+        model.bankname = @"工商";
+        model.bankcard = @"6225 6225 6225";
+        model.memberwx = @"wechat";
+        model.memberalipay = @"alibaba";
+        model.memberphone = @"1390000000";
+        model.memberwallet = @"2222";
+        model.sellorbuy = 1;
+
+        YUUPendingMailboxModel *model0 = [[YUUPendingMailboxModel alloc] init];
+        model0.sorbid = 1111;
+        model0.tradingtime = @"2018";
+        model0.tradingcard = @"90000";
+        model0.membername = @"小明";
+        model0.bankname = @"工商";
+        model0.bankcard = @"6225 6225 6225";
+        model0.memberwx = @"wechat";
+        model0.memberalipay = @"alibaba";
+        model0.memberphone = @"1390000000";
+        model0.memberwallet = @"2222";
+        model0.sellorbuy = 0;
+        
+        _mailArr = @[model, model0];
+    }
 }
 
 - (void)sliderChange:(UISlider *)slider {
@@ -89,10 +129,11 @@
         [weakSelf.tableView reloadData];
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
-        if (request.getResponse.code == 4) {
-            weakSelf.buyerArr = @[];
-            [weakSelf.tableView reloadData];
-        }
+//        if (request.getResponse.code == 4) {
+//            weakSelf.buyerArr = @[];
+//            [weakSelf.tableView reloadData];
+//        }
+        [weakSelf.tableView reloadData];
         [HUD showRequest:request];
     }];
     [request start];
@@ -106,10 +147,11 @@
         [weakSelf.tableView reloadData];
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
-        if (request.getResponse.code == 4) {
-            weakSelf.mailArr = @[];
-            [weakSelf.tableView reloadData];
-        }
+//        if (request.getResponse.code == 4) {
+//            weakSelf.mailArr = @[];
+//            [weakSelf.tableView reloadData];
+//        }
+        [weakSelf.tableView reloadData];
         [HUD showRequest:request];
     }];
     [request start];
@@ -132,13 +174,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_segmentSelected == 0) {
-        PendingBuyerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingTableViewCell"];
-        
+        PendingBuyerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingBuyerCell"];
+        cell.model = _buyerArr[indexPath.section];
+        return cell;
     } else {
-        
+        PendingMailboxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingMailboxCell"];
+        cell.model = _mailArr[indexPath.section];
+        return cell;
     }
-PendingBuyerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingTableViewCell"];
-    return cell;
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

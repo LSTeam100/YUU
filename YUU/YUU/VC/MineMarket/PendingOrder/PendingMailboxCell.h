@@ -24,4 +24,6 @@
 
 @property (strong, nonatomic) IBOutlet YUUBorderButton *rightBtn;
 
+@property (nonatomic, strong) YUUPendingMailboxModel *model;
+
 @end

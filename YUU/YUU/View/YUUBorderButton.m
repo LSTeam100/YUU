@@ -14,11 +14,12 @@
     [super awakeFromNib];
     
 //    self.backgroundColor = [UIColor clearColor];
-    self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 5;
-    self.layer.borderColor = [[UIColor whiteColor] CGColor];
-    self.layer.borderWidth = 1;
+//    self.layer.masksToBounds = YES;
+//    self.layer.cornerRadius = self.frame.size.height/2;
+//    self.layer.borderColor = [[UIColor whiteColor] CGColor];
+//    self.layer.borderWidth = 1;
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

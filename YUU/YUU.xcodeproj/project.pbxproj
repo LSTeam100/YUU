@@ -70,6 +70,7 @@
 		0925E975215320CC00F874A7 /* YUUMineMarketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925E974215320CB00F874A7 /* YUUMineMarketRequest.m */; };
 		0925E9782153211100F874A7 /* YUUMineMarketMailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925E9772153211100F874A7 /* YUUMineMarketMailRequest.m */; };
 		0925E97B21532E8000F874A7 /* PendingMailboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925E97A21532E8000F874A7 /* PendingMailboxCell.m */; };
+		0925E97F215341C400F874A7 /* YUUGetGiftRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925E97E215341C400F874A7 /* YUUGetGiftRequest.m */; };
 		0926F06B213289050083CFDD /* YUUBorderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F06A213289050083CFDD /* YUUBorderTextField.m */; };
 		0926F07221328E200083CFDD /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07021328E200083CFDD /* HUD.m */; };
 		0926F07321328E200083CFDD /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07121328E200083CFDD /* HUDManager.m */; };
@@ -276,6 +277,8 @@
 		0925E9772153211100F874A7 /* YUUMineMarketMailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUMineMarketMailRequest.m; sourceTree = "<group>"; };
 		0925E97921532E8000F874A7 /* PendingMailboxCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PendingMailboxCell.h; sourceTree = "<group>"; };
 		0925E97A21532E8000F874A7 /* PendingMailboxCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PendingMailboxCell.m; sourceTree = "<group>"; };
+		0925E97D215341C400F874A7 /* YUUGetGiftRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUGetGiftRequest.h; sourceTree = "<group>"; };
+		0925E97E215341C400F874A7 /* YUUGetGiftRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUGetGiftRequest.m; sourceTree = "<group>"; };
 		0926F069213289050083CFDD /* YUUBorderTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBorderTextField.h; sourceTree = "<group>"; };
 		0926F06A213289050083CFDD /* YUUBorderTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBorderTextField.m; sourceTree = "<group>"; };
 		0926F06C21328B990083CFDD /* HUDProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDProtocol.h; sourceTree = "<group>"; };
@@ -503,6 +506,7 @@
 		09207E1121270C6A00952C6D /* MineMachine */ = {
 			isa = PBXGroup;
 			children = (
+				0925E97C2153418600F874A7 /* HTTP */,
 				09207E1221270C6A00952C6D /* YUUMineMachine.storyboard */,
 				09225517212B9F31000BF25B /* YUUMineMachineVC.h */,
 				09225518212B9F31000BF25B /* YUUMineMachineVC.m */,
@@ -672,6 +676,15 @@
 				0925E974215320CB00F874A7 /* YUUMineMarketRequest.m */,
 				0925E9762153211100F874A7 /* YUUMineMarketMailRequest.h */,
 				0925E9772153211100F874A7 /* YUUMineMarketMailRequest.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		0925E97C2153418600F874A7 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				0925E97D215341C400F874A7 /* YUUGetGiftRequest.h */,
+				0925E97E215341C400F874A7 /* YUUGetGiftRequest.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1165,6 +1178,7 @@
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				0952AC2C21392D2600D701CE /* UIView+Help.m in Sources */,
 				0994456D2141229200548245 /* YUUSellerSellitModel.m in Sources */,
+				0925E97F215341C400F874A7 /* YUUGetGiftRequest.m in Sources */,
 				1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */,
 				18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */,
 				18D3532621379D9000990F7C /* (null) in Sources */,

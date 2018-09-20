@@ -7,6 +7,7 @@
 //
 
 #import "YUUMineMachineCell.h"
+#import "YUUGetGiftRequest.h"
 
 @implementation YUUMineMachineCell
 
@@ -28,8 +29,8 @@
     _statusView.layer.cornerRadius = _statusView.frame.size.width/2;
     _numberLabel.text = model.millsize;
     _typeLabel.text = _model.milltypeName;
-    _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)model.runtimeday, (long)model.totaldays];
-    _powerLabel.text = [NSString stringWithFormat:@"%ld", (long)model.compower];
+    _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",[model.runtimeday integerValue], [model.totaldays integerValue]];
+    _powerLabel.text = [NSString stringWithFormat:@"%ld", [model.compower integerValue]];
     _outputLabel.text = [NSString stringWithFormat:@"%.2f", [model.outputcoins doubleValue]];
     if (model.getmill == YUUMachineReceiveNo) {
         _receiveLabel.text = @"未领取";
@@ -37,5 +38,21 @@
         _receiveLabel.text = @"已领取";
     }
 }
+
+- (IBAction)receiveAction:(UITapGestureRecognizer *)sender {
+    if (_model.getmill == YUUMachineReceiveNo) {
+        [HUD showHUD];
+        WeakSelf
+        YUUGetGiftRequest *request = [[YUUGetGiftRequest alloc] initWithMillid:_model.millsize uccess:^(YUUBaseRequest *request) {
+            weakSelf.model.getmill = YUUMachineReceived;
+            weakSelf.receiveLabel.text = @"已领取";
+            [HUD showRequest:request];
+        } failure:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        }];
+        [request start];
+    }
+}
+
 
 @end

@@ -22,10 +22,6 @@
     return self;
 }
 
-- (NSString *)getMethod {
-    return @"GET";
-}
-
 - (NSString *)getURL {
     return @"/millspool/";
 }

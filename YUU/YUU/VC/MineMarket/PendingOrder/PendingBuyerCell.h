@@ -20,9 +20,11 @@
 
 @property (strong, nonatomic) IBOutlet YUUBorderButton *middleBtn;
 
-@property (strong, nonatomic) IBOutlet YUUBorderButton *leftBtn;
+//@property (strong, nonatomic) IBOutlet YUUBorderButton *leftBtn;
+//
+//@property (strong, nonatomic) IBOutlet YUUBorderButton *rightBtn;
 
-@property (strong, nonatomic) IBOutlet YUUBorderButton *rightBtn;
+@property (nonatomic, strong) YUUPendingBuyerModel *model;
 
 
 @end
