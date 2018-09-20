@@ -13,13 +13,15 @@
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[token,memberphone,newtraderpsw,verfiCode];
+        
+        
+        NSArray *signArr = @[token,memberphone,[YUUEncryMgr sha1:newtraderpsw],verfiCode];
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
                                    @"token": token,
                                    @"memberphone": memberphone,
-                                   @"newtraderpsw": newtraderpsw,
+                                   @"newtraderpsw": [YUUEncryMgr sha1:newtraderpsw],
                                    @"code" : verfiCode,
                                    @"sign" : sha1key
                                    };

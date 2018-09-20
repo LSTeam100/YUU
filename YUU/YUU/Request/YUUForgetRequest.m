@@ -15,12 +15,12 @@
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[phoneNum,password,[NSString stringWithFormat:@"%d",[idCode intValue]]];
+        NSArray *signArr = @[phoneNum,[YUUEncryMgr sha1:password],[NSString stringWithFormat:@"%d",[idCode intValue]]];
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
                                    @"memberphone": phoneNum,
-                                   @"loginpassword":password,
+                                   @"loginpassword":[YUUEncryMgr sha1:password],
                                    @"code":idCode,
                                    @"sign" : sha1key
                                    };

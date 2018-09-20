@@ -12,14 +12,15 @@
 -(id)initWithModifyTransaction:(NSString *)token Oldtraderpsw:(NSString *)oldtraderpsw Newtraderpsw:(NSString *)newtraderpsw SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
-    if (self) {        
-        NSArray *signArr = @[token,oldtraderpsw,newtraderpsw];;
+    if (self) {
+        
+        NSArray *signArr = @[token,[YUUEncryMgr sha1:oldtraderpsw],[YUUEncryMgr sha1:newtraderpsw]];;
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
                                    @"token": token,
-                                   @"oldtraderpsw": oldtraderpsw,
-                                   @"newtraderpsw": newtraderpsw,
+                                   @"oldtraderpsw": [YUUEncryMgr sha1:oldtraderpsw],
+                                   @"newtraderpsw": [YUUEncryMgr sha1:newtraderpsw],
                                    @"sign" : sha1key
                                    };
         [self setParameters:parameters];

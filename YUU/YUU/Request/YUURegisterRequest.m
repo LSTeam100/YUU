@@ -16,7 +16,7 @@
                         failureCallback:failed];
     if(self){
         
-        NSArray *signArr = @[phoneNum,[NSString stringWithFormat:@"%d",[idCode intValue]],password,upmemberip];
+        NSArray *signArr = @[phoneNum,[NSString stringWithFormat:@"%d",[idCode intValue]],[YUUEncryMgr sha1:password],upmemberip];
         
         NSString *sha1key = getSignFromParameter(signArr);
         DLOG(@"sha1key=%@",sha1key);
@@ -25,7 +25,7 @@
                                    @"upmemberip": upmemberip,
                                    @"code": idCode,
                                    @"memberphone": phoneNum,
-                                   @"loginpassword":password,
+                                   @"loginpassword":[YUUEncryMgr sha1:password],
                                    @"sign" : sha1key
                                    };
         [self setParameters:parameters];
