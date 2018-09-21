@@ -15,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="368" height="544"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-3d-hBB">
+                    <rect key="frame" x="0.0" y="0.0" width="368" height="544"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卖家资料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEe-nL-RqU">
                     <rect key="frame" x="151.5" y="20" width="65.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -189,7 +193,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-hL-2Wd" userLabel="0" customClass="YUUBorderTextField">
-                    <rect key="frame" x="80" y="69" width="208" height="30"/>
+                    <rect key="frame" x="70" y="69" width="233" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ex9-fN-zFi"/>
                     </constraints>
@@ -253,7 +257,7 @@
                 <constraint firstAttribute="trailing" secondItem="VMp-mq-548" secondAttribute="trailing" constant="15" id="Dwv-lg-9ei"/>
                 <constraint firstItem="t3f-rw-daT" firstAttribute="centerY" secondItem="BZN-Sy-WrB" secondAttribute="centerY" id="E9z-sp-VWr"/>
                 <constraint firstItem="VMp-mq-548" firstAttribute="top" secondItem="dP0-j5-ata" secondAttribute="bottom" constant="20" id="Eaa-Pl-saI"/>
-                <constraint firstItem="fIf-hL-2Wd" firstAttribute="leading" secondItem="BkS-Gd-R6z" secondAttribute="trailing" constant="20" id="EmZ-AV-9NR"/>
+                <constraint firstItem="fIf-hL-2Wd" firstAttribute="leading" secondItem="BkS-Gd-R6z" secondAttribute="trailing" constant="10" id="EmZ-AV-9NR"/>
                 <constraint firstItem="P76-lJ-n4V" firstAttribute="trailing" secondItem="2fS-Kb-BFA" secondAttribute="trailing" id="Gvv-Qa-mk3"/>
                 <constraint firstItem="uRA-lh-Efx" firstAttribute="height" secondItem="4mP-E3-V9W" secondAttribute="height" id="Jaf-3Z-FFo"/>
                 <constraint firstItem="Ain-6K-Evj" firstAttribute="top" secondItem="TEe-nL-RqU" secondAttribute="bottom" constant="15" id="JnD-24-uej"/>
@@ -289,10 +293,13 @@
                 <constraint firstItem="rG9-N3-pXZ" firstAttribute="leading" secondItem="BZN-Sy-WrB" secondAttribute="leading" id="jA8-Y0-xr5"/>
                 <constraint firstItem="rhs-Re-D4f" firstAttribute="centerY" secondItem="39I-ae-cJ3" secondAttribute="centerY" id="jcD-4s-zYg"/>
                 <constraint firstItem="U6y-aB-K4p" firstAttribute="width" secondItem="39I-ae-cJ3" secondAttribute="width" id="kbw-Ru-BlH"/>
+                <constraint firstAttribute="trailing" secondItem="Mo2-3d-hBB" secondAttribute="trailing" id="kvF-ug-d0Z"/>
                 <constraint firstItem="uRA-lh-Efx" firstAttribute="centerY" secondItem="rG9-N3-pXZ" secondAttribute="centerY" id="lO9-Og-U3L"/>
                 <constraint firstItem="4mP-E3-V9W" firstAttribute="width" secondItem="PIO-tz-G7t" secondAttribute="width" id="lWh-Ry-tuk"/>
                 <constraint firstItem="dP0-j5-ata" firstAttribute="centerY" secondItem="rG9-N3-pXZ" secondAttribute="centerY" id="ldN-zj-AQM"/>
                 <constraint firstItem="2fS-Kb-BFA" firstAttribute="height" secondItem="fIf-hL-2Wd" secondAttribute="height" id="luB-87-C50"/>
+                <constraint firstItem="Mo2-3d-hBB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nKp-JD-D6F"/>
+                <constraint firstAttribute="bottom" secondItem="Mo2-3d-hBB" secondAttribute="bottom" id="nXO-Ub-GbS"/>
                 <constraint firstItem="PIO-tz-G7t" firstAttribute="trailing" secondItem="zIV-ln-Ry6" secondAttribute="trailing" id="nny-Eg-XJL"/>
                 <constraint firstItem="zIV-ln-Ry6" firstAttribute="leading" secondItem="P76-lJ-n4V" secondAttribute="leading" id="o1E-xe-tXh"/>
                 <constraint firstItem="Wxl-Od-9Kf" firstAttribute="width" secondItem="KtH-cg-ArE" secondAttribute="width" id="pG9-DF-NsE"/>
@@ -304,12 +311,14 @@
                 <constraint firstItem="Vvi-kR-u71" firstAttribute="centerY" secondItem="Wxl-Od-9Kf" secondAttribute="centerY" id="uiB-hr-4io"/>
                 <constraint firstAttribute="trailing" secondItem="ENb-vR-1N1" secondAttribute="trailing" constant="10" id="vGF-AL-Xk8"/>
                 <constraint firstItem="39I-ae-cJ3" firstAttribute="top" secondItem="Wxl-Od-9Kf" secondAttribute="bottom" constant="20" id="vxv-gS-hw3"/>
-                <constraint firstItem="ENb-vR-1N1" firstAttribute="leading" secondItem="fIf-hL-2Wd" secondAttribute="trailing" constant="20" id="xRA-fI-3tI"/>
+                <constraint firstItem="ENb-vR-1N1" firstAttribute="leading" secondItem="fIf-hL-2Wd" secondAttribute="trailing" constant="5" id="xRA-fI-3tI"/>
                 <constraint firstAttribute="trailing" secondItem="DRa-Ah-R3B" secondAttribute="trailing" id="xZB-ZP-yIX"/>
+                <constraint firstItem="Mo2-3d-hBB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="y9k-xv-9sN"/>
                 <constraint firstItem="Wxl-Od-9Kf" firstAttribute="top" secondItem="KtH-cg-ArE" secondAttribute="bottom" constant="20" id="zLW-VW-FrR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="backgroundView" destination="Mo2-3d-hBB" id="Mbn-9N-afF"/>
                 <outlet property="btn0" destination="ENb-vR-1N1" id="Ldv-V7-sCS"/>
                 <outlet property="btn1" destination="Sks-kT-cwH" id="5xP-Ww-HWs"/>
                 <outlet property="btn2" destination="Vvi-kR-u71" id="liE-Ep-NGx"/>
@@ -317,6 +326,7 @@
                 <outlet property="btn4" destination="UKB-9B-hRK" id="aPe-81-5mp"/>
                 <outlet property="btn5" destination="t3f-rw-daT" id="8zo-mY-cLt"/>
                 <outlet property="btn6" destination="dP0-j5-ata" id="6Ky-tG-RAi"/>
+                <outlet property="label" destination="VMp-mq-548" id="CuK-vM-C4l"/>
                 <outlet property="textField0" destination="fIf-hL-2Wd" id="jZB-fB-txV"/>
                 <outlet property="textField1" destination="2fS-Kb-BFA" id="9Cm-iP-IjH"/>
                 <outlet property="textField2" destination="P76-lJ-n4V" id="hlj-IB-xQw"/>

@@ -16,6 +16,11 @@
     
 }
 
+- (void)layoutSubviews {
+    [_priceView removeFromSuperview];
+    [self drawPrice];
+}
+
 - (void)drawPrice {
     _priceView = [[DrawView alloc] initWithFrame:self.contentView.bounds];
     [self.contentView addSubview:_priceView];
@@ -30,7 +35,7 @@
     _priceView.left = 40;
     _priceView.right = 50;
     _priceView.bottom = 60;
-    _priceView.top = 60;
+    _priceView.top = 40;
     
     //    _priceView.partLine = 3;
     
@@ -46,8 +51,7 @@
 
 - (void)setPriceArr:(NSArray *)priceArr {
     _priceArr = priceArr;
-    [_priceView removeFromSuperview];
-    [self drawPrice];
+    
 }
 
 @end

@@ -25,6 +25,7 @@
 //@property (strong, nonatomic) IBOutlet YUUBorderButton *rightBtn;
 
 @property (nonatomic, strong) YUUPendingBuyerModel *model;
+@property (strong, nonatomic) IBOutlet UIView *bgView;
 
 
 @end

@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *headphoto;
 
-@property (nonatomic, assign) NSInteger membergrade;
+@property (nonatomic, strong) NSString *membergrade;
 
 @property (nonatomic, assign) NSInteger memberid;
 

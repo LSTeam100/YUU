@@ -24,19 +24,31 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(YUUMachinePoolModel *)model {
-    _model = model;
-    
+- (void)setDirectModel:(DirectPushModel *)directModel {
     _icon.image = [UIImage imageNamed:@"default_icon"];
-    _idLabel.text = [NSString stringWithFormat:@"ID%@", model.memberid];
-//    if (model.uerLevel == YUUUserLevelNew) {
-//        _levelLabel.text = @"新手矿工";
-//    }
-    _levelLabel.text = model.membergrade;
-    _powerLabel.text = [NSString stringWithFormat:@"算力: %@",model.memberpower];
-    _machineCountLabel.text = [NSString stringWithFormat:@"矿机: %@台", model.membertotalmills];
-    _directPushLabel.text = [NSString stringWithFormat:@"直推: %@人", model.membertotaldirect];
-    _teamCountLabel.text = [NSString stringWithFormat:@"团队: %@人", model.membertotalnodirect];
+    _idLabel.text = [NSString stringWithFormat:@"ID%ld", (long)directModel.memberid];
+    //    if (model.uerLevel == YUUUserLevelNew) {
+    //        _levelLabel.text = @"新手矿工";
+    //    }
+    _levelLabel.text = directModel.membergrade;
+    _powerLabel.text = [NSString stringWithFormat:@"算力: %ld",(long)directModel.memberpower];
+    _machineCountLabel.text = [NSString stringWithFormat:@"矿机: %ld台", (long)directModel.membertotalmills];
+    _directPushLabel.text = [NSString stringWithFormat:@"直推: %ld人", (long)directModel.membertotaldirect];
+    _teamCountLabel.text = [NSString stringWithFormat:@"团队: %ld人", (long)directModel.membertotalnodirect];
 }
+
+- (void)setTeamModel:(TeamPushModel *)teamModel {
+    _icon.image = [UIImage imageNamed:@"default_icon"];
+    _idLabel.text = [NSString stringWithFormat:@"ID%ld", (long)teamModel.memberid];
+    //    if (model.uerLevel == YUUUserLevelNew) {
+    //        _levelLabel.text = @"新手矿工";
+    //    }
+    _levelLabel.text = teamModel.membergrade;
+    _powerLabel.text = [NSString stringWithFormat:@"算力: %ld",(long)teamModel.memberpower];
+    _machineCountLabel.text = [NSString stringWithFormat:@"矿机: %ld台", (long)teamModel.membertotalmills];
+    _directPushLabel.text = [NSString stringWithFormat:@"直推: %ld人", (long)teamModel.membertotaldirect];
+    _teamCountLabel.text = [NSString stringWithFormat:@"团队: %ld人", (long)teamModel.membertotalnodirect];
+}
+
 
 @end

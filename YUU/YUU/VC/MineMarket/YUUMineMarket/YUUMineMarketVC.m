@@ -50,6 +50,23 @@
     _tableView.estimatedRowHeight = 100;
     
     [self getHTTPData];
+    
+    YUUPendingMailboxModel *model = [[YUUPendingMailboxModel alloc] init];
+    model.sorbid = 1111;
+    model.tradingtime = @"2018";
+    model.tradingcard = @"90000";
+    model.membername = @"小明";
+    model.bankname = @"工商";
+    model.bankcard = @"6225 6225 6225";
+    model.memberwx = @"wechat";
+    model.memberalipay = @"alibaba";
+    model.memberphone = @"1390000000";
+    model.memberwallet = @"2222";
+    model.sellorbuy = 1;
+    model.progressnum = 2;
+    
+    
+    _mailList = @[model, model];
 }
 
 - (void)getHTTPData {

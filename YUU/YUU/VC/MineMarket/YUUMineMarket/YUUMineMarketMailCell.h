@@ -7,7 +7,8 @@
 //
 
 #import "YUUBaseTableViewCell.h"
-#import "YUUTransactionModel.h"
+#import "YUUPendingMailboxModel.h"
+#import "YUUSellerOnsaleRequest.h"
 
 @interface YUUMineMarketMailCell : YUUBaseTableViewCell
 
@@ -22,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *rightBtn;
 @property (strong, nonatomic) IBOutlet UIView *bgView;
 
-@property (nonatomic, strong) YUUTransactionModel *model;
+@property (nonatomic, strong) YUUPendingMailboxModel *model;
 
 
 

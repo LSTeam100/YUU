@@ -10,6 +10,7 @@
 #import "HUDView.h"
 #import "YUUBorderTextField.h"
 #import "HUDProtocol.h"
+#import "YUUPendingMailboxModel.h"
 
 @interface YUUSellerInfoView : HUDView
 
@@ -35,6 +36,14 @@
 @property (strong, nonatomic) IBOutlet UIButton *btn6;
 
 @property (nonatomic, strong) NSArray *textFields;
+
+@property (nonatomic, strong) YUUPendingMailboxModel *model;
+
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
+
+@property (strong, nonatomic) IBOutlet UILabel *label;
+
+
 
 @end
 

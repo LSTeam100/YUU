@@ -14,11 +14,13 @@
     [super awakeFromNib];
     
     [_middleBtn setTitle:@"卖给他" forState:UIControlStateNormal];
-    [_middleBtn setTitleColor:[UIColor R:160.0 G:69.0 B:22.0] forState:UIControlStateNormal];
+    [_middleBtn setTitleColor:[UIColor hex:@"ff2a00"] forState:UIControlStateNormal];
     
     _numberLabel.textColor = YUUYellow;
     _timeLabel.textColor = [UIColor whiteColor];
     _contentLabel.textColor = [UIColor whiteColor];
+    
+    _bgView.backgroundColor = [UIColor hex:@"e4c177" alpha:0.1];
 }
 
 - (void)setModel:(YUUPendingBuyerModel *)model {
@@ -26,7 +28,7 @@
     
     _middleBtn.layer.masksToBounds = YES;
     _middleBtn.layer.cornerRadius = _middleBtn.frame.size.height/2;
-    _middleBtn.layer.borderColor = [[UIColor R:160.0 G:69.0 B:22.0] CGColor];
+    _middleBtn.layer.borderColor = [[UIColor hex:@"ff2a00"] CGColor];
     _middleBtn.layer.borderWidth = 1;
     
     _numberLabel.text = [NSString stringWithFormat:@"单号：%@",model.tradingcard];

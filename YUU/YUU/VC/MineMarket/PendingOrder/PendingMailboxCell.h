@@ -9,6 +9,7 @@
 #import "YUUBaseTableViewCell.h"
 #import "YUUBorderButton.h"
 #import "YUUPendingMailboxModel.h"
+#import "YUUSellerInfoView.h"
 
 @interface PendingMailboxCell : YUUBaseTableViewCell
 
@@ -25,5 +26,7 @@
 @property (strong, nonatomic) IBOutlet YUUBorderButton *rightBtn;
 
 @property (nonatomic, strong) YUUPendingMailboxModel *model;
+
+@property (strong, nonatomic) IBOutlet UIView *bgView;
 
 @end

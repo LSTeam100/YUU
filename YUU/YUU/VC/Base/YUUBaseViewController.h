@@ -14,8 +14,12 @@
 
 @interface YUUBaseViewController : UIViewController
 
+//@property (nonatomic, assign) BOOL isViewDidLoad;
+
 + (instancetype)storyboardInstanceType;
 
 - (void)setCustomBackItem;
+
+- (void)getHTTPData;
 
 @end

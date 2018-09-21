@@ -26,8 +26,9 @@
 
 
 @interface YUUMachineArrModel : NSObject
-@property(nonatomic,strong)NSNumber *memberpower;
-@property(nonatomic,strong)NSNumber *memberdaycoin;
-@property(nonatomic,strong)NSMutableArray <YUUMachineDetailModel *>*machineArr;
+
+@property(nonatomic, assign) NSInteger *memberpower;
+@property(nonatomic, assign) double memberdaycoin;
+@property(nonatomic, strong) NSArray *msgList;
 
 @end

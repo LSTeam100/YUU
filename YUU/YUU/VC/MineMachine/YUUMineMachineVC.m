@@ -66,7 +66,7 @@
     WeakSelf
     YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
         weakSelf.arrModel = request.getResponse.data;
-        for (YUUMachineDetailModel *model in weakSelf.arrModel.machineArr) {
+        for (YUUMachineDetailModel *model in weakSelf.arrModel.msgList) {
             if (model.milldie == YUUMachineStatusWorking) {
                 [weakSelf.workingItems addObject:model];
             } else {
@@ -85,8 +85,8 @@
 }
 
 - (void)updateUI {
-    _computePowerLabel.text = [NSString stringWithFormat:@"%@",_arrModel.memberpower];
-    _outputLabel.text = [NSString stringWithFormat:@"%0.2f",[_arrModel.memberdaycoin floatValue]];
+    _computePowerLabel.text = [NSString stringWithFormat:@"%ld",(long)_arrModel.memberpower];
+    _outputLabel.text = [NSString stringWithFormat:@"%0.2f",_arrModel.memberdaycoin];
     [self.tableView reloadData];
 }
 

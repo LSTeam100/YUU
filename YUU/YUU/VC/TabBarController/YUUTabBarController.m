@@ -12,7 +12,7 @@
 #import "YUUUserData.h"
 
 
-@interface YUUTabBarController ()
+@interface YUUTabBarController () <UITabBarControllerDelegate>
 
 @end
 
@@ -43,6 +43,8 @@
         vc.tabBarItem.title = titles[i];
     }
     NSLog(@"%f,%f",self.tabBar.frame.size.width,self.tabBar.frame.size.height);
+    
+    self.delegate = self;
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -67,14 +69,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)viewController;
+        if (nav.viewControllers.count == 1) {
+            UIViewController *vc = nav.topViewController;
+            if ([vc isKindOfClass:[YUUBaseViewController class]]) {
+                if ([(YUUBaseViewController *)vc isViewLoaded]) {                
+                    [(YUUBaseViewController *)vc getHTTPData];
+                }
+            }
+        }
+    }
 }
-*/
 
 @end

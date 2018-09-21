@@ -15,7 +15,7 @@
 }
 
 - (CGSize)intrinsicContentSize {
-    return CGSizeMake(300, 260);
+    return CGSizeMake(300, 140);
 }
 
 - (IBAction)closeBtnAction:(id)sender {
@@ -24,18 +24,18 @@
     }
 }
 
-- (void)setModel:(YUUMachinePoolArrModel *)model {
+- (void)setModel:(MineralPoolModel *)model {
     if (!model) {
         return;
     }
     _model = model;
     
-    _label0.text = [NSString stringWithFormat:@"总直推数：%@", model.totaldirect];
-    _label1.text = [NSString stringWithFormat:@"四级矿工数：%@", model.fourminer];
-    _label2.text = [NSString stringWithFormat:@"四级矿工数：%@", model.threeminer];
-    _label3.text = [NSString stringWithFormat:@"四级矿工数：%@", model.twominer];
-    _label4.text = [NSString stringWithFormat:@"四级矿工数：%@", model.oneminer];
-    _label5.text = [NSString stringWithFormat:@"在产矿工数：%@", model.actminer];
+    _label0.text = [NSString stringWithFormat:@"总直推数：%ld", (long)model.totaldirect];
+    _label1.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.fourminer];
+    _label2.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.threeminer];
+    _label3.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.twominer];
+    _label4.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.oneminer];
+    _label5.text = [NSString stringWithFormat:@"在产矿工数：%ld", (long)model.actminer];
 }
 
 /*

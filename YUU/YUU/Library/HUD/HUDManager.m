@@ -141,8 +141,8 @@ static HUDManager *manager = nil;
         weakSelf.hud = [MBProgressHUD showHUDAddedTo:keyWindow animated:YES];
         weakSelf.hud.mode = MBProgressHUDModeCustomView;
         weakSelf.hud.bezelView.color = [UIColor clearColor];
-        weakSelf.hud.backgroundView.color = [UIColor grayColor];
-        weakSelf.hud.backgroundView.alpha = 0.3;
+//        weakSelf.hud.backgroundView.color = [UIColor grayColor];
+//        weakSelf.hud.backgroundView.alpha = 0.0;
         weakSelf.hud.customView = customView;
         
         for (UIView *view in weakSelf.hud.subviews) {

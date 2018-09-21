@@ -56,6 +56,10 @@
 
 @implementation YUUMachineArrModel
 
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"msgList" : @"YUUMachineDetailModel"};
+}
+
 @end
 
 

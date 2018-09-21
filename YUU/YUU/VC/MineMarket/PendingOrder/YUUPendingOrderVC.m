@@ -41,6 +41,24 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 100;
     
+    _upLabel.textColor = [UIColor R:255.0 G:255.0 B:255.0];
+    _upLabel.backgroundColor = [UIColor hex:@"e4c177" alpha:0.1];
+    _upLabel.layer.borderColor = YUUYellow.CGColor;
+    _upLabel.layer.borderWidth = 1;
+    NSString *str = @"";
+    if (_level == 0) {
+        str = @"1-50";
+    } else if (_level == 1) {
+        str = @"50-100";
+    } else if (_level == 1) {
+        str = @"100-500";
+    } else if (_level == 1) {
+        str = @"500-1000";
+    }
+    _upLabel.text = [NSString stringWithFormat:@"认证用户可进行%@YUU议价交易",str];
+    
+
+    
     _segmentView = [[SHSegmentView alloc] init];
     [self.view addSubview:_segmentView];
     WeakSelf
@@ -76,6 +94,7 @@
     _currentPriceLabel.text = [NSString stringWithFormat:@"%@",_model.sevenprice];
     self.currentPrice = [_model.sevenprice doubleValue];
     
+    
     {
         YUUPendingBuyerModel *model = [[YUUPendingBuyerModel alloc] init];
         model.tradingcard = @"828722626";
@@ -99,6 +118,7 @@
         model.memberphone = @"1390000000";
         model.memberwallet = @"2222";
         model.sellorbuy = 1;
+        model.progressnum = 2;
 
         YUUPendingMailboxModel *model0 = [[YUUPendingMailboxModel alloc] init];
         model0.sorbid = 1111;
@@ -112,6 +132,7 @@
         model0.memberphone = @"1390000000";
         model0.memberwallet = @"2222";
         model0.sellorbuy = 0;
+        model0.progressnum = 1;
         
         _mailArr = @[model, model0];
     }
@@ -158,7 +179,7 @@
 }
 
 - (IBAction)hangingOrderAction:(UIButton *)sender {
-    YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:@"" Buyprice:@"" SuccessCallback:^(YUUBaseRequest *request) {
+    YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPrice.text SuccessCallback:^(YUUBaseRequest *request) {
         
     } failureCallback:^(YUUBaseRequest *request) {
         
@@ -193,9 +214,9 @@
 }
 
 #pragma mark - UITableViewDelegate -
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  84;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return  84;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {

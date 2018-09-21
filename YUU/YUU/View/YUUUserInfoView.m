@@ -23,7 +23,7 @@
 */
 
 - (CGSize)intrinsicContentSize {
-    return CGSizeMake(300, 260);
+    return CGSizeMake(300, 160);
 }
 
 - (IBAction)btn0Action:(id)sender {

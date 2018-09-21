@@ -22,21 +22,29 @@
 }
 
 - (CGSize)intrinsicContentSize {
-    return CGSizeMake(300, 260);
+    return CGSizeMake(300, 360);
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     _textFields = @[_textField0, _textField1, _textField2, _textField3, _textField4, _textField5, _textField6,];
+    
+    _backgroundView.backgroundColor = [UIColor hex:@"e4c177" alpha:0.3];
+    _backgroundView.layer.masksToBounds = YES;
+    _backgroundView.layer.cornerRadius = 10;
+    
+    _label.textColor = YUUYellow;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setModel:(YUUPendingMailboxModel *)model {
+    _textField0.text = model.membername;
+    _textField1.text = model.bankname;
+    _textField2.text = model.bankcard;
+    _textField3.text = model.memberwx;
+    _textField4.text = model.memberalipay;
+    _textField5.text = model.memberphone;
+    _textField6.text = model.memberwallet;
 }
-*/
 
 
 - (IBAction)copyAction:(UIButton *)sender {

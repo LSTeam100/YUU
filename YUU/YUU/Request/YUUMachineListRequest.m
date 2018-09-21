@@ -36,17 +36,18 @@
     [super processResponse:responseDictionary];
     if([[self getResponse] isSucceed]){
         NSDictionary* data=responseDictionary[@"data"];
-        if(data!=nil){
-            YUUMachineArrModel *modelList = [[YUUMachineArrModel alloc]init];
-            modelList = data[@"memberpower"];
-            modelList = data[@"memberdaycoin"];
-            NSArray *modelArr = data[@"msgList"];
-            for (NSDictionary *oneDic in modelArr) {
-                YUUMachineDetailModel *m = [[YUUMachineDetailModel alloc]initWtihDic:oneDic];
-                [modelList.machineArr addObject:m];
-            }
-            [self getResponse].data=modelList;
-        }
+//        if(data!=nil){
+//            YUUMachineArrModel *modelList = [[YUUMachineArrModel alloc]init];
+//            modelList = data[@"memberpower"];
+//            modelList = data[@"memberdaycoin"];
+//            NSArray *modelArr = data[@"msgList"];
+//            for (NSDictionary *oneDic in modelArr) {
+//                YUUMachineDetailModel *m = [[YUUMachineDetailModel alloc]initWtihDic:oneDic];
+//                [modelList.machineArr addObject:m];
+//            }
+//            [self getResponse].data=modelList;
+//        }
+        [self getResponse].data = [YUUMachineArrModel mj_objectWithKeyValues:data];
     }
 }
 @end

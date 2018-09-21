@@ -18,7 +18,7 @@
         
         NSDictionary *parameters=@{
                                    @"token": token,
-                                   @"milltype" : milltype,
+                                   @"milltypeid" : milltype,
                                    @"sign" : sha1key
                                    };
         [self setParameters:parameters];

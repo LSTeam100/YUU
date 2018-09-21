@@ -62,6 +62,8 @@
     bgImageView.image = [UIImage imageNamed:@"bg"];
     [self.view addSubview:bgImageView];
     [self.view sendSubviewToBack:bgImageView];
+    
+//    _isViewDidLoad = YES;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -81,6 +83,8 @@
     self.navigationItem.backBarButtonItem = backItem;
 }
 
+
+- (void)getHTTPData {}
 /*
 #pragma mark - Navigation
 

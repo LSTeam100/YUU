@@ -22,10 +22,10 @@
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.bottom.mas_equalTo(self);
     }];
-    _bgView.backgroundColor = [UIColor grayColor];
+    _bgView.backgroundColor = YUUYellow_alpha(0.9);
     _bgView.alpha = 0.7;
     _bgView.layer.masksToBounds = YES;
-    _bgView.layer.cornerRadius = 5;
+    _bgView.layer.cornerRadius = 10;
 }
 
 /*

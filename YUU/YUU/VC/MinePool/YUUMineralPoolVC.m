@@ -12,8 +12,9 @@
 #import "Header.h"
 #import "YUUTeamInfoView.h"
 #import "YUUUserInfoView.h"
-#import "YUUMachinepoolRequst.h"
-#import "YUUMachinePoolArrModel.h"
+//#import "YUUMachinepoolRequst.h"
+//#import "YUUMachinePoolArrModel.h"
+#import "GetMineralPoolRequest.h"
 
 @interface YUUMineralPoolVC () <UITableViewDelegate, UITableViewDataSource, HUDProtocol>
 
@@ -23,7 +24,7 @@
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray *items;
-@property (nonatomic, strong) YUUMachinePoolArrModel *model;
+@property (nonatomic, strong) MineralPoolModel *model;
 @property (nonatomic, assign) BOOL isDirect;
 
 @end
@@ -42,15 +43,48 @@
     
     [self addSegment];
     
+    {
+        _model = [[MineralPoolModel alloc] init];
+        _model.millspoolpower = 50;
+        _model.totalminers = 100;
+        _model.totaldirect = 51;
+        _model.actminer = 30;
+        _model.oneminer = 11;
+        _model.twominer = 22;
+        _model.threeminer = 33;
+        _model.fourminer = 44;
+        
+        DirectPushModel *d = [[DirectPushModel alloc] init];
+        d.headphoto = @"";
+        d.membergrade = @"123";
+        d.memberid = 123;
+        d.memberpower = 111;
+        d.membertotalmills = 111;
+        d.membertotaldirect = 111;
+        d.membertotalnodirect = 111;
+        d.memberphone = 12345;
+        _model.directid = @[d, d];
+        
+        TeamPushModel *t = [[TeamPushModel alloc] init];
+        t.headphoto = @"";
+        t.membergrade = @"222";
+        t.memberid = 222;
+        t.memberpower = 2222;
+        t.membertotalmills = 222;
+        t.membertotaldirect = 222;
+        t.membertotalnodirect = 222;
+        _model.nodirectid = @[t, t];
+    }
+    self.isDirect = YES;
     [self getHTTPData];
 }
 
 - (void)getHTTPData {
     WeakSelf
-    YUUMachinepoolRequst *request = [[YUUMachinepoolRequst alloc] initWithMachinepool:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
+    GetMineralPoolRequest *request = [[GetMineralPoolRequest alloc] initWithSuccess:^(YUUBaseRequest *request) {
         weakSelf.model = request.getResponse.data;
         [weakSelf updateUI];
-    } failureCallback:^(YUUBaseRequest *request) {
+    } failure:^(YUUBaseRequest *request) {
         if (request.getResponse.code == 4) {
             weakSelf.model = nil;
             [weakSelf updateUI];
@@ -63,8 +97,8 @@
 
 - (void)updateUI {
     if (_model) {
-        _powerLabel.text = [NSString stringWithFormat:@"%ld",[_model.millspoolpower integerValue]];
-        _minerCountLabel.text = [NSString stringWithFormat:@"%ld",[_model.totalminers integerValue]];
+        _powerLabel.text = [NSString stringWithFormat:@"%ld",(long)_model.millspoolpower];
+        _minerCountLabel.text = [NSString stringWithFormat:@"%ld",(long)_model.totalminers];
     } else {
         _powerLabel.text = @"0";
         _minerCountLabel.text = @"0";
@@ -128,9 +162,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YUUMineralPoolCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineralPoolCell"];
     if (_isDirect) {
-        cell.model = self.model.directidArr[indexPath.section];
+        cell.directModel = self.model.directid[indexPath.section];
     } else {
-        cell.model = self.model.nodirectidArr[indexPath.section];
+        cell.teamModel = self.model.nodirectid[indexPath.section];
     }
     
     return cell;
@@ -138,20 +172,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (_isDirect) {
-        return self.model.directidArr.count;
+        return self.model.directid.count;
     } else {
-        return self.model.nodirectidArr.count;
+        return self.model.nodirectid.count;
     }
 }
 
 #pragma mark - UITableViewDelegate -
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_isDirect) {
-        YUUMachinePoolModel *model = self.model.directidArr[indexPath.section];
+        DirectPushModel *model = self.model.directid[indexPath.section];
         YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
         view.delegate = self;
-        view.textField0.text = [NSString stringWithFormat:@"%@", model.memberid];
-        view.textField1.text = [NSString stringWithFormat:@"%@", model.memberphone];
+        view.textField0.text = [NSString stringWithFormat:@"%ld", (long)model.memberid];
+        view.textField1.text = [NSString stringWithFormat:@"%ld", (long)model.memberphone];
         [HUD showCustomView:view];
     } else {
 //        YUUMachinePoolModel *model = self.model.nodirectidArr[indexPath.section];
