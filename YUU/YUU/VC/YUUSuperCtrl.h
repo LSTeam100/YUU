@@ -19,7 +19,7 @@
 
 -(BOOL)handleResponseError:(YUUSuperCtrl *)currentController
                    request:(YUUBaseRequest *)request
-       treatErrorAsUnknown:(BOOL) treated;
+                 needToken:(BOOL) token;
 -(void)setBusyIndicatorVisible:(BOOL)visible;
 @property(nonatomic,strong)UIView *activeView;
 

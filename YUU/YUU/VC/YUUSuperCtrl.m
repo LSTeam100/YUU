@@ -8,7 +8,7 @@
 
 #import "YUUSuperCtrl.h"
 #import "MBProgressHUD.h"
-
+#import "YUULoginCtrl.h"
 @interface YUUSuperCtrl (){
     int _busyCount;
 }
@@ -91,14 +91,37 @@
     }
 }
 
+-(void)naviTologin{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
+    [self presentViewController:navi animated:YES completion:^{
+        DLOG(@"展示登录页面");
+    }];
+}
+
 -(BOOL)handleResponseError:(YUUSuperCtrl *)currentController
                    request:(YUUBaseRequest *)request
-       treatErrorAsUnknown:(BOOL) treated{
+       needToken:(BOOL) token{
     int statusCode=[request getResponse].code;
-    if (treated) {
-        [self showDefaultFailureMessage];
-
+    if (token == false) {
+        switch (statusCode) {
+            case 1:
+                [self naviTologin];
+                break;
+            default:
+                break;
+        }
+        
     }
+    else{
+        
+    }
+    
+    
+//    if (treated) {
+//        [self showDefaultFailureMessage];
+//
+//    }
 //    if (statusCode == 0) {
 //        <#statements#>
 //    }
@@ -166,6 +189,14 @@
 //        }
 //    }
     return NO;
+}
+-(void)showCloesdMarket:(YUUSuperCtrl *)ctrl Content:(NSString *)content{
+    [self presentViewController:ctrl animated:YES completion:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+    }];
+
 }
 -(void)showDefaultFailureMessage{
     UIAlertController *alert  = [UIAlertController alertControllerWithTitle:@"" message:@"操作失败" preferredStyle:UIAlertControllerStyleAlert];
