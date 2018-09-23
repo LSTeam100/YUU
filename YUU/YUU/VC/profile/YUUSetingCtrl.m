@@ -9,6 +9,9 @@
 #import "YUUSetingCtrl.h"
 #import "YUUModifyPassword.h"
 #import "YUUUserData.h"
+#import "YUUMineDetailRequest.h"
+#import "YUUMineDetailModel.h"
+
 @implementation YUUSetingCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -23,6 +26,7 @@
 @interface YUUSetingCtrl ()
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
 @property(nonatomic,weak)IBOutlet UIButton *logoutBtn;
+@property(nonatomic,weak)YUUMineDetailModel *DetailModel;
 @end
 
 @implementation YUUSetingCtrl
@@ -40,19 +44,55 @@
     return 40;
 }
 
+-(void)mineDetailRequest{
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    [self setBusyIndicatorVisible:YES];
+    
+    __weak typeof(self) weakSelf = self;
+    YUUMineDetailRequest *mineDetial = [[YUUMineDetailRequest alloc]initWithMineDetail:token SuccessCallback:^(YUUBaseRequest *request) {
+        [weakSelf setBusyIndicatorVisible:NO];
+        YUUMineDetailModel *model = [request getResponse].data;
+        self.DetailModel = model;
+        [self.tableView reloadData];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [weakSelf setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                break;
+            case 1:
+                DLOG(@"无效token");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [self handleResponseError:self request:request needToken:YES];
+        [HUD showHUDTitle:res.msg durationTime:2];
+    }];
+    [mineDetial start];
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifer = @"YUUSetingCell";
     YUUSetingCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 
     switch (indexPath.row) {
         case 0:
             cell.titleLabel.text = @"微信公众号";
+            cell.lastLabel.text = self.DetailModel.memberwx;
             break;
         case 1:
             cell.titleLabel.text = @"当前版本";
+            cell.lastLabel.text = app_Version;
             break;
         case 2:
             cell.titleLabel.text = @"修改登录密码";

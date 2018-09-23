@@ -95,7 +95,7 @@
 		0994447A2140D57200548245 /* MineralPoolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444792140D57200548245 /* MineralPoolModel.m */; };
 		099444822140FC0B00548245 /* DirectPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444812140FC0B00548245 /* DirectPushModel.m */; };
 		099444852140FC2000548245 /* TeamPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444842140FC2000548245 /* TeamPushModel.m */; };
-		099445382141226000548245 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		099445382141226000548245 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		099445672141229200548245 /* YUUMineDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099445462141228C00548245 /* YUUMineDetailModel.m */; };
 		099445682141229200548245 /* YUUMachineMarketInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099445472141228C00548245 /* YUUMachineMarketInfoModel.m */; };
 		099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099445482141228C00548245 /* YUUMachinePoolArrModel.m */; };
@@ -130,7 +130,7 @@
 		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
 		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
 		18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */; };
-		18D3532621379D9000990F7C /* (null) in Sources */ = {isa = PBXBuildFile; };
+		18D3532621379D9000990F7C /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A0213929A000990F7C /* CostomTextFieldBgView.m */; };
 		18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A3213A7BAA00990F7C /* CostomSepView.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
@@ -1028,6 +1028,7 @@
 				18EDE40421257A3700FC8E0C /* Frameworks */,
 				18EDE40521257A3700FC8E0C /* Resources */,
 				FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */,
+				D5CD255CE01797B6CB2B9C48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1111,6 +1112,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D5CD255CE01797B6CB2B9C48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUU/Pods-YUU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FBFD8A0E30C40CEB661976F5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1181,7 +1197,7 @@
 				0925E97F215341C400F874A7 /* YUUGetGiftRequest.m in Sources */,
 				1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */,
 				18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */,
-				18D3532621379D9000990F7C /* (null) in Sources */,
+				18D3532621379D9000990F7C /* BuildFile in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
 				099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */,
@@ -1197,7 +1213,7 @@
 				09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */,
 				099445752141229200548245 /* YUUCurrencyHistoryModel.m in Sources */,
 				18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */,
-				099445382141226000548245 /* (null) in Sources */,
+				099445382141226000548245 /* BuildFile in Sources */,
 				09251C82213F6EC300B12370 /* PendingBuyerCell.m in Sources */,
 				0926F07221328E200083CFDD /* HUD.m in Sources */,
 				18F97C14214E08960059E194 /* YUUCallCenterCtrl.m in Sources */,
@@ -1417,10 +1433,7 @@
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5a5bf09d-5c26-4d4e-81d4-3493912339e1";
@@ -1441,10 +1454,7 @@
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
