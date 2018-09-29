@@ -47,7 +47,8 @@
                 break;
         }
         [HUD showHUDTitle:res.msg durationTime:2];
-        
+        [self handleResponseError:self request:request needToken:YES];
+
     }];
     [callCenter start];
 }

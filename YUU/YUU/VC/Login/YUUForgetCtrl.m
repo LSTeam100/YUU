@@ -186,7 +186,7 @@
             default:
                 break;
         }
-
+        [self handleResponseError:self request:request needToken:YES];
     }];
     
     [forget start];

@@ -63,6 +63,7 @@
             default:
                 break;
         }
+        [self handleResponseError:self request:request needToken:YES];
         [HUD showHUDTitle:res.msg durationTime:2];
 
     }];

@@ -104,6 +104,7 @@ typedef enum {
             default:
                 break;
         }
+        [self handleResponseError:self request:request needToken:YES];
         [HUD showHUDTitle:res.msg durationTime:2];
     }];
     [mineDetial start];
@@ -360,6 +361,7 @@ typedef enum {
         }
         
         [HUD showHUDTitle:res.msg durationTime:2];
+        [self handleResponseError:self request:request needToken:YES];
     }];
     [sendWX start];
 }
@@ -389,7 +391,7 @@ typedef enum {
             default:
                 break;
         }
-        
+        [self handleResponseError:self request:request needToken:YES];
         [HUD showHUDTitle:res.msg durationTime:2];
 
         
@@ -423,6 +425,7 @@ typedef enum {
             default:
                 break;
         }
+        [self handleResponseError:self request:request needToken:YES];
         [HUD showHUDTitle:res.msg durationTime:2];
 
     }];

@@ -70,7 +70,6 @@
     
     if (self.modifyType == loginType) {
         [self setBusyIndicatorVisible:YES];
-        
         NSString *token = [YUUUserData shareInstance].userModel.token;
         YUUModifyLoginRequest *modifyLogin = [[YUUModifyLoginRequest alloc]initWithModifyLogin:token Oldpsw:self.oldField.text Newpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
@@ -98,6 +97,7 @@
                 default:
                     break;
             }
+            [self handleResponseError:self request:request needToken:YES];
             [HUD showHUDTitle:res.msg durationTime:2];
         }];
         [modifyLogin start];
@@ -125,6 +125,7 @@
                 default:
                     break;
             }
+            [self handleResponseError:self request:request needToken:YES];
             [HUD showHUDTitle:res.msg durationTime:2];
 
         }];
