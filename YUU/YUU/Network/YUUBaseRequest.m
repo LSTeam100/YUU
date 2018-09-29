@@ -51,7 +51,13 @@
         [allParameters addObject:[YUUUserData shareInstance].token];
     }
     for (id str in dict.allValues) {
-        [allParameters addObject:[str stringValue]];
+        NSString *strValue;
+        if (![str isKindOfClass:[NSString class]]) {
+            strValue = [NSString stringWithFormat:@"%@",str];
+        } else {
+            strValue = str;
+        }
+        [allParameters addObject:strValue];
     }
     NSString *sha1key = getSignFromParameter([NSArray arrayWithArray:allParameters]);
     

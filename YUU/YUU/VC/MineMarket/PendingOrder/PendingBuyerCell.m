@@ -33,7 +33,7 @@
     
     _numberLabel.text = [NSString stringWithFormat:@"单号：%@",model.tradingcard];
     _timeLabel.text = model.tradingtime;
-    _contentLabel.text = @"内容";
+    _contentLabel.text = [NSString stringWithFormat:@"ID:%ld挂买%ldYUU,单价%ld元，总计%ld元",(long)model.memberid,(long)model.coinnum,(long)model.buyprice,(model.coinnum*model.buyprice)];
 }
 
 @end

@@ -31,11 +31,11 @@
     _model = model;
     
     _label0.text = [NSString stringWithFormat:@"总直推数：%ld", (long)model.totaldirect];
-    _label1.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.fourminer];
-    _label2.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.threeminer];
-    _label3.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.twominer];
-    _label4.text = [NSString stringWithFormat:@"四级矿工数：%ld", (long)model.oneminer];
-    _label5.text = [NSString stringWithFormat:@"在产矿工数：%ld", (long)model.actminer];
+    _label1.text = [NSString stringWithFormat:@"四级矿工：%ld", (long)model.fourminer];
+    _label2.text = [NSString stringWithFormat:@"三级矿工：%ld", (long)model.threeminer];
+    _label3.text = [NSString stringWithFormat:@"二级矿工：%ld", (long)model.twominer];
+    _label4.text = [NSString stringWithFormat:@"一级矿工：%ld", (long)model.oneminer];
+    _label5.text = [NSString stringWithFormat:@"在产矿工：%ld", (long)model.actminer];
 }
 
 /*

@@ -9,21 +9,20 @@
 #import "YUUPointSellRequest.h"
 #import "YUUPointSellModel.h"
 @implementation YUUPointSellRequest
--(id)initWithPointSell:(NSString *)token Memberid:(NSString *)memberid  Sellnum:(NSString *)sellnum Sellprice:(NSString *)sellprice SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+-(id)initWithMemberid:(NSString *)memberid
+               Sellnum:(NSString *)sellnum
+             Sellprice:(NSString *)sellprice
+       SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[token,memberid,sellprice];
-
-        NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
-                                   @"token": token,
-                                   @"sign" : sha1key,
+                                   @"sellnum" : sellnum,
                                    @"memberid" : memberid,
                                    @"sellprice" : sellprice
                                    };
-        [self setParameters:parameters];
+        [self setParameterDic:parameters];
     }
     return self;
 }

@@ -41,29 +41,31 @@
     _doneItems = [NSMutableArray array];
     _isWorking = YES;
     
-    YUUMachineDetailModel *model = [[YUUMachineDetailModel alloc] init];
-    model.millsize = @"1";
-    model.milltype = @1;
-    model.runtimeday = @1;
-    model.totaldays = @1;
-    model.compower = @"1";
-    model.outputcoins = @1;
-    model.getmill = 1;
-    model.milldie = 1;
-
-    _workingItems = [NSMutableArray array];
-    [_workingItems addObject:model];
-    [_workingItems addObject:model];
-    
-    _doneItems = [NSMutableArray array];
-    [_doneItems addObject:model];
-    [_doneItems addObject:model];
+//    YUUMachineDetailModel *model = [[YUUMachineDetailModel alloc] init];
+//    model.millsize = @"1";
+//    model.milltype = @1;
+//    model.runtimeday = @1;
+//    model.totaldays = @1;
+//    model.compower = @"1";
+//    model.outputcoins = @1;
+//    model.getmill = 1;
+//    model.milldie = 1;
+//
+//    _workingItems = [NSMutableArray array];
+//    [_workingItems addObject:model];
+//    [_workingItems addObject:model];
+//    
+//    _doneItems = [NSMutableArray array];
+//    [_doneItems addObject:model];
+//    [_doneItems addObject:model];
     
     [self getHTTPData];
 }
 
 - (void)getHTTPData {
     WeakSelf
+    [_workingItems removeAllObjects];
+    [_doneItems removeAllObjects];
     YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
         weakSelf.arrModel = request.getResponse.data;
         for (YUUMachineDetailModel *model in weakSelf.arrModel.msgList) {
@@ -75,11 +77,11 @@
         }
         [weakSelf updateUI];
     } failureCallback:^(YUUBaseRequest *request) {
-//        if (request.getResponse.code == 4) {
-//            [weakSelf.workingItems removeAllObjects];
-//            [weakSelf.doneItems removeAllObjects];
-//            [weakSelf updateUI];
-//        }
+        if (request.getResponse.code == 4) {
+            [weakSelf.workingItems removeAllObjects];
+            [weakSelf.doneItems removeAllObjects];
+            [weakSelf updateUI];
+        }
     }];
     [request start];
 }

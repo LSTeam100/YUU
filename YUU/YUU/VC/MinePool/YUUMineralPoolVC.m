@@ -43,38 +43,38 @@
     
     [self addSegment];
     
-    {
-        _model = [[MineralPoolModel alloc] init];
-        _model.millspoolpower = 50;
-        _model.totalminers = 100;
-        _model.totaldirect = 51;
-        _model.actminer = 30;
-        _model.oneminer = 11;
-        _model.twominer = 22;
-        _model.threeminer = 33;
-        _model.fourminer = 44;
-        
-        DirectPushModel *d = [[DirectPushModel alloc] init];
-        d.headphoto = @"";
-        d.membergrade = @"123";
-        d.memberid = 123;
-        d.memberpower = 111;
-        d.membertotalmills = 111;
-        d.membertotaldirect = 111;
-        d.membertotalnodirect = 111;
-        d.memberphone = 12345;
-        _model.directid = @[d, d];
-        
-        TeamPushModel *t = [[TeamPushModel alloc] init];
-        t.headphoto = @"";
-        t.membergrade = @"222";
-        t.memberid = 222;
-        t.memberpower = 2222;
-        t.membertotalmills = 222;
-        t.membertotaldirect = 222;
-        t.membertotalnodirect = 222;
-        _model.nodirectid = @[t, t];
-    }
+//    {
+//        _model = [[MineralPoolModel alloc] init];
+//        _model.millspoolpower = 50;
+//        _model.totalminers = 100;
+//        _model.totaldirect = 51;
+//        _model.actminer = 30;
+//        _model.oneminer = 11;
+//        _model.twominer = 22;
+//        _model.threeminer = 33;
+//        _model.fourminer = 44;
+//        
+//        DirectPushModel *d = [[DirectPushModel alloc] init];
+//        d.headphoto = @"";
+//        d.membergrade = @"123";
+//        d.memberid = 123;
+//        d.memberpower = 111;
+//        d.membertotalmills = 111;
+//        d.membertotaldirect = 111;
+//        d.membertotalnodirect = 111;
+//        d.memberphone = 12345;
+//        _model.directid = @[d, d];
+//        
+//        TeamPushModel *t = [[TeamPushModel alloc] init];
+//        t.headphoto = @"";
+//        t.membergrade = @"222";
+//        t.memberid = 222;
+//        t.memberpower = 2222;
+//        t.membertotalmills = 222;
+//        t.membertotaldirect = 222;
+//        t.membertotalnodirect = 222;
+//        _model.nodirectid = @[t, t];
+//    }
     self.isDirect = YES;
     [self getHTTPData];
 }

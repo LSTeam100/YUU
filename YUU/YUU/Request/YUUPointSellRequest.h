@@ -9,5 +9,5 @@
 #import "YUUBaseRequest.h"
 
 @interface YUUPointSellRequest : YUUBaseRequest
--(id)initWithPointSell:(NSString *)token Memberid:(NSString *)memberid  Sellnum:(NSString *)sellnum Sellprice:(NSString *)sellprice SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
+-(id)initWithMemberid:(NSString *)memberid  Sellnum:(NSString *)sellnum Sellprice:(NSString *)sellprice SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 @end

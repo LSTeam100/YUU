@@ -77,7 +77,6 @@
         [weakSelf updateUI];
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
-        NSLog(@"");
         [HUD showRequest:request];
     }];
     [request start];

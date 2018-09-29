@@ -38,7 +38,7 @@
     }
     
     [HUD showHUD];
-    YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithPointSell:@"sing" Memberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
+    YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
         [HUD showRequest:request];
     } failureCallback:^(YUUBaseRequest *request) {
         [HUD showRequest:request];

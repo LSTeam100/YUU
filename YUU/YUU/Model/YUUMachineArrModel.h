@@ -12,6 +12,7 @@
 
 @interface YUUMachineDetailModel :NSObject
 @property(nonatomic,strong)NSString *millsize;
+@property (nonatomic, strong) NSString *millid;
 @property(nonatomic, assign) YUUMilltype milltype;
 @property(nonatomic,strong) NSString *milltypeName;
 @property(nonatomic,strong)NSNumber *runtimeday;

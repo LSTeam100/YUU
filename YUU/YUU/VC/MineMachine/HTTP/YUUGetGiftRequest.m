@@ -18,7 +18,7 @@
     
     
     NSDictionary *parameters = @{ @"millid" : millid };
-    [self setParameters:parameters];
+    [self setParameterDic:parameters];
     
     return self;
 }

@@ -165,9 +165,9 @@
         left.image = [UIImage imageNamed:@"btn_left_selected"];
         [self addSubview:left];
         [left mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self);
+            make.centerY.mas_equalTo(self).mas_offset(-1);
             make.left.mas_equalTo(self).mas_offset(1);
-            make.height.mas_equalTo(self).mas_offset(-2);
+            make.height.mas_equalTo(self).mas_offset(-4);
             make.width.mas_equalTo(self).multipliedBy(0.33).mas_offset(0);
         }];
 
@@ -176,9 +176,9 @@
         [self addSubview:middle];
         middle.hidden = YES;
         [middle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self);
+            make.centerY.mas_equalTo(self).mas_offset(-1);
             make.left.mas_equalTo(left.mas_right).mas_offset(1);
-            make.height.mas_equalTo(self).mas_offset(-2);
+            make.height.mas_equalTo(self).mas_offset(-4);
             make.width.mas_equalTo(self).multipliedBy(0.33).mas_offset(-2);
         }];
 
@@ -187,9 +187,9 @@
         [self addSubview:right];
         right.hidden = YES;
         [right mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self);
+            make.centerY.mas_equalTo(self).mas_offset(-1);
             make.right.mas_equalTo(self).mas_offset(-1);
-            make.height.mas_equalTo(self).mas_offset(-2);
+            make.height.mas_equalTo(self).mas_offset(-4);
             make.width.mas_equalTo(self).multipliedBy(0.33).mas_offset(0);
         }];
 

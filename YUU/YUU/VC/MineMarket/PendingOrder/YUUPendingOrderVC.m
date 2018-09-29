@@ -17,7 +17,7 @@
 #import "YUUPendingMailboxModel.h"
 #import "YUUPointOnsaleRequest.h"
 
-@interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource>
+@interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (nonatomic, strong) SHSegmentView *segmentView;
 @property (nonatomic, assign) NSInteger segmentSelected;
@@ -247,6 +247,64 @@
     _currentPrice = currentPrice;
     _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    switch (_level) {
+        case UserLevelNovice:
+            if ([textField.text integerValue] > 50) {
+                textField.text = @"50";
+            }
+            break;
+        case UserLevelAdvanced:
+            if ([textField.text integerValue] > 100) {
+                textField.text = @"100";
+            } else if ([textField.text integerValue] < 50) {
+                textField.text = @"50";
+            }
+            break;
+        case UserLevelMaster:
+            if ([textField.text integerValue] > 500) {
+                textField.text = @"500";
+            } else if ([textField.text integerValue] < 100) {
+                textField.text = @"100";
+            }
+            break;
+        case UserLevelInternational:
+            if ([textField.text integerValue] > 1000) {
+                textField.text = @"1000";
+            } else if ([textField.text integerValue] < 500) {
+                textField.text = @"500";
+            }
+            break;
+            
+        default:
+            break;
+    }
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    return [self validateNumber:string];
+}
+
+- (BOOL)validateNumber:(NSString*)number {
+    BOOL res = YES;
+    NSCharacterSet* tmpSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    int i = 0;
+    while (i < number.length) {
+        NSString * string = [number substringWithRange:NSMakeRange(i, 1)];
+        NSRange range = [string rangeOfCharacterFromSet:tmpSet];
+        if (range.length == 0) {
+            res = NO;
+            break;
+            
+        }
+        i++;
+        
+    }
+    return res;
+}
+
 
 
 @end
