@@ -13,7 +13,9 @@
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
-        NSArray *signArr = @[token,uporderstype,buynum,buyprice];
+        double price = [buyprice doubleValue];
+        NSString * priceKey = [NSString stringWithFormat: @"%.1lf", price];
+        NSArray *signArr = @[token,uporderstype,buynum,priceKey];
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{

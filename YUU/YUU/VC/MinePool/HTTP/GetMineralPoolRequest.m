@@ -14,10 +14,16 @@
                         failure:(onFailureCallback)failure
 {
     self = [super initWithSuccessCallback:success failureCallback:failure];
-    
-    
-    NSDictionary *parameters = @{  };
+    NSString *token =[YUUUserData shareInstance].token;
+    NSArray *signArr = @[token];
+    NSString *sha1key = getSignFromParameter(signArr);
+    NSDictionary *parameters=@{
+                               @"token":token,
+                               @"sign" : sha1key
+                               };
     [self setParameters:parameters];
+//    NSDictionary *parameters = @{  };
+//    [self setParameters:parameters];
     
     return self;
 }

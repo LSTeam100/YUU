@@ -15,7 +15,6 @@
     if (self) {
         NSArray *signArr = @[token];
         NSString *sha1key = getSignFromParameter(signArr);
-        
         NSDictionary *parameters=@{
                                    @"token": token,
                                    @"sign" : sha1key

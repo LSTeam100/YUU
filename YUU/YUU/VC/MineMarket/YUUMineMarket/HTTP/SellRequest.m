@@ -18,6 +18,7 @@
 {
     self = [super initWithSuccessCallback:success failureCallback:failure];
     
+    
     [self setParameterDic:@{@"memberid":memberid,
                             @"sellnum":sellnum,
                             @"sellprice":sellprice,
