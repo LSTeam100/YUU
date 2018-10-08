@@ -29,10 +29,10 @@
     self.cardName.text = [NSString stringWithFormat:@"%@",self.DetailModel.bankname];
     
     self.cranOwnerLabel.text = [NSString stringWithFormat:@"持卡人:%@",self.DetailModel.membername];
-    self.DetailModel.bankname = @"9999999999";
+//    self.DetailModel.bankname = @"9999999999";
     
-    if (self.DetailModel.bankname.length > 0) {
-        NSString *lastNum = [self.DetailModel.bankname substringFromIndex:self.DetailModel.bankname.length - 4];
+    if (self.DetailModel.bankcard.length > 0) {
+        NSString *lastNum = [self.DetailModel.bankcard substringFromIndex:self.DetailModel.bankcard.length - 4];
         self.lastLabel.text = lastNum;
     }
 

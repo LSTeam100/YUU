@@ -1429,6 +1429,8 @@
                     </view>
                     <connections>
                         <outlet property="alreadyAuthenView" destination="fql-bT-JdI" id="MJ3-et-qmc"/>
+                        <outlet property="idLabel" destination="bqX-1W-AjR" id="P7T-iJ-L64"/>
+                        <outlet property="nameLabel" destination="q0n-3h-0nU" id="MtY-oO-b1L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7E-hP-6I7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2262,8 +2264,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smk-7e-esF">
-                                        <rect key="frame" x="286.5" y="65" width="66.5" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smk-7e-esF">
+                                        <rect key="frame" x="311" y="65" width="40" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2316,7 +2318,7 @@
                                     <constraint firstItem="HDH-0a-Eht" firstAttribute="centerY" secondItem="A4j-L1-byD" secondAttribute="centerY" id="OSW-Kh-UPU"/>
                                     <constraint firstItem="3xu-4F-QR7" firstAttribute="centerY" secondItem="HDH-0a-Eht" secondAttribute="centerY" id="QNm-Fh-HRi"/>
                                     <constraint firstItem="g5t-Ul-aVx" firstAttribute="leading" secondItem="e2C-Io-SKu" secondAttribute="leading" constant="23" id="TXV-xZ-ZXH"/>
-                                    <constraint firstAttribute="trailing" secondItem="smk-7e-esF" secondAttribute="trailing" constant="22" id="XBg-sH-4oh"/>
+                                    <constraint firstAttribute="trailing" secondItem="smk-7e-esF" secondAttribute="trailing" constant="24" id="XBg-sH-4oh"/>
                                     <constraint firstAttribute="height" constant="200" id="ccU-76-SEQ"/>
                                     <constraint firstItem="YyA-rU-2L5" firstAttribute="leading" secondItem="e2C-Io-SKu" secondAttribute="leading" constant="15" id="mu6-xq-Uqt"/>
                                     <constraint firstItem="A4j-L1-byD" firstAttribute="centerY" secondItem="UiH-mS-baj" secondAttribute="centerY" id="rjo-d4-UGP"/>

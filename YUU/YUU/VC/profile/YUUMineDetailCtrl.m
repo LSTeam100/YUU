@@ -290,6 +290,7 @@ typedef enum {
         case 1:
             if ([self isAuthenUser]) {
                 YUUProfileAuthenCtrl * userAlready = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenCtrl"];
+                userAlready.DetailModel = self.DetailModel;
                 [self.navigationController pushViewController:userAlready animated:YES];
             }
             else{

@@ -20,7 +20,7 @@
 
         NSDictionary *parameters=@{
                                    @"membername": name,
-                                   @"Membercardid":membercardid,
+                                   @"membercardid":membercardid,
                                    @"bankcard":bankcard,
                                    @"bankphone":bankphone,
                                    @"code":code,
