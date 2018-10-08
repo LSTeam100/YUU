@@ -155,7 +155,7 @@
                                                         <action selector="btnAction:" destination="ZM7-ET-cXy" eventType="touchUpInside" id="0ec-yq-6FE"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-fu-GkV">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-fu-GkV">
                                                     <rect key="frame" x="237" y="106.5" width="80" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Button"/>
@@ -163,7 +163,7 @@
                                                         <action selector="btnAction:" destination="ZM7-ET-cXy" eventType="touchUpInside" id="Wcm-A3-cHc"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fG5-2e-rP3">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fG5-2e-rP3">
                                                     <rect key="frame" x="37" y="106.5" width="80" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Button"/>
@@ -171,7 +171,7 @@
                                                         <action selector="btnAction:" destination="ZM7-ET-cXy" eventType="touchUpInside" id="CCN-dk-ghV"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoN-uM-oAG">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoN-uM-oAG">
                                                     <rect key="frame" x="67.5" y="106.5" width="80" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Button"/>
@@ -179,7 +179,7 @@
                                                         <action selector="btnAction:" destination="ZM7-ET-cXy" eventType="touchUpInside" id="FpY-lA-HK1"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-2O-N8z">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-2O-N8z">
                                                     <rect key="frame" x="207.5" y="106.5" width="80" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Button"/>
@@ -794,6 +794,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ht9-YE-QHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021.6" y="118.29085457271366"/>
+        </scene>
+        <!--NoticeVC-->
+        <scene sceneID="QFn-04-4JY">
+            <objects>
+                <viewController storyboardIdentifier="YUUNoticeVC" id="5uq-jc-gyD" customClass="YUUNoticeVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ti4-3g-dqW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点对点交易流程" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rv-UY-MtD">
+                                <rect key="frame" x="20" y="60" width="335" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买家版" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTu-CK-bvG">
+                                <rect key="frame" x="20" y="96" width="335" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pa6-p3-mo9">
+                                <rect key="frame" x="20" y="132" width="335" height="140"/>
+                                <string key="text">（点对点需要你去找卖家，找到卖家并商定好价格后） 1.把你的ID号给他让他转币 2.点击-矿市-信息查看是否收到交易申请。收到申请后点击卖家信息一定要按照后台资料打款。
+（注意：90%的买家被骗都是因为未按后台资料打款）
+3.打完款点击确认按钮，输入密码。
+4.联系卖家收款后让他确认。
+5.点击“我的”页面，下拉刷新后即可看到币到账。
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卖家版" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcL-cb-dEM">
+                                <rect key="frame" x="20" y="292" width="335" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omr-bk-Uiq">
+                                <rect key="frame" x="20" y="328" width="335" height="109"/>
+                                <string key="text">（你需要找到一个买家并商定好价格以及数量。）
+1.点击矿市页面，输入买家ID数量发起交易。
+（注意：交易需要扣除20%手续费。你所拥有的币量除以1.2就是可卖币量）
+2.联系买家转款，并提示他点击确认。
+3.收到钱后去“矿市”-“信箱”点确认。交易完成！
+（注意：卖家被骗90%都是因为未收到钱就点击确认了）</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2rv-UY-MtD" firstAttribute="leading" secondItem="8sw-Hm-uke" secondAttribute="leading" constant="20" id="2O0-tf-2zl"/>
+                            <constraint firstItem="8sw-Hm-uke" firstAttribute="trailing" secondItem="Pa6-p3-mo9" secondAttribute="trailing" constant="20" id="2b4-sa-UdX"/>
+                            <constraint firstItem="8sw-Hm-uke" firstAttribute="trailing" secondItem="omr-bk-Uiq" secondAttribute="trailing" constant="20" id="6eF-2E-gDd"/>
+                            <constraint firstItem="8sw-Hm-uke" firstAttribute="trailing" secondItem="zcL-cb-dEM" secondAttribute="trailing" constant="20" id="CFu-nm-6Eg"/>
+                            <constraint firstItem="Pa6-p3-mo9" firstAttribute="top" secondItem="bTu-CK-bvG" secondAttribute="bottom" constant="20" id="U62-rR-jvc"/>
+                            <constraint firstItem="Pa6-p3-mo9" firstAttribute="leading" secondItem="8sw-Hm-uke" secondAttribute="leading" constant="20" id="V9e-yx-TXp"/>
+                            <constraint firstItem="zcL-cb-dEM" firstAttribute="leading" secondItem="8sw-Hm-uke" secondAttribute="leading" constant="20" id="VbZ-Un-hLq"/>
+                            <constraint firstItem="omr-bk-Uiq" firstAttribute="top" secondItem="zcL-cb-dEM" secondAttribute="bottom" constant="20" id="VtS-JX-XDW"/>
+                            <constraint firstItem="zcL-cb-dEM" firstAttribute="top" secondItem="Pa6-p3-mo9" secondAttribute="bottom" constant="20" id="Wok-Bh-iPk"/>
+                            <constraint firstItem="2rv-UY-MtD" firstAttribute="top" secondItem="8sw-Hm-uke" secondAttribute="top" constant="40" id="X7R-IE-jq2"/>
+                            <constraint firstItem="bTu-CK-bvG" firstAttribute="leading" secondItem="8sw-Hm-uke" secondAttribute="leading" constant="20" id="caR-4I-5km"/>
+                            <constraint firstItem="bTu-CK-bvG" firstAttribute="top" secondItem="2rv-UY-MtD" secondAttribute="bottom" constant="20" id="fh3-z2-eAX"/>
+                            <constraint firstItem="omr-bk-Uiq" firstAttribute="leading" secondItem="8sw-Hm-uke" secondAttribute="leading" constant="20" id="keB-Y5-2M8"/>
+                            <constraint firstItem="8sw-Hm-uke" firstAttribute="trailing" secondItem="2rv-UY-MtD" secondAttribute="trailing" constant="20" id="xMT-Tc-5Og"/>
+                            <constraint firstItem="8sw-Hm-uke" firstAttribute="trailing" secondItem="bTu-CK-bvG" secondAttribute="trailing" constant="20" id="ybM-lv-9Mc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8sw-Hm-uke"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Pk-lO-8Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2051" y="156"/>
         </scene>
     </scenes>
     <resources>

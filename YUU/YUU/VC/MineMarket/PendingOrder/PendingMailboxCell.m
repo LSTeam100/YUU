@@ -98,29 +98,45 @@
 - (void)btnAction:(UIButton *)btn {
     if ([btn.titleLabel.text isEqualToString:@"确认"]) {
         if (_model.sellorbuy == 1) { // 买家
+            [HUD showHUD];
+            WeakSelf
             YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                
+                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+                    [weakSelf.delegate cellStatusChanged];
+                }
+                [HUD showRequest:request];
             } failureCallback:^(YUUBaseRequest *request) {
-                
+                [HUD showRequest:request];
             }];
             [request start];
         } else {
+            [HUD showHUD];
+            WeakSelf
             YUUSellerOnsaleRequest *request = [[YUUSellerOnsaleRequest alloc] initWithSellerOnsale:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                
+                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+                    [weakSelf.delegate cellStatusChanged];
+                }
+                [HUD showRequest:request];
             } failureCallback:^(YUUBaseRequest *request) {
-                
+                [HUD showRequest:request];
             }];
             [request start];
         }
     } else if ([btn.titleLabel.text isEqualToString:@"买家资料"]) {
         YUUSellerInfoView *hudView = [YUUSellerInfoView xibInstancetype];
         hudView.model = _model;
+        hudView.delegate = self;
         [HUD showCustomView:hudView];
     } else if ([btn.titleLabel.text isEqualToString:@"卖家资料"]) {
         YUUSellerInfoView *hudView = [YUUSellerInfoView xibInstancetype];
         hudView.model = _model;
+        hudView.delegate = self;
         [HUD showCustomView:hudView];
     }
+}
+
+- (void)closeBtnDidSelected {
+    [HUD hide];
 }
 
 @end

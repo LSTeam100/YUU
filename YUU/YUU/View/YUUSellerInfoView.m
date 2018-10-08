@@ -22,7 +22,7 @@
 }
 
 - (CGSize)intrinsicContentSize {
-    return CGSizeMake(300, 360);
+    return CGSizeMake(300, 420);
 }
 
 - (void)awakeFromNib {
@@ -33,7 +33,9 @@
     _backgroundView.layer.masksToBounds = YES;
     _backgroundView.layer.cornerRadius = 10;
     
-    _label.textColor = YUUYellow;
+    _label.textColor = [UIColor R:239 G:102 B:7];
+    
+    
 }
 
 - (void)setModel:(YUUPendingMailboxModel *)model {

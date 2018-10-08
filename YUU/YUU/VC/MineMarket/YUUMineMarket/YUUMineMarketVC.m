@@ -16,8 +16,9 @@
 #import "YUUMineMarketPriceCell.h"
 #import "YUUMineMarketRequest.h"
 #import "YUUMineMarketMailRequest.h"
+#import "YUUNoticeVC.h"
 
-@interface YUUMineMarketVC () <UITableViewDelegate, UITableViewDataSource>
+@interface YUUMineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMineMarketPointCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
@@ -50,23 +51,6 @@
     _tableView.estimatedRowHeight = 100;
     
     [self getHTTPData];
-    
-    YUUPendingMailboxModel *model = [[YUUPendingMailboxModel alloc] init];
-    model.sorbid = 1111;
-    model.tradingtime = @"2018";
-    model.tradingcard = @"90000";
-    model.membername = @"小明";
-    model.bankname = @"工商";
-    model.bankcard = @"6225 6225 6225";
-    model.memberwx = @"wechat";
-    model.memberalipay = @"alibaba";
-    model.memberphone = @"1390000000";
-    model.memberwallet = @"2222";
-    model.sellorbuy = 1;
-    model.progressnum = 2;
-    
-    
-    _mailList = @[model, model];
 }
 
 - (void)getHTTPData {
@@ -154,7 +138,7 @@
         return cell;
     } else if (_segmentSelected == 1) {
         YUUMineMarketPointCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMarketPointCell"];
-        
+        cell.delegate = self;
         return cell;
     } else {
         YUUMineMarketMailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMarketMailCell"];
@@ -206,6 +190,16 @@
     self.hidesBottomBarWhenPushed = NO;
 }
 
+
+#pragma mark - YUUMineMarketPointCellDelegate -
+- (void)selectNotice {
+    YUUNoticeVC *vc = [YUUNoticeVC storyboardInstanceType];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)cellStatusChanged {
+    
+}
 
 
 @end

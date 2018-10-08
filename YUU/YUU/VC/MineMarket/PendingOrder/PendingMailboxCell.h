@@ -11,7 +11,15 @@
 #import "YUUPendingMailboxModel.h"
 #import "YUUSellerInfoView.h"
 
-@interface PendingMailboxCell : YUUBaseTableViewCell
+@protocol PendingMailboxCellDelegate <NSObject>
+
+- (void)cellStatusChanged;
+
+@end
+
+@interface PendingMailboxCell : YUUBaseTableViewCell <HUDProtocol>
+
+@property (nonatomic, weak) id <PendingMailboxCellDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 

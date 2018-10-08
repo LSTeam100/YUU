@@ -10,6 +10,7 @@
 #import "UITextField+Help.h"
 #import "YUUPointSellRequest.h"
 #import "Header.h"
+#import "SellRequest.h"
 
 @implementation YUUMineMarketPointCell
 
@@ -38,6 +39,12 @@
     }
     
     [HUD showHUD];
+//    SellRequest *request = [[SellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text Success:^(YUUBaseRequest *request) {
+//        [HUD showRequest:request];
+//    } failure:^(YUUBaseRequest *request) {
+//        [HUD showRequest:request];
+//    }];
+    
     YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
         [HUD showRequest:request];
     } failureCallback:^(YUUBaseRequest *request) {
@@ -47,6 +54,9 @@
 }
 
 - (IBAction)noticeBtnAction:(id)sender {
+    if (_delegate && [_delegate respondsToSelector:@selector(selectNotice)]) {
+        [_delegate selectNotice];
+    }
 }
 
 

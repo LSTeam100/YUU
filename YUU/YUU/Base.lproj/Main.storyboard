@@ -536,7 +536,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_password" translatesAutoresizingMaskIntoConstraints="NO" id="0SQ-NL-O4b">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="48"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc123456" placeholder="请输入您的登录密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E29-3x-x7e">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qaz123" placeholder="请输入您的登录密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E29-3x-x7e">
                                         <rect key="frame" x="60" y="2" width="225" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="AOE-lO-er4"/>
@@ -592,7 +592,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_account" translatesAutoresizingMaskIntoConstraints="NO" id="t0g-dH-QN7">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="48"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13522683252" placeholder="请输入您的手机或ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6M-3A-ozp">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" placeholder="请输入您的手机或ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6M-3A-ozp">
                                         <rect key="frame" x="60" y="2" width="225" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="4Qv-PP-eI0"/>

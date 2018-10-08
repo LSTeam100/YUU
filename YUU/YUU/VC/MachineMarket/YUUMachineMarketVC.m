@@ -39,6 +39,10 @@
     _tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf getHTTPData];
     }];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [_tableview.mj_header beginRefreshing];
 }
 

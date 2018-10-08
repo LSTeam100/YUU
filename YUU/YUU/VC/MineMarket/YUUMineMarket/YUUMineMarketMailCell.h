@@ -9,8 +9,15 @@
 #import "YUUBaseTableViewCell.h"
 #import "YUUPendingMailboxModel.h"
 #import "YUUSellerOnsaleRequest.h"
+#import "YUUSellerInfoView.h"
 
-@interface YUUMineMarketMailCell : YUUBaseTableViewCell
+@protocol YUUMineMarketMailCellDelegate <NSObject>
+- (void)cellStatusChanged;
+@end
+
+@interface YUUMineMarketMailCell : YUUBaseTableViewCell <HUDProtocol>
+
+@property (nonatomic, weak) id <YUUMineMarketMailCellDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
@@ -25,6 +32,6 @@
 
 @property (nonatomic, strong) YUUPendingMailboxModel *model;
 
-
+@property (nonatomic, strong) YUUSellerInfoView *hudView;
 
 @end

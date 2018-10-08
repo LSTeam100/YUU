@@ -8,7 +8,15 @@
 
 #import "YUUBaseTableViewCell.h"
 
+@protocol YUUMineMarketPointCellDelegate <NSObject>
+
+- (void)selectNotice;
+
+@end
+
 @interface YUUMineMarketPointCell : YUUBaseTableViewCell
+
+@property (nonatomic, weak) id <YUUMineMarketPointCellDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UITextField *idTextField;
 @property (strong, nonatomic) IBOutlet UITextField *countTextField;

@@ -76,6 +76,8 @@
 		0926F07321328E200083CFDD /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07121328E200083CFDD /* HUDManager.m */; };
 		0926F076213298B20083CFDD /* YUUBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F075213298B20083CFDD /* YUUBorderButton.m */; };
 		0926F0792132993C0083CFDD /* HUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F0782132993C0083CFDD /* HUDView.m */; };
+		092A4097216AFBEF006C9476 /* YUUNoticeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A4096216AFBEF006C9476 /* YUUNoticeVC.m */; };
+		092A409A216B0E42006C9476 /* SellRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A4099216B0E42006C9476 /* SellRequest.m */; };
 		095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CB212CE03D0083C009 /* SHSegmentView.m */; };
 		0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951820A212D84C30083C009 /* UIViewController+Help.m */; };
 		0952AC2021391C4D00D701CE /* YUUEncryMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 0952AC1F21391C4D00D701CE /* YUUEncryMgr.m */; };
@@ -95,7 +97,7 @@
 		0994447A2140D57200548245 /* MineralPoolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444792140D57200548245 /* MineralPoolModel.m */; };
 		099444822140FC0B00548245 /* DirectPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444812140FC0B00548245 /* DirectPushModel.m */; };
 		099444852140FC2000548245 /* TeamPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444842140FC2000548245 /* TeamPushModel.m */; };
-		099445382141226000548245 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		099445382141226000548245 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		099445672141229200548245 /* YUUMineDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099445462141228C00548245 /* YUUMineDetailModel.m */; };
 		099445682141229200548245 /* YUUMachineMarketInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099445472141228C00548245 /* YUUMachineMarketInfoModel.m */; };
 		099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099445482141228C00548245 /* YUUMachinePoolArrModel.m */; };
@@ -130,7 +132,7 @@
 		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
 		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
 		18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */; };
-		18D3532621379D9000990F7C /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		18D3532621379D9000990F7C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A0213929A000990F7C /* CostomTextFieldBgView.m */; };
 		18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A3213A7BAA00990F7C /* CostomSepView.m */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
@@ -290,6 +292,10 @@
 		0926F075213298B20083CFDD /* YUUBorderButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBorderButton.m; sourceTree = "<group>"; };
 		0926F0772132993C0083CFDD /* HUDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDView.h; sourceTree = "<group>"; };
 		0926F0782132993C0083CFDD /* HUDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDView.m; sourceTree = "<group>"; };
+		092A4095216AFBEF006C9476 /* YUUNoticeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUNoticeVC.h; sourceTree = "<group>"; };
+		092A4096216AFBEF006C9476 /* YUUNoticeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUNoticeVC.m; sourceTree = "<group>"; };
+		092A4098216B0E42006C9476 /* SellRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellRequest.h; sourceTree = "<group>"; };
+		092A4099216B0E42006C9476 /* SellRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellRequest.m; sourceTree = "<group>"; };
 		095181CA212CE03D0083C009 /* SHSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSegmentView.h; sourceTree = "<group>"; };
 		095181CB212CE03D0083C009 /* SHSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSegmentView.m; sourceTree = "<group>"; };
 		095181CD212CE0E40083C009 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -470,6 +476,8 @@
 				091D8E3C2130D8C800C430AB /* YUUMineMarketPriceCell.m */,
 				091D8E412130D8C800C430AB /* YUUMineMarketVC.h */,
 				091D8E3D2130D8C800C430AB /* YUUMineMarketVC.m */,
+				092A4095216AFBEF006C9476 /* YUUNoticeVC.h */,
+				092A4096216AFBEF006C9476 /* YUUNoticeVC.m */,
 			);
 			path = YUUMineMarket;
 			sourceTree = "<group>";
@@ -676,6 +684,8 @@
 				0925E974215320CB00F874A7 /* YUUMineMarketRequest.m */,
 				0925E9762153211100F874A7 /* YUUMineMarketMailRequest.h */,
 				0925E9772153211100F874A7 /* YUUMineMarketMailRequest.m */,
+				092A4098216B0E42006C9476 /* SellRequest.h */,
+				092A4099216B0E42006C9476 /* SellRequest.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1197,7 +1207,7 @@
 				0925E97F215341C400F874A7 /* YUUGetGiftRequest.m in Sources */,
 				1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */,
 				18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */,
-				18D3532621379D9000990F7C /* BuildFile in Sources */,
+				18D3532621379D9000990F7C /* (null) in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
 				099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */,
@@ -1213,7 +1223,7 @@
 				09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */,
 				099445752141229200548245 /* YUUCurrencyHistoryModel.m in Sources */,
 				18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */,
-				099445382141226000548245 /* BuildFile in Sources */,
+				099445382141226000548245 /* (null) in Sources */,
 				09251C82213F6EC300B12370 /* PendingBuyerCell.m in Sources */,
 				0926F07221328E200083CFDD /* HUD.m in Sources */,
 				18F97C14214E08960059E194 /* YUUCallCenterCtrl.m in Sources */,
@@ -1241,6 +1251,7 @@
 				091D8E452130D8C900C430AB /* YUUMineMarketMailCell.m in Sources */,
 				0923C45F214895EE00869625 /* YUUMachinepoolRequst.m in Sources */,
 				095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */,
+				092A409A216B0E42006C9476 /* SellRequest.m in Sources */,
 				09207E1F21270C6A00952C6D /* YUUMineralPoolVC.m in Sources */,
 				0994456E2141229200548245 /* YUUBillModel.m in Sources */,
 				189CC553212A964800E8E2E4 /* YUUSignUpCtrl.m in Sources */,
@@ -1259,6 +1270,7 @@
 				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
 				0923C45A214895EE00869625 /* YUUSellerTransactionRequest.m in Sources */,
 				0923C468214895EE00869625 /* YUUBuyerTransactionRequest.m in Sources */,
+				092A4097216AFBEF006C9476 /* YUUNoticeVC.m in Sources */,
 				091D8E442130D8C900C430AB /* YUUMineMarketVC.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */,
@@ -1433,7 +1445,10 @@
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5a5bf09d-5c26-4d4e-81d4-3493912339e1";
@@ -1454,7 +1469,10 @@
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.YUU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
