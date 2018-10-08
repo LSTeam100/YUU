@@ -27,7 +27,7 @@
     return self;
 }
 -(NSString *)getURL{
-    return @"/sellenter/";
+    return @"/pointbuyenter/";
 }
 
 -(NSString *)getMethod{

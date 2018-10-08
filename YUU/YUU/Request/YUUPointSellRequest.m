@@ -17,12 +17,19 @@
                         failureCallback:failed];
     if (self) {
         
+        double price = [sellprice doubleValue];
+        NSString * priceKey = [NSString stringWithFormat: @"%.1lf", price];
+        NSArray *signArr = @[sellnum,memberid,priceKey,[YUUUserData shareInstance].token];
+        NSString *sha1key = getSignFromParameter(signArr);
+
         NSDictionary *parameters=@{
                                    @"sellnum" : sellnum,
                                    @"memberid" : memberid,
-                                   @"sellprice" : sellprice
+                                   @"sellprice" : sellprice,
+                                   @"token" : [YUUUserData shareInstance].token,
+                                   @"sign" : sha1key,
                                    };
-        [self setParameterDic:parameters];
+        [self setParameters:parameters];
     }
     return self;
 }
