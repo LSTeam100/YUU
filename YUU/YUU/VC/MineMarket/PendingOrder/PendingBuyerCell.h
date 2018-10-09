@@ -10,7 +10,15 @@
 #import "YUUBorderButton.h"
 #import "YUUPendingBuyerModel.h"
 
+@protocol PendingBuyerCellDelegate <NSObject>
+
+- (void)buyerCellStatusChanged;
+
+@end
+
 @interface PendingBuyerCell : YUUBaseTableViewCell
+
+@property (nonatomic, weak) id <PendingBuyerCellDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 

@@ -13,7 +13,7 @@
 
 @protocol PendingMailboxCellDelegate <NSObject>
 
-- (void)cellStatusChanged;
+- (void)mailCellStatusChanged;
 
 @end
 

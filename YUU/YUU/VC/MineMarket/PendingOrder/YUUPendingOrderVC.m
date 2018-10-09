@@ -48,12 +48,16 @@
     NSString *str = @"";
     if (_level == 0) {
         str = @"1-50";
+        _countTextField.text = @"1";
     } else if (_level == 1) {
         str = @"50-100";
+        _countTextField.text = @"50";
     } else if (_level == 1) {
         str = @"100-500";
+        _countTextField.text = @"100";
     } else if (_level == 1) {
         str = @"500-1000";
+        _countTextField.text = @"500";
     }
     _upLabel.text = [NSString stringWithFormat:@"认证用户可进行%@YUU议价交易",str];
     
@@ -136,10 +140,11 @@
 }
 
 - (IBAction)hangingOrderAction:(UIButton *)sender {
+    [HUD showHUD];
     YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPrice.text SuccessCallback:^(YUUBaseRequest *request) {
-        
+        [HUD showRequest:request];
     } failureCallback:^(YUUBaseRequest *request) {
-        
+        [HUD showRequest:request];
     }];
     [request start];
 }
@@ -154,10 +159,12 @@
     if (_segmentSelected == 0) {
         PendingBuyerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingBuyerCell"];
         cell.model = _buyerArr[indexPath.section];
+//        cell.delegate = self;
         return cell;
     } else {
         PendingMailboxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingMailboxCell"];
         cell.model = _mailArr[indexPath.section];
+        cell.delegate = self;
         return cell;
     }
 
@@ -262,7 +269,8 @@
     return res;
 }
 
-- (void)cellStatusChanged {
+#pragma mark - PendingMailboxCellDelegate -
+- (void)mailCellStatusChanged {
     [self getMailInfo];
 }
 

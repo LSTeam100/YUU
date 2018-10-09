@@ -39,12 +39,23 @@
     _timeLabel.text = model.tradingtime;
     
     _middleBtn.hidden = YES;
+    _middleLeftBtn.hidden = YES;
+    _middleRightBtn.hidden = YES;
     _leftBtn.hidden = YES;
     _rightBtn.hidden = YES;
     
     _middleBtn.layer.masksToBounds = YES;
     _middleBtn.layer.cornerRadius = _middleBtn.frame.size.height/2;
     _middleBtn.layer.borderWidth = 1;
+    
+    _middleLeftBtn.layer.masksToBounds = YES;
+    _middleLeftBtn.layer.cornerRadius = _middleLeftBtn.frame.size.height/2;
+    _middleLeftBtn.layer.borderWidth = 1;
+    
+    _middleRightBtn.layer.masksToBounds = YES;
+    _middleRightBtn.layer.cornerRadius = _middleRightBtn.frame.size.height/2;
+    _middleRightBtn.layer.borderWidth = 1;
+
     
     _leftBtn.layer.masksToBounds = YES;
     _leftBtn.layer.cornerRadius = _leftBtn.frame.size.height/2;
@@ -56,20 +67,20 @@
     
     if (model.sellorbuy == 1) { // 买家
         if (model.progressnum == 1) { // 发起交易
-            _leftBtn.hidden = NO;
-            [_leftBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
-            [_leftBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
-            _leftBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+            _middleLeftBtn.hidden = NO;
+            [_middleLeftBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
+            [_middleLeftBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+            _middleLeftBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
             _middleBtn.hidden = NO;
             [_middleBtn setTitle:@"确认交易" forState:UIControlStateNormal];
             [_middleBtn setTitleColor:[UIColor hex:@"1ae08c"] forState:UIControlStateNormal];
             _middleBtn.layer.borderColor = [UIColor hex:@"1ae08c"].CGColor;
             
-            _rightBtn.hidden = NO;
-            [_rightBtn setTitle:@"取消交易" forState:UIControlStateNormal];
-            [_rightBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
-            _rightBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+            _middleRightBtn.hidden = NO;
+            [_middleRightBtn setTitle:@"取消交易" forState:UIControlStateNormal];
+            [_middleRightBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+            _middleRightBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
             _contentLabel.text = [NSString stringWithFormat:@"收到%ld转入的%ldYUU，请严格按照平台公布的卖/买家资料进行交易，请勿相信中介！非平台公布资料交易，后果自负",(long)model.sorbid,(long)model.coinnum];
         } else if (model.progressnum == 2) { // 2：买家确认了
@@ -79,6 +90,13 @@
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
             _contentLabel.text = [NSString stringWithFormat:@"支付%ldYUU的交易款后，等待卖家的二次确认",(long)model.coinnum];
+        } else {
+            _middleBtn.hidden = NO;
+            [_middleBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
+            [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+            _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+            
+            _contentLabel.text = @"交易完成";
         }
     } else { // 卖家
         if (model.progressnum == 1) { // 发起交易
@@ -100,6 +118,13 @@
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
             _contentLabel.text = [NSString stringWithFormat:@"给%ld转入%ldYUU，等待买家的二次确认",(long)model.sorbid,(long)model.coinnum];
+        } else {
+            _middleBtn.hidden = NO;
+            [_middleBtn setTitle:@"买家资料" forState:UIControlStateNormal];
+            [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+            _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+            
+            _contentLabel.text = @"交易完成";
         }
     }
 }
@@ -145,7 +170,7 @@
     } else if ([title isEqualToString:@"取消交易"]) {
         [HUD showHUD];
         WeakSelf
-        YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:[YUUUserData shareInstance].token Tradingcard:@"" SuccessCallback:^(YUUBaseRequest *request) {
+        YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];
             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
                 [weakSelf.delegate cellStatusChanged];

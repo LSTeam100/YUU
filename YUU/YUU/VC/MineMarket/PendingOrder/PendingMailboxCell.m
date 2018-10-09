@@ -65,6 +65,13 @@
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
             _contentLabel.text = [NSString stringWithFormat:@"给%ld转入%ldYUU，等待买家确认",(long)model.sorbid,(long)model.coinnum];
+        } else {
+            _middleBtn.hidden = NO;
+            [_middleBtn setTitle:@"买家资料" forState:UIControlStateNormal];
+            [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+            _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+            
+            _contentLabel.text = @"交易确认";
         }
     } else {
         if (model.progressnum == 1) { // 发起交易
@@ -86,6 +93,13 @@
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
             _contentLabel.text = [NSString stringWithFormat:@"支付%ldYUU的交易款后，等待卖家的确认",(long)model.coinnum];
+        } else {
+            _middleBtn.hidden = NO;
+            [_middleBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
+            [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+            _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+            
+            _contentLabel.text = @"交易确认";
         }
     }
     
@@ -96,13 +110,13 @@
 }
 
 - (void)btnAction:(UIButton *)btn {
-    if ([btn.titleLabel.text isEqualToString:@"确认"]) {
+    if ([btn.titleLabel.text isEqualToString:@"确认交易"]) {
         if (_model.sellorbuy == 1) { // 买家
             [HUD showHUD];
             WeakSelf
             YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                    [weakSelf.delegate cellStatusChanged];
+                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+                    [weakSelf.delegate mailCellStatusChanged];
                 }
                 [HUD showRequest:request];
             } failureCallback:^(YUUBaseRequest *request) {
@@ -113,8 +127,8 @@
             [HUD showHUD];
             WeakSelf
             YUUSellerOnsaleRequest *request = [[YUUSellerOnsaleRequest alloc] initWithSellerOnsale:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                    [weakSelf.delegate cellStatusChanged];
+                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+                    [weakSelf.delegate mailCellStatusChanged];
                 }
                 [HUD showRequest:request];
             } failureCallback:^(YUUBaseRequest *request) {

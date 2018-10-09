@@ -18,7 +18,7 @@
 #import "YUUMineMarketMailRequest.h"
 #import "YUUNoticeVC.h"
 
-@interface YUUMineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMineMarketPointCellDelegate>
+@interface YUUMineMarketVC () <UITableViewDelegate, UITableViewDataSource, YUUMineMarketPointCellDelegate, YUUMineMarketMailCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
@@ -143,7 +143,7 @@
     } else {
         YUUMineMarketMailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMarketMailCell"];
         cell.model = _mailList[indexPath.row];
-        
+        cell.delegate = self;
         return cell;
     }
 }
@@ -197,8 +197,9 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - YUUMineMarketMailCellDelegate -
 - (void)cellStatusChanged {
-    
+    [self getMailData];
 }
 
 

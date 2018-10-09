@@ -44,7 +44,7 @@
     if (_model.getmill == YUUMachineReceiveNo) {
         [HUD showHUD];
         WeakSelf
-        YUUGetGiftRequest *request = [[YUUGetGiftRequest alloc] initWithMillid:_model.millid uccess:^(YUUBaseRequest *request) {
+        YUUGetGiftRequest *request = [[YUUGetGiftRequest alloc] initWithMillid:_model.millsize uccess:^(YUUBaseRequest *request) {
             weakSelf.model.getmill = YUUMachineReceived;
             weakSelf.receiveLabel.text = @"已领取";
             [HUD showRequest:request];
