@@ -17,7 +17,7 @@
 #import "YUUPendingMailboxModel.h"
 #import "YUUPointOnsaleRequest.h"
 
-@interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,PendingMailboxCellDelegate>
+@interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,PendingMailboxCellDelegate, PendingBuyerCellDelegate>
 
 @property (nonatomic, strong) SHSegmentView *segmentView;
 @property (nonatomic, assign) NSInteger segmentSelected;
@@ -159,7 +159,7 @@
     if (_segmentSelected == 0) {
         PendingBuyerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingBuyerCell"];
         cell.model = _buyerArr[indexPath.section];
-//        cell.delegate = self;
+        cell.delegate = self;
         return cell;
     } else {
         PendingMailboxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingMailboxCell"];
@@ -272,6 +272,10 @@
 #pragma mark - PendingMailboxCellDelegate -
 - (void)mailCellStatusChanged {
     [self getMailInfo];
+}
+
+- (void)buyerCellStatusChanged {
+    [self getBuyerInfo];
 }
 
 @end

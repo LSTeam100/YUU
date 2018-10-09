@@ -7,6 +7,7 @@
 //
 
 #import "PendingBuyerCell.h"
+#import "YUUSellerSellitRequest.h"
 
 @implementation PendingBuyerCell
 
@@ -35,5 +36,22 @@
     _timeLabel.text = model.tradingtime;
     _contentLabel.text = [NSString stringWithFormat:@"ID:%ld挂买%ldYUU,单价%ld元，总计%ld元",(long)model.memberid,(long)model.coinnum,(long)model.buyprice,(model.coinnum*model.buyprice)];
 }
+
+
+- (IBAction)sellAction:(id)sender {
+    WeakSelf
+    [HUD showHUD];
+    YUUSellerSellitRequest *request = [[YUUSellerSellitRequest alloc] initWithSellerSellit:[YUUUserData shareInstance].userModel.token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(buyerCellStatusChanged)]) {
+            [weakSelf.delegate buyerCellStatusChanged];
+        }
+        [HUD showRequest:request];
+    } failureCallback:^(YUUBaseRequest *request) {
+        [HUD showRequest:request];
+    }];
+    [request start];
+}
+
+
 
 @end
