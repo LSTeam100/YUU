@@ -45,6 +45,11 @@
    
     self.isDirect = YES;
     [self getHTTPData];
+    
+    WeakSelf
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getHTTPData];
+    }];
 }
 
 - (void)getHTTPData {
@@ -52,12 +57,14 @@
     GetMineralPoolRequest *request = [[GetMineralPoolRequest alloc] initWithSuccess:^(YUUBaseRequest *request) {
         weakSelf.model = request.getResponse.data;
         [weakSelf updateUI];
+        
+        [weakSelf.tableView.mj_header endRefreshing];
     } failure:^(YUUBaseRequest *request) {
         if (request.getResponse.code == 4) {
             weakSelf.model = nil;
             [weakSelf updateUI];
         }
-        NSLog(@"");
+        [weakSelf.tableView.mj_header endRefreshing];
     }];
 
     [request start];
@@ -85,19 +92,6 @@
         make.width.mas_equalTo(263);
         make.height.mas_equalTo(38);
     }];
-    
-//    [segment setTitles:@[@"直推" ,@"团队"] segmentSelectedAtIndex:^(NSInteger index) {
-//        if (index == 0) {
-//            YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
-//            view.delegate = self;
-//            view.textField0.text = @"28346879";
-//            [HUD showCustomView:view];
-//        } else {
-//            YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
-//            view.delegate = self;
-//            [HUD showCustomView:view];
-//        }
-//    }];
     
     [segment setSegmentTitles:@[@"直推" ,@"团队"] segmentSelectedAtIndex:^(NSInteger index) {
         if (index == 0) {
@@ -159,10 +153,7 @@
         view.textField1.text = [NSString stringWithFormat:@"%ld", (long)model.memberphone];
         [HUD showCustomView:view];
     } else {
-//        YUUMachinePoolModel *model = self.model.nodirectidArr[indexPath.section];
-//        YUUTeamInfoView *view = [YUUTeamInfoView xibInstancetype];
-//        view.delegate = self;
-//        [HUD showCustomView:view];
+
     }
 }
 

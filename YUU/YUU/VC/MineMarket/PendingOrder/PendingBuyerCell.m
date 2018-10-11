@@ -8,6 +8,7 @@
 
 #import "PendingBuyerCell.h"
 #import "YUUSellerSellitRequest.h"
+#import "AlertController.h"
 
 @implementation PendingBuyerCell
 
@@ -39,17 +40,22 @@
 
 
 - (IBAction)sellAction:(id)sender {
-    WeakSelf
-    [HUD showHUD];
-    YUUSellerSellitRequest *request = [[YUUSellerSellitRequest alloc] initWithSellerSellit:[YUUUserData shareInstance].userModel.token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(buyerCellStatusChanged)]) {
-            [weakSelf.delegate buyerCellStatusChanged];
-        }
-        [HUD showRequest:request];
-    } failureCallback:^(YUUBaseRequest *request) {
-        [HUD showRequest:request];
+    [AlertController alertTitle:@"确定卖给他" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
+        WeakSelf
+        [HUD showHUD];
+        YUUSellerSellitRequest *request = [[YUUSellerSellitRequest alloc] initWithSellerSellit:[YUUUserData shareInstance].userModel.token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(buyerCellStatusChanged)]) {
+                [weakSelf.delegate buyerCellStatusChanged];
+            }
+            [HUD showRequest:request];
+        } failureCallback:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        }];
+        [request start];
+    } cancelHandler:^{
+        
     }];
-    [request start];
+    
 }
 
 

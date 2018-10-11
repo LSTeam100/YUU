@@ -11,6 +11,7 @@
 #import "YUUPointbuyRequest.h"
 #import "YUUSellerTransactionRequest.h"
 #import "YUUBuyerTransactionRequest.h"
+#import "AlertController.h"
 
 @implementation YUUMineMarketMailCell
 
@@ -142,43 +143,55 @@
         _hudView.delegate = self;
         [HUD showCustomView:_hudView];
     } else if ([title isEqualToString:@"确认交易"]) {
-        if (_model.sellorbuy == 1) { // 买家
-            [HUD showHUD];
-            WeakSelf
-            YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                [HUD showRequest:request];
-                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                    [weakSelf.delegate cellStatusChanged];
-                }
-            } failureCallback:^(YUUBaseRequest *request) {
-                [HUD showRequest:request];
-            }];
-            [request start];
-        } else {
-            [HUD showHUD];
-            WeakSelf
-            YUUSellerOnsaleRequest *request = [[YUUSellerOnsaleRequest alloc] initWithSellerOnsale:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                [HUD showRequest:request];
-                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                    [weakSelf.delegate cellStatusChanged];
-                }
-            } failureCallback:^(YUUBaseRequest *request) {
-                [HUD showRequest:request];
-            }];
-            [request start];
-        }
-    } else if ([title isEqualToString:@"取消交易"]) {
-        [HUD showHUD];
-        WeakSelf
-        YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
-            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                [weakSelf.delegate cellStatusChanged];
+        [AlertController alertTitle:@"确认交易" message:nil determine:@"确定" cancel:@"取消" determineHandler:^
+        {
+            if (_model.sellorbuy == 1) { // 买家
+                [HUD showHUD];
+                WeakSelf
+                YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+                    [HUD showRequest:request];
+                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+                        [weakSelf.delegate cellStatusChanged];
+                    }
+                } failureCallback:^(YUUBaseRequest *request) {
+                    [HUD showRequest:request];
+                }];
+                [request start];
+            } else {
+                [HUD showHUD];
+                WeakSelf
+                YUUSellerOnsaleRequest *request = [[YUUSellerOnsaleRequest alloc] initWithSellerOnsale:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+                    [HUD showRequest:request];
+                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+                        [weakSelf.delegate cellStatusChanged];
+                    }
+                } failureCallback:^(YUUBaseRequest *request) {
+                    [HUD showRequest:request];
+                }];
+                [request start];
             }
-        } failureCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+        } cancelHandler:^{
+            
         }];
-        [request start];
+        
+    } else if ([title isEqualToString:@"取消交易"]) {
+        [AlertController alertTitle:@"取消交易" message:nil determine:@"确定" cancel:@"取消" determineHandler:^
+         {
+             [HUD showHUD];
+             WeakSelf
+             YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+                 [HUD showRequest:request];
+                 if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+                     [weakSelf.delegate cellStatusChanged];
+                 }
+             } failureCallback:^(YUUBaseRequest *request) {
+                 [HUD showRequest:request];
+             }];
+             [request start];
+         } cancelHandler:^{
+             
+         }];
+        
     }
 }
 
