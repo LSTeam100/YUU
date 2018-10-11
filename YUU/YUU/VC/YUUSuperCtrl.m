@@ -103,7 +103,7 @@
                    request:(YUUBaseRequest *)request
        needToken:(BOOL) token{
     int statusCode=[request getResponse].code;
-//    if (token == false) {
+    if (token == true) {
         switch (statusCode) {
             case 1:
                 [self naviTologin];
@@ -112,10 +112,10 @@
                 break;
         }
     
-//    }
-//    else{
-//
-//    }
+    }
+    else{
+
+    }
     
     
 //    if (treated) {

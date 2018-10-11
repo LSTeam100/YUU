@@ -112,6 +112,7 @@
 
 - (void)btnAction:(UIButton *)btn {
     if ([btn.titleLabel.text isEqualToString:@"确认交易"]) {
+
         [AlertController alertTitle:@"确认交易" message:nil determine:@"确认" cancel:@"取消" determineHandler:^
         {
             if (_model.sellorbuy == 1) { // 买家
@@ -142,7 +143,6 @@
         } cancelHandler:^{
             
         }];
-        
     } else if ([btn.titleLabel.text isEqualToString:@"买家资料"]) {
         YUUSellerInfoView *hudView = [YUUSellerInfoView xibInstancetype];
         hudView.model = _model;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YUUBaseViewController.h"
-
-@interface YUUMachineMarketVC : YUUBaseViewController
+#import "YUUSuperCtrl.h"
+@interface YUUMachineMarketVC : YUUSuperCtrl
 
 @end

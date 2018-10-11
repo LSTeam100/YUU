@@ -338,14 +338,15 @@ typedef enum {
 -(void)sendWXRequest:(NSString *)wxNum{
     NSString *token = [YUUUserData shareInstance].userModel.token;
     
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUUUserSendwxRequest *sendWX = [[YUUUserSendwxRequest alloc]initWithSendwx:token Memberwx:wxNum SuccessCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
+        [weakSelf setBusyIndicatorVisible:NO];
         [HUD showHUDTitle:@"微信注册成功" durationTime:2];
-        [self mineDetailRequest];
+        [weakSelf mineDetailRequest];
 
     } failureCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
+        [weakSelf setBusyIndicatorVisible:NO];
         YUUResponse *res = [request getResponse];
         switch (res.code) {
             case 0:
@@ -362,7 +363,7 @@ typedef enum {
         }
         
         [HUD showHUDTitle:res.msg durationTime:2];
-        [self handleResponseError:self request:request needToken:YES];
+        [weakSelf handleResponseError:self request:request needToken:YES];
     }];
     [sendWX start];
 }
