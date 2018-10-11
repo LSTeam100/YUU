@@ -121,6 +121,7 @@
                 [HUD showRequest:request];
             } failureCallback:^(YUUBaseRequest *request) {
                 [HUD showRequest:request];
+                
             }];
             [request start];
         } else {

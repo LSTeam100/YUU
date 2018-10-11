@@ -38,14 +38,15 @@
 }
 -(void)getHistory{
     NSString *token = [YUUUserData shareInstance].userModel.token;
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUUCurrencyHistoryRequest *history = [[YUUCurrencyHistoryRequest alloc]initWithCurrencyHistory:token SuccessCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
-        self.hisArrModel = [request getResponse].data;
-        [self.tableView reloadData];
+        [weakSelf setBusyIndicatorVisible:NO];
+        weakSelf.hisArrModel = [request getResponse].data;
+        [weakSelf.tableView reloadData];
 
     } failureCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
+        [weakSelf setBusyIndicatorVisible:NO];
         YUUResponse *res = [request getResponse];
         switch (res.code) {
             case 0:
@@ -58,6 +59,7 @@
                 break;
         }
         [HUD showHUDTitle:res.msg durationTime:2];
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [history start];
 }

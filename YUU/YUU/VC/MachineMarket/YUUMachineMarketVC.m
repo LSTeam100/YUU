@@ -59,6 +59,7 @@
     } failureCallback:^(YUUBaseRequest *request) {
         [HUD hide];
         [weakSelf.tableview.mj_header endRefreshing];
+        [weakSelf handleResponseError:self request:request needToken:YES];
     }];
     [request start];
 }
