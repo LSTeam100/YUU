@@ -12,6 +12,7 @@
 #import "HUDManager.h"
 #import "YUUCommonModel.h"
 #import "YUUUserData.h"
+#import "YUUForgetCtrl.h"
 @interface YUULoginCtrl ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
 {
     IBOutlet UITextField *account;
@@ -115,9 +116,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [self.view endEditing:YES];
-    if ([segue.identifier isEqualToString:@"signup"]) {
-        
-        
+    if ([segue.identifier isEqualToString:@"forgetPassword"]) {
+        YUUForgetCtrl *forget = segue.destinationViewController;
+        forget.forgetType = forgetLoginType;        
     }
     
 }
@@ -173,6 +174,7 @@
     
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -43,6 +43,7 @@
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUForgetCtrl *forget = [sb instantiateViewControllerWithIdentifier:@"YUUForgetCtrl"];
+    forget.forgetType = forgetTransactionType;
     [self.navigationController pushViewController:forget animated:YES];
 }
 -(IBAction)submitAction:(id)sender{

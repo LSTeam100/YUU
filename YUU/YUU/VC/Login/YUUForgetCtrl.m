@@ -11,6 +11,7 @@
 #import "YUUCommonModel.h"
 #import "HUD.h"
 #import "YUUSendMessageRequest.h"
+#import "YUUForgetTransactionRequest.h"
 @interface YUUForgetCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     CGFloat originInputTopMargin;
@@ -163,33 +164,69 @@
     }
     
     [self setBusyIndicatorVisible:YES];
+    if (self.forgetType == forgetLoginType) {
+        YUUForgetRequest *forget = [[YUUForgetRequest alloc]initWithMobilePhone:self.phoneTextField.text Password:self.passwordField.text IDCode:[NSNumber numberWithInt:[self.codeTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            [HUD showHUDTitle:@"登录密码重置成功" durationTime:2];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+        } failureCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            YUUResponse *res = [request getResponse];
+            switch (res.code) {
+                case 0:
+                    [HUD showHUDTitle:res.msg durationTime:2];
+                    break;
+                case 1:
+                    [HUD showHUDTitle:@"token无效" durationTime:2];
+                    break;
+                case 2:
+                    [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
+                    break;
+                default:
+                    break;
+            }
+            [self handleResponseError:self request:request needToken:YES];
+        }];
+        
+        [forget start];
+    }
+    else{
+        
+        YUUForgetTransactionRequest *req = [[YUUForgetTransactionRequest alloc]initWithForgetTransaction:[YUUUserData shareInstance].token Memberphone:self.phoneTextField.text Newtraderpsw:self.passwordField.text VerfiCode:self.codeTextField.text SuccessCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            [HUD showHUDTitle:@"交易密码重置成功" durationTime:2];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
 
-    YUUForgetRequest *forget = [[YUUForgetRequest alloc]initWithMobilePhone:self.phoneTextField.text Password:self.passwordField.text IDCode:[NSNumber numberWithInt:[self.codeTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
-        [HUD showHUDTitle:@"成功重置密码" durationTime:2];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [self.navigationController popViewControllerAnimated:YES];
-        });
-    } failureCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-            case 1:
-                [HUD showHUDTitle:@"token无效" durationTime:2];
-                break;
-            case 2:
-                [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
-                break;
-            default:
-                break;
-        }
-        [self handleResponseError:self request:request needToken:YES];
-    }];
+        } failureCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            YUUResponse *res = [request getResponse];
+            switch (res.code) {
+                case 0:
+                    [HUD showHUDTitle:res.msg durationTime:2];
+                    break;
+                case 1:
+                    [HUD showHUDTitle:@"token无效" durationTime:2];
+                    break;
+                case 2:
+                    [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
+                    break;
+                default:
+                    break;
+            }
+            [self handleResponseError:self request:request needToken:YES];
+
+        }];
+        [req start];
+        
+    }
     
-    [forget start];
+    
+    
+    
 }
 
 -(IBAction)sendVerifyCode:(id)sender{
