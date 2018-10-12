@@ -112,45 +112,44 @@
 
 - (void)btnAction:(UIButton *)btn {
     if ([btn.titleLabel.text isEqualToString:@"确认交易"]) {
-
-        
-            if (_model.sellorbuy == 1) { // 买家
-                [AlertController alertTitle:@"确认交易" message:nil determine:@"确认" cancel:@"取消" determineHandler:^
-                 {
-                        [HUD showHUD];
-                        WeakSelf
-                        YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
-                                [weakSelf.delegate mailCellStatusChanged];
-                            }
-                            [HUD showRequest:request];
-                        } failureCallback:^(YUUBaseRequest *request) {
-                            [HUD showRequest:request];
-                        }];
-                        [request start];
-                 } cancelHandler:^{
-                     
-                 }];
-            } else {
-                [AlertController alertTextFieldTitle:@"确认交易" message:nil determine:@"确认" cancel:@"取消" determineHandler:^(UITextField *textField) {
-                    if (textField.text.length == 0) {
-                        return ;
-                    }
-                        [HUD showHUD];
-                        WeakSelf
-                    YUUPendingSellenterRequest *request = [[YUUPendingSellenterRequest alloc] initWithTradingcard:_model.tradingcard password:textField.text success:^(YUUBaseRequest *request) {
+        if (_model.sellorbuy == 1) { // 买家
+            [AlertController alertTitle:@"确认交易" message:nil determine:@"确认" cancel:@"取消" determineHandler:^
+             {
+                    [HUD showHUD];
+                    WeakSelf
+                    YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
                         if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
                             [weakSelf.delegate mailCellStatusChanged];
                         }
                         [HUD showRequest:request];
-                    } failure:^(YUUBaseRequest *request) {
+                    } failureCallback:^(YUUBaseRequest *request) {
                         [HUD showRequest:request];
                     }];
-                } cancelHandler:^{
-                    
+                    [request start];
+             } cancelHandler:^{
+                 
+             }];
+        } else {
+            [AlertController alertTextFieldTitle:@"确认交易" message:nil determine:@"确认" cancel:@"取消" determineHandler:^(UITextField *textField) {
+                if (textField.text.length == 0) {
+                    return ;
+                }
+                    [HUD showHUD];
+                    WeakSelf
+                YUUPendingSellenterRequest *request = [[YUUPendingSellenterRequest alloc] initWithTradingcard:_model.tradingcard password:textField.text success:^(YUUBaseRequest *request) {
+                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+                        [weakSelf.delegate mailCellStatusChanged];
+                    }
+                    [HUD showRequest:request];
+                } failure:^(YUUBaseRequest *request) {
+                    [HUD showRequest:request];
                 }];
+                [request start];
+            } cancelHandler:^{
                 
-            }
+            }];
+            
+        }
        
     } else if ([btn.titleLabel.text isEqualToString:@"买家资料"]) {
         YUUSellerInfoView *hudView = [YUUSellerInfoView xibInstancetype];
