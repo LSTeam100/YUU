@@ -9,6 +9,7 @@
 #import "PendingMailboxCell.h"
 #import "YUUBuyerTransactionRequest.h"
 #import "YUUSellerOnsaleRequest.h"
+#import "AlertController.h"
 
 @implementation PendingMailboxCell
 
@@ -111,32 +112,37 @@
 
 - (void)btnAction:(UIButton *)btn {
     if ([btn.titleLabel.text isEqualToString:@"确认交易"]) {
-        if (_model.sellorbuy == 1) { // 买家
-            [HUD showHUD];
-            WeakSelf
-            YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
-                    [weakSelf.delegate mailCellStatusChanged];
-                }
-                [HUD showRequest:request];
-            } failureCallback:^(YUUBaseRequest *request) {
-                [HUD showRequest:request];
-                
-            }];
-            [request start];
-        } else {
-            [HUD showHUD];
-            WeakSelf
-            YUUSellerOnsaleRequest *request = [[YUUSellerOnsaleRequest alloc] initWithSellerOnsale:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
-                    [weakSelf.delegate mailCellStatusChanged];
-                }
-                [HUD showRequest:request];
-            } failureCallback:^(YUUBaseRequest *request) {
-                [HUD showRequest:request];
-            }];
-            [request start];
-        }
+
+        [AlertController alertTitle:@"确认交易" message:nil determine:@"确认" cancel:@"取消" determineHandler:^
+        {
+            if (_model.sellorbuy == 1) { // 买家
+                [HUD showHUD];
+                WeakSelf
+                YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+                        [weakSelf.delegate mailCellStatusChanged];
+                    }
+                    [HUD showRequest:request];
+                } failureCallback:^(YUUBaseRequest *request) {
+                    [HUD showRequest:request];
+                }];
+                [request start];
+            } else {
+                [HUD showHUD];
+                WeakSelf
+                YUUSellerOnsaleRequest *request = [[YUUSellerOnsaleRequest alloc] initWithSellerOnsale:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+                        [weakSelf.delegate mailCellStatusChanged];
+                    }
+                    [HUD showRequest:request];
+                } failureCallback:^(YUUBaseRequest *request) {
+                    [HUD showRequest:request];
+                }];
+                [request start];
+            }
+        } cancelHandler:^{
+            
+        }];
     } else if ([btn.titleLabel.text isEqualToString:@"买家资料"]) {
         YUUSellerInfoView *hudView = [YUUSellerInfoView xibInstancetype];
         hudView.model = _model;

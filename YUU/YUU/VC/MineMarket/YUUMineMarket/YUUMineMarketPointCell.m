@@ -11,6 +11,7 @@
 #import "YUUPointSellRequest.h"
 #import "Header.h"
 #import "SellRequest.h"
+#import "AlertController.h"
 
 @implementation YUUMineMarketPointCell
 
@@ -37,20 +38,18 @@
         _countTextField.text.length == 0) {
         return;
     }
-    
-    [HUD showHUD];
-//    SellRequest *request = [[SellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text Success:^(YUUBaseRequest *request) {
-//        [HUD showRequest:request];
-//    } failure:^(YUUBaseRequest *request) {
-//        [HUD showRequest:request];
-//    }];
-    
-    YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
-        [HUD showRequest:request];
-    } failureCallback:^(YUUBaseRequest *request) {
-        [HUD showRequest:request];
+    [AlertController alertTitle:@"确定卖出" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
+        [HUD showHUD];
+        YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        } failureCallback:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        }];
+        [request start];
+    } cancelHandler:^{
+        
     }];
-    [request start];
+    
 }
 
 - (IBAction)noticeBtnAction:(id)sender {

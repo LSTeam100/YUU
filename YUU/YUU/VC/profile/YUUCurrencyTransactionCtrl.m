@@ -11,6 +11,8 @@
 #import "YUUCurrencySellRequest.h"
 #import "HUD.h"
 #import "YUUUserData.h"
+#import "AlertController.h"
+
 @implementation YUUCurrencyCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -110,36 +112,42 @@
         return;
     }
     
-    
-    [self setBusyIndicatorVisible:YES];
-    NSString *token = [YUUUserData shareInstance].userModel.token;
-    
-    YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:self.coinnumField.text SuccessCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
-        [HUD showHUDTitle:@"交易成功" durationTime:2];
-
+    [AlertController alertTitle:@"交易确认" message:nil determine:@"确定" cancel:@"取消" determineHandler:^
+    {
+        [self setBusyIndicatorVisible:YES];
+        NSString *token = [YUUUserData shareInstance].userModel.token;
         
-    } failureCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
+        YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:self.coinnumField.text SuccessCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            [HUD showHUDTitle:@"交易成功" durationTime:2];
+            
+            
+        } failureCallback:^(YUUBaseRequest *request) {
+            [self setBusyIndicatorVisible:NO];
+            YUUResponse *res = [request getResponse];
+            switch (res.code) {
+                case 0:
                 DLOG(@"用户错误信息");
                 break;
-            case 1:
+                case 1:
                 DLOG(@"token无效");
                 break;
-            case 3:
+                case 3:
                 DLOG(@"闭市");
                 break;
-            default:
+                default:
                 break;
-        }
+            }
+            
+            [HUD showHUDTitle:res.msg durationTime:2];
+            [self handleResponseError:self request:request needToken:YES];
+        }];
+        [sell start];
+    } cancelHandler:^{
         
-        [HUD showHUDTitle:res.msg durationTime:2];
-        [self handleResponseError:self request:request needToken:YES];
     }];
-    [sell start];
+    
+    
 }
 
 

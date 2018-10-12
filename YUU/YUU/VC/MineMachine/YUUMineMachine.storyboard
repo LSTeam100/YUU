@@ -221,9 +221,13 @@
                                     <outletCollection property="gestureRecognizers" destination="AWq-KT-Bwd" appends="YES" id="s34-aJ-sGS"/>
                                 </connections>
                             </label>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ad-oS-EHN">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ad-oS-EHN">
                                 <rect key="frame" x="5" y="285" width="365" height="38"/>
                                 <subviews>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zr9-U5-5YH">
+                                        <rect key="frame" x="0.0" y="0.0" width="365" height="38"/>
+                                        <color key="backgroundColor" red="0.90196078430000004" green="0.62745098040000002" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsp-hx-SMs">
                                         <rect key="frame" x="0.0" y="9" width="50" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -270,9 +274,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.84313725490196079" green="0.71764705882352942" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Jfa-3h-MkQ" firstAttribute="leading" secondItem="Tsp-hx-SMs" secondAttribute="trailing" id="3f2-9y-fc8"/>
+                                    <constraint firstItem="zr9-U5-5YH" firstAttribute="leading" secondItem="6Ad-oS-EHN" secondAttribute="leading" id="8gv-3m-ZgE"/>
                                     <constraint firstItem="5KD-VT-xK2" firstAttribute="centerY" secondItem="6Ad-oS-EHN" secondAttribute="centerY" id="B2J-E9-AUS"/>
                                     <constraint firstItem="tER-zL-vPM" firstAttribute="centerY" secondItem="6Ad-oS-EHN" secondAttribute="centerY" id="CKO-N5-nnn"/>
                                     <constraint firstItem="tER-zL-vPM" firstAttribute="centerX" secondItem="6Ad-oS-EHN" secondAttribute="centerX" id="FwP-XK-suD"/>
@@ -280,6 +285,7 @@
                                     <constraint firstItem="h5q-yc-aga" firstAttribute="width" secondItem="UVO-7D-tiZ" secondAttribute="width" id="Gkr-DJ-uuq"/>
                                     <constraint firstItem="h5q-yc-aga" firstAttribute="centerY" secondItem="6Ad-oS-EHN" secondAttribute="centerY" id="NN7-eZ-6Rg"/>
                                     <constraint firstItem="5KD-VT-xK2" firstAttribute="leading" secondItem="Jfa-3h-MkQ" secondAttribute="trailing" id="NOf-Hn-4lX"/>
+                                    <constraint firstAttribute="bottom" secondItem="zr9-U5-5YH" secondAttribute="bottom" id="PSB-u5-mSf"/>
                                     <constraint firstItem="SY0-cN-bQq" firstAttribute="centerY" secondItem="6Ad-oS-EHN" secondAttribute="centerY" id="TD5-9e-axt"/>
                                     <constraint firstAttribute="height" constant="38" id="ZA0-6R-tMK"/>
                                     <constraint firstItem="UVO-7D-tiZ" firstAttribute="centerY" secondItem="6Ad-oS-EHN" secondAttribute="centerY" id="afb-1D-u3E"/>
@@ -289,9 +295,11 @@
                                     <constraint firstItem="Jfa-3h-MkQ" firstAttribute="centerY" secondItem="6Ad-oS-EHN" secondAttribute="centerY" id="hf5-OA-jXO"/>
                                     <constraint firstItem="Tsp-hx-SMs" firstAttribute="width" secondItem="Jfa-3h-MkQ" secondAttribute="width" id="iL5-Vb-Qei"/>
                                     <constraint firstItem="SY0-cN-bQq" firstAttribute="leading" secondItem="UVO-7D-tiZ" secondAttribute="trailing" id="ijK-hm-Qni"/>
+                                    <constraint firstAttribute="trailing" secondItem="zr9-U5-5YH" secondAttribute="trailing" id="oaT-Va-5Da"/>
                                     <constraint firstItem="Jfa-3h-MkQ" firstAttribute="width" secondItem="5KD-VT-xK2" secondAttribute="width" id="onr-oh-Fzm"/>
                                     <constraint firstItem="Tsp-hx-SMs" firstAttribute="centerY" secondItem="6Ad-oS-EHN" secondAttribute="centerY" id="pNb-NA-lof"/>
                                     <constraint firstItem="h5q-yc-aga" firstAttribute="leading" secondItem="tER-zL-vPM" secondAttribute="trailing" id="q4C-w0-YWA"/>
+                                    <constraint firstItem="zr9-U5-5YH" firstAttribute="top" secondItem="6Ad-oS-EHN" secondAttribute="top" id="uAR-OP-qEO"/>
                                     <constraint firstItem="Tsp-hx-SMs" firstAttribute="leading" secondItem="6Ad-oS-EHN" secondAttribute="leading" id="x2g-Zz-nRS"/>
                                 </constraints>
                             </view>
@@ -356,7 +364,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-172" y="109"/>
+            <point key="canvasLocation" x="-172" y="108.39580209895054"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VsX-nV-XXb">

@@ -16,6 +16,7 @@
 #import "YUUGetPendingMailRequest.h"
 #import "YUUPendingMailboxModel.h"
 #import "YUUPointOnsaleRequest.h"
+#import "AlertController.h"
 
 @interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,PendingMailboxCellDelegate, PendingBuyerCellDelegate>
 
@@ -25,6 +26,13 @@
 @property (nonatomic, strong) NSArray *mailArr;
 
 @property (nonatomic, assign) double currentPrice;
+
+@property (strong, nonatomic) IBOutlet UILabel *currentPriceTitleLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *currentPriceUnitLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *internetCurrentPriceLabel;
+
 
 @end
 
@@ -45,21 +53,10 @@
     _upLabel.backgroundColor = [UIColor hex:@"e4c177" alpha:0.1];
     _upLabel.layer.borderColor = YUUYellow.CGColor;
     _upLabel.layer.borderWidth = 1;
-    NSString *str = @"";
-    if (_level == 0) {
-        str = @"1-50";
-        _countTextField.text = @"1";
-    } else if (_level == 1) {
-        str = @"50-100";
-        _countTextField.text = @"50";
-    } else if (_level == 1) {
-        str = @"100-500";
-        _countTextField.text = @"100";
-    } else if (_level == 1) {
-        str = @"500-1000";
-        _countTextField.text = @"500";
-    }
-    _upLabel.text = [NSString stringWithFormat:@"认证用户可进行%@YUU议价交易",str];
+    
+    _currentPriceLabel.text = [NSString stringWithFormat:@"%@",_model.sevenprice];
+    
+    
     
 
     
@@ -95,8 +92,40 @@
     _countTextField.layer.borderWidth = 1;
     _countTextField.backgroundColor = [UIColor hex:@"#e4c177" alpha:0.3];
     
-    _currentPriceLabel.text = [NSString stringWithFormat:@"%@",_model.sevenprice];
+    
     self.currentPrice = [_model.sevenprice doubleValue];
+    
+    if (_level == UserLevelNovice) {
+        _upLabel.text = @"认证用户可进行1-50YUU议价交易!";
+        _countTextField.text = @"1";
+        _currentPriceTitleLabel.hidden = NO;
+        _currentPriceLabel.hidden = NO;
+        _currentPriceUnitLabel.hidden = NO;
+        _internetCurrentPriceLabel.hidden = YES;
+    } else if (_level == UserLevelAdvanced) {
+        _upLabel.text = @"算力≥10用户可进行51-500YUU议价交易!";
+        _countTextField.text = @"50";
+        _currentPriceTitleLabel.hidden = NO;
+        _currentPriceLabel.hidden = NO;
+        _currentPriceUnitLabel.hidden = NO;
+        _internetCurrentPriceLabel.hidden = YES;
+    } else if (_level == UserLevelMaster) {
+        _upLabel.text = @"算力≥100用户可进行501-10000YUU议价交易!";
+        _countTextField.text = @"100";
+        _currentPriceTitleLabel.hidden = NO;
+        _currentPriceLabel.hidden = NO;
+        _currentPriceUnitLabel.hidden = NO;
+        _internetCurrentPriceLabel.hidden = YES;
+    } else if (_level == UserLevelInternational) {
+        _upLabel.text = @"算力≥100用户可进行501-10000YUU议价交易!";
+        _countTextField.text = @"500";
+        _myPrice.text = @"0.0001";
+        self.currentPrice = 0.0001;
+        _currentPriceTitleLabel.hidden = YES;
+        _currentPriceLabel.hidden = YES;
+        _currentPriceUnitLabel.hidden = YES;
+        _internetCurrentPriceLabel.hidden = NO;
+    }
 }
 
 - (void)sliderChange:(UISlider *)slider {
@@ -140,13 +169,17 @@
 }
 
 - (IBAction)hangingOrderAction:(UIButton *)sender {
-    [HUD showHUD];
-    YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPrice.text SuccessCallback:^(YUUBaseRequest *request) {
-        [HUD showRequest:request];
-    } failureCallback:^(YUUBaseRequest *request) {
-        [HUD showRequest:request];
+    [AlertController alertTitle:@"确认挂买单" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
+        [HUD showHUD];
+        YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPrice.text SuccessCallback:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        } failureCallback:^(YUUBaseRequest *request) {
+            [HUD showRequest:request];
+        }];
+        [request start];
+    } cancelHandler:^{
+        
     }];
-    [request start];
 }
 
 
@@ -197,11 +230,19 @@
 
 
 - (IBAction)plusAction:(id)sender {
-    self.currentPrice -= 1;
+    if (_level == UserLevelInternational) {
+        self.currentPrice -= 0.0001;
+    } else {
+        self.currentPrice -= 1;
+    }
 }
 
 - (IBAction)lessAction:(id)sender {
-    self.currentPrice += 1;
+    if (_level == UserLevelInternational) {
+        self.currentPrice += 0.0001;
+    } else {
+        self.currentPrice += 1;
+    }
 }
 
 - (void)setCurrentPrice:(double)currentPrice {
@@ -209,7 +250,12 @@
         return;
     }
     _currentPrice = currentPrice;
-    _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
+    if (_level == UserLevelInternational) {
+        _myPrice.text = [NSString stringWithFormat:@"%0.4f",_currentPrice];
+    } else {
+        _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
+    }
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
