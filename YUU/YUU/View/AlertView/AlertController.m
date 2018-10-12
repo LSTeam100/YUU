@@ -53,5 +53,35 @@
     [[UIViewController currentViewController] presentViewController:alert animated:YES completion:nil];
 }
 
++ (void)alertTextFieldTitle:(NSString *)title
+                    message:(NSString *)message
+                  determine:(NSString *)determine
+                     cancel:(NSString *)cancel
+           determineHandler:(void (^)(UITextField *textField))determineHandler
+              cancelHandler:(void (^)(void))cancelHandler;
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action) {
+        if (cancelHandler) {
+            cancelHandler();
+        }
+    }];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:determine style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+        if (determineHandler) {
+            determineHandler(alert.textFields[0]);
+        }
+    }];
+    
+    [alert addAction:cancelAction];
+    [alert addAction:sureAction];
+    
+    [[UIViewController currentViewController] presentViewController:alert animated:YES completion:nil];
+}
+
 
 @end

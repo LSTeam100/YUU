@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 @interface AlertController : NSObject
 
@@ -22,5 +22,12 @@
            message:(NSString *)message
          determine:(NSString *)determine
   determineHandler:(void (^)(void))determineHandler;
+
++ (void)alertTextFieldTitle:(NSString *)title
+                    message:(NSString *)message
+                  determine:(NSString *)determine
+                     cancel:(NSString *)cancel
+           determineHandler:(void (^)(UITextField *textField))determineHandler
+              cancelHandler:(void (^)(void))cancelHandler;
 
 @end

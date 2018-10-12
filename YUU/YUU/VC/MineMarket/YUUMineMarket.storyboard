@@ -564,6 +564,9 @@
                                 <state key="normal" title="新手挂单交易须知">
                                     <color key="titleColor" red="0.73725490196078436" green="0.73333333333333328" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="noticeAction:" destination="75R-pC-dw3" eventType="touchUpInside" id="bpy-Kj-wFm"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t7J-8U-rWK" customClass="YUUBaseTableView">
                                 <rect key="frame" x="10" y="429" width="355" height="238"/>
@@ -885,6 +888,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Pk-lO-8Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2051" y="156"/>
+        </scene>
+        <!--Pending NoticeVC-->
+        <scene sceneID="l2m-49-zgB">
+            <objects>
+                <viewController storyboardIdentifier="YUUPendingNoticeVC" id="oGF-zA-hXc" customClass="YUUPendingNoticeVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Er5-sH-wXq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(必须是认证会员方可挂单。)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO5-j9-dU7">
+                                <rect key="frame" x="20" y="60" width="182" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买家版" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7C-Vz-rVf">
+                                <rect key="frame" x="20" y="97" width="43" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-mw-TX5">
+                                <rect key="frame" x="20" y="134" width="335" height="117"/>
+                                <string key="text">1.点击“矿市” - “新手挂单”，输入价格和数量（1-10都可）。（注意：你的价格越高成交的可能性越大。）
+2.等待匹配卖家。匹配后点击“新手挂单” - 查看卖家信息。
+3.按照后台资料打款并确认。
+（注意：买家被骗90%都是因为未按后台资料打款）</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bku-Iz-kvF">
+                                <rect key="frame" x="20" y="308" width="335" height="134"/>
+                                <string key="text">1.点击“矿市” - “新手挂单”，点击“卖给TA”输入交易密码以及短信验证码。
+2.匹配成功后点击“新手挂单” - “交易信箱”查看买家信息，联系买家转款，并提示他点确认
+3.收到钱后去“矿市” “新手挂单” - “交易信箱”点确认。交易完成！
+（注意：卖家被骗90%都是因为未收到钱就点确认了）</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卖家版" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6V-5J-NkR">
+                                <rect key="frame" x="20" y="271" width="43" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZO5-j9-dU7" firstAttribute="leading" secondItem="fpw-NB-FJa" secondAttribute="leading" constant="20" id="25r-Rx-DcT"/>
+                            <constraint firstItem="e7C-Vz-rVf" firstAttribute="leading" secondItem="ZO5-j9-dU7" secondAttribute="leading" id="3lc-RF-pwr"/>
+                            <constraint firstItem="ZO5-j9-dU7" firstAttribute="top" secondItem="fpw-NB-FJa" secondAttribute="top" constant="40" id="6PE-3A-mjh"/>
+                            <constraint firstItem="BuS-mw-TX5" firstAttribute="leading" secondItem="e7C-Vz-rVf" secondAttribute="leading" id="9wE-lu-5AH"/>
+                            <constraint firstAttribute="trailing" secondItem="Bku-Iz-kvF" secondAttribute="trailing" constant="20" id="DKZ-F3-K9x"/>
+                            <constraint firstItem="Bku-Iz-kvF" firstAttribute="top" secondItem="h6V-5J-NkR" secondAttribute="bottom" constant="20" id="Xod-DF-UpJ"/>
+                            <constraint firstItem="h6V-5J-NkR" firstAttribute="top" secondItem="BuS-mw-TX5" secondAttribute="bottom" constant="20" id="Y9h-9p-Bxi"/>
+                            <constraint firstItem="BuS-mw-TX5" firstAttribute="top" secondItem="e7C-Vz-rVf" secondAttribute="bottom" constant="20" id="fNS-qw-6fl"/>
+                            <constraint firstItem="e7C-Vz-rVf" firstAttribute="top" secondItem="ZO5-j9-dU7" secondAttribute="bottom" constant="20" id="fdA-t8-2Cb"/>
+                            <constraint firstItem="h6V-5J-NkR" firstAttribute="leading" secondItem="BuS-mw-TX5" secondAttribute="leading" id="g1R-cc-Ktl"/>
+                            <constraint firstAttribute="trailing" secondItem="BuS-mw-TX5" secondAttribute="trailing" constant="20" id="gXz-Gx-iRQ"/>
+                            <constraint firstItem="Bku-Iz-kvF" firstAttribute="leading" secondItem="h6V-5J-NkR" secondAttribute="leading" id="zrp-dv-bK2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fpw-NB-FJa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMX-9q-gMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2881" y="164"/>
         </scene>
     </scenes>
     <resources>

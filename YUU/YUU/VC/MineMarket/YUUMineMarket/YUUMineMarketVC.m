@@ -192,6 +192,7 @@
 
 
 #pragma mark - YUUMineMarketPointCellDelegate -
+
 - (void)selectNotice {
     YUUNoticeVC *vc = [YUUNoticeVC storyboardInstanceType];
     [self.navigationController pushViewController:vc animated:YES];
@@ -201,6 +202,7 @@
 - (void)cellStatusChanged {
     [self getMailData];
 }
+
 
 
 @end

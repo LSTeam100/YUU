@@ -17,6 +17,7 @@
 #import "YUUPendingMailboxModel.h"
 #import "YUUPointOnsaleRequest.h"
 #import "AlertController.h"
+#import "YUUPendingNoticeVC.h"
 
 @interface YUUPendingOrderVC () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,PendingMailboxCellDelegate, PendingBuyerCellDelegate>
 
@@ -55,11 +56,7 @@
     _upLabel.layer.borderWidth = 1;
     
     _currentPriceLabel.text = [NSString stringWithFormat:@"%@",_model.sevenprice];
-    
-    
-    
 
-    
     _segmentView = [[SHSegmentView alloc] init];
     [self.view addSubview:_segmentView];
     WeakSelf
@@ -322,6 +319,12 @@
 
 - (void)buyerCellStatusChanged {
     [self getBuyerInfo];
+}
+
+
+- (IBAction)noticeAction:(id)sender {
+    YUUPendingNoticeVC *vc = [YUUPendingNoticeVC storyboardInstanceType];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
