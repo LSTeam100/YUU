@@ -9,6 +9,6 @@
 #import "YUUBaseRequest.h"
 
 @interface YUUSellerTransactionRequest : YUUBaseRequest
--(id)initWithSellerTransaction:(NSString *)token Tradingcard:(NSString *)tradingcard SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
+-(id)initWithSellerTransaction:(NSString *)token Tradingcard:(NSString *)tradingcard password:(NSString *)password SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 
 @end

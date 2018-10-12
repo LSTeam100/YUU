@@ -27,6 +27,7 @@
 		09207E1F21270C6A00952C6D /* YUUMineralPoolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1721270C6A00952C6D /* YUUMineralPoolVC.m */; };
 		09207E2021270C6A00952C6D /* YUUMineralPoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09207E1821270C6A00952C6D /* YUUMineralPoolCell.m */; };
 		092209E22170EB660021B34A /* YUUPendingNoticeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 092209E12170EB660021B34A /* YUUPendingNoticeVC.m */; };
+		092209E52171020D0021B34A /* YUUPendingSellenterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 092209E42171020D0021B34A /* YUUPendingSellenterRequest.m */; };
 		09225516212B9943000BF25B /* YUUBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225515212B9943000BF25B /* YUUBaseTableViewCell.m */; };
 		09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09225518212B9F31000BF25B /* YUUMineMachineVC.m */; };
 		0922551C212B9F78000BF25B /* YUUBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922551B212B9F78000BF25B /* YUUBaseTableView.m */; };
@@ -193,6 +194,8 @@
 		09207E1821270C6A00952C6D /* YUUMineralPoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUMineralPoolCell.m; sourceTree = "<group>"; };
 		092209E02170EB660021B34A /* YUUPendingNoticeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPendingNoticeVC.h; sourceTree = "<group>"; };
 		092209E12170EB660021B34A /* YUUPendingNoticeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPendingNoticeVC.m; sourceTree = "<group>"; };
+		092209E32171020D0021B34A /* YUUPendingSellenterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPendingSellenterRequest.h; sourceTree = "<group>"; };
+		092209E42171020D0021B34A /* YUUPendingSellenterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPendingSellenterRequest.m; sourceTree = "<group>"; };
 		09225514212B9943000BF25B /* YUUBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUBaseTableViewCell.h; sourceTree = "<group>"; };
 		09225515212B9943000BF25B /* YUUBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBaseTableViewCell.m; sourceTree = "<group>"; };
 		09225517212B9F31000BF25B /* YUUMineMachineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUMineMachineVC.h; sourceTree = "<group>"; };
@@ -832,6 +835,8 @@
 				09251C75213F6D1D00B12370 /* YUUGetPendingMailRequest.m */,
 				09251C71213F68DA00B12370 /* BaseHTTP.h */,
 				09251C72213F68DA00B12370 /* BaseHTTP.m */,
+				092209E32171020D0021B34A /* YUUPendingSellenterRequest.h */,
+				092209E42171020D0021B34A /* YUUPendingSellenterRequest.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1303,6 +1308,7 @@
 				091D8E492130DF1800C430AB /* YUUSellerInfoView.m in Sources */,
 				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 				099444762140D28F00548245 /* GetMineralPoolRequest.m in Sources */,
+				092209E52171020D0021B34A /* YUUPendingSellenterRequest.m in Sources */,
 				0923C464214895EE00869625 /* YUUForgetRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

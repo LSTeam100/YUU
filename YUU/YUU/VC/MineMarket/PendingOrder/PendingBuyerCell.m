@@ -15,7 +15,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [_middleBtn setTitle:@"卖给他" forState:UIControlStateNormal];
+    [_middleBtn setTitle:@"卖给TA" forState:UIControlStateNormal];
     [_middleBtn setTitleColor:[UIColor hex:@"ff2a00"] forState:UIControlStateNormal];
     
     _numberLabel.textColor = YUUYellow;
@@ -40,10 +40,13 @@
 
 
 - (IBAction)sellAction:(id)sender {
-    [AlertController alertTitle:@"确定卖给他" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
+    [AlertController alertTextFieldTitle:@"确定卖给TA" message:nil determine:@"确定" cancel:@"取消" determineHandler:^(UITextField *textField) {
+        if (textField.text.length == 0) {
+            return ;
+        }
         WeakSelf
         [HUD showHUD];
-        YUUSellerSellitRequest *request = [[YUUSellerSellitRequest alloc] initWithSellerSellit:[YUUUserData shareInstance].userModel.token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+        YUUSellerSellitRequest *request = [[YUUSellerSellitRequest alloc] initWithSellerSellit:[YUUUserData shareInstance].userModel.token Tradingcard:_model.tradingcard password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(buyerCellStatusChanged)]) {
                 [weakSelf.delegate buyerCellStatusChanged];
             }

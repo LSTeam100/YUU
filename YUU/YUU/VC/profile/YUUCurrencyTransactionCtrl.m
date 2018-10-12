@@ -112,12 +112,15 @@
         return;
     }
     
-    [AlertController alertTitle:@"交易确认" message:nil determine:@"确定" cancel:@"取消" determineHandler:^
+    [AlertController alertTextFieldTitle:@"交易确认" message:nil determine:@"确定" cancel:@"取消" determineHandler:^(UITextField *textField)
     {
+        if (textField.text.length == 0) {
+            return ;
+        }
         [self setBusyIndicatorVisible:YES];
         NSString *token = [YUUUserData shareInstance].userModel.token;
         
-        YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:self.coinnumField.text SuccessCallback:^(YUUBaseRequest *request) {
+        YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:self.coinnumField.text password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
             [HUD showHUDTitle:@"交易成功" durationTime:2];
             

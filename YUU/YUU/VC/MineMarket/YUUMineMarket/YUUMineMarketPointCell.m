@@ -38,16 +38,28 @@
         _countTextField.text.length == 0) {
         return;
     }
-    [AlertController alertTitle:@"确定卖出" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
+    
+    [AlertController alertTextFieldTitle:@"确定卖出" message:nil determine:@"确定" cancel:@"取消" determineHandler:^(UITextField *textField) {
+        if (textField.text.length == 0) {
+            return ;
+        }
         [HUD showHUD];
-        YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
+        YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];
         } failureCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];
         }];
         [request start];
-    } cancelHandler:^{
         
+        [_priceTextField resignFirstResponder];
+        [_countTextField resignFirstResponder];
+        _priceTextField.text = @"";
+        _countTextField.text = @"";
+    } cancelHandler:^{
+        [_priceTextField resignFirstResponder];
+        [_countTextField resignFirstResponder];
+        _priceTextField.text = @"";
+        _countTextField.text = @"";
     }];
     
 }

@@ -10,6 +10,6 @@
 
 @interface YUUSellerSellitRequest : YUUBaseRequest
 
--(id)initWithSellerSellit:(NSString *)token Tradingcard:(NSString *)tradingcard SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
+-(id)initWithSellerSellit:(NSString *)token Tradingcard:(NSString *)tradingcard password:(NSString *)password SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 
 @end

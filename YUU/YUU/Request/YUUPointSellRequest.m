@@ -8,10 +8,14 @@
 
 #import "YUUPointSellRequest.h"
 #import "YUUPointSellModel.h"
+#import "YUUEncryMgr.h"
+
 @implementation YUUPointSellRequest
+
 -(id)initWithMemberid:(NSString *)memberid
                Sellnum:(NSString *)sellnum
              Sellprice:(NSString *)sellprice
+             password:(NSString *)password
        SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
@@ -19,7 +23,7 @@
         
         double price = [sellprice doubleValue];
         NSString * priceKey = [NSString stringWithFormat: @"%.1lf", price];
-        NSArray *signArr = @[sellnum,memberid,priceKey,[YUUUserData shareInstance].token];
+        NSArray *signArr = @[sellnum,memberid,priceKey,[YUUUserData shareInstance].token, [YUUEncryMgr sha1:password]];
         NSString *sha1key = getSignFromParameter(signArr);
 
         NSDictionary *parameters=@{
@@ -28,6 +32,7 @@
                                    @"sellprice" : sellprice,
                                    @"token" : [YUUUserData shareInstance].token,
                                    @"sign" : sha1key,
+                                   @"tradepsw" : [YUUEncryMgr sha1:password]
                                    };
         [self setParameters:parameters];
     }
