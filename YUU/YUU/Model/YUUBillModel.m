@@ -24,5 +24,12 @@
 @end
 
 @implementation YUUBillModelList
-
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.billModelArr = [[NSMutableArray alloc]init];
+    }
+    return self;
+    
+}
 @end

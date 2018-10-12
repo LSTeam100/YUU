@@ -2223,15 +2223,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="iPJ-NL-yPc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ass-2f-31q">
+                                <rect key="frame" x="166" y="80" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iPJ-NL-yPc" secondAttribute="trailing" id="0xa-5f-X0O"/>
                             <constraint firstItem="iPJ-NL-yPc" firstAttribute="leading" secondItem="UGt-Al-mDA" secondAttribute="leading" id="9Zy-da-q5N"/>
                             <constraint firstItem="iPJ-NL-yPc" firstAttribute="top" secondItem="oZD-EE-ovb" secondAttribute="bottom" id="En6-7l-YL8"/>
+                            <constraint firstItem="Ass-2f-31q" firstAttribute="top" secondItem="oZD-EE-ovb" secondAttribute="bottom" constant="60" id="iKM-P3-2jN"/>
+                            <constraint firstItem="Ass-2f-31q" firstAttribute="centerX" secondItem="UGt-Al-mDA" secondAttribute="centerX" id="lXI-Sn-C2e"/>
                             <constraint firstItem="u4w-qc-eqo" firstAttribute="top" secondItem="iPJ-NL-yPc" secondAttribute="bottom" id="oY6-gO-w2P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="Ass-2f-31q" id="Ijr-cZ-94j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMA-ED-AUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

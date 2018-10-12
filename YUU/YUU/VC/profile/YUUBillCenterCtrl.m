@@ -68,7 +68,6 @@ typedef enum {
         [self setBusyIndicatorVisible:NO];
         self.BillModelList = [request getResponse].data;
         [self sortArrWithBillType];
-        [self.tableView reloadData];
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -149,6 +148,7 @@ typedef enum {
     [self sortArrWithBillType];
     
     
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -208,7 +208,7 @@ typedef enum {
     else if (self.selectBillType == billTypeFreeze){
         self.selectTypeArr = [self aseembleArr:billTypeFreeze];
     }
-    
+    [self.tableView reloadData];
 }
 
 

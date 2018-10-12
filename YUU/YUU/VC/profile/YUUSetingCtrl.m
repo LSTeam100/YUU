@@ -11,7 +11,7 @@
 #import "YUUUserData.h"
 #import "YUUMineDetailRequest.h"
 #import "YUUMineDetailModel.h"
-
+#import "YUUTabBarController.h"
 @implementation YUUSetingCell
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -38,7 +38,7 @@
     // Do any additional setup after loading the view.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 3;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 40;
@@ -86,20 +86,20 @@
     NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 
     switch (indexPath.row) {
+//        case 0:
+//            cell.titleLabel.text = @"微信公众号";
+//            cell.lastLabel.text = self.DetailModel.memberwx;
+//            break;
         case 0:
-            cell.titleLabel.text = @"微信公众号";
-            cell.lastLabel.text = self.DetailModel.memberwx;
-            break;
-        case 1:
             cell.titleLabel.text = @"当前版本";
             cell.lastLabel.text = app_Version;
             break;
-        case 2:
+        case 1:
             cell.titleLabel.text = @"修改登录密码";
             cell.lastLabel.hidden = YES;
             cell.moreImageView.hidden = NO;
             break;
-        case 3:
+        case 2:
             cell.titleLabel.text = @"修改交易密码";
             cell.lastLabel.hidden = YES;
             cell.moreImageView.hidden = NO;
@@ -117,11 +117,11 @@
     YUUModifyPassword *modiy = [sb instantiateViewControllerWithIdentifier:@"YUUModifyPassword"];
 
     switch (indexPath.row) {
-        case 2:
+        case 1:
             modiy.modifyType = loginType;
             [self.navigationController pushViewController:modiy animated:YES];
             break;
-        case 3:
+        case 2:
             modiy.modifyType = transactionType;
             [self.navigationController pushViewController:modiy animated:YES];
             break;
@@ -134,9 +134,17 @@
 
 -(IBAction)loginOut:(id)sender{
     [[YUUUserData shareInstance]removeUserData];
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    
+    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
     [self presentViewController:navi animated:YES completion:^{
+        if ([root isKindOfClass:[YUUTabBarController class]]) {
+            YUUTabBarController *tabbar = (YUUTabBarController *)root;
+            [tabbar setSelectedIndex:0];
+        }
         DLOG(@"展示登录页面");
     }];
 

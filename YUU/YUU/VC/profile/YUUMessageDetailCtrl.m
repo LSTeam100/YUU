@@ -9,7 +9,7 @@
 #import "YUUMessageDetailCtrl.h"
 
 @interface YUUMessageDetailCtrl ()
-
+@property (nonatomic,strong) IBOutlet UILabel *contentLabel;
 @end
 
 @implementation YUUMessageDetailCtrl
@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"公告标题";
+    self.contentLabel.text = self.msgModel.newstext;
     // Do any additional setup after loading the view.
 }
 

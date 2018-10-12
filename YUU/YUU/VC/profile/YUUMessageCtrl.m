@@ -39,6 +39,7 @@
     [super viewDidLoad];
     self.title = @"消息通知";
     self.tableView.backgroundColor = [UIColor clearColor];
+    [self getMessageRequest];
     
 }
 -(void)getMessageRequest{
@@ -85,6 +86,7 @@
     cell.titleLabel.text = msgModel.newstext;
     cell.dateLabel.text = msgModel.newstime;
     cell.detailLabel.text = msgModel.newsname;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -92,6 +94,8 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     YUUMessageDetailCtrl *detail = [sb instantiateViewControllerWithIdentifier:@"YUUMessageDetailCtrl"];
+    YUUMsgModel *msgModel = [self.msgModelList.msgList objectAtIndex:indexPath.row];
+    detail.msgModel = msgModel;
     [self.navigationController pushViewController:detail animated:YES];
     
 }

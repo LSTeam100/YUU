@@ -7,7 +7,7 @@
 //
 
 #import "YUUSuperCtrl.h"
-
+#import "YUUMsgModel.h"
 @interface YUUMessageDetailCtrl : YUUSuperCtrl
-
+@property(nonatomic,strong)YUUMsgModel *msgModel;
 @end

@@ -9,7 +9,13 @@
 #import "YUUMsgModel.h"
 
 @implementation YUUMsgModelList
-
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.msgList = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
 @end
 
 @implementation YUUMsgModel
