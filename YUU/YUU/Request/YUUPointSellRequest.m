@@ -29,7 +29,7 @@
         NSDictionary *parameters=@{
                                    @"sellnum" : sellnum,
                                    @"memberid" : memberid,
-                                   @"sellprice" : sellprice,
+                                   @"sellprice" : priceKey,
                                    @"token" : [YUUUserData shareInstance].token,
                                    @"sign" : sha1key,
                                    @"tradepsw" : [YUUEncryMgr sha1:password]
