@@ -88,34 +88,42 @@
     _countTextField.layer.borderColor = [YUUYellow CGColor];
     _countTextField.layer.borderWidth = 1;
     _countTextField.backgroundColor = [UIColor hex:@"#e4c177" alpha:0.3];
+    [_countTextField addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
     
     
-    self.currentPrice = [_model.sevenprice doubleValue];
     
     if (_level == UserLevelNovice) {
         _upLabel.text = @"认证用户可进行1-50YUU议价交易!";
         _countTextField.text = @"1";
+        _sliderBegin = 1;
+        _sliderEnd = 50;
         _currentPriceTitleLabel.hidden = NO;
         _currentPriceLabel.hidden = NO;
         _currentPriceUnitLabel.hidden = NO;
         _internetCurrentPriceLabel.hidden = YES;
     } else if (_level == UserLevelAdvanced) {
         _upLabel.text = @"算力≥10用户可进行51-500YUU议价交易!";
-        _countTextField.text = @"50";
+        _countTextField.text = @"51";
+        _sliderBegin = 51;
+        _sliderEnd = 500;
         _currentPriceTitleLabel.hidden = NO;
         _currentPriceLabel.hidden = NO;
         _currentPriceUnitLabel.hidden = NO;
         _internetCurrentPriceLabel.hidden = YES;
     } else if (_level == UserLevelMaster) {
         _upLabel.text = @"算力≥100用户可进行501-10000YUU议价交易!";
-        _countTextField.text = @"100";
+        _countTextField.text = @"501";
+        _sliderBegin = 501;
+        _sliderEnd = 10000;
         _currentPriceTitleLabel.hidden = NO;
         _currentPriceLabel.hidden = NO;
         _currentPriceUnitLabel.hidden = NO;
         _internetCurrentPriceLabel.hidden = YES;
     } else if (_level == UserLevelInternational) {
         _upLabel.text = @"算力≥100用户可进行501-10000YUU议价交易!";
-        _countTextField.text = @"500";
+        _countTextField.text = @"501";
+        _sliderBegin = 501;
+        _sliderEnd = 10000;
         _myPrice.text = @"0.0001";
         self.currentPrice = 0.0001;
         _currentPriceTitleLabel.hidden = YES;
@@ -123,6 +131,8 @@
         _currentPriceUnitLabel.hidden = YES;
         _internetCurrentPriceLabel.hidden = NO;
     }
+    
+    self.currentPrice = [_model.sevenprice doubleValue];
 }
 
 - (void)sliderChange:(UISlider *)slider {
@@ -249,8 +259,10 @@
     _currentPrice = currentPrice;
     if (_level == UserLevelInternational) {
         _myPrice.text = [NSString stringWithFormat:@"%0.4f",_currentPrice];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4ldETH",_countTextField.text, _myPrice.text, [_countTextField.text integerValue] * [_myPrice.text integerValue]];
     } else {
         _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
     }
     
 }
@@ -293,6 +305,15 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     return [self validateNumber:string];
 }
+
+- (IBAction)valueChanged:(UITextField *)sender {
+    if (_level == UserLevelInternational) {
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4ldETH",_countTextField.text, _myPrice.text, [_countTextField.text integerValue] * [_myPrice.text integerValue]];
+    } else {
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
+    }
+}
+
 
 - (BOOL)validateNumber:(NSString*)number {
     BOOL res = YES;

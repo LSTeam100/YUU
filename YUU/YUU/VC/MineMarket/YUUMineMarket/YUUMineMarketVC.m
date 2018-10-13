@@ -125,9 +125,6 @@
 
 #pragma mark - UITableViewDataSource -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_segmentSelected == 2) {
-        return _mailList.count;
-    }
     return 1;
 }
 
@@ -142,22 +139,32 @@
         return cell;
     } else {
         YUUMineMarketMailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YUUMineMarketMailCell"];
-        cell.model = _mailList[indexPath.row];
+        cell.model = _mailList[indexPath.section];
         cell.delegate = self;
         return cell;
     }
 }
 
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (_segmentSelected == 2) {
+        return _mailList.count;
+    }
+    return 1;
+}
 
 #pragma mark - UITableViewDelegate -
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (_segmentSelected == 2 && section != 0) {
         return 5;
     }
     return 0;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 10)];
+    aview.backgroundColor = [UIColor clearColor];
+    return aview;
+}
 
 
 - (IBAction)pendingOrderBtnAction:(UIButton *)sender {
@@ -165,23 +172,23 @@
     if (sender.tag == 0) {
         vc.title = @"新手挂单";
         vc.level = UserLevelNovice;
-        vc.sliderBegin = 1;
-        vc.sliderEnd = 50;
+//        vc.sliderBegin = 1;
+//        vc.sliderEnd = 50;
     } else if (sender.tag == 1) {
         vc.title = @"进阶挂单";
         vc.level = UserLevelAdvanced;
-        vc.sliderBegin = 50;
-        vc.sliderEnd = 100;
+//        vc.sliderBegin = 50;
+//        vc.sliderEnd = 100;
     } else if (sender.tag == 2) {
         vc.title = @"高手挂单";
         vc.level = UserLevelMaster;
-        vc.sliderBegin = 100;
-        vc.sliderEnd = 500;
+//        vc.sliderBegin = 100;
+//        vc.sliderEnd = 500;
     } else {
         vc.title = @"国际挂单";
         vc.level = UserLevelInternational;
-        vc.sliderBegin = 500;
-        vc.sliderEnd = 1000;
+//        vc.sliderBegin = 500;
+//        vc.sliderEnd = 1000;
     }
     vc.model = _model;
     self.hidesBottomBarWhenPushed = YES;

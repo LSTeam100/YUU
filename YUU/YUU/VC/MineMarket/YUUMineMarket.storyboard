@@ -735,8 +735,9 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                 <connections>
+                                    <action selector="valueChanged:" destination="75R-pC-dw3" eventType="valueChanged" id="Tkq-eR-Dy0"/>
                                     <outlet property="delegate" destination="75R-pC-dw3" id="JFN-cM-l8d"/>
                                 </connections>
                             </textField>

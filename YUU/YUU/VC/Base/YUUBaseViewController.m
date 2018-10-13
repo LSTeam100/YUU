@@ -27,36 +27,46 @@
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    UIView *aview = [[UIView alloc] initWithFrame:self.navigationController.navigationBar.bounds];
-    aview.userInteractionEnabled = NO;
+    BOOL add = NO;
+    for (UIView *v in self.navigationController.navigationBar.subviews) {
+        if (v.tag == 10086) {
+            add = YES;
+        }
+    }
+    if (!add) {
+        UIView *aview = [[UIView alloc] initWithFrame:self.navigationController.navigationBar.bounds];
+        aview.userInteractionEnabled = NO;
+        
+        UIView *middle = [[UIView alloc] initWithFrame:CGRectMake(0, 2, aview.frame.size.width, aview.frame.size.height - 4)];
+        middle.backgroundColor = YUUYellow;
+        middle.alpha = 0.05;
+        [aview addSubview:middle];
+        
+        UIView *up = [[UIView alloc] initWithFrame:CGRectMake(0, 0, aview.frame.size.width, 2)];
+        up.backgroundColor = YUUYellow;
+        [aview addSubview:up];
+        
+        UIView *down = [[UIView alloc] initWithFrame:CGRectMake(0, aview.frame.size.height-2, aview.frame.size.width, 2)];
+        down.backgroundColor = YUUYellow;
+        [aview addSubview:down];
+        
+        aview.tag = 10086;
+        [self.navigationController.navigationBar addSubview:aview];
+        
+        // 取消导航栏下面的线
+        self.navigationController.navigationBar.clipsToBounds = YES;
+        
+        [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:18],
+                                                             NSForegroundColorAttributeName: YUUYellow
+                                                             }];
+        // 透明背景
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"120"] forBarMetrics:UIBarMetricsDefault];
+        //    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"bg"]];
+        
+        // title color
+        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : YUUYellow};
+    }
     
-    UIView *middle = [[UIView alloc] initWithFrame:CGRectMake(0, 2, aview.frame.size.width, aview.frame.size.height - 4)];
-    middle.backgroundColor = YUUYellow;
-    middle.alpha = 0.05;
-    [aview addSubview:middle];
-    
-    UIView *up = [[UIView alloc] initWithFrame:CGRectMake(0, 0, aview.frame.size.width, 2)];
-    up.backgroundColor = YUUYellow;
-    [aview addSubview:up];
-    
-    UIView *down = [[UIView alloc] initWithFrame:CGRectMake(0, aview.frame.size.height-2, aview.frame.size.width, 2)];
-    down.backgroundColor = YUUYellow;
-    [aview addSubview:down];
-    
-    [self.navigationController.navigationBar addSubview:aview];
-    
-    // 取消导航栏下面的线
-    self.navigationController.navigationBar.clipsToBounds = YES;
-    
-    [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:18],
-                                                         NSForegroundColorAttributeName: YUUYellow
-                                                         }];
-    // 透明背景
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"120"] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"bg"]];
-
-    // title color
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : YUUYellow};
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     bgImageView.image = [UIImage imageNamed:@"bg"];

@@ -49,34 +49,6 @@
     if (model.sellorbuy == 1) { // 买家
         if (model.progressnum == 1) { // 发起交易
             _leftBtn.hidden = NO;
-            [_leftBtn setTitle:@"买家资料" forState:UIControlStateNormal];
-            [_leftBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
-            _leftBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
-            
-            _rightBtn.hidden = NO;
-            [_rightBtn setTitle:@"确认交易" forState:UIControlStateNormal];
-            [_rightBtn setTitleColor:[UIColor hex:@"1ae08c"] forState:UIControlStateNormal];
-            _rightBtn.layer.borderColor = [UIColor hex:@"1ae08c"].CGColor;
-            
-            _contentLabel.text = [NSString stringWithFormat:@"收到%ld的支付后，等待卖家的二次确认",(long)model.sorbid];
-        } else if (model.progressnum == 2) { // 2：买家确认了
-            _middleBtn.hidden = NO;
-            [_middleBtn setTitle:@"买家资料" forState:UIControlStateNormal];
-            [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
-            _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
-            
-            _contentLabel.text = [NSString stringWithFormat:@"给%ld转入%ldYUU，等待买家确认",(long)model.sorbid,(long)model.coinnum];
-        } else {
-            _middleBtn.hidden = NO;
-            [_middleBtn setTitle:@"买家资料" forState:UIControlStateNormal];
-            [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
-            _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
-            
-            _contentLabel.text = @"交易确认";
-        }
-    } else {
-        if (model.progressnum == 1) { // 发起交易
-            _leftBtn.hidden = NO;
             [_leftBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
             [_leftBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
             _leftBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
@@ -87,20 +59,34 @@
             _rightBtn.layer.borderColor = [UIColor hex:@"1ae08c"].CGColor;
             
             _contentLabel.text = [NSString stringWithFormat:@"收到%ld转入的%ldYUU，请严格按照平台公布的卖/买家资料进行交易，请勿相信中介！非平台公布资料交易，后果自负",(long)model.sorbid,(long)model.coinnum];
-        } else if (model.progressnum == 3) { // 卖家确认了
+        } else if (model.progressnum == 2) { // 2：买家确认了
             _middleBtn.hidden = NO;
             [_middleBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
             [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
             _contentLabel.text = [NSString stringWithFormat:@"支付%ldYUU的交易款后，等待卖家的确认",(long)model.coinnum];
-        } else {
+        }
+    } else {
+        if (model.progressnum == 1) { // 发起交易
             _middleBtn.hidden = NO;
-            [_middleBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
+            [_middleBtn setTitle:@"买家资料" forState:UIControlStateNormal];
             [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
-            _contentLabel.text = @"交易确认";
+            _contentLabel.text = [NSString stringWithFormat:@"给%ld转入%ldYUU，等待买家确认",(long)model.sorbid,(long)model.coinnum];
+        } else if (model.progressnum == 2) { // 卖家确认了
+            _leftBtn.hidden = NO;
+            [_leftBtn setTitle:@"买家资料" forState:UIControlStateNormal];
+            [_leftBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+            _leftBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+            
+            _rightBtn.hidden = NO;
+            [_rightBtn setTitle:@"确认交易" forState:UIControlStateNormal];
+            [_rightBtn setTitleColor:[UIColor hex:@"1ae08c"] forState:UIControlStateNormal];
+            _rightBtn.layer.borderColor = [UIColor hex:@"1ae08c"].CGColor;
+            
+            _contentLabel.text = [NSString stringWithFormat:@"收到%ld的支付后，等待卖家的二次确认",(long)model.sorbid];
         }
     }
     
