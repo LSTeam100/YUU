@@ -36,7 +36,7 @@
 @property(nonatomic,weak)IBOutlet UILabel *freezeLabel;
 @property(nonatomic,weak)IBOutlet UILabel *lockLabel;
 @property(nonatomic,weak)IBOutlet UIImageView *headImageView;
-@property(nonatomic,weak)UIView *newsRedIcon;
+@property(nonatomic,weak)IBOutlet UIView *newsRedIcon;
 
 @property(nonatomic,strong)YUUCommonModel *userModel;
 @end
@@ -53,8 +53,13 @@
 -(void)updateUI{
     self.profileIdLabel.text = [NSString stringWithFormat:@"ID:%@",self.userModel.memberid];
     self.profileGradeLabel.text = [NSString stringWithFormat:@"等级:%@",self.userModel.membergrade];
-    self.assetLabel.text = [NSString stringWithFormat:@"%@",self.userModel.propertynum];
-    self.availbleLabel.text = [NSString stringWithFormat:@"可用YUU:%@",self.userModel.canuseyuu];
+    
+    float propertynum = [self.userModel.propertynum floatValue];
+
+    self.assetLabel.text = [NSString stringWithFormat:@"%.4f",propertynum];
+    
+    float canuse = [self.userModel.canuseyuu floatValue];
+    self.availbleLabel.text = [NSString stringWithFormat:@"可用YUU:%.4f ",canuse];
     self.freezeLabel.text = [NSString stringWithFormat:@"冻结YUU:%@",self.userModel.frozenyuu];
     self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%@",self.userModel.lockedyuu];
     self.profileIdLabel.textColor = colorWithHexString(@"e4c177", 1);
@@ -63,8 +68,15 @@
     DLOG(@"membergrade=%@",self.userModel.membergrade);
     self.headImageView.image = getHeadPhoto(self.userModel.membergrade);
     
-    
-//    self.userModel.headphoto
+    self.newsRedIcon.backgroundColor = colorWithHexString(@"d82e2e", 1.0);
+    self.newsRedIcon.layer.cornerRadius = 4;
+    if ([self.userModel.newnews intValue] == 1) {
+        [self.newsRedIcon setHidden:NO];
+    }
+    else{
+        [self.newsRedIcon setHidden:true];
+
+    }
 
     
 
@@ -165,8 +177,8 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     if (self.userModel) {
         if ([self.userModel.certification intValue] == 1) {
-            YUUProfileAuthenCtrl * already = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenCtrl"];
-            [self.navigationController pushViewController:already animated:YES];
+//            YUUProfileAuthenCtrl * already = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenCtrl"];
+//            [self.navigationController pushViewController:already animated:YES];
         }
         else{
             YUUProfileAuthenEditeCtrl * edite = [sb instantiateViewControllerWithIdentifier:@"YUUProfileAuthenEditeCtrl"];
