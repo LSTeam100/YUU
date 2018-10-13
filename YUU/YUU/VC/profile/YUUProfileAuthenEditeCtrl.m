@@ -180,6 +180,8 @@
         countDownTimer = nil;
         self.sendMsgBtn.hidden = NO;
         self.countDownLabel.hidden = YES;
+        countNum = 300;
+
     }
     else{
         self.countDownLabel.text = [NSString stringWithFormat:@"%d",countNum];

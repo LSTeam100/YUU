@@ -179,7 +179,7 @@ typedef enum {
 
             break;
             case 5:
-//            cell.detailLabel.text = self.DetailModel.memberwallet;
+            cell.detailLabel.text = @"";
             cell.authenBtn.hidden = YES;
             cell.moreImageView.hidden = NO;
             cell.titleLabel.text = @"虚拟钱包";

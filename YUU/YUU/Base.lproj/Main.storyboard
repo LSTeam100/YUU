@@ -79,8 +79,8 @@
                                     <action selector="sell:" destination="Lmg-oV-d90" eventType="touchUpInside" id="e0T-Jp-6l0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="警告：此功能是将YUU转换为外坞平台医疗链，兑换比例1:1." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35K-yG-rGr">
-                                <rect key="frame" x="31" y="434" width="313" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="警告：此功能是将YUU转换成外坞平台代币，兑换比例锚定为1:1兑换，不能内部转账，否则会导致YUU丢失无法找回，平台地址一定要填写正确，否者导致兑换错误由用户自己承担。兑换地址为交易所IDAX交易所钱包地址。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35K-yG-rGr">
+                                <rect key="frame" x="31" y="434" width="313" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -184,6 +184,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertLabel" destination="35K-yG-rGr" id="zzh-ne-pbc"/>
                         <outlet property="avaliableLabel" destination="u49-Fe-R1k" id="36V-3D-zCz"/>
                         <outlet property="coinnumField" destination="2Uw-eZ-KqF" id="CVq-51-A9L"/>
                         <outlet property="coinnumLabel" destination="qJH-Nr-hXi" id="Yad-ma-ZMw"/>

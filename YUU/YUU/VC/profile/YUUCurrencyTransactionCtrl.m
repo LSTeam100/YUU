@@ -40,6 +40,7 @@
 @property(nonatomic,weak)IBOutlet UIButton *sellBtn;
 @property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
 @property(nonatomic,weak)IBOutlet UILabel *avaliableLabel;
+@property(nonatomic,weak)IBOutlet UILabel *alertLabel;
 @end
 
 @implementation YUUCurrencyTransactionCtrl
@@ -50,8 +51,10 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     [self initSegmentBar];
     [self setCustomBackItem];
-    self.avaliableLabel.text = self.avalibleMoney;
     
+    float money = [self.avalibleMoney floatValue];
+    self.avaliableLabel.text = [NSString stringWithFormat:@"%.6f",money];
+    self.avaliableLabel.textColor = colorWithHexString(@"ED6621", 1);
     UIBarButtonItem *histroyItem = [[UIBarButtonItem alloc]initWithTitle:@"历史记录" style:UIBarButtonItemStylePlain target:self action:@selector(naviToHistoryController)];
     
     self.navigationItem.rightBarButtonItem = histroyItem;
@@ -92,10 +95,13 @@
     if (clickBtn.tag == 0) {
         [self.leftSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_left_selected"] forState:UIControlStateNormal];
         [self.rightSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
+        self.alertLabel.text = @"警告：此功能是将YUU转换成外坞平台代币，兑换比例锚定为1:1兑换，不能内部转账，否则会导致YUU丢失无法找回，平台地址一定要填写正确，否者导致兑换错误由用户自己承担。兑换地址为交易所IDAX交易所钱包地址。";
     }
     else{
         [self.leftSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
         [self.rightSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_right_selected"] forState:UIControlStateNormal];
+        self.alertLabel.text = @"尊贵的朋友，您好，我们的转入功能正在开发中，如需交易所兑换YUU，请加官方客服1微信号或官方客服1QQ号进行兑换（官方客服1微信号：LWP20020701或官方客服1QQ号：2878748834）";
+
     }
     
 }

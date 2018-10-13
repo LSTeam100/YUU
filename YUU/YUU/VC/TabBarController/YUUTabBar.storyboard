@@ -199,19 +199,19 @@
                                                 <rect key="frame" x="172.5" y="0.0" width="172.5" height="80"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_freeze" translatesAutoresizingMaskIntoConstraints="NO" id="Ozl-QR-b24">
-                                                        <rect key="frame" x="16" y="7" width="11" height="13"/>
+                                                        <rect key="frame" x="5" y="7" width="11" height="13"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_lockposion" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-Zz-Cua">
-                                                        <rect key="frame" x="16" y="33" width="12" height="11"/>
+                                                        <rect key="frame" x="5" y="33" width="12" height="11"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="冻结YUU:000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmJ-xd-WVS">
-                                                        <rect key="frame" x="32" y="5" width="108.5" height="17"/>
+                                                        <rect key="frame" x="21" y="5" width="108.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="锁仓YUU:000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdB-ZM-sT7">
-                                                        <rect key="frame" x="32" y="30" width="108.5" height="17"/>
+                                                        <rect key="frame" x="21" y="30" width="108.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                                                 <constraints>
                                                     <constraint firstItem="IdB-ZM-sT7" firstAttribute="leading" secondItem="LmJ-xd-WVS" secondAttribute="leading" id="13s-74-t9y"/>
                                                     <constraint firstItem="AQW-Zz-Cua" firstAttribute="leading" secondItem="Ozl-QR-b24" secondAttribute="leading" id="8d1-2s-dgB"/>
-                                                    <constraint firstItem="LmJ-xd-WVS" firstAttribute="centerX" secondItem="PfG-x7-1T4" secondAttribute="centerX" id="FSK-h7-ajQ"/>
+                                                    <constraint firstItem="Ozl-QR-b24" firstAttribute="leading" secondItem="PfG-x7-1T4" secondAttribute="leading" constant="5" id="GYO-On-gHz"/>
                                                     <constraint firstItem="AQW-Zz-Cua" firstAttribute="centerY" secondItem="IdB-ZM-sT7" secondAttribute="centerY" id="Lee-wH-kGg"/>
                                                     <constraint firstItem="LmJ-xd-WVS" firstAttribute="leading" secondItem="Ozl-QR-b24" secondAttribute="trailing" constant="5" id="NXO-Jl-Qsu"/>
                                                     <constraint firstItem="LmJ-xd-WVS" firstAttribute="top" secondItem="PfG-x7-1T4" secondAttribute="top" constant="5" id="TPu-bM-9rZ"/>
@@ -233,20 +233,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="172.5" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可用YUU:000:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nh9-rH-pnC">
-                                                        <rect key="frame" x="31.5" y="5" width="109.5" height="17"/>
+                                                        <rect key="frame" x="58.5" y="5" width="109.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_availabel_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uk4-Ah-JYL">
-                                                        <rect key="frame" x="13.5" y="7" width="13" height="13"/>
+                                                        <rect key="frame" x="40.5" y="7" width="13" height="13"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="Nh9-rH-pnC" firstAttribute="leading" secondItem="uk4-Ah-JYL" secondAttribute="trailing" constant="5" id="IfK-6R-cl4"/>
                                                     <constraint firstItem="Nh9-rH-pnC" firstAttribute="top" secondItem="mU9-Y1-8Kx" secondAttribute="top" constant="5" id="SVJ-uB-pbU"/>
-                                                    <constraint firstItem="Nh9-rH-pnC" firstAttribute="centerX" secondItem="mU9-Y1-8Kx" secondAttribute="centerX" id="sNG-gR-IlK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Nh9-rH-pnC" secondAttribute="trailing" constant="5" id="qgs-md-rc2"/>
                                                     <constraint firstItem="uk4-Ah-JYL" firstAttribute="centerY" secondItem="Nh9-rH-pnC" secondAttribute="centerY" id="wbY-gF-T1N"/>
                                                 </constraints>
                                             </view>
@@ -324,8 +324,8 @@
                                                     <action selector="naviToBussniess:" destination="Gw1-xz-nDf" eventType="touchUpInside" id="e0M-dJ-z6I"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_business" translatesAutoresizingMaskIntoConstraints="NO" id="cOh-W5-UDr">
-                                                <rect key="frame" x="28" y="29" width="69" height="74"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_bussiness_unopen" translatesAutoresizingMaskIntoConstraints="NO" id="cOh-W5-UDr">
+                                                <rect key="frame" x="27" y="29" width="71" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家入驻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXj-Ga-ZPP">
                                                 <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
@@ -556,7 +556,7 @@
         <image name="profile_asset" width="343" height="192"/>
         <image name="profile_availabel_icon" width="13" height="13"/>
         <image name="profile_bills" width="69" height="73"/>
-        <image name="profile_business" width="69" height="74"/>
+        <image name="profile_bussiness_unopen" width="71" height="74"/>
         <image name="profile_coin" width="69" height="73"/>
         <image name="profile_costmer" width="69" height="74"/>
         <image name="profile_freeze" width="11" height="13"/>

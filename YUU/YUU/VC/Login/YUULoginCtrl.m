@@ -13,6 +13,7 @@
 #import "YUUCommonModel.h"
 #import "YUUUserData.h"
 #import "YUUForgetCtrl.h"
+#import "YUUTabBarController.h"
 @interface YUULoginCtrl ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
 {
     IBOutlet UITextField *account;
@@ -141,6 +142,9 @@
 //        [[HUDManager manager] showHUDTitle:@"输入手机号有误" durationTitme:2];
 //        return;
 //    }
+    
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
     [self setBusyIndicatorVisible:YES];
     YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:account.text Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -148,6 +152,12 @@
         [[YUUUserData shareInstance] saveUserData:login];
         [self dismissViewControllerAnimated:YES completion:^{
             DLOG(@"关闭登录页面");
+            if ([root isKindOfClass:[YUUTabBarController class]]) {
+                YUUTabBarController *tabbar = (YUUTabBarController *)root;
+                [tabbar setSelectedIndex:4];
+                
+            }
+
         }];
         
     } failureCallback:^(YUUBaseRequest *request) {
