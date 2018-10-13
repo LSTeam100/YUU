@@ -55,11 +55,11 @@
         countNum = 300;
 
     }
-    self.nameField.text = @"张三";
-    self.idCardField.text = @"130403198807063648";
-    self.bankField.text = @"123231313";
-    self.prePhoneField.text = @"15630008679";
-    self.messageCode.text = @"2233";
+//    self.nameField.text = @"段然";
+//    self.idCardField.text = @"130402198707093232";
+//    self.bankField.text = @"6230580000009727087";
+//    self.prePhoneField.text = @"15833979831";
+//    self.messageCode.text = @"2233";
 
 }
 
@@ -180,6 +180,8 @@
         countDownTimer = nil;
         self.sendMsgBtn.hidden = NO;
         self.countDownLabel.hidden = YES;
+        countNum = 300;
+
     }
     else{
         self.countDownLabel.text = [NSString stringWithFormat:@"%d",countNum];

@@ -137,13 +137,15 @@
     UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     
-    
+    WeakSelf
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
     [self presentViewController:navi animated:YES completion:^{
+         [weakSelf.navigationController popViewControllerAnimated:YES];
         if ([root isKindOfClass:[YUUTabBarController class]]) {
             YUUTabBarController *tabbar = (YUUTabBarController *)root;
-            [tabbar setSelectedIndex:0];
+            [tabbar setSelectedIndex:4];
+           
         }
         DLOG(@"展示登录页面");
     }];

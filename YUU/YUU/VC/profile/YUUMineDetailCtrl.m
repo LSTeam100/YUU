@@ -167,7 +167,7 @@ typedef enum {
             cell.authenBtn.hidden = YES;
             cell.moreImageView.hidden = NO;
             cell.titleLabel.text = @"微信";
-            cell.detailConstant.constant = -80;
+            cell.detailConstant.constant = -65;
 
             break;
             case 4:
@@ -175,15 +175,15 @@ typedef enum {
             cell.authenBtn.hidden = YES;
             cell.moreImageView.hidden = NO;
             cell.titleLabel.text = @"支付宝";
-            cell.detailConstant.constant = -80;
+            cell.detailConstant.constant = -65;
 
             break;
             case 5:
-            cell.detailLabel.text = self.DetailModel.memberwallet;
+            cell.detailLabel.text = @"";
             cell.authenBtn.hidden = YES;
             cell.moreImageView.hidden = NO;
             cell.titleLabel.text = @"虚拟钱包";
-            cell.detailConstant.constant = -80;
+            cell.detailConstant.constant = -65;
 
             break;
         default:

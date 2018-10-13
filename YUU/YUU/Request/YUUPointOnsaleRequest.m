@@ -23,7 +23,7 @@
                                    @"sign" : sha1key,
                                    @"uporderstype" : uporderstype,
                                    @"buynum" : buynum,
-                                   @"buyprice" : buyprice
+                                   @"buyprice" : priceKey
                                    };
         [self setParameters:parameters];
     }
