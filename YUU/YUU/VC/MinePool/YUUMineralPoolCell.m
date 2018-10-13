@@ -31,6 +31,9 @@
     //        _levelLabel.text = @"新手矿工";
     //    }
     _levelLabel.text = directModel.membergrade;
+    _icon.image = getHeadPhoto(directModel.membergrade);
+    
+    
     _powerLabel.text = [NSString stringWithFormat:@"算力: %ld",(long)directModel.memberpower];
     _machineCountLabel.text = [NSString stringWithFormat:@"矿机: %ld台", (long)directModel.membertotalmills];
     _directPushLabel.text = [NSString stringWithFormat:@"直推: %ld人", (long)directModel.membertotaldirect];
