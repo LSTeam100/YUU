@@ -158,8 +158,8 @@
         return;
     }
     
-    if (self.passwordField.text != self.resetPasswordField.text) {
-        [HUD showHUDTitle:@"密码输入不一致" durationTime:2];
+    if ([self.passwordField.text isEqualToString: self.resetPasswordField.text] == false) {
+        [HUD showHUDTitle:@"两次密码输入不一致" durationTime:2];
         return;
     }
     

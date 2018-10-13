@@ -25,9 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.oldField.secureTextEntry = true;
-    self.passwordField.secureTextEntry = true;
-    self.makeSureField.secureTextEntry = true;
+//    self.oldField.secureTextEntry = true;
+//    self.passwordField.secureTextEntry = true;
+//    self.makeSureField.secureTextEntry = true;
     
     if (self.modifyType == loginType) {
         self.title = @"修改登录密码";
@@ -63,7 +63,7 @@
         return;
     }
     
-    if (self.passwordField.text != self.makeSureField.text) {
+    if ([self.passwordField.text isEqualToString: self.makeSureField.text] == false) {
         [HUD showHUDTitle:@"两次密码输入不一致" durationTime:2];
         return;
     }
