@@ -35,6 +35,9 @@
 @property(nonatomic,weak)IBOutlet UILabel *availbleLabel;
 @property(nonatomic,weak)IBOutlet UILabel *freezeLabel;
 @property(nonatomic,weak)IBOutlet UILabel *lockLabel;
+@property(nonatomic,weak)IBOutlet UIImageView *headImageView;
+@property(nonatomic,weak)UIView *newsRedIcon;
+
 @property(nonatomic,strong)YUUCommonModel *userModel;
 @end
 
@@ -57,6 +60,13 @@
     self.profileIdLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.profileGradeLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.assetLabel.textColor = colorWithHexString(@"ED6621", 1);
+    DLOG(@"membergrade=%@",self.userModel.membergrade);
+    self.headImageView.image = getHeadPhoto(self.userModel.membergrade);
+    
+    
+//    self.userModel.headphoto
+
+    
 
     [self setupAuthenBtn];
 }

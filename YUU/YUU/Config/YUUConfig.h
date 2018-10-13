@@ -45,6 +45,27 @@ NS_INLINE NSString* getLocalVerifyCodeWithBit(int num){
     return verifyCode;
 }
 
+NS_INLINE UIImage* getHeadPhoto(NSString * headStr){
+    NSString *upgrade = @"0";
+    
+    if ([headStr isEqualToString:@"普通矿工"]) {
+        upgrade = @"0";
+    }
+    else if ([headStr isEqualToString:@"一级矿工"]){
+        upgrade = @"1";
+    }
+    else if ([headStr isEqualToString:@"二级矿工"]){
+        upgrade = @"2";
+    }else if ([headStr isEqualToString:@"三级矿工"]){
+        upgrade = @"3";
+    }
+    else{
+        upgrade = @"4";
+
+    }
+    UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"head_%@",upgrade]];
+    return img;
+}
 
 
 

@@ -13,6 +13,8 @@
 #import "YUUCommonModel.h"
 #import "YUUSendMessageRequest.h"
 #import "YUUUserData.h"
+#import "YUULoginRequest.h"
+
 @interface YUUSignUpCtrl ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     CGFloat originInputTopMargin;
@@ -63,10 +65,10 @@
     self.localVerCodeLabel.text = code;
     
     
-    self.phoneField.text = @"15630008679";
-    self.recommedField.text = @"1";
-    self.imgField.text = code;
-    self.passwordField.text = @"r20855090";
+//    self.phoneField.text = @"15630008679";
+//    self.recommedField.text = @"1";
+//    self.imgField.text = code;
+//    self.passwordField.text = @"r20855090";
     
 }
 
@@ -182,13 +184,15 @@
     
     
     [self setBusyIndicatorVisible:YES];
+    WeakSelf
     YUURegisterRequest *req = [[YUURegisterRequest alloc]initWithMobilePhone:_phoneField.text IDCode:[NSNumber numberWithInt:[_messageField.text intValue]] Password:_passwordField.text UpMemberip:_recommedField.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUCommonModel *model = [request getResponse].data;
         [[YUUUserData shareInstance] saveUserData:model];
         [HUD showHUDTitle:@"注册成功" durationTime:2];
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [self.navigationController popViewControllerAnimated:YES];
+            [weakSelf login:weakSelf.phoneField.text Pwd:weakSelf.passwordField.text];            
         });
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -263,6 +267,40 @@
     else{
         self.countDownLabel.text = [NSString stringWithFormat:@"%d",countNum];
     }
+}
+
+-(IBAction)login:(NSString *)account Pwd:(NSString *)pwd{
+    
+    [self setBusyIndicatorVisible:YES];
+    YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:account Password:pwd SuccessCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUCommonModel *login = [request getResponse].data;
+        [[YUUUserData shareInstance] saveUserData:login];
+        [self dismissViewControllerAnimated:YES completion:^{
+            DLOG(@"关闭登录页面");
+        }];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        YUUResponse *res = [request getResponse];
+        switch (res.code) {
+            case 0:
+                DLOG(@"用户锁定");
+                break;
+            case 1:
+                DLOG(@"需要提示用户错误信息");
+                break;
+            case 3:
+                DLOG(@"闭市");
+                break;
+            default:
+                break;
+        }
+        [HUD showHUDTitle:res.msg durationTime:2];
+    }];
+    [req start];
+    
+    
 }
 /*
 #pragma mark - Navigation

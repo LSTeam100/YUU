@@ -13,6 +13,7 @@
 @property(nonatomic,weak)IBOutlet UIView *alreadyAuthenView;
 @property(nonatomic,weak)IBOutlet UILabel *nameLabel;
 @property(nonatomic,weak)IBOutlet UILabel *idLabel;
+@property(nonatomic,weak)IBOutlet UIImageView *headImageView;
 
 @end
 
@@ -22,8 +23,15 @@
     [super viewDidLoad];
     self.title = @"实名认证";
     self.nameLabel.text = self.DetailModel.membername;
-    self.idLabel.text = [NSString stringWithFormat:@"%@",self.DetailModel.memberphone];
+    if (self.DetailModel.memberphone == nil) {
+        self.idLabel.text = [NSString stringWithFormat:@"%@",[YUUUserData shareInstance].userModel.memberid];
+    }
+    else{
+        self.idLabel.text = [NSString stringWithFormat:@"%@",self.DetailModel.memberphone];
+    }
     
+    YUUCommonModel *model =[YUUUserData shareInstance].userModel;
+    self.headImageView.image = getHeadPhoto(model.membergrade);
     // Do any additional setup after loading the view.
 }
 

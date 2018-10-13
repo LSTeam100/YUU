@@ -48,6 +48,7 @@ typedef enum {
 @property(nonatomic,strong)YUUMineDetailModel *DetailModel;
 @property(nonatomic,strong)YUUCommonModel *userModel;
 @property(nonatomic,assign)clickPayType clickType;
+@property(nonatomic,weak)IBOutlet UIImageView *headImageView;
 @end
 
 @implementation YUUMineDetailCtrl
@@ -61,6 +62,7 @@ typedef enum {
     self.titleGradeLabel.textColor = colorWithHexString(@"ED6621", 1.0);
     self.titleMineIdLabel.textColor = colorWithHexString(@"ED6621", 1.0);
     self.titleSuperIdLabel.textColor = colorWithHexString(@"ED6621", 1.0);
+    self.headImageView.image = getHeadPhoto(self.userModel.membergrade);
     [self mineDetailRequest];
     
 }
