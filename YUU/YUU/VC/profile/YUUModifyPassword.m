@@ -25,9 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.oldField.secureTextEntry = true;
-//    self.passwordField.secureTextEntry = true;
-//    self.makeSureField.secureTextEntry = true;
+    self.oldField.secureTextEntry = true;
+    self.passwordField.secureTextEntry = true;
+    self.makeSureField.secureTextEntry = true;
     
     if (self.modifyType == loginType) {
         self.title = @"修改登录密码";
