@@ -10,6 +10,7 @@
 #define YUUConfig_h
 #import <UIKit/UIKit.h>
 #import "YUUEncryMgr.h"
+#import "HUD.h"
 #define AFHTTPSessionManager ZHAFHTTPSessionManager
 #define AFHTTPRequestSerializer ZHAFHTTPRequestSerializer
 #define AFJSONRequestSerializer ZHAFJSONRequestSerializer
@@ -43,6 +44,15 @@ NS_INLINE NSString* getLocalVerifyCodeWithBit(int num){
         
     }
     return verifyCode;
+}
+NS_INLINE void showCostomAlert(NSString * imageName ,CGRect frame){
+    UIImage *img = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:frame];
+    imageView.image = img;
+    [HUD showCustomView:imageView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [HUD hide];
+    });
 }
 
 NS_INLINE UIImage* getHeadPhoto(NSString * headStr){

@@ -144,7 +144,7 @@
         [HUD showHUDTitle:@"输入手机号有误" durationTime:2];
         return;
     }
-    
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUUSendMessageRequest *sendMsg = [[YUUSendMessageRequest alloc]initWithSendMessage:self.prePhoneField.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -161,14 +161,17 @@
         switch (res.code) {
             case 0:
                 DLOG(@"错误信息");
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
         }
-        [HUD showHUDTitle:res.msg durationTime:2];
+//        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
     [sendMsg start];
@@ -228,7 +231,7 @@
     [self setBusyIndicatorVisible:YES];
     
     NSString *token = [YUUUserData shareInstance].userModel.token;
-    
+    WeakSelf
     YUUCertificationRequest *auth = [[YUUCertificationRequest alloc]initWithCertification:self.nameField.text Membercardid:self.idCardField.text Bankcard:self.bankField.text Bankphone:self.prePhoneField.text Code:self.messageCode.text Token:token SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUCommonModel *m = [request getResponse].data;
@@ -241,20 +244,22 @@
         YUUResponse *res = [request getResponse];
         switch (res.code) {
             case 0:
-//                [HUD showHUDTitle:res.msg durationTime:2];
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
             case 1:
                 DLOG(@"无效token");
-//                [HUD showHUDTitle:res.msg durationTime:2];
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
         }
         [self handleResponseError:self request:request needToken:YES];
-        [HUD showHUDTitle:res.msg durationTime:2];
+//        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
     [auth start];

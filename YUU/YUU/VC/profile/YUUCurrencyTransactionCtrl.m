@@ -125,7 +125,7 @@
         }
         [self setBusyIndicatorVisible:YES];
         NSString *token = [YUUUserData shareInstance].userModel.token;
-        
+        WeakSelf
         YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:self.coinnumField.text password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
             [HUD showHUDTitle:@"交易成功" durationTime:2];
@@ -137,18 +137,23 @@
             switch (res.code) {
                 case 0:
                 DLOG(@"用户错误信息");
+                    [HUD showHUDTitle:res.msg durationTime:2];
+
                 break;
                 case 1:
                 DLOG(@"token无效");
                 break;
                 case 3:
                 DLOG(@"闭市");
+                    showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+
                 break;
                 default:
+                    [HUD showHUDTitle:res.msg durationTime:2];
+
                 break;
             }
             
-            [HUD showHUDTitle:res.msg durationTime:2];
             [self handleResponseError:self request:request needToken:YES];
         }];
         [sell start];

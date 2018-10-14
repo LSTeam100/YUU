@@ -55,13 +55,15 @@
     self.profileGradeLabel.text = [NSString stringWithFormat:@"等级:%@",self.userModel.membergrade];
     
     float propertynum = [self.userModel.propertynum floatValue];
-
+    float forzen = [self.userModel.frozenyuu floatValue];
+    float lock = [self.userModel.lockedyuu floatValue];
+    
     self.assetLabel.text = [NSString stringWithFormat:@"%.4f",propertynum];
     
     float canuse = [self.userModel.canuseyuu floatValue];
     self.availbleLabel.text = [NSString stringWithFormat:@"可用YUU:%.4f ",canuse];
-    self.freezeLabel.text = [NSString stringWithFormat:@"冻结YUU:%@",self.userModel.frozenyuu];
-    self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%@",self.userModel.lockedyuu];
+    self.freezeLabel.text = [NSString stringWithFormat:@"冻结YUU:%.2f",forzen];
+    self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%.2f",lock];
     self.profileIdLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.profileGradeLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.assetLabel.textColor = colorWithHexString(@"ED6621", 1);
@@ -100,6 +102,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSString *token = [YUUUserData shareInstance].userModel.token;
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUULauchAppRequest *lauch = [[YUULauchAppRequest alloc]initWithAppRequest:token SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -115,15 +118,17 @@
                 break;
             case 2:
                 DLOG(@"用户被锁定");
+                showCostomAlert(@"local_alert", weakSelf.view.frame);
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
         }
         [self handleResponseError:self request:request needToken:YES];
-        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
     

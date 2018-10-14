@@ -150,7 +150,7 @@
 //    }
     
     UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:account.text Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -172,17 +172,20 @@
         switch (res.code) {
             case 0:
                 DLOG(@"用户锁定");
+                showCostomAlert(@"local_alert", weakSelf.view.frame);
                 break;
             case 1:
                 DLOG(@"需要提示用户错误信息");
+                [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
+                [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
                 break;
         }
-        [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
 
 //        [self handleResponseError:self request:request treatErrorAsUnknown:YES];
     }];

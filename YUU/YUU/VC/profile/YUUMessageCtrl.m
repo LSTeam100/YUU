@@ -44,6 +44,7 @@
 }
 -(void)getMessageRequest{
     NSString *token = [YUUUserData shareInstance].userModel.token;
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUUProfileMessageListRequest *msgReq = [[YUUProfileMessageListRequest alloc]initWithMessagelist:token SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -60,12 +61,14 @@
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+
                 break;
             default:
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
         }
         [self handleResponseError:self request:request needToken:YES];
-        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
     [msgReq start];
