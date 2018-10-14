@@ -190,7 +190,7 @@
 //                [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
 //                break;
 //        }
-        [weakSelf handleResponseError:weakSelf request:request needToken:false];
+//        [weakSelf handleResponseError:weakSelf request:request needToken:false];
     }];
     [req start];
     

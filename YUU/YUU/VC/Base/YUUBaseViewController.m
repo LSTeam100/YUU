@@ -10,7 +10,7 @@
 #import "UIColor+Help.h"
 #import "UINavigationController+help.h"
 #import "YUUColor.h"
-
+#import "YUULoginCtrl.h"
 @interface YUUBaseViewController ()
 
 @end
@@ -114,13 +114,14 @@
     if (token == true) {
         switch (statusCode) {
             case 1:
-                [self naviTologin];
+                [self naviTologin:statusCode];
+//                [HUD showHUDTitle:@"token无效" durationTime:2];
                 break;
             case 2:
                 showCostomAlert(@"local_alert", currentController.view.frame);
-            case 4:
-                showCostomAlert(@"closeMarket_alert", self.view.frame);
-                [self naviTologin];
+
+            case 3:
+                [self naviTologin:statusCode];
                 break;
             default:
                 [HUD showHUDTitle:res.msg durationTime:2];
@@ -130,14 +131,14 @@
     }
     else{
         switch (statusCode) {
-            case 0:
-                showCostomAlert(@"local_alert", currentController.view.frame);
+            case 1:
+                [self naviTologin:statusCode];
                 break;
+            case 2:
+                showCostomAlert(@"local_alert", self.view.frame);
             case 3:
-                showCostomAlert(@"closeMarket_alert", self.view.frame);
-                [self naviTologin];
+                [self naviTologin:statusCode];
                 break;
-                
             default:
                 [HUD showHUDTitle:res.msg durationTime:2];
                 break;
@@ -145,10 +146,43 @@
     }
     return NO;
 }
--(void)naviTologin{
+//-(void)str:(NSString *)imageName test:(CGRect)frame{
+//UIImage *img = [UIImage imageNamed:imageName];
+//UIImageView *imageView = [[UIImageView alloc]initWithFrame:frame];
+//imageView.image = img;
+//[HUD showCustomView:imageView];
+//dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    [HUD hide];
+//});}
+-(void)naviTologin:(int)statusCode{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *navi = [sb instantiateViewControllerWithIdentifier:@"loginNavi"];
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([root.presentedViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navi = (UINavigationController *)root.presentedViewController;
+        UIViewController *c = navi.viewControllers[0];
+        if ([c isKindOfClass:[YUULoginCtrl class]]) {
+            DLOG(@"已经是登录页面无需弹出登录");
+            switch (statusCode) {
+                case 3:
+                    showCostomAlert(@"closeMarket_alert", self.view.frame);
+                    break;
+                default:
+                    break;
+            }
+            return ;
+        }
+    }
+    
+    
     [self presentViewController:navi animated:YES completion:^{
+        switch (statusCode) {
+            case 3:
+                showCostomAlert(@"closeMarket_alert", self.view.frame);
+                break;
+            default:
+                break;
+        }
         DLOG(@"展示登录页面");
     }];
 }
