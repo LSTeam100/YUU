@@ -29,7 +29,7 @@
     [super awakeFromNib];
     _textFields = @[_textField0, _textField1, _textField2, _textField3, _textField4, _textField5, _textField6,];
     
-    _backgroundView.backgroundColor = [UIColor hex:@"e4c177" alpha:0.3];
+    _backgroundView.backgroundColor = [UIColor hex:@"e4c177" alpha:1.0];
     _backgroundView.layer.masksToBounds = YES;
     _backgroundView.layer.cornerRadius = 10;
     
