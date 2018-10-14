@@ -148,7 +148,7 @@
     [self.navigationController pushViewController: currency animated:YES];
 }
 -(IBAction)naviToBussniess:(id)sender{
-    UIImage *img = [UIImage imageNamed:@"holdon"];
+    UIImage *img = [UIImage imageNamed:@"bussness_alert"];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.view.frame];
     imageView.image = img;
     [HUD showCustomView:imageView];
