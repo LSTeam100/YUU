@@ -73,7 +73,7 @@
     YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
         weakSelf.arrModel = request.getResponse.data;
         for (YUUMachineDetailModel *model in weakSelf.arrModel.msgList) {
-            if (model.milldie == YUUMachineStatusWorking) {
+            if (model.milldie == YUUMachineStatusDefault) {
                 [weakSelf.workingItems addObject:model];
             } else {
                 [weakSelf.doneItems addObject:model];
