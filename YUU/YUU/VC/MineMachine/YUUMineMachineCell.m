@@ -62,6 +62,7 @@
             [HUD showRequest:request];
         } failure:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
+            [HUD hide];
             [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
         }];
         [request start];

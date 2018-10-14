@@ -62,6 +62,7 @@
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
 //        [HUD showRequest:request];
+        [HUD hide];
         [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];
@@ -76,6 +77,7 @@
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
 //        [HUD showRequest:request];
+        [HUD hide];
         [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];

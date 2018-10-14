@@ -154,6 +154,7 @@
         }
         [weakSelf.tableView reloadData];
 //        [HUD showRequest:request];
+        [HUD hide];
         [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];
@@ -173,6 +174,7 @@
         }
         [weakSelf.tableView reloadData];
 //        [HUD showRequest:request];
+        [HUD hide];
         [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];
@@ -186,6 +188,7 @@
             [HUD showRequest:request];
         } failureCallback:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
+            [HUD hide];
             [weakSelf handleResponseError:weakSelf request:request needToken:YES];
         }];
         [request start];
