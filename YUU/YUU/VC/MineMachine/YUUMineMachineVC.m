@@ -59,7 +59,11 @@
 //    [_doneItems addObject:model];
 //    [_doneItems addObject:model];
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self getHTTPData];
+
 }
 
 - (void)getHTTPData {
@@ -79,6 +83,7 @@
     } failureCallback:^(YUUBaseRequest *request) {
         
         YUUResponse *res = [request getResponse];
+        _arrModel = nil;
         switch (res.code) {
             case 1:
                 DLOG(@"token无效");
@@ -111,9 +116,17 @@
 }
 
 - (void)updateUI {
-    _computePowerLabel.text = [NSString stringWithFormat:@"%ld",(long)_arrModel.memberpower];
-    _outputLabel.text = [NSString stringWithFormat:@"%0.2f",_arrModel.memberdaycoin];
-    [self.tableView reloadData];
+    if (_arrModel != nil) {
+        _computePowerLabel.text = [NSString stringWithFormat:@"%ld",(long)_arrModel.memberpower];
+        _outputLabel.text = [NSString stringWithFormat:@"%0.2f",_arrModel.memberdaycoin];
+
+    }
+    else{
+        _computePowerLabel.text = @"0";
+        _outputLabel.text = @"0";
+
+    }
+        [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource -
