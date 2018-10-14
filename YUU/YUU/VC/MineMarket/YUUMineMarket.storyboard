@@ -803,7 +803,6 @@
                         <outlet property="internetCurrentPriceLabel" destination="tBG-jg-DHE" id="1jf-BL-zBC"/>
                         <outlet property="myPrice" destination="A4e-e0-Hfc" id="SdJ-D6-Myz"/>
                         <outlet property="noticeBtn" destination="Wak-Qu-bzb" id="1GC-qh-iTd"/>
-                        <outlet property="priceSlider" destination="KS8-0u-zuD" id="t2t-LU-8pp"/>
                         <outlet property="slider" destination="KS8-0u-zuD" id="1Ff-AV-iI6"/>
                         <outlet property="tableView" destination="t7J-8U-rWK" id="ldK-0T-F4A"/>
                         <outlet property="totalPriceLabel" destination="tuf-CV-UNk" id="AfW-hn-ujy"/>

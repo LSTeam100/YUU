@@ -77,10 +77,7 @@
     }];
     
     [self getBuyerInfo];
-    _slider.maximumValue = _sliderEnd;
-    _slider.minimumValue = _sliderBegin;
-    _slider.continuous = YES;//默认YES  如果设置为NO，则每次滑块停止移动后才触发事件
-    [_slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
+    
     
     _countTextField.textColor = YUUYellow;
     _countTextField.layer.masksToBounds = YES;
@@ -133,6 +130,10 @@
     }
     
     self.currentPrice = [_model.sevenprice doubleValue];
+    _slider.maximumValue = _sliderEnd;
+    _slider.minimumValue = _sliderBegin;
+    _slider.continuous = YES;//默认YES  如果设置为NO，则每次滑块停止移动后才触发事件
+    [_slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)sliderChange:(UISlider *)slider {
