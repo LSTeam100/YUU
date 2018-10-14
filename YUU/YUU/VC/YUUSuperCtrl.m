@@ -108,13 +108,22 @@
             case 1:
                 [self naviTologin];
                 break;
+            case 4:
+                [self naviTologin];
+                break;
             default:
                 break;
         }
     
     }
     else{
-
+        switch (statusCode) {
+            case 4:
+                [self naviTologin];
+                break;
+            default:
+                break;
+        }
     }
     
     

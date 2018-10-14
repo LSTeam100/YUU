@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YUUBaseViewController.h"
-
-@interface YUUMineralPoolVC : YUUBaseViewController
+#import "YUUSuperCtrl.h"
+@interface YUUMineralPoolVC : YUUSuperCtrl
 
 @end
