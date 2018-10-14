@@ -103,6 +103,11 @@
     [self tapCancelGesture:false];
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSString *tem = [[string componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]componentsJoinedByString:@""];
+    if (![string isEqualToString:tem]) {
+        return NO;
+        
+    }
     return  true;
 }
 - (void)moveUp:(float)shift{
