@@ -22,5 +22,12 @@
 @end
 
 @implementation YUUCurrencyHistoryArrModel
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        _currencyHistoryArr = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
 
 @end
