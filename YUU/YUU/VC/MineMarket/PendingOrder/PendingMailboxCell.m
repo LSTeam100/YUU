@@ -10,6 +10,8 @@
 #import "YUUBuyerTransactionRequest.h"
 #import "AlertController.h"
 #import "YUUPendingSellenterRequest.h"
+#import "YUUSuperCtrl.h"
+#import "UIViewController+Help.h"
 
 @implementation PendingMailboxCell
 
@@ -109,7 +111,7 @@
                         }
                         [HUD showRequest:request];
                     } failureCallback:^(YUUBaseRequest *request) {
-                        [HUD showRequest:request];
+//                        [HUD showRequest:request];[(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
                     }];
                     [request start];
              } cancelHandler:^{
@@ -128,7 +130,8 @@
                     }
                     [HUD showRequest:request];
                 } failure:^(YUUBaseRequest *request) {
-                    [HUD showRequest:request];
+//                    [HUD showRequest:request];
+                    [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
                 }];
                 [request start];
             } cancelHandler:^{

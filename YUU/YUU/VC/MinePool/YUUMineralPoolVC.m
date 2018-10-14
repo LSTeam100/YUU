@@ -65,6 +65,7 @@
             [weakSelf updateUI];
         }
         [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf handleResponseError:self request:request needToken:YES];
     }];
 
     [request start];

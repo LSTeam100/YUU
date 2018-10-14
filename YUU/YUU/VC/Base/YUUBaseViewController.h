@@ -22,4 +22,8 @@
 
 - (void)getHTTPData;
 
+-(BOOL)handleResponseError:(YUUBaseViewController *)currentController
+                   request:(YUUBaseRequest *)request
+                 needToken:(BOOL) token;
+
 @end

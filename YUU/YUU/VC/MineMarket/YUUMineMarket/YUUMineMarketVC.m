@@ -61,7 +61,8 @@
         [weakSelf updateUI];
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
-        [HUD showRequest:request];
+//        [HUD showRequest:request];
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];
 }
@@ -74,7 +75,8 @@
         [weakSelf.tableView reloadData];
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
-        [HUD showRequest:request];
+//        [HUD showRequest:request];
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];
 }

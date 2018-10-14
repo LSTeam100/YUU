@@ -12,6 +12,8 @@
 #import "Header.h"
 #import "SellRequest.h"
 #import "AlertController.h"
+#import "YUUSuperCtrl.h"
+#import "UIViewController+Help.h"
 
 @implementation YUUMineMarketPointCell
 
@@ -47,7 +49,8 @@
         YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];
         } failureCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
         }];
         [request start];
         

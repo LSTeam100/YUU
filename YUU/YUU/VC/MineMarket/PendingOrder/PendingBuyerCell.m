@@ -9,6 +9,8 @@
 #import "PendingBuyerCell.h"
 #import "YUUSellerSellitRequest.h"
 #import "AlertController.h"
+#import "YUUSuperCtrl.h"
+#import "UIViewController+Help.h"
 
 @implementation PendingBuyerCell
 
@@ -52,7 +54,8 @@
             }
             [HUD showRequest:request];
         } failureCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
         }];
         [request start];
     } cancelHandler:^{

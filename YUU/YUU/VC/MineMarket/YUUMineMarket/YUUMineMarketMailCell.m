@@ -12,6 +12,8 @@
 #import "YUUSellerTransactionRequest.h"
 #import "YUUBuyerTransactionRequest.h"
 #import "AlertController.h"
+#import "YUUSuperCtrl.h"
+#import "UIViewController+Help.h"
 
 @implementation YUUMineMarketMailCell
 
@@ -141,7 +143,8 @@
                             [weakSelf.delegate cellStatusChanged];
                         }
                     } failureCallback:^(YUUBaseRequest *request) {
-                        [HUD showRequest:request];
+//                        [HUD showRequest:request];
+                        [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
                     }];
                     [request start];
              } cancelHandler:^{
@@ -160,7 +163,8 @@
                                                                                                                   [weakSelf.delegate cellStatusChanged];
                                                                                                               }
                                                                                                           } failureCallback:^(YUUBaseRequest *request) {
-                                                                                              [HUD showRequest:request];
+//                                                                                              [HUD showRequest:request];
+                                                                                                              [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
                                                                                                           }];
                     [request start];
                 }
@@ -181,7 +185,8 @@
                      [weakSelf.delegate cellStatusChanged];
                  }
              } failureCallback:^(YUUBaseRequest *request) {
-                 [HUD showRequest:request];
+//
+                 [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];[HUD showRequest:request];
              }];
              [request start];
          } cancelHandler:^{

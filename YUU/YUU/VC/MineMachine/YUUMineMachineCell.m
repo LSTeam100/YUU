@@ -8,6 +8,8 @@
 
 #import "YUUMineMachineCell.h"
 #import "YUUGetGiftRequest.h"
+#import "UIViewController+Help.h"
+#import "YUUSuperCtrl.h"
 
 @implementation YUUMineMachineCell
 
@@ -59,7 +61,8 @@
             weakSelf.receiveLabel.text = @"已领取";
             [HUD showRequest:request];
         } failure:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
         }];
         [request start];
     }

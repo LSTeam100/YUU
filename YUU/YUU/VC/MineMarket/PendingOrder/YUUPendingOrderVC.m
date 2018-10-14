@@ -153,7 +153,8 @@
             [weakSelf.tableView reloadData];
         }
         [weakSelf.tableView reloadData];
-        [HUD showRequest:request];
+//        [HUD showRequest:request];
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];
 }
@@ -171,7 +172,8 @@
             [weakSelf.tableView reloadData];
         }
         [weakSelf.tableView reloadData];
-        [HUD showRequest:request];
+//        [HUD showRequest:request];
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [request start];
 }
@@ -179,10 +181,12 @@
 - (IBAction)hangingOrderAction:(UIButton *)sender {
     [AlertController alertTitle:@"确认挂买单" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
         [HUD showHUD];
+        WeakSelf
         YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPrice.text SuccessCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];
         } failureCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
         }];
         [request start];
     } cancelHandler:^{
