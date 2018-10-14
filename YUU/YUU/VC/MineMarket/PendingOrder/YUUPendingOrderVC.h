@@ -18,8 +18,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *myPrice;
 
-@property (strong, nonatomic) IBOutlet UISlider *priceSlider;
-
 @property (strong, nonatomic) IBOutlet UITextField *countTextField;
 
 @property (strong, nonatomic) IBOutlet UILabel *totalPriceLabel;
