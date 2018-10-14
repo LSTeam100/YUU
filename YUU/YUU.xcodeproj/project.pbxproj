@@ -137,6 +137,8 @@
 		18D3532621379D9000990F7C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A0213929A000990F7C /* CostomTextFieldBgView.m */; };
 		18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A3213A7BAA00990F7C /* CostomSepView.m */; };
+		18D9959F2173959500276E76 /* YUUAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9959E2173959500276E76 /* YUUAlertView.m */; };
+		18D995A1217395B900276E76 /* YUUAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D995A0217395B900276E76 /* YUUAlertView.xib */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
 		18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40E21257A3700FC8E0C /* ViewController.m */; };
 		18EDE41221257A3700FC8E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EDE41021257A3700FC8E0C /* Main.storyboard */; };
@@ -412,6 +414,9 @@
 		18D353A0213929A000990F7C /* CostomTextFieldBgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostomTextFieldBgView.m; sourceTree = "<group>"; };
 		18D353A2213A7BAA00990F7C /* CostomSepView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CostomSepView.h; sourceTree = "<group>"; };
 		18D353A3213A7BAA00990F7C /* CostomSepView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostomSepView.m; sourceTree = "<group>"; };
+		18D9959D2173959500276E76 /* YUUAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUAlertView.h; sourceTree = "<group>"; };
+		18D9959E2173959500276E76 /* YUUAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUAlertView.m; sourceTree = "<group>"; };
+		18D995A0217395B900276E76 /* YUUAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YUUAlertView.xib; sourceTree = "<group>"; };
 		18EDE40721257A3700FC8E0C /* YUU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EDE40A21257A3700FC8E0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18EDE40B21257A3700FC8E0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -899,6 +904,9 @@
 				18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */,
 				18F97C12214E08960059E194 /* YUUCallCenterCtrl.h */,
 				18F97C13214E08960059E194 /* YUUCallCenterCtrl.m */,
+				18D9959D2173959500276E76 /* YUUAlertView.h */,
+				18D9959E2173959500276E76 /* YUUAlertView.m */,
+				18D995A0217395B900276E76 /* YUUAlertView.xib */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -1098,6 +1106,7 @@
 			files = (
 				091DBB10212A3F31005DC12C /* YUUTabBar.storyboard in Resources */,
 				09612989212E298200D9D02C /* YUUMineMarket.storyboard in Resources */,
+				18D995A1217395B900276E76 /* YUUAlertView.xib in Resources */,
 				18EDE41721257A3A00FC8E0C /* LaunchScreen.storyboard in Resources */,
 				091983D22131A96900E35196 /* YUUUserInfoView.xib in Resources */,
 				18EDE41421257A3A00FC8E0C /* Assets.xcassets in Resources */,
@@ -1289,6 +1298,7 @@
 				0925E975215320CC00F874A7 /* YUUMineMarketRequest.m in Sources */,
 				09D4C47B213CFF5900AA8EFD /* AlertController.m in Sources */,
 				0994456C2141229200548245 /* YUUBaseModel.m in Sources */,
+				18D9959F2173959500276E76 /* YUUAlertView.m in Sources */,
 				1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */,
 				0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */,
 				092209E22170EB660021B34A /* YUUPendingNoticeVC.m in Sources */,
@@ -1452,8 +1462,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P6UF878TKN;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DC778EPEP3;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1463,8 +1473,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5a5bf09d-5c26-4d4e-81d4-3493912339e1";
-				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1476,8 +1486,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P6UF878TKN;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DC778EPEP3;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1487,8 +1497,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3bb8a0ff-f6ba-4e3f-8507-61d29d4c2320";
-				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

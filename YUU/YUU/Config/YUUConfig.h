@@ -11,6 +11,8 @@
 #import <UIKit/UIKit.h>
 #import "YUUEncryMgr.h"
 #import "HUD.h"
+#import "HUDManager.h"
+#import "YUUAlertView.h"
 #define AFHTTPSessionManager ZHAFHTTPSessionManager
 #define AFHTTPRequestSerializer ZHAFHTTPRequestSerializer
 #define AFJSONRequestSerializer ZHAFJSONRequestSerializer
@@ -49,7 +51,13 @@ NS_INLINE void showCostomAlert(NSString * imageName ,CGRect frame){
     UIImage *img = [UIImage imageNamed:imageName];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:frame];
     imageView.image = img;
-    [HUD showCustomView:imageView];
+//    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"YUUAlertView" owner:nil options:nil];
+//    YUUAlertView *cView = [nibContents lastObject];
+//    cView.frame = frame;
+//    [cView showYUUAlert:imageName];
+    
+//    [HUD showCustomView:imageView];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [HUD hide];
     });
