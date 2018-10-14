@@ -59,7 +59,8 @@
         YUUGetGiftRequest *request = [[YUUGetGiftRequest alloc] initWithMillid:_model.millsize uccess:^(YUUBaseRequest *request) {
             weakSelf.model.getmill = YUUMachineReceived;
             weakSelf.receiveLabel.text = @"已领取";
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [HUD showHUDTitle:@"领取成功" durationTime:2];
         } failure:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
             [HUD hide];

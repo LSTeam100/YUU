@@ -185,7 +185,8 @@
         [HUD showHUD];
         WeakSelf
         YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPrice.text SuccessCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [HUD showHUDTitle:@"挂单成功" durationTime:2];
         } failureCallback:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
             [HUD hide];

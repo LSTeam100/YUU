@@ -10,7 +10,7 @@
 #import "YUUPointSellCancelRequest.h"
 #import "YUUPointbuyRequest.h"
 #import "YUUSellerTransactionRequest.h"
-#import "YUUBuyerTransactionRequest.h"
+#import "YUUSellerOnsaleRequest.h"
 #import "AlertController.h"
 #import "YUUSuperCtrl.h"
 #import "UIViewController+Help.h"
@@ -137,16 +137,16 @@
              {
                     [HUD showHUD];
                     WeakSelf
-                    YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                        [HUD showRequest:request];
-                        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                            [weakSelf.delegate cellStatusChanged];
-                        }
-                    } failureCallback:^(YUUBaseRequest *request) {
-//                        [HUD showRequest:request];
-                        [HUD hide];
-                        [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
-                    }];
+                 YUUSellerOnsaleRequest *request = [[YUUSellerOnsaleRequest alloc] initWithSellerOnsale:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
+                     if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+                         [weakSelf.delegate cellStatusChanged];
+                     }
+                     [HUD showHUDTitle:@"确认成功" durationTime:2];
+                 } failureCallback:^(YUUBaseRequest *request) {
+                     [HUD hide];
+                     [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
+                 }];
+                 
                     [request start];
              } cancelHandler:^{
                  
@@ -159,7 +159,8 @@
                     YUUSellerTransactionRequest *request = [[YUUSellerTransactionRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token
                                                                                                               Tradingcard:_model.tradingcard password:textField.text
                                                                                                           SuccessCallback:^(YUUBaseRequest *request) {
-                                                                                                              [HUD showRequest:request];
+//                                                                                                              [HUD showRequest:request];
+                                                                                                              [HUD showHUDTitle:@"确认成功" durationTime:2];
                                                                                                               if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
                                                                                                                   [weakSelf.delegate cellStatusChanged];
                                                                                                               }
@@ -182,7 +183,8 @@
              [HUD showHUD];
              WeakSelf
              YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                 [HUD showRequest:request];
+//                 [HUD showRequest:request];
+                 [HUD showHUDTitle:@"取消成功" durationTime:2];
                  if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
                      [weakSelf.delegate cellStatusChanged];
                  }

@@ -151,7 +151,7 @@
         if (countDownTimer == nil) {
             countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
         }
-        
+        [HUD showHUDTitle:@"短信发送成功" durationTime:2];
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         if (countDownTimer == nil) {
@@ -238,7 +238,7 @@
         YUUCommonModel *m = [request getResponse].data;
         [[YUUUserData shareInstance] saveUserData:m];
         [[YUUUserData shareInstance] getUserData];
-        
+        [HUD showHUDTitle:@"实名认证成功" durationTime:2];
         
     } failureCallback:^(YUUBaseRequest *request) {
         [weakSelf setBusyIndicatorVisible:NO];

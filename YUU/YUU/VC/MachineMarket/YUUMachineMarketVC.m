@@ -123,7 +123,8 @@
     [AlertController alertTitle:@"确认购买" message:nil determine:@"购买" cancel:@"取消" determineHandler:^{
         [HUD showHUD];
         YUUBuyMachineRequest *request = [[YUUBuyMachineRequest alloc] initWithBuyMachine:[YUUUserData shareInstance].token Milltype:[NSNumber numberWithInteger:model.milltype] SuccessCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [HUD showHUDTitle:@"购买成功" durationTime:2];
         } failureCallback:^(YUUBaseRequest *request) {
             [HUD showRequest:request];
         }];

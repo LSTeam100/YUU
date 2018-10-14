@@ -128,7 +128,7 @@
         WeakSelf
         YUUCurrencySellRequest *sell = [[YUUCurrencySellRequest alloc]initWithCurrencySell:token Coinsite:self.coinsiteField.text Coinnum:self.coinnumField.text password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            [HUD showHUDTitle:@"交易成功" durationTime:2];
+            [HUD showHUDTitle:@"转出成功" durationTime:2];
             
             
         } failureCallback:^(YUUBaseRequest *request) {

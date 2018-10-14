@@ -75,7 +75,7 @@
         NSString *token = [YUUUserData shareInstance].userModel.token;
         YUUModifyLoginRequest *modifyLogin = [[YUUModifyLoginRequest alloc]initWithModifyLogin:token Oldpsw:self.oldField.text Newpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            [HUD showHUDTitle:@"修改密码成功" durationTime:2];
+            [HUD showHUDTitle:@"登录密码修改成功" durationTime:2];
             if (self.modifyType == loginType) {
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self logout];
@@ -113,7 +113,7 @@
         [self setBusyIndicatorVisible:YES];
         YUUModifyTransactionRequest *modifyTransaction = [[YUUModifyTransactionRequest alloc]initWithModifyTransaction:token Oldtraderpsw:self.oldField.text Newtraderpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            [HUD showHUDTitle:@"修改密码成功" durationTime:2];
+            [HUD showHUDTitle:@"交易密码修改成功" durationTime:2];
 
         } failureCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];

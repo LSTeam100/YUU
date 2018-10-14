@@ -52,7 +52,8 @@
             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(buyerCellStatusChanged)]) {
                 [weakSelf.delegate buyerCellStatusChanged];
             }
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [HUD showHUDTitle:@"操作成功" durationTime:2];
         } failureCallback:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
             [HUD hide];

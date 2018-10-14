@@ -174,7 +174,7 @@
     if (self.forgetType == forgetLoginType) {
         YUUForgetRequest *forget = [[YUUForgetRequest alloc]initWithMobilePhone:self.phoneTextField.text Password:self.passwordField.text IDCode:[NSNumber numberWithInt:[self.codeTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            [HUD showHUDTitle:@"登录密码重置成功" durationTime:2];
+            [HUD showHUDTitle:@"登录密码修改成功" durationTime:2];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
             });
@@ -203,7 +203,7 @@
         WeakSelf
         YUUForgetTransactionRequest *req = [[YUUForgetTransactionRequest alloc]initWithForgetTransaction:[YUUUserData shareInstance].token Memberphone:self.phoneTextField.text Newtraderpsw:self.passwordField.text VerfiCode:self.codeTextField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            [HUD showHUDTitle:@"交易密码重置成功" durationTime:2];
+            [HUD showHUDTitle:@"交易密码修改成功" durationTime:2];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)2 *NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
             });
@@ -253,7 +253,7 @@
         if (countDownTimer == nil) {
             countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
         }
-        
+        [HUD showHUDTitle:@"短信发送成功" durationTime:2];
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         if (countDownTimer == nil) {

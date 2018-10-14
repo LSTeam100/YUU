@@ -242,7 +242,7 @@
         if (countDownTimer == nil) {
             countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
         }
-        
+        [HUD showHUDTitle:@"短信发送成功" durationTime:2];
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
 //        YUUResponse *res = [request getResponse];

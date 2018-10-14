@@ -109,7 +109,8 @@
                         if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
                             [weakSelf.delegate mailCellStatusChanged];
                         }
-                        [HUD showRequest:request];
+//                        [HUD showRequest:request];
+                        [HUD showHUDTitle:@"确认成功" durationTime:2];
                     } failureCallback:^(YUUBaseRequest *request) {
                         [HUD hide];
 //                        [HUD showRequest:request];
@@ -130,7 +131,8 @@
                     if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
                         [weakSelf.delegate mailCellStatusChanged];
                     }
-                    [HUD showRequest:request];
+//                    [HUD showRequest:request];
+                    [HUD showHUDTitle:@"确认成功" durationTime:2];
                 } failure:^(YUUBaseRequest *request) {
 //                    [HUD showRequest:request];
                     [HUD hide];

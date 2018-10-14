@@ -47,7 +47,8 @@
         }
         [HUD showHUD];
         YUUPointSellRequest *request = [[YUUPointSellRequest alloc] initWithMemberid:_idTextField.text Sellnum:_countTextField.text Sellprice:_priceTextField.text password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
-            [HUD showRequest:request];
+//            [HUD showRequest:request];
+            [HUD showHUDTitle:@"卖出成功" durationTime:2];
         } failureCallback:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
             [HUD hide];
