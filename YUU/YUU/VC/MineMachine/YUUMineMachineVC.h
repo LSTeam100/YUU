@@ -7,7 +7,7 @@
 //
 
 #import "YUUBaseViewController.h"
-
-@interface YUUMineMachineVC : YUUBaseViewController
+#import "YUUSuperCtrl.h"
+@interface YUUMineMachineVC : YUUSuperCtrl
 
 @end
