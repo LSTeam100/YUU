@@ -96,20 +96,25 @@ typedef enum {
         YUUResponse *res = [request getResponse];
         switch (res.code) {
             case 0:
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
             case 1:
                 DLOG(@"无效token");
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
         }
         [self handleResponseError:self request:request needToken:YES];
-        [HUD showHUDTitle:res.msg durationTime:2];
     }];
     [mineDetial start];
+    
+    
+
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 6;
@@ -353,18 +358,20 @@ typedef enum {
         switch (res.code) {
             case 0:
                 DLOG(@"错误信息");
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
             case 1:
                 DLOG(@"token无效");
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
         }
         
-        [HUD showHUDTitle:res.msg durationTime:2];
         [weakSelf handleResponseError:self request:request needToken:YES];
     }];
     [sendWX start];
@@ -372,7 +379,7 @@ typedef enum {
 
 -(void)sendAliRequest:(NSString *)aliNum{
     NSString *token = [YUUUserData shareInstance].userModel.token;
-    
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUUUserSendAlipayRequest *ali = [[YUUUserSendAlipayRequest alloc]initWithSendAlipay:token Memberalipay:aliNum SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -385,18 +392,19 @@ typedef enum {
         switch (res.code) {
             case 0:
                 DLOG(@"错误信息");
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
             case 1:
                 DLOG(@"token无效");
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
                 break;
         }
         [self handleResponseError:self request:request needToken:YES];
-        [HUD showHUDTitle:res.msg durationTime:2];
 
         
     }];
@@ -406,6 +414,7 @@ typedef enum {
 }
 
 -(void)sendWalletRequest:(NSString *)walletNum{
+    WeakSelf
     NSString *token = [YUUUserData shareInstance].userModel.token;
     [self setBusyIndicatorVisible:YES];
     YUUUserSendWalletRequest *wallet = [[YUUUserSendWalletRequest alloc]initWithSendWallet:token Memberwallet:walletNum SuccessCallback:^(YUUBaseRequest *request) {
@@ -419,18 +428,20 @@ typedef enum {
         switch (res.code) {
             case 0:
                 DLOG(@"错误信息");
+                [HUD showHUDTitle:res.msg durationTime:2];
                 break;
             case 1:
                 DLOG(@"token无效");
                 break;
             case 3:
                 DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
                 break;
             default:
                 break;
         }
         [self handleResponseError:self request:request needToken:YES];
-        [HUD showHUDTitle:res.msg durationTime:2];
+//        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
     [wallet start];

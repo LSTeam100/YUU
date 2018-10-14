@@ -63,13 +63,14 @@
         return;
     }
     
-    if (self.passwordField.text != self.makeSureField.text) {
+    if ([self.passwordField.text isEqualToString: self.makeSureField.text] == false) {
         [HUD showHUDTitle:@"两次密码输入不一致" durationTime:2];
         return;
     }
     
     
     if (self.modifyType == loginType) {
+        WeakSelf
         [self setBusyIndicatorVisible:YES];
         NSString *token = [YUUUserData shareInstance].userModel.token;
         YUUModifyLoginRequest *modifyLogin = [[YUUModifyLoginRequest alloc]initWithModifyLogin:token Oldpsw:self.oldField.text Newpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
@@ -88,12 +89,15 @@
             switch (res.code) {
                 case 0:
                     DLOG(@"信息错误");
+                    [HUD showHUDTitle:res.msg durationTime:2];
                     break;
                 case 1:
                     DLOG(@"token无效");
                     break;
                 case 3:
                     DLOG(@"闭市");
+                    showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+
                     break;
                 default:
                     break;
@@ -104,6 +108,7 @@
         [modifyLogin start];
     }
     else{
+        WeakSelf
         NSString *token = [YUUUserData shareInstance].userModel.token;
         [self setBusyIndicatorVisible:YES];
         YUUModifyTransactionRequest *modifyTransaction = [[YUUModifyTransactionRequest alloc]initWithModifyTransaction:token Oldtraderpsw:self.oldField.text Newtraderpsw:self.passwordField.text SuccessCallback:^(YUUBaseRequest *request) {
@@ -116,18 +121,23 @@
             switch (res.code) {
                 case 0:
                     DLOG(@"信息错误");
+                    [HUD showHUDTitle:res.msg durationTime:2];
+
                     break;
                 case 1:
                     DLOG(@"token无效");
                     break;
                 case 3:
                     DLOG(@"闭市");
+                    showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+
                     break;
                 default:
+                    [HUD showHUDTitle:res.msg durationTime:2];
+
                     break;
             }
             [self handleResponseError:self request:request needToken:YES];
-            [HUD showHUDTitle:res.msg durationTime:2];
 
         }];
         

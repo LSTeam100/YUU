@@ -59,7 +59,11 @@
 //    [_doneItems addObject:model];
 //    [_doneItems addObject:model];
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self getHTTPData];
+
 }
 
 - (void)getHTTPData {
@@ -69,7 +73,7 @@
     YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
         weakSelf.arrModel = request.getResponse.data;
         for (YUUMachineDetailModel *model in weakSelf.arrModel.msgList) {
-            if (model.milldie == YUUMachineStatusWorking) {
+            if (model.milldie == YUUMachineStatusDefault) {
                 [weakSelf.workingItems addObject:model];
             } else {
                 [weakSelf.doneItems addObject:model];
@@ -77,19 +81,52 @@
         }
         [weakSelf updateUI];
     } failureCallback:^(YUUBaseRequest *request) {
-        if (request.getResponse.code == 4) {
-            [weakSelf.workingItems removeAllObjects];
-            [weakSelf.doneItems removeAllObjects];
-            [weakSelf updateUI];
+        
+        YUUResponse *res = [request getResponse];
+        _arrModel = nil;
+        switch (res.code) {
+            case 1:
+                DLOG(@"token无效");
+                break;
+            case 2:
+                DLOG(@"用户被锁定");
+                showCostomAlert(@"local_alert", weakSelf.view.frame);
+                break;
+            case 3:
+                DLOG(@"闭市");
+                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+                break;
+            case 4:
+                [weakSelf.workingItems removeAllObjects];
+                [weakSelf.doneItems removeAllObjects];
+                [weakSelf updateUI];
+                break;
+            default:
+                [HUD showHUDTitle:res.msg durationTime:2];
+                break;
         }
+        [self handleResponseError:self request:request needToken:YES];
+
+        
+//        if (request.getResponse.code == 4) {
+//
+//        }
     }];
     [request start];
 }
 
 - (void)updateUI {
-    _computePowerLabel.text = [NSString stringWithFormat:@"%ld",(long)_arrModel.memberpower];
-    _outputLabel.text = [NSString stringWithFormat:@"%0.2f",_arrModel.memberdaycoin];
-    [self.tableView reloadData];
+    if (_arrModel != nil) {
+        _computePowerLabel.text = [NSString stringWithFormat:@"%ld",(long)_arrModel.memberpower];
+        _outputLabel.text = [NSString stringWithFormat:@"%0.2f",_arrModel.memberdaycoin];
+
+    }
+    else{
+        _computePowerLabel.text = @"0";
+        _outputLabel.text = @"0";
+
+    }
+        [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource -

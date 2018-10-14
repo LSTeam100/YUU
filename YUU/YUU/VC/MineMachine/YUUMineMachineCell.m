@@ -34,10 +34,20 @@
     _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",[model.runtimeday integerValue], [model.totaldays integerValue]];
     _powerLabel.text = [NSString stringWithFormat:@"%ld", [model.compower integerValue]];
     _outputLabel.text = [NSString stringWithFormat:@"%.2f", [model.outputcoins doubleValue]];
+    
     if (model.getmill == YUUMachineReceiveNo) {
         _receiveLabel.text = @"未领取";
-    } else {
+    }
+    else if (model.getmill == YUUMachineReceiveDefault)
+    {
+        _receiveLabel.text = @"";
+    }
+    else if(model.getmill == YUUMachineReceived) {
         _receiveLabel.text = @"已领取";
+    }
+    else{
+        _receiveLabel.text = @"已领取";
+
     }
 }
 - (IBAction)receiveAction:(UITapGestureRecognizer *)sender {

@@ -43,7 +43,7 @@
         vc.tabBarItem.title = titles[i];
     }
     NSLog(@"%f,%f",self.tabBar.frame.size.width,self.tabBar.frame.size.height);
-    
+
     self.delegate = self;
 }
 -(void)viewDidAppear:(BOOL)animated{
