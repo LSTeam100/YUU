@@ -85,25 +85,25 @@
             
         } failureCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            YUUResponse *res = [request getResponse];
-            switch (res.code) {
-                case 0:
-                    DLOG(@"信息错误");
-                    [HUD showHUDTitle:res.msg durationTime:2];
-                    break;
-                case 1:
-                    DLOG(@"token无效");
-                    break;
-                case 3:
-                    DLOG(@"闭市");
-                    showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-
-                    break;
-                default:
-                    break;
-            }
-            [self handleResponseError:self request:request needToken:YES];
-            [HUD showHUDTitle:res.msg durationTime:2];
+//            YUUResponse *res = [request getResponse];
+//            switch (res.code) {
+//                case 0:
+//                    DLOG(@"信息错误");
+//                    [HUD showHUDTitle:res.msg durationTime:2];
+//                    break;
+//                case 1:
+//                    DLOG(@"token无效");
+//                    break;
+//                case 3:
+//                    DLOG(@"闭市");
+//                    showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//
+//                    break;
+//                default:
+//                    break;
+//            }
+            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+//            [HUD showHUDTitle:res.msg durationTime:2];
         }];
         [modifyLogin start];
     }
@@ -117,27 +117,27 @@
 
         } failureCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            YUUResponse *res = [request getResponse];
-            switch (res.code) {
-                case 0:
-                    DLOG(@"信息错误");
-                    [HUD showHUDTitle:res.msg durationTime:2];
-
-                    break;
-                case 1:
-                    DLOG(@"token无效");
-                    break;
-                case 3:
-                    DLOG(@"闭市");
-                    showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-
-                    break;
-                default:
-                    [HUD showHUDTitle:res.msg durationTime:2];
-
-                    break;
-            }
-            [self handleResponseError:self request:request needToken:YES];
+//            YUUResponse *res = [request getResponse];
+//            switch (res.code) {
+//                case 0:
+//                    DLOG(@"信息错误");
+//                    [HUD showHUDTitle:res.msg durationTime:2];
+//
+//                    break;
+//                case 1:
+//                    DLOG(@"token无效");
+//                    break;
+//                case 3:
+//                    DLOG(@"闭市");
+//                    showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//
+//                    break;
+//                default:
+//                    [HUD showHUDTitle:res.msg durationTime:2];
+//
+//                    break;
+//            }
+            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
 
         }];
         

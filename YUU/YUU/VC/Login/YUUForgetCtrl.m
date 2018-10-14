@@ -169,7 +169,7 @@
         [HUD showHUDTitle:@"两次密码输入不一致" durationTime:2];
         return;
     }
-    
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     if (self.forgetType == forgetLoginType) {
         YUUForgetRequest *forget = [[YUUForgetRequest alloc]initWithMobilePhone:self.phoneTextField.text Password:self.passwordField.text IDCode:[NSNumber numberWithInt:[self.codeTextField.text intValue]] SuccessCallback:^(YUUBaseRequest *request) {
@@ -180,27 +180,27 @@
             });
         } failureCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            YUUResponse *res = [request getResponse];
-            switch (res.code) {
-                case 0:
-                    [HUD showHUDTitle:res.msg durationTime:2];
-                    break;
-                case 1:
-                    [HUD showHUDTitle:@"token无效" durationTime:2];
-                    break;
-                case 2:
-                    [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
-                    break;
-                default:
-                    break;
-            }
-            [self handleResponseError:self request:request needToken:YES];
+//            YUUResponse *res = [request getResponse];
+//            switch (res.code) {
+//                case 0:
+//                    [HUD showHUDTitle:res.msg durationTime:2];
+//                    break;
+//                case 1:
+//                    [HUD showHUDTitle:@"token无效" durationTime:2];
+//                    break;
+//                case 2:
+//                    [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
+//                    break;
+//                default:
+//                    break;
+//            }
+            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
         }];
         
         [forget start];
     }
     else{
-        
+        WeakSelf
         YUUForgetTransactionRequest *req = [[YUUForgetTransactionRequest alloc]initWithForgetTransaction:[YUUUserData shareInstance].token Memberphone:self.phoneTextField.text Newtraderpsw:self.passwordField.text VerfiCode:self.codeTextField.text SuccessCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
             [HUD showHUDTitle:@"交易密码重置成功" durationTime:2];
@@ -210,21 +210,21 @@
 
         } failureCallback:^(YUUBaseRequest *request) {
             [self setBusyIndicatorVisible:NO];
-            YUUResponse *res = [request getResponse];
-            switch (res.code) {
-                case 0:
-                    [HUD showHUDTitle:res.msg durationTime:2];
-                    break;
-                case 1:
-                    [HUD showHUDTitle:@"token无效" durationTime:2];
-                    break;
-                case 2:
-                    [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
-                    break;
-                default:
-                    break;
-            }
-            [self handleResponseError:self request:request needToken:YES];
+//            YUUResponse *res = [request getResponse];
+//            switch (res.code) {
+//                case 0:
+//                    [HUD showHUDTitle:res.msg durationTime:2];
+//                    break;
+//                case 1:
+//                    [HUD showHUDTitle:@"token无效" durationTime:2];
+//                    break;
+//                case 2:
+//                    [HUD showHUDTitle:@"锁定发送短信按钮" durationTime:2];
+//                    break;
+//                default:
+//                    break;
+//            }
+            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
 
         }];
         [req start];
@@ -259,23 +259,23 @@
         if (countDownTimer == nil) {
             countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
         }
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                DLOG(@"错误信息");
-                [HUD showHUDTitle:res.msg durationTime:2];
-
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-
-                break;
-            default:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-        }
-        
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                DLOG(@"错误信息");
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//
+//                break;
+//            default:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [sendMsg start];
 

@@ -203,18 +203,19 @@
         });
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                DLOG(@"提示用户错误信息");
-                break;
-            case 1:
-                DLOG(@"锁定发送短信按钮");
-                break;
-            default:
-                break;
-        }
-        [HUD showHUDTitle:res.msg durationTime:2];
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                DLOG(@"提示用户错误信息");
+//                break;
+//            case 1:
+//                DLOG(@"锁定发送短信按钮");
+//                break;
+//            default:
+//                break;
+//        }
+//        [HUD showHUDTitle:res.msg durationTime:2];
+        [weakSelf handleResponseError:weakSelf request:request needToken:false];
     }];
     [req start];
     
@@ -244,23 +245,23 @@
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                DLOG(@"错误信息");
-                [HUD showHUDTitle:res.msg durationTime:2];
-
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-
-                break;
-            default:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-        }
-        
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                DLOG(@"错误信息");
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//
+//                break;
+//            default:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:false];
     }];
     [sendMsg start];
     
@@ -295,25 +296,26 @@
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                DLOG(@"用户锁定");
-                showCostomAlert(@"local_alert", weakSelf.view.frame);
-                break;
-            case 1:
-                DLOG(@"需要提示用户错误信息");
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-                break;
-            default:
-                [HUD showHUDTitle:res.msg durationTime:2];
-
-                break;
-        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:false];
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                DLOG(@"用户锁定");
+//                showCostomAlert(@"local_alert", weakSelf.view.frame);
+//                break;
+//            case 1:
+//                DLOG(@"需要提示用户错误信息");
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//                break;
+//            default:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//
+//                break;
+//        }
     }];
     [req start];
     

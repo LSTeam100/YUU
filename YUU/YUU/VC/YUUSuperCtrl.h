@@ -17,9 +17,9 @@
 -(void)unregisterKeyboardNotification;
 -(void)handleTap:(UIGestureRecognizer *)gesture;
 
--(BOOL)handleResponseError:(YUUSuperCtrl *)currentController
-                   request:(YUUBaseRequest *)request
-                 needToken:(BOOL) token;
+//-(BOOL)handleResponseError:(YUUSuperCtrl *)currentController
+//                   request:(YUUBaseRequest *)request
+//                 needToken:(BOOL) token;
 -(void)setBusyIndicatorVisible:(BOOL)visible;
 @property(nonatomic,strong)UIView *activeView;
 

@@ -62,6 +62,7 @@ typedef enum {
     // Do any additional setup after loading the view.
 }
 -(void)billCenterRequest{
+    WeakSelf
     [self setBusyIndicatorVisible:YES];
     NSString *token =[YUUUserData shareInstance].userModel.token;
     YUUBillCenterRequest *bill = [[YUUBillCenterRequest alloc]initWithBillCenter:token SuccessCallback:^(YUUBaseRequest *request) {
@@ -71,8 +72,9 @@ typedef enum {
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        [HUD showHUDTitle:res.msg durationTime:2];
+        [weakSelf handleResponseError:weakSelf request:request needToken:false];
+//        YUUResponse *res = [request getResponse];
+//        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
     [bill start];

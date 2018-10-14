@@ -111,24 +111,24 @@
 
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 1:
-                DLOG(@"token无效");
-                break;
-            case 2:
-                DLOG(@"用户被锁定");
-                showCostomAlert(@"local_alert", weakSelf.view.frame);
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-                break;
-            default:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-        }
-        [self handleResponseError:self request:request needToken:YES];
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 1:
+//                DLOG(@"token无效");
+//                break;
+//            case 2:
+//                DLOG(@"用户被锁定");
+//                showCostomAlert(@"local_alert", weakSelf.view.frame);
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//                break;
+//            default:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
 
     }];
     
