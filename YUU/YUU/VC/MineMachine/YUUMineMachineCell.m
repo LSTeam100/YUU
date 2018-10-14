@@ -30,7 +30,7 @@
     _statusView.layer.masksToBounds = YES;
     _statusView.layer.cornerRadius = _statusView.frame.size.width/2;
     _numberLabel.text = model.millsize;
-    _typeLabel.text = _model.milltypeName;
+    _typeLabel.text = [_model.milltype stringByReplacingOccurrencesOfString:@"矿机" withString:@""];
     _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",[model.runtimeday integerValue], [model.totaldays integerValue]];
     _powerLabel.text = [NSString stringWithFormat:@"%ld", [model.compower integerValue]];
     _outputLabel.text = [NSString stringWithFormat:@"%.2f", [model.outputcoins doubleValue]];
