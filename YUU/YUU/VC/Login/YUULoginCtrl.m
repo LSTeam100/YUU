@@ -149,23 +149,26 @@
 //        return;
 //    }
     
-    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
     WeakSelf
     [self setBusyIndicatorVisible:YES];
     YUULoginRequest *req = [[YUULoginRequest alloc]initWithMobilePhone:account.text Password:passworad.text SuccessCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         YUUCommonModel *login = [request getResponse].data;
         [[YUUUserData shareInstance] saveUserData:login];
-        [self dismissViewControllerAnimated:YES completion:^{
-            DLOG(@"关闭登录页面");
-            if ([root isKindOfClass:[YUUTabBarController class]]) {
-                YUUTabBarController *tabbar = (YUUTabBarController *)root;
-                [tabbar setSelectedIndex:4];
-                
-            }
-
-        }];
+//        [self dismissViewControllerAnimated:YES completion:^{
+//            DLOG(@"关闭登录页面");
+//            if ([root isKindOfClass:[YUUTabBarController class]]) {
+//                YUUTabBarController *tabbar = (YUUTabBarController *)root;
+//                [tabbar setSelectedIndex:4];
+//                
+//            }
+//
+//        }];
         
+        [account resignFirstResponder];
+        [passworad resignFirstResponder];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"showTabBar" object:nil];
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         [weakSelf handleResponseError:self request:request needToken:false];

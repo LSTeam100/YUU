@@ -10,4 +10,6 @@
 
 @interface YUUTabBarController : UITabBarController
 
++ (instancetype)storyboardInstanceType;
+
 @end

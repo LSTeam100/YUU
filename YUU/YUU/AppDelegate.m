@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "YUUTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showTabBar) name:@"showTabBar" object:nil];
+    
     return YES;
+}
+
+- (void)showTabBar {
+    YUUTabBarController *vc = [YUUTabBarController storyboardInstanceType];
+    [[UIApplication sharedApplication] keyWindow].rootViewController = vc;
 }
 
 

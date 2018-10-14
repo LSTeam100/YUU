@@ -18,6 +18,11 @@
 
 @implementation YUUTabBarController
 
++ (instancetype)storyboardInstanceType {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YUUTabBar" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([self class])];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
