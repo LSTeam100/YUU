@@ -156,19 +156,18 @@
                 if (textField.text.length != 0) {
                     [HUD showHUD];
                     WeakSelf
-                    YUUSellerTransactionRequest *request = [[YUUSellerTransactionRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token
-                                                                                                              Tradingcard:_model.tradingcard password:textField.text
-                                                                                                          SuccessCallback:^(YUUBaseRequest *request) {
+                    YUUSellerTransactionRequest *request = [[YUUSellerTransactionRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
 //                                                                                                              [HUD showRequest:request];
-                                                                                                              [HUD showHUDTitle:@"确认成功" durationTime:2];
-                                                                                                              if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                                                                                                                  [weakSelf.delegate cellStatusChanged];
-                                                                                                              }
-                                                                                                          } failureCallback:^(YUUBaseRequest *request) {
+                          [HUD showHUDTitle:@"确认成功" durationTime:2];
+                        [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
+//                          if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+//                              [weakSelf.delegate cellStatusChanged];
+//                          }
+                      } failureCallback:^(YUUBaseRequest *request) {
 //                                                                                              [HUD showRequest:request];
-                                                                                                              [HUD hide];
-                                                                                                              [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
-                                                                                                          }];
+                          [HUD hide];
+                          [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
+                      }];
                     [request start];
                 }
             } cancelHandler:^{
@@ -185,9 +184,10 @@
              YUUPointSellCancelRequest *request = [[YUUPointSellCancelRequest alloc] initWithPointSellCancel:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
 //                 [HUD showRequest:request];
                  [HUD showHUDTitle:@"取消成功" durationTime:2];
-                 if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-                     [weakSelf.delegate cellStatusChanged];
-                 }
+//                 if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+//                     [weakSelf.delegate cellStatusChanged];
+//                 }
+                 [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
              } failureCallback:^(YUUBaseRequest *request) {
 //
                  [HUD hide];
@@ -198,6 +198,12 @@
              
          }];
         
+    }
+}
+
+- (void)delay {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cellStatusChanged)]) {
+        [self.delegate cellStatusChanged];
     }
 }
 

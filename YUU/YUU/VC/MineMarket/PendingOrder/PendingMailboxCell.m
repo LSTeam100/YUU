@@ -106,11 +106,12 @@
                     [HUD showHUD];
                     WeakSelf
                     YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-                        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
-                            [weakSelf.delegate mailCellStatusChanged];
-                        }
+//                        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+//                            [weakSelf.delegate mailCellStatusChanged];
+//                        }
 //                        [HUD showRequest:request];
                         [HUD showHUDTitle:@"确认成功" durationTime:2];
+                        [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
                     } failureCallback:^(YUUBaseRequest *request) {
                         [HUD hide];
 //                        [HUD showRequest:request];
@@ -128,11 +129,12 @@
                     [HUD showHUD];
                     WeakSelf
                 YUUPendingSellenterRequest *request = [[YUUPendingSellenterRequest alloc] initWithTradingcard:_model.tradingcard password:textField.text success:^(YUUBaseRequest *request) {
-                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
-                        [weakSelf.delegate mailCellStatusChanged];
-                    }
+//                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+//                        [weakSelf.delegate mailCellStatusChanged];
+//                    }
 //                    [HUD showRequest:request];
                     [HUD showHUDTitle:@"确认成功" durationTime:2];
+                    [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
                 } failure:^(YUUBaseRequest *request) {
 //                    [HUD showRequest:request];
                     [HUD hide];
@@ -155,6 +157,12 @@
         hudView.model = _model;
         hudView.delegate = self;
         [HUD showCustomView:hudView];
+    }
+}
+
+- (void)delay {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
+        [self.delegate mailCellStatusChanged];
     }
 }
 
