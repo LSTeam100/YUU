@@ -168,26 +168,26 @@
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                DLOG(@"用户锁定");
-                showCostomAlert(@"local_alert", weakSelf.view.frame);
-                break;
-            case 1:
-                DLOG(@"需要提示用户错误信息");
-                [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-                break;
-            default:
-                [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
-                break;
-        }
-
-//        [self handleResponseError:self request:request treatErrorAsUnknown:YES];
+        [weakSelf handleResponseError:self request:request needToken:false];
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                DLOG(@"用户锁定");
+//                showCostomAlert(@"local_alert", weakSelf.view.frame);
+//                break;
+//            case 1:
+//                DLOG(@"需要提示用户错误信息");
+//                [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//                break;
+//            default:
+//                [[HUDManager manager] showHUDTitle:res.msg durationTitme:2];
+//                break;
+//        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:false];
     }];
     [req start];
     

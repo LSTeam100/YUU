@@ -157,20 +157,21 @@
         if (countDownTimer == nil) {
             countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
         }
-       YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                DLOG(@"错误信息");
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-                break;
-            default:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-        }
+//       YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                DLOG(@"错误信息");
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//                break;
+//            default:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:false];
 //        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];
@@ -240,25 +241,25 @@
         
         
     } failureCallback:^(YUUBaseRequest *request) {
-        [self setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-            case 1:
-                DLOG(@"无效token");
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-                break;
-            default:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-        }
-        [self handleResponseError:self request:request needToken:YES];
+        [weakSelf setBusyIndicatorVisible:NO];
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//            case 1:
+//                DLOG(@"无效token");
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//                break;
+//            default:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
 //        [HUD showHUDTitle:res.msg durationTime:2];
 
     }];

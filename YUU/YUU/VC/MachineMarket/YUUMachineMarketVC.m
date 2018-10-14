@@ -58,26 +58,27 @@
         [weakSelf.tableview.mj_header endRefreshing];
     } failureCallback:^(YUUBaseRequest *request) {
         [HUD hide];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 1:
-                DLOG(@"token无效");
-                break;
-            case 2:
-                DLOG(@"用户被锁定");
-                showCostomAlert(@"local_alert", weakSelf.view.frame);
-                break;
-            case 3:
-                DLOG(@"闭市");
-                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
-                break;
-            default:
-                [HUD showHUDTitle:res.msg durationTime:2];
-                break;
-        }
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 1:
+//                DLOG(@"token无效");
+//                break;
+//            case 2:
+//                DLOG(@"用户被锁定");
+//                showCostomAlert(@"local_alert", weakSelf.view.frame);
+//                break;
+//            case 3:
+//                DLOG(@"闭市");
+//                showCostomAlert(@"closeMarket_alert", weakSelf.view.frame);
+//                break;
+//            default:
+//                [HUD showHUDTitle:res.msg durationTime:2];
+//                break;
+//        }
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+
         [weakSelf.tableview.mj_header endRefreshing];
 
-        [self handleResponseError:self request:request needToken:YES];
     }];
     [request start];
 }

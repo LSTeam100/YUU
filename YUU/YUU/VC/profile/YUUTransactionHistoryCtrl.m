@@ -47,18 +47,18 @@
 
     } failureCallback:^(YUUBaseRequest *request) {
         [weakSelf setBusyIndicatorVisible:NO];
-        YUUResponse *res = [request getResponse];
-        switch (res.code) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                break;
-        }
-        [HUD showHUDTitle:res.msg durationTime:2];
+//        YUUResponse *res = [request getResponse];
+//        switch (res.code) {
+//            case 0:
+//                break;
+//            case 1:
+//                break;
+//            case 2:
+//                break;
+//            default:
+//                break;
+//        }
+//        [HUD showHUDTitle:res.msg durationTime:2];
         [weakSelf handleResponseError:weakSelf request:request needToken:YES];
     }];
     [history start];
