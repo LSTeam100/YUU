@@ -11,6 +11,7 @@
 #import "UINavigationController+help.h"
 #import "YUUColor.h"
 #import "YUULoginCtrl.h"
+#import "YUUAlertView.h"
 @interface YUUBaseViewController ()
 
 @end
@@ -111,6 +112,7 @@
                  needToken:(BOOL) token{
     YUUResponse *res = [request getResponse];
     int statusCode=[request getResponse].code;
+//    CGRect frame = CGRectMake(20,self.view.frame.size.height - 88 - 95,self.view.frame.size.width - 40, 95);
     if (token == true) {
         switch (statusCode) {
             case 1:
@@ -118,8 +120,7 @@
 //                [HUD showHUDTitle:@"token无效" durationTime:2];
                 break;
             case 2:
-                showCostomAlert(@"local_alert", currentController.view.frame);
-
+                [self alertView:@"local_alert"];
             case 3:
                 [self naviTologin:statusCode];
                 break;
@@ -130,12 +131,13 @@
         
     }
     else{
+        
         switch (statusCode) {
             case 1:
                 [self naviTologin:statusCode];
                 break;
             case 2:
-                showCostomAlert(@"local_alert", self.view.frame);
+                [self alertView:@"local_alert"];
             case 3:
                 [self naviTologin:statusCode];
                 break;
@@ -145,6 +147,16 @@
         }
     }
     return NO;
+}
+
+-(void)alertView:(NSString *)imageName {
+    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"YUUAlertView" owner:nil options:nil];
+    YUUAlertView *cView = [nibContents lastObject];
+    cView.frame = self.view.frame;
+     [self.view addSubview:cView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [cView removeFromSuperview];
+    });
 }
 //-(void)str:(NSString *)imageName test:(CGRect)frame{
 //UIImage *img = [UIImage imageNamed:imageName];
@@ -165,7 +177,8 @@
             DLOG(@"已经是登录页面无需弹出登录");
             switch (statusCode) {
                 case 3:
-                    showCostomAlert(@"closeMarket_alert", self.view.frame);
+                    [self alertView:@"closeMarket_alert"];
+
                     break;
                 default:
                     break;
@@ -178,7 +191,7 @@
     [self presentViewController:navi animated:YES completion:^{
         switch (statusCode) {
             case 3:
-                showCostomAlert(@"closeMarket_alert", self.view.frame);
+                [self alertView:@"closeMarket_alert"];
                 break;
             default:
                 break;
