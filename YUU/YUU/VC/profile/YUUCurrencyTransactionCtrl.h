@@ -15,5 +15,5 @@
 @end
 
 @interface YUUCurrencyTransactionCtrl : YUUSuperCtrl
-@property(nonatomic,strong)NSString *avalibleMoney;
+@property(nonatomic,strong)NSNumber *avalibleMoney;
 @end

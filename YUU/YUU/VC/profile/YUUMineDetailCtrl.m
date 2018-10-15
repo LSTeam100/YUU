@@ -164,7 +164,7 @@ typedef enum {
             cell.authenBtn.hidden = NO;
             cell.moreImageView.hidden = YES;
             cell.titleLabel.text = @"银行卡认证";
-            cell.detailLabel.text = self.DetailModel.bankcard;
+            cell.detailLabel.text = self.DetailModel.bankname;
             cell.detailConstant.constant = 18;
             break;
             case 3:

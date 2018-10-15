@@ -41,6 +41,9 @@
 @property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
 @property(nonatomic,weak)IBOutlet UILabel *avaliableLabel;
 @property(nonatomic,weak)IBOutlet UILabel *alertLabel;
+@property(nonatomic,weak)IBOutlet UIView *addressView;
+@property(nonatomic,weak)IBOutlet NSLayoutConstraint *topConstant;
+@property(nonatomic,weak)IBOutlet UIView *moneyView;
 @end
 
 @implementation YUUCurrencyTransactionCtrl
@@ -52,8 +55,11 @@
     [self initSegmentBar];
     [self setCustomBackItem];
     
-    float money = [self.avalibleMoney floatValue];
-    self.avaliableLabel.text = [NSString stringWithFormat:@"%.6f",money];
+//    float money = [self.avalibleMoney floatValue];
+    self.avaliableLabel.text = regYUUCoin(self.avalibleMoney, 6);
+    
+    
+    
     self.avaliableLabel.textColor = colorWithHexString(@"ED6621", 1);
     UIBarButtonItem *histroyItem = [[UIBarButtonItem alloc]initWithTitle:@"历史记录" style:UIBarButtonItemStylePlain target:self action:@selector(naviToHistoryController)];
     
@@ -95,11 +101,20 @@
     if (clickBtn.tag == 0) {
         [self.leftSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_left_selected"] forState:UIControlStateNormal];
         [self.rightSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
+        self.addressView.hidden = false;
+        self.sellBtn.hidden = false;
+        self.moneyView.hidden = false;
+        self.topConstant.constant = 56;
         self.alertLabel.text = @"警告：此功能是将YUU转换成外坞平台代币，兑换比例锚定为1:1兑换，不能内部转账，否则会导致YUU丢失无法找回，平台地址一定要填写正确，否者导致兑换错误由用户自己承担。兑换地址为交易所IDAX交易所钱包地址。";
     }
     else{
         [self.leftSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
         [self.rightSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_right_selected"] forState:UIControlStateNormal];
+        self.addressView.hidden = true;
+        self.sellBtn.hidden = true;
+        self.moneyView.hidden = true;
+        self.topConstant.constant = -150;
+
         self.alertLabel.text = @"尊贵的朋友，您好，我们的转入功能正在开发中，如需交易所兑换YUU，请加官方客服1微信号或官方客服1QQ号进行兑换（官方客服1微信号：LWP20020701或官方客服1QQ号：2878748834）";
 
     }
@@ -108,12 +123,12 @@
 -(IBAction)sell:(id)sender{
     
     
-    if (self.coinsiteField.text > 0) {
+    if (self.coinsiteField.text.length == 0) {
         [HUD showHUDTitle:@"地址不能为空" durationTime:2];
         return;
     }
 
-    if (self.coinnumField.text > 0) {
+    if (self.coinnumField.text.length == 0) {
         [HUD showHUDTitle:@"交易金额不能为空" durationTime:2];
         return;
     }

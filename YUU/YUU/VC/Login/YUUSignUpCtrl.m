@@ -156,16 +156,16 @@
         return;
     }
     
-    if (self.imgField.text == 0) {
+    if (self.imgField.text.length == 0) {
         [HUD showHUDTitle:@"图片验证码不能为空" durationTime:2];
         return;
     }
     
-    if (self.passwordField.text == 0) {
+    if (self.passwordField.text.length == 0) {
         [HUD showHUDTitle:@"密码不能为空" durationTime:2];
         return;
     }
-    if (self.recommedField.text == 0) {
+    if (self.recommedField.text.length == 0) {
         [HUD showHUDTitle:@"推荐人手机号不能为空" durationTime:2];
         return;
     }

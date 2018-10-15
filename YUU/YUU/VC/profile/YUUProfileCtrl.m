@@ -54,16 +54,23 @@
     self.profileIdLabel.text = [NSString stringWithFormat:@"ID:%@",self.userModel.memberid];
     self.profileGradeLabel.text = [NSString stringWithFormat:@"等级:%@",self.userModel.membergrade];
     
-    float propertynum = [self.userModel.propertynum floatValue];
-    float forzen = [self.userModel.frozenyuu floatValue];
-    float lock = [self.userModel.lockedyuu floatValue];
+//    float propertynum = [self.userModel.propertynum floatValue];
+//    float forzen = [self.userModel.frozenyuu floatValue];
+//    float lock = [self.userModel.lockedyuu floatValue];
     
-    self.assetLabel.text = [NSString stringWithFormat:@"%.4f",propertynum];
+//    self.assetLabel.text = [NSString stringWithFormat:@"%.6f",propertynum];
     
-    float canuse = [self.userModel.canuseyuu floatValue];
-    self.availbleLabel.text = [NSString stringWithFormat:@"可用YUU:%.4f ",canuse];
-    self.freezeLabel.text = [NSString stringWithFormat:@"冻结YUU:%.2f",forzen];
-    self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%.2f",lock];
+    self.assetLabel.text = self.userModel.propertynum.description;
+    
+    
+//    float canuse = [self.userModel.canuseyuu floatValue];
+    NSString *canuseStr = regYUUCoin(self.userModel.canuseyuu, 3);
+    self.availbleLabel.text = [NSString stringWithFormat:@"可用YUU:%@",canuseStr];
+    
+    
+    
+    self.freezeLabel.text = [NSString stringWithFormat:@"冻结YUU:%@",regYUUCoin(self.userModel.frozenyuu, 3)];
+    self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%@",self.userModel.lockedyuu];
     self.profileIdLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.profileGradeLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.assetLabel.textColor = colorWithHexString(@"ED6621", 1);
@@ -149,7 +156,7 @@
 -(IBAction)naviToCoin:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
      YUUCurrencyTransactionCtrl *currency = [sb instantiateViewControllerWithIdentifier:@"YUUCurrencyTransactionCtrl"];
-    currency.avalibleMoney = [NSString stringWithFormat:@"%@",self.userModel.canuseyuu];
+    currency.avalibleMoney = self.userModel.canuseyuu;
     [self.navigationController pushViewController: currency animated:YES];
 }
 -(IBAction)naviToBussniess:(id)sender{

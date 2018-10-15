@@ -113,7 +113,8 @@
 - (void)updateUI {
     if (_arrModel != nil) {
         _computePowerLabel.text = [NSString stringWithFormat:@"%ld",(long)_arrModel.memberpower];
-        _outputLabel.text = [NSString stringWithFormat:@"%0.2f",_arrModel.memberdaycoin];
+//        _outputLabel.text = [NSString stringWithFormat:@"%0.2f",_arrModel.memberdaycoin];
+        _outputLabel.text = regYUUCoin([NSNumber numberWithDouble:_arrModel.memberdaycoin], 3);
 
     }
     else{

@@ -184,6 +184,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressView" destination="j7g-u5-Cvc" id="hMe-N3-ofr"/>
                         <outlet property="alertLabel" destination="35K-yG-rGr" id="zzh-ne-pbc"/>
                         <outlet property="avaliableLabel" destination="u49-Fe-R1k" id="36V-3D-zCz"/>
                         <outlet property="coinnumField" destination="2Uw-eZ-KqF" id="CVq-51-A9L"/>
@@ -192,8 +193,10 @@
                         <outlet property="coinsiteLabel" destination="FKT-KH-pmA" id="e5z-W7-gYs"/>
                         <outlet property="cstTopMargin" destination="kkZ-bR-y9R" id="ozq-3o-gw7"/>
                         <outlet property="leftSelectBtn" destination="giC-l2-0in" id="zdr-f9-mHy"/>
+                        <outlet property="moneyView" destination="j9R-8Z-SJX" id="4jF-p3-5N6"/>
                         <outlet property="rightSelectBtn" destination="Uju-nK-xB0" id="yVS-Pk-7LF"/>
                         <outlet property="sellBtn" destination="vo8-E6-EGN" id="gp2-Qr-YO9"/>
+                        <outlet property="topConstant" destination="RGH-du-Btg" id="ETc-gf-j8c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWx-UP-82v" userLabel="First Responder" sceneMemberID="firstResponder"/>
