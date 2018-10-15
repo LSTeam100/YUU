@@ -20,6 +20,8 @@
 
 @property (nonatomic, weak) id <PendingBuyerCellDelegate> delegate;
 
+@property (nonatomic, assign) UserLevel level;
+
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;

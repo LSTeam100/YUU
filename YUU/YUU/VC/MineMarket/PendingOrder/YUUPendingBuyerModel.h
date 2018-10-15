@@ -18,6 +18,6 @@
 
 @property (nonatomic, assign) NSInteger coinnum; // 币数（Int）
 
-@property (nonatomic, assign) NSInteger buyprice; // 买价（Double）
+@property (nonatomic, assign) double buyprice; // 买价（Double）
 
 @end

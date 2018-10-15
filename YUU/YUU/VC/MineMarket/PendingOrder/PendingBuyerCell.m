@@ -32,12 +32,27 @@
     
     _middleBtn.layer.masksToBounds = YES;
     _middleBtn.layer.cornerRadius = _middleBtn.frame.size.height/2;
-    _middleBtn.layer.borderColor = [[UIColor hex:@"ff2a00"] CGColor];
     _middleBtn.layer.borderWidth = 1;
+    
+    
+    if (model.memberid == [[YUUUserData shareInstance].userModel.memberid integerValue]) {
+        _middleBtn.layer.borderColor = [[UIColor hex:@"a8a296"] CGColor];
+        [_middleBtn setTitleColor:[UIColor hex:@"a8a296"] forState:UIControlStateNormal];
+        _middleBtn.userInteractionEnabled = NO;
+    } else {
+        _middleBtn.layer.borderColor = [[UIColor hex:@"ff2a00"] CGColor];
+        [_middleBtn setTitleColor:[UIColor hex:@"ff2a00"] forState:UIControlStateNormal];
+        _middleBtn.userInteractionEnabled = YES;
+    }
     
     _numberLabel.text = [NSString stringWithFormat:@"单号：%@",model.tradingcard];
     _timeLabel.text = model.tradingtime;
-    _contentLabel.text = [NSString stringWithFormat:@"ID:%ld挂买%ldYUU,单价%ld元，总计%ld元",(long)model.memberid,(long)model.coinnum,(long)model.buyprice,(model.coinnum*model.buyprice)];
+    if (_level == UserLevelInternational) {
+        _contentLabel.text = [NSString stringWithFormat:@"ID:%ld挂买%ldYUU,单价%@ETH，总计%@ETH",(long)model.memberid,(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:model.buyprice], 4),regYUUCoin([NSNumber numberWithDouble:(model.coinnum*model.buyprice)], 4)];
+    } else {
+        _contentLabel.text = [NSString stringWithFormat:@"ID:%ld挂买%ldYUU,单价%@元，总计%@元",(long)model.memberid,(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:model.buyprice], 2),regYUUCoin([NSNumber numberWithDouble:(model.coinnum*model.buyprice)], 2)];
+    }
+    
 }
 
 
@@ -49,11 +64,10 @@
         WeakSelf
         [HUD showHUD];
         YUUSellerSellitRequest *request = [[YUUSellerSellitRequest alloc] initWithSellerSellit:[YUUUserData shareInstance].userModel.token Tradingcard:_model.tradingcard password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
-            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(buyerCellStatusChanged)]) {
-                [weakSelf.delegate buyerCellStatusChanged];
-            }
+            
 //            [HUD showRequest:request];
             [HUD showHUDTitle:@"操作成功" durationTime:2];
+            [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
         } failureCallback:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
             [HUD hide];
@@ -66,6 +80,11 @@
     
 }
 
+- (void)delay {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(buyerCellStatusChanged)]) {
+        [self.delegate buyerCellStatusChanged];
+    }
+}
 
 
 @end

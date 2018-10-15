@@ -19,6 +19,8 @@
 
 @interface PendingMailboxCell : YUUBaseTableViewCell <HUDProtocol>
 
+@property (nonatomic, assign) UserLevel level;
+
 @property (nonatomic, weak) id <PendingMailboxCellDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;

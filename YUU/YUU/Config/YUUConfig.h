@@ -188,7 +188,8 @@ NS_INLINE NSString *regYUUCoin(NSNumber *coin ,int saveNum){
             nCoin = coinStr;
         }
     }
-       return  nCoin;
+        NSNumber *mum = [NSNumber numberWithDouble:[nCoin doubleValue]];
+    return [NSString stringWithFormat:@"%@",@(mum.floatValue)];
 }
 
 
