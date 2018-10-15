@@ -39,6 +39,10 @@
     
     if (model.getmill == YUUMachineReceiveNo) {
         _receiveLabel.text = @"未领取";
+        _receiveLabel.layer.masksToBounds = YES;
+        _receiveLabel.layer.cornerRadius = 8;
+        _receiveLabel.layer.borderColor = [[UIColor redColor] CGColor];
+        _receiveLabel.layer.borderWidth = 1;
     }
     else if (model.getmill == YUUMachineReceiveDefault)
     {
@@ -46,6 +50,7 @@
     }
     else if(model.getmill == YUUMachineReceived) {
         _receiveLabel.text = @"已领取";
+        _receiveLabel.layer.masksToBounds = NO;
     }
     else{
         _receiveLabel.text = @"已领取";

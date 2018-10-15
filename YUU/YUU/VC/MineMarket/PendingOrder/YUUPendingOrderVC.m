@@ -88,7 +88,7 @@
     [_countTextField addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
     
     
-    
+    self.currentPrice = [_model.sevenprice doubleValue];
     if (_level == UserLevelNovice) {
         _upLabel.text = @"认证用户可进行1-50YUU议价交易!";
         _countTextField.text = @"1";
@@ -129,7 +129,7 @@
         _internetCurrentPriceLabel.hidden = NO;
     }
     
-    self.currentPrice = [_model.sevenprice doubleValue];
+    
     _slider.maximumValue = _sliderEnd;
     _slider.minimumValue = _sliderBegin;
     _slider.continuous = YES;//默认YES  如果设置为NO，则每次滑块停止移动后才触发事件
@@ -262,14 +262,25 @@
 }
 
 - (void)setCurrentPrice:(double)currentPrice {
-    if (currentPrice < 0) {
-        return;
+    if (_level == UserLevelInternational) {
+        if (currentPrice < 0.0001) {
+            return;
+        }
+    } else {
+        if (currentPrice < 0) {
+            return;
+        }
     }
+    
     _currentPrice = currentPrice;
     if (_level == UserLevelInternational) {
+        if (currentPrice < 0.0001) {
+            currentPrice = 0.0001;
+        }
         _myPrice.text = [NSString stringWithFormat:@"%0.4f",_currentPrice];
-        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4ldETH",_countTextField.text, _myPrice.text, [_countTextField.text integerValue] * [_myPrice.text integerValue]];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
     } else {
+
         _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
         _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
     }
@@ -317,7 +328,7 @@
 
 - (IBAction)valueChanged:(UITextField *)sender {
     if (_level == UserLevelInternational) {
-        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4ldETH",_countTextField.text, _myPrice.text, [_countTextField.text integerValue] * [_myPrice.text integerValue]];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
     } else {
         _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
     }
