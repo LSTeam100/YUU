@@ -39,7 +39,7 @@
     
     //    _priceView.partLine = 3;
     
-    _priceView.maxLeft = 100;
+    _priceView.maxLeft = 14;
     _priceView.numbers = _priceArr;
     
     [_priceView mas_makeConstraints:^(MASConstraintMaker *make) {
