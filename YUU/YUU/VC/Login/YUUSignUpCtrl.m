@@ -45,6 +45,7 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");
     }];
+    
     self.passwordField.secureTextEntry = true;
     self.recommedField.keyboardType = UIKeyboardTypeNumberPad;
     if (countDownTimer) {
@@ -63,7 +64,9 @@
     self.imgField.keyboardType = UIKeyboardTypeNumberPad;
     NSString *code = getLocalVerifyCodeWithBit(4);
     self.localVerCodeLabel.text = code;
-    
+    UIColor *color = [UIColor whiteColor];
+    _recommedField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_recommedField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+
     
 //    self.phoneField.text = @"15630008679";
 //    self.recommedField.text = @"1";
