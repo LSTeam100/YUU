@@ -108,12 +108,12 @@
 -(IBAction)sell:(id)sender{
     
     
-    if (self.coinsiteField.text > 0) {
+    if (self.coinsiteField.text.length == 0) {
         [HUD showHUDTitle:@"地址不能为空" durationTime:2];
         return;
     }
 
-    if (self.coinnumField.text > 0) {
+    if (self.coinnumField.text.length == 0) {
         [HUD showHUDTitle:@"交易金额不能为空" durationTime:2];
         return;
     }
