@@ -59,8 +59,7 @@
 //    float lock = [self.userModel.lockedyuu floatValue];
     
 //    self.assetLabel.text = [NSString stringWithFormat:@"%.6f",propertynum];
-    
-    self.assetLabel.text = self.userModel.propertynum.description;
+    self.assetLabel.text = regYUUCoin(self.userModel.propertynum, 6);
     
     
 //    float canuse = [self.userModel.canuseyuu floatValue];

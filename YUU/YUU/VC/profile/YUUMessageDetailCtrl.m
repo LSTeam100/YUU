@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"公告标题";
+    self.title = self.msgModel.newsname;
     self.contentLabel.text = self.msgModel.newstext;
     // Do any additional setup after loading the view.
 }
