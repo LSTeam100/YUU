@@ -86,7 +86,10 @@
     _countTextField.layer.borderWidth = 1;
     _countTextField.backgroundColor = [UIColor hex:@"#e4c177" alpha:0.3];
     [_countTextField addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
+    [_myPriceTextField addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventEditingChanged];
     
+    _myPriceTextField.delegate = self;
+    _countTextField.delegate = self;
     
     self.currentPrice = [_model.sevenprice doubleValue];
     if (_level == UserLevelNovice) {
@@ -121,7 +124,8 @@
         _countTextField.text = @"501";
         _sliderBegin = 501;
         _sliderEnd = 10000;
-        _myPrice.text = @"0.0001";
+//        _myPrice.text = @"0.0001";
+        _myPriceTextField.text = @"0.0001";
         self.currentPrice = 0.0001;
         _currentPriceTitleLabel.hidden = YES;
         _currentPriceLabel.hidden = YES;
@@ -134,6 +138,8 @@
     _slider.minimumValue = _sliderBegin;
     _slider.continuous = YES;//默认YES  如果设置为NO，则每次滑块停止移动后才触发事件
     [_slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
+    
+    _myPrice.hidden = YES;
 }
 
 - (void)sliderChange:(UISlider *)slider {
@@ -184,7 +190,7 @@
     [AlertController alertTitle:@"确认挂买单" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
         [HUD showHUD];
         WeakSelf
-        YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPrice.text SuccessCallback:^(YUUBaseRequest *request) {
+        YUUPointOnsaleRequest *request = [[YUUPointOnsaleRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Uporderstype:[NSString stringWithFormat:@"%ld",_level] Buynum:_countTextField.text Buyprice:_myPriceTextField.text SuccessCallback:^(YUUBaseRequest *request) {
 //            [HUD showRequest:request];
             [HUD showHUDTitle:@"挂单成功" durationTime:2];
         } failureCallback:^(YUUBaseRequest *request) {
@@ -277,60 +283,133 @@
         if (currentPrice < 0.0001) {
             currentPrice = 0.0001;
         }
-        _myPrice.text = [NSString stringWithFormat:@"%0.4f",_currentPrice];
-        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
+//        _myPrice.text = [NSString stringWithFormat:@"%0.4f",_currentPrice];
+        _myPriceTextField.text = [NSString stringWithFormat:@"%0.4f",_currentPrice];
+//        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPriceTextField.text, [_countTextField.text floatValue] * [_myPriceTextField.text floatValue]];
     } else {
 
         _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
-        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
+        _myPriceTextField.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
+//        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPriceTextField.text, [_countTextField.text floatValue] * [_myPriceTextField.text floatValue]];
     }
     
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    switch (_level) {
-        case UserLevelNovice:
-            if ([textField.text integerValue] > 50) {
-                textField.text = @"50";
-            }
-            break;
-        case UserLevelAdvanced:
-            if ([textField.text integerValue] > 100) {
-                textField.text = @"100";
-            } else if ([textField.text integerValue] < 50) {
-                textField.text = @"50";
-            }
-            break;
-        case UserLevelMaster:
-            if ([textField.text integerValue] > 500) {
-                textField.text = @"500";
-            } else if ([textField.text integerValue] < 100) {
-                textField.text = @"100";
-            }
-            break;
-        case UserLevelInternational:
-            if ([textField.text integerValue] > 1000) {
-                textField.text = @"1000";
-            } else if ([textField.text integerValue] < 500) {
-                textField.text = @"500";
-            }
-            break;
-            
-        default:
-            break;
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    if (textField == _countTextField) {
+        switch (_level) {
+            case UserLevelNovice:
+                if ([textField.text integerValue] > 50) {
+                    textField.text = @"50";
+                }
+                break;
+            case UserLevelAdvanced:
+                if ([textField.text integerValue] > 100) {
+                    textField.text = @"100";
+                } else if ([textField.text integerValue] < 50) {
+                    textField.text = @"50";
+                }
+                break;
+            case UserLevelMaster:
+                if ([textField.text integerValue] > 500) {
+                    textField.text = @"500";
+                } else if ([textField.text integerValue] < 100) {
+                    textField.text = @"100";
+                }
+                break;
+            case UserLevelInternational:
+                if ([textField.text integerValue] > 1000) {
+                    textField.text = @"1000";
+                } else if ([textField.text integerValue] < 500) {
+                    textField.text = @"500";
+                }
+                break;
+                
+            default:
+                break;
+        }
+    } else {
+        switch (_level) {
+            case UserLevelNovice:
+            case UserLevelAdvanced:
+            case UserLevelMaster:
+                self.currentPrice = [[NSString stringWithFormat:@"%02f", [textField.text doubleValue]] doubleValue];
+                break;
+            case UserLevelInternational:
+                self.currentPrice = [[NSString stringWithFormat:@"%04f", [textField.text doubleValue]] doubleValue];
+                break;
+                
+            default:
+                break;
+        }
+        
     }
+    
     return YES;
 }
 
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+//    if (textField == _countTextField) {
+//        switch (_level) {
+//            case UserLevelNovice:
+//                if ([textField.text integerValue] > 50) {
+//                    textField.text = @"50";
+//                }
+//                break;
+//            case UserLevelAdvanced:
+//                if ([textField.text integerValue] > 100) {
+//                    textField.text = @"100";
+//                } else if ([textField.text integerValue] < 50) {
+//                    textField.text = @"50";
+//                }
+//                break;
+//            case UserLevelMaster:
+//                if ([textField.text integerValue] > 500) {
+//                    textField.text = @"500";
+//                } else if ([textField.text integerValue] < 100) {
+//                    textField.text = @"100";
+//                }
+//                break;
+//            case UserLevelInternational:
+//                if ([textField.text integerValue] > 1000) {
+//                    textField.text = @"1000";
+//                } else if ([textField.text integerValue] < 500) {
+//                    textField.text = @"500";
+//                }
+//                break;
+//
+//            default:
+//                break;
+//        }
+//    } else {
+//        self.currentPrice = [textField.text doubleValue];
+//    }
+//
+//    return YES;
+//}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    return [self validateNumber:string];
+    if (textField == _countTextField) {
+        return [self validateNumber:string];
+    } else {
+        
+    }
+    
+    return YES;
 }
 
 - (IBAction)valueChanged:(UITextField *)sender {
     if (_level == UserLevelInternational) {
-        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPriceTextField.text, [_countTextField.text floatValue] * [_myPriceTextField.text floatValue]];
+        
     } else {
-        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPriceTextField.text, [_countTextField.text floatValue] * [_myPriceTextField.text floatValue]];
+    }
+    
+    if (sender == _myPriceTextField) {
+        _currentPrice = [_myPriceTextField.text doubleValue];
     }
 }
 

@@ -68,9 +68,9 @@
 
 - (void)getHTTPData {
     WeakSelf
-    [_workingItems removeAllObjects];
-    [_doneItems removeAllObjects];
     YUUMachineListRequest *request = [[YUUMachineListRequest alloc] initWithMachineList:[YUUUserData shareInstance].token SuccessCallback:^(YUUBaseRequest *request) {
+        [weakSelf.workingItems removeAllObjects];
+        [weakSelf.doneItems removeAllObjects];
         weakSelf.arrModel = request.getResponse.data;
         for (YUUMachineDetailModel *model in weakSelf.arrModel.msgList) {
             if (model.milldie == YUUMachineStatusDefault) {

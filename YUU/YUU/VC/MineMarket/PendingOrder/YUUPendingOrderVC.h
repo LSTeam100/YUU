@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *currentPriceLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *myPrice;
+@property (strong, nonatomic) IBOutlet UITextField *myPriceTextField;
 
 @property (strong, nonatomic) IBOutlet UITextField *countTextField;
 
