@@ -139,6 +139,8 @@ NS_INLINE int isMobileValid(NSString *phoneNum){
     return 0;
 }
 
+
+
 //用户名密码正则验证：8个字符以上，由字母和数字组成
 NS_INLINE int isUserPwdValid(NSString *pwd){
     if (pwd.length < 8) {
@@ -151,6 +153,42 @@ NS_INLINE int isUserPwdValid(NSString *pwd){
         return 1;
     }
     return 0;
+}
+
+NS_INLINE NSString *regYUUCoin(NSNumber *coin ,int saveNum){
+    NSString *coinStr = coin.description;
+    NSString *nCoin = coinStr;
+    double coinValue = [coin floatValue];
+    if ([coinStr rangeOfString:@"."].location != NSNotFound) {
+        NSRange range = [coinStr rangeOfString:@"."];//匹配得到的下标
+        NSString *lastLen = [coinStr substringFromIndex:range.location];
+        
+        
+        if (lastLen.length > saveNum) {
+            if (saveNum == 2) {
+                nCoin = [NSString stringWithFormat:@"%.2f",coinValue];
+            }
+            else if (saveNum == 3){
+                nCoin = [NSString stringWithFormat:@"%.3f",coinValue];
+            }
+            else if (saveNum == 4){
+                nCoin = [NSString stringWithFormat:@"%.4f",coinValue];
+            }
+            else if (saveNum == 5){
+                nCoin = [NSString stringWithFormat:@"%.5f",coinValue];
+            }
+            else if (saveNum == 6){
+                nCoin = [NSString stringWithFormat:@"%.6f",coinValue];
+            }
+            else {
+                nCoin = [NSString stringWithFormat:@"%.2f",coinValue];
+            }
+        }
+        else{
+            nCoin = coinStr;
+        }
+    }
+       return  nCoin;
 }
 
 

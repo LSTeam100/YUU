@@ -52,8 +52,11 @@
     [self initSegmentBar];
     [self setCustomBackItem];
     
-    float money = [self.avalibleMoney floatValue];
-    self.avaliableLabel.text = [NSString stringWithFormat:@"%.6f",money];
+//    float money = [self.avalibleMoney floatValue];
+    self.avaliableLabel.text = regYUUCoin(self.avalibleMoney, 6);
+    
+    
+    
     self.avaliableLabel.textColor = colorWithHexString(@"ED6621", 1);
     UIBarButtonItem *histroyItem = [[UIBarButtonItem alloc]initWithTitle:@"历史记录" style:UIBarButtonItemStylePlain target:self action:@selector(naviToHistoryController)];
     
