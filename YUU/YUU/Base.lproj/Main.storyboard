@@ -992,7 +992,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufZ-Ec-ZKD" customClass="CostomSepView">
-                                        <rect key="frame" x="58" y="5" width="1" height="38"/>
+                                        <rect key="frame" x="58" y="10" width="1" height="28"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="Cox-wp-CHI"/>
@@ -1006,9 +1006,9 @@
                                     <constraint firstItem="ufZ-Ec-ZKD" firstAttribute="leading" secondItem="PlU-yo-bUa" secondAttribute="trailing" constant="5" id="MU2-zg-224"/>
                                     <constraint firstAttribute="trailing" secondItem="1Da-qB-xLg" secondAttribute="trailing" constant="10" id="TTr-cr-gJY"/>
                                     <constraint firstAttribute="height" constant="48" id="dtp-pH-X8F"/>
-                                    <constraint firstAttribute="bottom" secondItem="ufZ-Ec-ZKD" secondAttribute="bottom" constant="5" id="jL3-FY-cb5"/>
+                                    <constraint firstAttribute="bottom" secondItem="ufZ-Ec-ZKD" secondAttribute="bottom" constant="10" id="jL3-FY-cb5"/>
                                     <constraint firstItem="PlU-yo-bUa" firstAttribute="leading" secondItem="rZ6-73-4Hg" secondAttribute="leading" constant="10" id="pMR-uz-yTL"/>
-                                    <constraint firstItem="ufZ-Ec-ZKD" firstAttribute="top" secondItem="rZ6-73-4Hg" secondAttribute="top" constant="5" id="tQb-zP-2LY"/>
+                                    <constraint firstItem="ufZ-Ec-ZKD" firstAttribute="top" secondItem="rZ6-73-4Hg" secondAttribute="top" constant="10" id="tQb-zP-2LY"/>
                                     <constraint firstItem="1Da-qB-xLg" firstAttribute="centerY" secondItem="rZ6-73-4Hg" secondAttribute="centerY" id="uKf-Dn-nu9"/>
                                 </constraints>
                             </view>
@@ -1031,7 +1031,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2B-WR-rf6" customClass="CostomSepView">
-                                        <rect key="frame" x="58" y="5" width="1" height="38"/>
+                                        <rect key="frame" x="58" y="10" width="1" height="28"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="0cr-oU-scp"/>
@@ -1043,10 +1043,10 @@
                                 <constraints>
                                     <constraint firstItem="c2B-WR-rf6" firstAttribute="leading" secondItem="eCb-2O-2gR" secondAttribute="trailing" constant="5" id="JC3-xH-gu8"/>
                                     <constraint firstAttribute="height" constant="48" id="RJm-RO-XGf"/>
-                                    <constraint firstAttribute="bottom" secondItem="c2B-WR-rf6" secondAttribute="bottom" constant="5" id="cNA-tw-I8i"/>
+                                    <constraint firstAttribute="bottom" secondItem="c2B-WR-rf6" secondAttribute="bottom" constant="10" id="cNA-tw-I8i"/>
                                     <constraint firstAttribute="trailing" secondItem="Ej5-kY-1Vz" secondAttribute="trailing" constant="10" id="eup-6L-GKQ"/>
                                     <constraint firstItem="Ej5-kY-1Vz" firstAttribute="centerY" secondItem="YLP-hI-gkQ" secondAttribute="centerY" id="h2d-0k-tFJ"/>
-                                    <constraint firstItem="c2B-WR-rf6" firstAttribute="top" secondItem="YLP-hI-gkQ" secondAttribute="top" constant="5" id="hJu-0M-bzY"/>
+                                    <constraint firstItem="c2B-WR-rf6" firstAttribute="top" secondItem="YLP-hI-gkQ" secondAttribute="top" constant="10" id="hJu-0M-bzY"/>
                                     <constraint firstItem="Ej5-kY-1Vz" firstAttribute="leading" secondItem="c2B-WR-rf6" secondAttribute="trailing" constant="8" id="kTR-Dc-BFe"/>
                                     <constraint firstItem="eCb-2O-2gR" firstAttribute="centerY" secondItem="YLP-hI-gkQ" secondAttribute="centerY" id="t8R-VO-k2P"/>
                                     <constraint firstItem="eCb-2O-2gR" firstAttribute="leading" secondItem="YLP-hI-gkQ" secondAttribute="leading" constant="10" id="ure-4E-yl6"/>
@@ -1071,11 +1071,9 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT8-Uf-QwE" customClass="CostomSepView">
-                                        <rect key="frame" x="58" y="5" width="1" height="38"/>
+                                        <rect key="frame" x="58" y="10" width="1" height="28"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="1" id="jVx-3h-Q68"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="wuV-Mb-Pr6"/>
                                             <constraint firstAttribute="width" constant="1" id="xgl-VQ-6CX"/>
                                         </constraints>
                                     </view>
@@ -1087,8 +1085,8 @@
                                     <constraint firstItem="3RV-I1-R2A" firstAttribute="leading" secondItem="ha8-9e-Ear" secondAttribute="leading" constant="10" id="CCD-of-z5o"/>
                                     <constraint firstItem="B71-p7-QLD" firstAttribute="leading" secondItem="KT8-Uf-QwE" secondAttribute="trailing" constant="5" id="DsS-aT-zXW"/>
                                     <constraint firstItem="3RV-I1-R2A" firstAttribute="centerY" secondItem="ha8-9e-Ear" secondAttribute="centerY" id="Lze-Kj-Qao"/>
-                                    <constraint firstAttribute="bottom" secondItem="KT8-Uf-QwE" secondAttribute="bottom" constant="5" id="PE5-c0-e1o"/>
-                                    <constraint firstItem="KT8-Uf-QwE" firstAttribute="top" secondItem="ha8-9e-Ear" secondAttribute="top" constant="5" id="aSa-sv-PHm"/>
+                                    <constraint firstAttribute="bottom" secondItem="KT8-Uf-QwE" secondAttribute="bottom" constant="10" id="PE5-c0-e1o"/>
+                                    <constraint firstItem="KT8-Uf-QwE" firstAttribute="top" secondItem="ha8-9e-Ear" secondAttribute="top" constant="10" id="aSa-sv-PHm"/>
                                     <constraint firstItem="KT8-Uf-QwE" firstAttribute="leading" secondItem="3RV-I1-R2A" secondAttribute="trailing" constant="5" id="cqY-dZ-7iU"/>
                                     <constraint firstAttribute="trailing" secondItem="B71-p7-QLD" secondAttribute="trailing" constant="10" id="wR4-Vb-l5j"/>
                                 </constraints>
@@ -1112,13 +1110,10 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jm8-iQ-15g" customClass="CostomSepView">
-                                        <rect key="frame" x="73" y="5" width="1" height="38"/>
+                                        <rect key="frame" x="73" y="10" width="1" height="28"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="08P-Qq-RSB"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="1" id="5Kp-Xh-PNI"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="1" id="Kci-x0-Q1R"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="WQ1-oE-tqf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1127,11 +1122,11 @@
                                     <constraint firstAttribute="height" constant="48" id="F2e-BU-fud"/>
                                     <constraint firstItem="XIH-cn-gMg" firstAttribute="centerY" secondItem="fxW-Gq-Are" secondAttribute="centerY" id="OFW-r2-uf4"/>
                                     <constraint firstItem="XIH-cn-gMg" firstAttribute="leading" secondItem="fxW-Gq-Are" secondAttribute="leading" constant="10" id="RtB-v1-ffU"/>
-                                    <constraint firstItem="jm8-iQ-15g" firstAttribute="top" secondItem="fxW-Gq-Are" secondAttribute="top" constant="5" id="Wr1-S4-j1L"/>
+                                    <constraint firstItem="jm8-iQ-15g" firstAttribute="top" secondItem="fxW-Gq-Are" secondAttribute="top" constant="10" id="Wr1-S4-j1L"/>
                                     <constraint firstItem="7Jb-nt-bOY" firstAttribute="centerY" secondItem="fxW-Gq-Are" secondAttribute="centerY" id="YyM-Zp-mjj"/>
                                     <constraint firstItem="jm8-iQ-15g" firstAttribute="leading" secondItem="XIH-cn-gMg" secondAttribute="trailing" constant="5" id="iT8-za-arw"/>
                                     <constraint firstItem="7Jb-nt-bOY" firstAttribute="leading" secondItem="jm8-iQ-15g" secondAttribute="trailing" constant="5" id="lIq-2I-CWG"/>
-                                    <constraint firstAttribute="bottom" secondItem="jm8-iQ-15g" secondAttribute="bottom" constant="5" id="oCG-lX-wGt"/>
+                                    <constraint firstAttribute="bottom" secondItem="jm8-iQ-15g" secondAttribute="bottom" constant="10" id="oCG-lX-wGt"/>
                                     <constraint firstAttribute="trailing" secondItem="7Jb-nt-bOY" secondAttribute="trailing" constant="10" id="pWx-Z7-ftI"/>
                                 </constraints>
                             </view>
@@ -1483,17 +1478,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMG-iw-thL" customClass="CostomSepView">
-                                        <rect key="frame" x="76.5" y="11.5" width="2" height="17"/>
+                                        <rect key="frame" x="76.5" y="9.5" width="1" height="21"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="Al3-1M-hFV"/>
-                                            <constraint firstAttribute="width" constant="2" id="GcG-5s-XTJ"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="RbY-Ef-iRb"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="t4N-tI-S2t"/>
+                                            <constraint firstAttribute="height" constant="21" id="Al3-1M-hFV"/>
+                                            <constraint firstAttribute="width" constant="1" id="GcG-5s-XTJ"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgK-ai-ecL">
-                                        <rect key="frame" x="93.5" y="11.5" width="209.5" height="17"/>
+                                        <rect key="frame" x="92.5" y="11.5" width="210.5" height="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1524,17 +1517,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lw4-xe-o5o" customClass="CostomSepView">
-                                        <rect key="frame" x="76.5" y="11.5" width="2" height="17"/>
+                                        <rect key="frame" x="76.5" y="9.5" width="1" height="21"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="2" id="7H9-Pm-H7M"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="IjO-oO-af3"/>
-                                            <constraint firstAttribute="height" constant="17" id="eiA-Wp-MId"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="kN3-hH-eqH"/>
+                                            <constraint firstAttribute="width" constant="1" id="7H9-Pm-H7M"/>
+                                            <constraint firstAttribute="height" constant="21" id="eiA-Wp-MId"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N28-bY-7wy">
-                                        <rect key="frame" x="93.5" y="11.5" width="209.5" height="17"/>
+                                        <rect key="frame" x="92.5" y="11.5" width="210.5" height="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1571,19 +1562,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awX-vh-CKc" customClass="CostomSepView">
-                                        <rect key="frame" x="76.5" y="11" width="2" height="17"/>
+                                        <rect key="frame" x="76.5" y="9" width="1" height="21"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="2" id="047-wm-Uf5"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="2" id="Cdl-gK-oZy"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="GJJ-4f-fAC"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="17" id="SrD-u6-3Sn"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="lcV-Jy-L1Z"/>
-                                            <constraint firstAttribute="height" constant="17" id="vYq-7M-QV2"/>
+                                            <constraint firstAttribute="width" constant="1" id="047-wm-Uf5"/>
+                                            <constraint firstAttribute="height" constant="21" id="vYq-7M-QV2"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btY-W7-F50">
-                                        <rect key="frame" x="93.5" y="11.5" width="209.5" height="17"/>
+                                        <rect key="frame" x="92.5" y="11.5" width="210.5" height="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1614,7 +1601,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8DE-Dx-wkr">
-                                        <rect key="frame" x="81" y="11.5" width="137" height="17"/>
+                                        <rect key="frame" x="80" y="11.5" width="138" height="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1623,17 +1610,11 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Hm-ED-13E" customClass="CostomSepView">
-                                        <rect key="frame" x="64" y="12" width="2" height="17"/>
+                                        <rect key="frame" x="64" y="10" width="1" height="21"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="0Kl-QG-aR5"/>
-                                            <constraint firstAttribute="width" constant="2" id="6KK-oY-aae"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="2" id="DEG-yG-F81"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="17" id="KVi-id-HnT"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="17" id="Sc6-LO-2fK"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="2" id="jWz-Ky-B9q"/>
-                                            <constraint firstAttribute="height" constant="17" id="rHw-pe-pY3"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="u0q-dt-8rj"/>
+                                            <constraint firstAttribute="width" constant="1" id="6KK-oY-aae"/>
+                                            <constraint firstAttribute="height" constant="21" id="rHw-pe-pY3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1674,15 +1655,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-wX-gB5" customClass="CostomSepView">
-                                        <rect key="frame" x="76.5" y="11.5" width="2" height="17"/>
+                                        <rect key="frame" x="76.5" y="9.5" width="1" height="21"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="2" id="glT-Tk-UDO"/>
-                                            <constraint firstAttribute="height" constant="17" id="jNb-lr-HAk"/>
+                                            <constraint firstAttribute="width" constant="1" id="glT-Tk-UDO"/>
+                                            <constraint firstAttribute="height" constant="21" id="jNb-lr-HAk"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1qp-rY-chw">
-                                        <rect key="frame" x="93.5" y="11.5" width="209.5" height="17"/>
+                                        <rect key="frame" x="92.5" y="11.5" width="210.5" height="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
