@@ -105,7 +105,7 @@
         self.sellBtn.hidden = false;
         self.moneyView.hidden = false;
         self.topConstant.constant = 56;
-        self.alertLabel.text = @"警告：此功能是将YUU转换成外坞平台代币，兑换比例锚定为1:1兑换，不能内部转账，否则会导致YUU丢失无法找回，平台地址一定要填写正确，否者导致兑换错误由用户自己承担。兑换地址为交易所IDAX交易所钱包地址。";
+        self.alertLabel.text = @"警告：此功能是将YUU转换成外埠平台代币，兑换比例锚定为1:1兑换，不能内部转账，否则会导致YUU丢失无法找回，平台地址一定要填写正确，否者导致兑换错误由用户自己承担。兑换地址为交易所IDAX交易所钱包地址。";
     }
     else{
         [self.leftSelectBtn setBackgroundImage:nil forState:UIControlStateNormal];
