@@ -10,4 +10,6 @@
 
 @interface YUUPendingNoticeVC : YUUBaseViewController
 
+@property (nonatomic, assign) UserLevel level;
+
 @end

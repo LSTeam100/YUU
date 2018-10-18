@@ -36,5 +36,7 @@
 
 @property (nonatomic, assign) NSInteger sellorbuy; // 卖家0，买家1
 
+@property (nonatomic, assign) double price;
+
 
 @end

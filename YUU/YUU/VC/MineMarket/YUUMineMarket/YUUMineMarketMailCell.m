@@ -85,14 +85,14 @@
             [_middleRightBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
             _middleRightBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
-            _contentLabel.text = [NSString stringWithFormat:@"收到%ld转入的%ldYUU，请严格按照平台公布的卖/买家资料进行交易，请勿相信中介！非平台公布资料交易，后果自负",(long)model.sorbid,(long)model.coinnum];
+            _contentLabel.text = [NSString stringWithFormat:@"收到%ld,%ldyuu，总价%@元，请严格按照平台公布卖家资料进行打款交易，请勿相信中介！非平台公布资料交易，后果自负！",(long)model.sorbid,(long)model.coinnum, regYUUCoin([NSNumber numberWithDouble:model.price], 2)];
         } else if (model.progressnum == 2) { // 2：买家确认了
             _middleBtn.hidden = NO;
             [_middleBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
             [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
-            _contentLabel.text = [NSString stringWithFormat:@"支付%ldYUU的交易款后，等待卖家的二次确认",(long)model.coinnum];
+            _contentLabel.text = [NSString stringWithFormat:@"收到%ld转入%ldYUU，总价%@元，等待卖方二次确认",(long)model.sorbid,(long)model.coinnum, regYUUCoin([NSNumber numberWithDouble:model.price], 2)];
         }
     } else { // 卖家
         if (model.progressnum == 1) { // 发起交易
@@ -101,10 +101,10 @@
             [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
             _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
-            _contentLabel.text = [NSString stringWithFormat:@"给%ld转入%ldYUU，等待买家确认",(long)model.sorbid,(long)model.coinnum];
+            _contentLabel.text = [NSString stringWithFormat:@"转给%ld，%ldYUU，总价%@元，等待买家确认",(long)model.sorbid,(long)model.coinnum, regYUUCoin([NSNumber numberWithDouble:model.price], 2)];
         } else if (model.progressnum == 2) { // 卖家确认了
             _leftBtn.hidden = NO;
-            [_leftBtn setTitle:@"买家资料" forState:UIControlStateNormal];
+            [_leftBtn setTitle:@"卖家资料" forState:UIControlStateNormal];
             [_leftBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
             _leftBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
             
@@ -113,7 +113,7 @@
             [_rightBtn setTitleColor:[UIColor hex:@"1ae08c"] forState:UIControlStateNormal];
             _rightBtn.layer.borderColor = [UIColor hex:@"1ae08c"].CGColor;
             
-            _contentLabel.text = [NSString stringWithFormat:@"收到%ld的支付后，等待卖家的二次确认",(long)model];
+            _contentLabel.text = [NSString stringWithFormat:@"收到转给%ld，%ldYUU，总价%@元支付后，等待您的二次确认",(long)model.sorbid,(long)model.coinnum, regYUUCoin([NSNumber numberWithDouble:model.price], 2)];
         }
     }
 }
@@ -157,14 +157,9 @@
                     [HUD showHUD];
                     WeakSelf
                     YUUSellerTransactionRequest *request = [[YUUSellerTransactionRequest alloc] initWithSellerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard password:textField.text SuccessCallback:^(YUUBaseRequest *request) {
-//                                                                                                              [HUD showRequest:request];
                           [HUD showHUDTitle:@"确认成功" durationTime:2];
                         [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
-//                          if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(cellStatusChanged)]) {
-//                              [weakSelf.delegate cellStatusChanged];
-//                          }
                       } failureCallback:^(YUUBaseRequest *request) {
-//                                                                                              [HUD showRequest:request];
                           [HUD hide];
                           [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
                       }];

@@ -78,6 +78,9 @@
 		0926F07321328E200083CFDD /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F07121328E200083CFDD /* HUDManager.m */; };
 		0926F076213298B20083CFDD /* YUUBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F075213298B20083CFDD /* YUUBorderButton.m */; };
 		0926F0792132993C0083CFDD /* HUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926F0782132993C0083CFDD /* HUDView.m */; };
+		0929C90D21781B3000A4A5A5 /* pending0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0929C90A21781B3000A4A5A5 /* pending0.jpg */; };
+		0929C90E21781B3000A4A5A5 /* pending1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0929C90B21781B3000A4A5A5 /* pending1.jpg */; };
+		0929C90F21781B3000A4A5A5 /* pending2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0929C90C21781B3000A4A5A5 /* pending2.jpg */; };
 		092A4097216AFBEF006C9476 /* YUUNoticeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A4096216AFBEF006C9476 /* YUUNoticeVC.m */; };
 		092A409A216B0E42006C9476 /* SellRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A4099216B0E42006C9476 /* SellRequest.m */; };
 		095181CC212CE03D0083C009 /* SHSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095181CB212CE03D0083C009 /* SHSegmentView.m */; };
@@ -300,6 +303,9 @@
 		0926F075213298B20083CFDD /* YUUBorderButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUBorderButton.m; sourceTree = "<group>"; };
 		0926F0772132993C0083CFDD /* HUDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDView.h; sourceTree = "<group>"; };
 		0926F0782132993C0083CFDD /* HUDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDView.m; sourceTree = "<group>"; };
+		0929C90A21781B3000A4A5A5 /* pending0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pending0.jpg; sourceTree = "<group>"; };
+		0929C90B21781B3000A4A5A5 /* pending1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pending1.jpg; sourceTree = "<group>"; };
+		0929C90C21781B3000A4A5A5 /* pending2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pending2.jpg; sourceTree = "<group>"; };
 		092A4095216AFBEF006C9476 /* YUUNoticeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUNoticeVC.h; sourceTree = "<group>"; };
 		092A4096216AFBEF006C9476 /* YUUNoticeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUNoticeVC.m; sourceTree = "<group>"; };
 		092A4098216B0E42006C9476 /* SellRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellRequest.h; sourceTree = "<group>"; };
@@ -674,6 +680,9 @@
 		09251C77213F6EC300B12370 /* PendingOrder */ = {
 			isa = PBXGroup;
 			children = (
+				0929C90A21781B3000A4A5A5 /* pending0.jpg */,
+				0929C90B21781B3000A4A5A5 /* pending1.jpg */,
+				0929C90C21781B3000A4A5A5 /* pending2.jpg */,
 				09251C78213F6EC300B12370 /* PendingBuyerCell.h */,
 				09251C7C213F6EC300B12370 /* PendingBuyerCell.m */,
 				0925E97921532E8000F874A7 /* PendingMailboxCell.h */,
@@ -1106,6 +1115,9 @@
 			files = (
 				091DBB10212A3F31005DC12C /* YUUTabBar.storyboard in Resources */,
 				09612989212E298200D9D02C /* YUUMineMarket.storyboard in Resources */,
+				0929C90F21781B3000A4A5A5 /* pending2.jpg in Resources */,
+				0929C90E21781B3000A4A5A5 /* pending1.jpg in Resources */,
+				0929C90D21781B3000A4A5A5 /* pending0.jpg in Resources */,
 				18D995A1217395B900276E76 /* YUUAlertView.xib in Resources */,
 				18EDE41721257A3A00FC8E0C /* LaunchScreen.storyboard in Resources */,
 				091983D22131A96900E35196 /* YUUUserInfoView.xib in Resources */,
@@ -1462,8 +1474,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DC778EPEP3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = P6UF878TKN;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1473,8 +1485,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3bb8a0ff-f6ba-4e3f-8507-61d29d4c2320";
+				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1486,8 +1498,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DC778EPEP3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -103,6 +103,8 @@
         _currentPriceLabel.hidden = NO;
         _currentPriceUnitLabel.hidden = NO;
         _internetCurrentPriceLabel.hidden = YES;
+        
+        [_noticeBtn setTitle:@"新手挂单交易须知" forState:UIControlStateNormal];
     } else if (_level == UserLevelAdvanced) {
         _upLabel.text = @"算力≥10用户可进行51-500YUU议价交易!";
         _countTextField.text = @"51";
@@ -113,6 +115,8 @@
         _currentPriceLabel.hidden = NO;
         _currentPriceUnitLabel.hidden = NO;
         _internetCurrentPriceLabel.hidden = YES;
+        
+        [_noticeBtn setTitle:@"进阶挂单交易须知" forState:UIControlStateNormal];
     } else if (_level == UserLevelMaster) {
         _upLabel.text = @"算力≥100用户可进行501-10000YUU议价交易!";
         _countTextField.text = @"501";
@@ -123,6 +127,8 @@
         _currentPriceLabel.hidden = NO;
         _currentPriceUnitLabel.hidden = NO;
         _internetCurrentPriceLabel.hidden = YES;
+        
+        [_noticeBtn setTitle:@"高手挂单交易须知" forState:UIControlStateNormal];
     } else if (_level == UserLevelInternational) {
         _upLabel.text = @"算力≥100用户可进行501-10000YUU议价交易!";
         _countTextField.text = @"501";
@@ -136,6 +142,8 @@
         _currentPriceLabel.hidden = YES;
         _currentPriceUnitLabel.hidden = YES;
         _internetCurrentPriceLabel.hidden = NO;
+        
+        [_noticeBtn setTitle:@"国际挂单交易须知" forState:UIControlStateNormal];
     }
     
     
@@ -498,7 +506,14 @@
 
 
 - (IBAction)noticeAction:(id)sender {
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    //设置backBarButtonItem即可
+    self.navigationItem.backBarButtonItem = backItem;
+    
     YUUPendingNoticeVC *vc = [YUUPendingNoticeVC storyboardInstanceType];
+    vc.level = _level;
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
