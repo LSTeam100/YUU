@@ -51,7 +51,7 @@
     frame.origin.y += self.navigationController.navigationBar.frame.size.height + 20;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = CGRectMake(0, 0, scrollView.frame.size.width, scrollView.frame.size.height*(image.size.height/image.size.width));
+    imageView.frame = CGRectMake(0, 0, scrollView.frame.size.width, image.size.height/(image.size.width/scrollView.frame.size.width));
     [scrollView addSubview:imageView];
     [scrollView setContentSize:CGSizeMake(0, imageView.frame.size.height)];
     [self.view addSubview:scrollView];
