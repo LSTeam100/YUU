@@ -143,6 +143,7 @@
         _currentPriceUnitLabel.hidden = YES;
         _internetCurrentPriceLabel.hidden = NO;
         
+        _noticeBtn.hidden = YES;
         [_noticeBtn setTitle:@"国际挂单交易须知" forState:UIControlStateNormal];
     }
     
