@@ -29,6 +29,11 @@
     self.passwordField.secureTextEntry = true;
     self.makeSureField.secureTextEntry = true;
     
+    self.oldField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.oldField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.makeSureField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.makeSureField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+
+    
     if (self.modifyType == loginType) {
         self.title = @"修改登录密码";
         self.forgetTransactionBtn.hidden = YES;
