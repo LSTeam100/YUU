@@ -120,7 +120,7 @@
 //                [HUD showHUDTitle:@"token无效" durationTime:2];
                 break;
             case 2:
-                [self alertView:@"local_alert"];
+                [self alertView:@"local_alert" IsForeverShow:false];
             case 3:
                 [self naviTologin:statusCode];
                 break;
@@ -137,7 +137,7 @@
                 [self naviTologin:statusCode];
                 break;
             case 2:
-                [self alertView:@"local_alert"];
+                [self alertView:@"local_alert" IsForeverShow:false];
             case 3:
                 [self naviTologin:statusCode];
                 break;
@@ -149,13 +149,15 @@
     return NO;
 }
 
--(void)alertView:(NSString *)imageName {
+-(void)alertView:(NSString *)imageName IsForeverShow:(BOOL)isForeverShow {
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"YUUAlertView" owner:nil options:nil];
     YUUAlertView *cView = [nibContents lastObject];
     cView.frame = self.view.frame;
      [self.view addSubview:cView];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [cView removeFromSuperview];
+        if (isForeverShow == false) {
+            [cView removeFromSuperview];
+        }
     });
 }
 //-(void)str:(NSString *)imageName test:(CGRect)frame{
@@ -177,8 +179,7 @@
             DLOG(@"已经是登录页面无需弹出登录");
             switch (statusCode) {
                 case 3:
-                    [self alertView:@"closeMarket_alert"];
-
+                    [self alertView:@"closeMarket_alert" IsForeverShow:true];
                     break;
                 default:
                     break;
@@ -191,7 +192,7 @@
     [self presentViewController:navi animated:YES completion:^{
         switch (statusCode) {
             case 3:
-                [self alertView:@"closeMarket_alert"];
+                [self alertView:@"closeMarket_alert" IsForeverShow:true];
                 break;
             default:
                 break;
