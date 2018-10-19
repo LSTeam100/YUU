@@ -69,7 +69,7 @@
     
     
     self.freezeLabel.text = [NSString stringWithFormat:@"冻结YUU:%@",regYUUCoin(self.userModel.frozenyuu, 3)];
-    self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%@",self.userModel.lockedyuu];
+    self.lockLabel.text = [NSString stringWithFormat:@"锁仓YUU:%@",regYUUCoin(self.userModel.lockedyuu, 3)];
     self.profileIdLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.profileGradeLabel.textColor = colorWithHexString(@"e4c177", 1);
     self.assetLabel.textColor = colorWithHexString(@"ED6621", 1);
