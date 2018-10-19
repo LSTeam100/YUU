@@ -91,6 +91,8 @@
     NSString* url=[BaseAddress stringByAppendingString:[self getURL]];
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval=10.0f;
+    manager.securityPolicy.validatesDomainName = NO;
+
     manager.requestSerializer=[AFJSONRequestSerializer serializerWithWritingOptions:0];
     if(_headers!=nil){
         [_headers enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -129,6 +131,8 @@
     
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
 //    manager.requestSerializer=[AFJSONRequestSerializer serializerWithWritingOptions:0];
+//    manager.securityPolicy.allowInvalidCertificates=NO;
+    manager.securityPolicy.validatesDomainName = NO;
     manager.requestSerializer.timeoutInterval=10.0f;
     [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     if(_headers!=nil){

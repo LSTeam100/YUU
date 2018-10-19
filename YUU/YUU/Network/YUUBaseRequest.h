@@ -11,7 +11,7 @@
 #import "YUUUserData.h"
 
 @class YUUBaseRequest;
-static NSString * const BaseAddress = @"http://yuuleyou.com";
+static NSString * const BaseAddress = @"https://yuuleyou.com";
 
 typedef void(^onSuccessCallback)(YUUBaseRequest* request);
 typedef void(^onFailureCallback)(YUUBaseRequest* request);
