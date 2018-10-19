@@ -162,7 +162,7 @@ typedef enum {
     YUUBillModel *model = [self.selectTypeArr objectAtIndex:indexPath.row];
     cell.titleLabel.text = model.billname;
     cell.detailLabel.text = model.billtime;
-    cell.tailLabel.text = [NSString stringWithFormat:@"%@",model.billnum];
+    cell.tailLabel.text = regYUUCoin(model.billnum, 6);
     
     return cell;
 }
