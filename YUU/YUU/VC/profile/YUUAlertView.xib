@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="local_alert" translatesAutoresizingMaskIntoConstraints="NO" id="EDC-vn-S1N">
-                    <rect key="frame" x="10" y="492" width="355" height="95"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeMarket_alert" translatesAutoresizingMaskIntoConstraints="NO" id="EDC-vn-S1N">
+                    <rect key="frame" x="10" y="493" width="355" height="94"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,6 +33,6 @@
         </view>
     </objects>
     <resources>
-        <image name="local_alert" width="375" height="95"/>
+        <image name="closeMarket_alert" width="375" height="94"/>
     </resources>
 </document>
