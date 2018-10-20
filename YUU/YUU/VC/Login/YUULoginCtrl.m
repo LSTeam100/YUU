@@ -41,9 +41,9 @@
         DLOG(@"text change");
     }];
     
-    if ([YUUUserData shareInstance].userModel.token.length > 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"showTabBar" object:nil];
-    }
+//    if ([YUUUserData shareInstance].userModel.token.length > 0) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"showTabBar" object:nil];
+//    }
     
 
 }
