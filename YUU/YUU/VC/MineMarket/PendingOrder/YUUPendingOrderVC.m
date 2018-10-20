@@ -217,7 +217,7 @@
     if (_level == UserLevelInternational) {
         _myPriceTextField.text = regYUUCoin([NSNumber numberWithDouble:[_myPriceTextField.text doubleValue]], 4);
     } else {
-        _myPriceTextField.text = regYUUCoin([NSNumber numberWithDouble:[_myPriceTextField.text doubleValue]], 2);
+        _myPriceTextField.text = regYUUCoin([NSNumber numberWithDouble:[_myPriceTextField.text doubleValue]], 1);
     }
     
     [AlertController alertTitle:@"确认挂买单" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
@@ -328,10 +328,10 @@
         _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@ETH，总价%0.4fETH",_countTextField.text, _myPriceTextField.text, [_countTextField.text floatValue] * [_myPriceTextField.text floatValue]];
     } else {
 
-        _myPrice.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
-        _myPriceTextField.text = [NSString stringWithFormat:@"%0.2f",_currentPrice];
+        _myPrice.text = [NSString stringWithFormat:@"%0.1f",_currentPrice];
+        _myPriceTextField.text = [NSString stringWithFormat:@"%0.1f",_currentPrice];
 //        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPrice.text, [_countTextField.text floatValue] * [_myPrice.text floatValue]];
-        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.2f元",_countTextField.text, _myPriceTextField.text, [_countTextField.text floatValue] * [_myPriceTextField.text floatValue]];
+        _totalPriceLabel.text = [NSString stringWithFormat:@"买入%@YUU，出价%@元，总价%0.1f元",_countTextField.text, _myPriceTextField.text, [_countTextField.text floatValue] * [_myPriceTextField.text floatValue]];
     }
     
 }
@@ -374,7 +374,7 @@
             case UserLevelNovice:
             case UserLevelAdvanced:
             case UserLevelMaster:
-                self.currentPrice = [[NSString stringWithFormat:@"%02f", [textField.text doubleValue]] doubleValue];
+                self.currentPrice = [[NSString stringWithFormat:@"%01f", [textField.text doubleValue]] doubleValue];
                 break;
             case UserLevelInternational:
                 self.currentPrice = [[NSString stringWithFormat:@"%04f", [textField.text doubleValue]] doubleValue];
@@ -385,10 +385,15 @@
         }
         
     }
+    [textField resignFirstResponder];
     
     return YES;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (textField == _countTextField) {
@@ -433,7 +438,7 @@
                     }
                 } else {
                     NSRange range = [sender.text rangeOfString:@"."];
-                    if (sender.text.length - range.location > 2) {
+                    if (sender.text.length - range.location > 1) {
                         sender.text = [sender.text substringToIndex:sender.text.length - 1];
                         return;
                     }
@@ -449,18 +454,14 @@
                     return;
                 }
             }
-            
-//            sender.text = regYUUCoin([NSNumber numberWithDouble:[sender.text doubleValue]], 4);
         } else {
             if ([sender.text containsString:@"."]) {
                 NSRange range = [sender.text rangeOfString:@"."];
-                if (sender.text.length - range.location > 2+1) {
+                if (sender.text.length - range.location > 1+1) {
                     sender.text = [sender.text substringToIndex:sender.text.length - 1];
                     return;
                 }
             }
-            
-//            sender.text = regYUUCoin([NSNumber numberWithDouble:[sender.text doubleValue]], 2);
         }
         [self updateContent];
     }
