@@ -31,7 +31,17 @@
     
     _statusView.layer.masksToBounds = YES;
     _statusView.layer.cornerRadius = _statusView.frame.size.width/2;
-    _numberLabel.text = model.millsize;
+    
+    if (model.millsize.length >= 7) {
+        NSString *mill = [model.millsize substringToIndex:7];
+        _numberLabel.text = mill;
+    }
+    else{
+        _numberLabel.text = model.millsize;
+
+    }
+    
+
     _typeLabel.text = [_model.milltype stringByReplacingOccurrencesOfString:@"矿机" withString:@""];
     _operationLabel.text = [NSString stringWithFormat:@"%ld/%ld",[model.runtimeday integerValue], [model.totaldays integerValue]];
     _powerLabel.text = [NSString stringWithFormat:@"%ld", [model.compower integerValue]];
@@ -54,7 +64,6 @@
     }
     else{
         _receiveLabel.text = @"已领取";
-
     }
 }
 - (IBAction)receiveAction:(UITapGestureRecognizer *)sender {
