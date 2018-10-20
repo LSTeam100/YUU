@@ -181,7 +181,7 @@
         _response.code=-100;
     }else{
         _response.code=(int)error.code;
-        _response.msg=error.description;
+        _response.msg=@"服务器请求失败";
     }
     
 }
