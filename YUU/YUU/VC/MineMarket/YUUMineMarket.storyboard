@@ -517,7 +517,7 @@
                                 <rect key="frame" x="138" y="112" width="97" height="30"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.86666666670000003" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="75R-pC-dw3" id="cbC-l5-c8Y"/>
                                 </connections>
@@ -744,7 +744,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                 <connections>
                                     <action selector="valueChanged:" destination="75R-pC-dw3" eventType="valueChanged" id="Tkq-eR-Dy0"/>
                                     <outlet property="delegate" destination="75R-pC-dw3" id="JFN-cM-l8d"/>
