@@ -120,7 +120,7 @@
 //                [HUD showHUDTitle:@"token无效" durationTime:2];
                 break;
             case 2:
-                [self alertView:@"local_alert" IsForeverShow:false];
+                [self alertView:@"local_alert" IsForeverShow:false SuperCtrl:self];
             case 3:
                 [self naviTologin:statusCode];
                 break;
@@ -137,7 +137,8 @@
                 [self naviTologin:statusCode];
                 break;
             case 2:
-                [self alertView:@"local_alert" IsForeverShow:false];
+                [self alertView:@"local_alert" IsForeverShow:false SuperCtrl:self];
+
             case 3:
                 [self naviTologin:statusCode];
                 break;
@@ -149,11 +150,13 @@
     return NO;
 }
 
--(void)alertView:(NSString *)imageName IsForeverShow:(BOOL)isForeverShow {
+-(void)alertView:(NSString *)imageName IsForeverShow:(BOOL)isForeverShow SuperCtrl:(UIViewController *)superCtrl {
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"YUUAlertView" owner:nil options:nil];
     YUUAlertView *cView = [nibContents lastObject];
     cView.frame = self.view.frame;
-     [self.view addSubview:cView];
+    [cView showYUUAlert:imageName];
+    DLOG(@"cView=%@",cView);
+     [superCtrl.view addSubview:cView];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (isForeverShow == false) {
             [cView removeFromSuperview];
@@ -179,7 +182,7 @@
             DLOG(@"已经是登录页面无需弹出登录");
             switch (statusCode) {
                 case 3:
-                    [self alertView:@"closeMarket_alert" IsForeverShow:true];
+                    [self alertView:@"closeMarket_alert" IsForeverShow:true SuperCtrl:c];
                     break;
                 default:
                     break;
@@ -192,7 +195,7 @@
     [self presentViewController:navi animated:YES completion:^{
         switch (statusCode) {
             case 3:
-                [self alertView:@"closeMarket_alert" IsForeverShow:true];
+                [self alertView:@"closeMarket_alert" IsForeverShow:true SuperCtrl:self.presentedViewController];
                 break;
             default:
                 break;

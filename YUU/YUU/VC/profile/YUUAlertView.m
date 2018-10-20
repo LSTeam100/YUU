@@ -17,6 +17,13 @@
     // Drawing code
 }
 */
+-(instancetype)init{
+   self = [super init];
+    if (self) {
+        self.backgroundColor = [UIColor yellowColor];
+    }
+    return self;
+}
 -(void)showYUUAlert:(NSString *)imageName{
     UIImage *img = [UIImage imageNamed:imageName];
     self.alertImageVIew.image= img;    
