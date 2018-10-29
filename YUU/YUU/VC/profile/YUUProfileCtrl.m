@@ -51,7 +51,7 @@
 }
 
 -(void)updateUI{
-    self.profileIdLabel.text = [NSString stringWithFormat:@"ID:%@",self.userModel.memberid];
+    self.profileIdLabel.text = [NSString stringWithFormat:@"ID:%@",self.userModel.memberidStr];
     self.profileGradeLabel.text = [NSString stringWithFormat:@"等级:%@",self.userModel.membergrade];
     
 //    float propertynum = [self.userModel.propertynum floatValue];

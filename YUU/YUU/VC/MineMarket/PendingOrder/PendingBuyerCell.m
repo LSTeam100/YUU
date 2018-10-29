@@ -48,9 +48,9 @@
     _numberLabel.text = [NSString stringWithFormat:@"单号：%@",model.tradingcard];
     _timeLabel.text = model.tradingtime;
     if (_level == UserLevelInternational) {
-        _contentLabel.text = [NSString stringWithFormat:@"ID:%ld挂买%ldYUU,单价%@ETH，总计%@ETH",(long)model.memberid,(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:model.buyprice], 4),regYUUCoin([NSNumber numberWithDouble:(model.coinnum*model.buyprice)], 4)];
+        _contentLabel.text = [NSString stringWithFormat:@"ID:%@挂买%ldYUU,单价%@ETH，总计%@ETH",model.memberidStr,(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:model.buyprice], 4),regYUUCoin([NSNumber numberWithDouble:(model.coinnum*model.buyprice)], 4)];
     } else {
-        _contentLabel.text = [NSString stringWithFormat:@"ID:%ld挂买%ldYUU,单价%@元，总计%@元",(long)model.memberid,(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:model.buyprice], 2),regYUUCoin([NSNumber numberWithDouble:(model.coinnum*model.buyprice)], 2)];
+        _contentLabel.text = [NSString stringWithFormat:@"ID:%@挂买%ldYUU,单价%@元，总计%@元",model.memberidStr,(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:model.buyprice], 2),regYUUCoin([NSNumber numberWithDouble:(model.coinnum*model.buyprice)], 2)];
     }
     
 }

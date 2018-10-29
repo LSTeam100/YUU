@@ -20,4 +20,6 @@
 @property(nonatomic,strong)NSNumber *newnews;
 @property(nonatomic,strong)NSString *token;
 
+@property (nonatomic, strong) NSString *memberidStr;
+
 @end
