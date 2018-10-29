@@ -1648,7 +1648,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0q-25-ffM" customClass="CostomTextFieldBgView">
                                 <rect key="frame" x="31" y="76" width="313" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真是姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-cg-8Qw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真实姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-cg-8Qw">
                                         <rect key="frame" x="15" y="13" width="49.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2127,7 +2127,7 @@
                                                     <rect key="frame" x="15" y="7.5" width="345" height="99.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR5-YL-R0p">
-                                                            <rect key="frame" x="20" y="30" width="58" height="17"/>
+                                                            <rect key="frame" x="20" y="30" width="305" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -2155,6 +2155,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="yAd-zQ-pFK" secondAttribute="trailing" constant="10" id="6ts-nd-HxK"/>
                                                         <constraint firstItem="LUD-Md-c8J" firstAttribute="centerX" secondItem="GIB-hB-AqK" secondAttribute="centerX" id="8wY-vm-cbv"/>
                                                         <constraint firstItem="ihE-iJ-zKf" firstAttribute="leading" secondItem="GIB-hB-AqK" secondAttribute="leading" constant="15" id="Ps5-V4-KH0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dR5-YL-R0p" secondAttribute="trailing" constant="20" id="aHY-R2-m5O"/>
                                                         <constraint firstItem="dR5-YL-R0p" firstAttribute="leading" secondItem="GIB-hB-AqK" secondAttribute="leading" constant="20" id="fuW-aQ-pLw"/>
                                                         <constraint firstAttribute="bottom" secondItem="ihE-iJ-zKf" secondAttribute="bottom" constant="15" id="lTv-Bx-ktA"/>
                                                         <constraint firstItem="LUD-Md-c8J" firstAttribute="top" secondItem="GIB-hB-AqK" secondAttribute="top" constant="5" id="x4W-zZ-SdU"/>
