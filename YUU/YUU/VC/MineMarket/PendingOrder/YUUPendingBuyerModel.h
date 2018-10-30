@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *tradingtime; // 单号时间
 
 @property (nonatomic, assign) NSInteger memberid; // 买家ID（Int）
+@property (nonatomic, strong) NSString *memberidStr;
 
 @property (nonatomic, assign) NSInteger coinnum; // 币数（Int）
 

@@ -40,4 +40,20 @@
     }
     return self;
 }
+
+- (NSString *)memberidStr {
+    NSString *str = [self.memberid stringValue];
+    NSString *result = @"";
+    if (str.length >2) {
+        for (int i = 0; i<str.length; i++) {
+            if (i == 0 || i == str.length-1) {
+                result = [result stringByAppendingString:[str substringWithRange:NSMakeRange(i, 1)]];
+            } else {
+                result = [result stringByAppendingString:@"*"];
+            }
+        }
+    }
+    return  result;
+}
+
 @end

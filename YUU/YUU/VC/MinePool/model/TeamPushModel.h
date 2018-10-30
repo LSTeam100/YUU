@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *membergrade;
 
 @property (nonatomic, assign) NSInteger memberid;
+@property (nonatomic, strong) NSString *memberidStr;
 
 @property (nonatomic, assign) NSInteger memberpower;
 

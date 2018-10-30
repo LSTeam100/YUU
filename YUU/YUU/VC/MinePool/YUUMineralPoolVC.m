@@ -172,7 +172,7 @@
         DirectPushModel *model = self.model.directid[indexPath.section];
         YUUUserInfoView *view = [YUUUserInfoView xibInstancetype];
         view.delegate = self;
-        view.textField0.text = [NSString stringWithFormat:@"%ld", (long)model.memberid];
+        view.textField0.text = [NSString stringWithFormat:@"%@", model.memberidStr];
         view.textField1.text = [NSString stringWithFormat:@"%ld", (long)model.memberphone];
         [HUD showCustomView:view];
     } else {

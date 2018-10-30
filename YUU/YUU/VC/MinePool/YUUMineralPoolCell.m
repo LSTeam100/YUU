@@ -26,7 +26,7 @@
 
 - (void)setDirectModel:(DirectPushModel *)directModel {
 //    _icon.image = [UIImage imageNamed:@"default_icon"];
-    _idLabel.text = [NSString stringWithFormat:@"ID:%ld", (long)directModel.memberid];
+    _idLabel.text = [NSString stringWithFormat:@"ID:%@", directModel.memberidStr];
     //    if (model.uerLevel == YUUUserLevelNew) {
     //        _levelLabel.text = @"新手矿工";
     //    }
@@ -43,7 +43,7 @@
 - (void)setTeamModel:(TeamPushModel *)teamModel {
 //    _icon.image = [UIImage imageNamed:@"default_icon"];
     _icon.image = getHeadPhoto(teamModel.membergrade);
-    _idLabel.text = [NSString stringWithFormat:@"ID%ld", (long)teamModel.memberid];
+    _idLabel.text = [NSString stringWithFormat:@"ID%@", teamModel.memberidStr];
     //    if (model.uerLevel == YUUUserLevelNew) {
     //        _levelLabel.text = @"新手矿工";
     //    }
