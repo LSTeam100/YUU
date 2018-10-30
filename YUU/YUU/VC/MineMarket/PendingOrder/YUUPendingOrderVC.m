@@ -261,7 +261,9 @@
         return cell;
     } else {
         PendingMailboxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PendingMailboxCell"];
-        cell.model = _mailArr[indexPath.section];
+        if (_mailArr.count >= indexPath.section) {
+            cell.model = _mailArr[indexPath.section];
+        }
         cell.delegate = self;
         return cell;
     }
