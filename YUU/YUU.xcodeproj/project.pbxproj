@@ -137,6 +137,11 @@
 		189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC56F212FF72400E8E2E4 /* YUUMessageDetailCtrl.m */; };
 		189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */; };
 		18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */; };
+		18D026222192DF19003A0D64 /* GamesHomeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D026212192DF19003A0D64 /* GamesHomeCtrl.m */; };
+		18D026252192ED5A003A0D64 /* YUUChatMenuCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D026242192ED5A003A0D64 /* YUUChatMenuCtrl.m */; };
+		18D026282192F14B003A0D64 /* YUUChatCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D026272192F14B003A0D64 /* YUUChatCtrl.m */; };
+		18D0262B21930DA4003A0D64 /* YUUHappycallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D0262A21930DA4003A0D64 /* YUUHappycallRequest.m */; };
+		18D0262E21930F1F003A0D64 /* YUUCallNowRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D0262D21930F1F003A0D64 /* YUUCallNowRequest.m */; };
 		18D3532621379D9000990F7C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A0213929A000990F7C /* CostomTextFieldBgView.m */; };
 		18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A3213A7BAA00990F7C /* CostomSepView.m */; };
@@ -416,6 +421,16 @@
 		189CC5722130FC4C00E8E2E4 /* YUUSetingCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSetingCtrl.m; sourceTree = "<group>"; };
 		18CDC7C0213D548A00A405F9 /* YUUTransactionHistoryCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTransactionHistoryCtrl.h; sourceTree = "<group>"; };
 		18CDC7C1213D548A00A405F9 /* YUUTransactionHistoryCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTransactionHistoryCtrl.m; sourceTree = "<group>"; };
+		18D026202192DF19003A0D64 /* GamesHomeCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesHomeCtrl.h; sourceTree = "<group>"; };
+		18D026212192DF19003A0D64 /* GamesHomeCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesHomeCtrl.m; sourceTree = "<group>"; };
+		18D026232192ED5A003A0D64 /* YUUChatMenuCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUChatMenuCtrl.h; sourceTree = "<group>"; };
+		18D026242192ED5A003A0D64 /* YUUChatMenuCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUChatMenuCtrl.m; sourceTree = "<group>"; };
+		18D026262192F14B003A0D64 /* YUUChatCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUChatCtrl.h; sourceTree = "<group>"; };
+		18D026272192F14B003A0D64 /* YUUChatCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUChatCtrl.m; sourceTree = "<group>"; };
+		18D0262921930DA4003A0D64 /* YUUHappycallRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUHappycallRequest.h; sourceTree = "<group>"; };
+		18D0262A21930DA4003A0D64 /* YUUHappycallRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUHappycallRequest.m; sourceTree = "<group>"; };
+		18D0262C21930F1F003A0D64 /* YUUCallNowRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCallNowRequest.h; sourceTree = "<group>"; };
+		18D0262D21930F1F003A0D64 /* YUUCallNowRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCallNowRequest.m; sourceTree = "<group>"; };
 		18D3539F213929A000990F7C /* CostomTextFieldBgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CostomTextFieldBgView.h; sourceTree = "<group>"; };
 		18D353A0213929A000990F7C /* CostomTextFieldBgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostomTextFieldBgView.m; sourceTree = "<group>"; };
 		18D353A2213A7BAA00990F7C /* CostomSepView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CostomSepView.h; sourceTree = "<group>"; };
@@ -502,6 +517,7 @@
 		09207E0821270C6A00952C6D /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				18D0261F2192DEAC003A0D64 /* Games */,
 				189CC558212D610E00E8E2E4 /* profile */,
 				095F4A63212A968C00098859 /* Base */,
 				18F85D2521290A12001A3205 /* Login */,
@@ -673,6 +689,10 @@
 				0923C44B214895EE00869625 /* YUUSellerTransactionRequest.h */,
 				0923C44C214895EE00869625 /* YUULauchAppRequest.h */,
 				0923C44D214895EE00869625 /* YUUProfileMessageListRequest.h */,
+				18D0262921930DA4003A0D64 /* YUUHappycallRequest.h */,
+				18D0262A21930DA4003A0D64 /* YUUHappycallRequest.m */,
+				18D0262C21930F1F003A0D64 /* YUUCallNowRequest.h */,
+				18D0262D21930F1F003A0D64 /* YUUCallNowRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -918,6 +938,19 @@
 				18D995A0217395B900276E76 /* YUUAlertView.xib */,
 			);
 			path = profile;
+			sourceTree = "<group>";
+		};
+		18D0261F2192DEAC003A0D64 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				18D026202192DF19003A0D64 /* GamesHomeCtrl.h */,
+				18D026212192DF19003A0D64 /* GamesHomeCtrl.m */,
+				18D026232192ED5A003A0D64 /* YUUChatMenuCtrl.h */,
+				18D026242192ED5A003A0D64 /* YUUChatMenuCtrl.m */,
+				18D026262192F14B003A0D64 /* YUUChatCtrl.h */,
+				18D026272192F14B003A0D64 /* YUUChatCtrl.m */,
+			);
+			path = Games;
 			sourceTree = "<group>";
 		};
 		18EDE3FE21257A3700FC8E0C = {
@@ -1234,6 +1267,7 @@
 				099445722141229200548245 /* YUUMilltraderModel.m in Sources */,
 				18F85CEC2126B3A2001A3205 /* ZHAFURLRequestSerialization.m in Sources */,
 				0952AC2C21392D2600D701CE /* UIView+Help.m in Sources */,
+				18D026222192DF19003A0D64 /* GamesHomeCtrl.m in Sources */,
 				0994456D2141229200548245 /* YUUSellerSellitModel.m in Sources */,
 				0925E97F215341C400F874A7 /* YUUGetGiftRequest.m in Sources */,
 				1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */,
@@ -1270,6 +1304,7 @@
 				099445702141229200548245 /* YUUTransactionModel.m in Sources */,
 				095859C2214B392C00821291 /* UITextField+Help.m in Sources */,
 				099445732141229200548245 /* YUUMsgModel.m in Sources */,
+				18D026252192ED5A003A0D64 /* YUUChatMenuCtrl.m in Sources */,
 				189CC5732130FC4C00E8E2E4 /* YUUSetingCtrl.m in Sources */,
 				0923C44F214895EE00869625 /* YUURegisterRequest.m in Sources */,
 				18F85CE82126B3A2001A3205 /* ZHAFSecurityPolicy.m in Sources */,
@@ -1289,6 +1324,7 @@
 				0923C46C214895EE00869625 /* YUUPointbuyRequest.m in Sources */,
 				1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */,
 				0923C460214895EE00869625 /* YUUMachineMarketRequest.m in Sources */,
+				18D026282192F14B003A0D64 /* YUUChatCtrl.m in Sources */,
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				0923C451214895EE00869625 /* YUUCallCenterRequest.m in Sources */,
 				189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */,
@@ -1312,6 +1348,7 @@
 				0994456C2141229200548245 /* YUUBaseModel.m in Sources */,
 				18D9959F2173959500276E76 /* YUUAlertView.m in Sources */,
 				1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */,
+				18D0262E21930F1F003A0D64 /* YUUCallNowRequest.m in Sources */,
 				0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */,
 				092209E22170EB660021B34A /* YUUPendingNoticeVC.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
@@ -1327,6 +1364,7 @@
 				099445682141229200548245 /* YUUMachineMarketInfoModel.m in Sources */,
 				189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */,
 				0994456A2141229200548245 /* YUUPointSellModel.m in Sources */,
+				18D0262B21930DA4003A0D64 /* YUUHappycallRequest.m in Sources */,
 				091D8E492130DF1800C430AB /* YUUSellerInfoView.m in Sources */,
 				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 				099444762140D28F00548245 /* GetMineralPoolRequest.m in Sources */,
@@ -1474,8 +1512,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P6UF878TKN;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DC778EPEP3;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1510,10 +1548,10 @@
 					"\"UIKit\"",
 					"-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuu.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3bb8a0ff-f6ba-4e3f-8507-61d29d4c2320";
-				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1525,8 +1563,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DC778EPEP3;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1561,7 +1599,7 @@
 					"\"UIKit\"",
 					"-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuu.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
