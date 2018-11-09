@@ -7,6 +7,7 @@
 //
 
 #import "GamesHomeCtrl.h"
+#import "OffensiveAndDefensiveOrderVC.h"
 
 @interface GamesHomeCtrl ()
     @property(nonatomic,weak)IBOutlet UIView *gameView;
@@ -46,6 +47,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)gameBtnAction:(UIButton *)sender {
+    OffensiveAndDefensiveOrderVC *vc = [OffensiveAndDefensiveOrderVC storyboardInstanceType];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 /*
 #pragma mark - Navigation

@@ -569,6 +569,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="71"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="攻守令"/>
+                                        <connections>
+                                            <action selector="gameBtnAction:" destination="dM9-RH-X4W" eventType="touchUpInside" id="xqK-gu-i2U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
