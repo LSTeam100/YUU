@@ -74,7 +74,7 @@
     label.lineBreakMode = NSLineBreakByCharWrapping;
     label.numberOfLines = 0;
     
-    CGSize size = [label sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 60 - 53, 1000)];
+    CGSize size = [label sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 60 - 60, 1000)];
     label.font = [UIFont systemFontOfSize:14];
     label.textAlignment = NSTextAlignmentLeft;
     return size.height;
@@ -82,7 +82,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     DLOG(@"indexPath=%@",indexPath);
-   return  [self getSizeWithText:@"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖"] +30;
+   return  [self getSizeWithText:@"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖"] + 30;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];;

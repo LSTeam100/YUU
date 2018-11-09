@@ -39,7 +39,7 @@
     self.contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
     self.contentLabel.numberOfLines = 0;
 
-    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - self.contentLabel.frame.origin.x - 53, 1000)];
+    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - self.contentLabel.frame.origin.x - 60, 1000)];
     self.contentLabel.font = [UIFont systemFontOfSize:14];
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
     self.contentLabel.textColor = YUUYellow;
