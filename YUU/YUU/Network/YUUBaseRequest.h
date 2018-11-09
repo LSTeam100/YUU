@@ -12,6 +12,7 @@
 
 @class YUUBaseRequest;
 static NSString * const BaseAddress = @"https://yuuleyou.com";
+static NSString * const TestAddress = @"http://47.110.32.18:8080";
 
 typedef void(^onSuccessCallback)(YUUBaseRequest* request);
 typedef void(^onFailureCallback)(YUUBaseRequest* request);

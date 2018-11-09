@@ -553,7 +553,7 @@
         <!--Games Home Ctrl-->
         <scene sceneID="xB1-qn-wch">
             <objects>
-                <viewController storyboardIdentifier="GamesHomeCtrl" id="dM9-RH-X4W" customClass="GamesHomeCtrl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamesHomeCtrl" hidesBottomBarWhenPushed="YES" id="dM9-RH-X4W" customClass="GamesHomeCtrl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XiQ-dG-RZz"/>
                         <viewControllerLayoutGuide type="bottom" id="CTE-Ua-RoN"/>
@@ -815,10 +815,10 @@
                                                     <constraint firstAttribute="height" constant="35" id="Fws-Na-Zpg"/>
                                                     <constraint firstAttribute="width" constant="80" id="fhF-tZ-M7W"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="发送"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kwc-J3-w8s" secondAttribute="trailing" constant="10" id="2LC-k7-H1X"/>
                                             <constraint firstAttribute="height" constant="40" id="2fK-aq-HCU"/>
@@ -853,7 +853,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-vu-Hhn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-vu-Hhn" customClass="CommLabel">
                                                             <rect key="frame" x="60" y="29" width="35.5" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -864,11 +864,12 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="H9s-lE-Ahv" firstAttribute="leading" secondItem="xYh-ih-4S4" secondAttribute="leading" constant="15" id="FAm-Yf-hoQ"/>
-                                                        <constraint firstItem="H9s-lE-Ahv" firstAttribute="centerY" secondItem="xYh-ih-4S4" secondAttribute="centerY" id="P4B-kd-jRQ"/>
+                                                        <constraint firstItem="H9s-lE-Ahv" firstAttribute="top" secondItem="xYh-ih-4S4" secondAttribute="top" constant="9.5" id="Q0M-mB-Utj"/>
                                                         <constraint firstItem="Kxc-7W-5NE" firstAttribute="top" secondItem="xYh-ih-4S4" secondAttribute="top" constant="10" id="dLg-VG-7rH"/>
                                                         <constraint firstItem="Kxc-7W-5NE" firstAttribute="leading" secondItem="H9s-lE-Ahv" secondAttribute="trailing" constant="5" id="rnr-bo-idT"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="contentLabel" destination="ggw-vu-Hhn" id="p9m-jj-lSS"/>
                                                     <outlet property="headImageView" destination="H9s-lE-Ahv" id="qe5-6B-ua0"/>
@@ -885,6 +886,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0wG-6d-hRQ" secondAttribute="trailing" id="1UU-Gk-Peq"/>
+                                    <constraint firstAttribute="height" constant="574" id="85v-UC-8uE"/>
                                     <constraint firstAttribute="trailing" secondItem="y9s-ry-af7" secondAttribute="trailing" id="F0e-0F-WZH"/>
                                     <constraint firstItem="y9s-ry-af7" firstAttribute="top" secondItem="ZYy-d4-HeG" secondAttribute="top" id="IAz-g6-veF"/>
                                     <constraint firstAttribute="bottom" secondItem="0wG-6d-hRQ" secondAttribute="bottom" id="NEO-ft-ZEj"/>
@@ -899,13 +901,14 @@
                             <constraint firstItem="ZYy-d4-HeG" firstAttribute="leading" secondItem="et6-ZO-Yxo" secondAttribute="leadingMargin" constant="7" id="1DS-Ko-GMC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZYy-d4-HeG" secondAttribute="trailing" constant="7" id="WOg-Xv-k8g"/>
                             <constraint firstItem="ZYy-d4-HeG" firstAttribute="top" secondItem="x1x-gT-ZVy" secondAttribute="bottom" constant="12" id="dFk-6K-v5v"/>
-                            <constraint firstItem="d59-6J-CxG" firstAttribute="top" secondItem="ZYy-d4-HeG" secondAttribute="bottom" constant="12" id="ip9-As-h3u"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="chatBgView" destination="ZYy-d4-HeG" id="klz-7j-lfg"/>
                         <outlet property="chatBottomView" destination="0wG-6d-hRQ" id="yhO-lC-L6u"/>
                         <outlet property="chatTextField" destination="Ien-6Y-Mce" id="t3M-EV-GP4"/>
+                        <outlet property="chatViewHeight" destination="85v-UC-8uE" id="hG2-Yw-bSo"/>
+                        <outlet property="cstTopMargin" destination="dFk-6K-v5v" id="iST-Ba-YwT"/>
                         <outlet property="messageList" destination="y9s-ry-af7" id="hMe-Tt-gCp"/>
                         <outlet property="sendMessageBtn" destination="kwc-J3-w8s" id="a1s-6H-USu"/>
                     </connections>

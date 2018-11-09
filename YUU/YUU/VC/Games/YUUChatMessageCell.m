@@ -13,10 +13,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.nameLabel.textColor = YUUYellow;
-//    self.contentLabel.textColor = YUUYellow;
-//    self.contentLabel.layer.borderWidth = 0.5;
-//    self.contentLabel.layer.borderColor = YUUYellow.CGColor;
-//    
+    self.contentLabel.textColor = YUUYellow;
+    self.contentLabel.layer.borderWidth = 0.5;
+    self.contentLabel.layer.borderColor = YUUYellow.CGColor;
+    self.contentLabel.layer.cornerRadius = 10;
+    self.contentLabel.layer.masksToBounds = YES;
 //    self.backgroundColor = [UIColor clearColor];
 //    
 //    CALayer *mask = [CALayer layer];
@@ -38,10 +39,13 @@
     self.contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
     self.contentLabel.numberOfLines = 0;
 
-    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - self.contentLabel.frame.origin.x - 10, 1000)];
+    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - self.contentLabel.frame.origin.x - 53, 1000)];
     self.contentLabel.font = [UIFont systemFontOfSize:14];
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
+    self.contentLabel.textColor = YUUYellow;
     self.contentLabel.frame = CGRectMake(self.contentLabel.frame.origin.x,self.contentLabel.frame.origin.y, size.width, size.height);
+    
+    
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

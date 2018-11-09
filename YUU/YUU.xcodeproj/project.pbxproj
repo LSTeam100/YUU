@@ -153,6 +153,7 @@
 		18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A0213929A000990F7C /* CostomTextFieldBgView.m */; };
 		18D353A4213A7BAA00990F7C /* CostomSepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D353A3213A7BAA00990F7C /* CostomSepView.m */; };
 		18D457DE219441EE009BAD76 /* YUUChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D457DD219441EE009BAD76 /* YUUChatMessageCell.m */; };
+		18D457E421957152009BAD76 /* CommLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D457E321957152009BAD76 /* CommLabel.m */; };
 		18D9959F2173959500276E76 /* YUUAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9959E2173959500276E76 /* YUUAlertView.m */; };
 		18D995A1217395B900276E76 /* YUUAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D995A0217395B900276E76 /* YUUAlertView.xib */; };
 		18EDE40C21257A3700FC8E0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDE40B21257A3700FC8E0C /* AppDelegate.m */; };
@@ -458,6 +459,8 @@
 		18D353A3213A7BAA00990F7C /* CostomSepView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostomSepView.m; sourceTree = "<group>"; };
 		18D457DC219441EE009BAD76 /* YUUChatMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUChatMessageCell.h; sourceTree = "<group>"; };
 		18D457DD219441EE009BAD76 /* YUUChatMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUChatMessageCell.m; sourceTree = "<group>"; };
+		18D457E221957152009BAD76 /* CommLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommLabel.h; sourceTree = "<group>"; };
+		18D457E321957152009BAD76 /* CommLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommLabel.m; sourceTree = "<group>"; };
 		18D9959D2173959500276E76 /* YUUAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUAlertView.h; sourceTree = "<group>"; };
 		18D9959E2173959500276E76 /* YUUAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUAlertView.m; sourceTree = "<group>"; };
 		18D995A0217395B900276E76 /* YUUAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YUUAlertView.xib; sourceTree = "<group>"; };
@@ -981,6 +984,8 @@
 		18D0261F2192DEAC003A0D64 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				18D457E221957152009BAD76 /* CommLabel.h */,
+				18D457E321957152009BAD76 /* CommLabel.m */,
 				18D026202192DF19003A0D64 /* GamesHomeCtrl.h */,
 				18D026212192DF19003A0D64 /* GamesHomeCtrl.m */,
 				18D026232192ED5A003A0D64 /* YUUChatMenuCtrl.h */,
@@ -1331,6 +1336,7 @@
 				0952AC2021391C4D00D701CE /* YUUEncryMgr.m in Sources */,
 				0926F07321328E200083CFDD /* HUDManager.m in Sources */,
 				0923C454214895EE00869625 /* YUUPointSellRequest.m in Sources */,
+				18D457E421957152009BAD76 /* CommLabel.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				09251C80213F6EC300B12370 /* YUUPendingMailboxModel.m in Sources */,
 				0923C453214895EE00869625 /* YUULoginRequest.m in Sources */,
@@ -1566,8 +1572,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P6UF878TKN;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DC778EPEP3;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1604,8 +1610,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3bb8a0ff-f6ba-4e3f-8507-61d29d4c2320";
-				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1617,8 +1623,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DC778EPEP3;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
