@@ -34,7 +34,7 @@ static NSString * const defaultTableName = @"chatTable";
         return false;
     }
     else{
-        BOOL result=[self.yuuDB executeUpdate:[NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS t_%@ (id integer PRIMARY KEY AUTOINCREMENT, memberid text NOT NULL, membergrade text NOT NULL,calltext text NOT NULL,msgid text NOT NULL,createtime text NOT NULL);",defaultTableName]];
+    BOOL result=[self.yuuDB executeUpdate:[NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS t_%@ (id integer PRIMARY KEY AUTOINCREMENT, memberid VARCHAR(255) NOT NULL, membergrade VARCHAR(255) NOT NULL,calltext VARCHAR(255) NOT NULL,msgid VARCHAR(255) NOT NULL,createtime VARCHAR(255) NOT NULL);",defaultTableName]];
         return result;
     }
 }
