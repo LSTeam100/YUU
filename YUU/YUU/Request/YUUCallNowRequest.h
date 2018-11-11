@@ -9,5 +9,5 @@
 #import "YUUBaseRequest.h"
 
 @interface YUUCallNowRequest : YUUBaseRequest
-
+-(id)initWithCallNow:(NSString *)token Callarea:(NSString *)callarea Calltext:(NSString *)calltext SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed;
 @end

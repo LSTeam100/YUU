@@ -8,9 +8,18 @@
 
 #import "YUUChatCtrl.h"
 #import "YUUChatMessageCell.h"
+#import "YUUDatabaseMgr.h"
+#import "YUUHappycallRequest.h"
+#import "ChatMsgModel.h"
+#import "YUUCallNowRequest.h"
+#import "YUUUserData.h"
+static  NSString * const chatTable = @"chatTable";
+
+
 @interface YUUChatCtrl ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     CGFloat originInputTopMargin;
+    NSMutableArray *msgArr;
 
 }
     @property (weak, nonatomic) IBOutlet UIView *chatBgView;
@@ -21,16 +30,16 @@
     @property(nonatomic,weak)IBOutlet NSLayoutConstraint *cstTopMargin;
     @property(nonatomic,weak)IBOutlet NSLayoutConstraint *chatViewHeight;
     @property(nonatomic,weak)UITapGestureRecognizer *tapCancelGesture;
+
 @end
 
 @implementation YUUChatCtrl
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    msgArr = [[NSMutableArray alloc]init];
     self.title = @"畅所欲言";
     self.chatViewHeight.constant = [UIScreen mainScreen].bounds.size.height * 0.86;
-    
-    
     self.chatBgView.layer.borderWidth = 1.0;
     self.chatBgView.layer.borderColor = YUUYellow.CGColor;
     self.chatBgView.backgroundColor = [UIColor clearColor];
@@ -54,17 +63,106 @@
     }];
     
     self.chatTextField.textColor = YUUYellow;
-
+    
+    [self readLocalMessageList];
     // Do any additional setup after loading the view.
 }
+    
+- (void)getServerMessgaeList{
+    NSString *lastMsgId = @"0";
+    if (msgArr.count > 0) {
+        ChatMsgModel *lastModel = [msgArr lastObject];
+        lastMsgId = lastModel.msgId;
+    }
+    [self setBusyIndicatorVisible:YES];
+    __weak typeof (self)weakself = self;
+    YUUHappycallRequest *req  = [[YUUHappycallRequest alloc]initWithHappycall:[NSString stringWithFormat:@"%ld",(long)self.type] LastId:lastMsgId SuccessCallback:^(YUUBaseRequest *request) {
+        [weakself setBusyIndicatorVisible:NO];
+        NSDictionary* data = [request getResponse].data;
+        NSArray *addArr = data[@"msgList"];
+        
+        [weakself saveMessage:addArr];
+        [weakself.messageList reloadData];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        [weakself handleResponseError:weakself request:request needToken:YES];
+        
+        
+        
+        //test
+        ChatMsgModel *m = [[ChatMsgModel alloc]init];
+        m.msgId = @"1";
+        m.memberId = [NSNumber numberWithInteger:1233];
+        m.membergrade = [NSNumber numberWithInteger:3];
+        m.calltext = @"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖";
+        m.createTime = @"2131231";
+        
+        
+        ChatMsgModel *m2 = [[ChatMsgModel alloc]init];
+        m2.msgId = @"2";
+        m2.memberId = [NSNumber numberWithInteger:1233];
+        m2.membergrade = [NSNumber numberWithInteger:3];
+        m2.calltext = @"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖";
+        m2.createTime = @"2131231";
+        
+        [msgArr addObject:m];
+        [msgArr addObject:m2];
+        
+        [weakself saveMessage:msgArr];
+        [weakself.messageList reloadData];
+
+
+    }];
+    [req start];
+    
+}
+- (void)readLocalMessageList{
+   BOOL ret = [[YUUDatabaseMgr shareInstance] openDB];
+    if (ret) {
+        DLOG(@"聊天表创建成功");
+        msgArr = [[YUUDatabaseMgr shareInstance] queryMsg];
+        [self sordTheMsg];
+        [self.messageList reloadData];
+    }
+    else{
+        DLOG(@"聊天表创建失败");
+    }
+}
+-(void)saveMessage:(NSArray *)addArr{
+    for (int i = 0; i < addArr.count; i++) {
+        ChatMsgModel *m = addArr[i];
+        BOOL ret = [[YUUDatabaseMgr shareInstance] insertData:m];
+        if (ret) {
+            DLOG(@"插入數據成功");
+        }
+        else{
+            DLOG(@"插入數據失敗");
+        }
+    }
+    [self sordTheMsg];
+}
+-(void)sordTheMsg{
+//    NSMutableArray *sortArr = [NSMutableArray arrayWithArray:msgArr];
+    [msgArr sortUsingComparator:^NSComparisonResult(ChatMsgModel *obj1, ChatMsgModel *obj2) {
+        return [@([obj1.msgId intValue]) compare:@([obj2.msgId intValue])];
+    }];
+    for (ChatMsgModel *m in msgArr) {
+        NSLog(@"排序后%@",m.msgId);
+    }
+}
+    
+    
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return msgArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifer = @"YUUChatMessageCell";
     YUUChatMessageCell *cell = nil;
+    ChatMsgModel *m = msgArr[indexPath.row];
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
-    [cell setContentText:@"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖"];
+    cell.nameLabel.text = m.msgId;
+    [cell setContentText:m.calltext];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -82,7 +180,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     DLOG(@"indexPath=%@",indexPath);
-   return  [self getSizeWithText:@"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖"] + 30;
+    ChatMsgModel * m = msgArr[indexPath.row];
+   return  [self getSizeWithText:m.calltext] + 10;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];;
@@ -156,6 +255,27 @@
         
     }
     return  true;
+}
+
+-(IBAction)sendMsg:(id)sender{
+    if (self.chatTextField.text.length == 0) {
+        [HUD showHUDTitle:@"您不能发送空" durationTime:2];
+        return;
+    }
+    
+    WeakSelf
+   NSString *token = [YUUUserData shareInstance].userModel.token;
+//    [self setBusyIndicatorVisible:YES];
+    YUUCallNowRequest *callNow = [[YUUCallNowRequest alloc]initWithCallNow:token Callarea:[NSString stringWithFormat:@"%ld",(long)self.type] Calltext:self.chatTextField.text SuccessCallback:^(YUUBaseRequest *request) {
+        [weakSelf setBusyIndicatorVisible:NO];
+        [self getServerMessgaeList];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+//        [weakSelf setBusyIndicatorVisible:NO];
+        [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+
+    }];
+    [callNow start];
 }
 /*
 #pragma mark - Navigation

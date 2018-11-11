@@ -35,4 +35,12 @@
 -(NSString *)getMethod{
     return @"POST";
 }
+-(void)processResponse:(NSDictionary *)responseDictionary{
+    [super processResponse:responseDictionary];
+    if([[self getResponse] isSucceed]){
+        NSDictionary* data=responseDictionary[@"data"];
+        [self getResponse].data = data;
+    }
+}
+
 @end

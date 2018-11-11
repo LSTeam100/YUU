@@ -146,17 +146,20 @@
 -(IBAction)naviToMine:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUMineDetailCtrl *mine = [sb instantiateViewControllerWithIdentifier:@"YUUMineDetailCtrl"];
+    mine.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController: mine animated:YES];
 }
 -(IBAction)naviToBill:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUBillCenterCtrl *bill = [sb instantiateViewControllerWithIdentifier:@"YUUBillCenterCtrl"];
     bill.assetMoney = self.assetLabel.text;
+    bill.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController: bill animated:YES];
 }
 -(IBAction)naviToCoin:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
      YUUCurrencyTransactionCtrl *currency = [sb instantiateViewControllerWithIdentifier:@"YUUCurrencyTransactionCtrl"];
+    currency.hidesBottomBarWhenPushed = YES;
     currency.avalibleMoney = self.userModel.canuseyuu;
     [self.navigationController pushViewController: currency animated:YES];
 }
@@ -173,6 +176,7 @@
 -(IBAction)naviToCostom:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUCallCenterCtrl *callcenter = [sb instantiateViewControllerWithIdentifier:@"YUUCallCenterCtrl"];
+    callcenter.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController: callcenter animated:YES];
 
     
@@ -191,12 +195,14 @@
 -(IBAction)naviToMesage:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUMessageCtrl *message = [sb instantiateViewControllerWithIdentifier:@"YUUMessageCtrl"];
+    message.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController: message animated:YES];
 }
 
 -(IBAction)naviToSetting:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YUUSetingCtrl *setting = [sb instantiateViewControllerWithIdentifier:@"YUUSetingCtrl"];
+    setting.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:setting animated:YES];
 }
 -(IBAction)authenId:(id)sender{

@@ -816,6 +816,9 @@
                                                     <constraint firstAttribute="width" constant="80" id="fhF-tZ-M7W"/>
                                                 </constraints>
                                                 <state key="normal" title="发送"/>
+                                                <connections>
+                                                    <action selector="sendMsg:" destination="rNC-aZ-FgC" eventType="touchUpInside" id="drn-CK-qqa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

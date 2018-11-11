@@ -8,11 +8,11 @@
 
 #import "YUUSuperCtrl.h"
 
-typedef enum {
-    chatTypeNormal,
-    chatTypeEmperor,
-    chatTypeSuggest,
-}chatType;
+typedef NS_ENUM(NSInteger , chatType)  {
+    chatTypeNormal = 0,
+    chatTypeEmperor = 1,
+    chatTypeSuggest = 2,
+};
 
 @interface YUUChatCtrl : YUUSuperCtrl
 @property(nonatomic,assign)chatType type;

@@ -128,6 +128,8 @@
 		099445762141229200548245 /* YUUPointOnsaleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994455A2141228E00548245 /* YUUPointOnsaleModel.m */; };
 		0994458821412BC100548245 /* YUUCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994458721412BC100548245 /* YUUCommonModel.m */; };
 		09D4C47B213CFF5900AA8EFD /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D4C47A213CFF5900AA8EFD /* AlertController.m */; };
+		1823F2702196C50D000F16E6 /* YUUDatabaseMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */; };
+		1823F2732196D268000F16E6 /* ChatMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F2722196D268000F16E6 /* ChatMsgModel.m */; };
 		1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D49E213109D300D5FDAE /* YUUModifyPassword.m */; };
 		1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */; };
 		1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */; };
@@ -410,6 +412,10 @@
 		0994458721412BC100548245 /* YUUCommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUCommonModel.m; sourceTree = "<group>"; };
 		09D4C479213CFF5900AA8EFD /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		09D4C47A213CFF5900AA8EFD /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
+		1823F26E2196C50D000F16E6 /* YUUDatabaseMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDatabaseMgr.h; sourceTree = "<group>"; };
+		1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUDatabaseMgr.m; sourceTree = "<group>"; };
+		1823F2712196D268000F16E6 /* ChatMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMsgModel.h; sourceTree = "<group>"; };
+		1823F2722196D268000F16E6 /* ChatMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMsgModel.m; sourceTree = "<group>"; };
 		1877D49D213109D300D5FDAE /* YUUModifyPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUModifyPassword.h; sourceTree = "<group>"; };
 		1877D49E213109D300D5FDAE /* YUUModifyPassword.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUModifyPassword.m; sourceTree = "<group>"; };
 		1877D4A0213145B500D5FDAE /* YUUCurrencyTransactionCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencyTransactionCtrl.h; sourceTree = "<group>"; };
@@ -646,6 +652,8 @@
 				099445542141228D00548245 /* YUUUserModel.m */,
 				0956EB932149F5FB00968BAF /* YUUPriceModel.h */,
 				0956EB942149F5FB00968BAF /* YUUPriceModel.m */,
+				1823F2712196D268000F16E6 /* ChatMsgModel.h */,
+				1823F2722196D268000F16E6 /* ChatMsgModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -817,6 +825,8 @@
 			children = (
 				0952AC1E21391C4D00D701CE /* YUUEncryMgr.h */,
 				0952AC1F21391C4D00D701CE /* YUUEncryMgr.m */,
+				1823F26E2196C50D000F16E6 /* YUUDatabaseMgr.h */,
+				1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */,
 			);
 			name = common;
 			path = YUU/common;
@@ -1329,6 +1339,7 @@
 				18CDC7C2213D548A00A405F9 /* YUUTransactionHistoryCtrl.m in Sources */,
 				18D3532621379D9000990F7C /* (null) in Sources */,
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
+				1823F2732196D268000F16E6 /* ChatMsgModel.m in Sources */,
 				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
 				099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */,
 				091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */,
@@ -1390,6 +1401,7 @@
 				0923C465214895EE00869625 /* YUUMachineListRequest.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
 				091D8E462130D8C900C430AB /* YUUMineMarketPointCell.m in Sources */,
+				1823F2702196C50D000F16E6 /* YUUDatabaseMgr.m in Sources */,
 				0951820C212D84C40083C009 /* UIViewController+Help.m in Sources */,
 				18F85D0B2126B9D7001A3205 /* UIDevice+YUUDe.m in Sources */,
 				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
