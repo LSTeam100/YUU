@@ -107,8 +107,8 @@ static  NSString * const chatTable = @"chatTable";
         m2.calltext = @"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖";
         m2.createTime = @"2131231";
         
-        [msgArr addObject:m];
-        [msgArr addObject:m2];
+//        [msgArr addObject:m];
+//        [msgArr addObject:m2];
         
         [weakself saveMessage:msgArr];
         [weakself.messageList reloadData];
@@ -133,14 +133,7 @@ static  NSString * const chatTable = @"chatTable";
 -(void)saveMessage:(NSArray *)addArr{
     for (int i = 0; i < addArr.count; i++) {
         ChatMsgModel *m = addArr[i];
-        BOOL ret = [[YUUDatabaseMgr shareInstance] insertData:m];
-        if (ret) {
-            DLOG(@"插入數據成功");
-        }
-        else{
-            DLOG(@"插入數據失敗");
-        }
-    }
+        BOOL ret = [[YUUDatabaseMgr shareInstance] insertData:m];    }
     [self sordTheMsg];
 }
 -(void)sordTheMsg{
