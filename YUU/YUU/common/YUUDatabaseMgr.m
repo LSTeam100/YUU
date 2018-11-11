@@ -22,6 +22,11 @@ static NSString * const defaultTableName = @"chatTable";
 - (BOOL)openDB{
     NSString *dbPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:defaultTableName];
     DLOG(@"dbPath=%@",dbPath);
+    NSFileManager *file = [NSFileManager defaultManager];
+    if ([file fileExistsAtPath:dbPath]) {
+        DLOG(@"已经创建好数据库");
+        return  true;
+    }
     self.yuuDB = [FMDatabase databaseWithPath:dbPath];
     if(!self.yuuDB.open)
     {
@@ -29,11 +34,12 @@ static NSString * const defaultTableName = @"chatTable";
         return false;
     }
     else{
-    BOOL result=[self.yuuDB executeUpdate:[NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS t_%@ (id integer PRIMARY KEY AUTOINCREMENT, memberid text NOT NULL, membergrade integer NOT NULL,calltext text NOT NULL,msgid text NOT NULL,createtime text NOT NULL);",defaultTableName]];
+        BOOL result=[self.yuuDB executeUpdate:[NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS t_%@ (id integer PRIMARY KEY AUTOINCREMENT, memberid text NOT NULL, membergrade text NOT NULL,calltext text NOT NULL,msgid text NOT NULL,createtime text NOT NULL);",defaultTableName]];
         return result;
     }
 }
 -(NSMutableArray *)queryMsg{
+    [self isOpen];
     // 1.执行查询语句
     FMResultSet *resultSet = [self.yuuDB executeQuery:@"SELECT * FROM t_chatTable"];
     NSMutableArray *arr = [[NSMutableArray alloc]init];
@@ -42,7 +48,7 @@ static NSString * const defaultTableName = @"chatTable";
         ChatMsgModel *model = [[ChatMsgModel alloc] init];
         NSString * memberid = [resultSet stringForColumn:@"memberid"];
         model.memberId = [NSNumber numberWithInt:[memberid intValue]];
-        model.membergrade = [NSNumber numberWithInteger:[resultSet intForColumn:@"membergrade"]];
+        model.membergrade = [NSNumber numberWithInt:[[resultSet stringForColumn:@"membergrade"] intValue]];
         model.calltext = [resultSet stringForColumn:@"calltext"];
         model.createTime = [resultSet stringForColumn:@"createtime"];
         model.msgId = [resultSet stringForColumn:@"msgid"];
@@ -52,7 +58,6 @@ static NSString * const defaultTableName = @"chatTable";
 }
 -(BOOL)isOpen{
     if (self.yuuDB.open) {
-        [self.yuuDB beginTransaction];
         return true;
     }
     else{
@@ -63,8 +68,17 @@ static NSString * const defaultTableName = @"chatTable";
     if (![self isOpen]) {
         return false;
     };
-    NSString *sqrStr = [NSString stringWithFormat:@"INSERT INTO t_chatTable ('%@','%ld', '%@','%@','%@') VALUES (?,?,?,?,?)",[NSString stringWithFormat:@"%@",model.memberId],(long)[model.membergrade integerValue],model.calltext,model.msgId,model.createTime];
-    BOOL results = [self.yuuDB executeUpdate:sqrStr];
+//    NSString *str = [NSString stringWithFormat:@"INSERT INTO t_chatTable (memberid,membergrade,calltext,msgid,createtime) VALUES (%@,%d,%@,%@,%@)",model.memberId,[model.membergrade intValue],model.calltext,model.msgId,model.createTime];
+//    DLOG(@"str=%@",str);
+    
+//    [_db executeUpdate:@"INSERT INTO car(own_id,car_id,car_brand,car_price)VALUES(?,?,?,?)",person.ID,maxID,car.brand,@(car.price)];
+
+    BOOL results = [self.yuuDB executeUpdate:@"INSERT INTO t_chatTable(memberid,membergrade,calltext,msgid,createtime)VALUES(?,?,?,?,?)",model.memberId,model.membergrade,model.calltext,model.msgId,model.createTime];
+    
+//    NSString *insertQurey=[NSString stringWithFormat:@"insert into %@(%@) values(%@)",baseName,fieldQurey,insertValuesString];
+
+    [self.yuuDB close];
+    
     return  results;
 }
 

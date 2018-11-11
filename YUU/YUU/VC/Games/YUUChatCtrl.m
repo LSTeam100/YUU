@@ -65,6 +65,7 @@ static  NSString * const chatTable = @"chatTable";
     self.chatTextField.textColor = YUUYellow;
     
     [self readLocalMessageList];
+    [self getServerMessgaeList];
     // Do any additional setup after loading the view.
 }
     
