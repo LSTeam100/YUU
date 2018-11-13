@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090DB2B92199C2D900E58F0E /* YUUCancelTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 090DB2B82199C2D900E58F0E /* YUUCancelTransactionRequest.m */; };
 		091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091983CA2131A54A00E35196 /* YUUTeamInfoView.m */; };
 		091983CD2131A55600E35196 /* YUUTeamInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091983CC2131A55600E35196 /* YUUTeamInfoView.xib */; };
 		091983D02131A95A00E35196 /* YUUUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091983CF2131A95A00E35196 /* YUUUserInfoView.m */; };
@@ -166,6 +167,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090DB2B72199C2D900E58F0E /* YUUCancelTransactionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCancelTransactionRequest.h; sourceTree = "<group>"; };
+		090DB2B82199C2D900E58F0E /* YUUCancelTransactionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCancelTransactionRequest.m; sourceTree = "<group>"; };
 		091983C92131A54A00E35196 /* YUUTeamInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTeamInfoView.h; sourceTree = "<group>"; };
 		091983CA2131A54A00E35196 /* YUUTeamInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTeamInfoView.m; sourceTree = "<group>"; };
 		091983CC2131A55600E35196 /* YUUTeamInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YUUTeamInfoView.xib; sourceTree = "<group>"; };
@@ -851,6 +854,8 @@
 				09251C72213F68DA00B12370 /* BaseHTTP.m */,
 				092209E32171020D0021B34A /* YUUPendingSellenterRequest.h */,
 				092209E42171020D0021B34A /* YUUPendingSellenterRequest.m */,
+				090DB2B72199C2D900E58F0E /* YUUCancelTransactionRequest.h */,
+				090DB2B82199C2D900E58F0E /* YUUCancelTransactionRequest.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1313,6 +1318,7 @@
 				18D9959F2173959500276E76 /* YUUAlertView.m in Sources */,
 				1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */,
 				0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */,
+				090DB2B92199C2D900E58F0E /* YUUCancelTransactionRequest.m in Sources */,
 				092209E22170EB660021B34A /* YUUPendingNoticeVC.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
 				189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */,
