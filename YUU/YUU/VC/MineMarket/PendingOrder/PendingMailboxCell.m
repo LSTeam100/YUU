@@ -12,6 +12,7 @@
 #import "YUUPendingSellenterRequest.h"
 #import "YUUSuperCtrl.h"
 #import "UIViewController+Help.h"
+#import "YUUCancelTransactionRequest.h"
 
 @implementation PendingMailboxCell
 
@@ -69,6 +70,13 @@
             
             _contentLabel.text = [NSString stringWithFormat:@"支付%ld转入%ldYUU，总价%@元，等待卖方二次确认",(long)model.sorbid,(long)model.coinnum, regYUUCoin([NSNumber numberWithDouble:(model.price*model.coinnum)], 2)];
         }
+    } else if (model.sellorbuy == 2) { // 本家
+        _middleBtn.hidden = NO;
+        [_middleBtn setTitle:@"取消交易" forState:UIControlStateNormal];
+        [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
+        _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+        
+        _contentLabel.text = [NSString stringWithFormat:@"您挂买单%ldYUU，单价%@元，总价%@元",(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:(model.price)], 2), regYUUCoin([NSNumber numberWithDouble:(model.price*model.coinnum)], 2)];
     } else {
         if (model.progressnum == 1) { // 发起交易
             _middleBtn.hidden = NO;
@@ -106,10 +114,6 @@
                     [HUD showHUD];
                     WeakSelf
                     YUUBuyerTransactionRequest *request = [[YUUBuyerTransactionRequest alloc] initWithBuyerTransaction:[YUUUserData shareInstance].token Tradingcard:_model.tradingcard SuccessCallback:^(YUUBaseRequest *request) {
-//                        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
-//                            [weakSelf.delegate mailCellStatusChanged];
-//                        }
-//                        [HUD showRequest:request];
                         [HUD showHUDTitle:@"确认成功" durationTime:2];
                         [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
                     } failureCallback:^(YUUBaseRequest *request) {
@@ -129,14 +133,9 @@
                     [HUD showHUD];
                     WeakSelf
                 YUUPendingSellenterRequest *request = [[YUUPendingSellenterRequest alloc] initWithTradingcard:_model.tradingcard password:textField.text success:^(YUUBaseRequest *request) {
-//                    if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(mailCellStatusChanged)]) {
-//                        [weakSelf.delegate mailCellStatusChanged];
-//                    }
-//                    [HUD showRequest:request];
                     [HUD showHUDTitle:@"确认成功" durationTime:2];
                     [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
                 } failure:^(YUUBaseRequest *request) {
-//                    [HUD showRequest:request];
                     [HUD hide];
                     [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
                 }];
@@ -157,6 +156,23 @@
         hudView.model = _model;
         hudView.delegate = self;
         [HUD showCustomView:hudView];
+    } else if ([btn.titleLabel.text isEqualToString:@"取消交易"]) {
+        [AlertController alertTitle:@"确认取消" message:nil determine:@"确认" cancel:@"取消" determineHandler:^
+         {
+             [HUD showHUD];
+             WeakSelf
+             
+             YUUCancelTransactionRequest *request = [[YUUCancelTransactionRequest alloc] initWithTradingcard:_model.tradingcard success:^(YUUBaseRequest *request) {
+                 [HUD showHUDTitle:@"取消成功" durationTime:2];
+                 [weakSelf performSelector:@selector(delay) withObject:nil afterDelay:2];
+             } failure:^(YUUBaseRequest *request) {
+                 [HUD hide];
+                 [(YUUSuperCtrl *)[UIViewController currentViewController] handleResponseError:(YUUSuperCtrl *)[UIViewController currentViewController] request:request needToken:YES];
+             }];
+             [request start];
+         } cancelHandler:^{
+             
+         }];
     }
 }
 

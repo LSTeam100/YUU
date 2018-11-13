@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		090D57E521A057E400EB3DF4 /* DefensiveListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57DF21A057E300EB3DF4 /* DefensiveListVC.m */; };
 		090D57E621A057E400EB3DF4 /* DefensiveListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57E121A057E300EB3DF4 /* DefensiveListCell.m */; };
 		090D57E721A057E400EB3DF4 /* DefensiveListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57E221A057E300EB3DF4 /* DefensiveListModel.m */; };
@@ -23,6 +24,9 @@
 		09128E2221B68D67002E720A /* WarbackRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E2121B68D67002E720A /* WarbackRequest.m */; };
 		0913F53421BAA39D0097FCE3 /* YUUSetGameYuuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0913F53321BAA39D0097FCE3 /* YUUSetGameYuuRequest.m */; };
 		0914DCA421B6D3FF004700D5 /* OrderchallengeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */; };
+
+		090DB2B92199C2D900E58F0E /* YUUCancelTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 090DB2B82199C2D900E58F0E /* YUUCancelTransactionRequest.m */; };
+
 		091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091983CA2131A54A00E35196 /* YUUTeamInfoView.m */; };
 		091983CD2131A55600E35196 /* YUUTeamInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091983CC2131A55600E35196 /* YUUTeamInfoView.xib */; };
 		091983D02131A95A00E35196 /* YUUUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091983CF2131A95A00E35196 /* YUUUserInfoView.m */; };
@@ -211,6 +215,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		090D57DF21A057E300EB3DF4 /* DefensiveListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefensiveListVC.m; sourceTree = "<group>"; };
 		090D57E021A057E300EB3DF4 /* DefensiveListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefensiveListModel.h; sourceTree = "<group>"; };
 		090D57E121A057E300EB3DF4 /* DefensiveListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefensiveListCell.m; sourceTree = "<group>"; };
@@ -243,6 +248,10 @@
 		0913F53321BAA39D0097FCE3 /* YUUSetGameYuuRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSetGameYuuRequest.m; sourceTree = "<group>"; };
 		0914DCA221B6D3FF004700D5 /* OrderchallengeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderchallengeRequest.h; sourceTree = "<group>"; };
 		0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderchallengeRequest.m; sourceTree = "<group>"; };
+
+		090DB2B72199C2D900E58F0E /* YUUCancelTransactionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCancelTransactionRequest.h; sourceTree = "<group>"; };
+		090DB2B82199C2D900E58F0E /* YUUCancelTransactionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCancelTransactionRequest.m; sourceTree = "<group>"; };
+
 		091983C92131A54A00E35196 /* YUUTeamInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTeamInfoView.h; sourceTree = "<group>"; };
 		091983CA2131A54A00E35196 /* YUUTeamInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTeamInfoView.m; sourceTree = "<group>"; };
 		091983CC2131A55600E35196 /* YUUTeamInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YUUTeamInfoView.xib; sourceTree = "<group>"; };
@@ -1073,6 +1082,8 @@
 				09251C72213F68DA00B12370 /* BaseHTTP.m */,
 				092209E32171020D0021B34A /* YUUPendingSellenterRequest.h */,
 				092209E42171020D0021B34A /* YUUPendingSellenterRequest.m */,
+				090DB2B72199C2D900E58F0E /* YUUCancelTransactionRequest.h */,
+				090DB2B82199C2D900E58F0E /* YUUCancelTransactionRequest.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1603,6 +1614,7 @@
 				1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */,
 				18D0262E21930F1F003A0D64 /* YUUCallNowRequest.m in Sources */,
 				0958B99E212C011F00B105CE /* YUUMineMachineCell.m in Sources */,
+				090DB2B92199C2D900E58F0E /* YUUCancelTransactionRequest.m in Sources */,
 				092209E22170EB660021B34A /* YUUPendingNoticeVC.m in Sources */,
 				18F85CE92126B3A2001A3205 /* ZHAFHTTPSessionManager.m in Sources */,
 				189CC55B212D61DD00E8E2E4 /* YUUProfileCtrl.m in Sources */,
