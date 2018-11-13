@@ -128,8 +128,10 @@
 		099445762141229200548245 /* YUUPointOnsaleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994455A2141228E00548245 /* YUUPointOnsaleModel.m */; };
 		0994458821412BC100548245 /* YUUCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994458721412BC100548245 /* YUUCommonModel.m */; };
 		09D4C47B213CFF5900AA8EFD /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D4C47A213CFF5900AA8EFD /* AlertController.m */; };
+		181B32C2219B00D200536D76 /* GameHistroyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181B32C1219B00D200536D76 /* GameHistroyCell.m */; };
 		1823F2702196C50D000F16E6 /* YUUDatabaseMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */; };
 		1823F2732196D268000F16E6 /* ChatMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F2722196D268000F16E6 /* ChatMsgModel.m */; };
+		1826764621992A2F007E5490 /* YUUGamesHistroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826764521992A2F007E5490 /* YUUGamesHistroy.m */; };
 		1877D49F213109D300D5FDAE /* YUUModifyPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D49E213109D300D5FDAE /* YUUModifyPassword.m */; };
 		1877D4A2213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A1213145B500D5FDAE /* YUUCurrencyTransactionCtrl.m */; };
 		1877D4A521314C1C00D5FDAE /* YUUTransactionHisCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877D4A421314C1C00D5FDAE /* YUUTransactionHisCtrl.m */; };
@@ -412,10 +414,14 @@
 		0994458721412BC100548245 /* YUUCommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUCommonModel.m; sourceTree = "<group>"; };
 		09D4C479213CFF5900AA8EFD /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		09D4C47A213CFF5900AA8EFD /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
+		181B32C0219B00D200536D76 /* GameHistroyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameHistroyCell.h; sourceTree = "<group>"; };
+		181B32C1219B00D200536D76 /* GameHistroyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameHistroyCell.m; sourceTree = "<group>"; };
 		1823F26E2196C50D000F16E6 /* YUUDatabaseMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDatabaseMgr.h; sourceTree = "<group>"; };
 		1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUDatabaseMgr.m; sourceTree = "<group>"; };
 		1823F2712196D268000F16E6 /* ChatMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMsgModel.h; sourceTree = "<group>"; };
 		1823F2722196D268000F16E6 /* ChatMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMsgModel.m; sourceTree = "<group>"; };
+		1826764421992A2F007E5490 /* YUUGamesHistroy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUGamesHistroy.h; sourceTree = "<group>"; };
+		1826764521992A2F007E5490 /* YUUGamesHistroy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUGamesHistroy.m; sourceTree = "<group>"; };
 		1877D49D213109D300D5FDAE /* YUUModifyPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUModifyPassword.h; sourceTree = "<group>"; };
 		1877D49E213109D300D5FDAE /* YUUModifyPassword.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUModifyPassword.m; sourceTree = "<group>"; };
 		1877D4A0213145B500D5FDAE /* YUUCurrencyTransactionCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCurrencyTransactionCtrl.h; sourceTree = "<group>"; };
@@ -994,6 +1000,10 @@
 		18D0261F2192DEAC003A0D64 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				1826764421992A2F007E5490 /* YUUGamesHistroy.h */,
+				1826764521992A2F007E5490 /* YUUGamesHistroy.m */,
+				181B32C0219B00D200536D76 /* GameHistroyCell.h */,
+				181B32C1219B00D200536D76 /* GameHistroyCell.m */,
 				18D457E221957152009BAD76 /* CommLabel.h */,
 				18D457E321957152009BAD76 /* CommLabel.m */,
 				18D026202192DF19003A0D64 /* GamesHomeCtrl.h */,
@@ -1344,9 +1354,11 @@
 				099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */,
 				091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */,
 				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
+				1826764621992A2F007E5490 /* YUUGamesHistroy.m in Sources */,
 				0952AC2021391C4D00D701CE /* YUUEncryMgr.m in Sources */,
 				0926F07321328E200083CFDD /* HUDManager.m in Sources */,
 				0923C454214895EE00869625 /* YUUPointSellRequest.m in Sources */,
+				181B32C2219B00D200536D76 /* GameHistroyCell.m in Sources */,
 				18D457E421957152009BAD76 /* CommLabel.m in Sources */,
 				18F85CEA2126B3A2001A3205 /* ZHAFURLResponseSerialization.m in Sources */,
 				09251C80213F6EC300B12370 /* YUUPendingMailboxModel.m in Sources */,
@@ -1618,7 +1630,6 @@
 					"\"SystemConfiguration\"",
 					"-framework",
 					"\"UIKit\"",
-					"-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1669,7 +1680,6 @@
 					"\"SystemConfiguration\"",
 					"-framework",
 					"\"UIKit\"",
-					"-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
