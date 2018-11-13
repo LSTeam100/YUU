@@ -39,4 +39,8 @@
 @property (nonatomic, assign) double price;
 
 
+@property (nonatomic, assign) long buynum;
+@property (nonatomic, assign) double buyprice;
+
+
 @end

@@ -73,10 +73,10 @@
     } else if (model.sellorbuy == 2) { // 本家
         _middleBtn.hidden = NO;
         [_middleBtn setTitle:@"取消交易" forState:UIControlStateNormal];
-        [_middleBtn setTitleColor:[UIColor hex:@"00baff"] forState:UIControlStateNormal];
-        _middleBtn.layer.borderColor = [UIColor hex:@"00baff"].CGColor;
+        [_middleBtn setTitleColor:[UIColor hex:@"ff2a00"] forState:UIControlStateNormal];
+        _middleBtn.layer.borderColor = [UIColor hex:@"ff2a00"].CGColor;
         
-        _contentLabel.text = [NSString stringWithFormat:@"您挂买单%ldYUU，单价%@元，总价%@元",(long)model.coinnum,regYUUCoin([NSNumber numberWithDouble:(model.price)], 2), regYUUCoin([NSNumber numberWithDouble:(model.price*model.coinnum)], 2)];
+        _contentLabel.text = [NSString stringWithFormat:@"您挂买单%ldYUU，单价%@元，总价%@元",model.buynum,regYUUCoin([NSNumber numberWithDouble:(model.buyprice)], 2), regYUUCoin([NSNumber numberWithDouble:(model.buyprice*model.buynum)], 2)];
     } else {
         if (model.progressnum == 1) { // 发起交易
             _middleBtn.hidden = NO;
