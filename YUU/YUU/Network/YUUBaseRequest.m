@@ -127,7 +127,7 @@
 }
 
 -(void)onPost{
-    NSString* url=[BaseAddress stringByAppendingString:[self getURL]];
+    NSString* url=[TestAddress stringByAppendingString:[self getURL]];
     
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
 //    manager.requestSerializer=[AFJSONRequestSerializer serializerWithWritingOptions:0];
