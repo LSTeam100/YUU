@@ -9,7 +9,7 @@
 #import "OffensiveAndDefensiveOrderVC.h"
 #import "OffensiveAndDefensiveOrderCell.h"
 #import "UIColor+Help.h"
-
+#import "YUUGamesHistroy.h"
 @interface OffensiveAndDefensiveOrderVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -41,6 +41,7 @@
                 [UIColor R:187 G:160 B:100],];
     [self.tableView reloadData];
     self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
 }
 
 #pragma mark - UITableViewDataSource -
@@ -66,6 +67,11 @@
 
 #pragma mark - UITableViewDelegate -
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 4) {
+        YUUGamesHistroy *gameHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"YUUGamesHistroy"];
+        [self.navigationController pushViewController:gameHistory animated:YES];
+    }
+    
     
 }
 

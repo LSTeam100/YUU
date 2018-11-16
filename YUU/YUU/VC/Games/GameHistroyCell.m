@@ -12,6 +12,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.timeLabel.textColor = colorWithHexString(@"52B2C6", 1.0);
+    self.otherIdLabel.textColor = colorWithHexString(@"52B2C6", 1.0);
+    
+
     // Initialization code
 }
 

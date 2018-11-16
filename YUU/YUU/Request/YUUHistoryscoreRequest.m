@@ -1,25 +1,26 @@
 //
-//  YUUCallNowRequest.m
+//  YUUHistoryscoreRequest.m
 //  YUU
 //
-//  Created by apple on 2018/11/7.
+//  Created by apple on 2018/11/16.
 //  Copyright © 2018 apple. All rights reserved.
 //
 
-#import "YUUCallNowRequest.h"
+#import "YUUHistoryscoreRequest.h"
 
-@implementation YUUCallNowRequest
--(id)initWithCallNow:(NSString *)token Callarea:(NSString *)callarea Calltext:(NSString *)calltext SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+@implementation YUUHistoryscoreRequest
+-(id)initWithHisScore:(NSString *)token LastId:(NSString *)lastId SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
         
-        NSArray *signArr = @[callarea,calltext,token];
+        NSArray *signArr = @[token,lastId];
+        
+        
         NSString *sha1key = getSignFromParameter(signArr);
         
         NSDictionary *parameters=@{
-                                   @"callarea": callarea,
-                                   @"calltext": calltext,
+                                   @"lastid": lastId,
                                    @"token": token,
                                    @"sign" : sha1key
                                    };
@@ -28,7 +29,7 @@
     return self;
 }
 -(NSString *)getURL{
-    return @"/callnow/";
+    return @"/historyscore/";
 }
 
 -(NSString *)getMethod{

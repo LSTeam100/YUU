@@ -418,8 +418,8 @@
                                                     <segue destination="dM9-RH-X4W" kind="show" id="F4F-q2-9Ho"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_games" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-be-ATO">
-                                                <rect key="frame" x="27.5" y="29" width="70" height="74"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_game_already" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-be-ATO">
+                                                <rect key="frame" x="28" y="29" width="69" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏娱乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArZ-P4-Xej">
                                                 <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
@@ -931,7 +931,7 @@
         <image name="profile_coin" width="69" height="73"/>
         <image name="profile_costmer" width="69" height="74"/>
         <image name="profile_freeze" width="11" height="13"/>
-        <image name="profile_games" width="70" height="74"/>
+        <image name="profile_game_already" width="69" height="74"/>
         <image name="profile_header_icon" width="40" height="41"/>
         <image name="profile_lockposion" width="12" height="11"/>
         <image name="profile_mine" width="69" height="74"/>

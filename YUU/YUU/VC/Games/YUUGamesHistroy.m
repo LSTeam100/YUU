@@ -8,8 +8,13 @@
 
 #import "YUUGamesHistroy.h"
 #import "GameHistroyCell.h"
+#import "YUUHistoryscoreRequest.h"
+#import "YUUUserData.h"
 @interface YUUGamesHistroy ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,strong)IBOutlet UITableView *tableView;
+@property(nonatomic,weak)IBOutlet UITableView *tableView;
+@property(nonatomic,weak)IBOutlet UIView *topView;
+@property(nonatomic,weak)IBOutlet UILabel *topLabel;
+@property(nonatomic,weak)IBOutlet UIView *titleBgView;
 
 @end
 
@@ -17,7 +22,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"攻守令";
+    self.tableView.delegate =self;
+    self.topView.layer.borderColor = [colorWithHexString(@"52B2C6", 1) CGColor];
+    
+    self.topView.layer.borderWidth = 1.0;
+    self.topView.backgroundColor = [UIColor clearColor];
+    self.titleBgView.backgroundColor = colorWithHexString(@"52B2C6", 1.0);
+    self.topLabel.textColor = colorWithHexString(@"52B2C6", 1.0);
+    self.topView.layer.cornerRadius = 10;
+    
+    
+
     // Do any additional setup after loading the view.
+}
+-(void)getHistroyReq{
+//    NSString *token = [YUUUserData shareInstance].token;
+//    YUUHistoryscoreRequest *hisscore = [YUUHistoryscoreRequest alloc]initWithHisScore:token LastId:<#(NSString *)#> SuccessCallback:^(YUUBaseRequest *request) {
+//        <#code#>
+//    } failureCallback:<#^(YUUBaseRequest *request)failed#>
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
