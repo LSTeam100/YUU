@@ -809,13 +809,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwc-J3-w8s">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwc-J3-w8s">
                                                 <rect key="frame" x="239" y="2.5" width="80" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Fws-Na-Zpg"/>
                                                     <constraint firstAttribute="width" constant="80" id="fhF-tZ-M7W"/>
                                                 </constraints>
-                                                <state key="normal" title="发送"/>
+                                                <state key="normal" image="chat_send"/>
                                                 <connections>
                                                     <action selector="sendMsg:" destination="rNC-aZ-FgC" eventType="touchUpInside" id="drn-CK-qqa"/>
                                                 </connections>
@@ -923,6 +923,7 @@
     </scenes>
     <resources>
         <image name="bg" width="375" height="667"/>
+        <image name="chat_send" width="77" height="37"/>
         <image name="profile_alauth" width="81" height="26"/>
         <image name="profile_asset" width="343" height="192"/>
         <image name="profile_availabel_icon" width="13" height="13"/>
