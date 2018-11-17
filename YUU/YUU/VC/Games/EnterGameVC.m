@@ -7,6 +7,7 @@
 //
 
 #import "EnterGameVC.h"
+#import "DefensiveVC.h"
 
 @interface EnterGameVC ()
 @property (strong, nonatomic) IBOutlet UIView *upView;
@@ -39,8 +40,15 @@
 }
 
 - (IBAction)upAction:(id)sender {
+    DefensiveVC *vc = [DefensiveVC storyboardInstanceType];
+    vc.isDefensive = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
 - (IBAction)downAction:(id)sender {
+    DefensiveVC *vc = [DefensiveVC storyboardInstanceType];
+    vc.isDefensive = NO;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

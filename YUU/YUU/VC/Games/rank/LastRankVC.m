@@ -57,7 +57,7 @@
         _currentWeekTime = [dict objectForKey:@"weekendtime"];
         _items = [RankModel mj_objectArrayWithKeyValuesArray:[dict objectForKey:@"msgList"]];
         [self.tableView reloadData];
-        _upTitle.text = @"周排行榜";
+//        _upTitle.text = @"周排行榜";
         _upContentLabel.text = [NSString stringWithFormat:@"您上周获得第%ld位",_currentWeekRank];
         [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
@@ -65,7 +65,7 @@
         [self.tableView reloadData];
         [HUD hide];
         [self handleResponseError:self request:request needToken:YES];
-        _upTitle.text = @"周排行榜";
+//        _upTitle.text = @"周排行榜";
         _upContentLabel.text = [NSString stringWithFormat:@"您上周获得第n位"];
     }];
     [request start];
