@@ -203,4 +203,9 @@
         DLOG(@"展示登录页面");
     }];
 }
+
+- (void)dealloc {
+    NSLog(@"dealloc %@",self);
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "YUUBaseTableViewCell.h"
 #import "UIColor+Help.h"
+#import "RankModel.h"
 
 typedef NS_ENUM(NSInteger, RankType) {
     week = 0,
@@ -23,5 +24,8 @@ typedef NS_ENUM(NSInteger, RankType) {
 @property (strong, nonatomic) IBOutlet UILabel *label2;
 @property (strong, nonatomic) IBOutlet UILabel *label3;
 
+@property (nonatomic, strong) RankModel *model;
+
+@property (nonatomic, assign) NSInteger index;
 
 @end

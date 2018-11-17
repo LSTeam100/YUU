@@ -9,8 +9,12 @@
 #import "YUUBaseViewController.h"
 #import "RankCell.h"
 
+typedef void(^ShowLastRankBlock)();
+
 
 @interface RankVC : YUUBaseViewController
+
+@property (nonatomic, strong) ShowLastRankBlock showLastRankBlock;
 
 @property (nonatomic, assign) RankType rankType;
 
@@ -28,6 +32,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *middleLabel3;
 @property (strong, nonatomic) IBOutlet UILabel *middleLabel4;
 
-@property (strong, nonatomic) IBOutlet UITableView *tableVeiw;
+@property (strong, nonatomic) IBOutlet YUUBaseTableView *tableVeiw;
 
 @end

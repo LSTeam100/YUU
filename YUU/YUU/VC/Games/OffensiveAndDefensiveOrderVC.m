@@ -10,6 +10,10 @@
 #import "OffensiveAndDefensiveOrderCell.h"
 #import "UIColor+Help.h"
 #import "YUUGamesHistroy.h"
+#import "GetAttackorderRequest.h"
+#import "RankViewController.h"
+#import "EnterGameVC.h"
+
 @interface OffensiveAndDefensiveOrderVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -17,6 +21,8 @@
 @property (nonatomic, strong) NSArray *iconNames;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *colors;
+
+@property (nonatomic, assign) BOOL hasNews;
 
 @end
 
@@ -31,17 +37,39 @@
     [super viewDidLoad];
     self.title = @"攻守令";
     
-    _iconNames = @[@"a", @"a", @"a", @"a", @"a", @"a"];
-    _titles = @[@"排名与奖励", @"0.3-3YUU", @"3-30YUU", @"30-300YUU", @"历史战报", @"游戏规则"];
+    _iconNames = @[@"offensiveAnDefensive0", @"offensiveAnDefensive1", @"offensiveAnDefensive2", @"offensiveAnDefensive3", @"a", @"a"];
+//    _titles = @[@"排名与奖励", @"0.3-3YUU", @"3-30YUU", @"30-300YUU", @"历史战报", @"游戏规则"];
+    _titles = @[@"进入游戏", @"排名与奖励", @"历史战报", @"游戏规则"];
     _colors = @[[UIColor R:187 G:160 B:100],
-                [UIColor R:172 G:122 B:90],
-                [UIColor R:182 G:209 B:208],
-                [UIColor R:240 G:59 B:70],
                 [UIColor R:187 G:160 B:100],
-                [UIColor R:187 G:160 B:100],];
+                [UIColor R:187 G:160 B:100],
+                [UIColor R:187 G:160 B:100]];
+//                [UIColor R:172 G:122 B:90],
+//                [UIColor R:182 G:209 B:208],
+//                [UIColor R:240 G:59 B:70],
+//                [UIColor R:187 G:160 B:100],
+//                [UIColor R:187 G:160 B:100],];
     [self.tableView reloadData];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self getHTTPData];
+}
+
+- (void)getHTTPData {
+    GetAttackorderRequest *request = [[GetAttackorderRequest alloc] initSuccess:^(YUUBaseRequest *request) {
+        if (request.getResponse.data) {
+            _hasNews = YES;
+        } else {
+            _hasNews = NO;
+        }
+        [self.tableView reloadData];
+    } failure:^(YUUBaseRequest *request) {
+        [self.tableView reloadData];
+    }];
+    [request start];
+    
 }
 
 #pragma mark - UITableViewDataSource -
@@ -54,20 +82,27 @@
     
     [cell setColor:_colors[indexPath.section]];
     cell.label.text = _titles[indexPath.section];
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *resourcePath = [bundle resourcePath];
-    NSString *filePath = [resourcePath stringByAppendingPathComponent:_iconNames[indexPath.section]];
-    cell.icon.image = [UIImage imageWithContentsOfFile:filePath];
+//    NSBundle *bundle = [NSBundle mainBundle];
+//    NSString *resourcePath = [bundle resourcePath];
+//    NSString *filePath = [resourcePath stringByAppendingPathComponent:_iconNames[indexPath.section]];
+//    cell.icon.image = [UIImage imageWithContentsOfFile:filePath];
+    cell.icon.image = [UIImage imageNamed:_iconNames[indexPath.section]];
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 6;
+    return _titles.count;
 }
 
 #pragma mark - UITableViewDelegate -
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 4) {
+    if (indexPath.section == 0) {
+        EnterGameVC *vc = [EnterGameVC storyboardInstanceType];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.section == 1) {
+        RankViewController *vc = [RankViewController storyboardInstanceType];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.section == 4) {
         YUUGamesHistroy *gameHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"YUUGamesHistroy"];
         [self.navigationController pushViewController:gameHistory animated:YES];
     }

@@ -8,6 +8,10 @@
 
 #import "YUUBaseViewController.h"
 
+typedef void(^ShowCurrentRankBlock)();
+
 @interface LastRankVC : YUUBaseViewController
+
+@property (nonatomic, strong) ShowCurrentRankBlock showCurrentRankBlock;
 
 @end

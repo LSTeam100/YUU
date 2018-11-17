@@ -7,31 +7,52 @@
 //
 
 #import "RankViewController.h"
+#import "RankVC.h"
+#import "LastRankVC.h"
 
 @interface RankViewController ()
-
+@property (nonatomic, strong) RankVC *rankVC;
+@property (nonatomic, strong) LastRankVC *lastRankVC;
 @end
 
 @implementation RankViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self showRankVC];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)showRankVC {
+    WeakSelf
+    if (!_rankVC) {
+        _rankVC = [RankVC storyboardInstanceType];
+        [self.view addSubview:_rankVC.view];
+        _rankVC.showLastRankBlock = ^(){
+            [weakSelf showLastRankVC];
+        };
+    }
+    _rankVC.view.hidden = NO;
+    if (_lastRankVC) {
+        _lastRankVC.view.hidden = YES;
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)showLastRankVC {
+    WeakSelf
+    if (!_lastRankVC) {
+        _lastRankVC = [LastRankVC storyboardInstanceType];
+        [self.view addSubview:_lastRankVC.view];
+        _lastRankVC.showCurrentRankBlock = ^(){
+            [weakSelf showRankVC];
+        };
+    }
+    _lastRankVC.view.hidden = NO;
+    if (_rankVC) {
+        _rankVC.view.hidden = YES;
+    }
 }
-*/
+
+
 
 @end
