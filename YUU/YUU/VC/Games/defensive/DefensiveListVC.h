@@ -10,4 +10,6 @@
 
 @interface DefensiveListVC : YUUBaseViewController
 
+@property (nonatomic, assign) NSInteger YUU;
+
 @end

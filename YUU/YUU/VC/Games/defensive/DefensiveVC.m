@@ -8,6 +8,7 @@
 
 #import "DefensiveVC.h"
 #import "GameYUUListVC.h"
+#import "DefensiveListVC.h"
 
 @interface DefensiveVC ()
 
@@ -76,21 +77,35 @@
 }
 
 - (IBAction)action0:(id)sender {
-    GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
-    vc.YUU = 0;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (_isDefensive) {
+        GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
+        vc.YUU = 0;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        DefensiveListVC *vc = [DefensiveListVC storyboardInstanceType];
+        vc.YUU = 0;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (IBAction)action1:(id)sender {
-    GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
-    vc.YUU = 1;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (_isDefensive) {
+        GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
+        vc.YUU = 1;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        
+    }
 }
 
 - (IBAction)action2:(id)sender {
-    GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
-    vc.YUU = 2;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (_isDefensive) {
+        GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
+        vc.YUU = 2;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        
+    }
 }
 
 

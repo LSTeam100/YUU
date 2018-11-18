@@ -58,6 +58,7 @@
 }
 
 - (void)getHTTPData {
+    [HUD showHUD];
     GetAttackorderRequest *request = [[GetAttackorderRequest alloc] initSuccess:^(YUUBaseRequest *request) {
         if (request.getResponse.data) {
             _hasNews = YES;
@@ -65,8 +66,11 @@
             _hasNews = NO;
         }
         [self.tableView reloadData];
+        [HUD showRequest:request];
     } failure:^(YUUBaseRequest *request) {
         [self.tableView reloadData];
+        [HUD hide];
+        [self handleResponseError:self request:request needToken:YES];
     }];
     [request start];
     

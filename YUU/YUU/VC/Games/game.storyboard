@@ -618,7 +618,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4an-rO-REi">
-                                <rect key="frame" x="20" y="80" width="335" height="74"/>
+                                <rect key="frame" x="20" y="40" width="335" height="74"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YUU0" translatesAutoresizingMaskIntoConstraints="NO" id="izb-9o-0f1">
                                         <rect key="frame" x="20" y="11" width="52" height="53"/>
@@ -657,7 +657,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-yH-yAL">
-                                <rect key="frame" x="20" y="174" width="335" height="74"/>
+                                <rect key="frame" x="20" y="134" width="335" height="74"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YUU1" translatesAutoresizingMaskIntoConstraints="NO" id="k3S-PP-Fk8">
                                         <rect key="frame" x="20" y="11" width="53" height="53"/>
@@ -696,7 +696,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nlo-Xv-CvK">
-                                <rect key="frame" x="20" y="268" width="335" height="74"/>
+                                <rect key="frame" x="20" y="228" width="335" height="74"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YUU2" translatesAutoresizingMaskIntoConstraints="NO" id="O1e-N4-led">
                                         <rect key="frame" x="20" y="11" width="53" height="53"/>
@@ -741,7 +741,7 @@
                             <constraint firstItem="4an-rO-REi" firstAttribute="leading" secondItem="UWR-nU-9vv" secondAttribute="leading" constant="20" id="C5P-mN-Abu"/>
                             <constraint firstItem="cc7-yH-yAL" firstAttribute="leading" secondItem="4an-rO-REi" secondAttribute="leading" id="FPs-v4-Dfk"/>
                             <constraint firstItem="cc7-yH-yAL" firstAttribute="top" secondItem="4an-rO-REi" secondAttribute="bottom" constant="20" id="Gua-OB-NLO"/>
-                            <constraint firstItem="4an-rO-REi" firstAttribute="top" secondItem="UWR-nU-9vv" secondAttribute="top" constant="60" id="NYr-Uh-vFf"/>
+                            <constraint firstItem="4an-rO-REi" firstAttribute="top" secondItem="UWR-nU-9vv" secondAttribute="top" constant="20" id="NYr-Uh-vFf"/>
                             <constraint firstItem="cc7-yH-yAL" firstAttribute="trailing" secondItem="Nlo-Xv-CvK" secondAttribute="trailing" id="ZC2-cA-duU"/>
                             <constraint firstItem="cc7-yH-yAL" firstAttribute="trailing" secondItem="4an-rO-REi" secondAttribute="trailing" id="k8h-ZQ-Opp"/>
                             <constraint firstItem="Nlo-Xv-CvK" firstAttribute="top" secondItem="cc7-yH-yAL" secondAttribute="bottom" constant="20" id="omv-lg-KSa"/>
@@ -870,7 +870,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fd-Av-RJ7">
-                                <rect key="frame" x="20" y="80" width="335" height="104"/>
+                                <rect key="frame" x="20" y="40" width="335" height="104"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defensiveList" translatesAutoresizingMaskIntoConstraints="NO" id="BfF-N9-aC8">
                                         <rect key="frame" x="100.5" y="28" width="134" height="48"/>
@@ -901,7 +901,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="263-KL-hBl" customClass="YUUBaseTableView">
-                                <rect key="frame" x="20" y="232" width="335" height="430"/>
+                                <rect key="frame" x="20" y="192" width="335" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefensiveListCell" rowHeight="95" id="mDM-wI-jDL" customClass="DefensiveListCell">
@@ -990,7 +990,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxc-s5-r1o">
-                                <rect key="frame" x="20" y="189" width="335" height="38"/>
+                                <rect key="frame" x="20" y="149" width="335" height="38"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="区域" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vaf-1s-KjK">
                                         <rect key="frame" x="20" y="10" width="35" height="18"/>
@@ -1057,14 +1057,16 @@
                             <constraint firstItem="Jxc-s5-r1o" firstAttribute="trailing" secondItem="1fd-Av-RJ7" secondAttribute="trailing" id="TbE-UI-b7d"/>
                             <constraint firstItem="263-KL-hBl" firstAttribute="trailing" secondItem="Jxc-s5-r1o" secondAttribute="trailing" id="WKP-HT-g5U"/>
                             <constraint firstItem="1fd-Av-RJ7" firstAttribute="leading" secondItem="Usm-dl-r94" secondAttribute="leading" constant="20" id="Yc4-bU-vnj"/>
-                            <constraint firstItem="1fd-Av-RJ7" firstAttribute="top" secondItem="Usm-dl-r94" secondAttribute="top" constant="60" id="jQi-Bu-uQt"/>
+                            <constraint firstItem="1fd-Av-RJ7" firstAttribute="top" secondItem="Usm-dl-r94" secondAttribute="top" constant="20" id="jQi-Bu-uQt"/>
                             <constraint firstItem="263-KL-hBl" firstAttribute="leading" secondItem="Jxc-s5-r1o" secondAttribute="leading" id="sGM-aR-Bj9"/>
                             <constraint firstItem="Jxc-s5-r1o" firstAttribute="leading" secondItem="1fd-Av-RJ7" secondAttribute="leading" id="zxx-m0-u0T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Usm-dl-r94"/>
                     </view>
                     <connections>
+                        <outlet property="middleView" destination="Jxc-s5-r1o" id="L1K-jx-gQw"/>
                         <outlet property="tableView" destination="263-KL-hBl" id="boJ-pw-bj3"/>
+                        <outlet property="upView" destination="1fd-Av-RJ7" id="Fr8-Jo-EPA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zZ-Gq-ynI" userLabel="First Responder" sceneMemberID="firstResponder"/>
