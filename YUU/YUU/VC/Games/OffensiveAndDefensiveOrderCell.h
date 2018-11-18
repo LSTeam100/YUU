@@ -15,6 +15,11 @@
 @property (strong, nonatomic) IBOutlet UIImageView *icon;
 @property (strong, nonatomic) IBOutlet UILabel *label;
 
+@property (strong, nonatomic) IBOutlet UIView *hasNewRecordIcon;
+@property (strong, nonatomic) IBOutlet UILabel *hasNewRecordLabel;
+
+@property (nonatomic, assign) BOOL hasNewRecord;
+
 - (void)setColor:(UIColor *)color;
 
 @end

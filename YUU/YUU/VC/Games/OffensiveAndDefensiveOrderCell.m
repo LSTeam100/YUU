@@ -13,6 +13,23 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    _hasNewRecordIcon.backgroundColor = [UIColor redColor];
+    _hasNewRecordIcon.layer.masksToBounds = YES;
+    _hasNewRecordIcon.layer.cornerRadius = _hasNewRecordIcon.frame.size.width/2;
+    _hasNewRecordIcon.hidden = YES;
+    _hasNewRecordLabel.textColor = [UIColor redColor];
+    _hasNewRecordLabel.hidden = YES;
+}
+
+- (void)setHasNewRecord:(BOOL)hasNewRecord {
+    _hasNewRecord = hasNewRecord;
+    if (hasNewRecord) {
+        _hasNewRecordIcon.hidden = NO;
+        _hasNewRecordLabel.hidden = NO;
+    } else {
+        _hasNewRecordIcon.hidden = YES;
+        _hasNewRecordLabel.hidden = YES;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

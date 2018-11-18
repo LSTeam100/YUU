@@ -74,7 +74,7 @@
     [self.view addSubview:bgImageView];
     [self.view sendSubviewToBack:bgImageView];
     
-//    _isViewDidLoad = YES;
+    [self setCustomBackItem];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

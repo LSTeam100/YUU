@@ -82,10 +82,11 @@
     
     [cell setColor:_colors[indexPath.section]];
     cell.label.text = _titles[indexPath.section];
-//    NSBundle *bundle = [NSBundle mainBundle];
-//    NSString *resourcePath = [bundle resourcePath];
-//    NSString *filePath = [resourcePath stringByAppendingPathComponent:_iconNames[indexPath.section]];
-//    cell.icon.image = [UIImage imageWithContentsOfFile:filePath];
+    if (indexPath.section == 2 && _hasNews) {
+        cell.hasNewRecord = YES;
+    } else {
+        cell.hasNewRecord = NO;
+    }
     cell.icon.image = [UIImage imageNamed:_iconNames[indexPath.section]];
     return cell;
 }
@@ -102,9 +103,11 @@
     } else if (indexPath.section == 1) {
         RankViewController *vc = [RankViewController storyboardInstanceType];
         [self.navigationController pushViewController:vc animated:YES];
-    } else if (indexPath.section == 4) {
+    } else if (indexPath.section == 2) {
         YUUGamesHistroy *gameHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"YUUGamesHistroy"];
         [self.navigationController pushViewController:gameHistory animated:YES];
+        _hasNews = NO;
+        [self.tableView reloadData];
     }
     
     

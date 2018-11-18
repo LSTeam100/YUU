@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"攻守令";
     
     _upView.backgroundColor = [UIColor clearColor];
     _upView.layer.masksToBounds = YES;
@@ -41,12 +42,14 @@
 
 - (IBAction)upAction:(id)sender {
     DefensiveVC *vc = [DefensiveVC storyboardInstanceType];
+    vc.title = @"守";
     vc.isDefensive = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)downAction:(id)sender {
     DefensiveVC *vc = [DefensiveVC storyboardInstanceType];
+    vc.title = @"攻";
     vc.isDefensive = NO;
     [self.navigationController pushViewController:vc animated:YES];
 }

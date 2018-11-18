@@ -36,17 +36,20 @@
     _upView.layer.borderWidth = 1;
     _upTitle.textColor = YUUBolderColor;
     
-    _middleView.backgroundColor = YUUBolderColor;
+    _middleView.backgroundColor = [UIColor R:15 G:82 B:108];;
     
     _weekBtn.layer.cornerRadius = 4;
     _weekBtn.layer.borderColor = YUUBolderColor.CGColor;
     _weekBtn.layer.borderWidth = 1;
-    [_weekBtn setTitleColor:YUUBolderColor forState:UIControlStateNormal];
+//    [_weekBtn setTitleColor:YUUBolderColor forState:UIControlStateNormal];
     
     _allBtn.layer.cornerRadius = 4;
     _allBtn.layer.borderColor = YUUBolderColor.CGColor;
     _allBtn.layer.borderWidth = 1;
-    [_allBtn setTitleColor:YUUBolderColor forState:UIControlStateNormal];
+//    [_allBtn setTitleColor:YUUBolderColor forState:UIControlStateNormal];
+    
+    [_weekBtn setTitleColor:[UIColor hex:@"84c9e7" alpha:1] forState:UIControlStateNormal];
+    [_allBtn setTitleColor:[UIColor hex:@"84c9e7" alpha:0.4] forState:UIControlStateNormal];
     
     [_lastWeekBtn setTitleColor:YUUBolderColor forState:UIControlStateNormal];
     
@@ -138,6 +141,8 @@
 //        _upContentLabel.text = [NSString stringWithFormat:@"您本周总获得第%ld位",_currentWeekRank];
     }
     [self getWeekData];
+    [_weekBtn setTitleColor:[UIColor hex:@"84c9e7" alpha:1] forState:UIControlStateNormal];
+    [_allBtn setTitleColor:[UIColor hex:@"84c9e7" alpha:0.4] forState:UIControlStateNormal];
 }
 
 - (IBAction)allBtnAction:(id)sender {
@@ -151,6 +156,8 @@
 //        _upContentLabel.text = [NSString stringWithFormat:@"您目前总获得第%ld位",_allRank];
     }
     [self getAllRankData];
+    [_weekBtn setTitleColor:[UIColor hex:@"84c9e7" alpha:0.4] forState:UIControlStateNormal];
+    [_allBtn setTitleColor:[UIColor hex:@"84c9e7" alpha:1] forState:UIControlStateNormal];
 }
 
 - (IBAction)lastWeekBtnAction:(id)sender {

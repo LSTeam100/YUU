@@ -42,7 +42,7 @@
     _upView.layer.borderWidth = 1;
     _upTitle.textColor = YUUBolderColor;
     
-    _middleView.backgroundColor = YUUBolderColor;
+    _middleView.backgroundColor = [UIColor R:15 G:82 B:108];
     
     [_currentWeekBtn setTitleColor:YUUBolderColor forState:UIControlStateNormal];
     

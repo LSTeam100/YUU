@@ -33,16 +33,19 @@
             [_items addObject:[NSNumber numberWithInteger:i]];
             i = i+3;
         }
+        self.title = @"0.3-3YUU";
     } else if (_YUU == 1) {
         for (int i = 6; i<30; i++) {
             [_items addObject:[NSNumber numberWithInteger:i]];
             i = i+3;
         }
+        self.title = @"6-30YUU";
     } else {
         for (int i = 60; i<300; i++) {
             [_items addObject:[NSNumber numberWithInteger:i]];
             i = i+30;
         }
+        self.title = @"60-300YUU";
     }
 }
 
