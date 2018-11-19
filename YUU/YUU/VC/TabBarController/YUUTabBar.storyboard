@@ -565,6 +565,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEu-9K-BQ6">
                                 <rect key="frame" x="36" y="70" width="303" height="71"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="games_menu_attack" translatesAutoresizingMaskIntoConstraints="NO" id="n7i-dU-bQ8">
+                                        <rect key="frame" x="10" y="4.5" width="73" height="62"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQf-y5-eha">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="71"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -577,10 +580,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dQf-y5-eha" secondAttribute="trailing" id="1AW-3i-aVy"/>
+                                    <constraint firstItem="n7i-dU-bQ8" firstAttribute="centerY" secondItem="NEu-9K-BQ6" secondAttribute="centerY" id="Cjr-Oo-Ngt"/>
                                     <constraint firstAttribute="bottom" secondItem="dQf-y5-eha" secondAttribute="bottom" id="MK7-sP-oyU"/>
                                     <constraint firstItem="dQf-y5-eha" firstAttribute="top" secondItem="NEu-9K-BQ6" secondAttribute="top" id="Wfi-cD-iLf"/>
                                     <constraint firstAttribute="height" constant="71" id="cO9-Uc-Wmj"/>
                                     <constraint firstItem="dQf-y5-eha" firstAttribute="leading" secondItem="NEu-9K-BQ6" secondAttribute="leading" id="eFo-bH-erp"/>
+                                    <constraint firstItem="n7i-dU-bQ8" firstAttribute="leadingMargin" secondItem="NEu-9K-BQ6" secondAttribute="leading" constant="18" id="juF-FN-0Pb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lW8-bH-rFN">
@@ -594,13 +599,18 @@
                                             <segue destination="Im7-mt-11q" kind="show" id="KaQ-D3-DR1"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="games_menu_chat" translatesAutoresizingMaskIntoConstraints="NO" id="uzW-sQ-WYa">
+                                        <rect key="frame" x="10" y="4.5" width="73" height="62"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="QCb-I5-60b" firstAttribute="top" secondItem="lW8-bH-rFN" secondAttribute="top" id="LJE-PS-T4y"/>
                                     <constraint firstAttribute="trailing" secondItem="QCb-I5-60b" secondAttribute="trailing" id="Wl2-HM-pUV"/>
+                                    <constraint firstItem="uzW-sQ-WYa" firstAttribute="centerY" secondItem="lW8-bH-rFN" secondAttribute="centerY" id="g8N-lV-PxC"/>
                                     <constraint firstItem="QCb-I5-60b" firstAttribute="leading" secondItem="lW8-bH-rFN" secondAttribute="leading" id="ghe-Sb-hJP"/>
                                     <constraint firstAttribute="bottom" secondItem="QCb-I5-60b" secondAttribute="bottom" id="pxZ-qB-TUa"/>
+                                    <constraint firstItem="uzW-sQ-WYa" firstAttribute="leadingMargin" secondItem="lW8-bH-rFN" secondAttribute="leading" constant="18" id="qQa-GE-aGi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRF-Bs-8vE">
@@ -611,11 +621,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="暂未开放"/>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="games_menu_unopen" translatesAutoresizingMaskIntoConstraints="NO" id="Hix-t4-w93">
+                                        <rect key="frame" x="10" y="4" width="73" height="62"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="M3u-IF-BRa" secondAttribute="trailing" id="Ngf-9f-w9X"/>
+                                    <constraint firstItem="Hix-t4-w93" firstAttribute="leadingMargin" secondItem="QRF-Bs-8vE" secondAttribute="leading" constant="18" id="Or5-b6-aEf"/>
                                     <constraint firstItem="M3u-IF-BRa" firstAttribute="leading" secondItem="QRF-Bs-8vE" secondAttribute="leading" id="PrF-RG-09p"/>
+                                    <constraint firstItem="Hix-t4-w93" firstAttribute="centerY" secondItem="QRF-Bs-8vE" secondAttribute="centerY" id="Pts-5e-uvP"/>
                                     <constraint firstItem="M3u-IF-BRa" firstAttribute="top" secondItem="QRF-Bs-8vE" secondAttribute="top" id="Ub5-o7-Teh"/>
                                     <constraint firstAttribute="bottom" secondItem="M3u-IF-BRa" secondAttribute="bottom" id="hWq-6E-ol6"/>
                                 </constraints>
@@ -650,7 +665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGf-Tx-61q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="714"/>
+            <point key="canvasLocation" x="364" y="713.79310344827593"/>
         </scene>
         <!--Chat Menu Ctrl-->
         <scene sceneID="RYM-Kp-qi0">
@@ -924,6 +939,9 @@
     <resources>
         <image name="bg" width="375" height="667"/>
         <image name="chat_send" width="77" height="37"/>
+        <image name="games_menu_attack" width="73" height="62"/>
+        <image name="games_menu_chat" width="73" height="62"/>
+        <image name="games_menu_unopen" width="73" height="62"/>
         <image name="profile_alauth" width="81" height="26"/>
         <image name="profile_asset" width="343" height="192"/>
         <image name="profile_availabel_icon" width="13" height="13"/>

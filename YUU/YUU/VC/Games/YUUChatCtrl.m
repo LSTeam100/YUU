@@ -271,6 +271,8 @@ static  NSString * const chatTable = @"chatTable";
 
     }];
     [callNow start];
+    self.chatTextField.text = nil;
+
 }
 /*
 #pragma mark - Navigation

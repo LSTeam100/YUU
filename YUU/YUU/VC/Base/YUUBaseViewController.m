@@ -131,14 +131,12 @@
         
     }
     else{
-        
         switch (statusCode) {
             case 1:
                 [self naviTologin:statusCode];
                 break;
             case 2:
                 [self alertView:@"local_alert" IsForeverShow:false SuperCtrl:self];
-
             case 3:
                 [self naviTologin:statusCode];
                 break;
