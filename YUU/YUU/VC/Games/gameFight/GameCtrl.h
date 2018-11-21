@@ -7,7 +7,7 @@
 //
 
 #import "YUUSuperCtrl.h"
-
+#import "YUUCardImageView.h"
 @interface GameCtrl : YUUSuperCtrl
-
+@property(nonatomic,weak)IBOutlet YUUCardImageView *bowman;
 @end

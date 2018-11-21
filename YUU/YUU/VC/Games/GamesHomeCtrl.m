@@ -8,7 +8,7 @@
 
 #import "GamesHomeCtrl.h"
 #import "OffensiveAndDefensiveOrderVC.h"
-
+#import "GameCtrl.h"
 @interface GamesHomeCtrl ()
     @property(nonatomic,weak)IBOutlet UIView *gameView;
     @property(nonatomic,weak)IBOutlet UIView *chatView;
@@ -51,6 +51,11 @@
 - (IBAction)gameBtnAction:(UIButton *)sender {
     OffensiveAndDefensiveOrderVC *vc = [OffensiveAndDefensiveOrderVC storyboardInstanceType];
     [self.navigationController pushViewController:vc animated:YES];
+}
+-(IBAction)UnOpenBtn:(UIButton *)sender{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GameCtrl" bundle:nil];
+    GameCtrl *game =[storyboard instantiateViewControllerWithIdentifier:@"GameCtrl"];
+    [self.navigationController pushViewController:game animated:YES];
 }
 
 

@@ -620,6 +620,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="71"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="暂未开放"/>
+                                        <connections>
+                                            <action selector="UnOpenBtn:" destination="dM9-RH-X4W" eventType="touchUpInside" id="1Z6-Xa-FKu"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="games_menu_unopen" translatesAutoresizingMaskIntoConstraints="NO" id="Hix-t4-w93">
                                         <rect key="frame" x="10" y="4" width="73" height="62"/>

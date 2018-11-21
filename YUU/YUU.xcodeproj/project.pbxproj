@@ -144,6 +144,11 @@
 		181B32C2219B00D200536D76 /* GameHistroyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181B32C1219B00D200536D76 /* GameHistroyCell.m */; };
 		181B32F5219EBB7600536D76 /* YUUHistoryscoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 181B32F4219EBB7600536D76 /* YUUHistoryscoreRequest.m */; };
 		181B32F8219EBB8200536D76 /* YUUHistoryGamesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181B32F7219EBB8200536D76 /* YUUHistoryGamesModel.m */; };
+		181DF36321A54AD800D9698D /* GameCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DF36221A54AD700D9698D /* GameCtrl.m */; };
+		181DF36621A54C0400D9698D /* GameCtrl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181DF36521A54C0400D9698D /* GameCtrl.storyboard */; };
+		181DF36A21A5516C00D9698D /* YUUPanRestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DF36921A5516C00D9698D /* YUUPanRestureRecognizer.m */; };
+		181DF36D21A553D600D9698D /* YUUSuspendCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DF36C21A553D600D9698D /* YUUSuspendCard.m */; };
+		181DF37021A5597900D9698D /* YUUCardImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DF36F21A5597900D9698D /* YUUCardImageView.m */; };
 		1823F2702196C50D000F16E6 /* YUUDatabaseMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */; };
 		1823F2732196D268000F16E6 /* ChatMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F2722196D268000F16E6 /* ChatMsgModel.m */; };
 		1826764621992A2F007E5490 /* YUUGamesHistroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826764521992A2F007E5490 /* YUUGamesHistroy.m */; };
@@ -461,6 +466,15 @@
 		181B32F4219EBB7600536D76 /* YUUHistoryscoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUHistoryscoreRequest.m; sourceTree = "<group>"; };
 		181B32F6219EBB8200536D76 /* YUUHistoryGamesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUUHistoryGamesModel.h; sourceTree = "<group>"; };
 		181B32F7219EBB8200536D76 /* YUUHistoryGamesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUUHistoryGamesModel.m; sourceTree = "<group>"; };
+		181DF36121A54AD700D9698D /* GameCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCtrl.h; sourceTree = "<group>"; };
+		181DF36221A54AD700D9698D /* GameCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCtrl.m; sourceTree = "<group>"; };
+		181DF36521A54C0400D9698D /* GameCtrl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameCtrl.storyboard; sourceTree = "<group>"; };
+		181DF36821A5516C00D9698D /* YUUPanRestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUPanRestureRecognizer.h; sourceTree = "<group>"; };
+		181DF36921A5516C00D9698D /* YUUPanRestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUPanRestureRecognizer.m; sourceTree = "<group>"; };
+		181DF36B21A553D600D9698D /* YUUSuspendCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSuspendCard.h; sourceTree = "<group>"; };
+		181DF36C21A553D600D9698D /* YUUSuspendCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSuspendCard.m; sourceTree = "<group>"; };
+		181DF36E21A5597900D9698D /* YUUCardImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUCardImageView.h; sourceTree = "<group>"; };
+		181DF36F21A5597900D9698D /* YUUCardImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUCardImageView.m; sourceTree = "<group>"; };
 		1823F26E2196C50D000F16E6 /* YUUDatabaseMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDatabaseMgr.h; sourceTree = "<group>"; };
 		1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUDatabaseMgr.m; sourceTree = "<group>"; };
 		1823F2712196D268000F16E6 /* ChatMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMsgModel.h; sourceTree = "<group>"; };
@@ -1019,6 +1033,22 @@
 			path = HTTP;
 			sourceTree = "<group>";
 		};
+		181DF36421A54BD500D9698D /* gameFight */ = {
+			isa = PBXGroup;
+			children = (
+				181DF36121A54AD700D9698D /* GameCtrl.h */,
+				181DF36221A54AD700D9698D /* GameCtrl.m */,
+				181DF36521A54C0400D9698D /* GameCtrl.storyboard */,
+				181DF36821A5516C00D9698D /* YUUPanRestureRecognizer.h */,
+				181DF36921A5516C00D9698D /* YUUPanRestureRecognizer.m */,
+				181DF36B21A553D600D9698D /* YUUSuspendCard.h */,
+				181DF36C21A553D600D9698D /* YUUSuspendCard.m */,
+				181DF36E21A5597900D9698D /* YUUCardImageView.h */,
+				181DF36F21A5597900D9698D /* YUUCardImageView.m */,
+			);
+			path = gameFight;
+			sourceTree = "<group>";
+		};
 		18784C642126A53E00874434 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,6 +1117,7 @@
 		18D0261F2192DEAC003A0D64 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				181DF36421A54BD500D9698D /* gameFight */,
 				1826764421992A2F007E5490 /* YUUGamesHistroy.h */,
 				1826764521992A2F007E5490 /* YUUGamesHistroy.m */,
 				181B32C0219B00D200536D76 /* GameHistroyCell.h */,
@@ -1316,6 +1347,7 @@
 				18EDE41721257A3A00FC8E0C /* LaunchScreen.storyboard in Resources */,
 				091983D22131A96900E35196 /* YUUUserInfoView.xib in Resources */,
 				18EDE41421257A3A00FC8E0C /* Assets.xcassets in Resources */,
+				181DF36621A54C0400D9698D /* GameCtrl.storyboard in Resources */,
 				092A89A921947DE3002B086F /* game.storyboard in Resources */,
 				09207E1B21270C6A00952C6D /* YUUMachineMarket.storyboard in Resources */,
 				09207E1E21270C6A00952C6D /* YUUMineralPool.storyboard in Resources */,
@@ -1405,6 +1437,7 @@
 				090D57E721A057E400EB3DF4 /* DefensiveListModel.m in Sources */,
 				09251C6D213F637B00B12370 /* YUUGetPendingOrderBuyerRequest.m in Sources */,
 				0966B44121951FDF001E3AA1 /* RankViewController.m in Sources */,
+				181DF36D21A553D600D9698D /* YUUSuspendCard.m in Sources */,
 				09207E1A21270C6A00952C6D /* YUUMachineMarketCell.m in Sources */,
 				189CC56A212FE52000E8E2E4 /* YUUProfileAuthenEditeCtrl.m in Sources */,
 				189CC550212A95A700E8E2E4 /* YUUForgetCtrl.m in Sources */,
@@ -1431,6 +1464,7 @@
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				1823F2732196D268000F16E6 /* ChatMsgModel.m in Sources */,
 				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
+				181DF36A21A5516C00D9698D /* YUUPanRestureRecognizer.m in Sources */,
 				099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */,
 				091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */,
 				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
@@ -1450,6 +1484,7 @@
 				099445752141229200548245 /* YUUCurrencyHistoryModel.m in Sources */,
 				090D57F121A05D0D00EB3DF4 /* GameYUUListCell.m in Sources */,
 				18D353A1213929A000990F7C /* CostomTextFieldBgView.m in Sources */,
+				181DF37021A5597900D9698D /* YUUCardImageView.m in Sources */,
 				099445382141226000548245 /* (null) in Sources */,
 				09251C82213F6EC300B12370 /* PendingBuyerCell.m in Sources */,
 				0926F07221328E200083CFDD /* HUD.m in Sources */,
@@ -1541,6 +1576,7 @@
 				091D8E492130DF1800C430AB /* YUUSellerInfoView.m in Sources */,
 				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 				099444762140D28F00548245 /* GetMineralPoolRequest.m in Sources */,
+				181DF36321A54AD800D9698D /* GameCtrl.m in Sources */,
 				090FFE4F21A00E3500F8FFF2 /* EnterGameVC.m in Sources */,
 				092209E52171020D0021B34A /* YUUPendingSellenterRequest.m in Sources */,
 				0923C464214895EE00869625 /* YUUForgetRequest.m in Sources */,
@@ -1686,8 +1722,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P6UF878TKN;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PCGH4WWPX;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1723,8 +1759,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3bb8a0ff-f6ba-4e3f-8507-61d29d4c2320";
-				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1736,8 +1772,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PCGH4WWPX;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

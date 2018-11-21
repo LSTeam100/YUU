@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Ctrl-->
+        <scene sceneID="iaQ-HC-SaW">
+            <objects>
+                <viewController storyboardIdentifier="GameCtrl" id="4Wq-5S-6ID" customClass="GameCtrl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i1b-zR-Mvd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fight_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-qZ-gTH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bowman" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-92-sp9" customClass="YUUCardImageView">
+                                <rect key="frame" x="63" y="535" width="57" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sZp-kb-oog" firstAttribute="trailing" secondItem="hCg-qZ-gTH" secondAttribute="trailing" id="5Sh-hN-6AZ"/>
+                            <constraint firstItem="hCg-qZ-gTH" firstAttribute="top" secondItem="sZp-kb-oog" secondAttribute="top" id="6lu-Tp-Qdi"/>
+                            <constraint firstItem="sZp-kb-oog" firstAttribute="bottom" secondItem="hCg-qZ-gTH" secondAttribute="bottom" id="EGZ-h7-fQJ"/>
+                            <constraint firstItem="hCg-qZ-gTH" firstAttribute="leading" secondItem="sZp-kb-oog" secondAttribute="leading" id="r1D-el-Z1a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sZp-kb-oog"/>
+                    </view>
+                    <connections>
+                        <outlet property="bowman" destination="G2Z-92-sp9" id="dng-TV-iwm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFl-Zh-aDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80.799999999999997" y="119.1904047976012"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bowman" width="57" height="92"/>
+        <image name="fight_bg" width="375" height="667"/>
+    </resources>
+</document>
