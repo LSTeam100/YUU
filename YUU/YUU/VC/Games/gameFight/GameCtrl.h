@@ -7,7 +7,13 @@
 //
 
 #import "YUUSuperCtrl.h"
-#import "YUUCardImageView.h"
 @interface GameCtrl : YUUSuperCtrl
-@property(nonatomic,weak)IBOutlet YUUCardImageView *bowman;
+@property(nonatomic,weak)IBOutlet UIImageView *bowman;
+@property(nonatomic,weak)IBOutlet UIImageView *cavalry;
+@property(nonatomic,weak)IBOutlet UIImageView *infantry;
+
+@property(nonatomic,weak)IBOutlet UIView *leftDefaultView;
+@property(nonatomic,weak)IBOutlet UIView *middleDefaultView;
+@property(nonatomic,weak)IBOutlet UIView *rightDefaultView;
+@property(nonatomic,weak)IBOutlet UIView *waitView;
 @end
