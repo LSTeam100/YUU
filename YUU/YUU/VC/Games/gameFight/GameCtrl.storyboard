@@ -289,9 +289,27 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAD-Gt-syM">
                                 <rect key="frame" x="10" y="587" width="355" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+0.30币" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-do-kGV">
+                                        <rect key="frame" x="0.0" y="53" width="52.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YUU:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pt-Xa-pop">
+                                        <rect key="frame" x="10" y="10" width="40" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="0pt-Xa-pop" firstAttribute="leading" secondItem="eAD-Gt-syM" secondAttribute="leading" constant="10" id="15f-oq-yea"/>
                                     <constraint firstAttribute="height" constant="80" id="Plr-eR-lFW"/>
+                                    <constraint firstAttribute="bottom" secondItem="pS6-do-kGV" secondAttribute="bottom" constant="10" id="Yji-Ou-0AI"/>
+                                    <constraint firstItem="0pt-Xa-pop" firstAttribute="top" secondItem="eAD-Gt-syM" secondAttribute="top" constant="10" id="sTd-t3-NaM"/>
+                                    <constraint firstItem="pS6-do-kGV" firstAttribute="leading" secondItem="eAD-Gt-syM" secondAttribute="leading" id="yAd-js-uKL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-E0-lJe">
@@ -481,6 +499,8 @@
                         <viewLayoutGuide key="safeArea" id="cGs-Tf-OJo"/>
                     </view>
                     <connections>
+                        <outlet property="awardLabel" destination="pS6-do-kGV" id="cjr-yO-gJ0"/>
+                        <outlet property="awardLabelTitle" destination="0pt-Xa-pop" id="q3i-fJ-ibq"/>
                         <outlet property="bowman" destination="Lfp-lv-8jc" id="Fry-SO-tSk"/>
                         <outlet property="cavalry" destination="AqU-pw-hvj" id="Bre-PQ-N1b"/>
                         <outlet property="infantry" destination="UvN-rN-wQG" id="8Qs-ms-EpX"/>

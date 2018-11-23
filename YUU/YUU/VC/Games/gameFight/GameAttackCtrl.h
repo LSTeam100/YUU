@@ -18,5 +18,7 @@
 @property(nonatomic,weak)IBOutlet UIView *rightDefaultView;
 @property(nonatomic,weak)IBOutlet UIView *waitView;
 @property(nonatomic,weak)IBOutlet UIImageView *maohaoImageView;
+@property(nonatomic,weak)IBOutlet UILabel *awardLabelTitle;
+@property(nonatomic,weak)IBOutlet UILabel *awardLabel;
 
 @end

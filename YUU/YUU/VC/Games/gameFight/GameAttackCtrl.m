@@ -36,7 +36,8 @@
     NSMutableArray *uidArr = [self addUidImageView:@"0238889"];
     
     [self createUidImageView:uidArr];
-    
+    self.awardLabel.textColor = [UIColor whiteColor];
+    self.awardLabelTitle.textColor = colorWithHexString(@"ED6621", 1.0);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
