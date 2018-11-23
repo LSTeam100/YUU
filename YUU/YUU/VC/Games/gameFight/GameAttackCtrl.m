@@ -1,24 +1,21 @@
 //
-//  GameCtrl.m
+//  GameAttackCtrl.m
 //  YUU
 //
-//  Created by apple on 2018/11/17.
+//  Created by apple on 2018/11/23.
 //  Copyright © 2018 apple. All rights reserved.
 //
 
-#import "GameCtrl.h"
+#import "GameAttackCtrl.h"
 
+@interface GameAttackCtrl ()
 
-
-
-@interface GameCtrl ()
 @end
 
-@implementation GameCtrl
+@implementation GameAttackCtrl
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.waitView.backgroundColor = colorWithHexString(@"283040", 1.0);
     self.waitView.layer.cornerRadius = 10;
     UIPanGestureRecognizer *panGestureRecognizer1 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
@@ -26,21 +23,32 @@
     [self.bowman addGestureRecognizer:panGestureRecognizer1];
     
     UIPanGestureRecognizer *panGestureRecognizer2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
-
+    
     [self.cavalry setUserInteractionEnabled:YES];
     [self.cavalry addGestureRecognizer:panGestureRecognizer2];
     
     UIPanGestureRecognizer *panGestureRecognizer3 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
-
+    
     [self.infantry setUserInteractionEnabled:YES];
     [self.infantry addGestureRecognizer:panGestureRecognizer3];
     
     
     NSMutableArray *uidArr = [self addUidImageView:@"0238889"];
-
+    
     [self createUidImageView:uidArr];
     
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+}
+
+
 - (void) panView:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     UIView *view = panGestureRecognizer.view;
@@ -90,6 +98,9 @@
     
 }
 
+-(IBAction)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 -(void)updateCardPosion:(UIView *)gestureView DefaultView:(UIView *)defaultView{
     if (gestureView.tag == cardTypeBowman) {
@@ -113,7 +124,7 @@
     return arr;
 }
 -(void)createUidImageView:(NSMutableArray *)uidArr{
-//    15 24
+    //    15 24
     CGSize size = CGSizeMake(15, 24);
     for (int i = 1; i <= uidArr.count; i++) {
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 15, 24)];
@@ -138,20 +149,7 @@
 }
 
 
--(IBAction)back:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
-
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

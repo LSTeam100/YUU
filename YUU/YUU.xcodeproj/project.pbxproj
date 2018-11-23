@@ -146,6 +146,7 @@
 		181B32F8219EBB8200536D76 /* YUUHistoryGamesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181B32F7219EBB8200536D76 /* YUUHistoryGamesModel.m */; };
 		181DF36321A54AD800D9698D /* GameCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DF36221A54AD700D9698D /* GameCtrl.m */; };
 		181DF36621A54C0400D9698D /* GameCtrl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181DF36521A54C0400D9698D /* GameCtrl.storyboard */; };
+		181DF37421A7EE1F00D9698D /* GameAttackCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DF37321A7EE1F00D9698D /* GameAttackCtrl.m */; };
 		1823F2702196C50D000F16E6 /* YUUDatabaseMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */; };
 		1823F2732196D268000F16E6 /* ChatMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823F2722196D268000F16E6 /* ChatMsgModel.m */; };
 		1826764621992A2F007E5490 /* YUUGamesHistroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826764521992A2F007E5490 /* YUUGamesHistroy.m */; };
@@ -466,6 +467,8 @@
 		181DF36121A54AD700D9698D /* GameCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCtrl.h; sourceTree = "<group>"; };
 		181DF36221A54AD700D9698D /* GameCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCtrl.m; sourceTree = "<group>"; };
 		181DF36521A54C0400D9698D /* GameCtrl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameCtrl.storyboard; sourceTree = "<group>"; };
+		181DF37221A7EE1F00D9698D /* GameAttackCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameAttackCtrl.h; sourceTree = "<group>"; };
+		181DF37321A7EE1F00D9698D /* GameAttackCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameAttackCtrl.m; sourceTree = "<group>"; };
 		1823F26E2196C50D000F16E6 /* YUUDatabaseMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUDatabaseMgr.h; sourceTree = "<group>"; };
 		1823F26F2196C50D000F16E6 /* YUUDatabaseMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUDatabaseMgr.m; sourceTree = "<group>"; };
 		1823F2712196D268000F16E6 /* ChatMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMsgModel.h; sourceTree = "<group>"; };
@@ -1030,6 +1033,8 @@
 				181DF36121A54AD700D9698D /* GameCtrl.h */,
 				181DF36221A54AD700D9698D /* GameCtrl.m */,
 				181DF36521A54C0400D9698D /* GameCtrl.storyboard */,
+				181DF37221A7EE1F00D9698D /* GameAttackCtrl.h */,
+				181DF37321A7EE1F00D9698D /* GameAttackCtrl.m */,
 			);
 			path = gameFight;
 			sourceTree = "<group>";
@@ -1556,6 +1561,7 @@
 				18D0262B21930DA4003A0D64 /* YUUHappycallRequest.m in Sources */,
 				090D57E621A057E400EB3DF4 /* DefensiveListCell.m in Sources */,
 				091D8E492130DF1800C430AB /* YUUSellerInfoView.m in Sources */,
+				181DF37421A7EE1F00D9698D /* GameAttackCtrl.m in Sources */,
 				095F4A66212A96A200098859 /* YUUBaseViewController.m in Sources */,
 				099444762140D28F00548245 /* GetMineralPoolRequest.m in Sources */,
 				181DF36321A54AD800D9698D /* GameCtrl.m in Sources */,

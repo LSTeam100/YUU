@@ -24,7 +24,11 @@
 
 #define MD5KEY @"7372d98e44d163e2ae7978a9b9d826a1"
 
-
+typedef NS_ENUM(NSInteger,cardType){
+    cardTypeBowman = 0,
+    cardTypeCavalry = 1,
+    cardTypeinfantry = 2,
+};
 
 NS_INLINE id getSignFromParameter(NSArray *paraArr){
     if (paraArr.count > 0) {
