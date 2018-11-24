@@ -143,6 +143,9 @@
 }
 
 
+-(IBAction)startFight:(id)sender{
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

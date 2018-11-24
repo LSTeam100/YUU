@@ -7,7 +7,8 @@
 //
 
 #import "GameAttackCtrl.h"
-
+#import "YUUStartAttackRequest.h"
+#import "YUUUserData.h"
 @interface GameAttackCtrl ()
 
 @end
@@ -149,6 +150,13 @@
     }
 }
 
+-(IBAction)startFight:(id)sender{
+    NSString *token = [YUUUserData shareInstance].token;
+    [self setBusyIndicatorVisible:YES];
+    WeakSelf
+//    YUUStartAttackRequest *attack = [YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:<#(NSString *)#> secondCard:<#(NSString *)#> ThirdCard:<#(NSString *)#> Battlenum:<#(NSString *)#> SuccessCallback:<#^(YUUBaseRequest *request)success#> failureCallback:<#^(YUUBaseRequest *request)failed#>
+    
+}
 
 
 - (void)didReceiveMemoryWarning {
