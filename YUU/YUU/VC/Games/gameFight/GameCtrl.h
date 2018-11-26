@@ -17,4 +17,7 @@
 @property(nonatomic,weak)IBOutlet UIView *rightDefaultView;
 @property(nonatomic,weak)IBOutlet UIView *waitView;
 @property(nonatomic,weak)IBOutlet UIImageView *maohaoImageView;
+@property(nonatomic,assign)cardType leftCardType;
+@property(nonatomic,assign)cardType midCardType;
+@property(nonatomic,assign)cardType rightCardType;
 @end

@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger,cardType){
     cardTypeBowman = 0,
     cardTypeCavalry = 1,
     cardTypeinfantry = 2,
+    cardTypeUnkonw = -1,
 };
 
 NS_INLINE id getSignFromParameter(NSArray *paraArr){

@@ -7,7 +7,7 @@
 //
 
 #import "GameCtrl.h"
-
+#import "YUUStartAttackRequest.h"
 
 
 
@@ -18,7 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self conigureCardType];
+
     self.waitView.backgroundColor = colorWithHexString(@"283040", 1.0);
     self.waitView.layer.cornerRadius = 10;
     UIPanGestureRecognizer *panGestureRecognizer1 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
@@ -39,6 +40,12 @@
     NSMutableArray *uidArr = [self addUidImageView:@"0238889"];
 
     [self createUidImageView:uidArr];
+    
+}
+-(void)conigureCardType{
+    self.leftCardType = cardTypeUnkonw;
+    self.midCardType = cardTypeUnkonw;
+    self.rightCardType = cardTypeUnkonw;
     
 }
 - (void) panView:(UIPanGestureRecognizer *)panGestureRecognizer
@@ -144,7 +151,23 @@
 
 
 -(IBAction)startFight:(id)sender{
-    
+    NSString *token = [YUUUserData shareInstance].token;
+    if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
+        [self setBusyIndicatorVisible:true];
+        WeakSelf
+        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:@"0" SuccessCallback:^(YUUBaseRequest *request) {
+            [weakSelf setBusyIndicatorVisible:false];
+            
+            
+        } failureCallback:^(YUUBaseRequest *request) {
+            [weakSelf setBusyIndicatorVisible:false];
+            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+        }];
+        [attack start];
+    }
+    else{
+        [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{

@@ -20,5 +20,9 @@
 @property(nonatomic,weak)IBOutlet UIImageView *maohaoImageView;
 @property(nonatomic,weak)IBOutlet UILabel *awardLabelTitle;
 @property(nonatomic,weak)IBOutlet UILabel *awardLabel;
+@property(nonatomic,assign)cardType leftCardType;
+@property(nonatomic,assign)cardType midCardType;
+@property(nonatomic,assign)cardType rightCardType;
+
 
 @end
