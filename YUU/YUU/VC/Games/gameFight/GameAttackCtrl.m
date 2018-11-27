@@ -88,6 +88,18 @@
             self.rightCardType = view.tag;
         }
         else{
+            switch (view.tag) {
+                case 0:
+                    self.leftCardType = cardTypeUnkonw;
+                    break;
+                case 1:
+                    self.midCardType = cardTypeUnkonw;
+                    break;
+                case 2:
+                    self.rightCardType = cardTypeUnkonw;
+                default:
+                    break;
+            }
             DLOG(@"不在放置区");
         }
     }
