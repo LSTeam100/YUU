@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"攻守令";
+    
     _upView.backgroundColor = [UIColor clearColor];
     _upView.layer.masksToBounds = YES;
     _upView.layer.cornerRadius = 8;

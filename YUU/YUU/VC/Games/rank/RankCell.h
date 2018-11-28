@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, RankType) {
 
 @property (strong, nonatomic) IBOutlet UIView *bgView;
 @property (strong, nonatomic) IBOutlet UIImageView *icon;
+@property (strong, nonatomic) IBOutlet UILabel *rankLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *label0;
 @property (strong, nonatomic) IBOutlet UILabel *label1;
 @property (strong, nonatomic) IBOutlet UILabel *label2;

@@ -22,6 +22,12 @@
     _label1.textColor = YUUBolderColor;
     _label2.textColor = [UIColor R:255 G:166 B:40];
     _label3.textColor = [UIColor R:255 G:166 B:40];
+    
+    _rankLabel.backgroundColor = YUUBolderColor;
+    _rankLabel.layer.masksToBounds = YES;
+    _rankLabel.layer.cornerRadius = 26/2;
+    _rankLabel.textColor = [UIColor whiteColor];
+    _rankLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 - (void)setModel:(RankModel *)model {
@@ -36,6 +42,13 @@
     _index = index;
     if (index >= 0 && index <= 2) {
         _icon.image = [UIImage imageNamed:[NSString stringWithFormat:@"rank%ld",_index+1]];
+        _icon.hidden = NO;
+        _rankLabel.hidden = YES;
+    } else {
+        _icon.hidden = YES;
+        _rankLabel.hidden = NO;
+        
+        _rankLabel.text = [NSString stringWithFormat:@"%ld",(long)index];
     }
 }
 

@@ -13,10 +13,11 @@
 #import "GetAttackorderRequest.h"
 #import "RankViewController.h"
 #import "EnterGameVC.h"
+#import "YUUBaseTableView.h"
 
 @interface OffensiveAndDefensiveOrderVC () <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 
 @property (nonatomic, strong) NSArray *iconNames;
 @property (nonatomic, strong) NSArray *titles;
