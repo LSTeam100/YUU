@@ -169,7 +169,7 @@
         [AlertController alertTitle:@"您确认如此排兵布阵了吗？" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
             [self setBusyIndicatorVisible:true];
             WeakSelf
-            YUUCanDefenseRequest *attack = [[YUUCanDefenseRequest alloc] initWithCanDefense:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] YuuNum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
+            YUUCanDefenseRequest *attack = [[YUUCanDefenseRequest alloc] initWithCanDefense:token FirstCard:[NSString stringWithFormat:@"%ld",(long)self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",(long)self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",(long)self.rightCardType] YuuNum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
                 [weakSelf setBusyIndicatorVisible:false];
             } failureCallback:^(YUUBaseRequest *request) {
                 [weakSelf setBusyIndicatorVisible:false];

@@ -129,10 +129,13 @@
 }
 
 -(IBAction)back:(id)sender{
+    [HUD showHUD];
     WarbackRequest *request = [[WarbackRequest alloc] initBattlenum:@"" success:^(YUUBaseRequest *request) {
-        
+        [HUD showRequest:request];
+//        [self.navigationController popViewControllerAnimated:YES];
     } failure:^(YUUBaseRequest *request) {
-        
+        [HUD hide];
+        [self handleResponseError:self request:request needToken:YES];
     }];
     [request start];
     
