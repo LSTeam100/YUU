@@ -7,8 +7,18 @@
 //
 
 #import "YUUBaseTableViewCell.h"
+#import "DefensiveListModel.h"
+@class DefensiveListCell;
+
+@protocol DefensiveListCellDelegate <NSObject>
+
+- (void)challengeSelected:(DefensiveListCell *)cell;
+
+@end
 
 @interface DefensiveListCell : YUUBaseTableViewCell
+
+@property (nonatomic, weak) id <DefensiveListCellDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UIView *bgView;
 
@@ -16,7 +26,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *label1;
 @property (strong, nonatomic) IBOutlet UILabel *label2;
 
+@property (nonatomic, strong) DefensiveListModel *model;
 
-
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 @end

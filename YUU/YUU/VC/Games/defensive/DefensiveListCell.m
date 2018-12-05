@@ -7,6 +7,7 @@
 //
 
 #import "DefensiveListCell.h"
+#import "YUUConfig.h"
 
 @implementation DefensiveListCell
 
@@ -22,6 +23,9 @@
     _label1.textColor = YUUBolderColor;
     _label2.textColor = YUUBolderColor;
     
+    _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action:)];
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,9 +33,22 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)challengeAction:(UIButton *)sender {
+    if (_delegate && [_delegate respondsToSelector:@selector(challengeSelected:)]) {
+        [_delegate challengeSelected:self];
+    }
+}
 
 
-- (IBAction)challengeAction:(id)sender {
+
+
+- (void)setModel:(DefensiveListModel *)model {
+    _model = model;
+    
+    _label0.text = [NSString stringWithFormat:@"%ld",model.memberid];
+    _label1.text = regYUUCoin([NSNumber numberWithDouble:(model.putyuu)], 2);
+    
+    _label2.text = @"防守中";
 }
 
 

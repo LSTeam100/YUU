@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-cX-pMk">
-                                <rect key="frame" x="106" y="516" width="162" height="38"/>
+                                <rect key="frame" x="106.5" y="516" width="162" height="38"/>
                                 <state key="normal" backgroundImage="begin"/>
                                 <connections>
                                     <action selector="startFight:" destination="4Wq-5S-6ID" eventType="touchUpInside" id="1U6-ZE-KiN"/>
@@ -67,7 +67,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJj-iG-ovr">
-                                <rect key="frame" x="240" y="303" width="66" height="103"/>
+                                <rect key="frame" x="240.5" y="303" width="66" height="103"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnemyDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-iw-Xjh">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="103"/>
@@ -82,7 +82,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw1-iS-mEF">
-                                <rect key="frame" x="154" y="303" width="66" height="103"/>
+                                <rect key="frame" x="154.5" y="303" width="66" height="103"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnemyDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="3g6-Id-8AC">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="103"/>
@@ -104,7 +104,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nJ-Ub-fuh">
-                                <rect key="frame" x="68" y="303" width="66" height="103"/>
+                                <rect key="frame" x="68.5" y="303" width="66" height="103"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnemyDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="bA4-Aj-DEs">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="103"/>
@@ -128,17 +128,17 @@
                                 <rect key="frame" x="68.5" y="564" width="66" height="103"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YUU0" translatesAutoresizingMaskIntoConstraints="NO" id="DuV-VI-eyD">
-                                <rect key="frame" x="83" y="35" width="36" height="36"/>
+                                <rect key="frame" x="83.5" y="35" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="2lq-ph-OSw"/>
                                     <constraint firstAttribute="width" constant="36" id="Dbk-Lu-3i3"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uid" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-oN-8Md">
-                                <rect key="frame" x="132" y="38.5" width="57" height="29"/>
+                                <rect key="frame" x="132.5" y="38.5" width="57" height="29"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maohao" translatesAutoresizingMaskIntoConstraints="NO" id="0az-KT-sQG">
-                                <rect key="frame" x="189" y="38.5" width="9" height="29"/>
+                                <rect key="frame" x="189.5" y="38.5" width="9" height="29"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -213,7 +213,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnemyDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="1OD-vM-5D6">
-                                <rect key="frame" x="240.5" y="144" width="67" height="103"/>
+                                <rect key="frame" x="241" y="144" width="67" height="103"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnemyDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-ZJ-5rP">
                                 <rect key="frame" x="154" y="144" width="67" height="103"/>
@@ -227,7 +227,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ed-MO-SPw">
-                                <rect key="frame" x="106" y="516" width="162" height="38"/>
+                                <rect key="frame" x="106.5" y="516" width="162" height="38"/>
                                 <state key="normal" backgroundImage="begin"/>
                                 <connections>
                                     <action selector="startFight:" destination="PFl-2t-LKM" eventType="touchUpInside" id="Aky-4J-0ho"/>
@@ -243,7 +243,7 @@
                                         <rect key="frame" x="27" y="15.5" width="22" height="29"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="num_3" translatesAutoresizingMaskIntoConstraints="NO" id="bnT-sS-OLk">
-                                        <rect key="frame" x="59" y="16.5" width="22" height="28"/>
+                                        <rect key="frame" x="59" y="16" width="22" height="28"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="num_4" translatesAutoresizingMaskIntoConstraints="NO" id="19t-a6-PNe">
                                         <rect key="frame" x="91" y="15.5" width="23" height="29"/>
@@ -325,7 +325,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPz-xh-5rQ">
-                                <rect key="frame" x="240.5" y="303" width="67" height="103"/>
+                                <rect key="frame" x="241" y="303" width="67" height="103"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-IG-ckv">
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="103"/>
@@ -340,7 +340,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IK-SO-FuY">
-                                <rect key="frame" x="153.5" y="303" width="67" height="103"/>
+                                <rect key="frame" x="154" y="303" width="67" height="103"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="Ce9-tR-eg7">
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="103"/>
@@ -380,7 +380,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-E0-lJe">
-                                <rect key="frame" x="67.5" y="303" width="66" height="103"/>
+                                <rect key="frame" x="68" y="303" width="66" height="103"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="7tg-qY-Iip">
                                         <rect key="frame" x="-0.5" y="0.0" width="67" height="103"/>
@@ -395,35 +395,35 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YUU0" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-St-ytw">
-                                <rect key="frame" x="82.5" y="35" width="36" height="36"/>
+                                <rect key="frame" x="83" y="35" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="Rmh-fv-eq8"/>
                                     <constraint firstAttribute="height" constant="36" id="jke-aN-E4N"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uid" translatesAutoresizingMaskIntoConstraints="NO" id="DQX-yJ-zpj">
-                                <rect key="frame" x="131.5" y="38.5" width="57" height="29"/>
+                                <rect key="frame" x="132" y="38.5" width="57" height="29"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maohao" translatesAutoresizingMaskIntoConstraints="NO" id="Hzx-o6-6D1">
-                                <rect key="frame" x="188.5" y="38.5" width="9" height="29"/>
+                                <rect key="frame" x="189" y="38.5" width="9" height="29"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vs" translatesAutoresizingMaskIntoConstraints="NO" id="FgU-0r-Y4b">
-                                <rect key="frame" x="124" y="220" width="126" height="83"/>
+                                <rect key="frame" x="124.5" y="220" width="126" height="83"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="win" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-fX-PB0">
-                                <rect key="frame" x="70" y="247" width="61" height="56"/>
+                                <rect key="frame" x="70.5" y="247" width="61" height="56"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lose" translatesAutoresizingMaskIntoConstraints="NO" id="I9T-jj-lck">
-                                <rect key="frame" x="165" y="247" width="43" height="56"/>
+                                <rect key="frame" x="166" y="247" width="43" height="56"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ping" translatesAutoresizingMaskIntoConstraints="NO" id="Obh-F7-KhK">
                                 <rect key="frame" x="248.5" y="247" width="52" height="56"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnemyDefaultCard" translatesAutoresizingMaskIntoConstraints="NO" id="Pmt-2e-58W">
-                                <rect key="frame" x="67" y="144" width="67" height="103"/>
+                                <rect key="frame" x="67.5" y="144" width="67" height="103"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bao" translatesAutoresizingMaskIntoConstraints="NO" id="20c-SF-uag">
-                                <rect key="frame" x="76.5" y="176" width="58" height="56"/>
+                                <rect key="frame" x="77" y="176" width="58" height="56"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Infantry" translatesAutoresizingMaskIntoConstraints="NO" id="UvN-rN-wQG">
                                 <rect key="frame" x="241" y="564" width="67" height="103"/>
@@ -524,35 +524,35 @@
     </scenes>
     <resources>
         <image name="EnemyDefaultCard" width="66" height="103"/>
-        <image name="Infantry" width="59" height="92"/>
-        <image name="YUU0" width="52" height="53"/>
-        <image name="attackAlert" width="146" height="45"/>
+        <image name="Infantry" width="59.5" height="92"/>
+        <image name="YUU0" width="52.5" height="53"/>
+        <image name="attackAlert" width="146.5" height="45.5"/>
         <image name="attack_bg" width="283" height="91"/>
-        <image name="bao" width="58" height="56"/>
-        <image name="begin" width="162" height="38"/>
-        <image name="bowman" width="57" height="92"/>
-        <image name="cavalry" width="59" height="92"/>
-        <image name="defensAlert" width="141" height="43"/>
+        <image name="bao" width="58" height="56.5"/>
+        <image name="begin" width="162.5" height="38"/>
+        <image name="bowman" width="57.5" height="92"/>
+        <image name="cavalry" width="59.5" height="92"/>
+        <image name="defensAlert" width="141.5" height="43.5"/>
         <image name="defense_bg" width="256" height="83"/>
         <image name="defensive" width="63" height="63"/>
         <image name="fight_bg" width="375" height="667"/>
         <image name="gamesHisStatusAttack" width="63" height="56"/>
-        <image name="lose" width="43" height="56"/>
-        <image name="maohao" width="9" height="29"/>
+        <image name="lose" width="43.5" height="56"/>
+        <image name="maohao" width="9" height="29.5"/>
         <image name="num_0" width="28" height="26"/>
-        <image name="num_1" width="17" height="29"/>
-        <image name="num_2" width="22" height="29"/>
+        <image name="num_1" width="17.5" height="29.5"/>
+        <image name="num_2" width="22" height="29.5"/>
         <image name="num_3" width="22" height="28"/>
-        <image name="num_4" width="23" height="29"/>
-        <image name="num_5" width="26" height="29"/>
+        <image name="num_4" width="23" height="29.5"/>
+        <image name="num_5" width="26.5" height="29"/>
         <image name="num_6" width="22" height="29"/>
-        <image name="num_7" width="21" height="27"/>
-        <image name="num_8" width="21" height="30"/>
-        <image name="num_9" width="21" height="30"/>
-        <image name="out" width="63" height="37"/>
-        <image name="ping" width="52" height="56"/>
-        <image name="selfDefaultCard" width="67" height="103"/>
-        <image name="uid" width="57" height="29"/>
+        <image name="num_7" width="21.5" height="27.5"/>
+        <image name="num_8" width="21.5" height="30"/>
+        <image name="num_9" width="21.5" height="30"/>
+        <image name="out" width="63.5" height="37"/>
+        <image name="ping" width="52" height="56.5"/>
+        <image name="selfDefaultCard" width="67.5" height="103"/>
+        <image name="uid" width="57" height="29.5"/>
         <image name="vs" width="126" height="83"/>
         <image name="win" width="61" height="56"/>
     </resources>

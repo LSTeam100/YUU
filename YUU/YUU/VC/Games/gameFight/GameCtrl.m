@@ -7,8 +7,8 @@
 //
 
 #import "GameCtrl.h"
-#import "YUUStartAttackRequest.h"
-
+#import "YUUCanDefenseRequest.h"
+#import "AlertController.h"
 
 
 @interface GameCtrl ()
@@ -165,17 +165,23 @@
 -(IBAction)startFight:(id)sender{
     NSString *token = [YUUUserData shareInstance].token;
     if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
-        [self setBusyIndicatorVisible:true];
-        WeakSelf
-        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:@"0" SuccessCallback:^(YUUBaseRequest *request) {
-            [weakSelf setBusyIndicatorVisible:false];
+        
+        [AlertController alertTitle:@"您确认如此排兵布阵了吗？" message:nil determine:@"确定" cancel:@"取消" determineHandler:^{
+            [self setBusyIndicatorVisible:true];
+            WeakSelf
+            YUUCanDefenseRequest *attack = [[YUUCanDefenseRequest alloc] initWithCanDefense:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] YuuNum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
+                [weakSelf setBusyIndicatorVisible:false];
+            } failureCallback:^(YUUBaseRequest *request) {
+                [weakSelf setBusyIndicatorVisible:false];
+                [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+            }];
+           
+            [attack start];
+        } cancelHandler:^{
             
-            
-        } failureCallback:^(YUUBaseRequest *request) {
-            [weakSelf setBusyIndicatorVisible:false];
-            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
         }];
-        [attack start];
+        
+        
     }
     else{
         [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];

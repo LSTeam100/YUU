@@ -9,8 +9,11 @@
 #import "DefensiveListVC.h"
 #import "DefensiveListCell.h"
 #import "GetAttackListRequest.h"
+#import "DefensiveListModel.h"
+#import "GameCtrl.h"
+#import "OrderchallengeRequest.h"
 
-@interface DefensiveListVC ()
+@interface DefensiveListVC () <DefensiveListCellDelegate>
 
 @property (strong, nonatomic) IBOutlet YUUBaseTableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *upView;
@@ -46,7 +49,7 @@
 
 - (void)getHTTPData {
     [HUD showHUD];
-    GetAttackListRequest *request = [[GetAttackListRequest alloc] initWarzone:[NSString stringWithFormat:@"%ld",_YUU] success:^(YUUBaseRequest *request) {
+    GetAttackListRequest *request = [[GetAttackListRequest alloc] initWarzone:[NSString stringWithFormat:@"%ld",(long)_YUU] success:^(YUUBaseRequest *request) {
         _items = request.getResponse.data;
         [_tableView reloadData];
         [HUD showRequest:request];
@@ -66,7 +69,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DefensiveListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefensiveListCell"];
-
+    cell.model = _items[indexPath.row];
+    cell.delegate = self;
     return cell;
 }
 
@@ -81,6 +85,24 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return  54;
+}
+
+- (void)challengeSelected:(DefensiveListCell *)cell {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    DefensiveListModel *model = _items[indexPath.row];
+    
+    [HUD showHUD];
+    OrderchallengeRequest *request = [[OrderchallengeRequest alloc] initBattlenum:model.battlenum success:^(YUUBaseRequest *request) {
+        [HUD showRequest:request];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GameCtrl" bundle:nil];
+        GameCtrl *game = [storyboard instantiateViewControllerWithIdentifier:@"GameCtrl"];
+        game.model = _items[indexPath.row];
+        [self.navigationController pushViewController:game animated:YES];
+    } failure:^(YUUBaseRequest *request) {
+        [HUD hide];
+        [self handleResponseError:self request:request needToken:YES];
+    }];
+    [request start];
 }
 
 @end

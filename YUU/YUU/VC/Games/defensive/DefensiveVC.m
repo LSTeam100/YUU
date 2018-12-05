@@ -76,17 +76,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)action0:(id)sender {
+
+- (IBAction)selectAction:(UIButton *)sender {
     if (_isDefensive) {
         GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
         vc.YUU = 0;
         [self.navigationController pushViewController:vc animated:YES];
     } else {
         DefensiveListVC *vc = [DefensiveListVC storyboardInstanceType];
-        vc.YUU = 0;
+        vc.YUU = sender.tag;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
 
 - (IBAction)action1:(id)sender {
     if (_isDefensive) {

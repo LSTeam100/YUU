@@ -7,7 +7,10 @@
 //
 
 #import "YUUSuperCtrl.h"
+#import "DefensiveListModel.h"
+
 @interface GameCtrl : YUUSuperCtrl
+
 @property(nonatomic,weak)IBOutlet UIImageView *bowman;
 @property(nonatomic,weak)IBOutlet UIImageView *cavalry;
 @property(nonatomic,weak)IBOutlet UIImageView *infantry;
@@ -20,4 +23,8 @@
 @property(nonatomic,assign)cardType leftCardType;
 @property(nonatomic,assign)cardType midCardType;
 @property(nonatomic,assign)cardType rightCardType;
+
+@property (nonatomic, strong) DefensiveListModel *model;
+
+
 @end

@@ -27,6 +27,7 @@ typedef void(^onFailureCallback)(YUUBaseRequest* request);
 
 -(void)setParameters:(NSDictionary *)parameters;
 - (void)setParameterDic:(NSDictionary *)dict;
+- (void)setParameterDic:(NSDictionary *)dict withToken:(BOOL)token;
 
 -(YUUResponse *)getResponse;
 

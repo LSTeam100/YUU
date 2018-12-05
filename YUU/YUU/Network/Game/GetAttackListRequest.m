@@ -17,7 +17,7 @@
 {
     self = [super initWithSuccessCallback:success failureCallback:failure];
     
-    [self setParameterDic:@{@"warzone":warzone}];
+    [self setParameterDic:@{@"warzone":warzone} withToken:NO];
     
     return self;
 }

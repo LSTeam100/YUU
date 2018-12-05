@@ -13,10 +13,14 @@
 		090D57EA21A0582400EB3DF4 /* DefensiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57E921A0582400EB3DF4 /* DefensiveVC.m */; };
 		090D57EE21A05CE700EB3DF4 /* GameYUUListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57ED21A05CE700EB3DF4 /* GameYUUListVC.m */; };
 		090D57F121A05D0D00EB3DF4 /* GameYUUListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57F021A05D0D00EB3DF4 /* GameYUUListCell.m */; };
-		090FFE49219FF4EF00F8FFF2 /* GetLastRankRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 090FFE48219FF4EF00F8FFF2 /* GetLastRankRequest.m */; };
-		090FFE4C219FF65700F8FFF2 /* GetAllRankRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 090FFE4B219FF65700F8FFF2 /* GetAllRankRequest.m */; };
 		090FFE4F21A00E3500F8FFF2 /* EnterGameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090FFE4E21A00E3500F8FFF2 /* EnterGameVC.m */; };
-		090FFE5821A0167E00F8FFF2 /* GetAttackListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 090FFE5721A0167E00F8FFF2 /* GetAttackListRequest.m */; };
+		09128E1B21B68D2B002E720A /* GetAttackorderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1221B68D2A002E720A /* GetAttackorderRequest.m */; };
+		09128E1C21B68D2B002E720A /* GetAllRankRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1321B68D2A002E720A /* GetAllRankRequest.m */; };
+		09128E1D21B68D2B002E720A /* GetAttackListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1521B68D2A002E720A /* GetAttackListRequest.m */; };
+		09128E1E21B68D2B002E720A /* GetLastRankRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1821B68D2A002E720A /* GetLastRankRequest.m */; };
+		09128E1F21B68D2B002E720A /* GetOrderweekrankingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1921B68D2A002E720A /* GetOrderweekrankingRequest.m */; };
+		09128E2221B68D67002E720A /* WarbackRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E2121B68D67002E720A /* WarbackRequest.m */; };
+		0914DCA421B6D3FF004700D5 /* OrderchallengeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */; };
 		091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091983CA2131A54A00E35196 /* YUUTeamInfoView.m */; };
 		091983CD2131A55600E35196 /* YUUTeamInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091983CC2131A55600E35196 /* YUUTeamInfoView.xib */; };
 		091983D02131A95A00E35196 /* YUUUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091983CF2131A95A00E35196 /* YUUUserInfoView.m */; };
@@ -115,8 +119,6 @@
 		0966B43D21951FB9001E3AA1 /* RankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0966B43A21951FB9001E3AA1 /* RankVC.m */; };
 		0966B43E21951FB9001E3AA1 /* RankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0966B43B21951FB9001E3AA1 /* RankCell.m */; };
 		0966B44121951FDF001E3AA1 /* RankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0966B44021951FDF001E3AA1 /* RankViewController.m */; };
-		098CB40D219F054100408A23 /* GetAttackorderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 098CB40C219F054100408A23 /* GetAttackorderRequest.m */; };
-		098CB410219F0AAD00408A23 /* GetOrderweekrankingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 098CB40F219F0AAD00408A23 /* GetOrderweekrankingRequest.m */; };
 		098CB413219F0B1900408A23 /* RankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 098CB412219F0B1900408A23 /* RankModel.m */; };
 		099444762140D28F00548245 /* GetMineralPoolRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444752140D28F00548245 /* GetMineralPoolRequest.m */; };
 		0994447A2140D57200548245 /* MineralPoolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 099444792140D57200548245 /* MineralPoolModel.m */; };
@@ -219,14 +221,22 @@
 		090D57ED21A05CE700EB3DF4 /* GameYUUListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameYUUListVC.m; sourceTree = "<group>"; };
 		090D57EF21A05D0D00EB3DF4 /* GameYUUListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameYUUListCell.h; sourceTree = "<group>"; };
 		090D57F021A05D0D00EB3DF4 /* GameYUUListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameYUUListCell.m; sourceTree = "<group>"; };
-		090FFE47219FF4EF00F8FFF2 /* GetLastRankRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetLastRankRequest.h; sourceTree = "<group>"; };
-		090FFE48219FF4EF00F8FFF2 /* GetLastRankRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetLastRankRequest.m; sourceTree = "<group>"; };
-		090FFE4A219FF65700F8FFF2 /* GetAllRankRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAllRankRequest.h; sourceTree = "<group>"; };
-		090FFE4B219FF65700F8FFF2 /* GetAllRankRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAllRankRequest.m; sourceTree = "<group>"; };
 		090FFE4D21A00E3500F8FFF2 /* EnterGameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterGameVC.h; sourceTree = "<group>"; };
 		090FFE4E21A00E3500F8FFF2 /* EnterGameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterGameVC.m; sourceTree = "<group>"; };
-		090FFE5621A0167E00F8FFF2 /* GetAttackListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAttackListRequest.h; sourceTree = "<group>"; };
-		090FFE5721A0167E00F8FFF2 /* GetAttackListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAttackListRequest.m; sourceTree = "<group>"; };
+		09128E1121B68D2A002E720A /* GetLastRankRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetLastRankRequest.h; sourceTree = "<group>"; };
+		09128E1221B68D2A002E720A /* GetAttackorderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAttackorderRequest.m; sourceTree = "<group>"; };
+		09128E1321B68D2A002E720A /* GetAllRankRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllRankRequest.m; sourceTree = "<group>"; };
+		09128E1421B68D2A002E720A /* GetOrderweekrankingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrderweekrankingRequest.h; sourceTree = "<group>"; };
+		09128E1521B68D2A002E720A /* GetAttackListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAttackListRequest.m; sourceTree = "<group>"; };
+		09128E1621B68D2A002E720A /* GetAttackorderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAttackorderRequest.h; sourceTree = "<group>"; };
+		09128E1721B68D2A002E720A /* GetAllRankRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllRankRequest.h; sourceTree = "<group>"; };
+		09128E1821B68D2A002E720A /* GetLastRankRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetLastRankRequest.m; sourceTree = "<group>"; };
+		09128E1921B68D2A002E720A /* GetOrderweekrankingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOrderweekrankingRequest.m; sourceTree = "<group>"; };
+		09128E1A21B68D2A002E720A /* GetAttackListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAttackListRequest.h; sourceTree = "<group>"; };
+		09128E2021B68D67002E720A /* WarbackRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarbackRequest.h; sourceTree = "<group>"; };
+		09128E2121B68D67002E720A /* WarbackRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarbackRequest.m; sourceTree = "<group>"; };
+		0914DCA221B6D3FF004700D5 /* OrderchallengeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderchallengeRequest.h; sourceTree = "<group>"; };
+		0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderchallengeRequest.m; sourceTree = "<group>"; };
 		091983C92131A54A00E35196 /* YUUTeamInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTeamInfoView.h; sourceTree = "<group>"; };
 		091983CA2131A54A00E35196 /* YUUTeamInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUTeamInfoView.m; sourceTree = "<group>"; };
 		091983CC2131A55600E35196 /* YUUTeamInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YUUTeamInfoView.xib; sourceTree = "<group>"; };
@@ -413,10 +423,6 @@
 		0966B43B21951FB9001E3AA1 /* RankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankCell.m; sourceTree = "<group>"; };
 		0966B43F21951FDF001E3AA1 /* RankViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankViewController.h; sourceTree = "<group>"; };
 		0966B44021951FDF001E3AA1 /* RankViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankViewController.m; sourceTree = "<group>"; };
-		098CB40B219F054100408A23 /* GetAttackorderRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAttackorderRequest.h; sourceTree = "<group>"; };
-		098CB40C219F054100408A23 /* GetAttackorderRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAttackorderRequest.m; sourceTree = "<group>"; };
-		098CB40E219F0AAD00408A23 /* GetOrderweekrankingRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetOrderweekrankingRequest.h; sourceTree = "<group>"; };
-		098CB40F219F0AAD00408A23 /* GetOrderweekrankingRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetOrderweekrankingRequest.m; sourceTree = "<group>"; };
 		098CB411219F0B1900408A23 /* RankModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankModel.h; sourceTree = "<group>"; };
 		098CB412219F0B1900408A23 /* RankModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankModel.m; sourceTree = "<group>"; };
 		099444742140D28F00548245 /* GetMineralPoolRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMineralPoolRequest.h; sourceTree = "<group>"; };
@@ -626,6 +632,27 @@
 				090D57F021A05D0D00EB3DF4 /* GameYUUListCell.m */,
 			);
 			path = GameYUUList;
+			sourceTree = "<group>";
+		};
+		09128E1021B68D2A002E720A /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				09128E1721B68D2A002E720A /* GetAllRankRequest.h */,
+				09128E1321B68D2A002E720A /* GetAllRankRequest.m */,
+				09128E1A21B68D2A002E720A /* GetAttackListRequest.h */,
+				09128E1521B68D2A002E720A /* GetAttackListRequest.m */,
+				09128E1621B68D2A002E720A /* GetAttackorderRequest.h */,
+				09128E1221B68D2A002E720A /* GetAttackorderRequest.m */,
+				09128E1121B68D2A002E720A /* GetLastRankRequest.h */,
+				09128E1821B68D2A002E720A /* GetLastRankRequest.m */,
+				09128E1421B68D2A002E720A /* GetOrderweekrankingRequest.h */,
+				09128E1921B68D2A002E720A /* GetOrderweekrankingRequest.m */,
+				09128E2021B68D67002E720A /* WarbackRequest.h */,
+				09128E2121B68D67002E720A /* WarbackRequest.m */,
+				0914DCA221B6D3FF004700D5 /* OrderchallengeRequest.h */,
+				0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		091D8E3A2130D8C800C430AB /* YUUMineMarket */ = {
@@ -1038,16 +1065,6 @@
 				09251C72213F68DA00B12370 /* BaseHTTP.m */,
 				092209E32171020D0021B34A /* YUUPendingSellenterRequest.h */,
 				092209E42171020D0021B34A /* YUUPendingSellenterRequest.m */,
-				098CB40B219F054100408A23 /* GetAttackorderRequest.h */,
-				098CB40C219F054100408A23 /* GetAttackorderRequest.m */,
-				098CB40E219F0AAD00408A23 /* GetOrderweekrankingRequest.h */,
-				098CB40F219F0AAD00408A23 /* GetOrderweekrankingRequest.m */,
-				090FFE47219FF4EF00F8FFF2 /* GetLastRankRequest.h */,
-				090FFE48219FF4EF00F8FFF2 /* GetLastRankRequest.m */,
-				090FFE4A219FF65700F8FFF2 /* GetAllRankRequest.h */,
-				090FFE4B219FF65700F8FFF2 /* GetAllRankRequest.m */,
-				090FFE5621A0167E00F8FFF2 /* GetAttackListRequest.h */,
-				090FFE5721A0167E00F8FFF2 /* GetAttackListRequest.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1234,6 +1251,7 @@
 		18F85CED2126B3FC001A3205 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				09128E1021B68D2A002E720A /* Game */,
 				09D4C47C213D004B00AA8EFD /* HTTP */,
 				18F85D1D2129048F001A3205 /* YUUBaseRequest.h */,
 				18F85D1E2129048F001A3205 /* YUUBaseRequest.m */,
@@ -1423,6 +1441,7 @@
 				0923C46A214895EE00869625 /* YUUUserSendwxRequest.m in Sources */,
 				0994456B2141229200548245 /* YUUUserData.m in Sources */,
 				0925E97B21532E8000F874A7 /* PendingMailboxCell.m in Sources */,
+				09128E1F21B68D2B002E720A /* GetOrderweekrankingRequest.m in Sources */,
 				092A89A721947DD5002B086F /* OffensiveAndDefensiveOrderVC.m in Sources */,
 				1814408B21A945B1001DC8D2 /* YUUStartAattackModel.m in Sources */,
 				0923C45E214895EE00869625 /* YUUPointSellCancelRequest.m in Sources */,
@@ -1436,6 +1455,7 @@
 				09251C76213F6D1D00B12370 /* YUUGetPendingMailRequest.m in Sources */,
 				0952AC2521391D0B00D701CE /* HMWADSimulateIDFA.m in Sources */,
 				09207E2021270C6A00952C6D /* YUUMineralPoolCell.m in Sources */,
+				09128E1C21B68D2B002E720A /* GetAllRankRequest.m in Sources */,
 				091983D02131A95A00E35196 /* YUUUserInfoView.m in Sources */,
 				0994447A2140D57200548245 /* MineralPoolModel.m in Sources */,
 				0923C466214895EE00869625 /* YUUBillCenterRequest.m in Sources */,
@@ -1445,7 +1465,6 @@
 				0923C46B214895EE00869625 /* YUUCurrencyHistoryRequest.m in Sources */,
 				18F85CD72126B295001A3205 /* HLCLog.m in Sources */,
 				092A89AC21947F4A002B086F /* OffensiveAndDefensiveOrderCell.m in Sources */,
-				090FFE4C219FF65700F8FFF2 /* GetAllRankRequest.m in Sources */,
 				09251C73213F68DA00B12370 /* BaseHTTP.m in Sources */,
 				0925E9782153211100F874A7 /* YUUMineMarketMailRequest.m in Sources */,
 				09251C83213F6EC300B12370 /* YUUPendingBuyerModel.m in Sources */,
@@ -1481,9 +1500,11 @@
 				18F85CE72126B3A2001A3205 /* ZHAFNetworkReachabilityManager.m in Sources */,
 				1823F2732196D268000F16E6 /* ChatMsgModel.m in Sources */,
 				189CC56D212FE93800E8E2E4 /* YUUMessageCtrl.m in Sources */,
+				09128E1E21B68D2B002E720A /* GetLastRankRequest.m in Sources */,
 				1814408521A94031001DC8D2 /* YUUBattleModel.m in Sources */,
 				099445692141229200548245 /* YUUMachinePoolArrModel.m in Sources */,
 				091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */,
+				09128E1B21B68D2B002E720A /* GetAttackorderRequest.m in Sources */,
 				09225519212B9F31000BF25B /* YUUMineMachineVC.m in Sources */,
 				1826764621992A2F007E5490 /* YUUGamesHistroy.m in Sources */,
 				0952AC2021391C4D00D701CE /* YUUEncryMgr.m in Sources */,
@@ -1508,7 +1529,7 @@
 				18F85CEB2126B3A2001A3205 /* ZHAFURLSessionManager.m in Sources */,
 				0923C458214895EE00869625 /* YUUPointOnsaleRequest.m in Sources */,
 				0923C467214895EE00869625 /* YUUBuyMachineRequest.m in Sources */,
-				098CB40D219F054100408A23 /* GetAttackorderRequest.m in Sources */,
+				09128E1D21B68D2B002E720A /* GetAttackListRequest.m in Sources */,
 				095F4A62212A774C00098859 /* UIColor+Help.m in Sources */,
 				0952AC2921392C9900D701CE /* DrawView.m in Sources */,
 				0923C463214895EE00869625 /* YUUUserSendWalletRequest.m in Sources */,
@@ -1545,7 +1566,6 @@
 				18EDE40F21257A3700FC8E0C /* ViewController.m in Sources */,
 				0923C451214895EE00869625 /* YUUCallCenterRequest.m in Sources */,
 				189CC570212FF72400E8E2E4 /* YUUMessageDetailCtrl.m in Sources */,
-				098CB410219F0AAD00408A23 /* GetOrderweekrankingRequest.m in Sources */,
 				0923C469214895EE00869625 /* YUUSendMessageRequest.m in Sources */,
 				0923C465214895EE00869625 /* YUUMachineListRequest.m in Sources */,
 				18F85D202129048F001A3205 /* YUUBaseRequest.m in Sources */,
@@ -1556,16 +1576,16 @@
 				091DBB0A212A3E86005DC12C /* YUUTabBarController.m in Sources */,
 				0923C45A214895EE00869625 /* YUUSellerTransactionRequest.m in Sources */,
 				0923C468214895EE00869625 /* YUUBuyerTransactionRequest.m in Sources */,
+				0914DCA421B6D3FF004700D5 /* OrderchallengeRequest.m in Sources */,
 				092A4097216AFBEF006C9476 /* YUUNoticeVC.m in Sources */,
 				091D8E442130D8C900C430AB /* YUUMineMarketVC.m in Sources */,
 				18EDE41A21257A3A00FC8E0C /* main.m in Sources */,
 				189CC55E212E97B000E8E2E4 /* YUUMineDetailCtrl.m in Sources */,
-				090FFE5821A0167E00F8FFF2 /* GetAttackListRequest.m in Sources */,
+				09128E2221B68D67002E720A /* WarbackRequest.m in Sources */,
 				099445672141229200548245 /* YUUMineDetailModel.m in Sources */,
 				0923C455214895EE00869625 /* YUUCertificationRequest.m in Sources */,
 				0925E975215320CC00F874A7 /* YUUMineMarketRequest.m in Sources */,
 				09D4C47B213CFF5900AA8EFD /* AlertController.m in Sources */,
-				090FFE49219FF4EF00F8FFF2 /* GetLastRankRequest.m in Sources */,
 				0994456C2141229200548245 /* YUUBaseModel.m in Sources */,
 				18D457DE219441EE009BAD76 /* YUUChatMessageCell.m in Sources */,
 				18D9959F2173959500276E76 /* YUUAlertView.m in Sources */,
@@ -1740,8 +1760,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PCGH4WWPX;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = P6UF878TKN;
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1778,7 +1798,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coralsec.FamilyGuard.Parent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "develop-libo";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1790,8 +1810,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PCGH4WWPX;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = YUU/YUUPre.pch;
 				INFOPLIST_FILE = YUU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

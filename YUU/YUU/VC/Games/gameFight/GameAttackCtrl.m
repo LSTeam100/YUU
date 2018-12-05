@@ -10,6 +10,8 @@
 #import "YUUStartAttackRequest.h"
 #import "YUUUserData.h"
 #import "HUD.h"
+#import "WarbackRequest.h"
+
 @interface GameAttackCtrl ()
 
 @end
@@ -127,6 +129,13 @@
 }
 
 -(IBAction)back:(id)sender{
+    WarbackRequest *request = [[WarbackRequest alloc] initBattlenum:@"" success:^(YUUBaseRequest *request) {
+        
+    } failure:^(YUUBaseRequest *request) {
+        
+    }];
+    [request start];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

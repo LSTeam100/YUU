@@ -67,6 +67,30 @@
     _parameters = [NSDictionary dictionaryWithDictionary:d];
 }
 
+- (void)setParameterDic:(NSDictionary *)dict withToken:(BOOL)token {
+    NSMutableArray *allParameters = [NSMutableArray array];
+    if (![dict.allKeys containsObject:@"token"] && token) {
+        [allParameters addObject:[YUUUserData shareInstance].token];
+    }
+    for (id str in dict.allValues) {
+        NSString *strValue;
+        if (![str isKindOfClass:[NSString class]]) {
+            strValue = [NSString stringWithFormat:@"%@",str];
+        } else {
+            strValue = str;
+        }
+        [allParameters addObject:strValue];
+    }
+    NSString *sha1key = getSignFromParameter([NSArray arrayWithArray:allParameters]);
+    
+    NSMutableDictionary *d = [NSMutableDictionary dictionaryWithDictionary:dict];
+    if (token) {
+        [d setObject:[YUUUserData shareInstance].token forKey:@"token"];
+    }
+    [d setObject:sha1key forKey:@"sign"];
+    _parameters = [NSDictionary dictionaryWithDictionary:d];
+}
+
 
 
 -(YUUResponse *)getResponse{
