@@ -24,7 +24,7 @@
 @property(nonatomic,assign)cardType midCardType;
 @property(nonatomic,assign)cardType rightCardType;
 
-@property (nonatomic, strong) DefensiveListModel *model;
+@property (nonatomic, assign) float yuuNum;
 
 
 @end

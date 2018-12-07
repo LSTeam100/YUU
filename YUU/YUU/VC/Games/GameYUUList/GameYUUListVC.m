@@ -8,6 +8,8 @@
 
 #import "GameYUUListVC.h"
 #import "GameYUUListCell.h"
+#import "YUUSetGameYuuRequest.h"
+#import "GameCtrl.h"
 
 @interface GameYUUListVC ()
 
@@ -29,21 +31,24 @@
     
     _items = [NSMutableArray array];
     if (_YUU == 0) {
-        for (int i = 6; i<30; i++) {
-            [_items addObject:[NSNumber numberWithInteger:i]];
-            i = i+3;
+        float t = 0.3;
+        for (int i = 0; i<9; i++) {
+            [_items addObject:[NSNumber numberWithFloat:t]];
+            t = t + 0.3;
         }
         self.title = @"0.3-3YUU";
     } else if (_YUU == 1) {
-        for (int i = 6; i<30; i++) {
-            [_items addObject:[NSNumber numberWithInteger:i]];
-            i = i+3;
+        NSInteger t = 6;
+        for (int i = 0; i<9; i++) {
+            [_items addObject:[NSNumber numberWithInteger:t]];
+            t = t+3;
         }
         self.title = @"6-30YUU";
     } else {
-        for (int i = 60; i<300; i++) {
-            [_items addObject:[NSNumber numberWithInteger:i]];
-            i = i+30;
+        NSInteger t = 6;
+        for (int i = 0; i<9; i++) {
+            [_items addObject:[NSNumber numberWithInteger:t]];
+            t = t+30;
         }
         self.title = @"60-300YUU";
     }
@@ -75,6 +80,20 @@
 
 #pragma mark - UITableViewDelegate -
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    float t = [_items[indexPath.row] floatValue];
+    [HUD showHUD];
+    YUUSetGameYuuRequest *request = [[YUUSetGameYuuRequest alloc] initWithYuunum:t success:^(YUUBaseRequest *request) {
+        [HUD showRequest:request];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GameCtrl" bundle:nil];
+        GameCtrl *vc = [storyboard instantiateViewControllerWithIdentifier:@"GameCtrl"];
+        vc.yuuNum = t;
+        [self.navigationController pushViewController:vc animated:YES];
+    } failure:^(YUUBaseRequest *request) {
+        [HUD hide];
+        [self handleResponseError:self request:request needToken:YES];
+    }];
+    [request start];
+    
     
 }
 

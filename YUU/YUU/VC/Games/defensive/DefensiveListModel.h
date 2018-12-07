@@ -15,4 +15,5 @@
 @property (nonatomic, assign) float putyuu; // 放了多少yuu（浮点数，小数点后只保留2位，小数点后末尾为0时0不显示）
 @property (nonatomic, strong) NSString *battlenum; // 战斗单号
 
+
 @end

@@ -10,7 +10,7 @@
 #import "DefensiveListCell.h"
 #import "GetAttackListRequest.h"
 #import "DefensiveListModel.h"
-#import "GameCtrl.h"
+#import "GameAttackCtrl.h"
 #import "OrderchallengeRequest.h"
 
 @interface DefensiveListVC () <DefensiveListCellDelegate>
@@ -43,7 +43,10 @@
     
     
     _middleView.backgroundColor = [UIColor R:15 G:82 B:108];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self getHTTPData];
 }
 
@@ -95,9 +98,9 @@
     OrderchallengeRequest *request = [[OrderchallengeRequest alloc] initBattlenum:model.battlenum success:^(YUUBaseRequest *request) {
         [HUD showRequest:request];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GameCtrl" bundle:nil];
-        GameCtrl *game = [storyboard instantiateViewControllerWithIdentifier:@"GameCtrl"];
-        game.model = _items[indexPath.row];
-        [self.navigationController pushViewController:game animated:YES];
+        GameAttackCtrl *vc = [storyboard instantiateViewControllerWithIdentifier:@"GameAttackCtrl"];
+        vc.model = _items[indexPath.row];
+        [self.navigationController pushViewController:vc animated:YES];
     } failure:^(YUUBaseRequest *request) {
         [HUD hide];
         [self handleResponseError:self request:request needToken:YES];

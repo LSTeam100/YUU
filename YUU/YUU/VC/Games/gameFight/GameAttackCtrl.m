@@ -193,7 +193,7 @@
     if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
         [self setBusyIndicatorVisible:true];
         WeakSelf
-        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:@"0" SuccessCallback:^(YUUBaseRequest *request) {
+        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
             [weakSelf setBusyIndicatorVisible:false];
             
             
@@ -216,14 +216,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)rotationImageView:(UIImageView *)imageView {
+    CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
+    // 旋转角度， 其中的value表示图像旋转的最终位置
+    keyAnimation.values = [NSArray arrayWithObjects:
+                           [NSValue valueWithCATransform3D:CATransform3DMakeRotation(0, 0,1,0)],
+                           [NSValue valueWithCATransform3D:CATransform3DMakeRotation((M_PI/2), 0,1,0)],
+                           [NSValue valueWithCATransform3D:CATransform3DMakeRotation(0, 0,1,0)],
+                           nil];
+    keyAnimation.cumulative = NO;
+    keyAnimation.duration = 0.5;
+    keyAnimation.repeatCount = 1;
+    keyAnimation.removedOnCompletion = NO;
+//    keyAnimation.delegate = self;
+    [imageView.layer addAnimation:keyAnimation forKey:@"transform"];
+    [self performSelector:@selector(changeIamgeInImageView:) withObject:imageView afterDelay:0.5];
 }
-*/
+
+- (void)changeIamgeInImageView:(UIImageView *)imageView {
+    if (imageView.tag == 0) {
+        imageView.image = [UIImage imageNamed:@"logo"];
+    } else if (imageView.tag == 1) {
+        imageView.image = [UIImage imageNamed:@"icon"];
+    } else {
+        imageView.image = [UIImage imageNamed:@"icon"];
+    }
+}
+
+
 
 @end

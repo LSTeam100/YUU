@@ -80,7 +80,7 @@
 - (IBAction)selectAction:(UIButton *)sender {
     if (_isDefensive) {
         GameYUUListVC *vc = [GameYUUListVC storyboardInstanceType];
-        vc.YUU = 0;
+        vc.YUU = sender.tag;
         [self.navigationController pushViewController:vc animated:YES];
     } else {
         DefensiveListVC *vc = [DefensiveListVC storyboardInstanceType];

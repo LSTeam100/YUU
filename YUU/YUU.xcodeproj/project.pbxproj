@@ -20,6 +20,7 @@
 		09128E1E21B68D2B002E720A /* GetLastRankRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1821B68D2A002E720A /* GetLastRankRequest.m */; };
 		09128E1F21B68D2B002E720A /* GetOrderweekrankingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1921B68D2A002E720A /* GetOrderweekrankingRequest.m */; };
 		09128E2221B68D67002E720A /* WarbackRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E2121B68D67002E720A /* WarbackRequest.m */; };
+		0913F53421BAA39D0097FCE3 /* YUUSetGameYuuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0913F53321BAA39D0097FCE3 /* YUUSetGameYuuRequest.m */; };
 		0914DCA421B6D3FF004700D5 /* OrderchallengeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */; };
 		091983CB2131A54A00E35196 /* YUUTeamInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091983CA2131A54A00E35196 /* YUUTeamInfoView.m */; };
 		091983CD2131A55600E35196 /* YUUTeamInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091983CC2131A55600E35196 /* YUUTeamInfoView.xib */; };
@@ -235,6 +236,8 @@
 		09128E1A21B68D2A002E720A /* GetAttackListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAttackListRequest.h; sourceTree = "<group>"; };
 		09128E2021B68D67002E720A /* WarbackRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarbackRequest.h; sourceTree = "<group>"; };
 		09128E2121B68D67002E720A /* WarbackRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarbackRequest.m; sourceTree = "<group>"; };
+		0913F53221BAA39D0097FCE3 /* YUUSetGameYuuRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUSetGameYuuRequest.h; sourceTree = "<group>"; };
+		0913F53321BAA39D0097FCE3 /* YUUSetGameYuuRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUSetGameYuuRequest.m; sourceTree = "<group>"; };
 		0914DCA221B6D3FF004700D5 /* OrderchallengeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderchallengeRequest.h; sourceTree = "<group>"; };
 		0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderchallengeRequest.m; sourceTree = "<group>"; };
 		091983C92131A54A00E35196 /* YUUTeamInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUTeamInfoView.h; sourceTree = "<group>"; };
@@ -651,6 +654,8 @@
 				09128E2121B68D67002E720A /* WarbackRequest.m */,
 				0914DCA221B6D3FF004700D5 /* OrderchallengeRequest.h */,
 				0914DCA321B6D3FF004700D5 /* OrderchallengeRequest.m */,
+				0913F53221BAA39D0097FCE3 /* YUUSetGameYuuRequest.h */,
+				0913F53321BAA39D0097FCE3 /* YUUSetGameYuuRequest.m */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1606,6 +1611,7 @@
 				0923C461214895EE00869625 /* YUUForgetTransactionRequest.m in Sources */,
 				099445682141229200548245 /* YUUMachineMarketInfoModel.m in Sources */,
 				181DF37721A805B800D9698D /* YUUCanDefenseRequest.m in Sources */,
+				0913F53421BAA39D0097FCE3 /* YUUSetGameYuuRequest.m in Sources */,
 				189CC561212EAAA800E8E2E4 /* YUUProfileAuthenCtrl.m in Sources */,
 				0994456A2141229200548245 /* YUUPointSellModel.m in Sources */,
 				18D0262B21930DA4003A0D64 /* YUUHappycallRequest.m in Sources */,
