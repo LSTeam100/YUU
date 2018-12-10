@@ -11,8 +11,11 @@
 #import "YUUUserData.h"
 #import "HUD.h"
 #import "WarbackRequest.h"
+#import "YUUAttackResponseModel.h"
 
 @interface GameAttackCtrl ()
+
+@property (nonatomic, strong) YUUAttackResponseModel *responseModel;
 
 @end
 
@@ -130,16 +133,16 @@
 
 -(IBAction)back:(id)sender{
     [HUD showHUD];
-    WarbackRequest *request = [[WarbackRequest alloc] initBattlenum:@"" success:^(YUUBaseRequest *request) {
+    WarbackRequest *request = [[WarbackRequest alloc] initBattlenum:self.model.battlenum success:^(YUUBaseRequest *request) {
         [HUD showRequest:request];
-//        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     } failure:^(YUUBaseRequest *request) {
         [HUD hide];
         [self handleResponseError:self request:request needToken:YES];
     }];
     [request start];
     
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)updateCardPosion:(UIView *)gestureView DefaultView:(UIView *)defaultView{
@@ -189,24 +192,25 @@
 }
 
 -(IBAction)startFight:(id)sender{
-    NSString *token = [YUUUserData shareInstance].token;
-    if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
-        [self setBusyIndicatorVisible:true];
-        WeakSelf
-        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
-            [weakSelf setBusyIndicatorVisible:false];
-            
-            
-        } failureCallback:^(YUUBaseRequest *request) {
-            [weakSelf setBusyIndicatorVisible:false];
-            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
-        }];
-        [attack start];
-    }
-    else{
-        [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];
-    }
-    
+//    NSString *token = [YUUUserData shareInstance].token;
+//    if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
+//        [self setBusyIndicatorVisible:true];
+//        WeakSelf
+//        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
+//            [weakSelf setBusyIndicatorVisible:false];
+//            NSDictionary *dict = request.getResponse.responseObject;
+//            weakSelf.responseModel = [YUUAttackResponseModel mj_objectWithKeyValues:[dict objectForKey:@"data"]];
+//            [weakSelf showResult:weakSelf.responseModel];
+//        } failureCallback:^(YUUBaseRequest *request) {
+//            [weakSelf setBusyIndicatorVisible:false];
+//            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+//        }];
+//        [attack start];
+//    }
+//    else{
+//        [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];
+//    }
+[self showResult:nil];
     
 }
 
@@ -216,7 +220,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)rotationImageView:(UIImageView *)imageView {
+- (void)showResult:(YUUAttackResponseModel *)model {
+    [self rotationImageView:_imageView0];
+    [self rotationImageView:_imageView1];
+    [self rotationImageView:_imageView2];
+}
+
+
+- (void)rotationImageView:(UIImageView *)imageView {
     CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
     // 旋转角度， 其中的value表示图像旋转的最终位置
     keyAnimation.values = [NSArray arrayWithObjects:
@@ -230,16 +241,16 @@
     keyAnimation.removedOnCompletion = NO;
 //    keyAnimation.delegate = self;
     [imageView.layer addAnimation:keyAnimation forKey:@"transform"];
-    [self performSelector:@selector(changeIamgeInImageView:) withObject:imageView afterDelay:0.5];
+    [self performSelector:@selector(changeIamgeInImageView:) withObject:imageView afterDelay:0.5*imageView.tag];
 }
 
 - (void)changeIamgeInImageView:(UIImageView *)imageView {
     if (imageView.tag == 0) {
-        imageView.image = [UIImage imageNamed:@"logo"];
+        imageView.image = [UIImage imageNamed:@"bowman"];
     } else if (imageView.tag == 1) {
-        imageView.image = [UIImage imageNamed:@"icon"];
+        imageView.image = [UIImage imageNamed:@"cavalry"];
     } else {
-        imageView.image = [UIImage imageNamed:@"icon"];
+        imageView.image = [UIImage imageNamed:@"Infantry"];
     }
 }
 

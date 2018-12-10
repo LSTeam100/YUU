@@ -509,6 +509,9 @@
                         <outlet property="awardLabelTitle" destination="0pt-Xa-pop" id="q3i-fJ-ibq"/>
                         <outlet property="bowman" destination="Lfp-lv-8jc" id="Fry-SO-tSk"/>
                         <outlet property="cavalry" destination="AqU-pw-hvj" id="Bre-PQ-N1b"/>
+                        <outlet property="imageView0" destination="Pmt-2e-58W" id="CIV-oS-piv"/>
+                        <outlet property="imageView1" destination="gfp-ZJ-5rP" id="nDx-yt-iCC"/>
+                        <outlet property="imageView2" destination="1OD-vM-5D6" id="gGm-4h-dBE"/>
                         <outlet property="infantry" destination="UvN-rN-wQG" id="8Qs-ms-EpX"/>
                         <outlet property="leftDefaultView" destination="TTO-E0-lJe" id="HIC-OY-ga2"/>
                         <outlet property="maohaoImageView" destination="Hzx-o6-6D1" id="nPF-dG-99m"/>

@@ -14,6 +14,7 @@
 		090D57EE21A05CE700EB3DF4 /* GameYUUListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57ED21A05CE700EB3DF4 /* GameYUUListVC.m */; };
 		090D57F121A05D0D00EB3DF4 /* GameYUUListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D57F021A05D0D00EB3DF4 /* GameYUUListCell.m */; };
 		090FFE4F21A00E3500F8FFF2 /* EnterGameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090FFE4E21A00E3500F8FFF2 /* EnterGameVC.m */; };
+		09112B8221BE987600464DD1 /* YUUAttackResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09112B8121BE987600464DD1 /* YUUAttackResponseModel.m */; };
 		09128E1B21B68D2B002E720A /* GetAttackorderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1221B68D2A002E720A /* GetAttackorderRequest.m */; };
 		09128E1C21B68D2B002E720A /* GetAllRankRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1321B68D2A002E720A /* GetAllRankRequest.m */; };
 		09128E1D21B68D2B002E720A /* GetAttackListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09128E1521B68D2A002E720A /* GetAttackListRequest.m */; };
@@ -224,6 +225,8 @@
 		090D57F021A05D0D00EB3DF4 /* GameYUUListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameYUUListCell.m; sourceTree = "<group>"; };
 		090FFE4D21A00E3500F8FFF2 /* EnterGameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterGameVC.h; sourceTree = "<group>"; };
 		090FFE4E21A00E3500F8FFF2 /* EnterGameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterGameVC.m; sourceTree = "<group>"; };
+		09112B8021BE987600464DD1 /* YUUAttackResponseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUAttackResponseModel.h; sourceTree = "<group>"; };
+		09112B8121BE987600464DD1 /* YUUAttackResponseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUUAttackResponseModel.m; sourceTree = "<group>"; };
 		09128E1121B68D2A002E720A /* GetLastRankRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetLastRankRequest.h; sourceTree = "<group>"; };
 		09128E1221B68D2A002E720A /* GetAttackorderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAttackorderRequest.m; sourceTree = "<group>"; };
 		09128E1321B68D2A002E720A /* GetAllRankRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllRankRequest.m; sourceTree = "<group>"; };
@@ -1082,6 +1085,8 @@
 				181DF36521A54C0400D9698D /* GameCtrl.storyboard */,
 				181DF37221A7EE1F00D9698D /* GameAttackCtrl.h */,
 				181DF37321A7EE1F00D9698D /* GameAttackCtrl.m */,
+				09112B8021BE987600464DD1 /* YUUAttackResponseModel.h */,
+				09112B8121BE987600464DD1 /* YUUAttackResponseModel.m */,
 			);
 			path = gameFight;
 			sourceTree = "<group>";
@@ -1539,6 +1544,7 @@
 				0952AC2921392C9900D701CE /* DrawView.m in Sources */,
 				0923C463214895EE00869625 /* YUUUserSendWalletRequest.m in Sources */,
 				0926F06B213289050083CFDD /* YUUBorderTextField.m in Sources */,
+				09112B8221BE987600464DD1 /* YUUAttackResponseModel.m in Sources */,
 				0994456F2141229200548245 /* YUUMachineArrModel.m in Sources */,
 				18F85D2421290981001A3205 /* YUUSuperCtrl.m in Sources */,
 				099445702141229200548245 /* YUUTransactionModel.m in Sources */,

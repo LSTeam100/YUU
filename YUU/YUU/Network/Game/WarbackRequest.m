@@ -16,7 +16,7 @@
 {
     self = [super initWithSuccessCallback:success failureCallback:failure];
     
-    [self setParameterDic:@{@"battlenum":battlenum}];
+    [self setParameterDic:@{@"battlenum":battlenum} withToken:NO];
     
     return self;
 }

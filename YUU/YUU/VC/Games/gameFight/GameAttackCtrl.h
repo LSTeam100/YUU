@@ -27,4 +27,11 @@
 
 @property (nonatomic, strong) DefensiveListModel *model;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView0;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView1;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView2;
+
+
+
+
 @end
