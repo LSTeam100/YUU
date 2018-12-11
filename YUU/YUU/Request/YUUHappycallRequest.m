@@ -9,12 +9,12 @@
 #import "YUUHappycallRequest.h"
 
 @implementation YUUHappycallRequest
--(id)initWithHappycall:(NSString *)callarea LastId:(NSString *)lastId SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
+-(id)initWithHappycall:(NSString *)callarea LastId:(NSString *)lastId Refreshid:(NSString *)refreshid SuccessCallback:(onSuccessCallback)success failureCallback:(onFailureCallback)failed{
     self=[super initWithSuccessCallback:success
                         failureCallback:failed];
     if (self) {
         
-        NSArray *signArr = @[callarea,lastId];
+        NSArray *signArr = @[callarea,lastId,refreshid];
         
         
         NSString *sha1key = getSignFromParameter(signArr);
@@ -22,6 +22,7 @@
         NSDictionary *parameters=@{
                                    @"callarea": callarea,
                                    @"latestid": lastId,
+                                   @"refreshid": refreshid,
                                    @"sign" : sha1key
                                    };
         [self setParameters:parameters];

@@ -84,7 +84,7 @@ static NSString * const defaultTableName = @"chatTable";
     NSArray *msgArr = [self queryMsg];
     BOOL isHas = false;
     for (ChatMsgModel *m in msgArr) {
-        if ([model.msgId isEqualToString:m.msgId]) {
+        if (model.msgId == m.msgId) {
             isHas = true;
             break;
         }

@@ -14,5 +14,5 @@
 @property(nonatomic,strong)NSString *calltext;
 @property(nonatomic,strong)NSString *msgId;
 @property(nonatomic,strong)NSString *createTime;
-
+-(instancetype)initWtihDic:(NSDictionary *)dic;
 @end

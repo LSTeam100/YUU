@@ -49,6 +49,11 @@ static  NSString * const chatTable = @"chatTable";
     self.chatTextField.layer.cornerRadius = 5;
     self.chatTextField.backgroundColor = [UIColor clearColor];
     self.chatTextField.delegate = self;
+    
+    
+
+    
+    
     if (self.type == chatTypeNormal) {
         DLOG(@"这是普通聊天区");
     }
@@ -64,20 +69,46 @@ static  NSString * const chatTable = @"chatTable";
     
     self.chatTextField.textColor = YUUYellow;
     
+    WeakSelf
+    _messageList.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getHistoryData];
+    }];
+    
+    _messageList.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf getNewData];
+    }];
+    
     [self readLocalMessageList];
     [self getServerMessgaeList];
     // Do any additional setup after loading the view.
 }
+
+-(void)getHistoryData{
+    WeakSelf
+
+    [weakSelf.messageList.mj_header endRefreshing];
+
+}
+
+-(void)getNewData{
+    WeakSelf
+
+    [weakSelf.messageList.mj_footer endRefreshing];
+
+}
     
 - (void)getServerMessgaeList{
     NSString *lastMsgId = @"0";
+    NSString *refresid = @"0";
+    
     if (msgArr.count > 0) {
         ChatMsgModel *lastModel = [msgArr lastObject];
+        
         lastMsgId = lastModel.msgId;
     }
     [self setBusyIndicatorVisible:YES];
     __weak typeof (self)weakself = self;
-    YUUHappycallRequest *req  = [[YUUHappycallRequest alloc]initWithHappycall:[NSString stringWithFormat:@"%ld",(long)self.type] LastId:lastMsgId SuccessCallback:^(YUUBaseRequest *request) {
+    YUUHappycallRequest *req  = [[YUUHappycallRequest alloc]initWithHappycall:[NSString stringWithFormat:@"%ld",(long)self.type] LastId:lastMsgId Refreshid:refresid SuccessCallback:^(YUUBaseRequest *request) {
         [weakself setBusyIndicatorVisible:NO];
         NSDictionary* data = [request getResponse].data;
         NSArray *addArr = data[@"msgList"];
@@ -85,6 +116,7 @@ static  NSString * const chatTable = @"chatTable";
         [weakself saveMessage:addArr];
         [weakself readLocalMessageList];
         [weakself.messageList reloadData];
+    
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -95,6 +127,7 @@ static  NSString * const chatTable = @"chatTable";
         //test
         ChatMsgModel *m = [[ChatMsgModel alloc]init];
         m.msgId = @"1";
+        
         m.memberId = [NSNumber numberWithInteger:1233];
         m.membergrade = [NSNumber numberWithInteger:3];
         m.calltext = @"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖";
@@ -133,8 +166,10 @@ static  NSString * const chatTable = @"chatTable";
 }
 -(void)saveMessage:(NSArray *)addArr{
     for (int i = 0; i < addArr.count; i++) {
-        ChatMsgModel *m = addArr[i];
-        BOOL ret = [[YUUDatabaseMgr shareInstance] insertData:m];    }
+        ChatMsgModel *m = [[ChatMsgModel alloc]initWtihDic:addArr[i]];
+        BOOL ret = [[YUUDatabaseMgr shareInstance] insertData:m];
+        
+    }
     [self sordTheMsg];
 }
 -(void)sordTheMsg{
