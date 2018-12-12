@@ -192,25 +192,30 @@
 }
 
 -(IBAction)startFight:(id)sender{
-//    NSString *token = [YUUUserData shareInstance].token;
-//    if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
-//        [self setBusyIndicatorVisible:true];
-//        WeakSelf
-//        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
-//            [weakSelf setBusyIndicatorVisible:false];
-//            NSDictionary *dict = request.getResponse.responseObject;
-//            weakSelf.responseModel = [YUUAttackResponseModel mj_objectWithKeyValues:[dict objectForKey:@"data"]];
-//            [weakSelf showResult:weakSelf.responseModel];
-//        } failureCallback:^(YUUBaseRequest *request) {
-//            [weakSelf setBusyIndicatorVisible:false];
-//            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
-//        }];
-//        [attack start];
-//    }
-//    else{
-//        [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];
-//    }
-[self showResult:nil];
+    NSString *token = [YUUUserData shareInstance].token;
+    if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
+        [self setBusyIndicatorVisible:true];
+        WeakSelf
+        YUUStartAttackRequest *attack = [[YUUStartAttackRequest alloc]initWithStartattack:token FirstCard:[NSString stringWithFormat:@"%ld",self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",self.rightCardType] Battlenum:self.model.battlenum SuccessCallback:^(YUUBaseRequest *request) {
+            [weakSelf setBusyIndicatorVisible:false];
+            NSDictionary *dict = request.getResponse.responseObject;
+            weakSelf.responseModel = [YUUAttackResponseModel mj_objectWithKeyValues:[dict objectForKey:@"data"]];
+            [weakSelf showResult:weakSelf.responseModel];
+        } failureCallback:^(YUUBaseRequest *request) {
+            [weakSelf setBusyIndicatorVisible:false];
+            [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+        }];
+        [attack start];
+    }
+    else{
+        [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];
+    }
+    
+//    _responseModel = [[YUUAttackResponseModel alloc] init];
+//    _responseModel.firstbout = 2;
+//    _responseModel.secondbout = 2;
+//    _responseModel.thirdbout = 2;
+//    [self showResult:_responseModel];
     
 }
 
@@ -221,9 +226,13 @@
 }
 
 - (void)showResult:(YUUAttackResponseModel *)model {
-    [self rotationImageView:_imageView0];
-    [self rotationImageView:_imageView1];
-    [self rotationImageView:_imageView2];
+    _imageView0.tag = 0;
+    _imageView1.tag = 1;
+    _imageView2.tag = 2;
+    
+    [self performSelector:@selector(rotationImageView:) withObject:_imageView0 afterDelay:0];
+    [self performSelector:@selector(rotationImageView:) withObject:_imageView1 afterDelay:0.4];
+    [self performSelector:@selector(rotationImageView:) withObject:_imageView2 afterDelay:0.4*2];
 }
 
 
@@ -241,16 +250,88 @@
     keyAnimation.removedOnCompletion = NO;
 //    keyAnimation.delegate = self;
     [imageView.layer addAnimation:keyAnimation forKey:@"transform"];
-    [self performSelector:@selector(changeIamgeInImageView:) withObject:imageView afterDelay:0.5*imageView.tag];
+    [self changeIamgeInImageView:imageView];
 }
 
 - (void)changeIamgeInImageView:(UIImageView *)imageView {
     if (imageView.tag == 0) {
-        imageView.image = [UIImage imageNamed:@"bowman"];
+        if (self.leftCardType == cardTypeBowman) {
+            if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else if (_responseModel.firstbout == 2) {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            }
+        } else if (self.leftCardType == cardTypeCavalry) {
+            if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            } else if (_responseModel.firstbout == 2) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            }
+        } else {
+            if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else if (_responseModel.firstbout == 2) {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            }
+        }
     } else if (imageView.tag == 1) {
-        imageView.image = [UIImage imageNamed:@"cavalry"];
+        if (self.midCardType == cardTypeBowman) {
+            if (_responseModel.secondbout == 0 || _responseModel.secondbout == 1) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else if (_responseModel.secondbout == 2) {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            }
+        } else if (self.midCardType == cardTypeCavalry) {
+            if (_responseModel.secondbout == 0 || _responseModel.secondbout == 1) {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            } else if (_responseModel.secondbout == 2) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            }
+        } else {
+            if (_responseModel.secondbout == 0 || _responseModel.secondbout == 1) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else if (_responseModel.secondbout == 2) {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            }
+        }
     } else {
-        imageView.image = [UIImage imageNamed:@"Infantry"];
+        if (self.rightCardType == cardTypeBowman) {
+            if (_responseModel.thirdbout == 0 || _responseModel.thirdbout == 1) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else if (_responseModel.thirdbout == 2) {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            }
+        } else if (self.rightCardType == cardTypeCavalry) {
+            if (_responseModel.thirdbout == 0 || _responseModel.thirdbout == 1) {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            } else if (_responseModel.thirdbout == 2) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            }
+        } else {
+            if (_responseModel.thirdbout == 0 || _responseModel.thirdbout == 1) {
+                imageView.image = [UIImage imageNamed:@"cavalry"];
+            } else if (_responseModel.thirdbout == 2) {
+                imageView.image = [UIImage imageNamed:@"Infantry"];
+            } else {
+                imageView.image = [UIImage imageNamed:@"bowman"];
+            }
+        }
     }
 }
 
