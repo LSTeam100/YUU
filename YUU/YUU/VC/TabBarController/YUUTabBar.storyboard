@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QGN-cz-vlM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QGN-cz-vlM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -94,8 +93,8 @@
             <objects>
                 <viewController id="Gw1-xz-nDf" customClass="YUUProfileCtrl" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YCq-Jz-OXn"/>
-                        <viewControllerLayoutGuide type="bottom" id="sog-FN-HLf"/>
+                        <viewControllerLayoutGuide type="top" id="Q3y-a3-sgN"/>
+                        <viewControllerLayoutGuide type="bottom" id="8vd-Fe-27j"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q1O-15-lWl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -182,7 +181,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="187"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="资产总额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQW-K6-sBe">
-                                        <rect key="frame" x="133.5" y="24" width="77.5" height="23"/>
+                                        <rect key="frame" x="134" y="24" width="77.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -234,13 +233,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="172.5" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可用YUU:000:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nh9-rH-pnC">
-                                                        <rect key="frame" x="58.5" y="5" width="109.5" height="17"/>
+                                                        <rect key="frame" x="58" y="5" width="109.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_availabel_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uk4-Ah-JYL">
-                                                        <rect key="frame" x="40.5" y="7" width="13" height="13"/>
+                                                        <rect key="frame" x="40" y="7" width="13" height="13"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -298,7 +297,7 @@
                                                 <rect key="frame" x="28" y="29" width="69" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人资料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9Y-Sc-HIx">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="20.5"/>
+                                                <rect key="frame" x="28" y="116" width="69.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -329,7 +328,7 @@
                                                 <rect key="frame" x="27" y="29" width="71" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家入驻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXj-Ga-ZPP">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
+                                                <rect key="frame" x="28" y="116" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -360,7 +359,7 @@
                                                 <rect key="frame" x="28" y="29" width="69" height="73"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账单中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0h-la-VDX">
-                                                <rect key="frame" x="27.5" y="115" width="69.5" height="21"/>
+                                                <rect key="frame" x="28" y="115" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -422,7 +421,7 @@
                                                 <rect key="frame" x="28" y="29" width="69" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏娱乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArZ-P4-Xej">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
+                                                <rect key="frame" x="28" y="116" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -453,7 +452,7 @@
                                                 <rect key="frame" x="28" y="29" width="69" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客服中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNL-jK-hbp">
-                                                <rect key="frame" x="27.5" y="116" width="69.5" height="21"/>
+                                                <rect key="frame" x="28" y="116" width="69.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -506,17 +505,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="abc-II-ax3" firstAttribute="top" secondItem="YCq-Jz-OXn" secondAttribute="bottom" id="1ar-nw-AH2"/>
-                            <constraint firstItem="sog-FN-HLf" firstAttribute="top" secondItem="zY3-49-kFl" secondAttribute="bottom" id="ChG-FR-6Ap"/>
+                            <constraint firstItem="abc-II-ax3" firstAttribute="top" secondItem="Q3y-a3-sgN" secondAttribute="bottom" id="1ar-nw-AH2"/>
+                            <constraint firstItem="8vd-Fe-27j" firstAttribute="top" secondItem="zY3-49-kFl" secondAttribute="bottom" id="ChG-FR-6Ap"/>
                             <constraint firstAttribute="trailing" secondItem="R5I-AK-efs" secondAttribute="trailing" id="DiY-ol-6MD"/>
                             <constraint firstItem="Tqa-ss-5kG" firstAttribute="top" secondItem="abc-II-ax3" secondAttribute="bottom" id="OeI-LJ-Uss"/>
                             <constraint firstItem="R5I-AK-efs" firstAttribute="leading" secondItem="Q1O-15-lWl" secondAttribute="leading" id="PQl-19-sui"/>
-                            <constraint firstItem="sog-FN-HLf" firstAttribute="top" secondItem="R5I-AK-efs" secondAttribute="bottom" id="SaX-yf-cV8"/>
+                            <constraint firstItem="8vd-Fe-27j" firstAttribute="top" secondItem="R5I-AK-efs" secondAttribute="bottom" id="SaX-yf-cV8"/>
                             <constraint firstItem="R5I-AK-efs" firstAttribute="top" secondItem="Tqa-ss-5kG" secondAttribute="bottom" id="XnZ-ij-UdK"/>
                             <constraint firstAttribute="trailing" secondItem="Tqa-ss-5kG" secondAttribute="trailing" constant="15" id="avx-MV-Fdj"/>
                             <constraint firstAttribute="trailing" secondItem="zY3-49-kFl" secondAttribute="trailing" id="hMs-EI-0XS"/>
                             <constraint firstItem="Tqa-ss-5kG" firstAttribute="leading" secondItem="Q1O-15-lWl" secondAttribute="leading" constant="15" id="iiq-uS-DCy"/>
-                            <constraint firstItem="zY3-49-kFl" firstAttribute="top" secondItem="YCq-Jz-OXn" secondAttribute="bottom" id="lFF-1R-5Vr"/>
+                            <constraint firstItem="zY3-49-kFl" firstAttribute="top" secondItem="Q3y-a3-sgN" secondAttribute="bottom" id="lFF-1R-5Vr"/>
                             <constraint firstItem="zY3-49-kFl" firstAttribute="leading" secondItem="Q1O-15-lWl" secondAttribute="leading" id="ple-eT-JgG"/>
                             <constraint firstAttribute="trailing" secondItem="abc-II-ax3" secondAttribute="trailing" id="wuU-c2-8OU"/>
                             <constraint firstItem="abc-II-ax3" firstAttribute="leading" secondItem="Q1O-15-lWl" secondAttribute="leading" id="zxB-Rg-o7M"/>
@@ -555,8 +554,8 @@
             <objects>
                 <viewController storyboardIdentifier="GamesHomeCtrl" hidesBottomBarWhenPushed="YES" id="dM9-RH-X4W" customClass="GamesHomeCtrl" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XiQ-dG-RZz"/>
-                        <viewControllerLayoutGuide type="bottom" id="CTE-Ua-RoN"/>
+                        <viewControllerLayoutGuide type="top" id="mKC-C6-Q3X"/>
+                        <viewControllerLayoutGuide type="bottom" id="WwO-s8-JuA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LF5-j4-mJy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -625,7 +624,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="games_menu_unopen" translatesAutoresizingMaskIntoConstraints="NO" id="Hix-t4-w93">
-                                        <rect key="frame" x="10" y="4" width="73" height="62"/>
+                                        <rect key="frame" x="10" y="4.5" width="73" height="62"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -645,7 +644,7 @@
                             <constraint firstItem="QRF-Bs-8vE" firstAttribute="leading" secondItem="LF5-j4-mJy" secondAttribute="leadingMargin" constant="20" id="O0p-qN-EYg"/>
                             <constraint firstItem="lW8-bH-rFN" firstAttribute="centerX" secondItem="dQf-y5-eha" secondAttribute="centerX" id="Wuj-V6-h2B"/>
                             <constraint firstItem="NEu-9K-BQ6" firstAttribute="centerX" secondItem="LF5-j4-mJy" secondAttribute="centerX" id="YCc-bH-Wdz"/>
-                            <constraint firstItem="NEu-9K-BQ6" firstAttribute="top" secondItem="XiQ-dG-RZz" secondAttribute="bottom" constant="50" id="cTW-RT-zKe"/>
+                            <constraint firstItem="NEu-9K-BQ6" firstAttribute="top" secondItem="mKC-C6-Q3X" secondAttribute="bottom" constant="50" id="cTW-RT-zKe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QRF-Bs-8vE" secondAttribute="trailing" constant="20" id="cs3-bZ-n1o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NEu-9K-BQ6" secondAttribute="trailing" constant="20" id="dtk-zY-Kbb"/>
                             <constraint firstItem="lW8-bH-rFN" firstAttribute="height" secondItem="NEu-9K-BQ6" secondAttribute="height" id="hiE-l5-sd2"/>
@@ -675,8 +674,8 @@
             <objects>
                 <viewController storyboardIdentifier="YUUChatMenuCtrl" id="Im7-mt-11q" customClass="YUUChatMenuCtrl" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="O1o-Vk-duD"/>
-                        <viewControllerLayoutGuide type="bottom" id="3yX-nl-le7"/>
+                        <viewControllerLayoutGuide type="top" id="toL-uX-mz0"/>
+                        <viewControllerLayoutGuide type="bottom" id="PXX-8h-Gkd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zeu-LT-gDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -778,7 +777,7 @@
                             <constraint firstItem="oj4-aF-EdO" firstAttribute="leading" secondItem="Zeu-LT-gDY" secondAttribute="leadingMargin" constant="20" id="Lev-N1-lwB"/>
                             <constraint firstItem="oj4-aF-EdO" firstAttribute="centerX" secondItem="Zeu-LT-gDY" secondAttribute="centerX" id="MPC-iQ-4QY"/>
                             <constraint firstItem="9Bw-yd-lQD" firstAttribute="centerX" secondItem="5xP-bO-PfP" secondAttribute="centerX" id="ZIW-1s-kRR"/>
-                            <constraint firstItem="oj4-aF-EdO" firstAttribute="top" secondItem="O1o-Vk-duD" secondAttribute="bottom" constant="62" id="ea1-Gl-pVc"/>
+                            <constraint firstItem="oj4-aF-EdO" firstAttribute="top" secondItem="toL-uX-mz0" secondAttribute="bottom" constant="62" id="ea1-Gl-pVc"/>
                             <constraint firstItem="9Bw-yd-lQD" firstAttribute="top" secondItem="oj4-aF-EdO" secondAttribute="bottom" constant="21" id="fZW-Wq-Aiu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Bw-yd-lQD" secondAttribute="trailing" constant="20" id="kxJ-k0-FGQ"/>
                             <constraint firstItem="v7g-Ht-Jds" firstAttribute="top" secondItem="9Bw-yd-lQD" secondAttribute="bottom" constant="21" id="oLi-sx-wfc"/>
@@ -808,8 +807,8 @@
             <objects>
                 <viewController storyboardIdentifier="YUUChatCtrl" id="rNC-aZ-FgC" customClass="YUUChatCtrl" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="x1x-gT-ZVy"/>
-                        <viewControllerLayoutGuide type="bottom" id="d59-6J-CxG"/>
+                        <viewControllerLayoutGuide type="top" id="QUQ-i5-YHJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="JKB-cN-xlh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="et6-ZO-Yxo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -921,7 +920,7 @@
                         <constraints>
                             <constraint firstItem="ZYy-d4-HeG" firstAttribute="leading" secondItem="et6-ZO-Yxo" secondAttribute="leadingMargin" constant="7" id="1DS-Ko-GMC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZYy-d4-HeG" secondAttribute="trailing" constant="7" id="WOg-Xv-k8g"/>
-                            <constraint firstItem="ZYy-d4-HeG" firstAttribute="top" secondItem="x1x-gT-ZVy" secondAttribute="bottom" constant="12" id="dFk-6K-v5v"/>
+                            <constraint firstItem="ZYy-d4-HeG" firstAttribute="top" secondItem="QUQ-i5-YHJ" secondAttribute="bottom" constant="12" id="dFk-6K-v5v"/>
                         </constraints>
                     </view>
                     <connections>
@@ -942,23 +941,23 @@
     <resources>
         <image name="bg" width="375" height="667"/>
         <image name="chat_send" width="77" height="37"/>
-        <image name="games_menu_attack" width="73" height="62"/>
-        <image name="games_menu_chat" width="73" height="62"/>
-        <image name="games_menu_unopen" width="73" height="62"/>
-        <image name="profile_alauth" width="81" height="26"/>
-        <image name="profile_asset" width="343" height="192"/>
+        <image name="games_menu_attack" width="73" height="62.5"/>
+        <image name="games_menu_chat" width="73" height="62.5"/>
+        <image name="games_menu_unopen" width="73" height="62.5"/>
+        <image name="profile_alauth" width="81" height="26.5"/>
+        <image name="profile_asset" width="343" height="192.5"/>
         <image name="profile_availabel_icon" width="13" height="13"/>
-        <image name="profile_bills" width="69" height="73"/>
+        <image name="profile_bills" width="69.5" height="73.5"/>
         <image name="profile_bussiness_unopen" width="71" height="74"/>
-        <image name="profile_coin" width="69" height="73"/>
-        <image name="profile_costmer" width="69" height="74"/>
+        <image name="profile_coin" width="69" height="73.5"/>
+        <image name="profile_costmer" width="69.5" height="74"/>
         <image name="profile_freeze" width="11" height="13"/>
-        <image name="profile_game_already" width="69" height="74"/>
-        <image name="profile_header_icon" width="40" height="41"/>
-        <image name="profile_lockposion" width="12" height="11"/>
-        <image name="profile_mine" width="69" height="74"/>
-        <image name="profile_setting" width="19" height="18"/>
-        <image name="profile_wechat_icon" width="20" height="20"/>
+        <image name="profile_game_already" width="69.5" height="74"/>
+        <image name="profile_header_icon" width="40.5" height="41"/>
+        <image name="profile_lockposion" width="12" height="11.5"/>
+        <image name="profile_mine" width="69.5" height="74"/>
+        <image name="profile_setting" width="19.5" height="18.5"/>
+        <image name="profile_wechat_icon" width="20" height="20.5"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MmK-SO-CgS"/>
