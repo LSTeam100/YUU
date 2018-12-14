@@ -531,6 +531,9 @@
                         <outlet property="leftDefaultView" destination="TTO-E0-lJe" id="HIC-OY-ga2"/>
                         <outlet property="maohaoImageView" destination="Hzx-o6-6D1" id="nPF-dG-99m"/>
                         <outlet property="middleDefaultView" destination="3IK-SO-FuY" id="NHj-aY-8KZ"/>
+                        <outlet property="resultImage0" destination="5EQ-fX-PB0" id="jel-nJ-ZBo"/>
+                        <outlet property="resultImage1" destination="I9T-jj-lck" id="ERR-1I-CFA"/>
+                        <outlet property="resultImage2" destination="Obh-F7-KhK" id="2pO-Fo-fBv"/>
                         <outlet property="rightDefaultView" destination="VPz-xh-5rQ" id="f0V-hC-LIw"/>
                         <outlet property="waitView" destination="eAD-Gt-syM" id="bvq-XP-Crc"/>
                     </connections>

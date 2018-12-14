@@ -31,6 +31,8 @@
 
     self.waitView.backgroundColor = colorWithHexString(@"283040", 1.0);
     self.waitView.layer.cornerRadius = 10;
+    
+    // bowman
     UIPanGestureRecognizer *panGestureRecognizer1 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
     [self.bowman setUserInteractionEnabled:YES];
     [self.bowman addGestureRecognizer:panGestureRecognizer1];
@@ -42,7 +44,7 @@
     }];
     bowmanBack.image = [UIImage imageNamed:@"bowman"];
     
-    
+    // cavalry
     UIPanGestureRecognizer *panGestureRecognizer2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
     
     [self.cavalry setUserInteractionEnabled:YES];
@@ -55,6 +57,7 @@
     }];
     cavalryBack.image = [UIImage imageNamed:@"cavalry"];
     
+    // infantry
     UIPanGestureRecognizer *panGestureRecognizer3 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
     
     [self.infantry setUserInteractionEnabled:YES];
@@ -65,7 +68,7 @@
     [infantryBack mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.top.left.mas_equalTo(self.infantry);
     }];
-    infantryBack.image = [UIImage imageNamed:@"infantry"];
+    infantryBack.image = [UIImage imageNamed:@"Infantry"];
     
     
     NSMutableArray *uidArr = [self addUidImageView:@"0238889"];
@@ -74,7 +77,9 @@
     self.awardLabel.textColor = [UIColor whiteColor];
     self.awardLabelTitle.textColor = colorWithHexString(@"ED6621", 1.0);
     
-    
+    _resultImage0.hidden = YES;
+    _resultImage1.hidden = YES;
+    _resultImage2.hidden = YES;
 }
 -(void)conigureCardType{
     self.leftCardType = cardTypeUnkonw;
@@ -132,6 +137,8 @@
                     break;
             }
             DLOG(@"不在放置区");
+            [self.view setNeedsLayout];
+            [self.view layoutIfNeeded];
         }
     }
 }
@@ -175,17 +182,12 @@
     NSString *imageName = @"";
     if (gestureView.tag == cardTypeBowman) {
         imageName = @"bowman";
-//        self.bowman.center = defaultView.center;
-        
-        
     } else if (gestureView.tag == cardTypeCavalry){
         imageName = @"cavalry";
 //        self.cavalry.center = defaultView.center;
-        
     } else if (gestureView.tag == cardTypeinfantry){
-        imageName = @"infantry";
+        imageName = @"Infantry";
 //        self.infantry.center = defaultView.center;
-        
     }
     
     if (defaultView == self.leftDefaultView) {
@@ -313,80 +315,110 @@
         if (self.leftCardType == cardTypeBowman) {
             if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage0.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.firstbout == 2) {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage0.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage0.image = [UIImage imageNamed:@"win"];
             }
         } else if (self.leftCardType == cardTypeCavalry) {
             if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage0.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.firstbout == 2) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage0.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage0.image = [UIImage imageNamed:@"win"];
             }
         } else {
             if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage0.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.firstbout == 2) {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage0.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage0.image = [UIImage imageNamed:@"win"];
             }
         }
+        _resultImage0.hidden = NO;
     } else if (imageView.tag == 1) {
         if (self.midCardType == cardTypeBowman) {
             if (_responseModel.secondbout == 0 || _responseModel.secondbout == 1) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage1.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.secondbout == 2) {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage1.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage1.image = [UIImage imageNamed:@"win"];
             }
         } else if (self.midCardType == cardTypeCavalry) {
             if (_responseModel.secondbout == 0 || _responseModel.secondbout == 1) {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage1.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.secondbout == 2) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage1.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage1.image = [UIImage imageNamed:@"win"];
             }
         } else {
             if (_responseModel.secondbout == 0 || _responseModel.secondbout == 1) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage1.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.secondbout == 2) {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage1.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage1.image = [UIImage imageNamed:@"win"];
             }
+            _resultImage1.hidden = NO;
         }
     } else {
         if (self.rightCardType == cardTypeBowman) {
             if (_responseModel.thirdbout == 0 || _responseModel.thirdbout == 1) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage2.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.thirdbout == 2) {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage2.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage2.image = [UIImage imageNamed:@"win"];
             }
         } else if (self.rightCardType == cardTypeCavalry) {
             if (_responseModel.thirdbout == 0 || _responseModel.thirdbout == 1) {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage2.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.thirdbout == 2) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage2.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage2.image = [UIImage imageNamed:@"win"];
             }
         } else {
             if (_responseModel.thirdbout == 0 || _responseModel.thirdbout == 1) {
                 imageView.image = [UIImage imageNamed:@"cavalry"];
+                _resultImage2.image = [UIImage imageNamed:@"lose"];
             } else if (_responseModel.thirdbout == 2) {
                 imageView.image = [UIImage imageNamed:@"Infantry"];
+                _resultImage2.image = [UIImage imageNamed:@"ping"];
             } else {
                 imageView.image = [UIImage imageNamed:@"bowman"];
+                _resultImage2.image = [UIImage imageNamed:@"win"];
             }
         }
+        _resultImage2.hidden = NO;
     }
 }
 
