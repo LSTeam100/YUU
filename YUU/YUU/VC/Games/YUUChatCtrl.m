@@ -236,7 +236,7 @@ static  NSString * const chatTable = @"chatTable";
     DLOG(@"indexPath=%@",indexPath);
     ChatMsgModel * m = msgArr[indexPath.row];
     
-    CGFloat h = [self getSizeWithText:m.calltext] + 10;
+    CGFloat h = [self getSizeWithText:m.calltext] + 25;
     
     if (h < 60) {
         return 60;
