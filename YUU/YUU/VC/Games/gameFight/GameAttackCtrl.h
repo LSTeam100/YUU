@@ -31,6 +31,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView1;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView2;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView3;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView4;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView5;
 
 
 

@@ -524,6 +524,9 @@
                         <outlet property="imageView0" destination="Pmt-2e-58W" id="CIV-oS-piv"/>
                         <outlet property="imageView1" destination="gfp-ZJ-5rP" id="nDx-yt-iCC"/>
                         <outlet property="imageView2" destination="1OD-vM-5D6" id="gGm-4h-dBE"/>
+                        <outlet property="imageView3" destination="7tg-qY-Iip" id="Qtm-Xf-OVO"/>
+                        <outlet property="imageView4" destination="Ce9-tR-eg7" id="f5g-3D-Uyb"/>
+                        <outlet property="imageView5" destination="AlH-IG-ckv" id="5Iu-7G-l8M"/>
                         <outlet property="infantry" destination="UvN-rN-wQG" id="8Qs-ms-EpX"/>
                         <outlet property="leftDefaultView" destination="TTO-E0-lJe" id="HIC-OY-ga2"/>
                         <outlet property="maohaoImageView" destination="Hzx-o6-6D1" id="nPF-dG-99m"/>
