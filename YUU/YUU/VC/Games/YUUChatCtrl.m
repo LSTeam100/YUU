@@ -84,16 +84,55 @@ static  NSString * const chatTable = @"chatTable";
 }
 
 -(void)getHistoryData{
-    WeakSelf
+    NSString *lastMsgId = @"0";
+    NSString *refresid = @"0";
+    
+    if (msgArr.count > 0) {
+        ChatMsgModel *lastModel = [msgArr lastObject];
+        ChatMsgModel *firstModel = [msgArr firstObject];
+        lastMsgId = lastModel.msgId;
+        refresid = firstModel.msgId;
+    }
+    
+    
+    [self setBusyIndicatorVisible:YES];
+    __weak typeof (self)weakself = self;
+    YUUHappycallRequest *req  = [[YUUHappycallRequest alloc]initWithHappycall:[NSString stringWithFormat:@"%ld",(long)self.type] LastId:lastMsgId Refreshid:refresid SuccessCallback:^(YUUBaseRequest *request) {
+        [weakself setBusyIndicatorVisible:NO];
+        
+        NSDictionary* data = [request getResponse].data;
+        NSArray *addArr = data[@"msgList"];
+        BOOL over = data[@"istop"];
+        if (over) {
+            [weakself.messageList.mj_header endRefreshing];
+            [weakself.messageList.mj_footer endRefreshingWithNoMoreData];
+        }
+        else{
+            [weakself.messageList.mj_header endRefreshing];
 
-    [weakSelf.messageList.mj_header endRefreshing];
+        }
+        
 
+        [weakself saveMessage:addArr];
+        [weakself readLocalMessageList];
+        [weakself.messageList reloadData];
+        
+    } failureCallback:^(YUUBaseRequest *request) {
+        [self setBusyIndicatorVisible:NO];
+        [weakself.messageList.mj_footer endRefreshing];
+        
+        [weakself handleResponseError:weakself request:request needToken:YES];
+        
+        [weakself saveMessage:msgArr];
+        [weakself.messageList reloadData];
+        
+    }];
+    [req start];
 }
 
 -(void)getNewData{
     WeakSelf
-
-    [weakSelf.messageList.mj_footer endRefreshing];
+    [self getServerMessgaeList];
 
 }
     
@@ -103,7 +142,6 @@ static  NSString * const chatTable = @"chatTable";
     
     if (msgArr.count > 0) {
         ChatMsgModel *lastModel = [msgArr lastObject];
-        
         lastMsgId = lastModel.msgId;
     }
     [self setBusyIndicatorVisible:YES];
@@ -111,42 +149,28 @@ static  NSString * const chatTable = @"chatTable";
     YUUHappycallRequest *req  = [[YUUHappycallRequest alloc]initWithHappycall:[NSString stringWithFormat:@"%ld",(long)self.type] LastId:lastMsgId Refreshid:refresid SuccessCallback:^(YUUBaseRequest *request) {
         [weakself setBusyIndicatorVisible:NO];
         NSDictionary* data = [request getResponse].data;
+        BOOL over = data[@"istop"];
+        if (over) {
+            [weakself.messageList.mj_footer endRefreshing];
+            [weakself.messageList.mj_footer endRefreshingWithNoMoreData];
+        }
+        else{
+            [weakself.messageList.mj_footer endRefreshing];
+        }
+
         NSArray *addArr = data[@"msgList"];
-        
         [weakself saveMessage:addArr];
         [weakself readLocalMessageList];
         [weakself.messageList reloadData];
-    
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
+        [weakself.messageList.mj_footer endRefreshing];
+
         [weakself handleResponseError:weakself request:request needToken:YES];
-        
-        
-        
-        //test
-        ChatMsgModel *m = [[ChatMsgModel alloc]init];
-        m.msgId = @"1";
-        
-        m.memberId = [NSNumber numberWithInteger:1233];
-        m.membergrade = [NSNumber numberWithInteger:3];
-        m.calltext = @"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖";
-        m.createTime = @"2131231";
-        
-        
-        ChatMsgModel *m2 = [[ChatMsgModel alloc]init];
-        m2.msgId = @"2";
-        m2.memberId = [NSNumber numberWithInteger:1233];
-        m2.membergrade = [NSNumber numberWithInteger:3];
-        m2.calltext = @"你是一款两件事看来大家反馈就是打开圣诞快乐放假快乐圣诞节福利开始江东父老会计师看来大家反馈脸上的肌肤立刻就是考虑到肌肤立刻升级到了放假了是肯德基风口浪尖";
-        m2.createTime = @"2131231";
-        
-        [msgArr addObject:m];
-        [msgArr addObject:m2];
         
         [weakself saveMessage:msgArr];
         [weakself.messageList reloadData];
-
 
     }];
     [req start];
@@ -211,7 +235,17 @@ static  NSString * const chatTable = @"chatTable";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     DLOG(@"indexPath=%@",indexPath);
     ChatMsgModel * m = msgArr[indexPath.row];
-   return  [self getSizeWithText:m.calltext] + 10;
+    
+    CGFloat h = [self getSizeWithText:m.calltext] + 25;
+    
+    if (h < 60) {
+        return 60;
+    }
+    else{
+        return  h;
+    }
+    
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];;

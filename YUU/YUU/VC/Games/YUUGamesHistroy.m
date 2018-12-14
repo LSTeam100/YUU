@@ -42,7 +42,6 @@ typedef NS_ENUM(NSInteger , fightResult)  {
     self.title = @"攻守令";
     self.tableView.delegate =self;
     self.topView.layer.borderColor = [colorWithHexString(@"52B2C6", 1) CGColor];
-    
     self.topView.layer.borderWidth = 1.0;
     self.topView.backgroundColor = [UIColor clearColor];
     self.titleBgView.backgroundColor = colorWithHexString(@"52B2C6", 1.0);
