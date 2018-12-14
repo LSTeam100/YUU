@@ -43,7 +43,7 @@
     self.contentLabel.font = [UIFont systemFontOfSize:14];
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
     self.contentLabel.textColor = YUUYellow;
-    self.contentLabel.frame = CGRectMake(self.contentLabel.frame.origin.x,self.contentLabel.frame.origin.y, size.width, size.height);
+    self.contentLabel.frame = CGRectMake(self.contentLabel.frame.origin.x,self.contentLabel.frame.origin.y, size.width + 10, size.height);
     
     
 }
