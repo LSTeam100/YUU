@@ -13,12 +13,14 @@
 -(instancetype)initWtihDic:(NSDictionary *)dic{
     self = [super init];
     if (self) {
-        DLOG(@"dic=%@",dic);
-        self.memberId = dic[@"memberid"];
-        self.membergrade = dic[@"membergrade"];
-        self.calltext = dic[@"calltext"];
-        self.msgId = dic[@"id"];
-        self.createTime = dic[@"time"];
+        if (dic != nil) {
+            DLOG(@"dic=%@",dic);
+            self.memberId = dic[@"memberid"];
+            self.membergrade = dic[@"membergrade"];
+            self.calltext = dic[@"calltext"];
+            self.msgId = dic[@"id"];
+            self.createTime = dic[@"time"];
+        }
     }
     return self;
 }
