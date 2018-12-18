@@ -50,10 +50,6 @@ static  NSString * const chatTable = @"chatTable";
     self.chatTextField.backgroundColor = [UIColor clearColor];
     self.chatTextField.delegate = self;
     
-    
-
-    
-    
     if (self.type == chatTypeNormal) {
         DLOG(@"这是普通聊天区");
     }
@@ -73,8 +69,9 @@ static  NSString * const chatTable = @"chatTable";
     _messageList.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf getHistoryData];
     }];
-    
-    _messageList.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+//    MJRefreshAutoNormalFooter
+//    MJRefreshBackNormalFooter
+    _messageList.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [weakSelf getNewData];
     }];
     
@@ -102,16 +99,8 @@ static  NSString * const chatTable = @"chatTable";
         
         NSDictionary* data = [request getResponse].data;
         NSArray *addArr = data[@"msgList"];
-        BOOL over = data[@"istop"];
-        if (over) {
-            [weakself.messageList.mj_header endRefreshing];
-            [weakself.messageList.mj_footer endRefreshingWithNoMoreData];
-        }
-        else{
-            [weakself.messageList.mj_header endRefreshing];
-
-        }
-        
+//        BOOL over = data[@"istop"];
+        [weakself.messageList.mj_header endRefreshing];
 
         [weakself saveMessage:addArr];
         [weakself readLocalMessageList];
@@ -131,9 +120,7 @@ static  NSString * const chatTable = @"chatTable";
 }
 
 -(void)getNewData{
-    WeakSelf
     [self getServerMessgaeList];
-
 }
     
 - (void)getServerMessgaeList{
@@ -150,13 +137,10 @@ static  NSString * const chatTable = @"chatTable";
         [weakself setBusyIndicatorVisible:NO];
         NSDictionary* data = [request getResponse].data;
         BOOL over = data[@"istop"];
-        if (over) {
-            [weakself.messageList.mj_footer endRefreshing];
-            [weakself.messageList.mj_footer endRefreshingWithNoMoreData];
-        }
-        else{
-            [weakself.messageList.mj_footer endRefreshing];
-        }
+//        if (over ) {
+//            <#statements#>
+//        }
+        [weakself.messageList.mj_footer endRefreshing];
 
         NSArray *addArr = data[@"msgList"];
         [weakself saveMessage:addArr];
@@ -166,10 +150,9 @@ static  NSString * const chatTable = @"chatTable";
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
         [weakself.messageList.mj_footer endRefreshing];
-
         [weakself handleResponseError:weakself request:request needToken:YES];
         
-        [weakself saveMessage:msgArr];
+//        [weakself saveMessage:msgArr];
         [weakself.messageList reloadData];
 
     }];
@@ -202,7 +185,7 @@ static  NSString * const chatTable = @"chatTable";
         return [@([obj1.msgId intValue]) compare:@([obj2.msgId intValue])];
     }];
     for (ChatMsgModel *m in msgArr) {
-        NSLog(@"排序后%@",m.msgId);
+        DLOG(@"排序后%@",m.msgId);
     }
 }
     
@@ -233,10 +216,9 @@ static  NSString * const chatTable = @"chatTable";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    DLOG(@"indexPath=%@",indexPath);
     ChatMsgModel * m = msgArr[indexPath.row];
     
-    CGFloat h = [self getSizeWithText:m.calltext] + 25;
+    CGFloat h = [self getSizeWithText:m.calltext] + 30;
     
     if (h < 60) {
         return 60;
@@ -331,8 +313,8 @@ static  NSString * const chatTable = @"chatTable";
    NSString *token = [YUUUserData shareInstance].userModel.token;
 //    [self setBusyIndicatorVisible:YES];
     YUUCallNowRequest *callNow = [[YUUCallNowRequest alloc]initWithCallNow:token Callarea:[NSString stringWithFormat:@"%ld",(long)self.type] Calltext:self.chatTextField.text SuccessCallback:^(YUUBaseRequest *request) {
-        [weakSelf setBusyIndicatorVisible:NO];
-        [self getServerMessgaeList];
+//        [weakSelf setBusyIndicatorVisible:NO];
+        [weakSelf getServerMessgaeList];
         
     } failureCallback:^(YUUBaseRequest *request) {
 //        [weakSelf setBusyIndicatorVisible:NO];

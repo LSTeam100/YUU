@@ -54,12 +54,15 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(IBAction)UnOpenBtn:(UIButton *)sender{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GameCtrl" bundle:nil];
-    GameCtrl *game =[storyboard instantiateViewControllerWithIdentifier:@"GameCtrl"];
     
-    GameAttackCtrl *attack = [storyboard instantiateViewControllerWithIdentifier:@"GameAttackCtrl"];
-    
-    [self.navigationController pushViewController:attack animated:YES];
+    UIImage *img = [UIImage imageNamed:@"holdon"];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.view.frame];
+    imageView.image = img;
+    [HUD showCustomView:imageView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [HUD hide];
+    });
+
 }
 
 

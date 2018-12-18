@@ -35,14 +35,26 @@
     // Initialization code
 }
 -(void)setContentText:(NSString *)text{
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    label.text = text;
+    label.lineBreakMode = NSLineBreakByCharWrapping;
+    label.numberOfLines = 0;
+    
+    CGSize size = [label sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 60 - 60, 1000)];
+    label.font = [UIFont systemFontOfSize:14];
+    label.textAlignment = NSTextAlignmentLeft;
+    
     self.contentLabel.text = text;
     self.contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
     self.contentLabel.numberOfLines = 0;
 
-    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - self.contentLabel.frame.origin.x - 60, 1000)];
     self.contentLabel.font = [UIFont systemFontOfSize:14];
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
     self.contentLabel.textColor = YUUYellow;
+    DLOG(@"text=%@",text);
+    DLOG(@"w=%f",size.width);
+    DLOG(@"h=%f",size.height);
     self.contentLabel.frame = CGRectMake(self.contentLabel.frame.origin.x,self.contentLabel.frame.origin.y, size.width + 10, size.height);
     
     
