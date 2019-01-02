@@ -22,5 +22,5 @@
 @property(nonatomic,strong)NSNumber *thirdgetyuu;
 @property(nonatomic,strong)NSNumber *thirdboutintegral;
 @property(nonatomic,strong)NSString *HistoryGamesId;
-
+-(instancetype)initWithDic:(NSDictionary *)dic;
 @end

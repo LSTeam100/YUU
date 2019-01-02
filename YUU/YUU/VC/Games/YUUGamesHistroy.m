@@ -87,7 +87,7 @@ typedef NS_ENUM(NSInteger , fightResult)  {
     GameHistroyCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    YUUHistoryGamesModel *model = historyArr[indexPath.row];
+    YUUHistoryGamesModel *model = [[YUUHistoryGamesModel alloc]initWithDic:historyArr[indexPath.row]];
     cell.timeLabel.text = model.time;
     cell.otherIdLabel.text = [NSString stringWithFormat:@"%ld",[model.otherid longValue]];
     cell.firstIcon.image = [self fightResult:[model.firstbout integerValue]];
@@ -98,8 +98,7 @@ typedef NS_ENUM(NSInteger , fightResult)  {
     cell.thiYuuLabel.text = regYUUCoin(model.thirdgetyuu, 2);
     cell.firPohintLabel.text = regYUUCoin(model.firstboutintegral, 2);
     cell.secPohintLabel.text = regYUUCoin(model.secondboutintegral, 2);
-    cell.thiYuuLabel.text = regYUUCoin(model.thirdboutintegral, 2);
-    
+    cell.thiPohintLabel.text = regYUUCoin(model.thirdboutintegral, 2);
     if ([model.attordef integerValue] == 0) {
         cell.statusImageView.image = [UIImage imageNamed:@"gamesHisStatusDefence"];
     }
