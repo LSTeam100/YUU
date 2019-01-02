@@ -52,12 +52,17 @@ static  NSString * const chatTable = @"chatTable";
     
     if (self.type == chatTypeNormal) {
         DLOG(@"这是普通聊天区");
+        [YUUDatabaseMgr shareInstance].tableName = @"chatTableNormal";
     }
     else if (self.type == chatTypeEmperor){
         DLOG(@"这是帝王聊天区");
+        [YUUDatabaseMgr shareInstance].tableName = @"chatTableEmperor";
+
     }
     else if (self.type == chatTypeSuggest){
         DLOG(@"这是建议区");
+        [YUUDatabaseMgr shareInstance].tableName = @"chatTableSuggest";
+
     }
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         DLOG(@"text change");

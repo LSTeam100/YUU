@@ -12,6 +12,7 @@
 
 @interface YUUDatabaseMgr : NSObject
 @property(nonatomic,strong)FMDatabase *yuuDB;
+@property(nonatomic,strong)NSString *tableName;
 -(BOOL)insertData:(ChatMsgModel *)model;
 -(NSMutableArray *)queryMsg;
 + (instancetype)shareInstance;
