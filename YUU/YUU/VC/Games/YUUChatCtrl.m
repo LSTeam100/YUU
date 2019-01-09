@@ -109,7 +109,7 @@ static  NSString * const chatTable = @"chatTable";
 
         [weakself saveMessage:addArr];
         [weakself readLocalMessageList];
-        [weakself.messageList reloadData];
+//        [weakself.messageList reloadData];
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -150,7 +150,10 @@ static  NSString * const chatTable = @"chatTable";
         NSArray *addArr = data[@"msgList"];
         [weakself saveMessage:addArr];
         [weakself readLocalMessageList];
-        [weakself.messageList reloadData];
+        [weakself tableviewScrollToBottom];
+        
+//        [weakself.messageList reloadData];
+        
         
     } failureCallback:^(YUUBaseRequest *request) {
         [self setBusyIndicatorVisible:NO];
@@ -163,6 +166,10 @@ static  NSString * const chatTable = @"chatTable";
     }];
     [req start];
     
+}
+-(void)tableviewScrollToBottom{
+    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:msgArr.count-1 inSection:0];
+    [self.messageList scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 }
 - (void)readLocalMessageList{
    BOOL ret = [[YUUDatabaseMgr shareInstance] openDB];
