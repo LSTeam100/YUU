@@ -320,23 +320,61 @@ static  NSString * const chatTable = @"chatTable";
         [HUD showHUDTitle:@"您不能发送空" durationTime:2];
         return;
     }
+    [self alertMessage];
     
+}
+
+-(void)alertMessage{
+    NSString *msg = @"";
+    if (self.type == chatTypeEmperor) {
+        msg = @"帝王区每次发言都会被扣除5个YUU";
+    }
+    else if (self.type == chatTypeSuggest){
+        msg = @"建议区每次发言都会被扣除10个YUU，但您的建议一旦被采纳，会奖励您1000个YUU";
+    }
+    else{
+        [self sendRequest];
+        return;
+    }
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
     WeakSelf
-   NSString *token = [YUUUserData shareInstance].userModel.token;
-//    [self setBusyIndicatorVisible:YES];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf sendRequest];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"cancel Action");
+        
+    }];
+
+
+    [alert addAction:okAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
+    
+}
+-(void)sendRequest{
+    WeakSelf
+    NSString *token = [YUUUserData shareInstance].userModel.token;
+    //    [self setBusyIndicatorVisible:YES];
     YUUCallNowRequest *callNow = [[YUUCallNowRequest alloc]initWithCallNow:token Callarea:[NSString stringWithFormat:@"%ld",(long)self.type] Calltext:self.chatTextField.text SuccessCallback:^(YUUBaseRequest *request) {
-//        [weakSelf setBusyIndicatorVisible:NO];
+        //        [weakSelf setBusyIndicatorVisible:NO];
         [weakSelf getServerMessgaeList];
         
     } failureCallback:^(YUUBaseRequest *request) {
-//        [weakSelf setBusyIndicatorVisible:NO];
+        //        [weakSelf setBusyIndicatorVisible:NO];
         [weakSelf handleResponseError:weakSelf request:request needToken:YES];
-
+        
     }];
     [callNow start];
     self.chatTextField.text = nil;
 
 }
+
+
+
 /*
 #pragma mark - Navigation
 
