@@ -465,13 +465,31 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有新记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo7-ia-cMb">
+                                                            <rect key="frame" x="255.5" y="38.5" width="49.5" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdH-jh-yNp">
+                                                            <rect key="frame" x="275.5" y="23.5" width="10" height="10"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="10" id="1Ui-6C-IHX"/>
+                                                                <constraint firstAttribute="width" constant="10" id="CyJ-yO-43m"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="xXV-pL-YrQ" firstAttribute="centerY" secondItem="Y1R-6K-V8Q" secondAttribute="centerY" id="6VY-20-ajK"/>
                                                         <constraint firstItem="4ZN-CF-VHP" firstAttribute="leading" secondItem="xXV-pL-YrQ" secondAttribute="trailing" constant="45" id="GxM-Le-kP6"/>
+                                                        <constraint firstItem="ZdH-jh-yNp" firstAttribute="centerX" secondItem="vo7-ia-cMb" secondAttribute="centerX" id="KWO-pr-G66"/>
                                                         <constraint firstItem="4ZN-CF-VHP" firstAttribute="centerY" secondItem="Y1R-6K-V8Q" secondAttribute="centerY" id="PJU-Ho-ORk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vo7-ia-cMb" secondAttribute="trailing" constant="30" id="Squ-A7-PSD"/>
                                                         <constraint firstAttribute="trailing" secondItem="4ZN-CF-VHP" secondAttribute="trailing" id="aWH-OF-JDn"/>
+                                                        <constraint firstItem="vo7-ia-cMb" firstAttribute="centerY" secondItem="Y1R-6K-V8Q" secondAttribute="centerY" constant="10" id="cMj-eB-VLH"/>
+                                                        <constraint firstItem="vo7-ia-cMb" firstAttribute="top" secondItem="ZdH-jh-yNp" secondAttribute="bottom" constant="5" id="tDU-B3-c9g"/>
                                                         <constraint firstItem="xXV-pL-YrQ" firstAttribute="leading" secondItem="Y1R-6K-V8Q" secondAttribute="leading" constant="12" id="xxO-fJ-tPB"/>
                                                     </constraints>
                                                 </view>
@@ -485,6 +503,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bgView" destination="Y1R-6K-V8Q" id="Pc3-jT-zSM"/>
+                                            <outlet property="hasNewRecordIcon" destination="ZdH-jh-yNp" id="E34-KM-Y4d"/>
+                                            <outlet property="hasNewRecordLabel" destination="vo7-ia-cMb" id="W5L-40-ud4"/>
                                             <outlet property="icon" destination="xXV-pL-YrQ" id="EaN-9R-6T7"/>
                                             <outlet property="label" destination="4ZN-CF-VHP" id="NV3-cg-DvV"/>
                                         </connections>
@@ -511,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUS-zY-ELB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120.8" y="193.85307346326837"/>
+            <point key="canvasLocation" x="72.799999999999997" y="158.77061469265368"/>
         </scene>
         <!--Enter GameVC-->
         <scene sceneID="Oma-tG-kiX">

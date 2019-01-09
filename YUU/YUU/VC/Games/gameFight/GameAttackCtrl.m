@@ -81,6 +81,19 @@
     _resultImage1.hidden = YES;
     _resultImage2.hidden = YES;
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 -(void)conigureCardType{
     self.leftCardType = cardTypeUnkonw;
     self.midCardType = cardTypeUnkonw;
@@ -88,14 +101,6 @@
 
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = NO;
-}
 
 
 - (void) panView:(UIPanGestureRecognizer *)panGestureRecognizer
