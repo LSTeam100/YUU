@@ -189,10 +189,8 @@
         imageName = @"bowman";
     } else if (gestureView.tag == cardTypeCavalry){
         imageName = @"cavalry";
-//        self.cavalry.center = defaultView.center;
     } else if (gestureView.tag == cardTypeinfantry){
         imageName = @"Infantry";
-//        self.infantry.center = defaultView.center;
     }
     
     if (defaultView == self.leftDefaultView) {

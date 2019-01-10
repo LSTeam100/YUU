@@ -12,6 +12,9 @@
 
 
 @interface GameCtrl ()
+@property (nonatomic, strong) UIImageView *attactImageView0;
+@property (nonatomic, strong) UIImageView *attactImageView1;
+@property (nonatomic, strong) UIImageView *attactImageView2;
 @end
 
 @implementation GameCtrl
@@ -26,15 +29,36 @@
     [self.bowman setUserInteractionEnabled:YES];
     [self.bowman addGestureRecognizer:panGestureRecognizer1];
     
+    UIImageView *bowmanBack = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [self.view insertSubview:bowmanBack belowSubview:self.bowman];
+    [bowmanBack mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.top.left.mas_equalTo(self.bowman);
+    }];
+    bowmanBack.image = [UIImage imageNamed:@"bowman"];
+    
     UIPanGestureRecognizer *panGestureRecognizer2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
 
     [self.cavalry setUserInteractionEnabled:YES];
     [self.cavalry addGestureRecognizer:panGestureRecognizer2];
     
+    UIImageView *cavalryBack = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [self.view insertSubview:cavalryBack belowSubview:self.cavalry];
+    [cavalryBack mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.top.left.mas_equalTo(self.cavalry);
+    }];
+    cavalryBack.image = [UIImage imageNamed:@"cavalry"];
+    
     UIPanGestureRecognizer *panGestureRecognizer3 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
 
     [self.infantry setUserInteractionEnabled:YES];
     [self.infantry addGestureRecognizer:panGestureRecognizer3];
+    
+    UIImageView *infantryBack = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [self.view insertSubview:infantryBack belowSubview:self.infantry];
+    [infantryBack mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.top.left.mas_equalTo(self.infantry);
+    }];
+    infantryBack.image = [UIImage imageNamed:@"Infantry"];
     
     
     NSMutableArray *uidArr = [self addUidImageView:@"0238889"];
@@ -100,6 +124,8 @@
                     break;
             }
             DLOG(@"不在放置区");
+            [self.view setNeedsLayout];
+            [self.view layoutIfNeeded];
         }
     }
 }
@@ -127,15 +153,37 @@
 
 
 -(void)updateCardPosion:(UIView *)gestureView DefaultView:(UIView *)defaultView{
+    NSString *imageName = @"";
     if (gestureView.tag == cardTypeBowman) {
-        self.bowman.center = defaultView.center;
+        imageName = @"bowman";
+    } else if (gestureView.tag == cardTypeCavalry){
+        imageName = @"cavalry";
+    } else if (gestureView.tag == cardTypeinfantry){
+        imageName = @"Infantry";
     }
-    else if (gestureView.tag == cardTypeCavalry){
-        self.cavalry.center = defaultView.center;
+    
+    if (defaultView == self.leftDefaultView) {
+        if (!_attactImageView0) {
+            _attactImageView0 = [[UIImageView alloc] initWithFrame:defaultView.frame];
+            [self.view addSubview:_attactImageView0];
+        }
+        _attactImageView0.image = [UIImage imageNamed:imageName];
+    } else if (defaultView == self.middleDefaultView) {
+        if (!_attactImageView1) {
+            _attactImageView1 = [[UIImageView alloc] initWithFrame:defaultView.frame];
+            [self.view addSubview:_attactImageView1];
+        }
+        _attactImageView1.image = [UIImage imageNamed:imageName];
+    } else {
+        if (!_attactImageView2) {
+            _attactImageView2 = [[UIImageView alloc] initWithFrame:defaultView.frame];
+            [self.view addSubview:_attactImageView2];
+        }
+        _attactImageView2.image = [UIImage imageNamed:imageName];
     }
-    else if (gestureView.tag == cardTypeinfantry){
-        self.infantry.center = defaultView.center;
-    }
+    
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
 }
 
 -(NSMutableArray *)addUidImageView:(NSString *)uidStr{
