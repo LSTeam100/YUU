@@ -173,14 +173,13 @@
     [HUD showHUD];
     WarbackRequest *request = [[WarbackRequest alloc] initBattlenum:self.model.battlenum success:^(YUUBaseRequest *request) {
         [HUD showRequest:request];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.navigationController popToViewController:self.navigationController.viewControllers[3] animated:YES];
     } failure:^(YUUBaseRequest *request) {
         [HUD hide];
         [self handleResponseError:self request:request needToken:YES];
     }];
     [request start];
-    
-//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)updateCardPosion:(UIView *)gestureView DefaultView:(UIView *)defaultView {

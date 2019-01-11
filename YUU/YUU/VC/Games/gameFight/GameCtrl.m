@@ -222,7 +222,8 @@
 
 
 -(IBAction)back:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController popToViewController:self.navigationController.viewControllers[3] animated:YES];
 }
 
 

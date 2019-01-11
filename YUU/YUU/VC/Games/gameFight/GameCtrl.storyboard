@@ -250,7 +250,7 @@
                                     <constraint firstAttribute="bottom" secondItem="1OD-vM-5D6" secondAttribute="bottom" id="ucp-jY-ry4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-Ty-L1e">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-Ty-L1e">
                                 <rect key="frame" x="31" y="81" width="313" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="num_1" translatesAutoresizingMaskIntoConstraints="NO" id="zfs-ZQ-jnb">
