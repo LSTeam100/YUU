@@ -66,7 +66,7 @@
 - (void)getHTTPData {
     [HUD showHUD];
     GetAttackorderRequest *request = [[GetAttackorderRequest alloc] initSuccess:^(YUUBaseRequest *request) {
-        if (request.getResponse.data) {
+        if ([request.getResponse.data integerValue] > 0) {
             _hasNews = YES;
         } else {
             _hasNews = NO;
