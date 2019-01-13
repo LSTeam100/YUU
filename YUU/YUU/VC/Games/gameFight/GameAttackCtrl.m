@@ -13,6 +13,8 @@
 #import "WarbackRequest.h"
 #import "YUUAttackResponseModel.h"
 
+#define animationDuration 1.5
+
 @interface GameAttackCtrl ()
 
 @property (nonatomic, strong) YUUAttackResponseModel *responseModel;
@@ -289,9 +291,9 @@
     _imageView1.tag = 1;
     _imageView2.tag = 2;
     
-    [self performSelector:@selector(rotationImageView:) withObject:_imageView0 afterDelay:0];
-    [self performSelector:@selector(rotationImageView:) withObject:_imageView1 afterDelay:0.4];
-    [self performSelector:@selector(rotationImageView:) withObject:_imageView2 afterDelay:0.4*2];
+    [self performSelector:@selector(rotationImageView:) withObject:_imageView0 afterDelay:animationDuration*0];
+    [self performSelector:@selector(rotationImageView:) withObject:_imageView1 afterDelay:animationDuration*2];
+    [self performSelector:@selector(rotationImageView:) withObject:_imageView2 afterDelay:animationDuration*4];
 }
 
 
@@ -304,12 +306,13 @@
                            [NSValue valueWithCATransform3D:CATransform3DMakeRotation(0, 0,1,0)],
                            nil];
     keyAnimation.cumulative = NO;
-    keyAnimation.duration = 0.5;
+    keyAnimation.duration = animationDuration;
     keyAnimation.repeatCount = 1;
     keyAnimation.removedOnCompletion = NO;
 //    keyAnimation.delegate = self;
     [imageView.layer addAnimation:keyAnimation forKey:@"transform"];
-    [self changeIamgeInImageView:imageView];
+//    [self changeIamgeInImageView:imageView];
+    [self performSelector:@selector(changeIamgeInImageView:) withObject:imageView afterDelay:0.7];
 }
 
 - (void)changeIamgeInImageView:(UIImageView *)imageView {
@@ -383,8 +386,8 @@
                 imageView.image = [UIImage imageNamed:@"bowman"];
                 _resultImage1.image = [UIImage imageNamed:@"win"];
             }
-            _resultImage1.hidden = NO;
         }
+        _resultImage1.hidden = NO;
     } else {
         if (self.rightCardType == cardTypeBowman) {
             if (_responseModel.thirdbout == 0 || _responseModel.thirdbout == 1) {
