@@ -9,7 +9,7 @@
 #import "GameCtrl.h"
 #import "YUUCanDefenseRequest.h"
 #import "AlertController.h"
-
+#import "GamesHomeCtrl.h"
 
 @interface GameCtrl ()
 @property (nonatomic, strong) UIImageView *attactImageView0;
@@ -59,10 +59,9 @@
         make.width.height.top.left.mas_equalTo(self.infantry);
     }];
     infantryBack.image = [UIImage imageNamed:@"Infantry"];
+    NSString *userid = [NSString stringWithFormat:@"%@",[YUUUserData shareInstance].userModel.memberid];
     
-    
-    NSMutableArray *uidArr = [self addUidImageView:@"0238889"];
-
+    NSMutableArray *uidArr = [self addUidImageView:userid];
     [self createUidImageView:uidArr];
     
 }
@@ -197,17 +196,16 @@
 }
 -(void)createUidImageView:(NSMutableArray *)uidArr{
 //    15 24
-    CGSize size = CGSizeMake(15, 24);
     for (int i = 1; i <= uidArr.count; i++) {
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 15, 24)];
         imgView.image = uidArr[i-1];
-        CGPoint p = CGPointMake(CGRectGetMaxX(self.maohaoImageView.frame) + (((size.width / 2)+6) * i), self.maohaoImageView.center.y);
-        
+        CGSize newsize = CGSizeMake(imgView.image.size.width * 0.8, imgView.image.size.height * 0.8);
+        [imgView setFrame:CGRectMake(0, 0, newsize.width, newsize.height)];
+        CGPoint p = CGPointMake(CGRectGetMaxX(self.maohaoImageView.frame) + (((newsize.width / 2)+8) * i), self.maohaoImageView.center.y);
         imgView.center = p;
         [self.view addSubview:imgView];
         
     }
-    
 }
 
 -(BOOL)findCardPosion:(UIView *)gestureView DefaultView:(UIView *)defaultView{
@@ -227,6 +225,7 @@
 }
 
 
+
 -(IBAction)startFight:(id)sender{
     NSString *token = [YUUUserData shareInstance].token;
     if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
@@ -236,6 +235,7 @@
             WeakSelf
             YUUCanDefenseRequest *attack = [[YUUCanDefenseRequest alloc] initWithCanDefense:token FirstCard:[NSString stringWithFormat:@"%ld",(long)self.leftCardType] secondCard:[NSString stringWithFormat:@"%ld",(long)self.midCardType] ThirdCard:[NSString stringWithFormat:@"%ld",(long)self.rightCardType] YuuNum:[NSString stringWithFormat:@"%f",self.yuuNum] SuccessCallback:^(YUUBaseRequest *request) {
                 [weakSelf setBusyIndicatorVisible:false];
+                [weakSelf backToGameMenu];
             } failureCallback:^(YUUBaseRequest *request) {
                 [weakSelf setBusyIndicatorVisible:false];
                 [weakSelf handleResponseError:weakSelf request:request needToken:YES];
@@ -250,6 +250,15 @@
     }
     else{
         [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];
+    }
+}
+-(void)backToGameMenu{
+    NSArray *ctrlArr = self.navigationController.viewControllers;
+    for (UIViewController *vc in ctrlArr) {
+        if ([vc isKindOfClass:[GamesHomeCtrl class]]) {
+            GamesHomeCtrl *gameHome = (GamesHomeCtrl *)vc;
+            [self.navigationController popToViewController:gameHome animated:YES];
+        }
     }
 }
 
