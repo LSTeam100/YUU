@@ -229,14 +229,16 @@
     return arr;
 }
 -(void)createUidImageView:(NSMutableArray *)uidArr{
-    //    15 24
+    CGFloat lastImageMaxX = CGRectGetMaxX(self.maohaoImageView.frame);
     for (int i = 1; i <= uidArr.count; i++) {
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 15, 24)];
         imgView.image = uidArr[i-1];
         CGSize newsize = CGSizeMake(imgView.image.size.width * 0.8, imgView.image.size.height * 0.8);
         [imgView setFrame:CGRectMake(0, 0, newsize.width, newsize.height)];
-        CGPoint p = CGPointMake(CGRectGetMaxX(self.maohaoImageView.frame) + (((newsize.width / 2)+8) * i), self.maohaoImageView.center.y);
+        DLOG(@"imgeframe=%@",NSStringFromCGRect(imgView.frame));
+        CGPoint p = CGPointMake(lastImageMaxX + (newsize.width / 2) +5, self.maohaoImageView.center.y);
         imgView.center = p;
+        lastImageMaxX = CGRectGetMaxX(imgView.frame);
         [self.view addSubview:imgView];
         
     }
