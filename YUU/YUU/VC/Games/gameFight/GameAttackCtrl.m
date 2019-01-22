@@ -79,6 +79,7 @@
     [self createUidImageView:uidArr];
     self.awardLabel.textColor = [UIColor whiteColor];
     self.awardLabelTitle.textColor = colorWithHexString(@"ED6621", 1.0);
+    self.awardLabel.hidden = YES;
     
     _resultImage0.hidden = YES;
     _resultImage1.hidden = YES;
@@ -132,18 +133,18 @@
             self.rightCardType = view.tag;
         }
         else{
-            switch (view.tag) {
-                case 0:
-                    self.leftCardType = cardTypeUnkonw;
-                    break;
-                case 1:
-                    self.midCardType = cardTypeUnkonw;
-                    break;
-                case 2:
-                    self.rightCardType = cardTypeUnkonw;
-                default:
-                    break;
-            }
+//            switch (view.tag) {
+//                case 0:
+//                    self.leftCardType = cardTypeUnkonw;
+//                    break;
+//                case 1:
+//                    self.midCardType = cardTypeUnkonw;
+//                    break;
+//                case 2:
+//                    self.rightCardType = cardTypeUnkonw;
+//                default:
+//                    break;
+//            }
             DLOG(@"不在放置区");
             [self.view setNeedsLayout];
             [self.view layoutIfNeeded];
@@ -264,6 +265,12 @@
             NSDictionary *dict = request.getResponse.responseObject;
             weakSelf.responseModel = [YUUAttackResponseModel mj_objectWithKeyValues:[dict objectForKey:@"data"]];
             [weakSelf showResult:weakSelf.responseModel];
+            dispatch_async(dispatch_get_main_queue(), ^{
+             double yuu = weakSelf.responseModel.firstboutgetyuu+weakSelf.responseModel.secondboutgetyuu+weakSelf.responseModel.thirdboutgetyuu;
+                self.awardLabel.text = [NSString stringWithFormat:@"%@",regYUUCoin([NSNumber numberWithDouble:yuu], 2)];
+                self.awardLabel.hidden = NO;
+                NSLog(@"%f",yuu);
+            });
         } failureCallback:^(YUUBaseRequest *request) {
             [weakSelf setBusyIndicatorVisible:false];
             [weakSelf handleResponseError:weakSelf request:request needToken:YES];
