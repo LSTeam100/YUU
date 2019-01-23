@@ -200,7 +200,7 @@
     for (int i = 1; i <= uidArr.count; i++) {
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 15, 24)];
         imgView.image = uidArr[i-1];
-        CGSize newsize = CGSizeMake(imgView.image.size.width * 0.8, imgView.image.size.height * 0.8);
+        CGSize newsize = CGSizeMake(imgView.image.size.width * 0.9, imgView.image.size.height * 0.9);
         [imgView setFrame:CGRectMake(0, 0, newsize.width, newsize.height)];
         DLOG(@"imgeframe=%@",NSStringFromCGRect(imgView.frame));
         CGPoint p = CGPointMake(lastImageMaxX + (newsize.width / 2) +5, self.maohaoImageView.center.y);
