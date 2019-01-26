@@ -282,9 +282,9 @@
     }
     
 //    _responseModel = [[YUUAttackResponseModel alloc] init];
-//    _responseModel.firstbout = 2;
+//    _responseModel.firstbout = 1;
 //    _responseModel.secondbout = 2;
-//    _responseModel.thirdbout = 2;
+//    _responseModel.thirdbout = 4;
 //    [self showResult:_responseModel];
     
 }
@@ -325,41 +325,19 @@
 }
 
 - (void)changeIamgeInImageView:(UIImageView *)imageView {
+    NSArray *imageNames = @[@"lose", @"nu", @"ping", @"win", @"bao"];
     if (imageView.tag == 0) {
         if (self.leftCardType == cardTypeBowman) {
-            if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
-                imageView.image = [UIImage imageNamed:@"cavalry"];
-                _resultImage0.image = [UIImage imageNamed:@"lose"];
-            } else if (_responseModel.firstbout == 2) {
-                imageView.image = [UIImage imageNamed:@"bowman"];
-                _resultImage0.image = [UIImage imageNamed:@"ping"];
-            } else {
-                imageView.image = [UIImage imageNamed:@"Infantry"];
-                _resultImage0.image = [UIImage imageNamed:@"win"];
-            }
+            NSArray *images = @[@"cavalry", @"cavalry", @"bowman", @"Infantry", @"Infantry"];
+            imageView.image = [UIImage imageNamed:images[_responseModel.firstbout]];
         } else if (self.leftCardType == cardTypeCavalry) {
-            if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
-                imageView.image = [UIImage imageNamed:@"Infantry"];
-                _resultImage0.image = [UIImage imageNamed:@"lose"];
-            } else if (_responseModel.firstbout == 2) {
-                imageView.image = [UIImage imageNamed:@"cavalry"];
-                _resultImage0.image = [UIImage imageNamed:@"ping"];
-            } else {
-                imageView.image = [UIImage imageNamed:@"bowman"];
-                _resultImage0.image = [UIImage imageNamed:@"win"];
-            }
+            NSArray *images = @[@"Infantry", @"Infantry", @"cavalry", @"bowman", @"bowman"];
+            imageView.image = [UIImage imageNamed:images[_responseModel.firstbout]];
         } else {
-            if (_responseModel.firstbout == 0 || _responseModel.firstbout == 1) {
-                imageView.image = [UIImage imageNamed:@"cavalry"];
-                _resultImage0.image = [UIImage imageNamed:@"lose"];
-            } else if (_responseModel.firstbout == 2) {
-                imageView.image = [UIImage imageNamed:@"Infantry"];
-                _resultImage0.image = [UIImage imageNamed:@"ping"];
-            } else {
-                imageView.image = [UIImage imageNamed:@"bowman"];
-                _resultImage0.image = [UIImage imageNamed:@"win"];
-            }
+            NSArray *images = @[@"cavalry", @"cavalry", @"Infantry", @"bowman", @"bowman"];
+            imageView.image = [UIImage imageNamed:images[_responseModel.firstbout]];
         }
+        _resultImage0.image = [UIImage imageNamed:imageNames[_responseModel.firstbout]];
         _resultImage0.hidden = NO;
     } else if (imageView.tag == 1) {
         if (self.midCardType == cardTypeBowman) {
@@ -396,6 +374,7 @@
                 _resultImage1.image = [UIImage imageNamed:@"win"];
             }
         }
+        _resultImage1.image = [UIImage imageNamed:imageNames[_responseModel.secondbout]];
         _resultImage1.hidden = NO;
     } else {
         if (self.rightCardType == cardTypeBowman) {
@@ -432,6 +411,7 @@
                 _resultImage2.image = [UIImage imageNamed:@"win"];
             }
         }
+        _resultImage2.image = [UIImage imageNamed:imageNames[_responseModel.thirdbout]];
         _resultImage2.hidden = NO;
     }
 }
