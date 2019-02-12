@@ -22,6 +22,8 @@
 @property (nonatomic, strong) UIImageView *attactImageView0;
 @property (nonatomic, strong) UIImageView *attactImageView1;
 @property (nonatomic, strong) UIImageView *attactImageView2;
+    
+@property (nonatomic, assign) BOOL isGameOver;
 
 @end
 
@@ -109,6 +111,9 @@
 
 - (void) panView:(UIPanGestureRecognizer *)panGestureRecognizer
 {
+    if (_isGameOver) {
+        return;
+    }
     UIView *view = panGestureRecognizer.view;
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
         CGPoint translation = [panGestureRecognizer translationInView:view.superview];
@@ -133,18 +138,6 @@
             self.rightCardType = view.tag;
         }
         else{
-//            switch (view.tag) {
-//                case 0:
-//                    self.leftCardType = cardTypeUnkonw;
-//                    break;
-//                case 1:
-//                    self.midCardType = cardTypeUnkonw;
-//                    break;
-//                case 2:
-//                    self.rightCardType = cardTypeUnkonw;
-//                default:
-//                    break;
-//            }
             DLOG(@"不在放置区");
             [self.view setNeedsLayout];
             [self.view layoutIfNeeded];
@@ -256,6 +249,10 @@
 }
 
 -(IBAction)startFight:(id)sender{
+    if (_isGameOver) {
+        [HUD showHUDDelayTitle:@"游戏已结束，请重新开始"];
+        return;
+    }
     NSString *token = [YUUUserData shareInstance].token;
     if (self.leftCardType > cardTypeUnkonw && self.midCardType > cardTypeUnkonw && self.rightCardType > cardTypeUnkonw) {
         [self setBusyIndicatorVisible:true];
@@ -271,13 +268,14 @@
                 self.awardLabel.hidden = NO;
                 NSLog(@"%f",yuu);
             });
+            weakSelf.isGameOver = YES;
         } failureCallback:^(YUUBaseRequest *request) {
             [weakSelf setBusyIndicatorVisible:false];
             [weakSelf handleResponseError:weakSelf request:request needToken:YES];
+            weakSelf.isGameOver = YES;
         }];
         [attack start];
-    }
-    else{
+    } else {
         [HUD showHUDTitle:@"请保证每张卡放在准备区" durationTime:2];
     }
     
