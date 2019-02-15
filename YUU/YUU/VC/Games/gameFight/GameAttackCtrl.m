@@ -250,7 +250,7 @@
 
 -(IBAction)startFight:(id)sender{
     if (_isGameOver) {
-        [HUD showHUDDelayTitle:@"游戏已结束，请重新开始"];
+        [HUD showHUDTitle:@"游戏已结束，请重新开始" durationTime:1.6];
         return;
     }
     NSString *token = [YUUUserData shareInstance].token;
